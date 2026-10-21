@@ -22,5 +22,5 @@
 .rtds-port-evidence{display:flex;flex-wrap:wrap;gap:8px 15px;font-size:9px;line-height:1.7;color:var(--muted);margin-top:10px}.rtds-port-evidence a{color:#536b62;text-underline-offset:3px}
 @media(max-width:560px){.rtds-model-head{flex-wrap:wrap;gap:10px}.rtds-model-head>div{min-width:0}.rtds-model-head>.rtds-badge{font-size:8px}}
 
-/* Projected inspection highlight: constant CSS-pixel weight, independent of WebGL line limits. */
-#rtds-scene{position:relative}.rtds-highlight{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}.rtds-highlight rect{fill:var(--coral);fill-opacity:.045;stroke:var(--coral);stroke-width:2.5;stroke-linejoin:round}#rtds-label{border-width:1.5px;background:#f4f0e7f7;color:#9e4426;font-weight:600;box-shadow:0 2px 8px #263b2d14}
+/* High-contrast projected inspection UI: fixed CSS-pixel strokes, no material changes or flashing. */
+#rtds-scene{position:relative}.rtds-highlight{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}.rtds-highlight>*{stroke-linejoin:round;fill:none}.rtds-highlight-underlay{stroke:#17261d;stroke-width:7}.rtds-highlight-main{fill:#ff6a00;fill-opacity:.025;stroke:#ff6a00;stroke-width:4}.rtds-highlight-corners-underlay{stroke:#17261d;stroke-width:9}.rtds-highlight-corners{stroke:#ff6a00;stroke-width:6}#rtds-label{border:2px solid #ff6a00;background:#17261d;color:#fff8ed;font-weight:700;font-size:11px;padding:6px 10px;box-shadow:0 2px 8px #17261d45}

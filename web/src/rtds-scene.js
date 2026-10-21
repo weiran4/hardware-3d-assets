@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createInspectionControls,applyInspectionPose} from './rtds-camera.js';
-import {gltfDirection,inspectionFrame,isPortFacingCamera,highlightSelection,projectHighlightBounds} from './rtds-state.js';
+import {gltfDirection,inspectionFrame,isPortFacingCamera,highlightSelection,projectHighlightBounds,highlightCornerPath} from './rtds-state.js';
 
 // Independent RTDS viewer. Authored materials, semantic IDs and Y-up export are retained.
 // Highlight outlines are inspection UI, not physical LEDs or live device behaviour.
@@ -20,8 +20,10 @@ export async function createRtdsScene(container,label,modelInfo,metadata,onPort,
  const nodes=new Map(),meshes=[];model.traverse(n=>{if(n.userData.sid)nodes.set(n.userData.sid,n);if(n.isMesh)meshes.push(n);});
  for(const p of metadata.ports){if(!nodes.has(p.id)){renderer.dispose();renderer.domElement.remove();throw Error('模型缺少接口 ID: '+p.id);}}
  container.append(renderer.domElement);const instance=crypto.randomUUID();container.dataset.instance=instance;
- const overlay=document.createElementNS('http://www.w3.org/2000/svg','svg'),outline=document.createElementNS('http://www.w3.org/2000/svg','rect');
- overlay.classList.add('rtds-highlight');overlay.setAttribute('aria-hidden','true');overlay.setAttribute('hidden','');outline.setAttribute('rx','6');outline.setAttribute('vector-effect','non-scaling-stroke');overlay.append(outline);container.append(overlay);
+ const svg=tag=>document.createElementNS('http://www.w3.org/2000/svg',tag);
+ const overlay=svg('svg'),underlay=svg('rect'),outline=svg('rect'),cornerUnderlay=svg('path'),corners=svg('path');
+ overlay.classList.add('rtds-highlight');overlay.setAttribute('aria-hidden','true');overlay.setAttribute('hidden','');
+ for(const [node,className]of [[underlay,'rtds-highlight-underlay'],[outline,'rtds-highlight-main'],[cornerUnderlay,'rtds-highlight-corners-underlay'],[corners,'rtds-highlight-corners']]){node.classList.add(className);node.setAttribute('vector-effect','non-scaling-stroke');if(node.tagName==='rect')node.setAttribute('rx','4');overlay.append(node);}container.append(overlay);
  const portById=new Map(metadata.ports.map(p=>[p.id,p]));
  const wholeBox=new THREE.Box3().setFromObject(model),wholeSize=wholeBox.getSize(new THREE.Vector3()),wholeCenter=wholeBox.getCenter(new THREE.Vector3());
  const extent=Math.max(...wholeSize.toArray());let frameSize=wholeSize.toArray(),selected=[],selectedPort=null,active=true,disposed=false,frame=0,highlight={ids:[],box:null},highlightTitle='';
@@ -33,7 +35,7 @@ export async function createRtdsScene(container,label,modelInfo,metadata,onPort,
   const facing=highlight.ids.some(id=>{const world=nodes.get(id).getWorldPosition(new THREE.Vector3());return isPortFacingCamera(portById.get(id).normal||[0,-1,0],camera.position.toArray(),world.toArray());});
   const bounds=facing?projectHighlightBounds(highlight.box,camera,w,h):null;
   overlay.toggleAttribute('hidden',!bounds);label.hidden=!bounds;
-  if(bounds){overlay.setAttribute('viewBox',`0 0 ${w} ${h}`);for(const [key,value]of Object.entries(bounds))outline.setAttribute(key,String(value));label.textContent=highlightTitle;const halfLabel=label.offsetWidth/2+4;label.style.left=Math.max(halfLabel,Math.min(w-halfLabel,bounds.x+bounds.width/2))+'px';label.style.top=Math.max(34,bounds.y-7)+'px';}
+  if(bounds){overlay.setAttribute('viewBox',`0 0 ${w} ${h}`);for(const [key,value]of Object.entries(bounds))for(const node of [underlay,outline])node.setAttribute(key,String(value));const path=highlightCornerPath(bounds);corners.setAttribute('d',path);cornerUnderlay.setAttribute('d',path);label.textContent=highlightTitle;const halfLabel=label.offsetWidth/2+4;label.style.left=Math.max(halfLabel,Math.min(w-halfLabel,bounds.x+bounds.width/2))+'px';label.style.top=Math.max(34,bounds.y-7)+'px';}
   renderer.render(scene,camera);container.dataset.frames=String(+(container.dataset.frames||0)+1);container.dataset.triangles=String(renderer.info.render.triangles);
  }
  function resize(){const w=container.clientWidth,h=container.clientHeight;if(!w||!h)return;renderer.setSize(w,h);Object.assign(camera,inspectionFrame(frameSize,w,h));camera.updateProjectionMatrix();invalidate();}

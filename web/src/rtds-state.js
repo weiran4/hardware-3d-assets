@@ -28,13 +28,18 @@ export function highlightSelection(groupIds,portId,nodes){
  return{ids,box:box.isEmpty()?null:box};
 }
 export function projectHighlightBounds(box,camera,width,height,padding=8){
- if(!box||box.isEmpty()||width<5||height<5)return null;
+ if(!box||box.isEmpty()||width<11||height<11)return null;
  const points=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new Vector3(x,y,z).project(camera));
  if(points.some(p=>!Number.isFinite(p.x+p.y+p.z)))return null;
  if(points.every(p=>p.z< -1)||points.every(p=>p.z>1))return null;
  const left=(Math.min(...points.map(p=>p.x))*.5+.5)*width,right=(Math.max(...points.map(p=>p.x))*.5+.5)*width;
  const top=(-Math.max(...points.map(p=>p.y))*.5+.5)*height,bottom=(-Math.min(...points.map(p=>p.y))*.5+.5)*height;
  if(right<0||left>width||bottom<0||top>height)return null;
- const x=Math.max(2,left-padding),y=Math.max(2,top-padding),r=Math.min(width-2,right+padding),b=Math.min(height-2,bottom+padding);
+ const x=Math.max(5,left-padding),y=Math.max(5,top-padding),r=Math.min(width-5,right+padding),b=Math.min(height-5,bottom+padding);
  return r>x&&b>y?{x,y,width:r-x,height:b-y}:null;
+}
+
+export function highlightCornerPath({x,y,width,height}){
+ const length=Math.min(22,width/3,height/3),right=x+width,bottom=y+height;
+ return`M${x} ${y+length}V${y}H${x+length} M${right-length} ${y}H${right}V${y+length} M${right} ${bottom-length}V${bottom}H${right-length} M${x+length} ${bottom}H${x}V${bottom-length}`;
 }

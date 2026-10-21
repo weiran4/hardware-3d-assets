@@ -47,3 +47,18 @@ test('projection hides offscreen, behind-camera or unavailable targets and clips
  const behind=box.clone().translate(new THREE.Vector3(0,0,-2));assert.equal(highlight.projectHighlightBounds(behind,camera,320,600),null);
  const visible=highlight.projectHighlightBounds(box,camera,320,600);assert.ok(visible.x>=2&&visible.y>=2);assert.ok(visible.x+visible.width<=318&&visible.y+visible.height<=598);
 });
+
+test('high-contrast highlight keeps a 4px orange edge, dark understroke and thicker corner brackets without flashing',()=>{
+ const css=readFileSync('src/styles.css','utf8');
+ assert.match(css,/\.rtds-highlight-main\s*\{[^}]*stroke:\s*#ff6a00[^}]*stroke-width:\s*4(?:[;\s}])/,'strong orange main edge is missing');
+ assert.match(css,/\.rtds-highlight-underlay\s*\{[^}]*stroke:\s*#17261d[^}]*stroke-width:\s*7(?:[;\s}])/,'dark contrast edge is missing');
+ assert.match(css,/\.rtds-highlight-corners\s*\{[^}]*stroke:\s*#ff6a00[^}]*stroke-width:\s*6(?:[;\s}])/,'thicker corner markers are missing');
+ assert.ok(!/\.rtds-highlight[^}]*animation\s*:/.test(css),'highlight must not flash');
+});
+
+test('corner brackets cover exactly the four projected rectangle corners at every viewport scale',()=>{
+ assert.equal(typeof highlight.highlightCornerPath,'function','corner marker geometry is missing');
+ const path=highlight.highlightCornerPath({x:10,y:20,width:120,height:80});
+ assert.equal((path.match(/M/g)||[]).length,4);assert.match(path,/M10 42V20H32/);assert.match(path,/M108 20H130V42/);assert.match(path,/M130 78V100H108/);assert.match(path,/M32 100H10V78/);
+ const small=highlight.highlightCornerPath({x:5,y:5,width:15,height:9});assert.ok(!small.includes('NaN'));assert.match(small,/M5 8V5H8/);
+});

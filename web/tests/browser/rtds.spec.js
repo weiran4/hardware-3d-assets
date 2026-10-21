@@ -48,13 +48,18 @@ test('RTDS skip and keyboard selection preserve mode and focus; top view remains
  await page.locator('#rtds-top').click();const canvas=page.locator('#rtds-scene canvas'),before=await canvas.screenshot(),box=await canvas.boundingBox();await page.mouse.move(box.x+box.width*.4,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.65,box.y+box.height*.5,{steps:10});await page.mouse.up();expect(Buffer.compare(before,await canvas.screenshot())).not.toBe(0);expect(failures).toEqual([]);
 });
 
-async function highlightRect(page){await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));return page.locator('.rtds-highlight rect').evaluate(n=>Object.fromEntries(['x','y','width','height'].map(k=>[k,Number(n.getAttribute(k))])));}
+async function highlightRect(page){await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));return page.locator('.rtds-highlight-main').evaluate(n=>Object.fromEntries(['x','y','width','height'].map(k=>[k,Number(n.getAttribute(k))])));}
 
 test('Aurora uses one conspicuous grouped rectangle; an individual port narrows the outline and tracks orbit/zoom',async({page})=>{
  await rtdsLoaded(page);const overlay=page.locator('.rtds-highlight');await expect(overlay).toBeHidden();
- await page.locator('[data-group="aurora"]').click();await expect(overlay).toBeVisible();await expect(overlay.locator('rect')).toHaveCount(1);await expect(overlay).toHaveAttribute('data-kind','group');
+ await page.locator('[data-group="aurora"]').click();await expect(overlay).toBeVisible();await expect(overlay.locator('.rtds-highlight-main')).toHaveCount(1);await expect(overlay).toHaveAttribute('data-kind','group');
  await expect(overlay).toHaveAttribute('data-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-label')).toHaveText('GT 21–24 · Aurora');
- expect(await overlay.locator('rect').evaluate(n=>parseFloat(getComputedStyle(n).strokeWidth))).toBeGreaterThanOrEqual(2);await screenshot(page,'aurora-group-highlight');
+ expect(await overlay.locator('.rtds-highlight-main').evaluate(n=>parseFloat(getComputedStyle(n).strokeWidth))).toBeGreaterThanOrEqual(4);expect(await overlay.locator('.rtds-highlight-main').evaluate(n=>getComputedStyle(n).stroke)).toBe('rgb(255, 106, 0)');
+  expect(await overlay.locator('.rtds-highlight-underlay').evaluate(n=>parseFloat(getComputedStyle(n).strokeWidth))).toBe(7);
+  expect(await overlay.locator('.rtds-highlight-underlay').evaluate(n=>getComputedStyle(n).stroke)).toBe('rgb(23, 38, 29)');
+  expect(await overlay.locator('.rtds-highlight-corners').evaluate(n=>parseFloat(getComputedStyle(n).strokeWidth))).toBe(6);
+  expect((await overlay.locator('.rtds-highlight-corners').getAttribute('d')).match(/M/g)).toHaveLength(4);
+  await screenshot(page, 'aurora-group-highlight');
  const before=await highlightRect(page);await page.locator('#rtds-in').click();await expect.poll(async()=> (await highlightRect(page)).width).toBeGreaterThan(before.width);
  const canvas=page.locator('#rtds-scene canvas'),box=await canvas.boundingBox(),zoomed=await highlightRect(page);await page.mouse.move(box.x+box.width*.45,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.52,box.y+box.height*.5,{steps:8});await page.mouse.up();await expect(overlay).toBeVisible();await expect.poll(()=>highlightRect(page)).not.toEqual(zoomed);await screenshot(page,'aurora-orbit-highlight');
  // Compare group and single geometry at the same rear bookmark, not at different auto-focus zoom levels.
