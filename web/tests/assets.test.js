@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+test('display GLB retains real semantic anchors and original geometry',()=>{const b=readFileSync('public/assets/hardware.glb');assert.equal(b.toString('ascii',0,4),'glTF');const j=JSON.parse(b.toString('utf8',20,20+b.readUInt32LE(12)));assert.ok(j.meshes.length>80);for(const sid of ['trigger-controller.out','oscilloscope.ch1','oscilloscope.trig']){const n=j.nodes.find(n=>n.extras?.sid===sid);assert.ok(n);assert.equal(n.extras.kind,'anchor');const p=JSON.parse(n.extras.port_record);assert.equal(p.physical_compatibility,'unknown');}assert.equal(j.images?.length??0,0);assert.ok(!JSON.stringify(j).includes('/workspace/'));});
+test('page has accessible equivalents and conceptual disclaimer',()=>{const h=readFileSync('index.html','utf8');for(const id of ['port-out','port-ch1','port-trig','reset-lesson','send-pulse','view-reset','scene','status'])assert.ok(h.includes(`id="${id}"`));assert.ok(h.includes('概念演示'));assert.ok(h.includes('aria-live="polite"'));});

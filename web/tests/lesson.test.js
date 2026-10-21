@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createInitialState, transition } from '../src/lesson.js';
+const act=(s,type,port)=>transition(s,{type,port});
+test('starts idle; OUT then CH1 connects',()=>{let s=createInitialState();assert.equal(s.stage,'idle');s=act(s,'port','out');assert.equal(s.stage,'source');s=act(s,'port','ch1');assert.equal(s.stage,'connected');});
+test('CH1 before OUT does not connect',()=>{const s=act(createInitialState(),'port','ch1');assert.equal(s.stage,'idle');assert.equal(s.feedback,'choose-output');});
+test('wrong TRIG preserves selected source',()=>{let s=act(createInitialState(),'port','out');s=act(s,'port','trig');assert.equal(s.stage,'source');assert.equal(s.feedback,'wrong-port');s=act(s,'port','ch1');assert.equal(s.stage,'connected');});
+test('unknown actions and ports leave state unchanged',()=>{const s=createInitialState();assert.equal(act(s,'unknown'),s);assert.equal(act(s,'port','nope'),s);});
+test('pulse requires connection and is counted exactly once',()=>{let s=createInitialState();assert.equal(act(s,'pulse').pulseCount,0);s=act(act(s,'port','out'),'port','ch1');assert.equal(act(s,'pulse').pulseCount,1);});
+test('repeated connections are stable; reset clears everything',()=>{let s=act(act(createInitialState(),'port','out'),'port','ch1');s=act(s,'port','ch1');assert.equal(s.stage,'connected');s=act(s,'pulse');assert.deepEqual(act(s,'reset'),createInitialState());});

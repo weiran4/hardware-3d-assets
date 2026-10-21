@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4f0e7"><meta name="description" content="转一转，接一根线，看懂信号从哪里来、到哪里去。原创 3D 硬件互动概念实验。">
+<title>信号接线实验室 · Wiring Lab</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#lesson">跳到接线操作</a>
+<div class="page">
+<header class="masthead"><a class="brand" href="./" aria-label="信号接线实验室首页"><svg viewBox="0 0 36 28" aria-hidden="true"><path d="M1 17h8V5h10v19h9V12h7"/></svg><span>信号接线实验室</span></a><span class="edition">HARDWARE STUDIES <i>／</i> NO. 01</span><span class="concept-tag"><span></span> 交互概念实验</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">A LITTLE CONNECTION, A NEW UNDERSTANDING.</p><h1>接上这一根，<span>看见信号。</span></h1></div><p class="intro-copy">不用先懂电路。<br>转一转设备，找到接口，让信号走一遍。<span>一台示波器 · 一个脉冲控制器 · 一根线</span></p></section>
+<section class="exhibit" aria-label="三维接线互动实验">
+<div class="exhibit-top"><span>FIG. 01 <b>从输出，到输入</b></span><span class="mono">OUT → CH1</span></div>
+<div class="lab-grid">
+<aside class="lesson" id="lesson"><p class="eyebrow">TRY IT YOURSELF</p><h2>跟着接一次</h2><ol class="steps"><li id="step-1" class="active"><span class="step-num">01</span><div><strong>找到信号的起点</strong><p>点控制器的 <b>OUT</b> 输出。</p></div></li><li id="step-2"><span class="step-num">02</span><div><strong>接到观察的入口</strong><p>再点示波器的 <b>CH1</b>。</p></div></li><li id="step-3"><span class="step-num">03</span><div><strong>发一个脉冲</strong><p>看看下方波形怎么变化。</p></div></li></ol>
+<div class="port-buttons" aria-label="接线按钮，与三维接口操作相同"><button id="port-out" class="port-btn" data-port="out"><span class="port-dot coral"></span><b>OUT</b><span>输出</span><span class="button-arrow">↗</span></button><button id="port-ch1" class="port-btn" data-port="ch1"><span class="port-dot blue"></span><b>CH1</b><span>输入</span><span class="button-arrow">↗</span></button><button id="port-trig" class="port-btn subtle" data-port="trig"><span class="port-dot"></span><b>TRIG</b><span>触发</span><span class="button-arrow">↗</span></button></div>
+<button id="reset-lesson" class="text-button">↺ 重新接线</button>
+</aside>
+<div class="scene-wrap"><div id="scene" role="img" aria-label="可旋转的原创三维示波器、脉冲控制器和信号线。可使用旁边的接线按钮完成全部操作。"><div id="loading" role="status"><span class="loading-circle"></span>正在摆好实验台…</div></div><div id="port-labels" aria-label="三维接口位置"></div><div class="scene-caption"><span class="scene-dot"></span><span id="scene-state">线缆未连接</span><span class="scene-instruction">拖动旋转 · 滚轮缩放</span></div><div class="view-controls" aria-label="三维视角控制"><button id="view-left" aria-label="向左旋转视角" title="向左旋转">↶</button><button id="view-right" aria-label="向右旋转视角" title="向右旋转">↷</button><span></span><button id="view-in" aria-label="放大视角" title="放大">＋</button><button id="view-out" aria-label="缩小视角" title="缩小">−</button><button id="view-reset" aria-label="复位视角" title="复位视角">⌖</button></div></div>
+<aside class="field-note"><p class="eyebrow">FIELD NOTES <span>↙</span></p><div class="note-index" id="note-index">01—03</div><h2 id="note-title">先认识这张实验台</h2><p id="note-body">左边发出信号，右边把信号画出来。点设备或接口，读一张小注解。</p><div class="device-tabs" aria-label="认识设备"><button data-inspect="controller">控制器</button><button data-inspect="scope">示波器</button><button data-inspect="cable">信号线</button></div><div class="note-divider"></div><p class="note-small"><span class="asterisk">✳</span> 接口长得像，<br>不等于可以接。</p><p class="note-foot">本页只练习信号路径。<br>真实设备需核对接口、电平和额定值。</p></aside>
+</div>
+<div class="status-line" id="status" role="status" aria-live="polite"><span class="status-symbol">→</span><span id="status-text">先点 OUT，给这根线一个起点。</span><span id="progress-label" class="mono">0 / 3</span></div>
+</section>
+<section class="response" aria-labelledby="response-title"><div class="response-title"><p class="eyebrow">WATCH THE RESPONSE</p><h2 id="response-title">信号到达，会发生什么？</h2><p id="response-copy">连好线后，发送一个示意脉冲。</p><button id="send-pulse" class="pulse-button" disabled><svg viewBox="0 0 24 20" aria-hidden="true"><path d="M1 14h6V4h9v10h7"/></svg>发一个脉冲 <span>→</span></button></div><div class="signal-path" aria-hidden="true"><span>OUT</span><div><i></i><i></i><i></i></div><span>CH1</span></div><div class="trace"><div class="trace-top"><span><i id="trace-led"></i> CH1 <small>示意波形</small></span><span id="trace-status">等待连接</span></div><svg viewBox="0 0 600 128" preserveAspectRatio="none" role="img" aria-label="概念波形显示，不是测量数据"><defs><pattern id="grid" width="30" height="24" patternUnits="userSpaceOnUse"><path d="M30 0H0V24" fill="none" stroke="#8ca3a8" stroke-opacity=".13" stroke-width="1"/></pattern></defs><rect width="600" height="128" fill="url(#grid)"/><path id="trace-line" d="M0 90H600" fill="none" stroke="#b9d9c2" stroke-width="2.8" stroke-linejoin="round"/><line id="trace-sweep" x1="0" x2="0" y1="0" y2="128" stroke="#f4f0e7" stroke-opacity="0"/></svg><div class="trace-bottom"><span>CONCEPTUAL SIGNAL</span><span>非真实测量 · 无电压 / 时间标定</span></div></div></section>
+</main>
+<footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创通用模型；概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>
+</div><script type="module" src="./app.js"></script>
+</body></html>
