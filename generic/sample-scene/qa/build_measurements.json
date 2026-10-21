@@ -1,0 +1,9987 @@
+{
+  "asset_id": "sample-scene",
+  "unit_scale": 1.0,
+  "body_dimensions_m": null,
+  "asset_bounds_m": [
+    [
+      -0.2549999952316284,
+      -0.3178524672985077,
+      0.0
+    ],
+    [
+      0.24649998545646667,
+      0.15649999678134918,
+      0.1589999943971634
+    ]
+  ],
+  "basis": {
+    "right": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "front": [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "negative_scale_count": 0,
+  "root_drift_m": 0.0,
+  "other_part_drift_m": 0.0,
+  "motion_checked_ids": [
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.knob",
+    "oscilloscope.knob_time",
+    "trigger-controller.button",
+    "trigger-controller.knob"
+  ],
+  "motion_axis_max_drift": 9.541398640621973e-08,
+  "motion_pivot_max_drift": 0.0,
+  "motion_marker_min_displacement": 0.0016655208313821862,
+  "root_at_ground": true,
+  "part_ids": [
+    "oscilloscope.body",
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.foot_-1_-1",
+    "oscilloscope.foot_-1_1",
+    "oscilloscope.foot_1_-1",
+    "oscilloscope.foot_1_1",
+    "oscilloscope.grid_h_1",
+    "oscilloscope.grid_h_2",
+    "oscilloscope.grid_h_3",
+    "oscilloscope.grid_h_4",
+    "oscilloscope.grid_v_1",
+    "oscilloscope.grid_v_2",
+    "oscilloscope.grid_v_3",
+    "oscilloscope.grid_v_4",
+    "oscilloscope.grid_v_5",
+    "oscilloscope.grid_v_6",
+    "oscilloscope.grid_v_7",
+    "oscilloscope.handle",
+    "oscilloscope.handle_post_-1",
+    "oscilloscope.handle_post_1",
+    "oscilloscope.knob",
+    "oscilloscope.knob_pointer",
+    "oscilloscope.knob_shaft",
+    "oscilloscope.knob_time",
+    "oscilloscope.knob_time_pointer",
+    "oscilloscope.knob_time_shaft",
+    "oscilloscope.label_ch1",
+    "oscilloscope.label_level",
+    "oscilloscope.label_time",
+    "oscilloscope.label_trig",
+    "oscilloscope.model",
+    "oscilloscope.panel_front",
+    "oscilloscope.port_ch1",
+    "oscilloscope.port_ch1_base",
+    "oscilloscope.port_ch1_lug_-1",
+    "oscilloscope.port_ch1_lug_1",
+    "oscilloscope.port_ch1_pin",
+    "oscilloscope.port_ch1_well",
+    "oscilloscope.port_trig",
+    "oscilloscope.port_trig_base",
+    "oscilloscope.port_trig_lug_-1",
+    "oscilloscope.port_trig_lug_1",
+    "oscilloscope.port_trig_pin",
+    "oscilloscope.port_trig_well",
+    "oscilloscope.rear_panel",
+    "oscilloscope.screen",
+    "oscilloscope.screen_bezel",
+    "oscilloscope.screen_caption",
+    "oscilloscope.top_strip",
+    "oscilloscope.trace",
+    "oscilloscope.vent_0",
+    "oscilloscope.vent_1",
+    "oscilloscope.vent_2",
+    "oscilloscope.vent_3",
+    "oscilloscope.vent_4",
+    "oscilloscope.vent_5",
+    "signal-cable.body",
+    "signal-cable.boot_a",
+    "signal-cable.boot_a_rib0",
+    "signal-cable.boot_a_rib1",
+    "signal-cable.boot_a_rib2",
+    "signal-cable.boot_b",
+    "signal-cable.boot_b_rib0",
+    "signal-cable.boot_b_rib1",
+    "signal-cable.boot_b_rib2",
+    "signal-cable.connector_a",
+    "signal-cable.connector_b",
+    "signal-cable.plug_pin_a",
+    "signal-cable.plug_pin_b",
+    "signal-cable.plug_well_a",
+    "signal-cable.plug_well_b",
+    "trigger-controller.body",
+    "trigger-controller.brand",
+    "trigger-controller.button",
+    "trigger-controller.display",
+    "trigger-controller.foot_-1_-1",
+    "trigger-controller.foot_-1_1",
+    "trigger-controller.foot_1_-1",
+    "trigger-controller.foot_1_1",
+    "trigger-controller.indicator",
+    "trigger-controller.knob",
+    "trigger-controller.knob_pointer",
+    "trigger-controller.knob_shaft",
+    "trigger-controller.label_button",
+    "trigger-controller.label_level",
+    "trigger-controller.label_out",
+    "trigger-controller.panel_front",
+    "trigger-controller.port_out",
+    "trigger-controller.port_out_base",
+    "trigger-controller.port_out_lug_-1",
+    "trigger-controller.port_out_lug_1",
+    "trigger-controller.port_out_pin",
+    "trigger-controller.port_out_well",
+    "trigger-controller.top_inset",
+    "trigger-controller.trace",
+    "trigger-controller.vent_0",
+    "trigger-controller.vent_1",
+    "trigger-controller.vent_2",
+    "trigger-controller.vent_3",
+    "trigger-controller.vent_4"
+  ],
+  "anchor_ids": [
+    "oscilloscope.ch1",
+    "oscilloscope.trig",
+    "signal-cable.end_a",
+    "signal-cable.end_b",
+    "trigger-controller.out"
+  ],
+  "all_ids": [
+    "oscilloscope.body",
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.ch1",
+    "oscilloscope.foot_-1_-1",
+    "oscilloscope.foot_-1_1",
+    "oscilloscope.foot_1_-1",
+    "oscilloscope.foot_1_1",
+    "oscilloscope.grid_h_1",
+    "oscilloscope.grid_h_2",
+    "oscilloscope.grid_h_3",
+    "oscilloscope.grid_h_4",
+    "oscilloscope.grid_v_1",
+    "oscilloscope.grid_v_2",
+    "oscilloscope.grid_v_3",
+    "oscilloscope.grid_v_4",
+    "oscilloscope.grid_v_5",
+    "oscilloscope.grid_v_6",
+    "oscilloscope.grid_v_7",
+    "oscilloscope.handle",
+    "oscilloscope.handle_post_-1",
+    "oscilloscope.handle_post_1",
+    "oscilloscope.knob",
+    "oscilloscope.knob_pointer",
+    "oscilloscope.knob_shaft",
+    "oscilloscope.knob_time",
+    "oscilloscope.knob_time_pointer",
+    "oscilloscope.knob_time_shaft",
+    "oscilloscope.label_ch1",
+    "oscilloscope.label_level",
+    "oscilloscope.label_time",
+    "oscilloscope.label_trig",
+    "oscilloscope.model",
+    "oscilloscope.panel_front",
+    "oscilloscope.port_ch1",
+    "oscilloscope.port_ch1_base",
+    "oscilloscope.port_ch1_lug_-1",
+    "oscilloscope.port_ch1_lug_1",
+    "oscilloscope.port_ch1_pin",
+    "oscilloscope.port_ch1_well",
+    "oscilloscope.port_trig",
+    "oscilloscope.port_trig_base",
+    "oscilloscope.port_trig_lug_-1",
+    "oscilloscope.port_trig_lug_1",
+    "oscilloscope.port_trig_pin",
+    "oscilloscope.port_trig_well",
+    "oscilloscope.rear_panel",
+    "oscilloscope.root",
+    "oscilloscope.screen",
+    "oscilloscope.screen_bezel",
+    "oscilloscope.screen_caption",
+    "oscilloscope.top_strip",
+    "oscilloscope.trace",
+    "oscilloscope.trig",
+    "oscilloscope.vent_0",
+    "oscilloscope.vent_1",
+    "oscilloscope.vent_2",
+    "oscilloscope.vent_3",
+    "oscilloscope.vent_4",
+    "oscilloscope.vent_5",
+    "sample-scene.root",
+    "signal-cable.body",
+    "signal-cable.boot_a",
+    "signal-cable.boot_a_rib0",
+    "signal-cable.boot_a_rib1",
+    "signal-cable.boot_a_rib2",
+    "signal-cable.boot_b",
+    "signal-cable.boot_b_rib0",
+    "signal-cable.boot_b_rib1",
+    "signal-cable.boot_b_rib2",
+    "signal-cable.connector_a",
+    "signal-cable.connector_b",
+    "signal-cable.end_a",
+    "signal-cable.end_b",
+    "signal-cable.plug_pin_a",
+    "signal-cable.plug_pin_b",
+    "signal-cable.plug_well_a",
+    "signal-cable.plug_well_b",
+    "signal-cable.root",
+    "trigger-controller.body",
+    "trigger-controller.brand",
+    "trigger-controller.button",
+    "trigger-controller.display",
+    "trigger-controller.foot_-1_-1",
+    "trigger-controller.foot_-1_1",
+    "trigger-controller.foot_1_-1",
+    "trigger-controller.foot_1_1",
+    "trigger-controller.indicator",
+    "trigger-controller.knob",
+    "trigger-controller.knob_pointer",
+    "trigger-controller.knob_shaft",
+    "trigger-controller.label_button",
+    "trigger-controller.label_level",
+    "trigger-controller.label_out",
+    "trigger-controller.out",
+    "trigger-controller.panel_front",
+    "trigger-controller.port_out",
+    "trigger-controller.port_out_base",
+    "trigger-controller.port_out_lug_-1",
+    "trigger-controller.port_out_lug_1",
+    "trigger-controller.port_out_pin",
+    "trigger-controller.port_out_well",
+    "trigger-controller.root",
+    "trigger-controller.top_inset",
+    "trigger-controller.trace",
+    "trigger-controller.vent_0",
+    "trigger-controller.vent_1",
+    "trigger-controller.vent_2",
+    "trigger-controller.vent_3",
+    "trigger-controller.vent_4"
+  ],
+  "port_records": [
+    {
+      "anchor_name": "oscilloscope.ch1",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.ch1",
+      "label": "CH1",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.047,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "oscilloscope.trig",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.trig",
+      "label": "TRIG",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.104,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "signal-cable.end_a",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_a",
+      "label": "END A",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_a",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "signal-cable.end_b",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_b",
+      "label": "END B",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_b",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "trigger-controller.out",
+      "connector": "generic_coaxial_visual",
+      "direction": "output",
+      "electrical_constraints": null,
+      "id": "trigger-controller.out",
+      "label": "OUT",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "trigger-controller.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.061,
+        -0.073,
+        0.035
+      ],
+      "signal_type": "unknown"
+    }
+  ],
+  "metadata_errors": [],
+  "sidecar_present": true,
+  "unique_triangles": 6857,
+  "placed_triangles": 6857,
+  "curve_mesh_triangles": 1384,
+  "missing_resources": [],
+  "geometry_digest": "1657ae7148a93d4e410b91cffe3298191cb7959f9d66b758e21b758bf49fa8cf",
+  "semantic_digest": "37fb09e965b1b7fcfd2764125aac3e84bbdbe2bcbb1a81313de0a5600d230bf9",
+  "material_digest": "6a74d001ae3ef2fce2d8ff6c9cf9cc1f685523090ae8c324a66e1127a03d3049",
+  "objects": {
+    "oscilloscope.body": {
+      "sid": "oscilloscope.body",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.075
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.03500000387430191,
+          -0.004999995231628418,
+          0.012000001966953278
+        ],
+        [
+          0.24500000476837158,
+          0.1550000011920929,
+          0.1419999897480011
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "oscilloscope.button": {
+      "sid": "oscilloscope.button",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.14
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.012
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13300000131130219,
+          -0.015999995172023773,
+          0.06650000065565109
+        ],
+        [
+          0.1469999998807907,
+          -0.007999993860721588,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "oscilloscope.button_1": {
+      "sid": "oscilloscope.button_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.163
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.012
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.15599998831748962,
+          -0.015999995172023773,
+          0.06650000065565109
+        ],
+        [
+          0.16999998688697815,
+          -0.007999993860721588,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.button_2": {
+      "sid": "oscilloscope.button_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.186
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.012
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.17899999022483826,
+          -0.015999995172023773,
+          0.06650000065565109
+        ],
+        [
+          0.19299998879432678,
+          -0.007999993860721588,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.button_3": {
+      "sid": "oscilloscope.button_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.012
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.2019999921321869,
+          -0.015999995172023773,
+          0.06650000065565109
+        ],
+        [
+          0.21599999070167542,
+          -0.007999993860721588,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.ch1": {
+      "sid": "oscilloscope.ch1",
+      "parent": "oscilloscope.root",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.019
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.foot_-1_-1": {
+      "sid": "oscilloscope.foot_-1_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.001
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.021
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015000006183981895,
+          0.005500001832842827,
+          0.0
+        ],
+        [
+          0.016999995335936546,
+          0.0364999994635582,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_-1_1": {
+      "sid": "oscilloscope.foot_-1_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.001
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.129
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015000006183981895,
+          0.11350000649690628,
+          0.0
+        ],
+        [
+          0.016999995335936546,
+          0.1445000022649765,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_1_-1": {
+      "sid": "oscilloscope.foot_1_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.021
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.19299998879432678,
+          0.005500001832842827,
+          0.0
+        ],
+        [
+          0.22499999403953552,
+          0.0364999994635582,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_1_1": {
+      "sid": "oscilloscope.foot_1_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.129
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.19299998879432678,
+          0.11350000649690628,
+          0.0
+        ],
+        [
+          0.22499999403953552,
+          0.1445000022649765,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.grid_h_1": {
+      "sid": "oscilloscope.grid_h_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0165
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0617
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015500005334615707,
+          -0.016624996438622475,
+          0.06155000254511833
+        ],
+        [
+          0.10349999368190765,
+          -0.016374995931982994,
+          0.06185000017285347
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_2": {
+      "sid": "oscilloscope.grid_h_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0165
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0759
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015500005334615707,
+          -0.016624996438622475,
+          0.07575000077486038
+        ],
+        [
+          0.10349999368190765,
+          -0.016374995931982994,
+          0.07605000585317612
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_3": {
+      "sid": "oscilloscope.grid_h_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0165
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0901
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015500005334615707,
+          -0.016624996438622475,
+          0.08994999527931213
+        ],
+        [
+          0.10349999368190765,
+          -0.016374995931982994,
+          0.09025000035762787
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_4": {
+      "sid": "oscilloscope.grid_h_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0165
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1043
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015500005334615707,
+          -0.016624996438622475,
+          0.10414999723434448
+        ],
+        [
+          0.10349999368190765,
+          -0.016374995931982994,
+          0.10445000231266022
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_1": {
+      "sid": "oscilloscope.grid_v_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0025
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.002650005044415593,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          -0.0023500050883740187,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_2": {
+      "sid": "oscilloscope.grid_v_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.013
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.01284999679774046,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.013149996288120747,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_3": {
+      "sid": "oscilloscope.grid_v_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0285
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.028349997475743294,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.02864999882876873,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_4": {
+      "sid": "oscilloscope.grid_v_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.04384999722242355,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.04414999485015869,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_5": {
+      "sid": "oscilloscope.grid_v_5",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0595
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.05934999883174896,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.0596499964594841,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_6": {
+      "sid": "oscilloscope.grid_v_6",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.075
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.07484999299049377,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.07514999806880951,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_7": {
+      "sid": "oscilloscope.grid_v_7",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0905
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0164
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09034999459981918,
+          -0.016524994745850563,
+          0.05049999803304672
+        ],
+        [
+          0.09064999967813492,
+          -0.016274994239211082,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.handle": {
+      "sid": "oscilloscope.handle",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.154
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.032499998807907104,
+          0.08050000667572021,
+          0.14900000393390656
+        ],
+        [
+          0.17749999463558197,
+          0.09950000047683716,
+          0.1589999943971634
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.handle_post_-1": {
+      "sid": "oscilloscope.handle_post_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.038
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.148
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.031999994069337845,
+          0.08000000566244125,
+          0.1420000046491623
+        ],
+        [
+          0.04399999603629112,
+          0.10000000149011612,
+          0.15399999916553497
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.handle_post_1": {
+      "sid": "oscilloscope.handle_post_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.172
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.148
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.16599999368190765,
+          0.08000000566244125,
+          0.1420000046491623
+        ],
+        [
+          0.17799998819828033,
+          0.10000000149011612,
+          0.15399999916553497
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob": {
+      "sid": "oscilloscope.knob",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.153
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.02
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1379999965429306,
+          -0.026999996975064278,
+          0.08399999886751175
+        ],
+        [
+          0.1679999977350235,
+          -0.012999994680285454,
+          0.11400000005960464
+        ]
+      ],
+      "triangles": 188,
+      "materials": [
+        "palette.cream"
+      ]
+    },
+    "oscilloscope.knob_pointer": {
+      "sid": "oscilloscope.knob_pointer",
+      "parent": "oscilloscope.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.153
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0277
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.1077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.15234999358654022,
+          -0.028099995106458664,
+          0.10357499867677689
+        ],
+        [
+          0.15365000069141388,
+          -0.027299996465444565,
+          0.11182499676942825
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob_shaft": {
+      "sid": "oscilloscope.knob_shaft",
+      "parent": "oscilloscope.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.153
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.012
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14819999039173126,
+          -0.015999995172023773,
+          0.094200000166893
+        ],
+        [
+          0.15780000388622284,
+          -0.007999994792044163,
+          0.10379999876022339
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.knob_time": {
+      "sid": "oscilloscope.knob_time",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.02
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1979999840259552,
+          -0.026999996975064278,
+          0.08799999952316284
+        ],
+        [
+          0.2199999988079071,
+          -0.012999995611608028,
+          0.10999999940395355
+        ]
+      ],
+      "triangles": 188,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.knob_time_pointer": {
+      "sid": "oscilloscope.knob_time_pointer",
+      "parent": "oscilloscope.knob_time",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0277
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.10538
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20834998786449432,
+          -0.028099995106458664,
+          0.102354995906353
+        ],
+        [
+          0.20964999496936798,
+          -0.027299996465444565,
+          0.10840500146150589
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob_time_shaft": {
+      "sid": "oscilloscope.knob_time_shaft",
+      "parent": "oscilloscope.knob_time",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.012
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20547999441623688,
+          -0.015999995172023773,
+          0.09548000246286392
+        ],
+        [
+          0.21251998841762543,
+          -0.007999994792044163,
+          0.10251999646425247
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.label_ch1": {
+      "sid": "oscilloscope.label_ch1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.01
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.022
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14767365157604218,
+          -0.009999997913837433,
+          0.02054769918322563
+        ],
+        [
+          0.15561194717884064,
+          -0.009999997913837433,
+          0.023837700486183167
+        ]
+      ],
+      "triangles": 20,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_level": {
+      "sid": "oscilloscope.label_level",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.153
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.01
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.121
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14812800288200378,
+          -0.009999997913837433,
+          0.11977599561214447
+        ],
+        [
+          0.15812799334526062,
+          -0.009999997913837433,
+          0.12252800166606903
+        ]
+      ],
+      "triangles": 33,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_time": {
+      "sid": "oscilloscope.label_time",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.01
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.117
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20479799807071686,
+          -0.009999997913837433,
+          0.11580000072717667
+        ],
+        [
+          0.21315398812294006,
+          -0.009999997913837433,
+          0.11852800101041794
+        ]
+      ],
+      "triangles": 31,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_trig": {
+      "sid": "oscilloscope.label_trig",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.01
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.022
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.2039145976305008,
+          -0.009999997913837433,
+          0.02054769918322563
+        ],
+        [
+          0.21385039389133453,
+          -0.009999997913837433,
+          0.023837700486183167
+        ]
+      ],
+      "triangles": 37,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.model": {
+      "sid": "oscilloscope.model",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.017
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.01
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.01677500456571579,
+          -0.009999997913837433,
+          0.023454999551177025
+        ],
+        [
+          0.018059998750686646,
+          -0.009999997913837433,
+          0.026955001056194305
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.panel_front": {
+      "sid": "oscilloscope.panel_front",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.006
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.028499998152256012,
+          -0.008499996736645699,
+          0.017999999225139618
+        ],
+        [
+          0.23849999904632568,
+          -0.003499997314065695,
+          0.13600000739097595
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.cream"
+      ]
+    },
+    "oscilloscope.port_ch1": {
+      "sid": "oscilloscope.port_ch1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.014
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14459998905658722,
+          -0.01899999938905239,
+          0.032600000500679016
+        ],
+        [
+          0.15940000116825104,
+          -0.008999998681247234,
+          0.04739999771118164
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_base": {
+      "sid": "oscilloscope.port_ch1_base",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.008
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14249999821186066,
+          -0.010499994270503521,
+          0.030499998480081558
+        ],
+        [
+          0.1614999920129776,
+          -0.005499993450939655,
+          0.0494999997317791
+        ]
+      ],
+      "triangles": 124,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.port_ch1_lug_-1": {
+      "sid": "oscilloscope.port_ch1_lug_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.1444
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.013
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1429000049829483,
+          -0.014499996788799763,
+          0.03849999979138374
+        ],
+        [
+          0.14589999616146088,
+          -0.011499996297061443,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_lug_1": {
+      "sid": "oscilloscope.port_ch1_lug_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.1596
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.013
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.15809999406337738,
+          -0.014499996788799763,
+          0.03849999979138374
+        ],
+        [
+          0.16109998524188995,
+          -0.011499996297061443,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_pin": {
+      "sid": "oscilloscope.port_ch1_pin",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0122
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1508999913930893,
+          -0.013699998147785664,
+          0.03889999911189079
+        ],
+        [
+          0.15309999883174896,
+          -0.010699997656047344,
+          0.041099999099969864
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "oscilloscope.port_ch1_well": {
+      "sid": "oscilloscope.port_ch1_well",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.152
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0108
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.14719998836517334,
+          -0.011299996636807919,
+          0.03519999980926514
+        ],
+        [
+          0.15680000185966492,
+          -0.010299996472895145,
+          0.04479999840259552
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.port_trig": {
+      "sid": "oscilloscope.port_trig",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.014
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20159998536109924,
+          -0.01899999938905239,
+          0.032600000500679016
+        ],
+        [
+          0.21639999747276306,
+          -0.008999998681247234,
+          0.04739999771118164
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_base": {
+      "sid": "oscilloscope.port_trig_base",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.008
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.19949999451637268,
+          -0.010499994270503521,
+          0.030499998480081558
+        ],
+        [
+          0.21849998831748962,
+          -0.005499993450939655,
+          0.0494999997317791
+        ]
+      ],
+      "triangles": 124,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "oscilloscope.port_trig_lug_-1": {
+      "sid": "oscilloscope.port_trig_lug_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.2014
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.013
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.19990000128746033,
+          -0.014499996788799763,
+          0.03849999979138374
+        ],
+        [
+          0.2028999924659729,
+          -0.011499996297061443,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_lug_1": {
+      "sid": "oscilloscope.port_trig_lug_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.2166
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.013
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.2151000052690506,
+          -0.014499996788799763,
+          0.03849999979138374
+        ],
+        [
+          0.21809999644756317,
+          -0.011499996297061443,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_pin": {
+      "sid": "oscilloscope.port_trig_pin",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0122
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20789998769760132,
+          -0.013699998147785664,
+          0.03889999911189079
+        ],
+        [
+          0.210099995136261,
+          -0.010699997656047344,
+          0.041099999099969864
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "oscilloscope.port_trig_well": {
+      "sid": "oscilloscope.port_trig_well",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0108
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.20419998466968536,
+          -0.011299996636807919,
+          0.03519999980926514
+        ],
+        [
+          0.21379999816417694,
+          -0.010299996472895145,
+          0.04479999840259552
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.rear_panel": {
+      "sid": "oscilloscope.rear_panel",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.1555
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.018000006675720215,
+          0.15449999272823334,
+          0.02800000086426735
+        ],
+        [
+          0.2280000001192093,
+          0.15649999678134918,
+          0.12600000202655792
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "oscilloscope.root": {
+      "sid": "oscilloscope.root",
+      "parent": "sample-scene.root",
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.075
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.screen": {
+      "sid": "oscilloscope.screen",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0155
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.018000002950429916,
+          -0.016249993816018105,
+          0.047499995678663254
+        ],
+        [
+          0.10599999129772186,
+          -0.01474999450147152,
+          0.1184999942779541
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.screen"
+      ]
+    },
+    "oscilloscope.screen_bezel": {
+      "sid": "oscilloscope.screen_bezel",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.044
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.011
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.024500001221895218,
+          -0.015000000596046448,
+          0.04149999842047691
+        ],
+        [
+          0.11249999701976776,
+          -0.00699999975040555,
+          0.12449999153614044
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.screen_caption": {
+      "sid": "oscilloscope.screen_caption",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.012
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.017
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.0118080023676157,
+          -0.016999997198581696,
+          0.11076400429010391
+        ],
+        [
+          -0.005052001681178808,
+          -0.016999997198581696,
+          0.11356400698423386
+        ]
+      ],
+      "triangles": 20,
+      "materials": [
+        "palette.trace"
+      ]
+    },
+    "oscilloscope.top_strip": {
+      "sid": "oscilloscope.top_strip",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.009
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.129
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.02149999886751175,
+          -0.009749995544552803,
+          0.12599998712539673
+        ],
+        [
+          0.23149999976158142,
+          -0.008249996230006218,
+          0.13199999928474426
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.trace": {
+      "sid": "oscilloscope.trace",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.075
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.015729621052742004,
+          -0.017799995839595795,
+          0.06130469590425491
+        ],
+        [
+          0.10372961312532425,
+          -0.016199998557567596,
+          0.10469530522823334
+        ]
+      ],
+      "triangles": 548,
+      "materials": [
+        "palette.trace"
+      ]
+    },
+    "oscilloscope.trig": {
+      "sid": "oscilloscope.trig",
+      "parent": "oscilloscope.root",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.209
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.019
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.vent_0": {
+      "sid": "oscilloscope.vent_0",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.107
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.10400000959634781,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.11000000685453415,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_1": {
+      "sid": "oscilloscope.vent_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.095
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.09200000017881393,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.09799999743700027,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_2": {
+      "sid": "oscilloscope.vent_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.08000000566244125,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.0860000029206276,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_3": {
+      "sid": "oscilloscope.vent_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.071
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.06800000369548798,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.07400000095367432,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_4": {
+      "sid": "oscilloscope.vent_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.059
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.0560000017285347,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.06199999898672104,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_5": {
+      "sid": "oscilloscope.vent_5",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.24549999833106995,
+          0.04400000348687172,
+          0.07200000435113907
+        ],
+        [
+          0.24649998545646667,
+          0.05000000074505806,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "sample-scene.root": {
+      "sid": "sample-scene.root",
+      "parent": null,
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "signal-cable.body": {
+      "sid": "signal-cable.body",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.025
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.225
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11012168973684311,
+          -0.3178524672985077,
+          0.0002811336889863014
+        ],
+        [
+          0.1387321501970291,
+          -0.13214752078056335,
+          0.010660399682819843
+        ]
+      ],
+      "triangles": 776,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "signal-cable.boot_a": {
+      "sid": "signal-cable.boot_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.137691
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.177249
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13075374066829681,
+          -0.18417076766490936,
+          0.004328372422605753
+        ],
+        [
+          0.1446281224489212,
+          -0.17032741010189056,
+          0.0127283725887537
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib0": {
+      "sid": "signal-cable.boot_a_rib0",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.139116
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.178652
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13553278148174286,
+          -0.182281032204628,
+          0.003928372170776129
+        ],
+        [
+          0.14269958436489105,
+          -0.17502330243587494,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib1": {
+      "sid": "signal-cable.boot_a_rib1",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.137691
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.177249
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1341075301170349,
+          -0.1808779537677765,
+          0.003928372170776129
+        ],
+        [
+          0.1412743330001831,
+          -0.17362022399902344,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib2": {
+      "sid": "signal-cable.boot_a_rib2",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.136266
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.175846
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13268226385116577,
+          -0.179474875330925,
+          0.003928372170776129
+        ],
+        [
+          0.13984906673431396,
+          -0.17221714556217194,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b": {
+      "sid": "signal-cable.boot_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.137691
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.272751
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13075374066829681,
+          -0.2796725928783417,
+          0.004328372422605753
+        ],
+        [
+          0.1446281224489212,
+          -0.2658292353153229,
+          0.0127283725887537
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib0": {
+      "sid": "signal-cable.boot_b_rib0",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.139116
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.271348
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13553278148174286,
+          -0.2749766707420349,
+          0.003928372170776129
+        ],
+        [
+          0.14269958436489105,
+          -0.26771897077560425,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib1": {
+      "sid": "signal-cable.boot_b_rib1",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.137691
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.272751
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1341075301170349,
+          -0.2763797640800476,
+          0.003928372170776129
+        ],
+        [
+          0.1412743330001831,
+          -0.26912206411361694,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib2": {
+      "sid": "signal-cable.boot_b_rib2",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.136266
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.274154
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13268226385116577,
+          -0.2777828574180603,
+          0.003928372170776129
+        ],
+        [
+          0.13984906673431396,
+          -0.27052515745162964,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.connector_a": {
+      "sid": "signal-cable.connector_a",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.146242
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.185668
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13676419854164124,
+          -0.19513919949531555,
+          0.002128372434526682
+        ],
+        [
+          0.15572074055671692,
+          -0.17619597911834717,
+          0.014928372576832771
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "signal-cable.connector_b": {
+      "sid": "signal-cable.connector_b",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.146242
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.264332
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.13676419854164124,
+          -0.27380403876304626,
+          0.0021283722016960382
+        ],
+        [
+          0.15572074055671692,
+          -0.2548607885837555,
+          0.014928372576832771
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "signal-cable.end_a": {
+      "sid": "signal-cable.end_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.153012
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.192332
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "signal-cable.end_b": {
+      "sid": "signal-cable.end_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.153012
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.257668
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "signal-cable.plug_pin_a": {
+      "sid": "signal-cable.plug_pin_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.150518
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.189877
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1471821814775467,
+          -0.1931873857975006,
+          0.007328371983021498
+        ],
+        [
+          0.15385429561138153,
+          -0.1865662932395935,
+          0.00972837209701538
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "signal-cable.plug_pin_b": {
+      "sid": "signal-cable.plug_pin_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.150518
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.260123
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1471821814775467,
+          -0.2634337246417999,
+          0.007328371983021498
+        ],
+        [
+          0.15385429561138153,
+          -0.25681260228157043,
+          0.00972837209701538
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "signal-cable.plug_well_a": {
+      "sid": "signal-cable.plug_well_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.147668
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          -0.187071
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1438683122396469,
+          -0.1909077763557434,
+          0.004128372296690941
+        ],
+        [
+          0.15146712958812714,
+          -0.18323355913162231,
+          0.012928372249007225
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "signal-cable.plug_well_b": {
+      "sid": "signal-cable.plug_well_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.147668
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.262929
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.1438683122396469,
+          -0.26676642894744873,
+          0.004128372296690941
+        ],
+        [
+          0.15146712958812714,
+          -0.25909221172332764,
+          0.012928372249007225
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "signal-cable.root": {
+      "sid": "signal-cable.root",
+      "parent": "sample-scene.root",
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.025
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.225
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "trigger-controller.body": {
+      "sid": "trigger-controller.body",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.165
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.03
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.2549999952316284,
+          -0.08999999612569809,
+          0.010000001639127731
+        ],
+        [
+          -0.07500000298023224,
+          0.029999999329447746,
+          0.07999999821186066
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "trigger-controller.brand": {
+      "sid": "trigger-controller.brand",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.242
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.069
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.24166400730609894,
+          -0.09400000423192978,
+          0.06751679629087448
+        ],
+        [
+          -0.2205488085746765,
+          -0.09400000423192978,
+          0.07087679952383041
+        ]
+      ],
+      "triangles": 66,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.button": {
+      "sid": "trigger-controller.button",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.153
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.097
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.034
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.16500000655651093,
+          -0.10200000554323196,
+          0.02850000187754631
+        ],
+        [
+          -0.14100001752376556,
+          -0.09200000017881393,
+          0.039500001817941666
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "trigger-controller.display": {
+      "sid": "trigger-controller.display",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.151
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.094
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.059
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.1730000078678131,
+          -0.0950000062584877,
+          0.050999999046325684
+        ],
+        [
+          -0.1290000081062317,
+          -0.09300000220537186,
+          0.06700000166893005
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.screen"
+      ]
+    },
+    "trigger-controller.foot_-1_-1": {
+      "sid": "trigger-controller.foot_-1_-1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.229
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.069
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.24150000512599945,
+          -0.07999999821186066,
+          0.0
+        ],
+        [
+          -0.21649999916553497,
+          -0.057999998331069946,
+          0.009999999776482582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "trigger-controller.foot_-1_1": {
+      "sid": "trigger-controller.foot_-1_1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.229
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.009
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.24150000512599945,
+          -0.001999998465180397,
+          0.0
+        ],
+        [
+          -0.21649999916553497,
+          0.020000001415610313,
+          0.009999999776482582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "trigger-controller.foot_1_-1": {
+      "sid": "trigger-controller.foot_1_-1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.101
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.069
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11350000649690628,
+          -0.07999999821186066,
+          0.0
+        ],
+        [
+          -0.0885000005364418,
+          -0.057999998331069946,
+          0.009999999776482582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "trigger-controller.foot_1_1": {
+      "sid": "trigger-controller.foot_1_1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.101
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.009
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11350000649690628,
+          -0.001999998465180397,
+          0.0
+        ],
+        [
+          -0.0885000005364418,
+          0.020000001415610313,
+          0.009999999776482582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "trigger-controller.indicator": {
+      "sid": "trigger-controller.indicator",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.095
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.062
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.10660000145435333,
+          -0.09600000083446503,
+          0.05939999967813492
+        ],
+        [
+          -0.10140000283718109,
+          -0.09399999678134918,
+          0.06459999829530716
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "trigger-controller.knob": {
+      "sid": "trigger-controller.knob",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.212
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.103
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.22800001502037048,
+          -0.10999999940395355,
+          0.023999998345971107
+        ],
+        [
+          -0.19600000977516174,
+          -0.09600000083446503,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 188,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "trigger-controller.knob_pointer": {
+      "sid": "trigger-controller.knob_pointer",
+      "parent": "trigger-controller.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.212
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.1107
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04928
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.21265001595020294,
+          -0.11109999567270279,
+          0.04487999901175499
+        ],
+        [
+          -0.21135000884532928,
+          -0.11029999703168869,
+          0.053679998964071274
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.knob_shaft": {
+      "sid": "trigger-controller.knob_shaft",
+      "parent": "trigger-controller.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.212
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.095
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.2171200066804886,
+          -0.0989999994635582,
+          0.03487999737262726
+        ],
+        [
+          -0.20688001811504364,
+          -0.09099999815225601,
+          0.0451200008392334
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "trigger-controller.label_button": {
+      "sid": "trigger-controller.label_button",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.153
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.1571040153503418,
+          -0.09400000423192978,
+          0.043800000101327896
+        ],
+        [
+          -0.14918401837348938,
+          -0.09400000423192978,
+          0.04654400050640106
+        ]
+      ],
+      "triangles": 41,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.label_level": {
+      "sid": "trigger-controller.label_level",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.212
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.061
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.21687200665473938,
+          -0.09400000423192978,
+          0.059776000678539276
+        ],
+        [
+          -0.20687201619148254,
+          -0.09400000423192978,
+          0.06252799928188324
+        ]
+      ],
+      "triangles": 33,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.label_out": {
+      "sid": "trigger-controller.label_out",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.10860124975442886,
+          -0.09400000423192978,
+          0.048609502613544464
+        ],
+        [
+          -0.09927275031805038,
+          -0.09400000423192978,
+          0.0517595000565052
+        ]
+      ],
+      "triangles": 24,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.out": {
+      "sid": "trigger-controller.out",
+      "parent": "trigger-controller.root",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.103
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "trigger-controller.panel_front": {
+      "sid": "trigger-controller.panel_front",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.165
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.091
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.24900001287460327,
+          -0.09299999475479126,
+          0.015000002458691597
+        ],
+        [
+          -0.08100000768899918,
+          -0.08900000154972076,
+          0.07500000298023224
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.cream"
+      ]
+    },
+    "trigger-controller.port_out": {
+      "sid": "trigger-controller.port_out",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.098
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11140000075101852,
+          -0.10300000756978989,
+          0.02759999968111515
+        ],
+        [
+          -0.0966000035405159,
+          -0.09300000220537186,
+          0.042399998754262924
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "trigger-controller.port_out_base": {
+      "sid": "trigger-controller.port_out_base",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.092
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11349999904632568,
+          -0.09449999779462814,
+          0.025499999523162842
+        ],
+        [
+          -0.09450000524520874,
+          -0.08950000256299973,
+          0.04450000077486038
+        ]
+      ],
+      "triangles": 124,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "trigger-controller.port_out_lug_-1": {
+      "sid": "trigger-controller.port_out_lug_-1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.1116
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.097
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11310001462697983,
+          -0.09850000590085983,
+          0.03350000083446503
+        ],
+        [
+          -0.11010000854730606,
+          -0.09549999982118607,
+          0.0364999994635582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "trigger-controller.port_out_lug_1": {
+      "sid": "trigger-controller.port_out_lug_1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0964
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.097
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.09790001064538956,
+          -0.09850000590085983,
+          0.03350000083446503
+        ],
+        [
+          -0.09490000456571579,
+          -0.09549999982118607,
+          0.0364999994635582
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "trigger-controller.port_out_pin": {
+      "sid": "trigger-controller.port_out_pin",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0962
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.10510000586509705,
+          -0.09770000725984573,
+          0.033900000154972076
+        ],
+        [
+          -0.10289999842643738,
+          -0.09470000118017197,
+          0.03610000014305115
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "trigger-controller.port_out_well": {
+      "sid": "trigger-controller.port_out_well",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0948
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.035
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.1088000014424324,
+          -0.09530000388622284,
+          0.03019999898970127
+        ],
+        [
+          -0.09920000284910202,
+          -0.09430000185966492,
+          0.039799999445676804
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.root": {
+      "sid": "trigger-controller.root",
+      "parent": "sample-scene.root",
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.165
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.03
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "trigger-controller.top_inset": {
+      "sid": "trigger-controller.top_inset",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.165
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.021
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0808
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.22750000655651093,
+          -0.056999996304512024,
+          0.08004999905824661
+        ],
+        [
+          -0.10250000655651093,
+          0.014999998733401299,
+          0.0815499946475029
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "trigger-controller.trace": {
+      "sid": "trigger-controller.trace",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.165
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.03
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.17000000178813934,
+          -0.09594999998807907,
+          0.05654999986290932
+        ],
+        [
+          -0.1380000114440918,
+          -0.09504999965429306,
+          0.06345000118017197
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.trace"
+      ]
+    },
+    "trigger-controller.vent_0": {
+      "sid": "trigger-controller.vent_0",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0745
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.005
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07500001043081284,
+          -0.007999999448657036,
+          0.03400000184774399
+        ],
+        [
+          -0.07400000840425491,
+          -0.0019999989308416843,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.vent_1": {
+      "sid": "trigger-controller.vent_1",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0745
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.017
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07500001043081284,
+          -0.019999999552965164,
+          0.03400000184774399
+        ],
+        [
+          -0.07400000840425491,
+          -0.013999998569488525,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.vent_2": {
+      "sid": "trigger-controller.vent_2",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0745
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.029
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07500001043081284,
+          -0.03199999779462814,
+          0.03400000184774399
+        ],
+        [
+          -0.07400000840425491,
+          -0.025999998673796654,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.vent_3": {
+      "sid": "trigger-controller.vent_3",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0745
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.041
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07500001043081284,
+          -0.04399999976158142,
+          0.03400000184774399
+        ],
+        [
+          -0.07400000840425491,
+          -0.03800000250339508,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "trigger-controller.vent_4": {
+      "sid": "trigger-controller.vent_4",
+      "parent": "trigger-controller.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0745
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.053
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.045
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07500001043081284,
+          -0.0559999980032444,
+          0.03400000184774399
+        ],
+        [
+          -0.07400000840425491,
+          -0.05000000074505806,
+          0.0560000017285347
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    }
+  },
+  "materials": {
+    "palette.blue": {
+      "base_color": [
+        0.29,
+        0.4,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.sage": {
+      "base_color": [
+        0.39,
+        0.54,
+        0.4,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.white": {
+      "base_color": [
+        0.86,
+        0.87,
+        0.8,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.rubber": {
+      "base_color": [
+        0.075,
+        0.095,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.grid": {
+      "base_color": [
+        0.16,
+        0.25,
+        0.19,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.ink": {
+      "base_color": [
+        0.035,
+        0.046,
+        0.05,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.cream": {
+      "base_color": [
+        0.76,
+        0.75,
+        0.64,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.coral": {
+      "base_color": [
+        0.72,
+        0.25,
+        0.14,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.metal": {
+      "base_color": [
+        0.52,
+        0.59,
+        0.56,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.gold": {
+      "base_color": [
+        0.73,
+        0.55,
+        0.24,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.screen": {
+      "base_color": [
+        0.065,
+        0.12,
+        0.105,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.trace": {
+      "base_color": [
+        0.72,
+        0.85,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.82
+    }
+  },
+  "material_bindings": {
+    "oscilloscope.body": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_1": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_2": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_3": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_-1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_-1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_1": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_2": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_3": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_4": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_1": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_2": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_3": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_4": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_5": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_6": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_7": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle_post_-1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle_post_1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob": {
+      "slots": [
+        "palette.cream"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_pointer": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_shaft": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time_pointer": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time_shaft": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_ch1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_level": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_time": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_trig": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.model": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.panel_front": {
+      "slots": [
+        "palette.cream"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_base": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_lug_-1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_lug_1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_pin": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_well": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_base": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_lug_-1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_lug_1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_pin": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_well": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.rear_panel": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen": {
+      "slots": [
+        "palette.screen"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen_bezel": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen_caption": {
+      "slots": [
+        "palette.trace"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.top_strip": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.trace": {
+      "slots": [
+        "palette.trace"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_0": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_2": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_3": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_4": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_5": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.body": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib0": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib2": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib0": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib2": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.connector_a": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.connector_b": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_pin_a": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_pin_b": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_well_a": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_well_b": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.body": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.brand": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.button": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.display": {
+      "slots": [
+        "palette.screen"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.foot_-1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.foot_-1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.foot_1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.foot_1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.indicator": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.knob": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.knob_pointer": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.knob_shaft": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.label_button": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.label_level": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.label_out": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.panel_front": {
+      "slots": [
+        "palette.cream"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out_base": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out_lug_-1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out_lug_1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out_pin": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.port_out_well": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.top_inset": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.trace": {
+      "slots": [
+        "palette.trace"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.vent_0": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.vent_1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.vent_2": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.vent_3": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "trigger-controller.vent_4": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "runtime": {
+    "blender": "4.3.2",
+    "python": "3.13.5",
+    "engine": "CYCLES",
+    "device": "CPU"
+  }
+}

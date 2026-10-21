@@ -1,0 +1,37 @@
+{
+  "method": "Fresh candidate geometry/export; baseline diagnostic PNGs reused only when geometry, semantic and material digests match exactly. Reused views are not second renders.",
+  "views": {
+    "front": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/front.png"
+    },
+    "rear": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/rear.png"
+    },
+    "left": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/left.png"
+    },
+    "right": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/right.png"
+    },
+    "top": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/top.png"
+    },
+    "iso": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/iso.png"
+    },
+    "neutral": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/neutral.png"
+    },
+    "wireframe": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/oscilloscope/previews/wireframe.png"
+    }
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "schema_version": 1,
+  "target_repository": "https://github.com/weiran4/hardware-3d-assets",
+  "visibility": "public",
+  "publication_authorized": true,
+  "scope": "Original phase-1 assets plus reusable source, skill, documentation and QA; RTDS placeholder only",
+  "source_delivery_verified": {
+    "payload_files": 133,
+    "zip_files_including_manifest": 134,
+    "sha256_mismatches": 0,
+    "frozen_delivery_modified": false
+  },
+  "file_count": 139,
+  "allowlist": [
+    ".gitignore",
+    "README.md",
+    "deliverables/contact-sheet.png",
+    "deliverables/hero.png",
+    "deliverables/payload-sha256.json",
+    "deliverables/qa-all-views.png",
+    "docs/2026-10-21-hardware-3d-design.md",
+    "docs/2026-10-21-hardware-3d-design.pdf",
+    "docs/2026-10-21-hardware-3d-plan.md",
+    "docs/2026-10-21-hardware-3d-plan.pdf",
+    "docs/2026-10-21-stage1-scorecard.md",
+    "docs/README.md",
+    "generic/README.md",
+    "generic/oscilloscope/exports/asset.glb",
+    "generic/oscilloscope/metadata/parts.json",
+    "generic/oscilloscope/metadata/ports.json",
+    "generic/oscilloscope/parameters.json",
+    "generic/oscilloscope/previews/front.png",
+    "generic/oscilloscope/previews/iso.png",
+    "generic/oscilloscope/previews/left.png",
+    "generic/oscilloscope/previews/neutral.png",
+    "generic/oscilloscope/previews/rear.png",
+    "generic/oscilloscope/previews/right.png",
+    "generic/oscilloscope/previews/top.png",
+    "generic/oscilloscope/previews/wireframe.png",
+    "generic/oscilloscope/qa/build_measurements.json",
+    "generic/oscilloscope/qa/preview-provenance.json",
+    "generic/oscilloscope/qa/report.json",
+    "generic/oscilloscope/qa/roundtrip.json",
+    "generic/oscilloscope/qa/tools-used/asset_common.py",
+    "generic/oscilloscope/qa/tools-used/build.py",
+    "generic/oscilloscope/qa/tools-used/qa_asset.py",
+    "generic/oscilloscope/qa/tools-used/qa_roundtrip.py",
+    "generic/oscilloscope/references/manifest.json",
+    "generic/oscilloscope/source/asset.blend",
+    "generic/oscilloscope/source/build.py",
+    "generic/sample-scene/exports/asset.glb",
+    "generic/sample-scene/metadata/parts.json",
+    "generic/sample-scene/metadata/ports.json",
+    "generic/sample-scene/parameters.json",
+    "generic/sample-scene/previews/front.png",
+    "generic/sample-scene/previews/iso.png",
+    "generic/sample-scene/previews/left.png",
+    "generic/sample-scene/previews/neutral.png",
+    "generic/sample-scene/previews/rear.png",
+    "generic/sample-scene/previews/right.png",
+    "generic/sample-scene/previews/top.png",
+    "generic/sample-scene/previews/wireframe.png",
+    "generic/sample-scene/qa/build_measurements.json",
+    "generic/sample-scene/qa/preview-provenance.json",
+    "generic/sample-scene/qa/report.json",
+    "generic/sample-scene/qa/roundtrip.json",
+    "generic/sample-scene/qa/tools-used/asset_common.py",
+    "generic/sample-scene/qa/tools-used/build.py",
+    "generic/sample-scene/qa/tools-used/qa_asset.py",
+    "generic/sample-scene/qa/tools-used/qa_roundtrip.py",
+    "generic/sample-scene/references/manifest.json",
+    "generic/sample-scene/source/asset.blend",
+    "generic/sample-scene/source/build.py",
+    "generic/signal-cable/exports/asset.glb",
+    "generic/signal-cable/metadata/parts.json",
+    "generic/signal-cable/metadata/ports.json",
+    "generic/signal-cable/parameters.json",
+    "generic/signal-cable/previews/front.png",
+    "generic/signal-cable/previews/iso.png",
+    "generic/signal-cable/previews/left.png",
+    "generic/signal-cable/previews/neutral.png",
+    "generic/signal-cable/previews/rear.png",
+    "generic/signal-cable/previews/right.png",
+    "generic/signal-cable/previews/top.png",
+    "generic/signal-cable/previews/wireframe.png",
+    "generic/signal-cable/qa/build_measurements.json",
+    "generic/signal-cable/qa/preview-provenance.json",
+    "generic/signal-cable/qa/report.json",
+    "generic/signal-cable/qa/roundtrip.json",
+    "generic/signal-cable/qa/tools-used/asset_common.py",
+    "generic/signal-cable/qa/tools-used/build.py",
+    "generic/signal-cable/qa/tools-used/qa_asset.py",
+    "generic/signal-cable/qa/tools-used/qa_roundtrip.py",
+    "generic/signal-cable/references/manifest.json",
+    "generic/signal-cable/source/asset.blend",
+    "generic/signal-cable/source/build.py",
+    "generic/trigger-controller/exports/asset.glb",
+    "generic/trigger-controller/metadata/parts.json",
+    "generic/trigger-controller/metadata/ports.json",
+    "generic/trigger-controller/parameters.json",
+    "generic/trigger-controller/previews/front.png",
+    "generic/trigger-controller/previews/iso.png",
+    "generic/trigger-controller/previews/left.png",
+    "generic/trigger-controller/previews/neutral.png",
+    "generic/trigger-controller/previews/rear.png",
+    "generic/trigger-controller/previews/right.png",
+    "generic/trigger-controller/previews/top.png",
+    "generic/trigger-controller/previews/wireframe.png",
+    "generic/trigger-controller/qa/build_measurements.json",
+    "generic/trigger-controller/qa/preview-provenance.json",
+    "generic/trigger-controller/qa/report.json",
+    "generic/trigger-controller/qa/roundtrip.json",
+    "generic/trigger-controller/qa/tools-used/asset_common.py",
+    "generic/trigger-controller/qa/tools-used/build.py",
+    "generic/trigger-controller/qa/tools-used/qa_asset.py",
+    "generic/trigger-controller/qa/tools-used/qa_roundtrip.py",
+    "generic/trigger-controller/references/manifest.json",
+    "generic/trigger-controller/source/asset.blend",
+    "generic/trigger-controller/source/build.py",
+    "qa/accepted-checkpoints.json",
+    "qa/baseline-paths.json",
+    "qa/contract-final.log",
+    "qa/delivery-summary.json",
+    "qa/independent-review.json",
+    "qa/independent-review/README.md",
+    "qa/independent-review/independent_final.py",
+    "qa/independent-review/independent_repeat.py",
+    "qa/independent-review/verify_fixes.py",
+    "qa/integration-final.log",
+    "qa/progress.md",
+    "qa/publication-audit.json",
+    "qa/rebuild-comparison.json",
+    "rtds/README.md",
+    "skills/blender-hardware-lowpoly/SKILL.md",
+    "skills/blender-hardware-lowpoly/references/evaluation.md",
+    "skills/blender-hardware-lowpoly/references/sources.md",
+    "skills/blender-hardware-lowpoly/references/workflow-and-style.md",
+    "tests/test_blender_knob_mount.py",
+    "tests/test_blender_material_binding.py",
+    "tests/test_blender_motion.py",
+    "tests/test_blender_triangle_accounting.py",
+    "tests/test_contract.py",
+    "tools/asset_common.py",
+    "tools/build.py",
+    "tools/build_final_baseline.sh",
+    "tools/compare_rebuilds.py",
+    "tools/contact_sheet.py",
+    "tools/package_delivery.py",
+    "tools/promote.py",
+    "tools/qa_asset.py",
+    "tools/qa_roundtrip.py",
+    "tools/rebuild_all.sh",
+    "tools/render_views.py"
+  ],
+  "excluded": [
+    "Original reference artwork and personal/social screenshots",
+    "Library identifiers, receipts and private transfer notes",
+    "Historical checkpoint directories and failed candidate binaries",
+    "Caches, temporary renders and duplicate ZIP delivery archives",
+    "Credentials and dependency vendor directories"
+  ],
+  "checks": {
+    "known_credential_and_private_path_patterns": "PASS: no findings in selected files and extracted PDF text",
+    "blender_binary_inspection": [
+      {
+        "asset": "oscilloscope",
+        "images": [],
+        "libraries": [],
+        "texts": [],
+        "fonts": [
+          {
+            "name": "Bfont Regular",
+            "filepath": "<builtin>",
+            "packed": false
+          }
+        ]
+      },
+      {
+        "asset": "sample-scene",
+        "images": [],
+        "libraries": [],
+        "texts": [],
+        "fonts": [
+          {
+            "name": "Bfont Regular",
+            "filepath": "<builtin>",
+            "packed": false
+          },
+          {
+            "name": "Bfont Regular.001",
+            "filepath": "<builtin>",
+            "packed": false
+          }
+        ]
+      },
+      {
+        "asset": "signal-cable",
+        "images": [],
+        "libraries": [],
+        "texts": [],
+        "fonts": []
+      },
+      {
+        "asset": "trigger-controller",
+        "images": [],
+        "libraries": [],
+        "texts": [],
+        "fonts": [
+          {
+            "name": "Bfont Regular",
+            "filepath": "<builtin>",
+            "packed": false
+          }
+        ]
+      }
+    ],
+    "glb_images_and_external_buffers": "PASS: no images and no URI-backed buffers in all four GLBs",
+    "png_overview_visual_check": "PASS: all 32 diagnostic views show only original modeled hardware",
+    "png_private_source_metadata": "Project-relative source paths; decoded pixels and compressed image data unchanged",
+    "contract_tests": "PASS: 13 tests",
+    "model_payload_integrity": "PASS: all eight blend/GLB files unchanged from verified frozen delivery"
+  },
+  "unchanged_model_files": [
+    "generic/oscilloscope/exports/asset.glb",
+    "generic/oscilloscope/source/asset.blend",
+    "generic/sample-scene/exports/asset.glb",
+    "generic/sample-scene/source/asset.blend",
+    "generic/signal-cable/exports/asset.glb",
+    "generic/signal-cable/source/asset.blend",
+    "generic/trigger-controller/exports/asset.glb",
+    "generic/trigger-controller/source/asset.blend"
+  ],
+  "png_metadata_changes": [
+    {
+      "path": "deliverables/hero.png",
+      "original_sha256": "09fad2d8eb3c4b97388179e22ca0f8c1857ce9de1e0a5e018cad6aa8f3cc9375",
+      "public_sha256": "8cb6ba8b5eb03ba4f3cc4aa931db590dd34e10967411ea5e81e20d8fd40b4f05",
+      "pixel_sha256": "f2b46f8bcc812b25993d0b25c643e000d5d08ff9f28152b1ec6e0d7e6293630d",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/front.png",
+      "original_sha256": "f738e7855509abd98ec01efb7f2a01fc5446da6df511b0ad82f72f368a810872",
+      "public_sha256": "c2b2ec61046de3fa8a29acbff1e917bd9520af978c3e5c9c9bd74c238b701098",
+      "pixel_sha256": "0331b4084dacdb5231179fd5bbb63b249d4fa71d33ab66d419b92bec1da49d78",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/iso.png",
+      "original_sha256": "21b010109dcf97766da0ff68b09ed855aae2a5db2712a55ca0241708a681ed91",
+      "public_sha256": "41321b2a7575ef311502092b9c86d9520fa1531dcbb7a082a0b387bf1705fc6b",
+      "pixel_sha256": "2d07a5acc1f71232f8df922599e9a2c5dc7069bd2a7916511c326a42fd7a423e",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/left.png",
+      "original_sha256": "8576abfac9344c13bb13c543805e89dc88c93f94a8f6b3e434219b816c6a1d1b",
+      "public_sha256": "994b10648e588a816a42fca26124743af5fdd14ce807db8daa78e50633502e28",
+      "pixel_sha256": "2ec102e8af9fe01fb2fdeb78f4766f42b12258b3682e536e2f382f8f7c43b0d9",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/neutral.png",
+      "original_sha256": "57a0494975634335bc8989d5f74eae87d2e3ae678803d9532d11f9011bcd976f",
+      "public_sha256": "c7443f80d9ce3c1ef4d74fd34b91fce791a312cfd02da0e497f42b98dafa4e13",
+      "pixel_sha256": "9eef61e5f2b711c50fc0eb2c8d698cb4211772749a2e8d0d856049e3b349ff7a",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/rear.png",
+      "original_sha256": "d8c8d87712096deb7b9c24dbf415ed472ff24e72dd7984f1f72c544ce176e40f",
+      "public_sha256": "f60ae7c37045f7511668dc34636357c3d1cb0cd1d026b2ddc0d7a48b9461784f",
+      "pixel_sha256": "c19fd617a5735c46936fcce3b00489b6ca8b8bd7d31242aebb62b73a2c179dc1",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/right.png",
+      "original_sha256": "d61c1ea199772a71f96a0f389731c2f0a7aef4e91332c30e7857f6319944c1a8",
+      "public_sha256": "4ae03753fd1a05adb120ba76b7f56713c8fb46776dbb3235283e47382a94412e",
+      "pixel_sha256": "8f5455610c768254f574bf890df220bf455c9d5a14f598c9512dc004a0a5e125",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/top.png",
+      "original_sha256": "c97b5ea5dad0583308b84911025667fcae937d91759254df5866665c4ce4ad18",
+      "public_sha256": "a450dfea172b3669c9c5b5b677341cbeece35d4bda023aee6d3c0a99332d9fc8",
+      "pixel_sha256": "623678c948ea73fc1f7a7d5e1210ebe66f753ea8b4090d3fe5d74d5dc30d71cf",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/oscilloscope/previews/wireframe.png",
+      "original_sha256": "567a64ad21064ace0b853b1f452bf24eba154e8ed590bb8c82e30f1116fa1043",
+      "public_sha256": "70c79fd1c3295f794d452a56f8bb1c4b3257df99321b0461e8534c2adb974cf2",
+      "pixel_sha256": "d9a6ac381b2296df427f9601afda26b1445ca51402af24e2380cb3a38c1d878a",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/front.png",
+      "original_sha256": "b4d8246c595d91192a89f4e8d5312b96646220f30a1ec1a4b5ab7e4ae4e19ee9",
+      "public_sha256": "beba3a3f39cb9c7dd8a812b1e87a91ffab2c212c1e2f7134491ec95bfd00216b",
+      "pixel_sha256": "8022d0ea6c16e8412b4321009e8fe561f1201d56f58c6ea9c7d5775969379749",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/iso.png",
+      "original_sha256": "09fad2d8eb3c4b97388179e22ca0f8c1857ce9de1e0a5e018cad6aa8f3cc9375",
+      "public_sha256": "8cb6ba8b5eb03ba4f3cc4aa931db590dd34e10967411ea5e81e20d8fd40b4f05",
+      "pixel_sha256": "f2b46f8bcc812b25993d0b25c643e000d5d08ff9f28152b1ec6e0d7e6293630d",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/left.png",
+      "original_sha256": "6d2ed8046967dff044e3645532015dc7caec4cc610f045e9dd09962f29f12f2f",
+      "public_sha256": "34c5c8aafb9ffdc765a0632664c611b34cbe118e73c7e1edd84a6d380cce4154",
+      "pixel_sha256": "5726c574eca598493a53b986a70a1253877645985912006a0f656053c417e56b",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/neutral.png",
+      "original_sha256": "aec6d836ce45aca5946f5f47b6c73e939409546b43e90ed4d72b43db6575d000",
+      "public_sha256": "665cef31184232566fdd20b7204c89538c31436130a2012d6ad69f3c05975b9d",
+      "pixel_sha256": "32485500f22841c4729e4a4c10c10baaa19fc6ee2a2793d70e6ddf82526dcee1",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/rear.png",
+      "original_sha256": "e5a7bd97ae98c962f209738305b0279201d7f4cf5cfeddf58e2034f6e3f42720",
+      "public_sha256": "168d2d2778f3cf00dd1f8d0794cd5631bfc01c33247e191c6aa00db141d00942",
+      "pixel_sha256": "6833a69feb5fa27330d6c389958f60612f1f5332f1a3a9e389211cbc924fd0dd",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/right.png",
+      "original_sha256": "a4c96c64af678cda694d7ad8667f46a64846ac6eff84992f657e50102dc29fb0",
+      "public_sha256": "790174b50275c106f5022c4bfd76e5ce4d0e0291da8b2e56a5b4c048ef4b6715",
+      "pixel_sha256": "041fb336b1502ca61b2f4dab2d1073dfae8348ab177d0a824fb6179835fb4550",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/top.png",
+      "original_sha256": "288ed4be9a6bef94875fbcad4bdb94842a630adaa6b4a71ff8eb9e9d9fb006e2",
+      "public_sha256": "caab9c5a0d6b2a6588795dd18b44076db0506fcc91c6792b5f07ec5382d524d5",
+      "pixel_sha256": "4d4fd9b73399bf6d36422bcf0b1d0c1c66c8cb5b6ca1880a67a81690cef6d602",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/sample-scene/previews/wireframe.png",
+      "original_sha256": "e49ea88efe3c322e2a39204f24d68d569b7ad8b6c1065b6f9e7dd4444da44c6d",
+      "public_sha256": "e4920de7f8813725fd08b6d4d8008438c1c64e99c850cf9fa67530bf4a602c2a",
+      "pixel_sha256": "64991230850730d7d267b768374f5e63c30aa62f9c4d19374a143a5ee529f115",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/front.png",
+      "original_sha256": "f7fcb6983e68bdb5dbb2053cac0f47c9b1dfdcea527b32adb16df96883f33526",
+      "public_sha256": "76cb0a76837d4db671906745afe475757c44c09a16787cf182f25e627d85aa1d",
+      "pixel_sha256": "536df1a3cf40edcfb27b31fb5cfc1ad4a4c3b337f90d69b6b2101e2f3b0780df",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/iso.png",
+      "original_sha256": "34851cbc4f1d70060c5871bed8d40550c23463072da582648249679e597752c5",
+      "public_sha256": "a3e81b81d726e81e2ae22b669bfb97f26c050cc63f7ee67aea5d56573a1147ed",
+      "pixel_sha256": "bc620b6ff0f86ffc5e060e6a4fafc44faa98fa33de94de9dd357bcb3f4b3100a",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/left.png",
+      "original_sha256": "b71d518c4595c1e5ce9ef2a552f777fdfa1a97b8fe3611e5035ee9bea100d199",
+      "public_sha256": "6dedcdb0a30f24b5f6c55b5119c85cdc9acb9dd105489244b8f9bad9629062f7",
+      "pixel_sha256": "1190487fc8caff484994e9c7346b74bef65bc7f0837f05339f680879f18fd203",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/neutral.png",
+      "original_sha256": "5e1ef649af2aa8a7d988137a59cdf42b6d9de3063000bb29ccb6f9f0219a8e7a",
+      "public_sha256": "6c8338b785578d0adaa7ef82c90908934e501252ebef53739a5e47a3d19926fd",
+      "pixel_sha256": "06f6c5aeff0312b476fedad98098c1133ea80c4dece636d320cdd9781139fbc9",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/rear.png",
+      "original_sha256": "0f05ce3563d8c3d07cfe05e4c68c74dd61d5e6ed8b2e02eeef827da40b87f660",
+      "public_sha256": "8f3f0159d914eb433921d0f2bfc5c4c33eb17c689829787cd0947e8de79eb2b4",
+      "pixel_sha256": "0a6d1625087c44d3615c4dca9786615155fe0cb7aee152d466568c82d0ff83c1",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/right.png",
+      "original_sha256": "937d390145ea272ba3ea9a4ba7a0b8e824f639629432da331fa744472a8e790b",
+      "public_sha256": "b3a1c4eec541ac6c9ca15d256878b2183339042489c014e799358d6451a80eb2",
+      "pixel_sha256": "07948eb37196a868ff8aba772a9132864cda304847692558c15147a7b56d6607",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/top.png",
+      "original_sha256": "afbb09f60223a50395e334e7faa763b0b8afef85a2582047c47fbb7f5be135bd",
+      "public_sha256": "12e817d88cfcfe44bbe806a60d49dc345c1d5d1a4b4ee3343c7eaf55b3be4732",
+      "pixel_sha256": "45f7267098d019403f3abf40f7728bcc24e4d66012aaa08f3e06fcb82a207b4f",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/signal-cable/previews/wireframe.png",
+      "original_sha256": "f967f265f52e1259a532103f92480d2a1398a5802e698923b629f69472e9edda",
+      "public_sha256": "06da7ea24d2369b1845a1cffe48481ae3651e170ec8bace7f98b2586a6d8197d",
+      "pixel_sha256": "4df7386f30c8e029b739d7ab714372180af2692f0aaec7d086294d4f73949105",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/front.png",
+      "original_sha256": "9b8a81d47b5742f08b89da7aaa815be65b45689670a35f1c41e31f59ead99d32",
+      "public_sha256": "0e3af889b453637f50f9e3d95e9654c09554b586b5c5c26624f144ada4c4c02c",
+      "pixel_sha256": "a14c0cb32dd8a822039ecf8162e3c9213346f62c11e854d05520e16276198e64",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/iso.png",
+      "original_sha256": "9385948f10fa29ea20b44b06c6491d03052fd3e9774ecd450c13b2a714c9d298",
+      "public_sha256": "a7a14aa5bad33e2dcd8f3026fad5320390f596a966dbcc584f4fe62a4715d054",
+      "pixel_sha256": "e3c5354757d1f92dce2a09b4295ad16c49a09b51b613a6d613b27a24fe143216",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/left.png",
+      "original_sha256": "79238bb75e20dc02272cb24aec251a7106dd4575ae6b95f47074bcb4a2433056",
+      "public_sha256": "ed305aabe477cf17a8c8d4e55fbeb9ccc7dadee5c421a2cfc0fde16ba69f5859",
+      "pixel_sha256": "1b6b2db9065fa29b7a16adddc8cc7bf6b44fd30ba31d10959878debcc6a0d4e1",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/neutral.png",
+      "original_sha256": "d1dccd407a1c9dfc64c9d3da5340a3d187ea7930bff2f3c01746dd6461307728",
+      "public_sha256": "774d0e36d1e80524cf20f7c630d3edacf08911020d2aefad13ec893df589a100",
+      "pixel_sha256": "6092fecc3b323fecd527c12a9c34022618f95a95cfdc11283d032afe5989dd14",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/rear.png",
+      "original_sha256": "f84d8ddb256aeeb365934e0edb51f3dc423df04d9b33df7f411e79c1f2f7ad2c",
+      "public_sha256": "6b977dc2714d556f59ae0e321d815f7d319aa0598bd0f89b45064591de584786",
+      "pixel_sha256": "2f3655da83654513a8e9833da0904e6ee9f389cce2e5181ddcf65486def302ed",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/right.png",
+      "original_sha256": "03139e402d130ed143e0b85d6166d120863c1d6d606b0c8f63060afd6cbc6f29",
+      "public_sha256": "21b9f36fc645b0aa9b880ed830630668030dbe351d1e1835f01ef8b912fd4b0a",
+      "pixel_sha256": "9cc40a8579a33b88f4d5387036cb7907bba170916d7b6d4216cbc13864b9b0b3",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/top.png",
+      "original_sha256": "9f83b2ecaca102924f5bc8924834dc93e544a587fa1fd7fb16294b26fd3d7740",
+      "public_sha256": "bd226cdeb4594463f2e8fc7e4f731d3b84baa72794dc116ffa6bd05876cbd3a6",
+      "pixel_sha256": "ce8aad692e1c8f8cd8158525c455714bee40d9d78230cd75b385b582207a33ca",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "path": "generic/trigger-controller/previews/wireframe.png",
+      "original_sha256": "b3cfb65b044a36c1af7b9556534758fa4d01c087ca0c82b7d536bf5fefcd1575",
+      "public_sha256": "279573e03d3ef8ace7a4bdab47c97cccb139375eb0d72167076af4bf92d353e5",
+      "pixel_sha256": "4ad4f43d857e0624049c9196772e8c9dda18b7cd073d838e08ca7e4c3dff4d26",
+      "change": "File metadata made project-relative; compressed image data and decoded pixels unchanged"
+    }
+  ],
+  "historical_evidence_note": "Original independent-review.json outcomes and historical hashes are preserved. Current PNG bytes differ only in source-path metadata; public review script copies differ only in path handling. Use current payload manifest for public file integrity. Dated planning docs retain original scope and are explained in docs/README.md.",
+  "public_review_script_sha256": {
+    "independent_final.py": "45a93e9d5b8d2ed18e6c9cbac872ea4a9daa5644dff6f6493af811cc5ecff06e",
+    "verify_fixes.py": "5731da408a202d3e19aeb9857ddc250402f957df431fed2404982dd1e85643c6",
+    "independent_repeat.py": "47f128befe48d90f91499d14dcb117fb7be89d813cabea7b578c35e8a3c91f3c"
+  },
+  "rights": "No project license has been selected; public visibility is not a blanket license grant."
+}

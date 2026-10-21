@@ -1,0 +1,87 @@
+{
+  "status": "ready_for_user_review",
+  "user_acceptance": "pending",
+  "independent_review": "PASS_WITH_STATED_LIMITATIONS",
+  "clean_rebuild": "PASS",
+  "runtime": {
+    "blender": "4.3.2",
+    "bundled_python": "3.13.5",
+    "gltf_exporter": "4.3.47",
+    "engine": "Cycles CPU",
+    "samples": 128,
+    "resolution": [
+      1024,
+      1024
+    ]
+  },
+  "assets": {
+    "oscilloscope": {
+      "native_triangles": 3333,
+      "exported_triangles": 3333,
+      "unique_ids": 62,
+      "part_count": 59,
+      "anchor_count": 2,
+      "missing_resources": [],
+      "body_dimensions_m": [
+        0.2800000011920929,
+        0.1599999964237213,
+        0.12999999523162842
+      ],
+      "cable_length_m": null,
+      "cable_diameter_m": null,
+      "max_roundtrip_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 0.0
+    },
+    "trigger-controller": {
+      "native_triangles": 1588,
+      "exported_triangles": 1588,
+      "unique_ids": 31,
+      "part_count": 29,
+      "anchor_count": 1,
+      "missing_resources": [],
+      "body_dimensions_m": [
+        0.18000000715255737,
+        0.11999999731779099,
+        0.07000000029802322
+      ],
+      "cable_length_m": null,
+      "cable_diameter_m": null,
+      "max_roundtrip_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 0.0
+    },
+    "signal-cable": {
+      "native_triangles": 1936,
+      "exported_triangles": 1936,
+      "unique_ids": 18,
+      "part_count": 15,
+      "anchor_count": 2,
+      "missing_resources": [],
+      "body_dimensions_m": null,
+      "cable_length_m": 0.6000000007506544,
+      "cable_diameter_m": 0.004999999888241291,
+      "max_roundtrip_dimension_error_m": 0.0,
+      "max_anchor_error_m": 0.0
+    },
+    "sample-scene": {
+      "native_triangles": 6857,
+      "exported_triangles": 6857,
+      "unique_ids": 112,
+      "part_count": 103,
+      "anchor_count": 5,
+      "missing_resources": [],
+      "body_dimensions_m": null,
+      "cable_length_m": null,
+      "cable_diameter_m": null,
+      "max_roundtrip_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 0.0
+    }
+  },
+  "limitations": [
+    "Original fictional dimensions, not manufacturer facts",
+    "Physical compatibility unknown; electrical constraints null",
+    "No circuit simulation, safe real-device wiring claims or animation clips",
+    "Freestyle outline, cream studio floor, cameras and lighting not exported to GLB",
+    "Only Blender clean reimport verified; other viewers not certified",
+    "Historical QA completed before public repository publication; original outcomes retained"
+  ]
+}

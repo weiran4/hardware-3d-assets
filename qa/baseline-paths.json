@@ -1,0 +1,6 @@
+{
+  "oscilloscope": "checkpoints/final-baseline/oscilloscope",
+  "trigger-controller": "checkpoints/final-baseline/trigger-controller",
+  "signal-cable": "checkpoints/t2-r02/signal-cable",
+  "sample-scene": "checkpoints/t3-r01/sample-scene"
+}

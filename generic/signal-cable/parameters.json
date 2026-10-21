@@ -1,0 +1,42 @@
+{
+  "asset_id": "signal-cable",
+  "seed": 42,
+  "triangle_budget": 2000,
+  "required_part_ids": [
+    "signal-cable.body",
+    "signal-cable.connector_a",
+    "signal-cable.connector_b"
+  ],
+  "required_anchor_ids": [
+    "signal-cable.end_a",
+    "signal-cable.end_b"
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 1024,
+    "samples": 128,
+    "view_transform": "Standard",
+    "exposure": 0,
+    "camera_direction": [
+      0.65,
+      -1.1,
+      1.6
+    ],
+    "camera_margin": 1.24,
+    "light_position": [
+      -0.8,
+      -1.1,
+      1.8
+    ],
+    "light_energy": 28,
+    "light_size": 0.45,
+    "denoising": false,
+    "denoising_reason": "Cloud Blender build has no OpenImageDenoise support; tested 2026-10-21",
+    "world_strength": 0.65,
+    "fill_energy": 5,
+    "outline_px": 1.6
+  },
+  "cable_length_m": 0.6,
+  "cable_diameter_m": 0.005
+}

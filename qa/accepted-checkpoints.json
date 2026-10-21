@@ -1,0 +1,46 @@
+{
+  "oscilloscope": {
+    "candidate": "checkpoints/t4-r02/oscilloscope",
+    "checkpoint_sha256": "fec133e91e28bcba68cbaa6040096b920642890ae4ab5c733ed577c82c25148b",
+    "model_tools_sha256": {
+      "build.py": "f9f49e068fa70d71465fc4eb80bdbb208eb7f0285f356b61319ad8047568e255",
+      "asset_common.py": "4530ec1c38e69d9fced78d22be937bff6cfec6dab7af139571e535af6cfabb6b",
+      "qa_asset.py": "2e4139a553d068cad79ad516409efaa23edb99639e0cf3e0df6742f043a36120",
+      "qa_roundtrip.py": "4a6729b212d7abf21e23947bc1f276c577cf353c5cfa39ea91dbc62d766b1e2a"
+    },
+    "asset_source_sha256": "65d0199039f0ceb3970e14901f99d4c8934985bf74768e98a905d4584e17d545"
+  },
+  "trigger-controller": {
+    "candidate": "checkpoints/t4-r02/trigger-controller",
+    "checkpoint_sha256": "411d6b0838807331429d3958b36950b2f6e9393f3d370dc4c3d31672bacaa36d",
+    "model_tools_sha256": {
+      "build.py": "f9f49e068fa70d71465fc4eb80bdbb208eb7f0285f356b61319ad8047568e255",
+      "asset_common.py": "4530ec1c38e69d9fced78d22be937bff6cfec6dab7af139571e535af6cfabb6b",
+      "qa_asset.py": "2e4139a553d068cad79ad516409efaa23edb99639e0cf3e0df6742f043a36120",
+      "qa_roundtrip.py": "4a6729b212d7abf21e23947bc1f276c577cf353c5cfa39ea91dbc62d766b1e2a"
+    },
+    "asset_source_sha256": "6862d80936e0ff9484705df68fcba9d54abe8c8b7e35e0792691405aa03cc6bf"
+  },
+  "signal-cable": {
+    "candidate": "checkpoints/t4-r02/signal-cable",
+    "checkpoint_sha256": "dce1fda971c3f6280ce14894fcbf55abadf1d6b5038c66ae47a3e973e2aac411",
+    "model_tools_sha256": {
+      "build.py": "f9f49e068fa70d71465fc4eb80bdbb208eb7f0285f356b61319ad8047568e255",
+      "asset_common.py": "4530ec1c38e69d9fced78d22be937bff6cfec6dab7af139571e535af6cfabb6b",
+      "qa_asset.py": "2e4139a553d068cad79ad516409efaa23edb99639e0cf3e0df6742f043a36120",
+      "qa_roundtrip.py": "4a6729b212d7abf21e23947bc1f276c577cf353c5cfa39ea91dbc62d766b1e2a"
+    },
+    "asset_source_sha256": "a6859c1e99d75a1a366d63125ad417f910c58619b57fd522aea855c2a1af72fc"
+  },
+  "sample-scene": {
+    "candidate": "checkpoints/t4-r02/sample-scene",
+    "checkpoint_sha256": "055f223e1b7235ed120440fb74455c028552499d3fef5e76aec710e856f6445c",
+    "model_tools_sha256": {
+      "build.py": "f9f49e068fa70d71465fc4eb80bdbb208eb7f0285f356b61319ad8047568e255",
+      "asset_common.py": "4530ec1c38e69d9fced78d22be937bff6cfec6dab7af139571e535af6cfabb6b",
+      "qa_asset.py": "2e4139a553d068cad79ad516409efaa23edb99639e0cf3e0df6742f043a36120",
+      "qa_roundtrip.py": "4a6729b212d7abf21e23947bc1f276c577cf353c5cfa39ea91dbc62d766b1e2a"
+    },
+    "asset_source_sha256": "6ea86e414930772597f726941bc08f826487531994de5ca99ad385d80f59dcbf"
+  }
+}

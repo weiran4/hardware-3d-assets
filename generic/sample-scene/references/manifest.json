@@ -1,0 +1,28 @@
+{
+  "asset_id": "sample-scene",
+  "created": "2026-10-21",
+  "design": "original composition of three original verified generic practice assets",
+  "sources": [
+    {
+      "url": null,
+      "reference": "Privately supplied style reference; not distributed or embedded",
+      "accessed": "2026-10-21",
+      "observed_views": [
+        "illustrated three-quarter style only"
+      ],
+      "use": "cream field, thin dark contour, muted palette; no device shape copied",
+      "license": "unknown; reference image not redistributed"
+    }
+  ],
+  "dimension_basis": "fictional concept dimensions approved in project plan; not measured manufacturer data",
+  "unknowns": [
+    "electrical limits",
+    "pinout",
+    "impedance",
+    "frequency range",
+    "physical mating compatibility"
+  ],
+  "third_party_assets": false,
+  "geometry_and_code": "original procedural geometry; Blender built-in font used for labels",
+  "composition": "Devices and cable displayed unplugged. No implied electrical connection or compatibility."
+}

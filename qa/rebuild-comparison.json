@@ -1,0 +1,376 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "seed": 42,
+  "method": "fresh Blender processes; measured vertex/topology/transform, full semantics, material values+bindings; iso freshly rerendered for all4; scope8 and controller3 rerendered before optimization, remaining diagnostic PNGs reused from independently reviewed identical baselines with explicit provenance; no binary-hash identity requirement",
+  "assets": {
+    "oscilloscope": {
+      "status": "PASS",
+      "errors": [],
+      "baseline": "checkpoints/final-baseline/oscilloscope",
+      "repeat": "checkpoints/t4-r02/oscilloscope",
+      "geometry_digest_equal": true,
+      "semantic_digest_equal": true,
+      "material_digest_equal": true,
+      "placed_triangles": 3333,
+      "render_comparison": {
+        "iso": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "neutral": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "wireframe": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "front": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "rear": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "left": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "right": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "top": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        }
+      }
+    },
+    "trigger-controller": {
+      "status": "PASS",
+      "errors": [],
+      "baseline": "checkpoints/final-baseline/trigger-controller",
+      "repeat": "checkpoints/t4-r02/trigger-controller",
+      "geometry_digest_equal": true,
+      "semantic_digest_equal": true,
+      "material_digest_equal": true,
+      "placed_triangles": 1588,
+      "render_comparison": {
+        "iso": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "neutral": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "wireframe": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "front": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "rear": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "left": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "right": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "top": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        }
+      }
+    },
+    "signal-cable": {
+      "status": "PASS",
+      "errors": [],
+      "baseline": "checkpoints/t2-r02/signal-cable",
+      "repeat": "checkpoints/t4-r02/signal-cable",
+      "geometry_digest_equal": true,
+      "semantic_digest_equal": true,
+      "material_digest_equal": true,
+      "placed_triangles": 1936,
+      "render_comparison": {
+        "iso": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "neutral": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "wireframe": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "front": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "rear": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "left": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "right": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "top": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        }
+      }
+    },
+    "sample-scene": {
+      "status": "PASS",
+      "errors": [],
+      "baseline": "checkpoints/t3-r01/sample-scene",
+      "repeat": "checkpoints/t4-r02/sample-scene",
+      "geometry_digest_equal": true,
+      "semantic_digest_equal": true,
+      "material_digest_equal": true,
+      "placed_triangles": 6857,
+      "render_comparison": {
+        "iso": {
+          "coverage": "rendered_this_candidate",
+          "independent_rerender": true,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "neutral": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "wireframe": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "front": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "rear": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "left": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "right": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        },
+        "top": {
+          "coverage": "verified_baseline_render",
+          "independent_rerender": false,
+          "mean_absolute_rgb_0_255": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_channel_difference": 0
+        }
+      }
+    }
+  }
+}

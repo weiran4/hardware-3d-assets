@@ -1,0 +1,38 @@
+{
+  "asset_id": "trigger-controller",
+  "root": "trigger-controller.root",
+  "parts": {
+    "trigger-controller.body": "trigger-controller.body",
+    "trigger-controller.brand": "trigger-controller.brand",
+    "trigger-controller.button": "trigger-controller.button",
+    "trigger-controller.display": "trigger-controller.display",
+    "trigger-controller.foot_-1_-1": "trigger-controller.foot_-1_-1",
+    "trigger-controller.foot_-1_1": "trigger-controller.foot_-1_1",
+    "trigger-controller.foot_1_-1": "trigger-controller.foot_1_-1",
+    "trigger-controller.foot_1_1": "trigger-controller.foot_1_1",
+    "trigger-controller.indicator": "trigger-controller.indicator",
+    "trigger-controller.knob": "trigger-controller.knob",
+    "trigger-controller.knob_pointer": "trigger-controller.knob_pointer",
+    "trigger-controller.knob_shaft": "trigger-controller.knob_shaft",
+    "trigger-controller.label_button": "trigger-controller.label_button",
+    "trigger-controller.label_level": "trigger-controller.label_level",
+    "trigger-controller.label_out": "trigger-controller.label_out",
+    "trigger-controller.panel_front": "trigger-controller.panel_front",
+    "trigger-controller.port_out": "trigger-controller.port_out",
+    "trigger-controller.port_out_base": "trigger-controller.port_out_base",
+    "trigger-controller.port_out_lug_-1": "trigger-controller.port_out_lug_-1",
+    "trigger-controller.port_out_lug_1": "trigger-controller.port_out_lug_1",
+    "trigger-controller.port_out_pin": "trigger-controller.port_out_pin",
+    "trigger-controller.port_out_well": "trigger-controller.port_out_well",
+    "trigger-controller.top_inset": "trigger-controller.top_inset",
+    "trigger-controller.trace": "trigger-controller.trace",
+    "trigger-controller.vent_0": "trigger-controller.vent_0",
+    "trigger-controller.vent_1": "trigger-controller.vent_1",
+    "trigger-controller.vent_2": "trigger-controller.vent_2",
+    "trigger-controller.vent_3": "trigger-controller.vent_3",
+    "trigger-controller.vent_4": "trigger-controller.vent_4"
+  },
+  "anchors": {
+    "trigger-controller.out": "trigger-controller.out"
+  }
+}

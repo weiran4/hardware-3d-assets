@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "review_date_utc": "2026-10-21",
+  "reviewer": "Independent read-only QA reviewer; separate from asset builder",
+  "status": "PASS_WITH_STATED_LIMITATIONS",
+  "errors": [],
+  "user_acceptance": "pending; technical QA is not user scoring or approval",
+  "scope": "First original generic practice batch only: oscilloscope, trigger-controller, signal-cable, sample-scene. No RTDS, web app, electrical simulation, or compatibility certification.",
+  "runtime": {
+    "blender": "4.3.2",
+    "internal_python": "3.13.5",
+    "render_engine": "Cycles CPU",
+    "preview_resolution": [
+      1024,
+      1024
+    ],
+    "preview_samples": 128,
+    "denoising": false
+  },
+  "independence": {
+    "asset_measurements": "Separate reviewer script reopens actual saved .blend, measures evaluated meshes/curves, then resets to empty and imports actual delivered GLB. It does not import builder QA or trust its PASS fields.",
+    "repeat_measurements": "Separate reviewer script compares evaluated vertex/topology/transform, full ID/hierarchy/motion/port semantics, material values and object/face bindings, saved camera/light/render state and input parameters across baseline and T4.",
+    "mutations": "Only /tmp copies or unsaved in-memory scenes were corrupted; originals were not edited. Five actual GLB/sidecar mutations and an existing-palette reassignment tested rejection, beyond hand-authored report fixtures.",
+    "writes": "Reviewer wrote only its own /tmp diagnostics; no asset .blend/GLB or previews were edited.",
+    "scripts_sha256": {
+      "independent_final.py": "8f71c0b606010599345c5926374cf6bb6cb23501edf0a091b49174bddf257b58",
+      "independent_repeat.py": "c83d3971b5b8399d181aaf3814a96a2719bc6624333488060d1ab5ffafdc00e1",
+      "verify_fixes.py": "ffdc92d780aae9fe15dfb1e94a37c9c69518e2e0dc2b0bf51a8007b25adbbc94"
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "oscilloscope",
+      "path": "checkpoints/t4-r02/oscilloscope",
+      "body_dimensions_m": [
+        0.2800000011920929,
+        0.1599999964237213,
+        0.12999999523162842
+      ],
+      "status": "PASS",
+      "errors": [],
+      "native_triangles": 3333,
+      "glb_unique_triangles": 3333,
+      "glb_placed_triangles": 3333,
+      "objects": 62,
+      "parts": 59,
+      "anchors": 2,
+      "motion_checked": [
+        "oscilloscope.knob",
+        "oscilloscope.knob_time",
+        "oscilloscope.button",
+        "oscilloscope.button_1",
+        "oscilloscope.button_2",
+        "oscilloscope.button_3"
+      ],
+      "material_count": 12,
+      "max_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 0,
+      "min_axis_dot": 0.9999999999999954,
+      "missing_dependencies": [],
+      "hashes": {
+        "source/asset.blend": "e370eba1889ced19a24fc6252d8c7eb56b6bdb2c487aca27f8eea3f08fa7be4a",
+        "exports/asset.glb": "373222d85f002dbb75c0b7bae7686a59b0e7c27943cf0b05a7aed8b18b93f62a",
+        "metadata/ports.json": "092b53af44aeb5e6f9564594bb9435efdbe22de5f65103100f28cd3cc9106478"
+      },
+      "runtime": {
+        "blender": "4.3.2",
+        "python": "3.13.5"
+      }
+    },
+    {
+      "asset_id": "trigger-controller",
+      "path": "checkpoints/t4-r02/trigger-controller",
+      "body_dimensions_m": [
+        0.18000000715255737,
+        0.11999999731779099,
+        0.07000000029802322
+      ],
+      "status": "PASS",
+      "errors": [],
+      "native_triangles": 1588,
+      "glb_unique_triangles": 1588,
+      "glb_placed_triangles": 1588,
+      "objects": 31,
+      "parts": 29,
+      "anchors": 1,
+      "motion_checked": [
+        "trigger-controller.knob",
+        "trigger-controller.button"
+      ],
+      "material_count": 10,
+      "max_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 0,
+      "min_axis_dot": 0.9999999999999954,
+      "missing_dependencies": [],
+      "hashes": {
+        "source/asset.blend": "338825bd1b34344615a6f790f7d540f8da8c7ae124fa4425777e17f8260a7a53",
+        "exports/asset.glb": "18abd60ecfa73fdd5c536cf8e5febc058a7b3c49b8aea250d67fcb38b1aba0ec",
+        "metadata/ports.json": "7bdb9c925845fc506f41b0106d8ec3c8d9a52362ec9ee348d908a02f9493ad51"
+      },
+      "runtime": {
+        "blender": "4.3.2",
+        "python": "3.13.5"
+      }
+    },
+    {
+      "asset_id": "signal-cable",
+      "path": "checkpoints/t4-r02/signal-cable",
+      "cable_length_m": 0.6000000007506544,
+      "cable_diameter_m": 0.004999999888241291,
+      "status": "PASS",
+      "errors": [],
+      "native_triangles": 1936,
+      "glb_unique_triangles": 1936,
+      "glb_placed_triangles": 1936,
+      "objects": 18,
+      "parts": 15,
+      "anchors": 2,
+      "motion_checked": [],
+      "material_count": 5,
+      "max_dimension_error_m": 0,
+      "max_anchor_error_m": 3.725290298461914e-09,
+      "min_axis_dot": 0.9999999701976776,
+      "missing_dependencies": [],
+      "hashes": {
+        "source/asset.blend": "510f45b7b56bb674382475c047f1160a9b32ac36e2d0cc35a12016193112875a",
+        "exports/asset.glb": "b22c6667e9cbc5a58ad6be199759ee244006c3841db6e4b9cc0ec84fd2a473bc",
+        "metadata/ports.json": "513f4a4f802480b4954e7687fdd724519fe93b8d8d189e59a20f59bd0bf980d7"
+      },
+      "runtime": {
+        "blender": "4.3.2",
+        "python": "3.13.5"
+      }
+    },
+    {
+      "asset_id": "sample-scene",
+      "path": "checkpoints/t4-r02/sample-scene",
+      "status": "PASS",
+      "errors": [],
+      "native_triangles": 6857,
+      "glb_unique_triangles": 6857,
+      "glb_placed_triangles": 6857,
+      "objects": 112,
+      "parts": 103,
+      "anchors": 5,
+      "motion_checked": [
+        "oscilloscope.knob_time",
+        "oscilloscope.knob",
+        "oscilloscope.button_3",
+        "oscilloscope.button_2",
+        "oscilloscope.button_1",
+        "oscilloscope.button",
+        "trigger-controller.knob",
+        "trigger-controller.button"
+      ],
+      "material_count": 12,
+      "max_dimension_error_m": 1.4901161193847656e-08,
+      "max_anchor_error_m": 2.1073424255447017e-08,
+      "min_axis_dot": 0.9999999701976776,
+      "missing_dependencies": [],
+      "hashes": {
+        "source/asset.blend": "25622298a35a5d8c800c106fedd93b0fea5d14918c1be0f950ea3e8c8db2d2ca",
+        "exports/asset.glb": "e865666ff94367a967b76bcfd115844dfb1524c8560547b8ff765b4b18344a71",
+        "metadata/ports.json": "a656857abfd69589e293e9d9284ba3c7caec3ad34f2445487bf660299363ccf8"
+      },
+      "runtime": {
+        "blender": "4.3.2",
+        "python": "3.13.5"
+      }
+    }
+  ],
+  "repeat_comparison": [
+    {
+      "asset_id": "oscilloscope",
+      "baseline": "checkpoints/final-baseline/oscilloscope",
+      "candidate": "checkpoints/t4-r02/oscilloscope",
+      "status": "PASS",
+      "differences": [],
+      "baseline_digests": {
+        "geometry": "e68d3e7bcb4fe7a28c8ef9f0698e6934ff6cd96c594b61628e17f51cf5a1fde1",
+        "semantics": "53e6cdea2232e1b1eac34458e18aec91307a8dcba6a8b35b1b5511fdc45d6be3",
+        "materials_and_bindings": "8b81669b117c4ee8382c056e916c06ce28fe70a409911a3ec4d89421fe476df6",
+        "presentation": "8f52289f4924afc1b36dcdfc0c039e8f54de2cf584bfebf9640989291398f92f",
+        "parameters": "56a78c3f9072ea499310169624bbff308fc72949dbf1604fcdd988e37e672310"
+      },
+      "candidate_digests": {
+        "geometry": "e68d3e7bcb4fe7a28c8ef9f0698e6934ff6cd96c594b61628e17f51cf5a1fde1",
+        "semantics": "53e6cdea2232e1b1eac34458e18aec91307a8dcba6a8b35b1b5511fdc45d6be3",
+        "materials_and_bindings": "8b81669b117c4ee8382c056e916c06ce28fe70a409911a3ec4d89421fe476df6",
+        "presentation": "8f52289f4924afc1b36dcdfc0c039e8f54de2cf584bfebf9640989291398f92f",
+        "parameters": "56a78c3f9072ea499310169624bbff308fc72949dbf1604fcdd988e37e672310"
+      }
+    },
+    {
+      "asset_id": "trigger-controller",
+      "baseline": "checkpoints/final-baseline/trigger-controller",
+      "candidate": "checkpoints/t4-r02/trigger-controller",
+      "status": "PASS",
+      "differences": [],
+      "baseline_digests": {
+        "geometry": "056c1c45328a877db78b608a3479952c3a56146dc1d20a38cc4ae85b35fb787b",
+        "semantics": "d4ff31b564ee0fbdb162669f4c552bed098608d5738cab7d32ae81494ec69dfd",
+        "materials_and_bindings": "628e5c7e174516e98177c6144d66e053e44737031fe96add40ee85ef1361c9a8",
+        "presentation": "299de63dc1ae16e09899a3e677c0e1137ea6af0982386e184f2324d60d491eb2",
+        "parameters": "42567cf6aea1949f7aa11e262d7916754c765e61725fbc998acf85867504fbe3"
+      },
+      "candidate_digests": {
+        "geometry": "056c1c45328a877db78b608a3479952c3a56146dc1d20a38cc4ae85b35fb787b",
+        "semantics": "d4ff31b564ee0fbdb162669f4c552bed098608d5738cab7d32ae81494ec69dfd",
+        "materials_and_bindings": "628e5c7e174516e98177c6144d66e053e44737031fe96add40ee85ef1361c9a8",
+        "presentation": "299de63dc1ae16e09899a3e677c0e1137ea6af0982386e184f2324d60d491eb2",
+        "parameters": "42567cf6aea1949f7aa11e262d7916754c765e61725fbc998acf85867504fbe3"
+      }
+    },
+    {
+      "asset_id": "signal-cable",
+      "baseline": "checkpoints/t2-r02/signal-cable",
+      "candidate": "checkpoints/t4-r02/signal-cable",
+      "status": "PASS",
+      "differences": [],
+      "baseline_digests": {
+        "geometry": "a844edf4e3dd444eb10576257e45d26e7a7d3808aa1ed8e18d6824ac7decc996",
+        "semantics": "57cb37afa43eda4a7ece411d8a134954fdb53d75f7bb03f8b0cc67af7250397d",
+        "materials_and_bindings": "86eb6d38782148462588d915e2b6d5e3433b82038fca426de0170584c075ceac",
+        "presentation": "4bb3fa6fe012fe6b105de039cf035cd9eee5aa98f45de7d5a5ff818f3be3b2f3",
+        "parameters": "15fbceba56bb23828fdeeb90850001f5377bf8872bbb935424f37c517fb2741e"
+      },
+      "candidate_digests": {
+        "geometry": "a844edf4e3dd444eb10576257e45d26e7a7d3808aa1ed8e18d6824ac7decc996",
+        "semantics": "57cb37afa43eda4a7ece411d8a134954fdb53d75f7bb03f8b0cc67af7250397d",
+        "materials_and_bindings": "86eb6d38782148462588d915e2b6d5e3433b82038fca426de0170584c075ceac",
+        "presentation": "4bb3fa6fe012fe6b105de039cf035cd9eee5aa98f45de7d5a5ff818f3be3b2f3",
+        "parameters": "15fbceba56bb23828fdeeb90850001f5377bf8872bbb935424f37c517fb2741e"
+      }
+    },
+    {
+      "asset_id": "sample-scene",
+      "baseline": "checkpoints/t3-r01/sample-scene",
+      "candidate": "checkpoints/t4-r02/sample-scene",
+      "status": "PASS",
+      "differences": [],
+      "baseline_digests": {
+        "geometry": "368f3f6c04be26477bfaff9bbf0741bf7267d9a1b8ec8fa882b98640021fdf91",
+        "semantics": "2cbbc1925bd0034c50dd9bc57cf44d52a4aded27fa37db888aec907bdae48319",
+        "materials_and_bindings": "d90061dc2e27422e13c9c400d9d5d4d25ac15838b3da1a75ce00ef7d10198863",
+        "presentation": "1a317a639595178ab750d581a2baa03240179bb2865cc1922906c7057256b859",
+        "parameters": "335af8946a53992683fc21edc63bbebbe2c607bfa15eed7fc5b3148e39fa7472"
+      },
+      "candidate_digests": {
+        "geometry": "368f3f6c04be26477bfaff9bbf0741bf7267d9a1b8ec8fa882b98640021fdf91",
+        "semantics": "2cbbc1925bd0034c50dd9bc57cf44d52a4aded27fa37db888aec907bdae48319",
+        "materials_and_bindings": "d90061dc2e27422e13c9c400d9d5d4d25ac15838b3da1a75ce00ef7d10198863",
+        "presentation": "1a317a639595178ab750d581a2baa03240179bb2865cc1922906c7057256b859",
+        "parameters": "335af8946a53992683fc21edc63bbebbe2c607bfa15eed7fc5b3148e39fa7472"
+      }
+    }
+  ],
+  "preview_review": {
+    "oscilloscope": {
+      "status": "PASS",
+      "views": {
+        "iso": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "21b010109dcf97766da0ff68b09ed855aae2a5db2712a55ca0241708a681ed91",
+          "generic_matches": true
+        },
+        "neutral": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "57a0494975634335bc8989d5f74eae87d2e3ae678803d9532d11f9011bcd976f",
+          "generic_matches": true
+        },
+        "wireframe": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "567a64ad21064ace0b853b1f452bf24eba154e8ed590bb8c82e30f1116fa1043",
+          "generic_matches": true
+        },
+        "front": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "f738e7855509abd98ec01efb7f2a01fc5446da6df511b0ad82f72f368a810872",
+          "generic_matches": true
+        },
+        "rear": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "d8c8d87712096deb7b9c24dbf415ed472ff24e72dd7984f1f72c544ce176e40f",
+          "generic_matches": true
+        },
+        "left": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "8576abfac9344c13bb13c543805e89dc88c93f94a8f6b3e434219b816c6a1d1b",
+          "generic_matches": true
+        },
+        "right": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "d61c1ea199772a71f96a0f389731c2f0a7aef4e91332c30e7857f6319944c1a8",
+          "generic_matches": true
+        },
+        "top": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "c97b5ea5dad0583308b84911025667fcae937d91759254df5866665c4ce4ad18",
+          "generic_matches": true
+        }
+      },
+      "visual_observation": "Cream/ink/muted palette consistent; waveform and CH1/TRIG readable in single-asset views; top label removed; shaft bridges clear in top view."
+    },
+    "trigger-controller": {
+      "status": "PASS",
+      "views": {
+        "iso": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "9385948f10fa29ea20b44b06c6491d03052fd3e9774ecd450c13b2a714c9d298",
+          "generic_matches": true
+        },
+        "neutral": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "d1dccd407a1c9dfc64c9d3da5340a3d187ea7930bff2f3c01746dd6461307728",
+          "generic_matches": true
+        },
+        "wireframe": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "b3cfb65b044a36c1af7b9556534758fa4d01c087ca0c82b7d536bf5fefcd1575",
+          "generic_matches": true
+        },
+        "front": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "9b8a81d47b5742f08b89da7aaa815be65b45689670a35f1c41e31f59ead99d32",
+          "generic_matches": true
+        },
+        "rear": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "f84d8ddb256aeeb365934e0edb51f3dc423df04d9b33df7f411e79c1f2f7ad2c",
+          "generic_matches": true
+        },
+        "left": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "79238bb75e20dc02272cb24aec251a7106dd4575ae6b95f47074bcb4a2433056",
+          "generic_matches": true
+        },
+        "right": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "03139e402d130ed143e0b85d6166d120863c1d6d606b0c8f63060afd6cbc6f29",
+          "generic_matches": true
+        },
+        "top": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "9f83b2ecaca102924f5bc8924834dc93e544a587fa1fd7fb16294b26fd3d7740",
+          "generic_matches": true
+        }
+      },
+      "visual_observation": "LEVEL/ARM/OUT have clear margins; no longer hidden by control or panel edge; shaft visible bridging in side/top."
+    },
+    "signal-cable": {
+      "status": "PASS",
+      "views": {
+        "iso": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "34851cbc4f1d70060c5871bed8d40550c23463072da582648249679e597752c5",
+          "generic_matches": true
+        },
+        "neutral": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "5e1ef649af2aa8a7d988137a59cdf42b6d9de3063000bb29ccb6f9f0219a8e7a",
+          "generic_matches": true
+        },
+        "wireframe": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "f967f265f52e1259a532103f92480d2a1398a5802e698923b629f69472e9edda",
+          "generic_matches": true
+        },
+        "front": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "f7fcb6983e68bdb5dbb2053cac0f47c9b1dfdcea527b32adb16df96883f33526",
+          "generic_matches": true
+        },
+        "rear": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "0f05ce3563d8c3d07cfe05e4c68c74dd61d5e6ed8b2e02eeef827da40b87f660",
+          "generic_matches": true
+        },
+        "left": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "b71d518c4595c1e5ce9ef2a552f777fdfa1a97b8fe3611e5035ee9bea100d199",
+          "generic_matches": true
+        },
+        "right": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "937d390145ea272ba3ea9a4ba7a0b8e824f639629432da331fa744472a8e790b",
+          "generic_matches": true
+        },
+        "top": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "afbb09f60223a50395e334e7faa763b0b8afef85a2582047c47fbb7f5be135bd",
+          "generic_matches": true
+        }
+      },
+      "visual_observation": "Both ends and editable cable path intact; boot/tube join continuous; fine outline consistent with equipment."
+    },
+    "sample-scene": {
+      "status": "PASS",
+      "views": {
+        "iso": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "rendered_this_candidate",
+          "candidate_sha256": "09fad2d8eb3c4b97388179e22ca0f8c1857ce9de1e0a5e018cad6aa8f3cc9375",
+          "generic_matches": true
+        },
+        "neutral": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "aec6d836ce45aca5946f5f47b6c73e939409546b43e90ed4d72b43db6575d000",
+          "generic_matches": true
+        },
+        "wireframe": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "e49ea88efe3c322e2a39204f24d68d569b7ad8b6c1065b6f9e7dd4444da44c6d",
+          "generic_matches": true
+        },
+        "front": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "b4d8246c595d91192a89f4e8d5312b96646220f30a1ec1a4b5ab7e4ae4e19ee9",
+          "generic_matches": true
+        },
+        "rear": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "e5a7bd97ae98c962f209738305b0279201d7f4cf5cfeddf58e2034f6e3f42720",
+          "generic_matches": true
+        },
+        "left": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "6d2ed8046967dff044e3645532015dc7caec4cc610f045e9dd09962f29f12f2f",
+          "generic_matches": true
+        },
+        "right": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "a4c96c64af678cda694d7ad8667f46a64846ac6eff84992f657e50102dc29fb0",
+          "generic_matches": true
+        },
+        "top": {
+          "size": [
+            1024,
+            1024
+          ],
+          "max_rgb_difference_from_reviewed_baseline": 0,
+          "provenance": "verified_baseline_render",
+          "candidate_sha256": "288ed4be9a6bef94875fbcad4bdb94842a630adaa6b4a71ff8eb9e9d9fb006e2",
+          "generic_matches": true
+        }
+      },
+      "visual_observation": "All three at shared scale; no physical intersections visible in top/iso/neutral. Cable is deliberately unplugged; some side/front projection overlap is expected."
+    }
+  },
+  "preview_reuse_disclosure": "All 32 delivered views match reviewed baseline pixels exactly. T4 fresh renders: scope 8, controller iso/neutral/wireframe 3, cable iso 1, scene iso 1. Remaining views are copied baseline renders with explicit provenance, not claimed as second renders. Independently measured geometry, semantics, materials+bindings, presentation and parameters match for all 4.",
+  "generic_payload_matches_reviewed_T4": {
+    "oscilloscope": {
+      "source/asset.blend": true,
+      "exports/asset.glb": true,
+      "metadata/ports.json": true,
+      "parameters.json": true,
+      "source/build.py": true
+    },
+    "trigger-controller": {
+      "source/asset.blend": true,
+      "exports/asset.glb": true,
+      "metadata/ports.json": true,
+      "parameters.json": true,
+      "source/build.py": true
+    },
+    "signal-cable": {
+      "source/asset.blend": true,
+      "exports/asset.glb": true,
+      "metadata/ports.json": true,
+      "parameters.json": true,
+      "source/build.py": true
+    },
+    "sample-scene": {
+      "source/asset.blend": true,
+      "exports/asset.glb": true,
+      "metadata/ports.json": true,
+      "parameters.json": true,
+      "source/build.py": true
+    }
+  },
+  "tests_rerun": {
+    "pure_contract_unittest": {
+      "count": 13,
+      "result": "PASS"
+    },
+    "blender_integrations": {
+      "count": 6,
+      "result": "PASS",
+      "checks": [
+        "scope shaft-local motion",
+        "controller shaft-local motion",
+        "scope shaft-to-panel/knob bridge",
+        "controller shaft-to-panel/knob bridge",
+        "existing-palette material binding mutation",
+        "unique mesh datablock triangle accounting"
+      ]
+    },
+    "actual_GLb_sidecar_corruption_regressions": [
+      {
+        "case": "remove_record",
+        "status": "FAIL",
+        "errors": [
+          "metadata"
+        ],
+        "metadata_errors": [
+          "oscilloscope.ch1:id/parent",
+          "oscilloscope.ch1:position",
+          "oscilloscope.ch1:normal",
+          "full native/imported port semantics differ"
+        ]
+      },
+      {
+        "case": "alter_direction",
+        "status": "FAIL",
+        "errors": [
+          "metadata"
+        ],
+        "metadata_errors": [
+          "full native/imported port semantics differ"
+        ]
+      },
+      {
+        "case": "alter_constraints",
+        "status": "FAIL",
+        "errors": [
+          "metadata"
+        ],
+        "metadata_errors": [
+          "full native/imported port semantics differ"
+        ]
+      },
+      {
+        "case": "remove_sidecar",
+        "status": "FAIL",
+        "errors": [
+          "metadata"
+        ],
+        "metadata_errors": []
+      },
+      {
+        "case": "alter_material",
+        "status": "FAIL",
+        "errors": [
+          "materials"
+        ],
+        "metadata_errors": []
+      }
+    ]
+  },
+  "fixed_findings_verified": [
+    {
+      "finding": "Euler Z trial tilted rotary shafts instead of testing shaft-local rotation",
+      "resolution": "Post-multiplied local quaternion; shaft/pivot invariant; pointer moves; unrelated parts unchanged."
+    },
+    {
+      "finding": "GLB could lose full port_record or change semantics and roundtrip still report PASS",
+      "resolution": "Actual missing-record, direction, electrical-constraint and missing-sidecar mutations all reject."
+    },
+    {
+      "finding": "Changing material assignment to another existing palette color did not change repeat digest",
+      "resolution": "Bindings and face material indices included; actual coral-to-blue reassignment now rejects."
+    },
+    {
+      "finding": "Controller LEVEL hidden and ARM/OUT crossed lower panel seam",
+      "resolution": "Labels moved into clear space above controls; actual iso/front inspected."
+    },
+    {
+      "finding": "Knobs visibly floated 3 to 4.5 mm off panels",
+      "resolution": "Low-poly shaft children bridge panels and knobs; evaluated overlap test and side/top image review pass."
+    },
+    {
+      "finding": "Scope waveform too dark under Freestyle and decorative top brand crowded seam",
+      "resolution": "Trace/grid/text excluded from contour pass, trace strengthened, brand removed; actual final preview inspected."
+    },
+    {
+      "finding": "Native unique geometry count originally deduplicated separate identical mesh datablocks",
+      "resolution": "Latest count distinguishes datablock identity; regression independently rerun; actual GLB placed count always read from nodes/primitives."
+    }
+  ],
+  "remaining_limitations": [
+    "Fictional original concept dimensions, not a measured device replica; hidden/rear details intentionally simplified.",
+    "Connector shape and CH1/TRIG/OUT labels are visual semantics only. All physical compatibility stays unknown, signal types unknown and electrical constraints null; unplugged scene is not a wiring instruction.",
+    "Freestyle strokes, studio background and lighting are Blender presentation only and are not in the GLB.",
+    "No animation clips are delivered; isolated pivots/anchors were tested, not a full interactive application.",
+    "Actual GLB passed Blender reimport; no independent external-engine/viewer certification was performed.",
+    "Overview labels are small at group scale; use single-asset front views for reading. Diagnostic wireframe lines are light but inspected alongside neutral images and actual geometry.",
+    "Skill remains a practice-validated candidate; no unseen-asset transfer or production readiness claim.",
+    "Cloud staging is not persistent backup; user acceptance remains pending."
+  ],
+  "blocking_findings_remaining": []
+}

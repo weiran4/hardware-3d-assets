@@ -1,0 +1,142 @@
+{
+  "asset_id": "sample-scene",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y",
+  "ports": [
+    {
+      "anchor_name": "oscilloscope.ch1",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.ch1",
+      "label": "CH1",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.047,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "oscilloscope.trig",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.trig",
+      "label": "TRIG",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.104,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "signal-cable.end_a",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_a",
+      "label": "END A",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_a",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "signal-cable.end_b",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_b",
+      "label": "END B",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_b",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "trigger-controller.out",
+      "connector": "generic_coaxial_visual",
+      "direction": "output",
+      "electrical_constraints": null,
+      "id": "trigger-controller.out",
+      "label": "OUT",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "trigger-controller.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.061,
+        -0.073,
+        0.035
+      ],
+      "signal_type": "unknown"
+    }
+  ]
+}

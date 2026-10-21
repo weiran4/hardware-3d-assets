@@ -1,0 +1,30 @@
+PASS local shaft spin + pivot invariance + visible pointer movement
+Blender 4.3.2
+Read blend: "generic/oscilloscope/source/asset.blend"
+
+Blender quit
+PASS knob shafts physically bridge faceplate and knob
+Blender 4.3.2
+Read blend: "generic/oscilloscope/source/asset.blend"
+
+Blender quit
+PASS local shaft spin + pivot invariance + visible pointer movement
+Blender 4.3.2
+Read blend: "generic/trigger-controller/source/asset.blend"
+
+Blender quit
+PASS knob shafts physically bridge faceplate and knob
+Blender 4.3.2
+Read blend: "generic/trigger-controller/source/asset.blend"
+
+Blender quit
+PASS existing-palette material binding mutation is detected
+Blender 4.3.2
+Read blend: "generic/oscilloscope/source/asset.blend"
+
+Blender quit
+PASS unique datablock accounting: 3333
+Blender 4.3.2
+Read blend: "generic/oscilloscope/source/asset.blend"
+
+Blender quit

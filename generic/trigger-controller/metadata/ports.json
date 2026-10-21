@@ -1,0 +1,34 @@
+{
+  "asset_id": "trigger-controller",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y",
+  "ports": [
+    {
+      "anchor_name": "trigger-controller.out",
+      "connector": "generic_coaxial_visual",
+      "direction": "output",
+      "electrical_constraints": null,
+      "id": "trigger-controller.out",
+      "label": "OUT",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "trigger-controller.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.061,
+        -0.073,
+        0.035
+      ],
+      "signal_type": "unknown"
+    }
+  ]
+}

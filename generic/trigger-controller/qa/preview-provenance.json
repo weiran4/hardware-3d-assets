@@ -1,0 +1,42 @@
+{
+  "method": "Fresh candidate geometry/export; baseline diagnostic PNGs reused only when geometry, semantic and material digests match exactly. Reused views are not second renders.",
+  "views": {
+    "iso": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/trigger-controller/previews/iso.png"
+    },
+    "neutral": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/trigger-controller/previews/neutral.png"
+    },
+    "wireframe": {
+      "source": "rendered_this_candidate",
+      "path": "checkpoints/t4-r02/trigger-controller/previews/wireframe.png"
+    },
+    "front": {
+      "source": "verified_baseline_render",
+      "path": "checkpoints/final-baseline/trigger-controller/previews/front.png",
+      "sha256": "9b8a81d47b5742f08b89da7aaa815be65b45689670a35f1c41e31f59ead99d32"
+    },
+    "rear": {
+      "source": "verified_baseline_render",
+      "path": "checkpoints/final-baseline/trigger-controller/previews/rear.png",
+      "sha256": "f84d8ddb256aeeb365934e0edb51f3dc423df04d9b33df7f411e79c1f2f7ad2c"
+    },
+    "left": {
+      "source": "verified_baseline_render",
+      "path": "checkpoints/final-baseline/trigger-controller/previews/left.png",
+      "sha256": "79238bb75e20dc02272cb24aec251a7106dd4575ae6b95f47074bcb4a2433056"
+    },
+    "right": {
+      "source": "verified_baseline_render",
+      "path": "checkpoints/final-baseline/trigger-controller/previews/right.png",
+      "sha256": "03139e402d130ed143e0b85d6166d120863c1d6d606b0c8f63060afd6cbc6f29"
+    },
+    "top": {
+      "source": "verified_baseline_render",
+      "path": "checkpoints/final-baseline/trigger-controller/previews/top.png",
+      "sha256": "9f83b2ecaca102924f5bc8924834dc93e544a587fa1fd7fb16294b26fd3d7740"
+    }
+  }
+}

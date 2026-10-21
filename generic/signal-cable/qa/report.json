@@ -1,0 +1,2045 @@
+{
+  "asset_id": "signal-cable",
+  "unit_scale": 1.0,
+  "body_dimensions_m": null,
+  "asset_bounds_m": [
+    [
+      -0.135121688246727,
+      -0.09285246580839157,
+      0.0002811336889863014
+    ],
+    [
+      0.13072073459625244,
+      0.09285246580839157,
+      0.014928372576832771
+    ]
+  ],
+  "basis": {
+    "right": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "front": [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "negative_scale_count": 0,
+  "root_drift_m": 0.0,
+  "other_part_drift_m": 0.0,
+  "motion_checked_ids": [],
+  "motion_axis_max_drift": 0.0,
+  "motion_pivot_max_drift": 0.0,
+  "motion_marker_min_displacement": null,
+  "root_at_ground": true,
+  "part_ids": [
+    "signal-cable.body",
+    "signal-cable.boot_a",
+    "signal-cable.boot_a_rib0",
+    "signal-cable.boot_a_rib1",
+    "signal-cable.boot_a_rib2",
+    "signal-cable.boot_b",
+    "signal-cable.boot_b_rib0",
+    "signal-cable.boot_b_rib1",
+    "signal-cable.boot_b_rib2",
+    "signal-cable.connector_a",
+    "signal-cable.connector_b",
+    "signal-cable.plug_pin_a",
+    "signal-cable.plug_pin_b",
+    "signal-cable.plug_well_a",
+    "signal-cable.plug_well_b"
+  ],
+  "anchor_ids": [
+    "signal-cable.end_a",
+    "signal-cable.end_b"
+  ],
+  "all_ids": [
+    "signal-cable.body",
+    "signal-cable.boot_a",
+    "signal-cable.boot_a_rib0",
+    "signal-cable.boot_a_rib1",
+    "signal-cable.boot_a_rib2",
+    "signal-cable.boot_b",
+    "signal-cable.boot_b_rib0",
+    "signal-cable.boot_b_rib1",
+    "signal-cable.boot_b_rib2",
+    "signal-cable.connector_a",
+    "signal-cable.connector_b",
+    "signal-cable.end_a",
+    "signal-cable.end_b",
+    "signal-cable.plug_pin_a",
+    "signal-cable.plug_pin_b",
+    "signal-cable.plug_well_a",
+    "signal-cable.plug_well_b",
+    "signal-cable.root"
+  ],
+  "port_records": [
+    {
+      "anchor_name": "signal-cable.end_a",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_a",
+      "label": "END A",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_a",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "signal-cable.end_b",
+      "connector": "generic_coaxial_visual",
+      "direction": "bidirectional",
+      "electrical_constraints": null,
+      "id": "signal-cable.end_b",
+      "label": "END B",
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent_id": "signal-cable.connector_b",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0,
+        0,
+        0.0095
+      ],
+      "signal_type": "unknown"
+    }
+  ],
+  "metadata_errors": [],
+  "sidecar_present": true,
+  "unique_triangles": 1936,
+  "placed_triangles": 1936,
+  "curve_mesh_triangles": 776,
+  "missing_resources": [],
+  "geometry_digest": "aff1de9b5886f88fdf932e7257187b12556953aac439132d24c23d759ea25177",
+  "semantic_digest": "8f06af6c8aa06a56377b40be295970ee2aa59313e2d0f2e99d77cc48ab631094",
+  "material_digest": "8c2581b56311b159e136c10f994c4c2542e2b431134ddebe5bfc61938b13afe1",
+  "objects": {
+    "signal-cable.body": {
+      "sid": "signal-cable.body",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.135121688246727,
+          -0.09285246580839157,
+          0.0002811336889863014
+        ],
+        [
+          0.11373215168714523,
+          0.09285246580839157,
+          0.010660399682819843
+        ]
+      ],
+      "triangles": 776,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "signal-cable.boot_a": {
+      "sid": "signal-cable.boot_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.112691
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.047751
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10575374215841293,
+          0.04082923382520676,
+          0.004328372422605753
+        ],
+        [
+          0.11962812393903732,
+          0.05467257648706436,
+          0.0127283725887537
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib0": {
+      "sid": "signal-cable.boot_a_rib0",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.114116
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.046348
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11053277552127838,
+          0.04271895810961723,
+          0.003928372170776129
+        ],
+        [
+          0.11769959330558777,
+          0.04997668042778969,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib1": {
+      "sid": "signal-cable.boot_a_rib1",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.112691
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.047751
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10910752415657043,
+          0.04412204399704933,
+          0.003928372170776129
+        ],
+        [
+          0.11627434194087982,
+          0.051379766315221786,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_a_rib2": {
+      "sid": "signal-cable.boot_a_rib2",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.111266
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.049154
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10768226534128189,
+          0.04552512615919113,
+          0.003928372170776129
+        ],
+        [
+          0.11484908312559128,
+          0.052782848477363586,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b": {
+      "sid": "signal-cable.boot_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.112691
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.047751
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10575374215841293,
+          -0.05467257648706436,
+          0.004328372422605753
+        ],
+        [
+          0.11962812393903732,
+          -0.04082923382520676,
+          0.0127283725887537
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib0": {
+      "sid": "signal-cable.boot_b_rib0",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.114116
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.046348
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11053277552127838,
+          -0.04997668415307999,
+          0.003928372170776129
+        ],
+        [
+          0.11769959330558777,
+          -0.04271896183490753,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib1": {
+      "sid": "signal-cable.boot_b_rib1",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.112691
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.047751
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10910752415657043,
+          -0.051379766315221786,
+          0.003928372170776129
+        ],
+        [
+          0.11627434194087982,
+          -0.04412204399704933,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.boot_b_rib2": {
+      "sid": "signal-cable.boot_b_rib2",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.111266
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.049154
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10768226534128189,
+          -0.052782852202653885,
+          0.003928372170776129
+        ],
+        [
+          0.11484908312559128,
+          -0.04552512988448143,
+          0.013128372840583324
+        ]
+      ],
+      "triangles": 96,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "signal-cable.connector_a": {
+      "sid": "signal-cable.connector_a",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.121242
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.039332
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11176420748233795,
+          0.029860790818929672,
+          0.002128372434526682
+        ],
+        [
+          0.13072073459625244,
+          0.04880401864647865,
+          0.014928372576832771
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "signal-cable.connector_b": {
+      "sid": "signal-cable.connector_b",
+      "parent": "signal-cable.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.121242
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.039332
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11176420748233795,
+          -0.04880401864647865,
+          0.0021283722016960382
+        ],
+        [
+          0.13072073459625244,
+          -0.029860790818929672,
+          0.014928372576832771
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "signal-cable.end_a": {
+      "sid": "signal-cable.end_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.128012
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.032668
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "signal-cable.end_b": {
+      "sid": "signal-cable.end_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.128012
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.032668
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "signal-cable.plug_pin_a": {
+      "sid": "signal-cable.plug_pin_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.125518
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.035123
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.122182197868824,
+          0.031812604516744614,
+          0.007328371983021498
+        ],
+        [
+          0.12885430455207825,
+          0.038433704525232315,
+          0.00972837209701538
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "signal-cable.plug_pin_b": {
+      "sid": "signal-cable.plug_pin_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.125518
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.035123
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.122182197868824,
+          -0.038433704525232315,
+          0.007328371983021498
+        ],
+        [
+          0.12885430455207825,
+          -0.031812604516744614,
+          0.00972837209701538
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "signal-cable.plug_well_a": {
+      "sid": "signal-cable.plug_well_a",
+      "parent": "signal-cable.connector_a",
+      "kind": "part",
+      "matrix_world": [
+        [
+          0.701542,
+          0.0,
+          0.712628,
+          0.122668
+        ],
+        [
+          0.712628,
+          -0.0,
+          -0.701542,
+          0.037929
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11886832118034363,
+          0.034092217683792114,
+          0.004128372296690941
+        ],
+        [
+          0.12646713852882385,
+          0.04176642745733261,
+          0.012928372249007225
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "signal-cable.plug_well_b": {
+      "sid": "signal-cable.plug_well_b",
+      "parent": "signal-cable.connector_b",
+      "kind": "part",
+      "matrix_world": [
+        [
+          -0.701542,
+          -0.0,
+          0.712628,
+          0.122668
+        ],
+        [
+          0.712628,
+          0.0,
+          0.701542,
+          -0.037929
+        ],
+        [
+          -0.0,
+          1.0,
+          0.0,
+          0.008528
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11886832118034363,
+          -0.04176642745733261,
+          0.004128372296690941
+        ],
+        [
+          0.12646713852882385,
+          -0.034092217683792114,
+          0.012928372249007225
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "signal-cable.root": {
+      "sid": "signal-cable.root",
+      "parent": null,
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "materials": {
+    "palette.blue": {
+      "base_color": [
+        0.29,
+        0.4,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.rubber": {
+      "base_color": [
+        0.075,
+        0.095,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.metal": {
+      "base_color": [
+        0.52,
+        0.59,
+        0.56,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.gold": {
+      "base_color": [
+        0.73,
+        0.55,
+        0.24,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.ink": {
+      "base_color": [
+        0.035,
+        0.046,
+        0.05,
+        1.0
+      ],
+      "roughness": 0.82
+    }
+  },
+  "material_bindings": {
+    "signal-cable.body": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib0": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_a_rib2": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib0": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.boot_b_rib2": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.connector_a": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.connector_b": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_pin_a": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_pin_b": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_well_a": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "signal-cable.plug_well_b": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "runtime": {
+    "blender": "4.3.2",
+    "python": "3.13.5",
+    "engine": "CYCLES",
+    "device": "CPU"
+  },
+  "cable_length_m": 0.6000000007506544,
+  "cable_diameter_m": 0.004999999888241291,
+  "connector_count": 2,
+  "errors": [],
+  "status": "PASS"
+}

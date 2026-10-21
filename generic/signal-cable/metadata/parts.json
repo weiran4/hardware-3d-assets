@@ -1,0 +1,25 @@
+{
+  "asset_id": "signal-cable",
+  "root": "signal-cable.root",
+  "parts": {
+    "signal-cable.body": "signal-cable.body",
+    "signal-cable.boot_a": "signal-cable.boot_a",
+    "signal-cable.boot_a_rib0": "signal-cable.boot_a_rib0",
+    "signal-cable.boot_a_rib1": "signal-cable.boot_a_rib1",
+    "signal-cable.boot_a_rib2": "signal-cable.boot_a_rib2",
+    "signal-cable.boot_b": "signal-cable.boot_b",
+    "signal-cable.boot_b_rib0": "signal-cable.boot_b_rib0",
+    "signal-cable.boot_b_rib1": "signal-cable.boot_b_rib1",
+    "signal-cable.boot_b_rib2": "signal-cable.boot_b_rib2",
+    "signal-cable.connector_a": "signal-cable.connector_a",
+    "signal-cable.connector_b": "signal-cable.connector_b",
+    "signal-cable.plug_pin_a": "signal-cable.plug_pin_a",
+    "signal-cable.plug_pin_b": "signal-cable.plug_pin_b",
+    "signal-cable.plug_well_a": "signal-cable.plug_well_a",
+    "signal-cable.plug_well_b": "signal-cable.plug_well_b"
+  },
+  "anchors": {
+    "signal-cable.end_a": "signal-cable.end_a",
+    "signal-cable.end_b": "signal-cable.end_b"
+  }
+}

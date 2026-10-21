@@ -1,0 +1,5437 @@
+{
+  "asset_id": "oscilloscope",
+  "unit_scale": 1.0,
+  "body_dimensions_m": [
+    0.2800000011920929,
+    0.1599999964237213,
+    0.12999999523162842
+  ],
+  "asset_bounds_m": [
+    [
+      -0.14000000059604645,
+      -0.1030999943614006,
+      0.0
+    ],
+    [
+      0.14149999618530273,
+      0.08150000125169754,
+      0.1589999943971634
+    ]
+  ],
+  "basis": {
+    "right": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "front": [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "negative_scale_count": 0,
+  "root_drift_m": 0.0,
+  "other_part_drift_m": 0.0,
+  "motion_checked_ids": [
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.knob",
+    "oscilloscope.knob_time"
+  ],
+  "motion_axis_max_drift": 9.541398640621973e-08,
+  "motion_pivot_max_drift": 0.0,
+  "motion_marker_min_displacement": 0.0016655133911478756,
+  "root_at_ground": true,
+  "part_ids": [
+    "oscilloscope.body",
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.foot_-1_-1",
+    "oscilloscope.foot_-1_1",
+    "oscilloscope.foot_1_-1",
+    "oscilloscope.foot_1_1",
+    "oscilloscope.grid_h_1",
+    "oscilloscope.grid_h_2",
+    "oscilloscope.grid_h_3",
+    "oscilloscope.grid_h_4",
+    "oscilloscope.grid_v_1",
+    "oscilloscope.grid_v_2",
+    "oscilloscope.grid_v_3",
+    "oscilloscope.grid_v_4",
+    "oscilloscope.grid_v_5",
+    "oscilloscope.grid_v_6",
+    "oscilloscope.grid_v_7",
+    "oscilloscope.handle",
+    "oscilloscope.handle_post_-1",
+    "oscilloscope.handle_post_1",
+    "oscilloscope.knob",
+    "oscilloscope.knob_pointer",
+    "oscilloscope.knob_shaft",
+    "oscilloscope.knob_time",
+    "oscilloscope.knob_time_pointer",
+    "oscilloscope.knob_time_shaft",
+    "oscilloscope.label_ch1",
+    "oscilloscope.label_level",
+    "oscilloscope.label_time",
+    "oscilloscope.label_trig",
+    "oscilloscope.model",
+    "oscilloscope.panel_front",
+    "oscilloscope.port_ch1",
+    "oscilloscope.port_ch1_base",
+    "oscilloscope.port_ch1_lug_-1",
+    "oscilloscope.port_ch1_lug_1",
+    "oscilloscope.port_ch1_pin",
+    "oscilloscope.port_ch1_well",
+    "oscilloscope.port_trig",
+    "oscilloscope.port_trig_base",
+    "oscilloscope.port_trig_lug_-1",
+    "oscilloscope.port_trig_lug_1",
+    "oscilloscope.port_trig_pin",
+    "oscilloscope.port_trig_well",
+    "oscilloscope.rear_panel",
+    "oscilloscope.screen",
+    "oscilloscope.screen_bezel",
+    "oscilloscope.screen_caption",
+    "oscilloscope.top_strip",
+    "oscilloscope.trace",
+    "oscilloscope.vent_0",
+    "oscilloscope.vent_1",
+    "oscilloscope.vent_2",
+    "oscilloscope.vent_3",
+    "oscilloscope.vent_4",
+    "oscilloscope.vent_5"
+  ],
+  "anchor_ids": [
+    "oscilloscope.ch1",
+    "oscilloscope.trig"
+  ],
+  "all_ids": [
+    "oscilloscope.body",
+    "oscilloscope.button",
+    "oscilloscope.button_1",
+    "oscilloscope.button_2",
+    "oscilloscope.button_3",
+    "oscilloscope.ch1",
+    "oscilloscope.foot_-1_-1",
+    "oscilloscope.foot_-1_1",
+    "oscilloscope.foot_1_-1",
+    "oscilloscope.foot_1_1",
+    "oscilloscope.grid_h_1",
+    "oscilloscope.grid_h_2",
+    "oscilloscope.grid_h_3",
+    "oscilloscope.grid_h_4",
+    "oscilloscope.grid_v_1",
+    "oscilloscope.grid_v_2",
+    "oscilloscope.grid_v_3",
+    "oscilloscope.grid_v_4",
+    "oscilloscope.grid_v_5",
+    "oscilloscope.grid_v_6",
+    "oscilloscope.grid_v_7",
+    "oscilloscope.handle",
+    "oscilloscope.handle_post_-1",
+    "oscilloscope.handle_post_1",
+    "oscilloscope.knob",
+    "oscilloscope.knob_pointer",
+    "oscilloscope.knob_shaft",
+    "oscilloscope.knob_time",
+    "oscilloscope.knob_time_pointer",
+    "oscilloscope.knob_time_shaft",
+    "oscilloscope.label_ch1",
+    "oscilloscope.label_level",
+    "oscilloscope.label_time",
+    "oscilloscope.label_trig",
+    "oscilloscope.model",
+    "oscilloscope.panel_front",
+    "oscilloscope.port_ch1",
+    "oscilloscope.port_ch1_base",
+    "oscilloscope.port_ch1_lug_-1",
+    "oscilloscope.port_ch1_lug_1",
+    "oscilloscope.port_ch1_pin",
+    "oscilloscope.port_ch1_well",
+    "oscilloscope.port_trig",
+    "oscilloscope.port_trig_base",
+    "oscilloscope.port_trig_lug_-1",
+    "oscilloscope.port_trig_lug_1",
+    "oscilloscope.port_trig_pin",
+    "oscilloscope.port_trig_well",
+    "oscilloscope.rear_panel",
+    "oscilloscope.root",
+    "oscilloscope.screen",
+    "oscilloscope.screen_bezel",
+    "oscilloscope.screen_caption",
+    "oscilloscope.top_strip",
+    "oscilloscope.trace",
+    "oscilloscope.trig",
+    "oscilloscope.vent_0",
+    "oscilloscope.vent_1",
+    "oscilloscope.vent_2",
+    "oscilloscope.vent_3",
+    "oscilloscope.vent_4",
+    "oscilloscope.vent_5"
+  ],
+  "port_records": [
+    {
+      "anchor_name": "oscilloscope.ch1",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.ch1",
+      "label": "CH1",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.047,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "oscilloscope.trig",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.trig",
+      "label": "TRIG",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.104,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    }
+  ],
+  "metadata_errors": [],
+  "sidecar_present": true,
+  "unique_triangles": 3333,
+  "placed_triangles": 3333,
+  "curve_mesh_triangles": 548,
+  "missing_resources": [],
+  "geometry_digest": "ac33eb4d31b0af9a4328fc92d3ce5a6a3f27d127d25df5f5249feb8b2dc2af92",
+  "semantic_digest": "5b70b814beeab17e362cc7d669e83cf99ea52569a27b8af4a6d9b9f85c194fcd",
+  "material_digest": "32d0120e81d1de57401e64931c2ade53251c7109a2565299641797c2c4ea4041",
+  "objects": {
+    "oscilloscope.body": {
+      "sid": "oscilloscope.body",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.14000000059604645,
+          -0.07999999821186066,
+          0.012000001966953278
+        ],
+        [
+          0.14000000059604645,
+          0.07999999821186066,
+          0.1419999897480011
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "oscilloscope.button": {
+      "sid": "oscilloscope.button",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.035
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.087
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.02800000086426735,
+          -0.09099999815225601,
+          0.06650000065565109
+        ],
+        [
+          0.041999999433755875,
+          -0.08299999684095383,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "oscilloscope.button_1": {
+      "sid": "oscilloscope.button_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.058
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.087
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.050999999046325684,
+          -0.09099999815225601,
+          0.06650000065565109
+        ],
+        [
+          0.06499999761581421,
+          -0.08299999684095383,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.button_2": {
+      "sid": "oscilloscope.button_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.081
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.087
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.07400000095367432,
+          -0.09099999815225601,
+          0.06650000065565109
+        ],
+        [
+          0.08799999952316284,
+          -0.08299999684095383,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.button_3": {
+      "sid": "oscilloscope.button_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.087
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09700000286102295,
+          -0.09099999815225601,
+          0.06650000065565109
+        ],
+        [
+          0.11100000143051147,
+          -0.08299999684095383,
+          0.07349999994039536
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.white"
+      ]
+    },
+    "oscilloscope.ch1": {
+      "sid": "oscilloscope.ch1",
+      "parent": "oscilloscope.root",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.foot_-1_-1": {
+      "sid": "oscilloscope.foot_-1_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.054
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12000000476837158,
+          -0.06949999928474426,
+          0.0
+        ],
+        [
+          -0.08799999952316284,
+          -0.03850000351667404,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_-1_1": {
+      "sid": "oscilloscope.foot_-1_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.104
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.054
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12000000476837158,
+          0.03850000351667404,
+          0.0
+        ],
+        [
+          -0.08799999952316284,
+          0.06949999928474426,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_1_-1": {
+      "sid": "oscilloscope.foot_1_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.054
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.08799999952316284,
+          -0.06949999928474426,
+          0.0
+        ],
+        [
+          0.12000000476837158,
+          -0.03850000351667404,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.foot_1_1": {
+      "sid": "oscilloscope.foot_1_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.054
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.08799999952316284,
+          0.03850000351667404,
+          0.0
+        ],
+        [
+          0.12000000476837158,
+          0.06949999928474426,
+          0.012000000104308128
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.grid_h_1": {
+      "sid": "oscilloscope.grid_h_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0915
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0617
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12049999833106995,
+          -0.09162499755620956,
+          0.06155000254511833
+        ],
+        [
+          -0.001499999314546585,
+          -0.09137500077486038,
+          0.06185000017285347
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_2": {
+      "sid": "oscilloscope.grid_h_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0915
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0759
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12049999833106995,
+          -0.09162499755620956,
+          0.07575000077486038
+        ],
+        [
+          -0.001499999314546585,
+          -0.09137500077486038,
+          0.07605000585317612
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_3": {
+      "sid": "oscilloscope.grid_h_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0915
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0901
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12049999833106995,
+          -0.09162499755620956,
+          0.08994999527931213
+        ],
+        [
+          -0.001499999314546585,
+          -0.09137500077486038,
+          0.09025000035762787
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_h_4": {
+      "sid": "oscilloscope.grid_h_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0915
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1043
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12049999833106995,
+          -0.09162499755620956,
+          0.10414999723434448
+        ],
+        [
+          -0.001499999314546585,
+          -0.09137500077486038,
+          0.10445000231266022
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_1": {
+      "sid": "oscilloscope.grid_v_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.1075
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.10765000432729721,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.10734999924898148,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_2": {
+      "sid": "oscilloscope.grid_v_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.092
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.0921500027179718,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.09184999763965607,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_3": {
+      "sid": "oscilloscope.grid_v_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0765
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07665000110864639,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.07634999603033066,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_4": {
+      "sid": "oscilloscope.grid_v_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.061149999499320984,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.060850001871585846,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_5": {
+      "sid": "oscilloscope.grid_v_5",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0455
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.045649997889995575,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.04535000026226044,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_6": {
+      "sid": "oscilloscope.grid_v_6",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.03
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.030150000005960464,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.029849998652935028,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.grid_v_7": {
+      "sid": "oscilloscope.grid_v_7",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0145
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0914
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.01464999932795763,
+          -0.09152499586343765,
+          0.05049999803304672
+        ],
+        [
+          -0.014349999837577343,
+          -0.09127499908208847,
+          0.11549999564886093
+        ]
+      ],
+      "triangles": 12,
+      "materials": [
+        "palette.grid"
+      ]
+    },
+    "oscilloscope.handle": {
+      "sid": "oscilloscope.handle",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.015
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.154
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.07249999791383743,
+          0.005499999970197678,
+          0.14900000393390656
+        ],
+        [
+          0.07249999791383743,
+          0.02449999935925007,
+          0.1589999943971634
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.handle_post_-1": {
+      "sid": "oscilloscope.handle_post_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.067
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.015
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.148
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.0729999989271164,
+          0.004999999888241291,
+          0.1420000046491623
+        ],
+        [
+          -0.061000000685453415,
+          0.02499999850988388,
+          0.15399999916553497
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.handle_post_1": {
+      "sid": "oscilloscope.handle_post_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.067
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.015
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.148
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.061000000685453415,
+          0.004999999888241291,
+          0.1420000046491623
+        ],
+        [
+          0.0729999989271164,
+          0.02499999850988388,
+          0.15399999916553497
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob": {
+      "sid": "oscilloscope.knob",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.048
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.095
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.032999999821186066,
+          -0.10199999809265137,
+          0.08399999886751175
+        ],
+        [
+          0.06300000101327896,
+          -0.08799999952316284,
+          0.11400000005960464
+        ]
+      ],
+      "triangles": 188,
+      "materials": [
+        "palette.cream"
+      ]
+    },
+    "oscilloscope.knob_pointer": {
+      "sid": "oscilloscope.knob_pointer",
+      "parent": "oscilloscope.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.048
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.1027
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.1077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.04735000059008598,
+          -0.1030999943614006,
+          0.10357499867677689
+        ],
+        [
+          0.048650000244379044,
+          -0.1022999957203865,
+          0.11182499676942825
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob_shaft": {
+      "sid": "oscilloscope.knob_shaft",
+      "parent": "oscilloscope.knob",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.048
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.087
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.04320000112056732,
+          -0.09099999815225601,
+          0.094200000166893
+        ],
+        [
+          0.052799999713897705,
+          -0.08299999684095383,
+          0.10379999876022339
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.knob_time": {
+      "sid": "oscilloscope.knob_time",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.095
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09300000220537186,
+          -0.10199999809265137,
+          0.08799999952316284
+        ],
+        [
+          0.11500000208616257,
+          -0.08799999952316284,
+          0.10999999940395355
+        ]
+      ],
+      "triangles": 188,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.knob_time_pointer": {
+      "sid": "oscilloscope.knob_time_pointer",
+      "parent": "oscilloscope.knob_time",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.1027
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.10538
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10334999859333038,
+          -0.1030999943614006,
+          0.102354995906353
+        ],
+        [
+          0.10465000569820404,
+          -0.1022999957203865,
+          0.10840500146150589
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.knob_time_shaft": {
+      "sid": "oscilloscope.knob_time_shaft",
+      "parent": "oscilloscope.knob_time",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.087
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.099
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10048000514507294,
+          -0.09099999815225601,
+          0.09548000246286392
+        ],
+        [
+          0.10751999914646149,
+          -0.08299999684095383,
+          0.10251999646425247
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.rubber"
+      ]
+    },
+    "oscilloscope.label_ch1": {
+      "sid": "oscilloscope.label_ch1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.085
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.022
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.04267364740371704,
+          -0.08500000089406967,
+          0.02054769918322563
+        ],
+        [
+          0.0506119504570961,
+          -0.08500000089406967,
+          0.023837700486183167
+        ]
+      ],
+      "triangles": 20,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_level": {
+      "sid": "oscilloscope.label_level",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.048
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.085
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.121
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.04312799870967865,
+          -0.08500000089406967,
+          0.11977599561214447
+        ],
+        [
+          0.05312800034880638,
+          -0.08500000089406967,
+          0.12252800166606903
+        ]
+      ],
+      "triangles": 33,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_time": {
+      "sid": "oscilloscope.label_time",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.085
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.117
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09979800134897232,
+          -0.08500000089406967,
+          0.11580000072717667
+        ],
+        [
+          0.10815399885177612,
+          -0.08500000089406967,
+          0.11852800101041794
+        ]
+      ],
+      "triangles": 31,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.label_trig": {
+      "sid": "oscilloscope.label_trig",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.085
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.022
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09891460090875626,
+          -0.08500000089406967,
+          0.02054769918322563
+        ],
+        [
+          0.1088504046201706,
+          -0.08500000089406967,
+          0.023837700486183167
+        ]
+      ],
+      "triangles": 37,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.model": {
+      "sid": "oscilloscope.model",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.122
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.085
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.025
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12177500128746033,
+          -0.08500000089406967,
+          0.023454999551177025
+        ],
+        [
+          -0.08693999797105789,
+          -0.08500000089406967,
+          0.026955001056194305
+        ]
+      ],
+      "triangles": 92,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.panel_front": {
+      "sid": "oscilloscope.panel_front",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.081
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.13349999487400055,
+          -0.08349999785423279,
+          0.017999999225139618
+        ],
+        [
+          0.13349999487400055,
+          -0.07850000262260437,
+          0.13600000739097595
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.cream"
+      ]
+    },
+    "oscilloscope.port_ch1": {
+      "sid": "oscilloscope.port_ch1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.089
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.03959999978542328,
+          -0.09400000423192978,
+          0.032600000500679016
+        ],
+        [
+          0.0543999969959259,
+          -0.08399999886751175,
+          0.04739999771118164
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_base": {
+      "sid": "oscilloscope.port_ch1_base",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.083
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.03749999776482582,
+          -0.08549999445676804,
+          0.030499998480081558
+        ],
+        [
+          0.05649999901652336,
+          -0.08049999922513962,
+          0.0494999997317791
+        ]
+      ],
+      "triangles": 124,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.port_ch1_lug_-1": {
+      "sid": "oscilloscope.port_ch1_lug_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0394
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.088
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.03790000081062317,
+          -0.08950000256299973,
+          0.03849999979138374
+        ],
+        [
+          0.04089999943971634,
+          -0.08649999648332596,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_lug_1": {
+      "sid": "oscilloscope.port_ch1_lug_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0546
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.088
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.05310000106692314,
+          -0.08950000256299973,
+          0.03849999979138374
+        ],
+        [
+          0.05609999969601631,
+          -0.08649999648332596,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_ch1_pin": {
+      "sid": "oscilloscope.port_ch1_pin",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0872
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.045899998396635056,
+          -0.08870000392198563,
+          0.03889999911189079
+        ],
+        [
+          0.04809999838471413,
+          -0.08569999784231186,
+          0.041099999099969864
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "oscilloscope.port_ch1_well": {
+      "sid": "oscilloscope.port_ch1_well",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.047
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0858
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.0421999990940094,
+          -0.08630000054836273,
+          0.03519999980926514
+        ],
+        [
+          0.05179999768733978,
+          -0.08529999852180481,
+          0.04479999840259552
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.port_trig": {
+      "sid": "oscilloscope.port_trig",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.089
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.0966000035405159,
+          -0.09400000423192978,
+          0.032600000500679016
+        ],
+        [
+          0.11140000075101852,
+          -0.08399999886751175,
+          0.04739999771118164
+        ]
+      ],
+      "triangles": 128,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_base": {
+      "sid": "oscilloscope.port_trig_base",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.083
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09450000524520874,
+          -0.08549999445676804,
+          0.030499998480081558
+        ],
+        [
+          0.11349999904632568,
+          -0.08049999922513962,
+          0.0494999997317791
+        ]
+      ],
+      "triangles": 124,
+      "materials": [
+        "palette.sage"
+      ]
+    },
+    "oscilloscope.port_trig_lug_-1": {
+      "sid": "oscilloscope.port_trig_lug_-1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0964
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.088
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09489999711513519,
+          -0.08950000256299973,
+          0.03849999979138374
+        ],
+        [
+          0.09790000319480896,
+          -0.08649999648332596,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_lug_1": {
+      "sid": "oscilloscope.port_trig_lug_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.1116
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.088
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.11009999364614487,
+          -0.08950000256299973,
+          0.03849999979138374
+        ],
+        [
+          0.11309999972581863,
+          -0.08649999648332596,
+          0.04149999842047691
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.metal"
+      ]
+    },
+    "oscilloscope.port_trig_pin": {
+      "sid": "oscilloscope.port_trig_pin",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0872
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.10289999842643738,
+          -0.08870000392198563,
+          0.03889999911189079
+        ],
+        [
+          0.10510000586509705,
+          -0.08569999784231186,
+          0.041099999099969864
+        ]
+      ],
+      "triangles": 28,
+      "materials": [
+        "palette.gold"
+      ]
+    },
+    "oscilloscope.port_trig_well": {
+      "sid": "oscilloscope.port_trig_well",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.0858
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.09920000284910202,
+          -0.08630000054836273,
+          0.03519999980926514
+        ],
+        [
+          0.1088000014424324,
+          -0.08529999852180481,
+          0.04479999840259552
+        ]
+      ],
+      "triangles": 60,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.rear_panel": {
+      "sid": "oscilloscope.rear_panel",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0805
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.077
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12300000339746475,
+          0.0794999971985817,
+          0.02800000086426735
+        ],
+        [
+          0.12300000339746475,
+          0.08150000125169754,
+          0.12600000202655792
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.blue"
+      ]
+    },
+    "oscilloscope.root": {
+      "sid": "oscilloscope.root",
+      "parent": null,
+      "kind": "root",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.screen": {
+      "sid": "oscilloscope.screen",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0905
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12299999594688416,
+          -0.0912499949336052,
+          0.047499995678663254
+        ],
+        [
+          0.000999998301267624,
+          -0.08974999934434891,
+          0.1184999942779541
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.screen"
+      ]
+    },
+    "oscilloscope.screen_bezel": {
+      "sid": "oscilloscope.screen_bezel",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.061
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.086
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.083
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12950000166893005,
+          -0.09000000357627869,
+          0.04149999842047691
+        ],
+        [
+          0.007499996572732925,
+          -0.0820000022649765,
+          0.12449999153614044
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.screen_caption": {
+      "sid": "oscilloscope.screen_caption",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.117
+        ],
+        [
+          0.0,
+          -0.0,
+          -1.0,
+          -0.092
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0,
+          0.112
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.11680799722671509,
+          -0.09200000017881393,
+          0.11076400429010391
+        ],
+        [
+          -0.11005199700593948,
+          -0.09200000017881393,
+          0.11356400698423386
+        ]
+      ],
+      "triangles": 20,
+      "materials": [
+        "palette.trace"
+      ]
+    },
+    "oscilloscope.top_strip": {
+      "sid": "oscilloscope.top_strip",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.084
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.129
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.1264999955892563,
+          -0.08474999666213989,
+          0.12599998712539673
+        ],
+        [
+          0.1264999955892563,
+          -0.0832500010728836,
+          0.13199999928474426
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.coral"
+      ]
+    },
+    "oscilloscope.trace": {
+      "sid": "oscilloscope.trace",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          -0.12072961777448654,
+          -0.09279999881982803,
+          0.06130469590425491
+        ],
+        [
+          -0.0012703824322670698,
+          -0.09120000153779984,
+          0.10469530522823334
+        ]
+      ],
+      "triangles": 548,
+      "materials": [
+        "palette.trace"
+      ]
+    },
+    "oscilloscope.trig": {
+      "sid": "oscilloscope.trig",
+      "parent": "oscilloscope.root",
+      "kind": "anchor",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.104
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.094
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "oscilloscope.vent_0": {
+      "sid": "oscilloscope.vent_0",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.032
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          0.029000001028180122,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          0.03500000014901161,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_1": {
+      "sid": "oscilloscope.vent_1",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.02
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          0.016999999061226845,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          0.023000000044703484,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_2": {
+      "sid": "oscilloscope.vent_2",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.008
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          0.005000000353902578,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          0.010999999940395355,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_3": {
+      "sid": "oscilloscope.vent_3",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.004
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          -0.007000000216066837,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          -0.0010000001639127731,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_4": {
+      "sid": "oscilloscope.vent_4",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.016
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          -0.01900000125169754,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          -0.013000000268220901,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    },
+    "oscilloscope.vent_5": {
+      "sid": "oscilloscope.vent_5",
+      "parent": "oscilloscope.root",
+      "kind": "part",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.141
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.028
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds": [
+        [
+          0.140500009059906,
+          -0.03100000135600567,
+          0.07200000435113907
+        ],
+        [
+          0.14149999618530273,
+          -0.02500000037252903,
+          0.1080000028014183
+        ]
+      ],
+      "triangles": 44,
+      "materials": [
+        "palette.ink"
+      ]
+    }
+  },
+  "materials": {
+    "palette.blue": {
+      "base_color": [
+        0.29,
+        0.4,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.sage": {
+      "base_color": [
+        0.39,
+        0.54,
+        0.4,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.white": {
+      "base_color": [
+        0.86,
+        0.87,
+        0.8,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.rubber": {
+      "base_color": [
+        0.075,
+        0.095,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.grid": {
+      "base_color": [
+        0.16,
+        0.25,
+        0.19,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.ink": {
+      "base_color": [
+        0.035,
+        0.046,
+        0.05,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.cream": {
+      "base_color": [
+        0.76,
+        0.75,
+        0.64,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.coral": {
+      "base_color": [
+        0.72,
+        0.25,
+        0.14,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.metal": {
+      "base_color": [
+        0.52,
+        0.59,
+        0.56,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.gold": {
+      "base_color": [
+        0.73,
+        0.55,
+        0.24,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.screen": {
+      "base_color": [
+        0.065,
+        0.12,
+        0.105,
+        1.0
+      ],
+      "roughness": 0.82
+    },
+    "palette.trace": {
+      "base_color": [
+        0.72,
+        0.85,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.82
+    }
+  },
+  "material_bindings": {
+    "oscilloscope.body": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_1": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_2": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.button_3": {
+      "slots": [
+        "palette.white"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_-1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_-1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_1_-1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.foot_1_1": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_1": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_2": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_3": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_h_4": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_1": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_2": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_3": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_4": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_5": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_6": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.grid_v_7": {
+      "slots": [
+        "palette.grid"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle_post_-1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.handle_post_1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob": {
+      "slots": [
+        "palette.cream"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_pointer": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_shaft": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time_pointer": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.knob_time_shaft": {
+      "slots": [
+        "palette.rubber"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_ch1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_level": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_time": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.label_trig": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.model": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.panel_front": {
+      "slots": [
+        "palette.cream"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_base": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_lug_-1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_lug_1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_pin": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_ch1_well": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_base": {
+      "slots": [
+        "palette.sage"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_lug_-1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_lug_1": {
+      "slots": [
+        "palette.metal"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_pin": {
+      "slots": [
+        "palette.gold"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.port_trig_well": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.rear_panel": {
+      "slots": [
+        "palette.blue"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen": {
+      "slots": [
+        "palette.screen"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen_bezel": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.screen_caption": {
+      "slots": [
+        "palette.trace"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.top_strip": {
+      "slots": [
+        "palette.coral"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.trace": {
+      "slots": [
+        "palette.trace"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_0": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_1": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_2": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_3": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_4": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "oscilloscope.vent_5": {
+      "slots": [
+        "palette.ink"
+      ],
+      "face_material_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "runtime": {
+    "blender": "4.3.2",
+    "python": "3.13.5",
+    "engine": "CYCLES",
+    "device": "CPU"
+  },
+  "errors": [],
+  "status": "PASS"
+}

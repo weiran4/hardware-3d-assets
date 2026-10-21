@@ -1,0 +1,45 @@
+{
+  "asset_id": "trigger-controller",
+  "seed": 42,
+  "body_dimensions_m": [
+    0.18,
+    0.12,
+    0.07
+  ],
+  "triangle_budget": 5000,
+  "required_part_ids": [
+    "trigger-controller.body",
+    "trigger-controller.knob",
+    "trigger-controller.button",
+    "trigger-controller.port_out"
+  ],
+  "required_anchor_ids": [
+    "trigger-controller.out"
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 1024,
+    "samples": 128,
+    "view_transform": "Standard",
+    "exposure": 0,
+    "camera_direction": [
+      1.05,
+      -1.55,
+      1.0
+    ],
+    "camera_margin": 1.24,
+    "light_position": [
+      -0.8,
+      -1.1,
+      1.8
+    ],
+    "light_energy": 28,
+    "light_size": 0.45,
+    "denoising": false,
+    "denoising_reason": "Cloud Blender build has no OpenImageDenoise support; tested 2026-10-21",
+    "world_strength": 0.65,
+    "fill_energy": 5,
+    "outline_px": 1.6
+  }
+}

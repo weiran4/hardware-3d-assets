@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+checkpoints/
+qa/independent-review/outputs/
+render-temp/
+*.zip
+.env
+.env.*

@@ -1,0 +1,61 @@
+{
+  "asset_id": "oscilloscope",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y",
+  "ports": [
+    {
+      "anchor_name": "oscilloscope.ch1",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.ch1",
+      "label": "CH1",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.047,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    },
+    {
+      "anchor_name": "oscilloscope.trig",
+      "connector": "generic_coaxial_visual",
+      "direction": "input",
+      "electrical_constraints": null,
+      "id": "oscilloscope.trig",
+      "label": "TRIG",
+      "normal": [
+        0.0,
+        -1.0,
+        8.940696716308594e-08
+      ],
+      "orientation_wxyz": [
+        0.7071068286895752,
+        0.7071067690849304,
+        0.0,
+        0.0
+      ],
+      "parent_id": "oscilloscope.root",
+      "physical_compatibility": "unknown",
+      "position_m": [
+        0.104,
+        -0.094,
+        0.04
+      ],
+      "signal_type": "unknown"
+    }
+  ]
+}

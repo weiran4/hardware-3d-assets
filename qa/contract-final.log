@@ -1,0 +1,18 @@
+test_anchor_metadata_roundtrip (test_contract.TestDelivery.test_anchor_metadata_roundtrip) ... ok
+test_placed_geometry_budget (test_contract.TestDelivery.test_placed_geometry_budget) ... ok
+test_roundtrip_good (test_contract.TestDelivery.test_roundtrip_good) ... ok
+test_clean_rerun_resources (test_contract.TestRepeat.test_clean_rerun_resources) ... ok
+test_cable_length_and_connectors (test_contract.TestReuse.test_cable_length_and_connectors) ... ok
+test_scale_pivot_isolation (test_contract.TestReuse.test_scale_pivot_isolation) ... ok
+test_unknown_constraints_present_not_missing (test_contract.TestReuse.test_unknown_constraints_present_not_missing) ... ok
+test_anchor (test_contract.TestScope.test_anchor) ... ok
+test_budget (test_contract.TestScope.test_budget) ... ok
+test_duplicate (test_contract.TestScope.test_duplicate) ... ok
+test_required_parts (test_contract.TestScope.test_required_parts) ... ok
+test_units_axes_dimensions (test_contract.TestScope.test_units_axes_dimensions) ... ok
+test_valid (test_contract.TestScope.test_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+OK
