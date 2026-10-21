@@ -34,7 +34,10 @@ test('flow is keyboard operable, reduced-motion safe and readable at mobile/tabl
 test('a late conceptual endpoint request cannot replace a newer same-model interface choice',async({page})=>{
  await ready(page);let release,seen;const hold=new Promise(r=>release=r),requested=new Promise(r=>seen=r);let calls=0;
  await page.route('**/assets/rtds/gtdi-v2-2.01.glb',async route=>{if(++calls===1){seen();await hold;}await route.continue();});
- await page.locator('#flow-inspect-gtdi').click();await requested;await page.locator('[data-variant="gtdi-v2"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
- await page.locator('[data-group="digital_input"]').click();await selectPhysical(page,'gtdi-v2-2.01.bank1_odd');release();await page.waitForLoadState('networkidle');
+ await page.locator('#flow-inspect-gtdi').click();await requested;await page.locator('[data-variant="gtdi-v2"]').click();
+ // Three FileLoader coalesces simultaneous requests for one GLB URL. Choose from
+ // the already-loaded metadata before releasing that shared pending request.
+ await expect(page.locator('[data-group="digital_input"]')).toBeVisible();await page.locator('[data-group="digital_input"]').click();await selectPhysical(page,'gtdi-v2-2.01.bank1_odd');await expect(page.locator('#rtds-physical-port')).toHaveValue('gtdi-v2-2.01.bank1_odd');
+ release();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-asset','gtdi-v2-2.01');await page.waitForLoadState('networkidle');
  await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids','gtdi-v2-2.01.bank1_odd');await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);
 });

@@ -1,7 +1,9 @@
 // Software-rendered screenshots across all breakpoints may take longer than one default case.
 import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';import {selectPhysical} from './rtds-test-helpers.js';
 test.setTimeout(120000);
-async function loaded(page){await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');}
+async function loaded(page){await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
+ // Navigating to the same hash is not a reload: explicitly choose this case's model.
+ await page.locator('[data-variant="novacor-2.0"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-asset','novacor-2.0-2023');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');}
 async function shot(page,name){await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-ux-${name}.png`,fullPage:true});}
 
 test('02 automatically opens a shared03 panel with no repetitive Aurora or GTIO buttons',async({page})=>{
