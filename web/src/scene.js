@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import {defaultCamera,viewFrustum,pulseVisualState,layoutPortLabels} from './scene-config.js';
+import {defaultCamera,viewFrustum,pulseVisualState,layoutPortLabels,scopePulsePoints} from './scene-config.js';
 
 const SID = {out:'trigger-controller.out',ch1:'oscilloscope.ch1',trig:'oscilloscope.trig'};
 export async function createLabScene(container, labelLayer, onSelect) {
@@ -34,7 +34,11 @@ export async function createLabScene(container, labelLayer, onSelect) {
       const line=new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry,40),outlineMaterial);line.userData.isOutline=true;mesh.add(line);
     }
   }
+  // The source asset contains a decorative sine; the lesson displays its own square pulse.
   nodes.get('oscilloscope.trace').visible=false;
+  const scopePath=new THREE.CurvePath();
+  for(let i=1;i<scopePulsePoints.length;i++)scopePath.add(new THREE.LineCurve3(new THREE.Vector3().fromArray(scopePulsePoints[i-1]),new THREE.Vector3().fromArray(scopePulsePoints[i])));
+  const scopePulseTrace=new THREE.Mesh(new THREE.TubeGeometry(scopePath,60,.00055,6,false),new THREE.MeshBasicMaterial({color:0xb9d9c2}));scopePulseTrace.name='conceptual-square-pulse';scopePulseTrace.visible=false;nodes.get('oscilloscope.root').add(scopePulseTrace);
   model.updateMatrixWorld(true);
   const anchors=Object.fromEntries(Object.entries(SID).map(([key,sid])=>[key,nodes.get(sid)]));
   const looseCable=nodes.get('signal-cable.root');
@@ -57,7 +61,7 @@ export async function createLabScene(container, labelLayer, onSelect) {
     cableCurve=new THREE.CatmullRomCurve3([p0,p0.clone().addScaledVector(a.normal,.035),new THREE.Vector3(p0.x-.018,.013,.235),new THREE.Vector3((p0.x+p1.x)/2,.012,.29),new THREE.Vector3(p1.x+.04,.014,.21),p1.clone().addScaledVector(b.normal,.035),p1],false,'centripetal');
     const tube=new THREE.Mesh(new THREE.TubeGeometry(cableCurve,100,.0032,8,false),new THREE.MeshStandardMaterial({color:0x34434b,roughness:.95}));tube.castShadow=true;cableGroup.add(tube);scene.add(cableGroup);looseCable.visible=false;
   }
-  function removeConnection(){if(cableGroup){scene.remove(cableGroup);cableGroup.traverse(n=>{if(n.isMesh&&n.geometry.type==='TubeGeometry'){n.geometry.dispose();n.material.dispose();}});cableGroup=null;}looseCable.visible=true;connected=false;pulse.visible=false;pulseStart=-Infinity;nodes.get('oscilloscope.trace').visible=false;}
+  function removeConnection(){if(cableGroup){scene.remove(cableGroup);cableGroup.traverse(n=>{if(n.isMesh&&n.geometry.type==='TubeGeometry'){n.geometry.dispose();n.material.dispose();}});cableGroup=null;}looseCable.visible=true;connected=false;pulse.visible=false;pulseStart=-Infinity;scopePulseTrace.visible=false;}
   const raycaster=new THREE.Raycaster();let down=null;
   renderer.domElement.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
   renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down.x,e.clientY-down.y)>5)return;const r=container.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1),camera);const hits=raycaster.intersectObjects(meshes,false).filter(h=>{let n=h.object;while(n){if(!n.visible)return false;n=n.parent;}return true;});if(!hits.length)return;const n=hits[0].object,sid=n.userData.sid||'',asset=n.userData.asset_id;const port=Object.entries(SID).find(([k])=>sid.includes(`port_${k}`));if(port)onSelect({type:'port',port:port[0]});else onSelect({type:'inspect',target:asset==='oscilloscope'?'scope':asset==='trigger-controller'?'controller':'cable'});});
@@ -71,12 +75,12 @@ export async function createLabScene(container, labelLayer, onSelect) {
     for(const p of layoutPortLabels(visible,w,h)){const{btn,leader}=labels[p.key];btn.style.left=p.x+'px';btn.style.top=p.y+'px';leader.style.left=p.anchorX+'px';leader.style.top=p.anchorY+'px';leader.style.width=Math.hypot(p.x-p.anchorX,p.y-p.anchorY)+'px';leader.style.transform=`rotate(${Math.atan2(p.y-p.anchorY,p.x-p.anchorX)}rad)`;}
   }
   let disposed=false;
-  function frame(now){if(disposed)return;controls.update();updateLabels();const visual=pulseVisualState(now,pulseStart,reducedMotion);pulse.visible=connected&&visual.particleVisible;if(pulse.visible)pulse.position.copy(cableCurve.getPoint(visual.elapsed));nodes.get('oscilloscope.trace').visible=connected&&visual.traceVisible;renderer.render(scene,camera);requestAnimationFrame(frame);}
+  function frame(now){if(disposed)return;controls.update();updateLabels();const visual=pulseVisualState(now,pulseStart,reducedMotion);pulse.visible=connected&&visual.particleVisible;if(pulse.visible)pulse.position.copy(cableCurve.getPoint(visual.elapsed));scopePulseTrace.visible=connected&&visual.traceVisible;renderer.render(scene,camera);requestAnimationFrame(frame);}
   requestAnimationFrame(frame);
   container.dataset.loaded='true';container.dataset.meshes=meshes.length;container.dataset.anchors=Object.keys(anchors).join(',');
   return {
     update(state){selected=state.selected;if(state.stage==='connected'&&!connected){connected=true;addConnection();}else if(state.stage!=='connected'&&connected)removeConnection();container.dataset.connection=connected?'out-ch1':'none';},
-    pulse(){pulseStart=performance.now();if(reducedMotion)nodes.get('oscilloscope.trace').visible=true;},
+    pulse(){pulseStart=performance.now();if(reducedMotion)scopePulseTrace.visible=true;},
     view(action){if(action==='reset'){controls.reset();camera.position.copy(initialPosition);controls.target.fromArray(defaultCamera.target);camera.zoom=1;}else if(action==='in')camera.zoom=Math.min(2.5,camera.zoom*1.16);else if(action==='out')camera.zoom=Math.max(.7,camera.zoom/1.16);else{const offset=camera.position.clone().sub(controls.target);offset.applyAxisAngle(new THREE.Vector3(0,1,0),action==='left'?.22:-.22);camera.position.copy(controls.target).add(offset);}camera.updateProjectionMatrix();controls.update();container.dataset.view=`${camera.position.x.toFixed(3)},${camera.position.z.toFixed(3)},${camera.zoom.toFixed(3)}`;},
     dispose(){disposed=true;observer.disconnect();controls.dispose();renderer.dispose();}
   };

@@ -8,3 +8,4 @@ export function layoutPortLabels(points,width,height){
   placed.push(chosen||{...p,x:Math.min(width-29,Math.max(29,p.x+dx)),y:Math.min(height-25,Math.max(25,p.y+dy))});
  }return placed;
 }
+export const scopePulsePoints=[[-.116,.065,.0926],[-.084,.065,.0926],[-.084,.100,.0926],[-.058,.100,.0926],[-.058,.065,.0926],[-.006,.065,.0926]];

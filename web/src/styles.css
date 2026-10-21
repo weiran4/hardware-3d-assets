@@ -7,3 +7,7 @@
 
 .anchor-leader{position:absolute;height:1px;background:#9aa89b;transform-origin:0 50%;pointer-events:none;z-index:-1}.anchor-label{min-width:50px;min-height:30px}
 .anchor-label:not(:disabled):active{transform:translate(-50%,calc(-50% + 1px))}
+
+/* Keep the skip link keyboard-accessible without offscreen screenshot artifacts. */
+.skip{top:12px;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;padding:0;white-space:nowrap}.skip:focus{top:12px;clip-path:none;width:auto;height:auto;padding:12px;overflow:visible}
+@media(max-width:560px){h1 span{display:block;margin:4px 0 0;white-space:nowrap}}
