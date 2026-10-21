@@ -1,5 +1,11 @@
 # hardware-3d-assets
 
+## Interactive review page
+
+[Open the public wiring lab](https://weiran4.github.io/hardware-3d-assets/) · [Source and tests](web/)
+
+Rotate the original generic models, inspect ports, and try a conceptual **OUT → CH1** pulse sequence. Desktop/mobile browser checks gate deployment, followed by anonymous checks of the live page. This is **not** an electrical simulator, compatibility certification, or real-device wiring guide.
+
 ## Generic hardware · Phase 1
 
 Original, editable low-poly practice models for a future wiring tutorial. **Not product replicas, a circuit simulation, or real-device wiring instructions.** Dimensions are fictional concept parameters. All physical/electrical compatibility and limits remain unknown.
