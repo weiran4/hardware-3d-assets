@@ -1,0 +1,48 @@
+{
+  "asset_id": "gtai-v2-2.31",
+  "geometry_revision": "r08",
+  "status": "PASS",
+  "review_date_utc": "2026-10-21",
+  "scope": "review-ready original static visual candidate, not manufacturing or electrical certification",
+  "source_blend_sha256": "09b8643eb976aa1eb68daab944f1fa87bde0ea448faa9f3396eb2c1a93e50d8b",
+  "source_glb_sha256": "9d2721e486ca61c529fb4e7fe73c026c67d3b69d3de6aabb96cf1877b9b4e9f5",
+  "source_ports_sha256": "0a5ec030f2bf7dc631eb50fc3db2a790d8bb2a50c08ece0bf7760b98680e8856",
+  "preview_provenance_sha256": "df4737f3e45928cfeac1d37a538d6c0877baf7de209060706dd4322e3c573d81",
+  "builder_visual_inspection": [
+    "iso",
+    "neutral",
+    "wireframe",
+    "front",
+    "rear",
+    "left",
+    "right",
+    "top",
+    "terminal-closeup",
+    "optical-closeup",
+    "power-closeup"
+  ],
+  "independent_review": {
+    "status": "PASS",
+    "native_checks": 905,
+    "actual_glb_reimport_checks": 881,
+    "final_views_inspected": 11,
+    "actual_png_bytes_and_decoded_rgba_verified": true,
+    "all_scene_annotations_verified": 69,
+    "remaining_blockers": []
+  },
+  "source_limits": "Service contacts, lower power pin order, precise optical internal mating geometry and manufacturing fit remain explicitly unvalidated.",
+  "diagnostics_distribution": "Cheap diagnostics retained outside the publishable asset folder; only 11 frozen-master final PNGs are included.",
+  "publication": {
+    "metadata_receipt_from_repository_root": "rtds/qa/batch-2-publication-metadata.json",
+    "source_document_sha256": "4cf8e762efef7d2bdc95f32ea2cb932f0e106253c76f75cc82d9c996517d54b3",
+    "scope": "Publication hashes updated after metadata-only PNG sanitation; geometry, compressed image data and decoded pixels unchanged. Original source hashes retained here.",
+    "hash_updates": [
+      {
+        "json_pointer": "/preview_provenance_sha256",
+        "file": "rtds/gtai-v2-2.31/qa/preview-provenance.json",
+        "source_sha256": "ce0f088731b6eac532bd3a700f3a75ddbe14be40e7e2eb781563e122659e1290",
+        "published_sha256": "df4737f3e45928cfeac1d37a538d6c0877baf7de209060706dd4322e3c573d81"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "rtds.accuracy.v1",
+  "asset_id": "gtao-v2-2.20",
+  "asset_version": "0.1.0",
+  "status": "visual_candidate_with_service_detail_gaps",
+  "hardware_version": "GTAO V2",
+  "pcb_revision": "2.20",
+  "chapter_revision": "20240924",
+  "core_interface_geometry": "source_grounded_visual",
+  "service_contact_geometry": "unresolved_not_modelled",
+  "validated_mating": false,
+  "electrical_compatibility": "unknown",
+  "dimensions": {
+    "pcb_mm": [
+      100,
+      190,
+      1.6
+    ],
+    "pcb_status": "estimated_visual",
+    "plug_pitch_mm": 3.81,
+    "plug_W_H_L_mm": [
+      8.41,
+      11.1,
+      16.1
+    ],
+    "plug_status": "manufacturer_documented_envelope_not_certified_mating_profile",
+    "placements_header_tiers": "estimated_visual"
+  },
+  "power_pinout": {
+    "power1": [
+      "+24V",
+      "GND",
+      "GND",
+      "NC"
+    ],
+    "power2": null
+  },
+  "open_gates": [
+    {
+      "gate": "service_connector_details",
+      "photo_needed": "Perpendicular black-header and small service-mouth close-ups with exact PCB revision visible.",
+      "blocking": "complete_connector_accuracy_not_core_visual_candidate"
+    },
+    {
+      "gate": "mechanical_fit",
+      "evidence_needed": "Power/SFP/header part drawings and mechanical PCB placement datum.",
+      "blocking": "mating_or_manufacturing_certification"
+    }
+  ],
+  "simplifications": [
+    "Decorative small ICs/passives not BOM-correct",
+    "Underside supports indicative; unobserved DIN latch not asserted",
+    "Original text annotations, no source bitmap logos or serial numbers"
+  ],
+  "switch_state": {
+    "dip_count": 8,
+    "positions": "unverified_visual_centered",
+    "factory_default": false,
+    "configuration_validated": false
+  },
+  "geometry_revision": "r05",
+  "assembly_seating": "Major connector supports and heatsink core reach PCB; core top intentionally recessed1mm below annular cap to avoid coplanar shading.",
+  "label_layout": "All86 printed annotations, including port-parented labels, exact glyph visibility regression in native and actual GLB."
+}

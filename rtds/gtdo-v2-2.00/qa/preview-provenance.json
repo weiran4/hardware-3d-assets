@@ -1,0 +1,315 @@
+{
+  "source_blend": "source/asset.blend",
+  "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+  "source_glb_sha256": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+  "geometry_revision": "r05",
+  "render_script": "source/render_views.py",
+  "render_script_sha256": "e0e4f2cea2f62b210004d7b4c48f16be119b94ef18a7971c521c8dbfc098e1c8",
+  "reproduction": "From repository root: blender -b --python-exit-code 1 --python rtds/gtdo-v2-2.00/source/render_views.py",
+  "local_transient_logs_distributed": false,
+  "previews": {
+    "iso": {
+      "path": "previews/iso.png",
+      "sha256": "a0bd9834e50cdaa9077eb35dffedc76b90d2a75bff8469005d60d12590057629",
+      "decoded_rgba_sha256": "8f12f5a0e0866af4a947deca59dababcd48cee7e94310bab0935899537f00f87",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 48,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:26:59.033041+00:00"
+    },
+    "neutral": {
+      "path": "previews/neutral.png",
+      "sha256": "d21e43e5b7302743707a7ec4aa29caa770e46571e8ac756b1901e49154093496",
+      "decoded_rgba_sha256": "e6677ed1a080e76cbcdd8505a66a6980436439f3f64786da1c3069d0653a162a",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:27:23.797497+00:00"
+    },
+    "wireframe": {
+      "path": "previews/wireframe.png",
+      "sha256": "32653fb418f341c48ab4d85cb8e46826d179184ccc938783aa8c5b32ef057085",
+      "decoded_rgba_sha256": "eb5ce93c6ba9af93b497cf80278cc3630e787914c76ed7f11d9dc605cacd2aef",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:27:53.486034+00:00"
+    },
+    "front": {
+      "path": "previews/front.png",
+      "sha256": "bac88e4a8e34a8af33a59ea5b2eaeb97d5157ceb99f09a2c5c948437e1d88bb1",
+      "decoded_rgba_sha256": "a35dda0a68b7f2220abc9180685a951ca946b1713c59700a5f06ccab1183232b",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:28:00.370161+00:00"
+    },
+    "rear": {
+      "path": "previews/rear.png",
+      "sha256": "a75314570f669b8b692da6c02d204342ef0713c2d48128e8fd972038875abc26",
+      "decoded_rgba_sha256": "47061738620b342f693d62a1208dd82c449d86c8b3026563d7f48dcc71c26f27",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:28:05.294251+00:00"
+    },
+    "left": {
+      "path": "previews/left.png",
+      "sha256": "f534a89d25dc252a86bc606603aa0f926ed873d9b7ff721bc325509d606c4abc",
+      "decoded_rgba_sha256": "f6e93208fbd96de9b2e8066d9356ae84f0ea60e2ce5174b6df2a5d7b69a733b8",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:28:11.042357+00:00"
+    },
+    "right": {
+      "path": "previews/right.png",
+      "sha256": "69fb669516babc1d1b6d4d23794eaae86a91b320b76d43fcee5c46b55f14d52d",
+      "decoded_rgba_sha256": "ace2601864b3781aaf558fd2e6b983db26fb444c2362bd6622ccafae6bed1083",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:28:16.206452+00:00"
+    },
+    "top": {
+      "path": "previews/top.png",
+      "sha256": "f01d0104bbe33795fff5507029b9f3b5b3b4dedde163a17ebb73bd43809b5ac3",
+      "decoded_rgba_sha256": "6069ae895d569cb508961ea42ce21fe16279272b8e6f993117f8b21ea9b2fa65",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 48,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 180,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:29:51.052194+00:00"
+    },
+    "terminal-closeup": {
+      "path": "previews/terminal-closeup.png",
+      "sha256": "cce222ad77caf43ab6f43a1a3b4253817abf9a4a72abe333c74ac18ad30e5c95",
+      "decoded_rgba_sha256": "969022298da892787714c7ca78024722224933b92effe2633b925dfd7e2331e7",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:30:24.840812+00:00"
+    },
+    "optical-closeup": {
+      "path": "previews/optical-closeup.png",
+      "sha256": "b4c8e2382d4bb19881579e3eeca0bb1dffb634f6c11d9713611c89184c04be70",
+      "decoded_rgba_sha256": "73a4e880f32aaef00bcc07b1c1c597c088a0402c319d350cdf3f99b70f1beddc",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:30:52.365317+00:00"
+    },
+    "power-closeup": {
+      "path": "previews/power-closeup.png",
+      "sha256": "33ba4e3c9dd5b145b584b64dc6010d71bec4298d706582665015de90bcdd1848",
+      "decoded_rgba_sha256": "fe29727da322b799402873e6db36a6099cec7e1671b951d54bff26211a637e19",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+      "render_completed_utc": "2026-10-21T21:31:15.105733+00:00"
+    }
+  },
+  "expected_standard_views": [
+    "iso",
+    "neutral",
+    "wireframe",
+    "front",
+    "rear",
+    "left",
+    "right",
+    "top",
+    "terminal-closeup",
+    "optical-closeup",
+    "power-closeup"
+  ],
+  "missing_standard_views": [],
+  "review_preferred": [
+    "top",
+    "iso",
+    "terminal-closeup",
+    "optical-closeup",
+    "power-closeup"
+  ],
+  "publication": {
+    "metadata_receipt_from_repository_root": "rtds/qa/batch-2-publication-metadata.json",
+    "source_document_sha256": "8e22071cb04eb19eaf6c3695c555b05d7575b458d4a634713a6d06220a7c2e95",
+    "scope": "Publication hashes updated after metadata-only PNG sanitation; geometry, compressed image data and decoded pixels unchanged. Original source hashes retained here.",
+    "hash_updates": [
+      {
+        "json_pointer": "/previews/iso/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/iso.png",
+        "source_sha256": "f88b27fb6c4926da57560f3a04f68da00fb9f88c67969378bfa22b2cccc275f5",
+        "published_sha256": "a0bd9834e50cdaa9077eb35dffedc76b90d2a75bff8469005d60d12590057629"
+      },
+      {
+        "json_pointer": "/previews/neutral/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/neutral.png",
+        "source_sha256": "b9770a0b09d048899147b190a77fc34c74ced0fb2f134954e9910e4ee73830da",
+        "published_sha256": "d21e43e5b7302743707a7ec4aa29caa770e46571e8ac756b1901e49154093496"
+      },
+      {
+        "json_pointer": "/previews/wireframe/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/wireframe.png",
+        "source_sha256": "1ae721621e0f7fcb89f6482d02279e8c34bf8eebd0c632bdb9206d1cd05f8e80",
+        "published_sha256": "32653fb418f341c48ab4d85cb8e46826d179184ccc938783aa8c5b32ef057085"
+      },
+      {
+        "json_pointer": "/previews/front/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/front.png",
+        "source_sha256": "14a4655fa9ba3416e6edbba8dcb0044d6e929e857db576bf3da7a88f8511fd6a",
+        "published_sha256": "bac88e4a8e34a8af33a59ea5b2eaeb97d5157ceb99f09a2c5c948437e1d88bb1"
+      },
+      {
+        "json_pointer": "/previews/rear/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/rear.png",
+        "source_sha256": "166737e3fdc05bf16161275a47ae0a87c7bb5cc88b777f3e6479c5abd06db043",
+        "published_sha256": "a75314570f669b8b692da6c02d204342ef0713c2d48128e8fd972038875abc26"
+      },
+      {
+        "json_pointer": "/previews/left/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/left.png",
+        "source_sha256": "330366b960b79af705a812d3b0f8da3757d23507c19037712df4bc940a560458",
+        "published_sha256": "f534a89d25dc252a86bc606603aa0f926ed873d9b7ff721bc325509d606c4abc"
+      },
+      {
+        "json_pointer": "/previews/right/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/right.png",
+        "source_sha256": "c3744ee18cf1e82337b0414596cd5e52dbbba93f69e4f38598bb235dac9b2998",
+        "published_sha256": "69fb669516babc1d1b6d4d23794eaae86a91b320b76d43fcee5c46b55f14d52d"
+      },
+      {
+        "json_pointer": "/previews/top/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/top.png",
+        "source_sha256": "2494d19e35316a6b54de8b978408e9156100f64b937d2b7c7be76c8c2d4ed088",
+        "published_sha256": "f01d0104bbe33795fff5507029b9f3b5b3b4dedde163a17ebb73bd43809b5ac3"
+      },
+      {
+        "json_pointer": "/previews/terminal-closeup/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/terminal-closeup.png",
+        "source_sha256": "ebb6e7ddfdaea0a6115faff429422e2a01fb778205812fa7ae0fc2d0583c56a4",
+        "published_sha256": "cce222ad77caf43ab6f43a1a3b4253817abf9a4a72abe333c74ac18ad30e5c95"
+      },
+      {
+        "json_pointer": "/previews/optical-closeup/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/optical-closeup.png",
+        "source_sha256": "3334d9c1b33a345639530358053cf49605e60eefbfb6c4b95ac1dd6ad98ddec1",
+        "published_sha256": "b4c8e2382d4bb19881579e3eeca0bb1dffb634f6c11d9713611c89184c04be70"
+      },
+      {
+        "json_pointer": "/previews/power-closeup/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/power-closeup.png",
+        "source_sha256": "88abf078f682bd3e022cef5b7be54fc7aefe3d02b5a79c1ba48a642c872dcad7",
+        "published_sha256": "33ba4e3c9dd5b145b584b64dc6010d71bec4298d706582665015de90bcdd1848"
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "asset_id": "gtdo-v2-2.00",
+  "seed": 42,
+  "body_dimensions_m": [
+    0.11,
+    0.197,
+    0.0016
+  ],
+  "dimension_scope": "197mm card length documented in manual PDF362; width/thickness/carrier estimated; terminal plug pitch/envelope manufacturer documented",
+  "triangle_budget": 60000,
+  "required_part_ids": [
+    "gtdo-v2-2.00.body",
+    "gtdo-v2-2.00.carrier"
+  ],
+  "required_anchor_ids": [
+    "gtdo-v2-2.00.bank1_odd",
+    "gtdo-v2-2.00.bank1_even",
+    "gtdo-v2-2.00.bank2_odd",
+    "gtdo-v2-2.00.bank2_even",
+    "gtdo-v2-2.00.bank3_odd",
+    "gtdo-v2-2.00.bank3_even",
+    "gtdo-v2-2.00.bank4_odd",
+    "gtdo-v2-2.00.bank4_even",
+    "gtdo-v2-2.00.bank5_odd",
+    "gtdo-v2-2.00.bank5_even",
+    "gtdo-v2-2.00.bank6_odd",
+    "gtdo-v2-2.00.bank6_even",
+    "gtdo-v2-2.00.bank7_odd",
+    "gtdo-v2-2.00.bank7_even",
+    "gtdo-v2-2.00.bank8_odd",
+    "gtdo-v2-2.00.bank8_even",
+    "gtdo-v2-2.00.power1",
+    "gtdo-v2-2.00.power2",
+    "gtdo-v2-2.00.gt1",
+    "gtdo-v2-2.00.gt2",
+    "gtdo-v2-2.00.service_top",
+    "gtdo-v2-2.00.service_jtag",
+    "gtdo-v2-2.00.service_lower",
+    "gtdo-v2-2.00.service_usb"
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 1400,
+    "samples": 48,
+    "view_transform": "Standard",
+    "exposure": 0,
+    "camera_direction": [
+      -1.25,
+      -1.5,
+      2.7
+    ],
+    "camera_margin": 1.16,
+    "light_position": [
+      -0.8,
+      -1.1,
+      1.8
+    ],
+    "light_energy": 40,
+    "light_size": 1,
+    "denoising": false,
+    "world_strength": 0.65,
+    "fill_energy": 20,
+    "outline_px": 0.5
+  }
+}

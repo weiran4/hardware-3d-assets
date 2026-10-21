@@ -1,0 +1,63 @@
+{
+  "asset_id": "gtai-v2-2.31",
+  "pcb_revision": "2.31",
+  "review_scope": "original static visual candidate; no manufacturing or electrical certification",
+  "source_media_distributed": false,
+  "groups": [
+    {
+      "group": "analogue_input",
+      "mechanical_connectors": 12,
+      "visible_contacts": 36,
+      "evidence": "Manual PDF337,339,347; Phoenix1803581 official page",
+      "verified": "3 contacts each; upright +,-,GND;3.81mm pitch; real open wire-entry mouths and slotted screw heads",
+      "unverified": "Exact PCB header part/installed dimensions, mating tolerances and board datum"
+    },
+    {
+      "group": "power",
+      "mechanical_connectors": 2,
+      "visible_contacts": 8,
+      "evidence": "Manual PDF337,341",
+      "verified": "Two4-contact keyed visual shrouds; upper assignment and visible left chamfers",
+      "unverified": "Lower assignment, actual manufacturer connector family and tolerances"
+    },
+    {
+      "group": "optical",
+      "mechanical_connectors": 2,
+      "visible_contacts": 4,
+      "evidence": "Manual PDF337,343,344; inherited original LC-duplex visual vocabulary",
+      "verified": "Count, optical chain role and placement; open modeled mouths/rays/keys",
+      "unverified": "Exact transceiver part, internal key measurements, TxRx mapping and mating compatibility"
+    },
+    {
+      "group": "service_unresolved",
+      "mechanical_connectors": 2,
+      "visible_contacts": null,
+      "evidence": "Manual PDF337 exactPCB2.31",
+      "verified": "Only outline placement/count observed",
+      "unverified": "Contacts, keyed insert, standard and pinout intentionally omitted"
+    }
+  ],
+  "decorative_scope": "Representative IC/passive population only; exact circuitry not reconstructed. Decorative passives near the board identity/reset text are omitted to keep annotations unobscured.",
+  "physical_regression_scope": [
+    "actual child contact and screw counts",
+    "3.81mm pitch and geometric symbol order",
+    "native/imported anchor frames",
+    "four optical annulus quadrant rays percontact",
+    "terminal contact mouth rays",
+    "key shoulders on declared up side",
+    "header and power/service wall seating",
+    "root assembly support graph",
+    "primary component board bounds",
+    "noncoplanar heatsink cap",
+    "unobstructed revision silkscreen",
+    "no source bitmap dependencies",
+    "power contact mouth rays",
+    "all 69 printed annotation glyphs unobstructed in native and GLB files"
+  ],
+  "known_limits": [
+    "Unknowns remain disabled for mating/electrical validation.",
+    "Illustrative DIP states are not factory configuration.",
+    "Two service outlines do not claim exact hidden contacts."
+  ],
+  "geometry_revision": "r08"
+}

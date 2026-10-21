@@ -137,10 +137,10 @@ export const catalog=[
   {
     "id": "gtdo-v2",
     "name": "GTDO V2",
-    "revision": "V2 / PCB 修订未确认",
+    "revision": "V2 / PCB 2.00 / 20240924 章节",
     "family": "GTDO",
     "type": "数字输出卡",
-    "summary": "64 路数字输出，8 组 × 8 路，2 个光接口；需要单独核对布局与键位。",
+    "summary": "64 路数字输出，8 组 × 8 路；16 个五位端子插头，共 80 个端子位置。2 个光接口；辅助区域保留待核对。",
     "evidence": [
       {
         "source_id": "GTDO-PHOTO",
@@ -157,8 +157,8 @@ export const catalog=[
     ],
     "confidence": {
       "count": "documented",
-      "layout": "partial",
-      "keying": "unknown",
+      "layout": "observed",
+      "keying": "partial",
       "contacts": "partial",
       "physical_dimensions": "partial",
       "electrical_compatibility": "unknown"
@@ -189,10 +189,10 @@ export const catalog=[
   {
     "id": "gtai-v2",
     "name": "GTAI V2",
-    "revision": "V2 / PCB 修订未确认",
+    "revision": "V2 / PCB 2.31 / 20240924 章节",
     "family": "GTAI",
     "type": "模拟输入卡",
-    "summary": "12 路差分模拟输入；每路正、负、地三个接点。",
+    "summary": "12 路差分模拟输入，±10 V / 16 bit；每路正、负、地三个端子，共 36 个端子位置。",
     "evidence": [
       {
         "source_id": "GTAI-PHOTO",
@@ -210,7 +210,7 @@ export const catalog=[
     "confidence": {
       "count": "documented",
       "layout": "observed",
-      "keying": "unknown",
+      "keying": "partial",
       "contacts": "partial",
       "physical_dimensions": "unknown",
       "electrical_compatibility": "unknown"
@@ -241,10 +241,10 @@ export const catalog=[
   {
     "id": "gtao-v2",
     "name": "GTAO V2",
-    "revision": "V2 / PCB 2.20 参考图",
+    "revision": "V2 / PCB 2.20 / 20240924 章节",
     "family": "GTAO",
     "type": "模拟输出卡",
-    "summary": "记载 16 路模拟输出；后四路的可用性与 NovaCor 条件有关，不能只看插口判断。",
+    "summary": "16 路模拟输出，±10 V / 16 bit；每路正端与返回端，共 32 个端子位置。第 13–16 路仅适用于 NovaCor。",
     "evidence": [
       {
         "source_id": "GTAO-PHOTO",
@@ -261,8 +261,8 @@ export const catalog=[
     ],
     "confidence": {
       "count": "documented",
-      "layout": "partial",
-      "keying": "unknown",
+      "layout": "observed",
+      "keying": "partial",
       "contacts": "partial",
       "physical_dimensions": "unknown",
       "electrical_compatibility": "unknown"
@@ -475,7 +475,7 @@ export const catalog=[
 ];
 export const sources={
   "MANUAL-605": {
-    "title": "RTDS Hardware Manual, 605-page compilation",
+    "title": "RTDS Hardware Manual",
     "url": null,
     "access": "private_user_provided"
   },

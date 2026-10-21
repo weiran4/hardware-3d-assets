@@ -8,11 +8,11 @@ Rotate the original generic models, inspect ports, and try a conceptual **OUT 鈫
 
 ## RTDS hardware library 路 Phase 2
 
-[Browse the RTDS library](rtds/) 路 [18-entry version-specific source catalog](rtds/catalog/) 路 [Interactive review page](https://weiran4.github.io/hardware-3d-assets/)
+[Browse the RTDS library](rtds/) 路 [18-entry version-specific source catalog](rtds/catalog/) 路 [Interactive review page](https://weiran4.github.io/hardware-3d-assets/#rtds)
 
-Two original editable visual candidates are included: **NovaCor 2.0 (2023 exterior)** and **GTDI V2 (PCB 2.01)**. Each includes Blender/GLB files, interface metadata, diagnostic previews, regeneration sources and QA. Catalog entries without a model are explicitly not modeled; catalog evidence is not a geometry release or compatibility certification.
+Five original editable visual candidates are included: **NovaCor 2.0 (2023 exterior)**, **GTDI V2 (PCB 2.01)**, **GTDO V2 (PCB 2.00)**, **GTAI V2 (PCB 2.31)**, and **GTAO V2 (PCB 2.20)**. Each includes Blender/GLB files, interface metadata, diagnostic previews, regeneration sources and QA. Catalog entries without a model are explicitly not modeled; catalog evidence is not a geometry release or compatibility certification.
 
-Key visible ports, contacts, numbering and key orientation receive dedicated checks. Remaining mechanical/mating uncertainties are stated per model. The gallery is inspection-only: it does not validate or instruct real-device wiring. Manufacturer PDFs and photographs are not distributed. See [independent review](rtds/qa/independent-review.json).
+Key visible ports, contacts, numbering and key orientation receive dedicated checks. Remaining mechanical/mating uncertainties are stated per model. The gallery supports inspection and explicitly conceptual signal visualization only: it does not validate or instruct real-device wiring. Manufacturer PDFs and photographs are not distributed. See [first-batch independent review](rtds/qa/independent-review.json), [GTIO batch independent review](rtds/qa/batch-2-independent-review.json), and [publication metadata receipt](rtds/qa/batch-2-publication-metadata.json).
 
 ## Generic hardware 路 Phase 1
 
@@ -61,7 +61,7 @@ Final illustrations use 1024虏 PNG, Standard color transform, 128 CPU samples. T
 This is the public source repository, published with the owner's authorization.
 
 - `generic/`: original fictional, reusable hardware assets; four editable masters, four GLBs, and 32 diagnostic/illustration views.
-- `rtds/`: two version-pinned visual model candidates and an 18-entry source catalog; unknown mechanical/electrical properties remain explicit.
+- `rtds/`: five version-pinned visual model candidates and an 18-entry source catalog; unknown mechanical/electrical properties remain explicit.
 - `deliverables/`: overview images and a SHA-256 manifest, without duplicate ZIP archives.
 - `tools/`, `tests/`, `skills/`: procedural sources, tests, and the working Blender skill.
 - `docs/`, `qa/`: historical design/plan and measured review evidence. Historical documents describe their original pre-publication scope, not the current repository status; see `docs/README.md`.

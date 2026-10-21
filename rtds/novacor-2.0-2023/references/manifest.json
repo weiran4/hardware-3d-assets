@@ -15,7 +15,6 @@
     {
       "id": "manual-user-compilation",
       "title": "RTDS Hardware Manual",
-      "sha256": "c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf",
       "access": "user-provided private reference; not redistributed",
       "chapter": "NovaCor 2.0",
       "chapter_revision": "20250916",

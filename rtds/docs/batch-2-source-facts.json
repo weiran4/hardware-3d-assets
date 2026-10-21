@@ -1,0 +1,93 @@
+{
+  "batch": "GTIO original batch2",
+  "review_status": "PASS: source-version isolation, actual native/imported GLB geometry, complete support/annotation checks and all33 frozen-master final previews independently reviewed",
+  "manual": {
+    "distribution": "private reference only, not included",
+    "title": "RTDS Hardware Manual"
+  },
+  "assets": [
+    {
+      "id": "gtdo-v2-2.00",
+      "appearance": "manual Figure8.1, PCB2.00",
+      "chapter_revision": "20240924",
+      "pages": [
+        362,
+        363,
+        364,
+        365,
+        370
+      ],
+      "signal_plugs": 16,
+      "contacts_per_plug": 5,
+      "signal_channels": 64,
+      "connector_part": "1803604",
+      "source_decision": "Actual manual pixels resolve version and dual-tier5-contact plugs; 400px public image insufficient for fine geometry.",
+      "terminal_positions": 80,
+      "terminal_position_breakdown": {
+        "digital_channel_positions": 64,
+        "bank_positive_supply_positions": 8,
+        "bank_negative_supply_positions": 8
+      }
+    },
+    {
+      "id": "gtai-v2-2.31",
+      "appearance": "manual Figure7.1, PCB2.31",
+      "chapter_revision": "20240924",
+      "pages": [
+        336,
+        337,
+        339,
+        341,
+        347
+      ],
+      "signal_plugs": 12,
+      "contacts_per_plug": 3,
+      "signal_channels": 12,
+      "connector_part": "1803581",
+      "source_decision": "Manual PCB2.31 chosen; official website photo2.21 has different service population and is not mixed into the exact model.",
+      "terminal_positions": 36,
+      "terminal_position_breakdown": {
+        "positive_inputs": 12,
+        "negative_inputs": 12,
+        "ground_positions": 12
+      }
+    },
+    {
+      "id": "gtao-v2-2.20",
+      "appearance": "manual Figure6.2, PCB2.20",
+      "chapter_revision": "20240924",
+      "pages": [
+        276,
+        278,
+        279,
+        282,
+        289,
+        290
+      ],
+      "signal_plugs": 16,
+      "contacts_per_plug": 2,
+      "signal_channels": 16,
+      "connector_part": "1803578",
+      "source_decision": "V2 has16 outputs. Older12-output V1 remains separate catalog-only asset.",
+      "terminal_positions": 32,
+      "terminal_position_breakdown": {
+        "positive_outputs": 16,
+        "returns": 16
+      }
+    }
+  ],
+  "shared_facts": [
+    "Each selected card has2 optical transport ports and2 keyed four-contact power headers.",
+    "Upper power pin order+24V/GND/GND/NC directly documented; lower pin order kept unknown.",
+    "Phoenix MC1.5 connector pitch3.81mm confirmed from official products; exact mating PCB header remains unknown.",
+    "Core visible geometry is original; service details intentionally unresolved, not guessed.",
+    "Neither visual QA nor anchor geometry certifies mechanical or electrical compatibility."
+  ],
+  "qa_lessons": [
+    "Physical contact-count and seating checks do not catch coplanar decorative caps: final shading views exposed an inherited hidden-core/topcap overlap; original hidden cores were lowered 1 mm, regressions added and all final previews regenerated.",
+    "Blender scripts use --python-exit-code 1 because Python exceptions can otherwise coexist with process exit 0; verify actual report and test output.",
+    "Generic visual similarity is not permission to merge source versions: GTAI manual2.31 and website2.21 service populations are separate.",
+    "Before final renders, inspect a consolidated cheap top/isometric/side/interface set and all annotations versus component geometry; shortened GT1/GT2 labels avoid LED collisions without moving interfaces.",
+    "Annotation checks include every board and port-parented glyph, against every raised object, both native FONT and exported text meshes; primary labels or same-parent-only checks miss capacitor/header collisions."
+  ]
+}

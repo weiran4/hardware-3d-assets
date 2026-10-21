@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f4f0e7"><meta name="description" content="转一转，接一根线，看懂信号从哪里来、到哪里去。原创 3D 硬件互动概念实验。">
 <title>信号接线实验室 · Wiring Lab</title>
-<link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./app.css">
 </head>
 <body>
 <a class="skip" href="#lesson">跳到接线操作</a>
@@ -37,10 +37,27 @@
    <div class="rtds-camera" aria-label="RTDS 三维视角"><div><button id="rtds-front">正面</button><button id="rtds-rear">背面</button><button id="rtds-top">顶部</button><button id="rtds-reset">↺ 全貌</button></div><div><button id="rtds-in" aria-label="放大 RTDS 模型">＋</button><button id="rtds-out" aria-label="缩小 RTDS 模型">−</button></div></div>
    <div class="rtds-tour-row"><div><p class="eyebrow">02 / 接口巡览</p><p id="rtds-tour-copy">只观察接口分组，不模拟设备运行。</p></div><div><button id="rtds-isolate" aria-pressed="false">仅看本组</button><button id="rtds-next">下一组 →</button><button id="rtds-tour" aria-pressed="false">播放巡览</button></div></div>
    <div id="rtds-group-list" class="rtds-group-list" aria-label="接口分组"></div>
-   <div class="rtds-detail" id="rtds-detail"><div><p class="eyebrow">03 / 细看接口</p><h4 id="rtds-detail-title">从一个分组开始</h4><p id="rtds-detail-copy">选中接口分组后，查看该组的准确 ID 与信息。画面仅标注当前接口，避免拥挤。</p></div><div id="rtds-port-list" aria-label="当前组接口"></div><div id="rtds-port-facts"></div></div>
+   <div class="rtds-detail" id="rtds-detail"><div><p class="eyebrow">03 / 用途与参数</p><h4 id="rtds-detail-title">从一个分组开始</h4><p id="rtds-detail-copy">选择 02 分组后，自动查看共同用途、参数与连接对象；不同功能单独列出。</p></div><div id="rtds-port-list" aria-label="当前组功能类别"></div><div id="rtds-port-facts"></div></div>
   </div>
  </div>
- <div class="rtds-evidence"><section><p class="eyebrow">KNOWN / ESTIMATED / UNKNOWN</p><h3>把确定的，和未确定的分开。</h3><p id="rtds-summary"></p><div class="rtds-certainty"><div><span class="rtds-badge known">已核对的资料事实</span><p id="rtds-known-copy"></p></div><div><span class="rtds-badge estimated">照片估计的几何</span><p id="rtds-estimate-copy"></p></div><div><span class="rtds-badge unknown">未验证的兼容性</span><p>不能据此外接真实设备。模型不验证配接、电气条件、固件时序或安全认证。</p></div></div><p class="rtds-scope-note" id="rtds-scope-note"></p></section><section class="rtds-sources"><p class="eyebrow">SOURCE NOTES</p><h3>版本与依据</h3><ul id="rtds-source-list"></ul><p>仅发布原创几何、整理的事实与来源引用；不托管制造商图片或私有手册。此页面不是 RTDS 官方产品。</p></section></div>
+ <details class="rtds-provenance"><summary>版本资料与模型说明 <span>来源、几何估计与验证边界</span></summary><div class="rtds-evidence"><section><p class="eyebrow">KNOWN / ESTIMATED / UNKNOWN</p><h3>把确定的，和未确定的分开。</h3><p id="rtds-summary"></p><div class="rtds-certainty"><div><span class="rtds-badge known">已核对的资料事实</span><p id="rtds-known-copy"></p></div><div><span class="rtds-badge estimated">照片估计的几何</span><p id="rtds-estimate-copy"></p></div><div><span class="rtds-badge unknown">未验证的兼容性</span><p>不能据此外接真实设备。模型不验证配接、电气条件、固件时序或安全认证。</p></div></div><p class="rtds-scope-note" id="rtds-scope-note"></p></section><section class="rtds-sources"><p class="eyebrow">SOURCE NOTES</p><h3>版本与依据</h3><ul id="rtds-source-list"></ul><p>仅发布原创几何、整理的事实与来源引用；不托管制造商图片或私有手册。此页面不是 RTDS 官方产品。</p></section></div>
+ </details>
+ <section id="rtds-signal-flow" class="rtds-signal-flow" aria-labelledby="flow-heading">
+  <div class="flow-heading"><div><p class="eyebrow">04 / CONCEPTUAL SIGNAL FLOW</p><h3 id="flow-heading">看一位逻辑值，如何进入仿真。</h3><p>概念信号流 · 不是硬件执行。先区分应用数据方向，再看光传输接口。</p></div><span class="rtds-badge estimated">仅示意 · 非测量值</span></div>
+  <div class="flow-controls"><div class="flow-input-control" role="group" aria-label="虚拟输入逻辑值"><span>虚拟输入</span><button id="flow-input-0" aria-pressed="true">0</button><button id="flow-input-1" aria-pressed="false">1</button></div><div><button id="flow-step">单步 →</button><button id="flow-play" aria-pressed="false">播放示意</button><button id="flow-reset">重置</button></div><span>展示节奏，不代表设备时序</span></div>
+  <p class="flow-direction">应用数据方向：外部逻辑状态 → GTDI → NovaCor 仿真输入</p>
+  <div class="flow-diagram">
+   <div class="flow-node" data-flow-phase="field"><small>VIRTUAL SOURCE</small><h4>虚拟外部状态</h4><strong id="flow-source-value">0</strong><p>不代表真实端子或电平</p></div>
+   <div class="flow-arrow" data-flow-phase="field" aria-hidden="true"><span>→</span><i></i></div>
+   <div class="flow-node" data-flow-phase="optical"><small>GTDI V2 · PCB 2.01</small><h4>示意输入值</h4><strong id="flow-sampled">—</strong><p>本轮虚拟值 · 不是板上指示灯</p><button id="flow-inspect-gtdi">查看上游 Port 1 ↗</button></div>
+   <div class="flow-arrow" data-flow-phase="optical" aria-hidden="true"><span>→</span><i></i></div>
+   <div class="flow-node" data-flow-phase="received"><small>NOVACOR 2.0</small><h4>示意接收值</h4><strong id="flow-received">—</strong><p>未运行仿真 · 未连接真实设备</p><button id="flow-inspect-novacor">查看 GT 1 ↗</button></div>
+   <div class="flow-transport"><span>GTDI Port 1</span><b>↔</b><span>NovaCor GT 1</span><small>光传输角色关联 · 与上方单向应用箭头分开理解</small></div>
+  </div>
+  <div class="flow-status"><p id="flow-description" role="status"></p><span id="flow-count">示意传递 0 次</span></div><p id="flow-inspect-status" class="flow-inspect-status" role="status"></p>
+  <p class="flow-boundary">无电压 / 时间标定；不验证配接、电气条件、采样或延迟。0 / 1 仅为网页逻辑状态，未映射真实输入通道、端子引脚或光纤 Tx / Rx。此演示不包含多卡级联。</p>
+  <details class="flow-evidence"><summary>为什么选这两个接口？</summary><p>版本资料记载 GTDI V2 Port 1 为上游接口；NovaCor 2.0 的 GT 1–20 用于 GTIO，GT 21–24 为 Aurora。这里选择 GT 1 只是一个说明例子，不是通用接线验证。</p><p>私有手册依据：GTDI V2 章节修订 20241219，PDF 404、405、411、422；NovaCor 2.0 章节修订 20250916，PDF 72、74。模型锚点已独立核对；手册与原图不提供下载。<a href="https://knowledge.rtds.com/hc/en-us/articles/360034281234-GTIO-Cards" target="_blank" rel="noopener noreferrer">官方 GTIO 功能说明 ↗</a></p></details>
+ </section>
 </section>
 
 <footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创模型；接口观察与概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>

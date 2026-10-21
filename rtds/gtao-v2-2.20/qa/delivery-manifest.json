@@ -1,0 +1,303 @@
+{
+  "asset_id": "gtao-v2-2.20",
+  "asset_version": "0.1.0",
+  "geometry_revision": "r05",
+  "status": "reviewer_ready_core_interface_visual_candidate",
+  "source_variant": "GTAO V2 PCB 2.20; chapter 6A rev20240924, PDF279 Figure6.2",
+  "original_assets_only": true,
+  "source_blend_sha256": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894",
+  "source_glb_sha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+  "ports_sha256": "12e132765210a92286ac47972dcb4e2362a1535946db8a7f4b82410f5e2258ec",
+  "preview_provenance_sha256": "0a7ca0b75a8ed848c29664fe59a9be5a8367ae0878993da8b2e1a4f351c864ca",
+  "quality_summary": {
+    "triangles": 26557,
+    "anchors": 22,
+    "signal_terminal_positions": 32,
+    "power_contacts": 8,
+    "optical_receptacles": 4,
+    "service_outlines_with_unknown_contacts": 2,
+    "manifest_tests": 5,
+    "native_physical_tests": 20,
+    "actual_glb_physical_tests": 20,
+    "mutation_probes": 4,
+    "frozen_and_generic_regressions": 23,
+    "all_printed_labels": 86,
+    "glyph_samples_per_file": 10388,
+    "independent_native_checks": 984,
+    "independent_glb_checks": 948,
+    "final_previews": 11
+  },
+  "excluded": "Private manual/source media never included; all transient logs and diagnostics archived outside asset; cache removed. This manifest excludes its own hash.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6217,
+      "sha256": "034dd14a0dd49e7fe1259a89ea1895ae70024307edc93f8cee4b015f52528bb9"
+    },
+    {
+      "path": "docs/implementation-plan.md",
+      "bytes": 2872,
+      "sha256": "f6a67fa6e8b646fceac88e12b56e3fa18da33c4be21af722c20998e8d2b48122"
+    },
+    {
+      "path": "exports/asset.glb",
+      "bytes": 2013984,
+      "sha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b"
+    },
+    {
+      "path": "metadata/accuracy.json",
+      "bytes": 2077,
+      "sha256": "83f2ec64e394dd6d7b6b6845b8b03ab294311f02dbb625a22d1afe9b710c4070"
+    },
+    {
+      "path": "metadata/parts.json",
+      "bytes": 395,
+      "sha256": "7d4ef3b5b7ea7b966d9ed863cddca03a3e876c00e7bb0ae1861a6bb2818f3e79"
+    },
+    {
+      "path": "metadata/ports.json",
+      "bytes": 44003,
+      "sha256": "12e132765210a92286ac47972dcb4e2362a1535946db8a7f4b82410f5e2258ec"
+    },
+    {
+      "path": "parameters.json",
+      "bytes": 1463,
+      "sha256": "4819c4b38b95066bf2340fb1c1e3cd5d9aefe1d7197a1cc13e6fc83f4adde506"
+    },
+    {
+      "path": "previews/front.png",
+      "bytes": 1130048,
+      "sha256": "4603395271697f7a2d9ef519ad4553c6b421d9bfdefd56df9d3f162fe8a94254"
+    },
+    {
+      "path": "previews/iso.png",
+      "bytes": 1889462,
+      "sha256": "c86e816ede316ee59dedc61c568ea7f9411176d994c1737f0a7f65fad8af90c6"
+    },
+    {
+      "path": "previews/left.png",
+      "bytes": 1114017,
+      "sha256": "823299ad7c648018c58874fbff066ef05537968fb299a649e27c02e19845a3e7"
+    },
+    {
+      "path": "previews/neutral.png",
+      "bytes": 1225070,
+      "sha256": "b63f83d2135ce889923a378545585f60bf7e507ff6f92edd3619757dd4edd604"
+    },
+    {
+      "path": "previews/optical-closeup.png",
+      "bytes": 961010,
+      "sha256": "332b4ef9f95527490dc0a69e8387251f314d684c513ea6000aed804bf923f61a"
+    },
+    {
+      "path": "previews/power-closeup.png",
+      "bytes": 1942849,
+      "sha256": "79a29454e7426a9c615dfa6cf48cd5e855a2e23813d33d8240a941f320c9cd07"
+    },
+    {
+      "path": "previews/rear.png",
+      "bytes": 1131993,
+      "sha256": "404abff8c21227b20d0776b37d115a2036d30a505e577946e12e70bafb40ef29"
+    },
+    {
+      "path": "previews/right.png",
+      "bytes": 1116824,
+      "sha256": "225b130e69cffbf3f2e6ea7f5310978d32567a20e162bc81c22ea0f11eb4fe05"
+    },
+    {
+      "path": "previews/terminal-closeup.png",
+      "bytes": 1586533,
+      "sha256": "99fbd075a383f56875d183e8fe1ee0cd4a855ae66c1cd953fdb6d77a640ae1bf"
+    },
+    {
+      "path": "previews/top.png",
+      "bytes": 2407887,
+      "sha256": "5cff067a6681ef04986b8b64f8082bea05a39b620ac66a4b045ca5031872fcd9"
+    },
+    {
+      "path": "previews/wireframe.png",
+      "bytes": 902568,
+      "sha256": "5d41ef8f002a3ae51f3385e2d8187ebe9b49c3f20448328e1a8021656f2fd0e2"
+    },
+    {
+      "path": "qa/build_measurements.json",
+      "bytes": 1338388,
+      "sha256": "f0d2b993c8158a4dea393debb181e74edac66ac9b581e94f6ae3a87fc2ea5dab"
+    },
+    {
+      "path": "qa/component-accuracy.json",
+      "bytes": 4630,
+      "sha256": "0fe22bb2496f6911bd7bb13c4438aa45876c68dbb443987686dbbb2847f71ce6"
+    },
+    {
+      "path": "qa/label-visibility-glb.json",
+      "bytes": 490,
+      "sha256": "9271f0f8b1198cd11a7e2cc1e5cacf6136aa712b48117fb17c059d4f2247536e"
+    },
+    {
+      "path": "qa/label-visibility-native.json",
+      "bytes": 490,
+      "sha256": "9271f0f8b1198cd11a7e2cc1e5cacf6136aa712b48117fb17c059d4f2247536e"
+    },
+    {
+      "path": "qa/mutation-probes.json",
+      "bytes": 843,
+      "sha256": "9a169bcd9c3c08047b14d060faacb6067e49f545c0d92b30c18934a9bef35813"
+    },
+    {
+      "path": "qa/preview-provenance.json",
+      "bytes": 13141,
+      "sha256": "0a7ca0b75a8ed848c29664fe59a9be5a8367ae0878993da8b2e1a4f351c864ca"
+    },
+    {
+      "path": "qa/report.json",
+      "bytes": 1338424,
+      "sha256": "390f9c32025e8a63bc876dd2ccc15b9ee82a5a07039fd1a30ba58881c803dc29"
+    },
+    {
+      "path": "qa/roundtrip.json",
+      "bytes": 953,
+      "sha256": "524c1bb550ada607e9169891afe462d918348c7793596180a2571da93a0ab028"
+    },
+    {
+      "path": "references/manifest.json",
+      "bytes": 824,
+      "sha256": "8ace5958f17aa9dfd2049f251f71bd4c0538d682c06a0e3bfef0c5a090ed09e5"
+    },
+    {
+      "path": "source/asset.blend",
+      "bytes": 380050,
+      "sha256": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894"
+    },
+    {
+      "path": "source/build.py",
+      "bytes": 11601,
+      "sha256": "c7958eebbef2f7d22e88805679553d7780577e583720abb1cffa00401e171f4f"
+    },
+    {
+      "path": "source/diagnostic_views.py",
+      "bytes": 1403,
+      "sha256": "9bb6bb01253ecb218e07bb7f33dc464a07cdc273207a3889060ff3c1b02af0e1"
+    },
+    {
+      "path": "source/manifest.py",
+      "bytes": 3751,
+      "sha256": "47aea868c3f72f8e56d731986b9ce1be652bf94df18542eef137caff0d3c1473"
+    },
+    {
+      "path": "source/render_views.py",
+      "bytes": 2798,
+      "sha256": "d740d6fbcd82b743057496e1bf3d2469012f932198e7acce37b508db4ecc6490"
+    },
+    {
+      "path": "source/test_geometry.py",
+      "bytes": 10290,
+      "sha256": "ceb651f5c3711e28a80d1c7e2d22f0646bf005b8ac4e2509ce170fcaa3348423"
+    },
+    {
+      "path": "source/test_manifest.py",
+      "bytes": 1634,
+      "sha256": "dd297fff6238a882a17c3dccd713bd51c123cfc625118425e2aef312db185a62"
+    },
+    {
+      "path": "source/test_mutation_probes.py",
+      "bytes": 1845,
+      "sha256": "e6a03aa4934cfe728e56a28e133f04c4439f83976e37b8f157c5932083cb9aea"
+    },
+    {
+      "path": "source/test_roundtrip_geometry.py",
+      "bytes": 349,
+      "sha256": "99af0ac5723e28b3fbdf33af3663461227775bc4c0be2656e4c0558eada81e62"
+    },
+    {
+      "path": "source/write_preview_provenance.py",
+      "bytes": 3517,
+      "sha256": "9bd84967ee7514d78213b7de51f35ec2bef8ffe7b29e80867e29e1d8d0510f86"
+    }
+  ],
+  "publication": {
+    "metadata_receipt_from_repository_root": "rtds/qa/batch-2-publication-metadata.json",
+    "source_document_sha256": "4915d35400b379430e1683337179e8e2467d5642d5c3aeb0b41152333035d13c",
+    "scope": "Publication hashes updated after metadata-only PNG sanitation; geometry, compressed image data and decoded pixels unchanged. Original source hashes retained here.",
+    "hash_updates": [
+      {
+        "json_pointer": "/preview_provenance_sha256",
+        "file": "rtds/gtao-v2-2.20/qa/preview-provenance.json",
+        "source_sha256": "0ea3d32b5bf60a0957a5c2c0a7668d8a1f5db06f6f68549176e3b0a3b0177457",
+        "published_sha256": "0a7ca0b75a8ed848c29664fe59a9be5a8367ae0878993da8b2e1a4f351c864ca"
+      },
+      {
+        "json_pointer": "/files/7/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/front.png",
+        "source_sha256": "a1d9fe2dd610851dd95687b00bf0226775409896cfdb371fe7a19b2a9afe4105",
+        "published_sha256": "4603395271697f7a2d9ef519ad4553c6b421d9bfdefd56df9d3f162fe8a94254"
+      },
+      {
+        "json_pointer": "/files/8/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/iso.png",
+        "source_sha256": "dbc37533214fbef197bc51ea685cd73dfa362d9ba4f40f4b50c65ac6d321d7dd",
+        "published_sha256": "c86e816ede316ee59dedc61c568ea7f9411176d994c1737f0a7f65fad8af90c6"
+      },
+      {
+        "json_pointer": "/files/9/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/left.png",
+        "source_sha256": "d143df12c8f39065b0e6d1d062d86d2e43342210808be58abfe12e0ae66e2aa2",
+        "published_sha256": "823299ad7c648018c58874fbff066ef05537968fb299a649e27c02e19845a3e7"
+      },
+      {
+        "json_pointer": "/files/10/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/neutral.png",
+        "source_sha256": "eabb3a6f666e3d46c521cdeff7aa41df1fcaa3dc68714c997151dcdf3f865254",
+        "published_sha256": "b63f83d2135ce889923a378545585f60bf7e507ff6f92edd3619757dd4edd604"
+      },
+      {
+        "json_pointer": "/files/11/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/optical-closeup.png",
+        "source_sha256": "25d5789e946397918e46e2ba18838bfbdce6513f23ea124dd2fa7b90397a1249",
+        "published_sha256": "332b4ef9f95527490dc0a69e8387251f314d684c513ea6000aed804bf923f61a"
+      },
+      {
+        "json_pointer": "/files/12/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/power-closeup.png",
+        "source_sha256": "b729dec9d46ef7a52adb1d0baff4cec31a41346a8427046e7af0abc6d29e1ae0",
+        "published_sha256": "79a29454e7426a9c615dfa6cf48cd5e855a2e23813d33d8240a941f320c9cd07"
+      },
+      {
+        "json_pointer": "/files/13/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/rear.png",
+        "source_sha256": "2fb5bb4c2990ae7eadfa0f0bfeecf6298ccb845a7494d2958fe9888e790e4643",
+        "published_sha256": "404abff8c21227b20d0776b37d115a2036d30a505e577946e12e70bafb40ef29"
+      },
+      {
+        "json_pointer": "/files/14/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/right.png",
+        "source_sha256": "70c36fcc4f415c002c65d987d9156a4d6864f06ccaa927ccad07c52fccb1abb3",
+        "published_sha256": "225b130e69cffbf3f2e6ea7f5310978d32567a20e162bc81c22ea0f11eb4fe05"
+      },
+      {
+        "json_pointer": "/files/15/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/terminal-closeup.png",
+        "source_sha256": "defcd72a8ee2fe4db47862e2bed18fe1dad70e20db7861728030f0b99c27045a",
+        "published_sha256": "99fbd075a383f56875d183e8fe1ee0cd4a855ae66c1cd953fdb6d77a640ae1bf"
+      },
+      {
+        "json_pointer": "/files/16/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/top.png",
+        "source_sha256": "44bc7c2e186a18bf99fd8c2b80fd7cac01ed7d20daab8901c81ab5134f9c175a",
+        "published_sha256": "5cff067a6681ef04986b8b64f8082bea05a39b620ac66a4b045ca5031872fcd9"
+      },
+      {
+        "json_pointer": "/files/17/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/wireframe.png",
+        "source_sha256": "974998fa038220941b5e8fdf5925c2859128f391a936e7b68dc2d44247b45d22",
+        "published_sha256": "5d41ef8f002a3ae51f3385e2d8187ebe9b49c3f20448328e1a8021656f2fd0e2"
+      },
+      {
+        "json_pointer": "/files/23/sha256",
+        "file": "rtds/gtao-v2-2.20/qa/preview-provenance.json",
+        "source_sha256": "0ea3d32b5bf60a0957a5c2c0a7668d8a1f5db06f6f68549176e3b0a3b0177457",
+        "published_sha256": "0a7ca0b75a8ed848c29664fe59a9be5a8367ae0878993da8b2e1a4f351c864ca"
+      }
+    ]
+  }
+}

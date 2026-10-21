@@ -1,0 +1,9 @@
+{
+  "asset_id": "gtdo-v2-2.00",
+  "hardware_version": "GTDO V2",
+  "pcb_revision": "2.00",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "population": "16 Phoenix1803604 plugs installed as manual Fig8.7; PCB headers estimated",
+  "source_photo_reproduction": false,
+  "service_interfaces": "three header outlines and one USB-like outline; contacts intentionally absent pending close-ups"
+}

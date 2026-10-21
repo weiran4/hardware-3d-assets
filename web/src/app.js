@@ -1,3 +1,4 @@
+import './rtds-pip.css';
 import {createInitialState,transition} from './lesson.js';
 import {createLabScene} from './scene.js';
 import {initRtdsGallery} from './rtds-gallery.js';

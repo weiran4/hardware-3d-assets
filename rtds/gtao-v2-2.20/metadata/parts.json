@@ -1,0 +1,9 @@
+{
+  "asset_id": "gtao-v2-2.20",
+  "hardware_version": "GTAO V2",
+  "pcb_revision": "2.20",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "population": "16 Phoenix1803578 plugs installed as manual Fig6.2/6.10; PCB headers estimated",
+  "source_photo_reproduction": false,
+  "service_interfaces": "2 hollow silhouettes; contact geometry intentionally absent pending close-ups"
+}

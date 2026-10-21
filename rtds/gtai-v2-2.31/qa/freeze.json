@@ -1,0 +1,41 @@
+{
+  "geometry_revision": "r08",
+  "asset_id": "gtai-v2-2.31",
+  "sha256": {
+    "source/asset.blend": "09b8643eb976aa1eb68daab944f1fa87bde0ea448faa9f3396eb2c1a93e50d8b",
+    "exports/asset.glb": "9d2721e486ca61c529fb4e7fe73c026c67d3b69d3de6aabb96cf1877b9b4e9f5",
+    "parameters.json": "83566fbacbccd2ea65db24a88ef67ca57431e558f65774b6685d4a8bc165852e",
+    "metadata/ports.json": "0a5ec030f2bf7dc631eb50fc3db2a790d8bb2a50c08ece0bf7760b98680e8856",
+    "source/build.py": "625563079bb73a8581580707179c6d4ec054baf27cd2ee77a264f2dc0d30c504",
+    "source/manifest.py": "548eb3e4112c36df7e27220a3afaedd72e257be5347ab450e5f6ef687d1345c9",
+    "source/render_views.py": "e4e46162a164ed3f8784cba7013eef081f4d83967279684632d33be7ee299814",
+    "source/test_geometry.py": "7b77dbdcaa93562047a7528122845707e744e85f89552c2126c5f4992300e6a4",
+    "source/test_manifest.py": "ef81a6676ad9227ee0147951471418b9842797a965943c6856f9f0ed2bac065a",
+    "source/test_roundtrip_geometry.py": "99af0ac5723e28b3fbdf33af3663461227775bc4c0be2656e4c0558eada81e62",
+    "source/write_preview_provenance.py": "061295584039254de7c9c3571759248dccc983f6d67ad1f4d36080a2edcd47a5"
+  },
+  "native_status": "PASS",
+  "roundtrip_status": "PASS",
+  "placed_triangles": 26505,
+  "physical_tests_native": 19,
+  "physical_tests_glb_reimport": 19,
+  "manifest_tests": 4,
+  "printed_annotations_verified": 69,
+  "anchors_verified": 18,
+  "physical_contacts_verified": 48,
+  "all_final_previews_match_master": true,
+  "preview_provenance_sha256": "df4737f3e45928cfeac1d37a538d6c0877baf7de209060706dd4322e3c573d81",
+  "publication": {
+    "metadata_receipt_from_repository_root": "rtds/qa/batch-2-publication-metadata.json",
+    "source_document_sha256": "e7db3968abf1f198fc6c1f2dbc6103053763ce9512b1cd37b95bdcf392b8fe14",
+    "scope": "Publication hashes updated after metadata-only PNG sanitation; geometry, compressed image data and decoded pixels unchanged. Original source hashes retained here.",
+    "hash_updates": [
+      {
+        "json_pointer": "/preview_provenance_sha256",
+        "file": "rtds/gtai-v2-2.31/qa/preview-provenance.json",
+        "source_sha256": "ce0f088731b6eac532bd3a700f3a75ddbe14be40e7e2eb781563e122659e1290",
+        "published_sha256": "df4737f3e45928cfeac1d37a538d6c0877baf7de209060706dd4322e3c573d81"
+      }
+    ]
+  }
+}

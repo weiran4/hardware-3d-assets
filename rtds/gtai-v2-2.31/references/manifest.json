@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "private-manual-2026-compilation",
+      "chapter_revision": "20240924",
+      "pdf_page_range": [
+        336,
+        361
+      ],
+      "key_pages": [
+        337,
+        339,
+        340,
+        341,
+        343,
+        344,
+        347
+      ],
+      "appearance": "GTAI Version 2.31 observed in Figure7.1",
+      "distribution": "private inspection only; manual and screenshots excluded",
+      "title": "RTDS Hardware Manual"
+    },
+    {
+      "id": "phoenix-1803581",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-3-st-381-1803581",
+      "accessed": "2026-10-21",
+      "used_for": [
+        "3 positions in1 row",
+        "3.81 mm pitch",
+        "12.22×11.1×16.1 mm plug envelope",
+        "slotted screw head and wire mouth profile"
+      ],
+      "distribution": "reference only; no images included"
+    }
+  ],
+  "excluded_variant": "Public GTAI V2 photograph depicts different PCB2.21; not used to populate PCB2.31 service hardware."
+}

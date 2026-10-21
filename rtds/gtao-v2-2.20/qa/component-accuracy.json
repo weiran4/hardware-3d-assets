@@ -1,0 +1,111 @@
+{
+  "asset_id": "gtao-v2-2.20",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "overall_connector_accuracy": "PARTIAL_NOT_CERTIFIED",
+  "scope": "Source-grounded core visual interfaces; two unknown service contacts omitted, not guessed.",
+  "geometry_revision": "r05",
+  "checks": [
+    {
+      "name": "manifest topology/revision/pitch/unknown gates",
+      "result": "PASS",
+      "test_count": 5,
+      "test_script": "source/test_manifest.py"
+    },
+    {
+      "name": "reopened native mesh, visibility rays and assembly seating",
+      "result": "PASS",
+      "test_count": 20,
+      "test_script": "source/test_geometry.py"
+    },
+    {
+      "name": "actual GLB imported geometry same physical regressions",
+      "result": "PASS",
+      "test_count": 20,
+      "test_script": "source/test_roundtrip_geometry.py"
+    },
+    {
+      "name": "native contract",
+      "result": "PASS",
+      "report": "qa/report.json"
+    },
+    {
+      "name": "GLB dimensions/materials/hierarchy/anchors",
+      "result": "PASS",
+      "report": "qa/roundtrip.json"
+    },
+    {
+      "name": "existing generic and frozen manifest regression",
+      "result": "PASS",
+      "test_count": 23
+    },
+    {
+      "name": "deliberate geometry mutation sensitivity on clean actual GLB imports",
+      "result": "PASS",
+      "test_count": 4,
+      "report": "qa/mutation-probes.json"
+    },
+    {
+      "name": "all86 printed labels exact visibility",
+      "result": "PASS",
+      "samples_per_file": 10388,
+      "native_report": "qa/label-visibility-native.json",
+      "actual_glb_report": "qa/label-visibility-glb.json"
+    }
+  ],
+  "actual_counts": {
+    "terminal_plugs": 16,
+    "positions_per_plug": 2,
+    "physical_terminal_positions": 32,
+    "signal_channels": 16,
+    "return_positions": 16,
+    "power_headers": 2,
+    "contacts_per_power_header": 4,
+    "duplex_optical_ports": 2,
+    "receptacles_per_optical_port": 2,
+    "physical_contact_total": 44,
+    "dip_rockers": 8,
+    "service_outlines_without_contacts": 2,
+    "anchors": 22,
+    "placed_triangles": 26557,
+    "objects": 1072
+  },
+  "open_gates": [
+    "Black service header and USB-like mouth exact contacts/keying not validated.",
+    "Lower power separate pin order unknown; DIP centered states unverified.",
+    "PCB placement/header geometry photo-estimated, no physical-fit or electrical certification."
+  ],
+  "validated_mating": false,
+  "evidence": "README.md and references/manifest.json",
+  "source_blend_sha256": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894",
+  "export_glb_sha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+  "preview_provenance": "qa/preview-provenance.json",
+  "local_transient_logs_distributed": false,
+  "visual_review": {
+    "revision": "r05",
+    "side_diagnostics": "All four sides plus upright top inspected before final rendering; major housings, fins and supports seated.",
+    "reviewed_views": [
+      "iso",
+      "neutral",
+      "wireframe",
+      "front",
+      "rear",
+      "left",
+      "right",
+      "top",
+      "terminal-closeup",
+      "optical-closeup",
+      "power-closeup"
+    ],
+    "nonblocking_cosmetic_limits": [
+      "Decorative small electronics are representative rather than a BOM.",
+      "Deep terminal contacts require a low mouth-normal view; upright top is for screw and polarity labels."
+    ],
+    "heatsink": "Core cap recessed1mm below top annulus; noncoplanarity regression RED\u2192GREEN; side/top diagnostics inspected after correction.",
+    "gt_labels": "GT1/GT2 clear of link LEDs; XY-bound regression RED\u2192GREEN.",
+    "all_annotations": "All86 printed labels, including port-parented labels, PASS exact glyph-triangle top rays (10,388 samples) in native and actual GLB. Channel numbers and CONFIG/ERROR moved clear; no connector or component moved.",
+    "independent_consolidated_review": "PASS: 984 native checks and 948 actual-GLB checks, all 86 glyph labels, complete support graph, source power mapping, contacts/apertures/keys/pitch/source order.",
+    "builder_final_visual_review": "PASS: all11 r05 final PNGs inspected; upright top annotations clear, terminal/power/optical interiors visible in dedicated views, no floating major components or coplanar heatsink artifact.",
+    "independent_final_visual_and_provenance": "PASS: all 11 final views inspected; independent PNG-byte and decoded RGBA hashes match the current frozen master. No remaining visual blocker."
+  },
+  "reviewer_readiness": "READY: version-pinned core-interface visual candidate, with explicit service/mating uncertainty gates."
+}

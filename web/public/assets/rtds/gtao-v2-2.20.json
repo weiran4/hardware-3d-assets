@@ -1,0 +1,1718 @@
+{
+  "schema_version": "rtds.ports.v1",
+  "asset_id": "gtao-v2-2.20",
+  "asset_version": "0.1.0",
+  "hardware_version": "GTAO V2",
+  "pcb_revision": "2.20",
+  "appearance_revision": "PCB 2.20 manual Figure6.2, all 16 terminal plugs populated",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y; PCB component side +Z, board label top +Y",
+  "board_dimensions_m_estimated": [
+    0.1,
+    0.19,
+    0.0016
+  ],
+  "critical_interface_status": "core signal/power/optical geometry grounded; two auxiliary service details unresolved",
+  "ports": [
+    {
+      "id": "gtao-v2-2.20.channel1",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel1",
+      "label": "OUTPUT 1",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.0815,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 1,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.0815,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel2",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel2",
+      "label": "OUTPUT 2",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.0712,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 2,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.0712,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel3",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel3",
+      "label": "OUTPUT 3",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.0609,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 3,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.0609,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel4",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel4",
+      "label": "OUTPUT 4",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.050600000000000006,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 4,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.050600000000000006,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel5",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel5",
+      "label": "OUTPUT 5",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.0403,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 5,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.0403,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel6",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel6",
+      "label": "OUTPUT 6",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.03,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 6,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.03,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel7",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel7",
+      "label": "OUTPUT 7",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.019700000000000002,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 7,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.019700000000000002,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel8",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel8",
+      "label": "OUTPUT 8",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        0.009400000000000006,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 8,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        0.009400000000000006,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel9",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel9",
+      "label": "OUTPUT 9",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.006899999999999998,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 9,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.006899999999999998,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel10",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel10",
+      "label": "OUTPUT 10",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.0172,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 10,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.0172,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel11",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel11",
+      "label": "OUTPUT 11",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.027500000000000004,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 11,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.027500000000000004,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel12",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel12",
+      "label": "OUTPUT 12",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.03779999999999999,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 12,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.03779999999999999,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "documented hardware output"
+    },
+    {
+      "id": "gtao-v2-2.20.channel13",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel13",
+      "label": "OUTPUT 13",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.0481,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 13,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.0481,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "NovaCor only"
+    },
+    {
+      "id": "gtao-v2-2.20.channel14",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel14",
+      "label": "OUTPUT 14",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.05839999999999999,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 14,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.05839999999999999,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "NovaCor only"
+    },
+    {
+      "id": "gtao-v2-2.20.channel15",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel15",
+      "label": "OUTPUT 15",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.0687,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 15,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.0687,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "NovaCor only"
+    },
+    {
+      "id": "gtao-v2-2.20.channel16",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.channel16",
+      "label": "OUTPUT 16",
+      "group": "analog_output",
+      "connector": "phoenix_1803578_populated_visual",
+      "signal_type": "analog_output",
+      "direction": "output",
+      "position_m": [
+        0.05855,
+        -0.079,
+        0.01315
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            276,
+            278,
+            279,
+            289,
+            290
+          ]
+        },
+        {
+          "source_id": "phoenix-1803578",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "channel": 16,
+      "contact_labels": [
+        "+",
+        "RETURN"
+      ],
+      "contact_order": "component side upright top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803578",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        8.41,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0505,
+        -0.079,
+        0.01315
+      ],
+      "population": "all sixteen removable plugs installed as manual Figure6.2 and6.10",
+      "availability": "NovaCor only"
+    },
+    {
+      "id": "gtao-v2-2.20.power1",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.power1",
+      "label": "POWER 1",
+      "group": "power",
+      "connector": "keyed_1x4_power_header_visual",
+      "signal_type": "power",
+      "direction": "power",
+      "position_m": [
+        -0.043,
+        0.075,
+        0.021
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279,
+            281,
+            282
+          ]
+        }
+      ],
+      "contact_labels": [
+        "+24V",
+        "GND",
+        "GND",
+        "NC"
+      ],
+      "pinout_status": "verified_upper_header_only",
+      "contact_order": "board top (+Y) to bottom (-Y)",
+      "key_profile": "two corner chamfers on left long side in component-side view",
+      "power_role": "primary supply"
+    },
+    {
+      "id": "gtao-v2-2.20.power2",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.power2",
+      "label": "POWER 2",
+      "group": "power",
+      "connector": "keyed_1x4_power_header_visual",
+      "signal_type": "power",
+      "direction": "power",
+      "position_m": [
+        -0.043,
+        -0.078,
+        0.021
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279,
+            281,
+            282
+          ]
+        }
+      ],
+      "contact_labels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "pinout_status": "unknown_lower_header_pin_order",
+      "contact_order": "board top (+Y) to bottom (-Y)",
+      "key_profile": "two corner chamfers on left long side in component-side view",
+      "power_role": "power daisy-chain"
+    },
+    {
+      "id": "gtao-v2-2.20.gt1",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.gt1",
+      "label": "GT1",
+      "group": "optical",
+      "connector": "lc_duplex_sfp_visual",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.053,
+        0.026,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279,
+            280
+          ]
+        }
+      ],
+      "chain_role": "upstream"
+    },
+    {
+      "id": "gtao-v2-2.20.gt2",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.gt2",
+      "label": "GT2",
+      "group": "optical",
+      "connector": "lc_duplex_sfp_visual",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.053,
+        -0.025,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279,
+            280
+          ]
+        }
+      ],
+      "chain_role": "downstream"
+    },
+    {
+      "id": "gtao-v2-2.20.service_header",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.service_header",
+      "label": "SERVICE HEADER",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        -0.022,
+        0.091,
+        0.015
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279
+          ]
+        }
+      ],
+      "unresolved": "Exact contacts and keying unvalidated; hollow outline only, no invented contacts."
+    },
+    {
+      "id": "gtao-v2-2.20.service_usb",
+      "parent_id": "gtao-v2-2.20.root",
+      "anchor_name": "gtao-v2-2.20.service_usb",
+      "label": "SERVICE RECEPTACLE",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        0.002,
+        0.091,
+        0.011
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTAO V2 6A",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            279
+          ]
+        }
+      ],
+      "unresolved": "Exact contacts and keying unvalidated; hollow outline only, no invented contacts."
+    }
+  ]
+}

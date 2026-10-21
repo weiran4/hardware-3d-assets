@@ -33,25 +33,12 @@
       "type": "object",
       "required": [
         "title",
-        "filename",
-        "page_count",
-        "sha256",
         "access",
         "redistribution"
       ],
       "properties": {
         "title": {
-          "type": "string"
-        },
-        "filename": {
-          "type": "string"
-        },
-        "page_count": {
-          "const": 605
-        },
-        "sha256": {
-          "type": "string",
-          "pattern": "^[a-f0-9]{64}$"
+          "const": "RTDS Hardware Manual"
         },
         "access": {
           "const": "private_user_provided"
@@ -125,6 +112,26 @@
               "string",
               "null"
             ]
+          }
+        },
+        "if": {
+          "properties": {
+            "access": {
+              "const": "private_user_provided"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "title": {
+              "const": "RTDS Hardware Manual"
+            },
+            "date": {
+              "type": "null"
+            },
+            "url": {
+              "type": "null"
+            }
           }
         }
       }

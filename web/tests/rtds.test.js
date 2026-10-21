@@ -47,7 +47,7 @@ test('camera envelope includes diagonal projection instead of only largest axis'
 });
 
 test('public RTDS GLBs retain all source identities, no images/private paths and unknown mating',async()=>{
- const {readFileSync}=await import('node:fs');const {publishedModels}=await import('../src/rtds-models.js');assert.equal(Object.keys(publishedModels).length,2);
+ const {readFileSync}=await import('node:fs');const {publishedModels}=await import('../src/rtds-models.js');assert.equal(Object.keys(publishedModels).length,5);
  for(const info of Object.values(publishedModels)){
   const file=readFileSync('public/'+info.glb.replace('./',''));const data=JSON.parse(readFileSync('public/'+info.metadata.replace('./',''),'utf8'));const doc=JSON.parse(file.toString('utf8',20,20+file.readUInt32LE(12)));
   assert.equal(file.toString('ascii',0,4),'glTF');assert.equal(doc.images?.length??0,0);assert.ok(doc.meshes.length>100);
@@ -74,9 +74,27 @@ test('GTDI lower power assignments remain unknown instead of copying the upper c
 });
 
 test('GLB embedded port records agree with the shipped metadata, preventing stale model mixtures',async()=>{
- const {readFileSync}=await import('node:fs');for(const asset of ['novacor-2.0-2023','gtdi-v2-2.01']){const b=readFileSync(`public/assets/rtds/${asset}.glb`),doc=JSON.parse(b.toString('utf8',20,20+b.readUInt32LE(12))),data=JSON.parse(readFileSync(`public/assets/rtds/${asset}.json`));const nodes=new Map(doc.nodes.filter(n=>n.extras?.sid).map(n=>[n.extras.sid,n]));for(const p of data.ports){const embedded=JSON.parse(nodes.get(p.id).extras.port_record);assert.deepEqual(embedded,p,p.id);}}
+ const {readFileSync}=await import('node:fs');for(const asset of ['novacor-2.0-2023','gtdi-v2-2.01','gtdo-v2-2.00','gtai-v2-2.31','gtao-v2-2.20']){const b=readFileSync(`public/assets/rtds/${asset}.glb`),doc=JSON.parse(b.toString('utf8',20,20+b.readUInt32LE(12))),data=JSON.parse(readFileSync(`public/assets/rtds/${asset}.json`));const nodes=new Map(doc.nodes.filter(n=>n.extras?.sid).map(n=>[n.extras.sid,n]));for(const p of data.ports){const embedded=JSON.parse(nodes.get(p.id).extras.port_record);assert.deepEqual(embedded,p,p.id);}}
 });
 
 test('selected port labels do not float over the wrong hardware surface',async()=>{
  const {isPortFacingCamera}=await import('../src/rtds-state.js');assert.equal(isPortFacingCamera([0,1,0],[0,0,-1],[0,0,0]),true);assert.equal(isPortFacingCamera([0,1,0],[0,0,1],[0,0,0]),false);
+});
+
+test('new GTIO interface groups retain exact metadata identities with readable Chinese labels',()=>{
+ const groups=portGroups({ports:[{id:'a',group:'digital_output'},{id:'b',group:'analogue_input'},{id:'c',group:'analog_output'}]});
+ assert.deepEqual(groups.map(g=>g.label),['数字输出端子','差分模拟输入','模拟输出端子']);
+ assert.deepEqual(groups.map(g=>g.id),['digital_output','analogue_input','analog_output']);
+});
+
+test('group selection opens its first verified port details without narrowing the group highlight',()=>{
+ let s=galleryTransition(createGalleryState(),{type:'group',group:'aurora',firstPortId:'novacor-2.0-2023.gt21'});
+ assert.equal(s.portId,'novacor-2.0-2023.gt21');assert.equal(s.inspectionMode,'group');
+ s=galleryTransition(s,{type:'port',portId:'novacor-2.0-2023.gt23'});assert.equal(s.inspectionMode,'port');assert.equal(s.portId,'novacor-2.0-2023.gt23');
+ s=galleryTransition(s,{type:'group',group:'service_unresolved'});assert.equal(s.portId,null);assert.equal(s.inspectionMode,'group');
+});
+
+test('public manual citation retains only a generic title and chapter/page references',()=>{
+ assert.equal(sources['MANUAL-605'].title,'RTDS Hardware Manual');
+ for(const key of Object.keys(sources['MANUAL-605']))assert.doesNotMatch(key,/sha|hash|filename|page_count|modification/i);
 });

@@ -1,0 +1,1846 @@
+{
+  "schema_version": "rtds.ports.v1",
+  "asset_id": "gtdo-v2-2.00",
+  "asset_version": "0.1.0",
+  "hardware_version": "GTDO V2",
+  "pcb_revision": "2.00",
+  "appearance_revision": "PCB 2.00 manual Figure8.1, with external terminal plugs populated as Figure8.7",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y; PCB component side +Z, board label top +Y",
+  "board_dimensions_m_estimated": [
+    0.11,
+    0.197,
+    0.0016
+  ],
+  "critical_interface_status": "core signal/power/optical geometry grounded; auxiliary service details unresolved",
+  "ports": [
+    {
+      "id": "gtdo-v2-2.00.bank1_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank1_odd",
+      "label": "BANK 1 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        0.086,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 1,
+      "tier": "odd",
+      "contact_labels": [
+        "1",
+        "3",
+        "5",
+        "7",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        0.086,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank1_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank1_even",
+      "label": "BANK 1 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        0.086,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 1,
+      "tier": "even",
+      "contact_labels": [
+        "2",
+        "4",
+        "6",
+        "8",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        0.086,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank2_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank2_odd",
+      "label": "BANK 2 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        0.063,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 2,
+      "tier": "odd",
+      "contact_labels": [
+        "9",
+        "11",
+        "13",
+        "15",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        0.063,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank2_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank2_even",
+      "label": "BANK 2 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        0.063,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 2,
+      "tier": "even",
+      "contact_labels": [
+        "10",
+        "12",
+        "14",
+        "16",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        0.063,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank3_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank3_odd",
+      "label": "BANK 3 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        0.039999999999999994,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 3,
+      "tier": "odd",
+      "contact_labels": [
+        "17",
+        "19",
+        "21",
+        "23",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        0.039999999999999994,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank3_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank3_even",
+      "label": "BANK 3 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        0.039999999999999994,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 3,
+      "tier": "even",
+      "contact_labels": [
+        "18",
+        "20",
+        "22",
+        "24",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        0.039999999999999994,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank4_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank4_odd",
+      "label": "BANK 4 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        0.016999999999999987,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 4,
+      "tier": "odd",
+      "contact_labels": [
+        "25",
+        "27",
+        "29",
+        "31",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        0.016999999999999987,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank4_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank4_even",
+      "label": "BANK 4 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        0.016999999999999987,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 4,
+      "tier": "even",
+      "contact_labels": [
+        "26",
+        "28",
+        "30",
+        "32",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        0.016999999999999987,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank5_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank5_odd",
+      "label": "BANK 5 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        -0.014000000000000005,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 5,
+      "tier": "odd",
+      "contact_labels": [
+        "33",
+        "35",
+        "37",
+        "39",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        -0.014000000000000005,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank5_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank5_even",
+      "label": "BANK 5 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        -0.014000000000000005,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 5,
+      "tier": "even",
+      "contact_labels": [
+        "34",
+        "36",
+        "38",
+        "40",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        -0.014000000000000005,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank6_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank6_odd",
+      "label": "BANK 6 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        -0.037,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 6,
+      "tier": "odd",
+      "contact_labels": [
+        "41",
+        "43",
+        "45",
+        "47",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        -0.037,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank6_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank6_even",
+      "label": "BANK 6 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        -0.037,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 6,
+      "tier": "even",
+      "contact_labels": [
+        "42",
+        "44",
+        "46",
+        "48",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        -0.037,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank7_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank7_odd",
+      "label": "BANK 7 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        -0.06000000000000002,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 7,
+      "tier": "odd",
+      "contact_labels": [
+        "49",
+        "51",
+        "53",
+        "55",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        -0.06000000000000002,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank7_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank7_even",
+      "label": "BANK 7 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        -0.06000000000000002,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 7,
+      "tier": "even",
+      "contact_labels": [
+        "50",
+        "52",
+        "54",
+        "56",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        -0.06000000000000002,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank8_odd",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank8_odd",
+      "label": "BANK 8 ODD",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.04705,
+        -0.08300000000000002,
+        0.023
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 8,
+      "tier": "odd",
+      "contact_labels": [
+        "57",
+        "59",
+        "61",
+        "63",
+        "V+"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.039,
+        -0.08300000000000002,
+        0.023
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.bank8_even",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.bank8_even",
+      "label": "BANK 8 EVEN",
+      "group": "digital_output",
+      "connector": "phoenix_1803604_populated_visual",
+      "signal_type": "digital_output",
+      "direction": "output",
+      "position_m": [
+        0.06255,
+        -0.08300000000000002,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 5,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "plug_pitch_and_envelope": "manufacturer_documented"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            364,
+            370
+          ]
+        },
+        {
+          "source_id": "phoenix-1803604",
+          "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+          "accessed": "2026-10-21"
+        }
+      ],
+      "bank": 8,
+      "tier": "even",
+      "contact_labels": [
+        "58",
+        "60",
+        "62",
+        "64",
+        "V-"
+      ],
+      "contact_order": "component side: board top (+Y) to bottom (-Y)",
+      "plug_part_number": "1803604",
+      "pitch_mm": 3.81,
+      "plug_dimensions_mm_W_H_L": [
+        19.84,
+        11.1,
+        16.1
+      ],
+      "plug_center_m": [
+        0.0545,
+        -0.08300000000000002,
+        0.012
+      ],
+      "population": "plug installed; derived from manual Fig8.7, not inferred from rear-view photograph"
+    },
+    {
+      "id": "gtdo-v2-2.00.power1",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.power1",
+      "label": "POWER 1",
+      "group": "power",
+      "connector": "keyed_1x4_power_header_visual",
+      "signal_type": "power",
+      "direction": "power",
+      "position_m": [
+        -0.047,
+        0.073,
+        0.021
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            365
+          ]
+        }
+      ],
+      "contact_labels": [
+        "+24V",
+        "GND",
+        "GND",
+        "NC"
+      ],
+      "pinout_status": "verified_upper_header_only",
+      "contact_order": "board top (+Y) to bottom (-Y)",
+      "key_profile": "two corner chamfers on left long side in component-side view",
+      "power_role": "primary supply"
+    },
+    {
+      "id": "gtdo-v2-2.00.power2",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.power2",
+      "label": "POWER 2",
+      "group": "power",
+      "connector": "keyed_1x4_power_header_visual",
+      "signal_type": "power",
+      "direction": "power",
+      "position_m": [
+        -0.047,
+        -0.079,
+        0.021
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363,
+            365
+          ]
+        }
+      ],
+      "contact_labels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "pinout_status": "unknown_lower_header_pin_order",
+      "contact_order": "board top (+Y) to bottom (-Y)",
+      "key_profile": "two corner chamfers on left long side in component-side view",
+      "power_role": "power daisy-chain"
+    },
+    {
+      "id": "gtdo-v2-2.00.gt1",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.gt1",
+      "label": "GT1",
+      "group": "optical",
+      "connector": "lc_duplex_sfp_visual",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.057,
+        0.027,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            362,
+            363,
+            366
+          ]
+        }
+      ],
+      "chain_role": "upstream"
+    },
+    {
+      "id": "gtdo-v2-2.00.gt2",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.gt2",
+      "label": "GT2",
+      "group": "optical",
+      "connector": "lc_duplex_sfp_visual",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.057,
+        -0.025,
+        0.012
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "documented",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            362,
+            363,
+            366
+          ]
+        }
+      ],
+      "chain_role": "downstream"
+    },
+    {
+      "id": "gtdo-v2-2.00.service_top",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.service_top",
+      "label": "TOP SERVICE HEADER",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        -0.02,
+        0.092,
+        0.02
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363
+          ]
+        }
+      ],
+      "unresolved": "Exact contact count, connector part number and keyed mating profile need a straight-on close-up; hollow silhouette only, no invented contacts."
+    },
+    {
+      "id": "gtdo-v2-2.00.service_jtag",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.service_jtag",
+      "label": "SERVICE HEADER",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        -0.019,
+        0.065,
+        0.015
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363
+          ]
+        }
+      ],
+      "unresolved": "Exact contact count, connector part number and keyed mating profile need a straight-on close-up; hollow silhouette only, no invented contacts."
+    },
+    {
+      "id": "gtdo-v2-2.00.service_lower",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.service_lower",
+      "label": "LOWER SERVICE HEADER",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        0.009,
+        -0.084,
+        0.015
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363
+          ]
+        }
+      ],
+      "unresolved": "Exact contact count, connector part number and keyed mating profile need a straight-on close-up; hollow silhouette only, no invented contacts."
+    },
+    {
+      "id": "gtdo-v2-2.00.service_usb",
+      "parent_id": "gtdo-v2-2.00.root",
+      "anchor_name": "gtdo-v2-2.00.service_usb",
+      "label": "SERVICE RECEPTACLE",
+      "group": "service_unresolved",
+      "connector": "observed_service_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        -0.004,
+        0.096,
+        0.011
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_mechanically_certified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated",
+        "contact_geometry": "unresolved_not_modelled"
+      },
+      "evidence": [
+        {
+          "source_id": "manual-user-compilation",
+          "chapter": "GTDO V2",
+          "chapter_revision": "20240924",
+          "pdf_pages": [
+            363
+          ]
+        }
+      ],
+      "unresolved": "Exact contact count, connector part number and keyed mating profile need a straight-on close-up; hollow silhouette only, no invented contacts."
+    }
+  ]
+}

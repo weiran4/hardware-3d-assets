@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "id": "manual-user-compilation",
+      "chapter": "8A GTDO V2",
+      "chapter_revision": "20240924",
+      "pdf_page_range": [
+        362,
+        381
+      ],
+      "key_pages": [
+        362,
+        363,
+        364,
+        365,
+        370
+      ],
+      "hardware_appearance": "PCB Version2.00 shown in Figure8.1",
+      "distribution": "private reference only; not included",
+      "title": "RTDS Hardware Manual"
+    },
+    {
+      "id": "phoenix-1803604",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+      "accessed": "2026-10-21",
+      "used_for": [
+        "five positions in one row",
+        "3.81mm pitch",
+        "19.84x11.1x16.1mm plug envelope",
+        "slotted screw and wire-entry profile"
+      ],
+      "distribution": "reference only; no images included"
+    }
+  ]
+}

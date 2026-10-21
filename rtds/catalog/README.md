@@ -44,11 +44,11 @@ Refer to the manifest for the exact official links and manual page locators behi
 - **GTSOC V2 role wording:** PDF p.529 assigns Blackbox use to rear ports 1–4, while p.531 refers to front ports in that discussion. No automatic route is derived from the conflict.
 - **GTSOC V2 front population:** the public reference photo has copper RJ45 SFP modules. Sixteen SFP positions do not mean sixteen permanently fixed LC receptacles.
 - **GTNETx2:** four visible metal assemblies are not four Ethernet ports; the simulator-side and LAN-side roles are distinct.
-- **Legacy records:** full original GTNET, GTAI V1 and GTFPI V1 chapters were not found in this 605-page compilation. V2 geometry is not a substitute.
+- **Legacy records:** full original GTNET, GTAI V1 and GTFPI V1 chapters were not found in the inspected hardware manual. V2 geometry is not a substitute.
 
 ## Provenance and publishing boundary
 
-Checked **2026-10-21**. The user-supplied file is titled *RTDS Hardware Manual*, named `HDWR-TITLE-rev00.pdf`, and contains **605 pages**. Its SHA-256 is recorded in the manifest. The PDF's 2026-06-29 modification metadata is not the revision date of every chapter; individual printed dates are retained. The folder name “HARDWARE_2009” is not evidence of document age.
+Checked **2026-10-21** against the privately supplied *RTDS Hardware Manual*. Public citations retain the relevant chapter, page and printed revision; private file identity and file metadata remain outside this catalog.
 
 Only original short fact paraphrases, source identities and links are included here. No manufacturer PDF, photograph, bitmap texture, extracted page or nonpublic manual text chunk is distributed. Public accessibility is not a redistribution licence. Manufacturer names identify references and do not imply endorsement.
 
@@ -59,7 +59,7 @@ Coordinates, contact geometry, mating travel and tolerances must remain marked a
 From the project root:
 
 ```sh
-python3 -m unittest rtds/catalog/test_catalog.py -v
+python3 -m unittest discover -s rtds/catalog -p 'test_catalog*.py' -v
 ```
 
-The schema test uses the already-available `jsonschema` package. No installation or network call is required in the verified environment. Seven checks passed on 2026-10-21; the original missing-catalog test was observed failing before the manifest was created.
+The schema test uses the already-available `jsonschema` package. No installation or network call is required in the verified environment. The checks include structural rejection of private file-identity fields; regression tests use no real private fingerprints.

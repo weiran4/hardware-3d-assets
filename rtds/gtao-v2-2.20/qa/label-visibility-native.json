@@ -1,0 +1,10 @@
+{
+  "asset_id": "gtao-v2-2.20",
+  "status": "PASS",
+  "label_count": 86,
+  "triangle_sample_count": 10388,
+  "scope": "ALL printed labels, including port-parented power/terminal labels; exact glyph triangle centroid plus three interior-vertex samples; upward component-side visibility.",
+  "source_blend_sha256": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894",
+  "source_glb_sha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+  "blocked": []
+}

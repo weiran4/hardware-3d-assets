@@ -1,0 +1,9 @@
+{
+  "asset_id": "gtai-v2-2.31",
+  "hardware_version": "GTAI V2",
+  "pcb_revision": "2.31",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "population": "12 installed Phoenix1803581 removable plugs; visual PCB headers estimated",
+  "source_photo_reproduction": false,
+  "service_interfaces": "two hollow silhouettes; exact contacts and key inserts intentionally unmodelled"
+}

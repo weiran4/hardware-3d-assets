@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "manual-user-compilation",
+      "chapter": "6A",
+      "chapter_revision": "20240924",
+      "pdf_page_range": [
+        276,
+        307
+      ],
+      "key_pages": [
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        289,
+        290
+      ],
+      "distribution": "reference only; not included",
+      "title": "RTDS Hardware Manual"
+    },
+    {
+      "id": "phoenix-1803578",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578",
+      "accessed": "2026-10-21",
+      "used_for": [
+        "2 positions, 1 row",
+        "3.81mm pitch",
+        "8.41x11.1x16.1mm envelope",
+        "slotted screw and outward wire-entry profile"
+      ],
+      "distribution": "reference only; no images included"
+    }
+  ]
+}

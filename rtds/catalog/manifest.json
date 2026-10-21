@@ -5,9 +5,6 @@
   "scope": "Source inventory for original RTDS educational 3D assets. No geometry release or real-device wiring approval is implied.",
   "manual_reference": {
     "title": "RTDS Hardware Manual",
-    "filename": "HDWR-TITLE-rev00.pdf",
-    "page_count": 605,
-    "sha256": "c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf",
     "access": "private_user_provided",
     "redistribution": "not included; no manufacturer PDF/image/text extract is packaged"
   },
@@ -29,10 +26,10 @@
   "sources": [
     {
       "id": "MANUAL-605",
-      "title": "RTDS Hardware Manual, 605-page compilation",
+      "title": "RTDS Hardware Manual",
       "access": "private_user_provided",
-      "date": "2026-06-29",
-      "date_meaning": "PDF modification metadata; individual chapters have their own printed dates",
+      "date": null,
+      "date_meaning": "Refer to each cited chapter's printed revision.",
       "url": null
     },
     {
@@ -170,6 +167,22 @@
       "date": "2026-10-21",
       "date_meaning": "Access/verification date; product revision date not asserted",
       "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604"
+    },
+    {
+      "id": "PHOENIX-1803581",
+      "title": "Phoenix Contact MC 1,5/3-ST-3,81 (1803581)",
+      "access": "public_reference_only",
+      "date": "2026-10-21",
+      "date_meaning": "product facts accessed",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-3-st-381-1803581"
+    },
+    {
+      "id": "PHOENIX-1803578",
+      "title": "Phoenix Contact MC 1,5/2-ST-3,81 (1803578)",
+      "access": "public_reference_only",
+      "date": "2026-10-21",
+      "date_meaning": "product facts accessed",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-2-st-381-1803578"
     }
   ],
   "variants": [
@@ -748,7 +761,7 @@
       "id": "gtdo-v2",
       "family": "GTDO",
       "generation": "V2",
-      "identity_scope": "2024-09-24 chapter; official small photo does not resolve the exact PCB revision.",
+      "identity_scope": "Exact visual candidate PCB Version 2.00 from manual PDF page 363, chapter revision 20240924. Other PCB revisions are not silently substituted.",
       "evidence": [
         {
           "source_id": "GTDO-PHOTO",
@@ -761,6 +774,10 @@
         {
           "source_id": "MANUAL-605",
           "locator": "Chapter 8A; PDF pages 362-381; printed chapter date 2024-09-24"
+        },
+        {
+          "source_id": "PHOENIX-1803604",
+          "locator": "Product properties and Dimensions; accessed 2026-10-21"
         }
       ],
       "confidence": {
@@ -773,45 +790,72 @@
                 "MANUAL-605"
               ],
               "locator": "PDF pp.362-363 / printed pp.1-2"
+            },
+            {
+              "claim": "16 separate 5-position removable plugs give 80 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF363 and PDF370"
             }
           ],
-          "gaps": []
+          "gaps": [
+            "4 observed service connector outlines have unresolved internal contact counts."
+          ]
         },
         "layout": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Bank 1 labels are top V+,7,5,3,1 and bottom V-,8,6,4,2; later banks add eight to signal numbers.",
+              "claim": "In connector-end view each bank is V+,7,5,3,1 over V-,8,6,4,2. Upright board top-to-bottom: inner tier 1,3,5,7,V+ and outer tier 2,4,6,8,V-; subsequent banks add 8.",
               "source_refs": [
                 "MANUAL-605"
               ],
-              "locator": "PDF p.363 / printed p.2, Fig.8.1"
+              "locator": "PDF363 Figure8.1 and PDF370 Figure8.7"
             }
           ],
           "gaps": [
-            "Exact board revision, coordinates and connector orientation require full-resolution visual acceptance."
+            "Absolute placement, tier/height offsets and production tolerances remain photo-estimated."
           ]
         },
         "keying": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF363, power close-up PDF365"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Exact power/optical/PCB-header part pairing and hidden mechanical fit are not certified.",
+            "Service contact/key-notch geometry is unresolved and not invented."
           ]
         },
         "contacts": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Manual identifies Phoenix Contact 1803604 terminal blocks.",
+              "claim": "Phoenix Contact item 1803604 identifies the 5-position screw plug; each modeled wire entry has a distinct recessed contact.",
+              "source_refs": [
+                "PHOENIX-1803604",
+                "MANUAL-605"
+              ],
+              "locator": "PDF364 plus official product properties"
+            },
+            {
+              "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
                 "MANUAL-605"
               ],
-              "locator": "PDF p.364 / printed p.3"
+              "locator": "PDF365"
             }
           ],
           "gaps": [
-            "Actual plug/header mechanics and power/optical contacts not yet accepted."
+            "4 service interfaces are hollow contact-detail silhouettes, not complete connectors.",
+            "Optical Tx/Rx mapping, power/header mating mechanics and electrical compatibility are unvalidated."
           ]
         },
         "physical_dimensions": {
@@ -823,10 +867,18 @@
                 "MANUAL-605"
               ],
               "locator": "PDF p.362 / printed p.1"
+            },
+            {
+              "claim": "Phoenix item 1803604 has 3.81 mm pitch and published W x H x L plug envelope 19.84 x 11.1 x 16.1 mm.",
+              "source_refs": [
+                "PHOENIX-1803604"
+              ],
+              "locator": "Official product Dimensions; accessed 2026-10-21"
             }
           ],
           "gaps": [
-            "Width, thickness, carrier extent, reference endpoints and connector coordinates are not established."
+            "Board width/thickness, carrier, port placement and installed PCB header remain estimated; documented plug dimensions do not certify mating geometry.",
+            "Documented 197 mm card length lacks dimensioned measurement endpoints; it is not a fit tolerance."
           ]
         },
         "electrical_compatibility": {
@@ -838,15 +890,18 @@
         }
       },
       "release_gate": {
-        "stage": "catalog_only",
+        "stage": "connector_research_candidate",
         "accurate_connector_release_passed": false,
         "blockers": [
-          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
-          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+          "4 service connector interiors require version-matched straight-on closeups.",
+          "Matching PCB terminal-header identity, hidden key/mating geometry and exact mechanical tolerances remain unknown.",
+          "The lower power pin order and DIP states are unverified; no operational wiring or compatibility validation is approved."
         ]
       },
       "notes": [
-        "Eight banks of eight is materially different from V1 two banks of 32."
+        "Eight banks of eight is materially different from V1 two banks of 32.",
+        "Delivered original visual candidate: rtds/gtdo-v2-2.00/source/asset.blend and rtds/gtdo-v2-2.00/exports/asset.glb. Native and actual-GLB geometry, seating and source-view checks passed; boundaries in rtds/gtdo-v2-2.00/qa/component-accuracy.json.",
+        "80 terminal positions and 4 unresolved service outlines are preserved separately. Eight DIP rocker positions are illustrative, not verified factory settings."
       ]
     },
     {
@@ -932,7 +987,7 @@
       "id": "gtai-v2",
       "family": "GTAI",
       "generation": "V2",
-      "identity_scope": "2024-09-24 chapter and official V2 photo; exact PCB revision not accepted.",
+      "identity_scope": "Exact visual candidate PCB Version 2.31 from manual PDF page 337, chapter revision 20240924. Other PCB revisions are not silently substituted.",
       "evidence": [
         {
           "source_id": "GTAI-PHOTO",
@@ -945,6 +1000,10 @@
         {
           "source_id": "MANUAL-605",
           "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
+        },
+        {
+          "source_id": "PHOENIX-1803581",
+          "locator": "Product properties and Dimensions; accessed 2026-10-21"
         }
       ],
       "confidence": {
@@ -957,52 +1016,87 @@
                 "MANUAL-605"
               ],
               "locator": "PDF p.336 / printed p.1"
-            }
-          ],
-          "gaps": []
-        },
-        "layout": {
-          "status": "observed",
-          "facts": [
+            },
             {
-              "claim": "Twelve green terminal groups occupy one long edge, with two optical cages opposite.",
+              "claim": "12 separate 3-position removable plugs give 36 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
               "source_refs": [
-                "GTAI-PHOTO"
+                "MANUAL-605"
               ],
-              "locator": "Component-side photo"
+              "locator": "PDF337 and PDF347"
             }
           ],
           "gaps": [
-            "Do not derive channel polarity/orientation solely from the angled photo."
+            "2 observed service connector outlines have unresolved internal contact counts."
+          ]
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Twelve three-position plugs run top-to-bottom as channels 1-12; within each upright plug the order is positive,negative,ground. Two optical cages face outward on the left.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF337 Figure7.1 and PDF347 Figure7.8"
+            }
+          ],
+          "gaps": [
+            "Absolute placement, tier/height offsets and production tolerances remain photo-estimated."
           ]
         },
         "keying": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF337, power close-up PDF341"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Exact power/optical/PCB-header part pairing and hidden mechanical fit are not certified.",
+            "Service contact/key-notch geometry is unresolved and not invented."
           ]
         },
         "contacts": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Manual names Phoenix Contact 1803581 and gives three contacts per channel: positive, negative and ground.",
+              "claim": "Phoenix Contact item 1803581 identifies the 3-position screw plug; each modeled wire entry has a distinct recessed contact.",
+              "source_refs": [
+                "PHOENIX-1803581",
+                "MANUAL-605"
+              ],
+              "locator": "PDF339 plus official product properties"
+            },
+            {
+              "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
                 "MANUAL-605"
               ],
-              "locator": "PDF p.339 / printed p.4; p.347 / printed p.12"
+              "locator": "PDF341"
             }
           ],
           "gaps": [
-            "Verify physical terminal order in the upright figure and the mating plug/header geometry."
+            "2 service interfaces are hollow contact-detail silhouettes, not complete connectors.",
+            "Optical Tx/Rx mapping, power/header mating mechanics and electrical compatibility are unvalidated."
           ]
         },
         "physical_dimensions": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Phoenix item 1803581 has 3.81 mm pitch and published W x H x L plug envelope 12.22 x 11.1 x 16.1 mm.",
+              "source_refs": [
+                "PHOENIX-1803581"
+              ],
+              "locator": "Official product Dimensions; accessed 2026-10-21"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Board width/thickness, carrier, port placement and installed PCB header remain estimated; documented plug dimensions do not certify mating geometry."
           ]
         },
         "electrical_compatibility": {
@@ -1014,14 +1108,19 @@
         }
       },
       "release_gate": {
-        "stage": "catalog_only",
+        "stage": "connector_research_candidate",
         "accurate_connector_release_passed": false,
         "blockers": [
-          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
-          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+          "2 service connector interiors require version-matched straight-on closeups.",
+          "Matching PCB terminal-header identity, hidden key/mating geometry and exact mechanical tolerances remain unknown.",
+          "The lower power pin order and DIP states are unverified; no operational wiring or compatibility validation is approved."
         ]
       },
-      "notes": []
+      "notes": [
+        "Delivered original visual candidate: rtds/gtai-v2-2.31/source/asset.blend and rtds/gtai-v2-2.31/exports/asset.glb. Native and actual-GLB geometry, seating and source-view checks passed; boundaries in rtds/gtai-v2-2.31/qa/component-accuracy.json.",
+        "36 terminal positions and 2 unresolved service outlines are preserved separately. Eight DIP rocker positions are illustrative, not verified factory settings.",
+        "The official website photograph shows PCB 2.21 with a different service population; the delivered manual PCB 2.31 does not mix those details."
+      ]
     },
     {
       "id": "gtai-v1",
@@ -1095,7 +1194,7 @@
       "id": "gtao-v2",
       "family": "GTAO",
       "generation": "V2",
-      "identity_scope": "Official photo is marked PCB Version 2.20; chapter dated 2024-09-24 covers V2.",
+      "identity_scope": "Exact visual candidate PCB Version 2.20 from manual PDF page 279, chapter revision 20240924. Other PCB revisions are not silently substituted.",
       "evidence": [
         {
           "source_id": "GTAO-PHOTO",
@@ -1108,6 +1207,10 @@
         {
           "source_id": "MANUAL-605",
           "locator": "Chapter 6A; PDF pages 276-307; printed chapter date 2024-09-24"
+        },
+        {
+          "source_id": "PHOENIX-1803578",
+          "locator": "Product properties and Dimensions; accessed 2026-10-21"
         }
       ],
       "confidence": {
@@ -1120,52 +1223,87 @@
                 "MANUAL-605"
               ],
               "locator": "PDF p.276 / printed p.1"
+            },
+            {
+              "claim": "16 separate 2-position removable plugs give 32 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF279 and PDF290"
             }
           ],
-          "gaps": []
+          "gaps": [
+            "2 observed service connector outlines have unresolved internal contact counts."
+          ]
         },
         "layout": {
           "status": "partial",
           "facts": [
             {
-              "claim": "The upright terminal drawing places signal at the top and return at the bottom of each two-position plug.",
+              "claim": "Sixteen two-position plugs run top-to-bottom as channels 1-16; upright per-channel order is positive above return. This is not the older twelve-output card.",
               "source_refs": [
                 "MANUAL-605"
               ],
-              "locator": "PDF p.289 / printed p.14"
+              "locator": "PDF279 Figure6.2 and PDF289-290 Figure6.10"
             }
           ],
           "gaps": [
-            "Verify complete channel numbering and physical connector orientation before geometry release."
+            "Absolute placement, tier/height offsets and production tolerances remain photo-estimated."
           ]
         },
         "keying": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF279, power close-up PDF282"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Exact power/optical/PCB-header part pairing and hidden mechanical fit are not certified.",
+            "Service contact/key-notch geometry is unresolved and not invented."
           ]
         },
         "contacts": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Manual identifies Phoenix Contact 1803578 terminal blocks.",
+              "claim": "Phoenix Contact item 1803578 identifies the 2-position screw plug; each modeled wire entry has a distinct recessed contact.",
+              "source_refs": [
+                "PHOENIX-1803578",
+                "MANUAL-605"
+              ],
+              "locator": "PDF278 plus official product properties"
+            },
+            {
+              "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
                 "MANUAL-605"
               ],
-              "locator": "PDF p.278 / printed p.3"
+              "locator": "PDF282"
             }
           ],
           "gaps": [
-            "Plug/header part pairing and keying must be independently checked."
+            "2 service interfaces are hollow contact-detail silhouettes, not complete connectors.",
+            "Optical Tx/Rx mapping, power/header mating mechanics and electrical compatibility are unvalidated."
           ]
         },
         "physical_dimensions": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Phoenix item 1803578 has 3.81 mm pitch and published W x H x L plug envelope 8.41 x 11.1 x 16.1 mm.",
+              "source_refs": [
+                "PHOENIX-1803578"
+              ],
+              "locator": "Official product Dimensions; accessed 2026-10-21"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Board width/thickness, carrier, port placement and installed PCB header remain estimated; documented plug dimensions do not certify mating geometry."
           ]
         },
         "electrical_compatibility": {
@@ -1177,15 +1315,18 @@
         }
       },
       "release_gate": {
-        "stage": "catalog_only",
+        "stage": "connector_research_candidate",
         "accurate_connector_release_passed": false,
         "blockers": [
-          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
-          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+          "2 service connector interiors require version-matched straight-on closeups.",
+          "Matching PCB terminal-header identity, hidden key/mating geometry and exact mechanical tolerances remain unknown.",
+          "The lower power pin order and DIP states are unverified; no operational wiring or compatibility validation is approved."
         ]
       },
       "notes": [
-        "The legacy twelve-output GTAO is a separate variant, not a visibility toggle."
+        "The legacy twelve-output GTAO is a separate variant, not a visibility toggle.",
+        "Delivered original visual candidate: rtds/gtao-v2-2.20/source/asset.blend and rtds/gtao-v2-2.20/exports/asset.glb. Native and actual-GLB geometry, seating and source-view checks passed; boundaries in rtds/gtao-v2-2.20/qa/component-accuracy.json.",
+        "32 terminal positions and 2 unresolved service outlines are preserved separately. Eight DIP rocker positions are illustrative, not verified factory settings."
       ]
     },
     {

@@ -2,11 +2,14 @@
 
 Source-grounded, editable visual assets for learning hardware layout. **The source catalog is not a claim that all catalogued hardware has been modelled.** Version-specific ports are evidence-gated; no model is a certified mating part or electrical compatibility validator.
 
-## First assets
+## Five version-pinned visual models
 | Asset | Version boundary | Interface scope |
 |---|---|---|
 | [NovaCor 2.0](novacor-2.0-2023/) | 2023 brochure exterior, manual chapter 20250916 | 51 separate interfaces, 31 duplex optical SFP mouths, alternating row keying, 12+3 front single-contact sockets; exact socket standard unresolved |
 | [GTDI V2](gtdi-v2-2.01/) | PCB Version 2.01, manual chapter 20241219 | Core-interface visual candidate: 16 five-position plugs, two optical ports, two keyed four-contact power headers; four service interfaces retain explicit contact-detail gaps |
+| [GTDO V2](gtdo-v2-2.00/) | PCB Version 2.00, manual chapter 20240924 | 64 digital-output channels; 16 five-position plugs / 80 terminal positions (64 signals + 16 bank-supply positions); two optical and two four-contact power ports; four unresolved service outlines |
+| [GTAI V2](gtai-v2-2.31/) | PCB Version 2.31, manual chapter 20240924; not website PCB 2.21 | 12 differential-input channels; 12 three-position plugs / 36 terminal positions; two optical and two four-contact power ports; two unresolved service outlines |
+| [GTAO V2](gtao-v2-2.20/) | PCB Version 2.20, manual chapter 20240924; not the older 12-output card | 16 output channels; 16 two-position plugs / 32 terminal positions; two optical and two four-contact power ports; two unresolved service outlines |
 
 [Catalog](catalog/) records 18 version-specific hardware references, including NovaCor Light/1.0, separate GTDI/GTDO/GTAI/GTAO generations, GTSOC and GTNET variants, and GTFPI. Its confidence dimensions distinguish count, layout, keying, contacts, dimensions and electrical compatibility.
 
@@ -20,7 +23,7 @@ Installed reference runtime: Blender 4.3.2 / internal Python 3.13.5 / glTF expor
 
 ```sh
 python3 -m unittest discover -s rtds/tests -p 'test_*manifest.py' -v
-python3 -m unittest discover -s rtds/catalog -p 'test_catalog.py' -v
+python3 -m unittest discover -s rtds/catalog -p 'test_catalog*.py' -v
 blender -b --python-exit-code 1 --python rtds/tools/build_asset.py -- --asset novacor-2.0-2023 --views iso,front,rear,left,right,top,neutral,wireframe
 blender -b --python-exit-code 1 --python tools/qa_asset.py -- --asset-dir rtds/novacor-2.0-2023
 blender -b --python-exit-code 1 --python tools/qa_roundtrip.py -- --asset-dir rtds/novacor-2.0-2023

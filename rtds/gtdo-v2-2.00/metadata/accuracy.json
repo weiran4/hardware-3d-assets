@@ -1,0 +1,73 @@
+{
+  "schema_version": "rtds.accuracy.v1",
+  "asset_id": "gtdo-v2-2.00",
+  "asset_version": "0.1.0",
+  "hardware_version": "GTDO V2",
+  "pcb_revision": "2.00",
+  "status": "visual_candidate_with_service_detail_gaps",
+  "core_interface_geometry": "source_grounded_visual",
+  "service_contact_geometry": "unresolved_not_modelled",
+  "validated_mating": false,
+  "electrical_compatibility": "unknown",
+  "dimensions": {
+    "pcb_mm": [
+      110,
+      197,
+      1.6
+    ],
+    "pcb_status": "197mm card length documented but measurement endpoints not dimensioned; width/thickness estimated",
+    "carrier_mm": [
+      114,
+      201,
+      6
+    ],
+    "carrier_status": "estimated_visual",
+    "plug_pitch_mm": 3.81,
+    "plug_W_H_L_mm": [
+      19.84,
+      11.1,
+      16.1
+    ],
+    "plug_status": "manufacturer_documented_envelope_not_certified_mating_profile",
+    "placements_header_tiers": "estimated_visual"
+  },
+  "populated_state": "16 removable five-position plugs installed; manual Figure8.7 includes demonstration plugs removed, reproduced here all installed",
+  "power_pinout": {
+    "power1": [
+      "+24V",
+      "GND",
+      "GND",
+      "NC"
+    ],
+    "power2": null,
+    "power2_status": "daisy_chain_role_known_separate_pin_order_unverified"
+  },
+  "open_gates": [
+    {
+      "gate": "service_connector_details",
+      "photo_needed": "Powered-off perpendicular closeups of three black service headers and one small USB-like receptacle, with PCB2.00 identity; all contact rows and keyed details visible.",
+      "blocking": "complete_connector_accuracy_not_core_visual_candidate"
+    },
+    {
+      "gate": "mechanical_fit",
+      "evidence_needed": "Matching installed PCB terminal header identity; power and optical part identification, exact dimensioned drawings and placement datum.",
+      "blocking": "mating_or_manufacturing_certification"
+    }
+  ],
+  "simplifications": [
+    "small IC/passive packages are representative, not BOM-correct",
+    "underside supports indicative, no unobserved DIN latch mechanism",
+    "original text annotations, no bitmap logo/serial-number textures",
+    "optical duplex visible topology is illustrative, not identified module mating CAD; Tx/Rx polarity unknown"
+  ],
+  "switch_state": {
+    "dip_count": 8,
+    "count_status": "source_observed",
+    "positions": "unverified_visual_centered",
+    "factory_default": false,
+    "configuration_validated": false
+  },
+  "geometry_revision": "r05",
+  "assembly_seating": "Terminal PCB headers, keyed power and service outline walls reach the PCB; visible fins joined by seated central core. Hidden core cap lowered1mm below visible top cap to avoid coplanar self-shadow; board seating/anchors unchanged.",
+  "annotation_visibility": "All109 board and port annotations are checked against full scene geometry; GT labels shortened, bank numbers and upper power silkscreen fit clear of components without moving interfaces."
+}

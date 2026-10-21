@@ -49,9 +49,59 @@ class CatalogContract(unittest.TestCase):
         content = json.dumps(data)
         for forbidden in ['/workspace/', 'private-source-cache', 'file://', 'data:image', 'library_file_id']:
             self.assertNotIn(forbidden, content)
+        self.assert_no_private_file_identity(data['manual_reference'])
+        for source in data['sources']:
+            if source['access'] == 'private_user_provided':
+                self.assert_no_private_file_identity(source)
+                self.assertIsNone(source['date'])
+                self.assertIsNone(source['url'])
         for f in HERE.rglob('*'):
             self.assertNotIn(f.suffix.lower(), {'.pdf', '.png', '.jpg', '.jpeg', '.blend', '.glb'})
-        self.assertEqual(data['manual_reference']['sha256'], 'c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf')
+
+    def assert_no_private_file_identity(self, record):
+        forbidden = {
+            'filename', 'sha256', 'pagecount', 'pages', 'fileid',
+            'libraryfileid', 'privatepath', 'workspacepath',
+            'modificationdate', 'modified', 'moddate',
+        }
+        if isinstance(record, dict):
+            for key, value in record.items():
+                normalized = ''.join(c for c in key.lower() if c.isalnum())
+                self.assertNotIn(normalized, forbidden, key)
+                self.assert_no_private_file_identity(value)
+        elif isinstance(record, list):
+            for value in record:
+                self.assert_no_private_file_identity(value)
+
+    def test_private_manual_source_records_are_minimal(self):
+        root = HERE.parent
+        facts = json.loads((root / 'docs/batch-2-source-facts.json').read_text())
+        self.assert_no_private_file_identity(facts['manual'])
+        self.assertEqual(facts['manual']['title'], 'RTDS Hardware Manual')
+        for asset in ['gtdo-v2-2.00', 'gtai-v2-2.31', 'gtao-v2-2.20']:
+            refs = json.loads((root / asset / 'references/manifest.json').read_text())
+            sources = [s for s in refs['sources'] if 'manual' in s['id']]
+            self.assertTrue(sources, asset)
+            for source in sources:
+                self.assert_no_private_file_identity(source)
+                self.assertEqual(source['title'], 'RTDS Hardware Manual')
+                self.assertTrue(source['chapter_revision'])
+                self.assertTrue(source['pdf_page_range'])
+                self.assertTrue(source['key_pages'])
+
+    def test_manual_reference_schema_rejects_identity_fields(self):
+        import jsonschema
+        schema = json.loads((HERE / 'schema.json').read_text())['properties']['manual_reference']
+        validator = jsonschema.Draft202012Validator(schema)
+        minimal = {'title': 'RTDS Hardware Manual', 'access': 'private_user_provided',
+                   'redistribution': 'Private reference only; not included'}
+        self.assertEqual(list(validator.iter_errors(minimal)), [])
+        for key in ['filename', 'sha256', 'page_count', 'file_id', 'library_file_id',
+                    'private_path', 'workspace_path', 'modification_date']:
+            with self.subTest(key=key):
+                record = dict(minimal, **{key: 'not-public'})
+                self.assertTrue(any(e.validator == 'additionalProperties'
+                                    for e in validator.iter_errors(record)))
 
     def test_source_specific_dimension_conflict_is_not_erased(self):
         a = next(a for a in self.load()['variants'] if a['id'] == 'novacor-light')

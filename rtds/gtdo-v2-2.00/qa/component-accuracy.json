@@ -1,0 +1,91 @@
+{
+  "asset_id": "gtdo-v2-2.00",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "overall_connector_accuracy": "PARTIAL_NOT_CERTIFIED",
+  "scope": "PCB2.00 core visible interfaces, no invented service contacts or operational connection validation",
+  "geometry_revision": "r05",
+  "final_visual_review": "PASS_INDEPENDENT_ALL_11_CURRENT_HASH_PREVIEWS",
+  "checks": [
+    {
+      "name": "manifest topology/version/pitch/unknown gates",
+      "result": "PASS",
+      "test_count": 6,
+      "test_script": "source/test_manifest.py"
+    },
+    {
+      "name": "saved native contacts/4quadrant optical+power rays/physical keys/board seating/noncoplanar heatsink cap",
+      "result": "PASS",
+      "test_count": 18,
+      "test_script": "source/test_geometry.py"
+    },
+    {
+      "name": "same physical checks after actual deliveredGLB import",
+      "result": "PASS",
+      "test_count": 18,
+      "test_script": "source/test_roundtrip_geometry.py"
+    },
+    {
+      "name": "native complete asset contract",
+      "result": "PASS",
+      "report": "qa/report.json"
+    },
+    {
+      "name": "actualGLB dimensions/materials/hierarchy/full semantic port records",
+      "result": "PASS",
+      "report": "qa/roundtrip.json"
+    }
+  ],
+  "actual_counts": {
+    "digital_output_channels": 64,
+    "removable_signal_plugs": 16,
+    "terminal_positions": 80,
+    "bank_supply_positions": 16,
+    "keyed_power_connectors": 2,
+    "power_contacts": 8,
+    "optical_transport_ports": 2,
+    "optical_receptacles": 4,
+    "service_outlines_with_unknown_contacts": 4,
+    "anchor_count": 24,
+    "placed_triangles": 38665,
+    "materials": 14
+  },
+  "frozen_files_sha256": {
+    "source/asset.blend": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+    "exports/asset.glb": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+    "source/build.py": "b1458bf6a7aab5aa73533d9f3295b779aa72a2383fdd5bbe0879b509c6ebdb8e",
+    "metadata/ports.json": "337d548c153546979b92104cbc989dec5a856509fe5581c6b27428f3ddc3921b"
+  },
+  "scope_limits": [
+    "Photo-estimated dimensions/placements except documented plug pitch+envelope and nominal card length",
+    "Electrical/optical compatibility and manufacturer mating geometry remain unknown",
+    "Four service interiors remain intentionally absent",
+    "Lower power contact ordering and DIP states not validated"
+  ],
+  "coplanar_cap_regression": {
+    "status": "PASS",
+    "test": "source/test_geometry.py::test_heatsink_core_attachment",
+    "change": "Hidden heatsink core cap lowered 1 mm; source seating, contact records and anchors unchanged"
+  },
+  "annotation_regression": {
+    "status": "PASS",
+    "test": "source/test_geometry.py::test_all_printed_annotations_unobstructed_in_top_projection",
+    "scope": "All109 board and port annotations versus all raised scene meshes, plus GT/LED pairs; only text shortened/repositioned, interfaces unchanged",
+    "independent_exact_glyph_check": "PASS,109 annotations in both delivered files"
+  },
+  "independent_review": {
+    "native": {
+      "status": "PASS",
+      "check_count": 898,
+      "report": "qa/independent-native.json"
+    },
+    "actual_glb": {
+      "status": "PASS",
+      "check_count": 862,
+      "report": "qa/independent-glb.json"
+    },
+    "all_annotation_count": 109,
+    "support_graph": "every root component connected to PCB through original geometry"
+  },
+  "local_final_visual_review": "PASS_ALL_11_CURRENT_HASH_PREVIEWS",
+  "local_transient_history_distributed": false
+}

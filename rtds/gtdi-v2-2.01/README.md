@@ -58,7 +58,7 @@ Tests inspect actual reopened meshes, transformed label normals, keyed shrouds, 
 
 ## Sources and rights
 
-- RTDS hardware manual, local privately supplied 605-page compilation, SHA256 `c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf`; GTDI V2 chapter revision **2024-12-19**, PDF pages **404–425**, especially **405, 406, 408, 410–411, 414**. The folder name “HARDWARE_2009” is not the hardware revision. No manual page, embedded photo or lengthy verbatim excerpt is redistributed.
+- RTDS Hardware Manual (reference only); GTDI V2 chapter revision **2024-12-19**, PDF pages **404–425**, especially **405, 406, 408, 410–411, 414**. No manual page, embedded photo or lengthy verbatim excerpt is redistributed.
 - [Phoenix Contact MC 1,5/5-ST-3,81, item 1803604](https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604), accessed 2026-10-21. Authoritative plug dimensions and product views used for reference only, no image copied into this asset.
 - [RTDS GTIO Cards knowledge-base overview](https://knowledge.rtds.com/hc/en-us/articles/360034281234-GTIO-Cards) and its official GTDI V2 product photograph, consulted as visual cross-check. Public-source media remains manufacturer-owned and is not included.
 

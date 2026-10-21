@@ -1,0 +1,501 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-21T21:34:57.861226+00:00",
+  "models": [
+    {
+      "asset_id": "gtdo-v2-2.00",
+      "geometry_sha256": {
+        "source/asset.blend": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+        "exports/asset.glb": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+        "metadata/ports.json": "337d548c153546979b92104cbc989dec5a856509fe5581c6b27428f3ddc3921b",
+        "source/build.py": "b1458bf6a7aab5aa73533d9f3295b779aa72a2383fdd5bbe0879b509c6ebdb8e"
+      },
+      "independent_audits": [
+        {
+          "mode": "native",
+          "artifact_sha256": "d47ec44f942150d13a6961503bfd5b5b54e0b33cb3a0b9c23da849d6ebaf1c64",
+          "independent_checks": 898,
+          "passed": true,
+          "audit_report_sha256": "51537c299032a0a9731154d7940077a7ddec8a2484667f6402223fff6524acdd"
+        },
+        {
+          "mode": "glb",
+          "artifact_sha256": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+          "independent_checks": 862,
+          "passed": true,
+          "audit_report_sha256": "a8e00f2957644bac340059c3d05e576772a952f576b0cb84ee5902eb7c00e6e8"
+        }
+      ],
+      "final_previews": [
+        {
+          "view": "iso",
+          "path": "rtds/gtdo-v2-2.00/previews/iso.png",
+          "sha256": "a0bd9834e50cdaa9077eb35dffedc76b90d2a75bff8469005d60d12590057629",
+          "decoded_rgba_sha256": "8f12f5a0e0866af4a947deca59dababcd48cee7e94310bab0935899537f00f87"
+        },
+        {
+          "view": "neutral",
+          "path": "rtds/gtdo-v2-2.00/previews/neutral.png",
+          "sha256": "d21e43e5b7302743707a7ec4aa29caa770e46571e8ac756b1901e49154093496",
+          "decoded_rgba_sha256": "e6677ed1a080e76cbcdd8505a66a6980436439f3f64786da1c3069d0653a162a"
+        },
+        {
+          "view": "wireframe",
+          "path": "rtds/gtdo-v2-2.00/previews/wireframe.png",
+          "sha256": "32653fb418f341c48ab4d85cb8e46826d179184ccc938783aa8c5b32ef057085",
+          "decoded_rgba_sha256": "eb5ce93c6ba9af93b497cf80278cc3630e787914c76ed7f11d9dc605cacd2aef"
+        },
+        {
+          "view": "front",
+          "path": "rtds/gtdo-v2-2.00/previews/front.png",
+          "sha256": "bac88e4a8e34a8af33a59ea5b2eaeb97d5157ceb99f09a2c5c948437e1d88bb1",
+          "decoded_rgba_sha256": "a35dda0a68b7f2220abc9180685a951ca946b1713c59700a5f06ccab1183232b"
+        },
+        {
+          "view": "rear",
+          "path": "rtds/gtdo-v2-2.00/previews/rear.png",
+          "sha256": "a75314570f669b8b692da6c02d204342ef0713c2d48128e8fd972038875abc26",
+          "decoded_rgba_sha256": "47061738620b342f693d62a1208dd82c449d86c8b3026563d7f48dcc71c26f27"
+        },
+        {
+          "view": "left",
+          "path": "rtds/gtdo-v2-2.00/previews/left.png",
+          "sha256": "f534a89d25dc252a86bc606603aa0f926ed873d9b7ff721bc325509d606c4abc",
+          "decoded_rgba_sha256": "f6e93208fbd96de9b2e8066d9356ae84f0ea60e2ce5174b6df2a5d7b69a733b8"
+        },
+        {
+          "view": "right",
+          "path": "rtds/gtdo-v2-2.00/previews/right.png",
+          "sha256": "69fb669516babc1d1b6d4d23794eaae86a91b320b76d43fcee5c46b55f14d52d",
+          "decoded_rgba_sha256": "ace2601864b3781aaf558fd2e6b983db26fb444c2362bd6622ccafae6bed1083"
+        },
+        {
+          "view": "top",
+          "path": "rtds/gtdo-v2-2.00/previews/top.png",
+          "sha256": "f01d0104bbe33795fff5507029b9f3b5b3b4dedde163a17ebb73bd43809b5ac3",
+          "decoded_rgba_sha256": "6069ae895d569cb508961ea42ce21fe16279272b8e6f993117f8b21ea9b2fa65"
+        },
+        {
+          "view": "terminal-closeup",
+          "path": "rtds/gtdo-v2-2.00/previews/terminal-closeup.png",
+          "sha256": "cce222ad77caf43ab6f43a1a3b4253817abf9a4a72abe333c74ac18ad30e5c95",
+          "decoded_rgba_sha256": "969022298da892787714c7ca78024722224933b92effe2633b925dfd7e2331e7"
+        },
+        {
+          "view": "optical-closeup",
+          "path": "rtds/gtdo-v2-2.00/previews/optical-closeup.png",
+          "sha256": "b4c8e2382d4bb19881579e3eeca0bb1dffb634f6c11d9713611c89184c04be70",
+          "decoded_rgba_sha256": "73a4e880f32aaef00bcc07b1c1c597c088a0402c319d350cdf3f99b70f1beddc"
+        },
+        {
+          "view": "power-closeup",
+          "path": "rtds/gtdo-v2-2.00/previews/power-closeup.png",
+          "sha256": "33ba4e3c9dd5b145b584b64dc6010d71bec4298d706582665015de90bcdd1848",
+          "decoded_rgba_sha256": "fe29727da322b799402873e6db36a6099cec7e1671b951d54bff26211a637e19"
+        }
+      ],
+      "source_ids_resolve": true,
+      "compatibility_gates_retained": true,
+      "source_media_scan": "PASS"
+    },
+    {
+      "asset_id": "gtai-v2-2.31",
+      "geometry_sha256": {
+        "source/asset.blend": "09b8643eb976aa1eb68daab944f1fa87bde0ea448faa9f3396eb2c1a93e50d8b",
+        "exports/asset.glb": "9d2721e486ca61c529fb4e7fe73c026c67d3b69d3de6aabb96cf1877b9b4e9f5",
+        "metadata/ports.json": "0a5ec030f2bf7dc631eb50fc3db2a790d8bb2a50c08ece0bf7760b98680e8856",
+        "source/build.py": "625563079bb73a8581580707179c6d4ec054baf27cd2ee77a264f2dc0d30c504"
+      },
+      "independent_audits": [
+        {
+          "mode": "native",
+          "artifact_sha256": "09b8643eb976aa1eb68daab944f1fa87bde0ea448faa9f3396eb2c1a93e50d8b",
+          "independent_checks": 905,
+          "passed": true,
+          "audit_report_sha256": "c940b1ec637f3ba545a3c58b56dfc2be4bf0bbe9202bf5860b9a992ead2958f3"
+        },
+        {
+          "mode": "glb",
+          "artifact_sha256": "9d2721e486ca61c529fb4e7fe73c026c67d3b69d3de6aabb96cf1877b9b4e9f5",
+          "independent_checks": 881,
+          "passed": true,
+          "audit_report_sha256": "3a1bbffcad2b14037f222900a05ab738771be2d83c5572a3d61ffb24db6440a7"
+        }
+      ],
+      "final_previews": [
+        {
+          "view": "iso",
+          "path": "rtds/gtai-v2-2.31/previews/iso.png",
+          "sha256": "dd33625a47505a8581c8e2fb463a8a52df0fb31990a162064e46c5935d1447e6",
+          "decoded_rgba_sha256": "7d0b2603c543eb7f6a50e870459b1453d8648471d3271d8453ac0c51adef6bfd"
+        },
+        {
+          "view": "neutral",
+          "path": "rtds/gtai-v2-2.31/previews/neutral.png",
+          "sha256": "dcf1d95a9b90cd155978844f7da838ad8cb4548e10d3a9524507295c68f9f9f4",
+          "decoded_rgba_sha256": "cdd445238e7e347dc66d67a62a0133095097f52547581541fe9fe70d6999bdc1"
+        },
+        {
+          "view": "wireframe",
+          "path": "rtds/gtai-v2-2.31/previews/wireframe.png",
+          "sha256": "1334c96228135f41c7f5d3dfaddf90238845a9808b4dd90dcf6250a0f6afff41",
+          "decoded_rgba_sha256": "e9ea739681011a997494fc22c15ddf3ea15b65b2e4211f2f5027534c09dfa7da"
+        },
+        {
+          "view": "front",
+          "path": "rtds/gtai-v2-2.31/previews/front.png",
+          "sha256": "521bf85920dd5e57ded81a3b59bef7d3e01eccb26bd5c61f9ee94efe5dc411b6",
+          "decoded_rgba_sha256": "9001816a2e6103bf96d30c677fe35b72897077580a7674e0d53877f281a60b55"
+        },
+        {
+          "view": "rear",
+          "path": "rtds/gtai-v2-2.31/previews/rear.png",
+          "sha256": "cbb7bb218acae96ced3403dd983d603ce4fa63e8df7d41762c87319c2ae113b3",
+          "decoded_rgba_sha256": "3557043dbb4aa51916664e16e21688c432e666a769641db1a8520f09e558b57e"
+        },
+        {
+          "view": "left",
+          "path": "rtds/gtai-v2-2.31/previews/left.png",
+          "sha256": "18617e44a0c6444ee72be520dfb4a328a898610c658fc341f7ae3ddd395a954a",
+          "decoded_rgba_sha256": "f37bb52b4929eefdf3c29cecc6ee6ed9229281c497800a16a78a2eaa73491586"
+        },
+        {
+          "view": "right",
+          "path": "rtds/gtai-v2-2.31/previews/right.png",
+          "sha256": "6fad64c6052279ebf23e10a3f106cc091709a563ba0b195991a71fae34f697aa",
+          "decoded_rgba_sha256": "aca4ebeffda37b4f1eb10db01b9e906254cd38d070b9b1e8305d014ebee5d952"
+        },
+        {
+          "view": "top",
+          "path": "rtds/gtai-v2-2.31/previews/top.png",
+          "sha256": "06d374826b239c1e83e44356148f87d0fc11ddcf07d11cbdea3b7e0f0bea8a67",
+          "decoded_rgba_sha256": "e53d143674479d3ac888a3a76ad71f1f1e6de29a6f5f3a89983530509059100c"
+        },
+        {
+          "view": "terminal-closeup",
+          "path": "rtds/gtai-v2-2.31/previews/terminal-closeup.png",
+          "sha256": "61c040f178d5c4349e9f53c4bc446f58e4e0b5a3c0344380adefe0cba5f28421",
+          "decoded_rgba_sha256": "860d0ba8f939ab9b511b4c82d18c2e0968fa535324c3cefe240bebdf5c5a95e8"
+        },
+        {
+          "view": "optical-closeup",
+          "path": "rtds/gtai-v2-2.31/previews/optical-closeup.png",
+          "sha256": "8d78474f4f9fa740ffd61e461545f603da9e0ec653f800ffc20d26cc1f498563",
+          "decoded_rgba_sha256": "66c7aeec65d0ad4a7754859455f0a7ed41e471d1191c03d5a174df39f767150d"
+        },
+        {
+          "view": "power-closeup",
+          "path": "rtds/gtai-v2-2.31/previews/power-closeup.png",
+          "sha256": "b6fc1ab34ef425ffe59aa65b93aa9a9ba677ce513a0583e9df7fe6a7994532c8",
+          "decoded_rgba_sha256": "56866e8d694178c57aadb9ac0763e5364b97b4489e595eafd69a25ed30a3201a"
+        }
+      ],
+      "source_ids_resolve": true,
+      "compatibility_gates_retained": true,
+      "source_media_scan": "PASS"
+    },
+    {
+      "asset_id": "gtao-v2-2.20",
+      "geometry_sha256": {
+        "source/asset.blend": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894",
+        "exports/asset.glb": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+        "metadata/ports.json": "12e132765210a92286ac47972dcb4e2362a1535946db8a7f4b82410f5e2258ec",
+        "source/build.py": "c7958eebbef2f7d22e88805679553d7780577e583720abb1cffa00401e171f4f"
+      },
+      "independent_audits": [
+        {
+          "mode": "native",
+          "artifact_sha256": "11c8cebb56fea2c25f0729cc7a2cfc31152b7c8093bc334a0107b37a2c8b2894",
+          "independent_checks": 984,
+          "passed": true,
+          "audit_report_sha256": "8116bce7ffc6fa8ad9c069e3b802c527f3c281ee9a0252df36250a029622b0aa"
+        },
+        {
+          "mode": "glb",
+          "artifact_sha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+          "independent_checks": 948,
+          "passed": true,
+          "audit_report_sha256": "8ef3b845290b8d04c53ebd7558b53c6cf84f900cdc3be3f14d747a214f595e09"
+        }
+      ],
+      "final_previews": [
+        {
+          "view": "iso",
+          "path": "rtds/gtao-v2-2.20/previews/iso.png",
+          "sha256": "c86e816ede316ee59dedc61c568ea7f9411176d994c1737f0a7f65fad8af90c6",
+          "decoded_rgba_sha256": "6bc2161be0d525483b7736b562f98f1aad87d5306bc1a5278198a6e5bb60dae1"
+        },
+        {
+          "view": "neutral",
+          "path": "rtds/gtao-v2-2.20/previews/neutral.png",
+          "sha256": "b63f83d2135ce889923a378545585f60bf7e507ff6f92edd3619757dd4edd604",
+          "decoded_rgba_sha256": "0b6cab173b08773615bf90c1c10596bba9706d34ba85738707f06b46e34de477"
+        },
+        {
+          "view": "wireframe",
+          "path": "rtds/gtao-v2-2.20/previews/wireframe.png",
+          "sha256": "5d41ef8f002a3ae51f3385e2d8187ebe9b49c3f20448328e1a8021656f2fd0e2",
+          "decoded_rgba_sha256": "befbe3e36f30b4533e132970949f6165a40d92bee1deaf99e49c3dc406267d59"
+        },
+        {
+          "view": "front",
+          "path": "rtds/gtao-v2-2.20/previews/front.png",
+          "sha256": "4603395271697f7a2d9ef519ad4553c6b421d9bfdefd56df9d3f162fe8a94254",
+          "decoded_rgba_sha256": "cfb5a9a76f7322ba9f8102147a8923c466638855f5e0b943083285ff0ee71a5b"
+        },
+        {
+          "view": "rear",
+          "path": "rtds/gtao-v2-2.20/previews/rear.png",
+          "sha256": "404abff8c21227b20d0776b37d115a2036d30a505e577946e12e70bafb40ef29",
+          "decoded_rgba_sha256": "8157d2bbe5d91a0e0304309e470d54d85b2e9c9bfcfff0c7917d0a0e0cef9c2f"
+        },
+        {
+          "view": "left",
+          "path": "rtds/gtao-v2-2.20/previews/left.png",
+          "sha256": "823299ad7c648018c58874fbff066ef05537968fb299a649e27c02e19845a3e7",
+          "decoded_rgba_sha256": "0e237edf0abdfdc19655e90e943e65b0fa676f4b83493dad126fadb0ed8e2818"
+        },
+        {
+          "view": "right",
+          "path": "rtds/gtao-v2-2.20/previews/right.png",
+          "sha256": "225b130e69cffbf3f2e6ea7f5310978d32567a20e162bc81c22ea0f11eb4fe05",
+          "decoded_rgba_sha256": "5a4ba3990ef31f7e2d86c35d7b515810c949b7f2ced61a170068ca167ea264df"
+        },
+        {
+          "view": "top",
+          "path": "rtds/gtao-v2-2.20/previews/top.png",
+          "sha256": "5cff067a6681ef04986b8b64f8082bea05a39b620ac66a4b045ca5031872fcd9",
+          "decoded_rgba_sha256": "45c6e9e551449276728b786773b42802a2ced9ea5617c7191e1a3f53a9ad7b94"
+        },
+        {
+          "view": "terminal-closeup",
+          "path": "rtds/gtao-v2-2.20/previews/terminal-closeup.png",
+          "sha256": "99fbd075a383f56875d183e8fe1ee0cd4a855ae66c1cd953fdb6d77a640ae1bf",
+          "decoded_rgba_sha256": "17f92bba7e55e86ba8eb2bde4de35e61d325f7b254fa627d8c721108592dad6b"
+        },
+        {
+          "view": "optical-closeup",
+          "path": "rtds/gtao-v2-2.20/previews/optical-closeup.png",
+          "sha256": "332b4ef9f95527490dc0a69e8387251f314d684c513ea6000aed804bf923f61a",
+          "decoded_rgba_sha256": "4b9d72b047277068d073ebb4d44194ee8523b4c1b637fb561bc07e6d8027af3e"
+        },
+        {
+          "view": "power-closeup",
+          "path": "rtds/gtao-v2-2.20/previews/power-closeup.png",
+          "sha256": "79a29454e7426a9c615dfa6cf48cd5e855a2e23813d33d8240a941f320c9cd07",
+          "decoded_rgba_sha256": "eb94ec3b1e234a3727ab0e2255745c91d97833e9233b8c4b7cb3ad033eb81f2a"
+        }
+      ],
+      "source_ids_resolve": true,
+      "compatibility_gates_retained": true,
+      "source_media_scan": "PASS"
+    }
+  ],
+  "frozen_first_model_files_checked": 96,
+  "frozen_first_models_unchanged": true,
+  "publication": {
+    "metadata_receipt_from_repository_root": "rtds/qa/batch-2-publication-metadata.json",
+    "source_document_sha256": "81453c50400af68d755fa98aa4f015ad8aa18036fa5dc12885d2fed786c60975",
+    "scope": "Publication hashes updated after metadata-only PNG sanitation; geometry, compressed image data and decoded pixels unchanged. Original source hashes retained here.",
+    "hash_updates": [
+      {
+        "json_pointer": "/models/0/final_previews/0/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/iso.png",
+        "source_sha256": "f88b27fb6c4926da57560f3a04f68da00fb9f88c67969378bfa22b2cccc275f5",
+        "published_sha256": "a0bd9834e50cdaa9077eb35dffedc76b90d2a75bff8469005d60d12590057629"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/1/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/neutral.png",
+        "source_sha256": "b9770a0b09d048899147b190a77fc34c74ced0fb2f134954e9910e4ee73830da",
+        "published_sha256": "d21e43e5b7302743707a7ec4aa29caa770e46571e8ac756b1901e49154093496"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/2/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/wireframe.png",
+        "source_sha256": "1ae721621e0f7fcb89f6482d02279e8c34bf8eebd0c632bdb9206d1cd05f8e80",
+        "published_sha256": "32653fb418f341c48ab4d85cb8e46826d179184ccc938783aa8c5b32ef057085"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/3/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/front.png",
+        "source_sha256": "14a4655fa9ba3416e6edbba8dcb0044d6e929e857db576bf3da7a88f8511fd6a",
+        "published_sha256": "bac88e4a8e34a8af33a59ea5b2eaeb97d5157ceb99f09a2c5c948437e1d88bb1"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/4/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/rear.png",
+        "source_sha256": "166737e3fdc05bf16161275a47ae0a87c7bb5cc88b777f3e6479c5abd06db043",
+        "published_sha256": "a75314570f669b8b692da6c02d204342ef0713c2d48128e8fd972038875abc26"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/5/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/left.png",
+        "source_sha256": "330366b960b79af705a812d3b0f8da3757d23507c19037712df4bc940a560458",
+        "published_sha256": "f534a89d25dc252a86bc606603aa0f926ed873d9b7ff721bc325509d606c4abc"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/6/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/right.png",
+        "source_sha256": "c3744ee18cf1e82337b0414596cd5e52dbbba93f69e4f38598bb235dac9b2998",
+        "published_sha256": "69fb669516babc1d1b6d4d23794eaae86a91b320b76d43fcee5c46b55f14d52d"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/7/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/top.png",
+        "source_sha256": "2494d19e35316a6b54de8b978408e9156100f64b937d2b7c7be76c8c2d4ed088",
+        "published_sha256": "f01d0104bbe33795fff5507029b9f3b5b3b4dedde163a17ebb73bd43809b5ac3"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/8/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/terminal-closeup.png",
+        "source_sha256": "ebb6e7ddfdaea0a6115faff429422e2a01fb778205812fa7ae0fc2d0583c56a4",
+        "published_sha256": "cce222ad77caf43ab6f43a1a3b4253817abf9a4a72abe333c74ac18ad30e5c95"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/9/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/optical-closeup.png",
+        "source_sha256": "3334d9c1b33a345639530358053cf49605e60eefbfb6c4b95ac1dd6ad98ddec1",
+        "published_sha256": "b4c8e2382d4bb19881579e3eeca0bb1dffb634f6c11d9713611c89184c04be70"
+      },
+      {
+        "json_pointer": "/models/0/final_previews/10/sha256",
+        "file": "rtds/gtdo-v2-2.00/previews/power-closeup.png",
+        "source_sha256": "88abf078f682bd3e022cef5b7be54fc7aefe3d02b5a79c1ba48a642c872dcad7",
+        "published_sha256": "33ba4e3c9dd5b145b584b64dc6010d71bec4298d706582665015de90bcdd1848"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/0/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/iso.png",
+        "source_sha256": "2c396f205c7280e9c9372b5f187acff538da7a43eaf8d6a6f3a118b20e054502",
+        "published_sha256": "dd33625a47505a8581c8e2fb463a8a52df0fb31990a162064e46c5935d1447e6"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/1/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/neutral.png",
+        "source_sha256": "a842c41aedb122595a9ca05300b6005b8c2ba4d84c90978eb8a92744325bb6d0",
+        "published_sha256": "dcf1d95a9b90cd155978844f7da838ad8cb4548e10d3a9524507295c68f9f9f4"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/2/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/wireframe.png",
+        "source_sha256": "65ef1223349ef091bb207f3ed1272245ac24a20c7bc95b2cdfe391248b453852",
+        "published_sha256": "1334c96228135f41c7f5d3dfaddf90238845a9808b4dd90dcf6250a0f6afff41"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/3/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/front.png",
+        "source_sha256": "34ae6994b2a7a240bae0dd102c341ffe54d219e3991d2932a1147ab65103269e",
+        "published_sha256": "521bf85920dd5e57ded81a3b59bef7d3e01eccb26bd5c61f9ee94efe5dc411b6"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/4/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/rear.png",
+        "source_sha256": "581911ab467205687180429575f12a73db36119fcb0c5f5500227db3c7d49704",
+        "published_sha256": "cbb7bb218acae96ced3403dd983d603ce4fa63e8df7d41762c87319c2ae113b3"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/5/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/left.png",
+        "source_sha256": "b00c9a12cd9ccd61b8b0f01a2b1390ce715fb0604387c2ff234e8029caa6f07d",
+        "published_sha256": "18617e44a0c6444ee72be520dfb4a328a898610c658fc341f7ae3ddd395a954a"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/6/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/right.png",
+        "source_sha256": "18f7c75b675def87f56e92927c7ab1f6fc0877c86e20ebfcf9c9a723e7ae0368",
+        "published_sha256": "6fad64c6052279ebf23e10a3f106cc091709a563ba0b195991a71fae34f697aa"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/7/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/top.png",
+        "source_sha256": "70ee9996dfd07e243955b053450685c88879bb0aad34212f01137e617d58431c",
+        "published_sha256": "06d374826b239c1e83e44356148f87d0fc11ddcf07d11cbdea3b7e0f0bea8a67"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/8/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/terminal-closeup.png",
+        "source_sha256": "b793555e2a394f3044cb3ec4919684dea04472917cef1acfe0bc4bc76e240ffb",
+        "published_sha256": "61c040f178d5c4349e9f53c4bc446f58e4e0b5a3c0344380adefe0cba5f28421"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/9/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/optical-closeup.png",
+        "source_sha256": "a811b5c043162298ea695cffec5f7b43b32163a9d50c2c1fccc1ebde6888dfc3",
+        "published_sha256": "8d78474f4f9fa740ffd61e461545f603da9e0ec653f800ffc20d26cc1f498563"
+      },
+      {
+        "json_pointer": "/models/1/final_previews/10/sha256",
+        "file": "rtds/gtai-v2-2.31/previews/power-closeup.png",
+        "source_sha256": "9ddd938ae25413b158f1742c296dc1e52c321834741ca037ea3204b0c086611a",
+        "published_sha256": "b6fc1ab34ef425ffe59aa65b93aa9a9ba677ce513a0583e9df7fe6a7994532c8"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/0/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/iso.png",
+        "source_sha256": "dbc37533214fbef197bc51ea685cd73dfa362d9ba4f40f4b50c65ac6d321d7dd",
+        "published_sha256": "c86e816ede316ee59dedc61c568ea7f9411176d994c1737f0a7f65fad8af90c6"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/1/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/neutral.png",
+        "source_sha256": "eabb3a6f666e3d46c521cdeff7aa41df1fcaa3dc68714c997151dcdf3f865254",
+        "published_sha256": "b63f83d2135ce889923a378545585f60bf7e507ff6f92edd3619757dd4edd604"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/2/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/wireframe.png",
+        "source_sha256": "974998fa038220941b5e8fdf5925c2859128f391a936e7b68dc2d44247b45d22",
+        "published_sha256": "5d41ef8f002a3ae51f3385e2d8187ebe9b49c3f20448328e1a8021656f2fd0e2"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/3/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/front.png",
+        "source_sha256": "a1d9fe2dd610851dd95687b00bf0226775409896cfdb371fe7a19b2a9afe4105",
+        "published_sha256": "4603395271697f7a2d9ef519ad4553c6b421d9bfdefd56df9d3f162fe8a94254"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/4/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/rear.png",
+        "source_sha256": "2fb5bb4c2990ae7eadfa0f0bfeecf6298ccb845a7494d2958fe9888e790e4643",
+        "published_sha256": "404abff8c21227b20d0776b37d115a2036d30a505e577946e12e70bafb40ef29"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/5/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/left.png",
+        "source_sha256": "d143df12c8f39065b0e6d1d062d86d2e43342210808be58abfe12e0ae66e2aa2",
+        "published_sha256": "823299ad7c648018c58874fbff066ef05537968fb299a649e27c02e19845a3e7"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/6/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/right.png",
+        "source_sha256": "70c36fcc4f415c002c65d987d9156a4d6864f06ccaa927ccad07c52fccb1abb3",
+        "published_sha256": "225b130e69cffbf3f2e6ea7f5310978d32567a20e162bc81c22ea0f11eb4fe05"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/7/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/top.png",
+        "source_sha256": "44bc7c2e186a18bf99fd8c2b80fd7cac01ed7d20daab8901c81ab5134f9c175a",
+        "published_sha256": "5cff067a6681ef04986b8b64f8082bea05a39b620ac66a4b045ca5031872fcd9"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/8/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/terminal-closeup.png",
+        "source_sha256": "defcd72a8ee2fe4db47862e2bed18fe1dad70e20db7861728030f0b99c27045a",
+        "published_sha256": "99fbd075a383f56875d183e8fe1ee0cd4a855ae66c1cd953fdb6d77a640ae1bf"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/9/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/optical-closeup.png",
+        "source_sha256": "25d5789e946397918e46e2ba18838bfbdce6513f23ea124dd2fa7b90397a1249",
+        "published_sha256": "332b4ef9f95527490dc0a69e8387251f314d684c513ea6000aed804bf923f61a"
+      },
+      {
+        "json_pointer": "/models/2/final_previews/10/sha256",
+        "file": "rtds/gtao-v2-2.20/previews/power-closeup.png",
+        "source_sha256": "b729dec9d46ef7a52adb1d0baff4cec31a41346a8427046e7af0abc6d29e1ae0",
+        "published_sha256": "79a29454e7426a9c615dfa6cf48cd5e855a2e23813d33d8240a941f320c9cd07"
+      }
+    ]
+  }
+}

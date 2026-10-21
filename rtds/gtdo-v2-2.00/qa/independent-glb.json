@@ -1,0 +1,4760 @@
+{
+  "asset_id": "gtdo-v2-2.00",
+  "mode": "glb",
+  "path": "exports/asset.glb",
+  "sha256": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+  "independent_check_count": 862,
+  "passed": true,
+  "modeled_contact_or_optical_receptacle_features": 92,
+  "checks": [
+    {
+      "name": "exact_anchor_set",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank1_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank2_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank3_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank4_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank5_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank6_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank7_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_odd.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_odd.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_odd.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_odd.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_odd.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:physical_contacts",
+      "passed": true,
+      "details": 5
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_even.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_even.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_even.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_even.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.contact4:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.bank8_even.contact4"
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:documented_pitch_world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:screws_per_contact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:physical_contacts",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power1.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power1.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power1.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power1.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:source_upper_lower_position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:independent_power_label_boundary",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power1:actual_power_contact_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:physical_contacts",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2.contact0:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power2.contact0"
+    },
+    {
+      "name": "gtdo-v2-2.00.power2.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power2.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.power2.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power2.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.power2.contact3:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.power2.contact3"
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:source_upper_lower_position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:independent_power_label_boundary",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.power2:actual_power_contact_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:physical_contacts",
+      "passed": true,
+      "details": 2
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact1:annulus_visible_(0, 0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact1:annulus_visible_(-0.00085, 0, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact1:annulus_visible_(0, -0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact2:annulus_visible_(0, 0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact2:annulus_visible_(-0.00085, 0, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.contact2:annulus_visible_(0, -0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.key_slot1:key_slot_not_occluded",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.key_slot1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt1.key_slot2:key_slot_not_occluded",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt1.key_slot2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:physical_contacts",
+      "passed": true,
+      "details": 2
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact1:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact2:visible_actual_aperture",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact1:annulus_visible_(0, 0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact1:annulus_visible_(-0.00085, 0, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact1:annulus_visible_(0, -0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact2:annulus_visible_(0, 0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact2:annulus_visible_(-0.00085, 0, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.contact2:annulus_visible_(0, -0.00085, 0)",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.contact2"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.key_slot1:key_slot_not_occluded",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.key_slot1"
+    },
+    {
+      "name": "gtdo-v2-2.00.gt2.key_slot2:key_slot_not_occluded",
+      "passed": true,
+      "details": "gtdo-v2-2.00.gt2.key_slot2"
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:physical_contacts",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:unknown_contacts_absent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_top:noninteractive_unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:physical_contacts",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:unknown_contacts_absent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_jtag:noninteractive_unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:physical_contacts",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:unknown_contacts_absent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_lower:noninteractive_unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:stored_semantics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:normal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:key_up",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:physical_contacts",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:no_mating_certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:unknown_contacts_absent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.service_usb:noninteractive_unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PCB_thickness_1.6mm",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.pcb_header:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.keyed_shroud:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "gtdo-v2-2.00.power2.keyed_shroud:assembly_seating",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "all_annotation_nodes_survive_export",
+      "passed": true,
+      "details": 109
+    },
+    {
+      "name": "gtdo-v2-2.00.gt_label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "GT1",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.gt_label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "GT2",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "1",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "2",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "3",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "4",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label5:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "5",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label6:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "6",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label7:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "7",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_label8:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "8",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_on:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "ON",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.card_id:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "CARD ID",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "1",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "2",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "3",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "4",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "5",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_5:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "6",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_6:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "7",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_label_7:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "8",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.board_model:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "GTDO Version 2.00",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.maker_plain:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "RTDS",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.power_label:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "POWER\n+24V\n+5V\nBANK 1\nBANK 2",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.error_labelCONFIG ERROR:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "CONFIG ERROR",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.error_labelRUN ERROR:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "RUN ERROR",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "1",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "3",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "5",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "7",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "2",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "4",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "6",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "8",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "9",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "11",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "13",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "15",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "10",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "12",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "14",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "16",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "17",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "19",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "21",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "23",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "18",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "20",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "22",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "24",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "25",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "27",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "29",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "31",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "26",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "28",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "30",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "32",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "33",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "35",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "37",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "39",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "34",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "36",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "38",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "40",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "41",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "43",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "45",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "47",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "42",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "44",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "46",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "48",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "49",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "51",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "53",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "55",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "50",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "52",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "54",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "56",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "57",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "59",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "61",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "63",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V+",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "58",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "60",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "62",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "64",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even.label4:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "V-",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact_label0:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "+24V",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact_label1:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "GND",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact_label2:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "GND",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.power1.contact_label3:all_font_silkscreen_clear",
+      "passed": true,
+      "details": {
+        "text": "NC",
+        "actual_occluders": [],
+        "broadphase_candidates": []
+      }
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank_supply_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.body:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_0_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_0_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_0_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_0_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_0_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_2_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_2_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_2_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_2_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_1_vent_2_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_0_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_0_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_0_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_0_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_0_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_2_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_2_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_2_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_2_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.cage_2_vent_2_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.carrier:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.carrier_end-0.0995:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.carrier_end0.0995:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.carrier_lip-0.056:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.carrier_lip0.056:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_body:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.dip_switch8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.display_segment6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_0_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_1_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_2_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_3_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_4_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_5_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_6_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_-1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.driver_leg_7_1_9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.electrolytic:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.electrolytic_cap:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_core:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_fin0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_fin1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_fin2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_fin3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_fin4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.heatsink_top:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.006-0.084:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.0130.059:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.021-0.061:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.028-0.084:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.0330.076:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.045-0.012:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic-0.0450.007:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.ic0.010.092:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.id_display:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.link_led1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.link_led2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive10:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive11:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive12:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive13:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive14:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive15:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive16:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive17:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive18:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive19:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive20:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive21:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive22:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive23:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive24:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive25:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive26:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive27:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive28:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive29:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive30:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive31:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive32:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive33:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive34:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive35:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive36:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive37:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive38:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive39:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive40:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive41:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive42:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive43:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive44:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive45:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive46:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive47:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive48:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive49:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive50:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive51:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive52:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive53:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive54:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive55:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive56:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive57:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive58:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive59:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive60:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive61:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive62:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive63:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive64:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive65:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive66:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive67:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive68:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive69:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive70:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive71:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive72:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive73:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive74:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive75:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive76:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive77:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive78:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive79:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive80:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive81:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive82:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive83:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive84:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive85:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive86:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive87:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive88:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive89:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.lower_passive9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring-0.049-0.004:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring-0.049-0.063:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring-0.049-0.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring-0.0490.059:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring-0.0490.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring0.048-0.003:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring0.048-0.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.mount_ring0.0480.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_1_side-1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_1_side1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_1_z0.00755:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_1_z0.01605:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_2_side-1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_2_side1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_2_z0.00755:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.optical_cage_2_z0.01605:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.output_driver_7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive10:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive11:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive12:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive13:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive14:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive15:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive16:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive17:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive18:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive19:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive20:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive21:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive22:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive23:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive24:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive25:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive26:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive27:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive28:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive29:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive30:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive31:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive32:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive39:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive4:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive40:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive47:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive48:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive5:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive55:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive56:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive6:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive63:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive64:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive7:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive8:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.passive9:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw-0.049-0.004:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw-0.049-0.063:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw-0.049-0.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw-0.0490.059:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw-0.0490.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw0.048-0.003:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw0.048-0.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.screw0.0480.094:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_0_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_0_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_0_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_0_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_1_0:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_1_1:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_1_2:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.status_led_1_3:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.underside_support-0.063:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.underside_support0.063:root_assembly_supported",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "heatsink_hidden_core_not_coplanar_with_cap",
+      "passed": true,
+      "details": {
+        "core_top_z": 0.019999999552965164,
+        "annulus_top_z": 0.020999999716877937
+      }
+    },
+    {
+      "name": "heatsink_core_still_supports_cap",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no_private_image_textures",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_grounded_PCB_length_197mm",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "8_banks_64_output_channels_80_terminal_positions",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank1_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank2_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank3_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank4_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank5_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank6_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank7_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_odd:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gtdo-v2-2.00.bank8_even:independent_manual_pin_order",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 import {Box3,Vector3} from 'three';
-export function createGalleryState(){return{variantId:'novacor-2.0',group:null,portId:null,playing:false};}
+export function createGalleryState(){return{variantId:'novacor-2.0',group:null,portId:null,inspectionMode:null,subtypeId:null,playing:false};}
 export function galleryTransition(state,action){
  switch(action.type){
- case 'variant':return{variantId:action.variantId,group:null,portId:null,playing:false};
- case 'group':return{...state,group:action.group,portId:null};
- case 'port':return{...state,portId:action.portId};
+ case 'variant':return{variantId:action.variantId,group:null,portId:null,inspectionMode:null,subtypeId:null,playing:false};
+ case 'group':return{...state,group:action.group,portId:action.firstPortId||null,inspectionMode:'group',subtypeId:null};
+ case 'subtype':return{...state,subtypeId:action.subtypeId,portId:action.portId,inspectionMode:'subtype'};
+ case 'port':return{...state,portId:action.portId,inspectionMode:'port'};
  case 'tour':return{...state,playing:action.playing};
- case 'reset':return{...state,group:null,portId:null,playing:false};
+ case 'reset':return{...state,group:null,portId:null,inspectionMode:null,subtypeId:null,playing:false};
  default:return state;
  }
 }
-const names={analogue:'前部 · 模拟输出',ground:'前部 · 接地孔',gtio:'GT 1–20 · I/O',aurora:'GT 21–24 · Aurora',irc:'IRC 1–6 · 机箱互联',gtsync:'GTSYNC · 同步',udp:'ETH · UDP',wif:'WIF · 工作站网络',gbh:'GBH · 光连接',front_led_power:'前面板 LED 供电',ac_power:'交流电源入口',digital_input:'数字输入端子',power:'供电连接',optical:'光传输接口',service_unresolved:'辅助 / 服务区域 · 待核对'};
+const names={analogue:'前部 · 模拟输出',ground:'前部 · 接地孔',gtio:'GT 1–20 · I/O',aurora:'GT 21–24 · Aurora',irc:'IRC 1–6 · 机箱互联',gtsync:'GTSYNC · 同步',udp:'ETH · UDP',wif:'WIF · 工作站网络',gbh:'GBH · 光连接',front_led_power:'前面板 LED 供电',ac_power:'交流电源入口',digital_input:'数字输入端子',digital_output:'数字输出端子',analogue_input:'差分模拟输入',analog_output:'模拟输出端子',power:'供电连接',optical:'光传输接口',service_unresolved:'辅助 / 服务区域 · 待核对'};
 export function portGroups(metadata){
  const groups=new Map();
  for(const p of metadata?.ports||[]){if(!groups.has(p.group))groups.set(p.group,{id:p.group,label:names[p.group]||p.group,ports:[],interactive:false});const group=groups.get(p.group);group.ports.push(p);group.interactive ||= p.interactive!==false;}
