@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {createInspectionControls,applyInspectionPose} from './rtds-camera.js';
-import {gltfDirection,inspectionFrame,isPortFacingCamera} from './rtds-state.js';
+import {gltfDirection,inspectionFrame,isPortFacingCamera,highlightSelection,projectHighlightBounds} from './rtds-state.js';
 
 // Independent RTDS viewer. Authored materials, semantic IDs and Y-up export are retained.
 // Highlight outlines are inspection UI, not physical LEDs or live device behaviour.
@@ -20,13 +20,20 @@ export async function createRtdsScene(container,label,modelInfo,metadata,onPort,
  const nodes=new Map(),meshes=[];model.traverse(n=>{if(n.userData.sid)nodes.set(n.userData.sid,n);if(n.isMesh)meshes.push(n);});
  for(const p of metadata.ports){if(!nodes.has(p.id)){renderer.dispose();renderer.domElement.remove();throw Error('模型缺少接口 ID: '+p.id);}}
  container.append(renderer.domElement);const instance=crypto.randomUUID();container.dataset.instance=instance;
+ const overlay=document.createElementNS('http://www.w3.org/2000/svg','svg'),outline=document.createElementNS('http://www.w3.org/2000/svg','rect');
+ overlay.classList.add('rtds-highlight');overlay.setAttribute('aria-hidden','true');overlay.setAttribute('hidden','');outline.setAttribute('rx','6');outline.setAttribute('vector-effect','non-scaling-stroke');overlay.append(outline);container.append(overlay);
  const portById=new Map(metadata.ports.map(p=>[p.id,p]));
  const wholeBox=new THREE.Box3().setFromObject(model),wholeSize=wholeBox.getSize(new THREE.Vector3()),wholeCenter=wholeBox.getCenter(new THREE.Vector3());
- const extent=Math.max(...wholeSize.toArray());let frameSize=wholeSize.toArray(),selected=[],selectedPort=null,active=true,disposed=false,frame=0,highlights=[];
+ const extent=Math.max(...wholeSize.toArray());let frameSize=wholeSize.toArray(),selected=[],selectedPort=null,active=true,disposed=false,frame=0,highlight={ids:[],box:null},highlightTitle='';
  let controls=createInspectionControls(camera,renderer.domElement,invalidate);
  function invalidate(){if(active&&!disposed&&!frame)frame=requestAnimationFrame(render);}
  function render(){frame=0;if(!active||disposed)return;controls.update();
-  label.hidden=!selectedPort;if(selectedPort){const world=nodes.get(selectedPort).getWorldPosition(new THREE.Vector3()),p=world.clone().project(camera);const w=container.clientWidth,h=container.clientHeight;label.hidden=p.z>1||p.z< -1||!isPortFacingCamera(portById.get(selectedPort).normal,camera.position.toArray(),world.toArray());label.style.left=Math.max(60,Math.min(w-60,(p.x*.5+.5)*w))+'px';label.style.top=Math.max(40,Math.min(h-35,(-p.y*.5+.5)*h-14))+'px';label.textContent=portById.get(selectedPort).label;}
+  camera.updateMatrixWorld(true);
+  const w=container.clientWidth,h=container.clientHeight;
+  const facing=highlight.ids.some(id=>{const world=nodes.get(id).getWorldPosition(new THREE.Vector3());return isPortFacingCamera(portById.get(id).normal||[0,-1,0],camera.position.toArray(),world.toArray());});
+  const bounds=facing?projectHighlightBounds(highlight.box,camera,w,h):null;
+  overlay.toggleAttribute('hidden',!bounds);label.hidden=!bounds;
+  if(bounds){overlay.setAttribute('viewBox',`0 0 ${w} ${h}`);for(const [key,value]of Object.entries(bounds))outline.setAttribute(key,String(value));label.textContent=highlightTitle;const halfLabel=label.offsetWidth/2+4;label.style.left=Math.max(halfLabel,Math.min(w-halfLabel,bounds.x+bounds.width/2))+'px';label.style.top=Math.max(34,bounds.y-7)+'px';}
   renderer.render(scene,camera);container.dataset.frames=String(+(container.dataset.frames||0)+1);container.dataset.triangles=String(renderer.info.render.triangles);
  }
  function resize(){const w=container.clientWidth,h=container.clientHeight;if(!w||!h)return;renderer.setSize(w,h);Object.assign(camera,inspectionFrame(frameSize,w,h));camera.updateProjectionMatrix();invalidate();}
@@ -37,12 +44,14 @@ export async function createRtdsScene(container,label,modelInfo,metadata,onPort,
  const raycaster=new THREE.Raycaster();let down=null;
  renderer.domElement.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
  renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down.x,e.clientY-down.y)>5)return;down=null;const r=container.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),camera);const hits=raycaster.intersectObjects(meshes,false).filter(h=>h.object.visible);const id=hits.length?getAnchor(hits[0].object):null;if(id)onPort(id);});
- function clearHighlights(){for(const h of highlights){scene.remove(h);h.geometry.dispose();h.material.dispose();}highlights=[];}
+ function clearHighlights(){highlight={ids:[],box:null};highlightTitle='';overlay.setAttribute('hidden','');overlay.removeAttribute('data-ids');overlay.removeAttribute('data-kind');label.hidden=true;}
+
  reset();container.dataset.loaded='true';container.dataset.asset=metadata.asset_id;container.dataset.anchors=String(metadata.ports.length);container.dataset.pixelRatio=String(renderer.getPixelRatio());
  return{
-  inspect(ids,portId=null,isolate=false){selected=ids.filter(id=>nodes.has(id));selectedPort=portId&&nodes.has(portId)?portId:null;clearHighlights();
+  inspect(ids,portId=null,isolate=false,title=''){selected=ids.filter(id=>nodes.has(id));selectedPort=portId&&nodes.has(portId)?portId:null;clearHighlights();
    const selectedSet=new Set(selected);for(const mesh of meshes)mesh.visible=!isolate||selectedSet.has(getAnchor(mesh));
-   for(const id of selected){const box=new THREE.Box3().setFromObject(nodes.get(id));if(box.isEmpty())continue;box.expandByScalar(.0007);const h=new THREE.Box3Helper(box,id===selectedPort?0xc4633d:0x9b8764);h.material.depthTest=false;h.material.transparent=true;h.material.opacity=id===selectedPort?.95:.6;h.renderOrder=10;scene.add(h);highlights.push(h);}
+   highlight=highlightSelection(selected,portId,nodes);highlightTitle=title||(selectedPort?portById.get(selectedPort).label:`${highlight.ids.length} 个接口`);
+   if(highlight.ids.length){overlay.dataset.ids=highlight.ids.join(',');overlay.dataset.kind=portId?'port':'group';}
    container.dataset.selection=selectedPort||selected.join(',');container.dataset.isolated=String(isolate);invalidate();
   },
   focus(ids){const box=new THREE.Box3(),normal=new THREE.Vector3();for(const id of ids){const n=nodes.get(id);if(!n)continue;box.expandByObject(n);normal.add(new THREE.Vector3().fromArray(gltfDirection(portById.get(id).normal||[0,-1,0])));}
@@ -50,6 +59,6 @@ export async function createRtdsScene(container,label,modelInfo,metadata,onPort,
   },
   view(action){if(action==='reset')reset();else if(action==='in'||action==='out'){camera.zoom=THREE.MathUtils.clamp(camera.zoom*(action==='in'?1.25:.8),.5,8);camera.updateProjectionMatrix();invalidate();}else{const dir={front:[0,.08,1],rear:[0,.08,-1],top:[0,1,0]}[action];if(dir)pointAt(wholeCenter,new THREE.Vector3().fromArray(dir),wholeSize.toArray());}container.dataset.view=action;},
   setActive(value){active=value;controls.enabled=value;if(!value){cancelAnimationFrame(frame);frame=0;}else{resize();invalidate();}},
-  dispose(){disposed=true;cancelAnimationFrame(frame);observer.disconnect();controls.dispose();clearHighlights();model.traverse(n=>{if(n.isMesh){n.geometry.dispose();for(const m of Array.isArray(n.material)?n.material:[n.material])m.dispose();}});renderer.dispose();renderer.domElement.remove();label.hidden=true;if(container.dataset.instance===instance)delete container.dataset.loaded;}
+  dispose(){disposed=true;cancelAnimationFrame(frame);observer.disconnect();controls.dispose();clearHighlights();overlay.remove();model.traverse(n=>{if(n.isMesh){n.geometry.dispose();for(const m of Array.isArray(n.material)?n.material:[n.material])m.dispose();}});renderer.dispose();renderer.domElement.remove();label.hidden=true;if(container.dataset.instance===instance)delete container.dataset.loaded;}
  };
 }

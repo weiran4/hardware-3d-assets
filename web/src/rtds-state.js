@@ -1,3 +1,4 @@
+import {Box3,Vector3} from 'three';
 export function createGalleryState(){return{variantId:'novacor-2.0',group:null,portId:null,playing:false};}
 export function galleryTransition(state,action){
  switch(action.type){
@@ -19,3 +20,21 @@ export function gltfDirection([x,y,z]){return[x,z,-y||0];}
 export function inspectionFrame(size,width,height){const aspect=Math.max(.1,width/height),diameter=Math.hypot(...size)*1.15,span=Math.max(diameter,diameter/aspect);return{left:-span*aspect/2,right:span*aspect/2,top:span/2,bottom:-span/2};}
 export function galleryModeFromHash(hash){return hash==='#rtds'||hash.startsWith('#rtds-')?'rtds':'generic';}
 export function isPortFacingCamera(nativeNormal,camera,point){const normal=gltfDirection(nativeNormal),toward=camera.map((v,i)=>v-point[i]),length=Math.hypot(...toward)||1;return normal.reduce((sum,v,i)=>sum+v*toward[i],0)/length>.04;}
+
+// Inspection UI bounds, not connector compatibility or physical mating geometry.
+export function highlightSelection(groupIds,portId,nodes){
+ const ids=[...new Set(portId?[portId]:groupIds)].filter(id=>nodes.has(id));
+ const box=new Box3();for(const id of ids)box.expandByObject(nodes.get(id));
+ return{ids,box:box.isEmpty()?null:box};
+}
+export function projectHighlightBounds(box,camera,width,height,padding=8){
+ if(!box||box.isEmpty()||width<5||height<5)return null;
+ const points=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new Vector3(x,y,z).project(camera));
+ if(points.some(p=>!Number.isFinite(p.x+p.y+p.z)))return null;
+ if(points.every(p=>p.z< -1)||points.every(p=>p.z>1))return null;
+ const left=(Math.min(...points.map(p=>p.x))*.5+.5)*width,right=(Math.max(...points.map(p=>p.x))*.5+.5)*width;
+ const top=(-Math.max(...points.map(p=>p.y))*.5+.5)*height,bottom=(-Math.min(...points.map(p=>p.y))*.5+.5)*height;
+ if(right<0||left>width||bottom<0||top>height)return null;
+ const x=Math.max(2,left-padding),y=Math.max(2,top-padding),r=Math.min(width-2,right+padding),b=Math.min(height-2,bottom+padding);
+ return r>x&&b>y?{x,y,width:r-x,height:b-y}:null;
+}
