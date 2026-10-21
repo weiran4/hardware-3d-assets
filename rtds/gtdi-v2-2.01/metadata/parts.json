@@ -1,0 +1,9 @@
+{
+  "asset_id": "gtdi-v2-2.01",
+  "hardware_version": "GTDI V2",
+  "pcb_revision": "2.01",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "population": "16 Phoenix1803604 plugs installed as manual Fig9.9; PCB headers estimated",
+  "source_photo_reproduction": false,
+  "service_interfaces": "hollow silhouettes; contact geometry intentionally absent pending close-ups"
+}

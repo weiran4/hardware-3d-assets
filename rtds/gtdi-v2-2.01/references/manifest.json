@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "id": "private-manual-2026-compilation",
+      "sha256": "c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf",
+      "pages": 605,
+      "chapter_revision": "20241219",
+      "pdf_page_range": [
+        404,
+        425
+      ],
+      "key_pages": [
+        405,
+        406,
+        408,
+        410,
+        411,
+        414
+      ],
+      "distribution": "reference only; not included"
+    },
+    {
+      "id": "phoenix-1803604",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+      "accessed": "2026-10-21",
+      "used_for": [
+        "five positions",
+        "one row",
+        "3.81 mm pitch",
+        "19.84\u00d711.1\u00d716.1 mm plug envelope",
+        "screw and wire-entry observational profile"
+      ],
+      "distribution": "reference only; no images included"
+    },
+    {
+      "id": "rtds-gtdi-v2-public-photo",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034281234-GTIO-Cards",
+      "accessed": "2026-10-21",
+      "used_for": [
+        "blue PCB",
+        "green carrier",
+        "component and connector arrangement"
+      ],
+      "distribution": "reference only; no images included"
+    }
+  ]
+}

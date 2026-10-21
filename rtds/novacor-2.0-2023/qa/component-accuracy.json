@@ -1,0 +1,62 @@
+{
+  "asset_id": "novacor-2.0-2023",
+  "asset_version": "0.1.0",
+  "scope": "source-grounded exterior topology; not mechanical/electrical certification",
+  "status": "CORE_INTERFACE_VISUAL_QA_PASS_USER_REVIEW_PENDING",
+  "hardware_version": "NovaCor 2.0",
+  "interface_count": 51,
+  "counts_by_group": {
+    "analogue": 12,
+    "ground": 3,
+    "gtio": 20,
+    "aurora": 4,
+    "irc": 6,
+    "gtsync": 1,
+    "udp": 1,
+    "wif": 1,
+    "gbh": 1,
+    "front_led_power": 1,
+    "ac_power": 1
+  },
+  "visible_contacts_total": 100,
+  "checks": {
+    "native_contract": "PASS",
+    "actual_glb_roundtrip": "PASS",
+    "saved_geometry_tests": 5,
+    "mouth_clearance_tests": 2,
+    "optical_contacts_sampled_by_raycast": 62,
+    "samples_per_contact": 4,
+    "file_external_images": 0,
+    "verified_envelope_m": [
+      0.483,
+      0.522,
+      0.178
+    ],
+    "triangle_count": 53862,
+    "glb_anchor_max_error_m": 0.0,
+    "actual_glb_geometry_tests": 5,
+    "actual_glb_mouth_clearance_tests": 2,
+    "independent_source_and_render_review": "PASS_CORE_INTERFACE_SCOPE"
+  },
+  "accuracy": {
+    "interface_counts": "documented or directly observed in manufacturer references",
+    "visible_contacts": "observed topology; not hidden internal construction",
+    "placement": "photo_estimated",
+    "mechanical_fit": "not_certified",
+    "front_round_socket_keying": "no_visible_key; internal_keying_unverified; keyed_up defines reference frame only",
+    "electrical_compatibility": "not_validated"
+  },
+  "known_limits": [
+    "Front analogue/ground socket standard, exact dimensions and insertion depth unknown.",
+    "GBH part/module variant not certified; not an LC substitute.",
+    "Copper and optical mouth topology is detailed, but not a manufacturer mechanical drawing.",
+    "Brochure overall483x522x178 mm differs from manual PDF42 front450x175 mm and depth522 mm, PDF43 rear428 mm; extents/generation not reconciled.",
+    "Noncritical chassis hardware/vents/fans/rails are visual approximations.",
+    "No firmware state or actual data traffic is animated."
+  ],
+  "files_sha256": {
+    "source/asset.blend": "d67ba6cdbece5d15cbf0ec310edd0b972fbed8ef3d266351673f14ea9e538766",
+    "exports/asset.glb": "2a0b313de7814df39999027e428b818c5099f48455119c35dc086cfa83ec8099",
+    "metadata/ports.json": "7bb011a96eceafd1b99f949f0b141622a0336728c5b00a2066abe39c70e7ce53"
+  }
+}

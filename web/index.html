@@ -10,7 +10,8 @@
 <a class="skip" href="#lesson">跳到接线操作</a>
 <div class="page">
 <header class="masthead"><a class="brand" href="./" aria-label="信号接线实验室首页"><svg viewBox="0 0 36 28" aria-hidden="true"><path d="M1 17h8V5h10v19h9V12h7"/></svg><span>信号接线实验室</span></a><span class="edition">HARDWARE STUDIES <i>／</i> NO. 01</span><span class="concept-tag"><span></span> 交互概念实验</span></header>
-<main>
+<nav class="mode-nav" aria-label="选择实验模式"><button id="mode-generic" aria-controls="generic-panel" aria-pressed="true">01 <b>通用接线实验</b></button><button id="mode-rtds" aria-controls="rtds-panel" aria-pressed="false">02 <b>RTDS 素材库</b><span>接口观察</span></button></nav>
+<main id="generic-panel">
 <section class="intro"><div><p class="eyebrow">A LITTLE CONNECTION, A NEW UNDERSTANDING.</p><h1>接上这一根，<span>看见信号。</span></h1></div><p class="intro-copy">不用先懂电路。<br>转一转设备，找到接口，让信号走一遍。<span>一台示波器 · 一个脉冲控制器 · 一根线</span></p></section>
 <section class="exhibit" aria-label="三维接线互动实验">
 <div class="exhibit-top"><span>FIG. 01 <b>从输出，到输入</b></span><span class="mono">OUT → CH1</span></div>
@@ -26,6 +27,22 @@
 </section>
 <section class="response" aria-labelledby="response-title"><div class="response-title"><p class="eyebrow">WATCH THE RESPONSE</p><h2 id="response-title">信号到达，会发生什么？</h2><p id="response-copy">连好线后，发送一个示意脉冲。</p><button id="send-pulse" class="pulse-button" disabled><svg viewBox="0 0 24 20" aria-hidden="true"><path d="M1 14h6V4h9v10h7"/></svg>发一个脉冲 <span>→</span></button></div><div class="signal-path" aria-hidden="true"><span>OUT</span><div><i></i><i></i><i></i></div><span>CH1</span></div><div class="trace"><div class="trace-top"><span><i id="trace-led"></i> CH1 <small>示意波形</small></span><span id="trace-status">等待连接</span></div><svg viewBox="0 0 600 128" preserveAspectRatio="none" role="img" aria-label="概念波形显示，不是测量数据"><defs><pattern id="grid" width="30" height="24" patternUnits="userSpaceOnUse"><path d="M30 0H0V24" fill="none" stroke="#8ca3a8" stroke-opacity=".13" stroke-width="1"/></pattern></defs><rect width="600" height="128" fill="url(#grid)"/><path id="trace-line" d="M0 90H600" fill="none" stroke="#b9d9c2" stroke-width="2.8" stroke-linejoin="round"/><line id="trace-sweep" x1="0" x2="0" y1="0" y2="128" stroke="#f4f0e7" stroke-opacity="0"/></svg><div class="trace-bottom"><span>CONCEPTUAL SIGNAL</span><span>非真实测量 · 无电压 / 时间标定</span></div></div></section>
 </main>
-<footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创通用模型；概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>
+<section id="rtds-panel" aria-labelledby="rtds-heading" hidden>
+ <div class="rtds-intro"><div><p class="eyebrow">HARDWARE ATLAS / RTDS · VERSION BY VERSION</p><h2 id="rtds-heading">先看清接口，<em>再理解硬件。</em></h2></div><p>按版本建立的原创三维素材库。<br>从接口分组开始，逐个观察形状、编号与键位。<small id="rtds-library-count"></small></p></div>
+ <div class="rtds-workbench">
+  <aside class="rtds-library"><div class="rtds-library-title"><p class="eyebrow">01 / 选择版本</p><span>18</span></div><label class="rtds-filter-label" for="rtds-filter">筛选素材</label><select id="rtds-filter"><option value="all">全部版本</option><option value="modeled">可查看 3D</option><option value="reference">仅资料条目</option></select><div id="rtds-catalog" aria-label="RTDS 硬件版本目录"></div><p class="rtds-library-note">每一代单独核对。<br>目录条目 ≠ 已完成模型。</p></aside>
+  <div class="rtds-inspection">
+   <div class="rtds-model-head"><div><p class="eyebrow" id="rtds-model-kicker">RTDS / INTERFACE STUDY</p><h3 id="rtds-model-title">NovaCor 2.0</h3><p id="rtds-model-revision"></p></div><span id="rtds-model-status" class="rtds-badge"></span></div>
+   <div class="rtds-viewer-wrap"><div id="rtds-scene" role="img" aria-label="RTDS 原创三维接口模型。所有接口信息均可通过下方按钮查看。"></div><div id="rtds-loading" role="status"></div><div id="rtds-reference-placeholder" hidden><span>REFERENCE ONLY</span><strong>先留资料，不用猜测补齐。</strong><p>这一版本尚未发布三维模型。下方可查看已知事实与参考来源；待接口、键位与版本核对后再建模。</p></div><div id="rtds-label" hidden></div><div class="rtds-view-caption"><span id="rtds-view-state">整体观察</span><span>拖动旋转 · 双指 / 滚轮缩放</span></div></div>
+   <div class="rtds-camera" aria-label="RTDS 三维视角"><div><button id="rtds-front">正面</button><button id="rtds-rear">背面</button><button id="rtds-top">顶部</button><button id="rtds-reset">↺ 全貌</button></div><div><button id="rtds-in" aria-label="放大 RTDS 模型">＋</button><button id="rtds-out" aria-label="缩小 RTDS 模型">−</button></div></div>
+   <div class="rtds-tour-row"><div><p class="eyebrow">02 / 接口巡览</p><p id="rtds-tour-copy">只观察接口分组，不模拟设备运行。</p></div><div><button id="rtds-isolate" aria-pressed="false">仅看本组</button><button id="rtds-next">下一组 →</button><button id="rtds-tour" aria-pressed="false">播放巡览</button></div></div>
+   <div id="rtds-group-list" class="rtds-group-list" aria-label="接口分组"></div>
+   <div class="rtds-detail" id="rtds-detail"><div><p class="eyebrow">03 / 细看接口</p><h4 id="rtds-detail-title">从一个分组开始</h4><p id="rtds-detail-copy">选中接口分组后，查看该组的准确 ID 与信息。画面仅标注当前接口，避免拥挤。</p></div><div id="rtds-port-list" aria-label="当前组接口"></div><div id="rtds-port-facts"></div></div>
+  </div>
+ </div>
+ <div class="rtds-evidence"><section><p class="eyebrow">KNOWN / ESTIMATED / UNKNOWN</p><h3>把确定的，和未确定的分开。</h3><p id="rtds-summary"></p><div class="rtds-certainty"><div><span class="rtds-badge known">已核对的资料事实</span><p id="rtds-known-copy"></p></div><div><span class="rtds-badge estimated">照片估计的几何</span><p id="rtds-estimate-copy"></p></div><div><span class="rtds-badge unknown">未验证的兼容性</span><p>不能据此外接真实设备。模型不验证配接、电气条件、固件时序或安全认证。</p></div></div><p class="rtds-scope-note" id="rtds-scope-note"></p></section><section class="rtds-sources"><p class="eyebrow">SOURCE NOTES</p><h3>版本与依据</h3><ul id="rtds-source-list"></ul><p>仅发布原创几何、整理的事实与来源引用；不托管制造商图片或私有手册。此页面不是 RTDS 官方产品。</p></section></div>
+</section>
+
+<footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创模型；接口观察与概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>
 </div><script type="module" src="./app.js"></script>
 </body></html>

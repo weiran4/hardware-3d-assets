@@ -1,0 +1,1865 @@
+{
+  "$schema": "./schema.json",
+  "catalog_version": "0.1.0",
+  "checked_utc": "2026-10-21",
+  "scope": "Source inventory for original RTDS educational 3D assets. No geometry release or real-device wiring approval is implied.",
+  "manual_reference": {
+    "title": "RTDS Hardware Manual",
+    "filename": "HDWR-TITLE-rev00.pdf",
+    "page_count": 605,
+    "sha256": "c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf",
+    "access": "private_user_provided",
+    "redistribution": "not included; no manufacturer PDF/image/text extract is packaged"
+  },
+  "confidence_definition": {
+    "documented": "Specific fact explicitly documented for the cited variant; not a mechanical or electrical certification.",
+    "observed": "Visible in the cited photograph; dimensional accuracy and unseen geometry are not implied.",
+    "partial": "Only the listed subfacts are supported; listed gaps remain open.",
+    "unknown": "Not established in this catalog.",
+    "conflicting": "Cited sources disagree; no silent reconciliation."
+  },
+  "policies": [
+    "Logical channels, physical connector count and contact count are distinct.",
+    "Geometry, connector standard, protocol, pin meaning and compatibility are independent fields.",
+    "All physical connection validation remains disabled until a separate approved specification supplies the required conditions.",
+    "Public source availability does not grant redistribution rights; manufacturer media stays outside this catalog.",
+    "Source dates describe the cited document, not the actual age or revision of the user hardware.",
+    "Model releases must add their own saved-file/render/export QA and cannot treat catalog presence as acceptance."
+  ],
+  "sources": [
+    {
+      "id": "MANUAL-605",
+      "title": "RTDS Hardware Manual, 605-page compilation",
+      "access": "private_user_provided",
+      "date": "2026-06-29",
+      "date_meaning": "PDF modification metadata; individual chapters have their own printed dates",
+      "url": null
+    },
+    {
+      "id": "NC2-2023",
+      "title": "NovaCor 2.0 brochure",
+      "access": "public_reference_only",
+      "date": "2023-07-07",
+      "date_meaning": "PDF production metadata, not hardware release date",
+      "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/16079537928727"
+    },
+    {
+      "id": "NC2-KB",
+      "title": "NovaCor 2.0 knowledge-base article",
+      "access": "public_reference_only",
+      "date": "2023-07-17",
+      "date_meaning": "Article date observed in source research",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/16032930463511-NovaCor-2-0"
+    },
+    {
+      "id": "NC1-KB",
+      "title": "NovaCor knowledge-base article",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "2022 article identified by earlier source research; exact date not recorded",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034290474-NovaCor"
+    },
+    {
+      "id": "NCL-2024",
+      "title": "NovaCor Light brochure",
+      "access": "public_reference_only",
+      "date": "2024-03-14",
+      "date_meaning": "PDF production metadata, not hardware release date",
+      "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/22241174316311"
+    },
+    {
+      "id": "GTIO-2026",
+      "title": "GTIO Cards knowledge-base article",
+      "access": "public_reference_only",
+      "date": "2026-08-25",
+      "date_meaning": "Article update observed in source research",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034281234-GTIO-Cards"
+    },
+    {
+      "id": "GTDI-PHOTO",
+      "title": "GTDI V2 official component-side image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Date not established; visible PCB Version 2.01 is the identity evidence",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/8497880556695"
+    },
+    {
+      "id": "GTDO-PHOTO",
+      "title": "GTDO V2 official component-side image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Exact PCB revision illegible in the inspected 400 x 380 image",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/4409613704343"
+    },
+    {
+      "id": "GTAI-PHOTO",
+      "title": "GTAI V2 official component-side image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Exact board revision not established in this pass",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/360065822373"
+    },
+    {
+      "id": "GTAO-PHOTO",
+      "title": "GTAO V2 official component-side image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Visible PCB Version 2.20; image publication date unestablished",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/360100284733"
+    },
+    {
+      "id": "GTFPI-PHOTO",
+      "title": "GTFPI official component-side image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Visible PCB Version 2.01; image publication date unestablished",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+    },
+    {
+      "id": "GTFPI-KB",
+      "title": "GTFPI Card knowledge-base article",
+      "access": "public_reference_only",
+      "date": "2019-10-04",
+      "date_meaning": "Article update observed in source research",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034817173-GTFPI-Card"
+    },
+    {
+      "id": "SOC2-2026",
+      "title": "GTSOC V2 brochure",
+      "access": "public_reference_only",
+      "date": "2026-07-27",
+      "date_meaning": "PDF production metadata",
+      "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303"
+    },
+    {
+      "id": "SOC2-PHOTO",
+      "title": "GTSOC V2 official front image",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Inspected populated-module photograph; publication date unestablished",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/19752419176215"
+    },
+    {
+      "id": "SOC1-BROCHURE",
+      "title": "GTSOC V1 brochure",
+      "access": "public_reference_only",
+      "date": null,
+      "date_meaning": "Date unestablished",
+      "url": "https://www.rtds.com/-/media/project/oneweb/oneweb/ametekrtds/documents/rtds-website-linked-pdfs/gtsoc_v1.pdf?revision=b5c4ffd9-5464-40ea-bbc4-ac8016e9e490"
+    },
+    {
+      "id": "NET2-KB",
+      "title": "GTNETx2 knowledge-base article",
+      "access": "public_reference_only",
+      "date": "2024-09-10",
+      "date_meaning": "Article update observed in source research",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034788593-GTNETx2-The-RTDS-Simulator-s-Network-Interface-Card"
+    },
+    {
+      "id": "NET3-KB",
+      "title": "GTNETv3 knowledge-base article",
+      "access": "public_reference_only",
+      "date": "2026-07-24",
+      "date_meaning": "Article date observed in source research",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/42206688511639-GTNETv3-THE-RTDS-SIMULATOR-S-NETWORK-INTERFACE-CARD"
+    },
+    {
+      "id": "PHOENIX-1803604",
+      "title": "Phoenix Contact MC 1,5/5-ST-3,81 PCB plug, item 1803604",
+      "access": "public_reference_only",
+      "date": "2026-10-21",
+      "date_meaning": "Access/verification date; product revision date not asserted",
+      "url": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604"
+    }
+  ],
+  "variants": [
+    {
+      "id": "novacor-2.0",
+      "family": "NovaCor",
+      "generation": "2.0",
+      "identity_scope": "2023 brochure exterior candidate; manual chapter dated 2025-09-16 is separately cited, not proof that every chassis revision is identical.",
+      "evidence": [
+        {
+          "source_id": "NC2-2023",
+          "locator": "Brochure pp.1-2"
+        },
+        {
+          "source_id": "NC2-KB",
+          "locator": "Article"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 2A; PDF pages 65-105; printed chapter date 2025-09-16"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Front has 12 analogue outputs; three separate ground socket openings are visible.",
+              "source_refs": [
+                "NC2-2023"
+              ],
+              "locator": "p.2 front photograph"
+            },
+            {
+              "claim": "Rear groups: 20 GT I/O, four Aurora-designated GT positions 21-24, six IRC, one GTSYNC, one GBH, one UDP Ethernet and one workstation Ethernet.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.71 / printed p.7, Fig.2.9"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Front signals form four columns of three, numbered downward; grounds sit in a row to their right.",
+              "source_refs": [
+                "NC2-2023"
+              ],
+              "locator": "p.2 front photograph"
+            },
+            {
+              "claim": "GT numbering uses odd positions above even positions; 1-8, 9-16 and 17-24 are separate blocks. IRC follows at right.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.72 / printed p.8, Fig.2.11"
+            }
+          ],
+          "gaps": [
+            "Absolute port locations, pitch and production tolerances are not established."
+          ]
+        },
+        "keying": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The top and bottom GT fibre rows have opposite mating-latch orientations; top row tab up, bottom row tab down.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.72 / printed p.8, Fig.2.10"
+            },
+            {
+              "claim": "GBH mating tab faces up; its POF and HCS cable variants are distinct.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.81-82 / printed pp.17-18"
+            }
+          ],
+          "gaps": [
+            "No exact front analogue socket mechanical family identified.",
+            "Do not substitute an LC module for the separate GBH interface."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The manual lists Finisar FTLF8519P3BNL for GT1-24, IRC1-6 and GTSYNC.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.72 / printed p.8"
+            },
+            {
+              "claim": "UDP is populated by a copper SFP, separate from the workstation Ethernet connector.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.71 / printed p.7"
+            }
+          ],
+          "gaps": [
+            "Analogue socket standard/diameter and contact mechanics remain unresolved; the photograph does not show a BNC bayonet.",
+            "The modeled copper/optical mouth topology has passed core visual review; internal construction, production tolerances and mating fit remain uncertified."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Published exterior W x D x H: 483 x 522 x 178 mm.",
+              "source_refs": [
+                "NC2-2023"
+              ],
+              "locator": "p.2 dimensions"
+            }
+          ],
+          "gaps": [
+            "Port pitch, diameter, recess depth, side/bottom detail and tolerances remain approximate."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "exterior_candidate",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Front analogue/ground socket family, exact dimensions and insertion depth remain unresolved despite source-grounded visible mouth topology.",
+          "GBH part/module variant and mechanical fit remain uncertified; checked visible key directions are not manufacturer mating CAD.",
+          "Source-relative placement remains approximate; enclosure dimensions do not certify connector pitch, tolerances or mating travel."
+        ]
+      },
+      "notes": [
+        "Aurora positions must remain distinct from ordinary GT I/O even when their visible form is alike.",
+        "The 12 built-in outputs are not the channel count of an external GTAO V2.",
+        "Delivered original exterior asset: rtds/novacor-2.0-2023/source/asset.blend and rtds/novacor-2.0-2023/exports/asset.glb; r05 core interface visuals independently passed source, native and actual-GLB review. Scope and remaining gaps are recorded in rtds/novacor-2.0-2023/qa/component-accuracy.json.",
+        "Core visual review includes interface counts, numbering, visible contact topology and key directions; it does not close mechanical-fit or electrical/optical-compatibility gates."
+      ]
+    },
+    {
+      "id": "novacor-light",
+      "family": "NovaCor",
+      "generation": "Light",
+      "identity_scope": "2024 brochure and 2025-05-29 chapter are separate evidence sets; do not copy the NovaCor 2.0 rear panel.",
+      "evidence": [
+        {
+          "source_id": "NCL-2024",
+          "locator": "Brochure front/rear and dimensions"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 2B; PDF pages 106-142; printed chapter date 2025-05-29"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The rear includes separate D-sub digital I/O and analogue I/O groups, internal I/O, optical communication and workstation connections.",
+              "source_refs": [
+                "NCL-2024"
+              ],
+              "locator": "Rear photograph"
+            }
+          ],
+          "gaps": [
+            "D-sub pin counts and population must be accepted from the Light-specific diagram, not inferred from another chassis."
+          ]
+        },
+        "layout": {
+          "status": "observed",
+          "facts": [
+            {
+              "claim": "Digital I/O D-subs occupy the upper-left rear; analogue I/O is upper-right, with communications lower down.",
+              "source_refs": [
+                "NCL-2024"
+              ],
+              "locator": "Rear photograph"
+            }
+          ],
+          "gaps": [
+            "Port coordinates and exact option population remain unverified."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "conflicting",
+          "facts": [
+            {
+              "claim": "Brochure lists 483 x 522 x 178 mm overall.",
+              "source_refs": [
+                "NCL-2024"
+              ],
+              "locator": "Dimensions"
+            },
+            {
+              "claim": "Manual prints W x L x H as 20 x 19 x 7 inches, alongside 50.8 x 48.3 x 17.8 cm.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.107 / printed p.2, section 2.3"
+            }
+          ],
+          "gaps": [
+            "Axis labels and depth differ between sources. Preserve both; resolve by a version-matched mechanical drawing before setting asset dimensions."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "A documentation discrepancy is not resolved by averaging dimensions or swapping axes silently."
+      ]
+    },
+    {
+      "id": "novacor-1.0",
+      "family": "NovaCor",
+      "generation": "1.0",
+      "identity_scope": "Dedicated 1.0 chapter dated 2023-05-23; no 2.0 geometry inheritance.",
+      "evidence": [
+        {
+          "source_id": "NC1-KB",
+          "locator": "NovaCor article"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 2C; PDF pages 143-180; printed chapter date 2023-05-23"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The chapter identifies 12 built-in front analogue outputs.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.148-150 / chapter 2C section 2.3"
+            }
+          ],
+          "gaps": [
+            "A full version-specific physical connector inventory has not been accepted in this increment."
+          ]
+        },
+        "layout": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "POWER8-based 1.0 and POWER9-based 2.0 are not interchangeable asset identities."
+      ]
+    },
+    {
+      "id": "gtdi-v2",
+      "family": "GTDI",
+      "generation": "V2",
+      "identity_scope": "PCB Version 2.01 is visible in the official photograph and manual Fig.9.1; chapter is dated 2024-12-19.",
+      "evidence": [
+        {
+          "source_id": "GTDI-PHOTO",
+          "locator": "Visible PCB marking"
+        },
+        {
+          "source_id": "GTIO-2026",
+          "locator": "GTDI entry"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 9A; PDF pages 404-425; printed chapter date 2024-12-19"
+        },
+        {
+          "source_id": "PHOENIX-1803604",
+          "locator": "Product properties and Dimensions; accessed 2026-10-21"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "64 digital input channels form eight banks of eight, with two optical transport ports.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.404 / printed p.1; p.406 / printed p.3"
+            },
+            {
+              "claim": "Each bank uses a pair of removable five-position terminal plugs: four signals plus a shared auxiliary/return position per row.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.414 / printed p.11, Fig.9.9"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "In the connector-end view of Fig.9.9, the first bank is shown as top V+(WET),7,5,3,1 and bottom GND,8,6,4,2. Those rows describe this end view, not top/bottom board coordinates.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.414 / printed p.11, Fig.9.9"
+            },
+            {
+              "claim": "Optical port 1 is the upstream connection; port 2 is the downstream connection.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.404 / printed p.1"
+            },
+            {
+              "claim": "In the upright component-side board frame, odd signals run downward on the inner tier and even signals downward on the outer tier, with bank numbering progressing independently of the connector-end view.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.405 / printed p.2, Fig.9.1, cross-checked with PDF p.414 / printed p.11, Fig.9.9"
+            }
+          ],
+          "gaps": [
+            "Core bank progression, labels and connector-end/board-frame orientation have been checked; absolute board coordinates and header-tier offsets remain photo-estimated.",
+            "Port 1/2 geometry coordinates are not mechanical dimensions."
+          ]
+        },
+        "keying": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The two four-contact power connections are keyed; the manual distinguishes the first connector with the card upright.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.408 / printed p.5, Fig.9.4"
+            }
+          ],
+          "gaps": [
+            "Core visible power-shroud and optical key directions have passed source/native/GLB visual review; exact power housing profile, optical module mechanics and terminal mating fit remain uncertified.",
+            "Matching PCB header part number and hidden mating geometry remain unknown."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual identifies the terminal block as Phoenix Contact 1803604.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.406 / printed p.3"
+            },
+            {
+              "claim": "Both white power headers have four visible contacts. The upper power header has +24V,GND,GND,NC top-to-bottom in the illustrated frame; the lower power header pin order remains unknown.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.405 / printed p.2, Fig.9.1; PDF p.408 / printed p.5, Fig.9.4"
+            },
+            {
+              "claim": "Phoenix Contact identifies item 1803604 as a five-position, single-row plug.",
+              "source_refs": [
+                "PHOENIX-1803604"
+              ],
+              "locator": "Product properties: number of positions and rows; accessed 2026-10-21"
+            }
+          ],
+          "gaps": [
+            "The matching PCB header part number, hidden mating fingers and complete mechanical fit remain unknown.",
+            "Four auxiliary/service interfaces are contact-detail silhouettes, not certified complete connectors.",
+            "Pin-role facts do not approve a connection or power-on procedure."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Phoenix Contact item 1803604 has 3.81 mm pitch and a published W x H x L envelope of 19.84 x 11.1 x 16.1 mm.",
+              "source_refs": [
+                "PHOENIX-1803604"
+              ],
+              "locator": "Dimensions section; accessed 2026-10-21"
+            }
+          ],
+          "gaps": [
+            "Board/carrier dimensions, power-header pitch and placement/tier offsets are photo-estimated.",
+            "The documented plug envelope does not identify the mating PCB header or certify complete mating fit."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "connector_research_candidate",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Matching PCB terminal-header part and hidden mating geometry remain unknown despite documented plug pitch/envelope.",
+          "Four auxiliary/service interfaces need contact-count, family and key-notch close-ups; current models contain contact-detail silhouettes only.",
+          "Lower power-header pin order and DIP switch states remain unverified; no usable address/default setting is asserted.",
+          "Board dimensions, placement and power/optical/header mechanics remain visual estimates, not certified mechanical fit."
+        ]
+      },
+      "notes": [
+        "Delivered original asset: rtds/gtdi-v2-2.01/source/asset.blend and rtds/gtdi-v2-2.01/exports/asset.glb. PCB 2.01 core visual interfaces independently passed source/native/actual-GLB review; remaining gates are recorded in rtds/gtdi-v2-2.01/qa/component-accuracy.json.",
+        "The delivered population has 16 installed removable five-position plugs: 80 positions comprising 64 signals, eight WET and eight GND; it follows the populated connector reference rather than claiming the distant board photo has identical plug population.",
+        "The four service interfaces remain contact-detail silhouettes; the eight DIP rocker states are illustrative, not a factory default or verified address configuration.",
+        "Bank ordering, connector-end versus upright-board orientation and core visible key directions have been checked. Overall accurate-connector release remains false because mechanical, auxiliary-contact and compatibility gaps remain."
+      ]
+    },
+    {
+      "id": "gtdi-v1",
+      "family": "GTDI",
+      "generation": "V1",
+      "identity_scope": "Chapter applies to v1.10 and later within V1; Fig.9.1 photo is marked 1.11. Do not use V2 field terminals.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 9B; PDF pages 426-447; printed chapter date 2020-02-03"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "64 digital inputs and two optical transport ports are described.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.426 / printed p.9.1"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Port 1 connects upstream and port 2 connects downstream in the chapter.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.426 / printed p.9.1"
+            }
+          ],
+          "gaps": [
+            "Exact V1 terminal and jumper layout needs its own image review."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "V2 additions, bank terminals and pull-up details must not be projected backward."
+      ]
+    },
+    {
+      "id": "gtdo-v2",
+      "family": "GTDO",
+      "generation": "V2",
+      "identity_scope": "2024-09-24 chapter; official small photo does not resolve the exact PCB revision.",
+      "evidence": [
+        {
+          "source_id": "GTDO-PHOTO",
+          "locator": "Component-side photo"
+        },
+        {
+          "source_id": "GTIO-2026",
+          "locator": "GTDO entry"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 8A; PDF pages 362-381; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "64 digital outputs are arranged as eight banks of eight; two optical ports are shown.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.362-363 / printed pp.1-2"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Bank 1 labels are top V+,7,5,3,1 and bottom V-,8,6,4,2; later banks add eight to signal numbers.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.363 / printed p.2, Fig.8.1"
+            }
+          ],
+          "gaps": [
+            "Exact board revision, coordinates and connector orientation require full-resolution visual acceptance."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual identifies Phoenix Contact 1803604 terminal blocks.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.364 / printed p.3"
+            }
+          ],
+          "gaps": [
+            "Actual plug/header mechanics and power/optical contacts not yet accepted."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual gives card length as 19.7 cm.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.362 / printed p.1"
+            }
+          ],
+          "gaps": [
+            "Width, thickness, carrier extent, reference endpoints and connector coordinates are not established."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "Eight banks of eight is materially different from V1 two banks of 32."
+      ]
+    },
+    {
+      "id": "gtdo-v1",
+      "family": "GTDO",
+      "generation": "V1",
+      "identity_scope": "Dedicated legacy chapter 8B; opening printed revision date not found.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 8B; PDF pages 382-403; printed chapter date not found"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "64 digital outputs are grouped into two banks of 32; two optical transport ports are described.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.382 / printed p.8.1"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The power section describes two keyed supply connections.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.385 / printed p.8.4"
+            }
+          ],
+          "gaps": [
+            "Do not use the V2 eight-bank field-terminal model."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "gtai-v2",
+      "family": "GTAI",
+      "generation": "V2",
+      "identity_scope": "2024-09-24 chapter and official V2 photo; exact PCB revision not accepted.",
+      "evidence": [
+        {
+          "source_id": "GTAI-PHOTO",
+          "locator": "Component-side photo"
+        },
+        {
+          "source_id": "GTIO-2026",
+          "locator": "GTAI entry"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Twelve differential analogue input channels are documented.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.336 / printed p.1"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "observed",
+          "facts": [
+            {
+              "claim": "Twelve green terminal groups occupy one long edge, with two optical cages opposite.",
+              "source_refs": [
+                "GTAI-PHOTO"
+              ],
+              "locator": "Component-side photo"
+            }
+          ],
+          "gaps": [
+            "Do not derive channel polarity/orientation solely from the angled photo."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual names Phoenix Contact 1803581 and gives three contacts per channel: positive, negative and ground.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.339 / printed p.4; p.347 / printed p.12"
+            }
+          ],
+          "gaps": [
+            "Verify physical terminal order in the upright figure and the mating plug/header geometry."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "gtai-v1",
+      "family": "GTAI",
+      "generation": "V1",
+      "identity_scope": "Placeholder identity only; the supplied compilation has a GTAI V2 chapter, not a standalone V1 chapter.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "layout": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "No V2 channel/terminal geometry is claimed for V1.",
+        "Locate an actual V1 label and matching documentation before building."
+      ]
+    },
+    {
+      "id": "gtao-v2",
+      "family": "GTAO",
+      "generation": "V2",
+      "identity_scope": "Official photo is marked PCB Version 2.20; chapter dated 2024-09-24 covers V2.",
+      "evidence": [
+        {
+          "source_id": "GTAO-PHOTO",
+          "locator": "Visible PCB marking"
+        },
+        {
+          "source_id": "GTIO-2026",
+          "locator": "GTAO entry"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 6A; PDF pages 276-307; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Sixteen analogue outputs are documented; access to the last four is described as NovaCor-dependent.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.276 / printed p.1"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The upright terminal drawing places signal at the top and return at the bottom of each two-position plug.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.289 / printed p.14"
+            }
+          ],
+          "gaps": [
+            "Verify complete channel numbering and physical connector orientation before geometry release."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual identifies Phoenix Contact 1803578 terminal blocks.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.278 / printed p.3"
+            }
+          ],
+          "gaps": [
+            "Plug/header part pairing and keying must be independently checked."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "The legacy twelve-output GTAO is a separate variant, not a visibility toggle."
+      ]
+    },
+    {
+      "id": "gtao-v1",
+      "family": "GTAO",
+      "generation": "V1 / legacy twelve-channel",
+      "identity_scope": "Legacy chapter 6B dated 2020-02-03; exact PCB revision remains unestablished.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 6B; PDF pages 308-335; printed chapter date 2020-02-03"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Twelve analogue outputs are documented.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.308 / printed p.6.1"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Field connections use terminal blocks and the card is rail-mounted.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.308 / printed p.6.1"
+            }
+          ],
+          "gaps": [
+            "Detailed legacy geometry and connector grouping have not been accepted."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "gtsoc-v2",
+      "family": "GTSOC",
+      "generation": "V2",
+      "identity_scope": "2024-09-27 manual chapter; 2026 brochure/photo is a separate populated-module configuration.",
+      "evidence": [
+        {
+          "source_id": "SOC2-2026",
+          "locator": "Brochure"
+        },
+        {
+          "source_id": "SOC2-PHOTO",
+          "locator": "Populated front photograph"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 13A; PDF pages 528-535; printed chapter date 2024-09-27"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Sixteen front SFP positions, four rear optical positions and three front USB interfaces are documented.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.529 / printed p.2"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Rear photo places Ethernet left of a two-by-two optical group; optical labels are 1,3 above 2,4; AC power is at far right.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.530 / printed p.3"
+            },
+            {
+              "claim": "Public front photograph is populated with copper RJ45 SFP modules.",
+              "source_refs": [
+                "SOC2-PHOTO"
+              ],
+              "locator": "Front photograph"
+            }
+          ],
+          "gaps": [
+            "Do not universally represent the front population as LC fibre.",
+            "USB connector families and installed SFP variants need close-up acceptance."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Front monitor/programming interfaces are labelled Prog JTAG, PS Monitor and PL Monitor.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.529 / printed p.2"
+            }
+          ],
+          "gaps": [
+            "USB mouth/contact details and SFP-module mating mechanics remain unverified."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "Manual p.529 assigns Blackbox use to rear ports 1-4, while p.531 refers to front ports 1-4. Treat that role wording as an unresolved source contradiction; do not implement an automatic route.",
+        "Firmware/application semantics are separate from physical port population."
+      ]
+    },
+    {
+      "id": "gtsoc-v1",
+      "family": "GTSOC",
+      "generation": "V1",
+      "identity_scope": "Dedicated chapter dated 2023-10-02; never borrow the V2 rear/front architecture.",
+      "evidence": [
+        {
+          "source_id": "SOC1-BROCHURE",
+          "locator": "Brochure"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 13B; PDF pages 536-542; printed chapter date 2023-10-02"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "The front has eight GT fibre ports, three USB interfaces and a power switch.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.537 / printed p.2"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The cited chapter distinguishes ports 1-4 from reserved positions 5-8.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.537 / printed p.2"
+            }
+          ],
+          "gaps": [
+            "This source-specific role distinction is not a claim about every later firmware release.",
+            "Physical position/keying details require matched photos."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "gtnet-v3",
+      "family": "GTNET",
+      "generation": "v3",
+      "identity_scope": "Card chapter dated 2026-05-04; external chassis revision must be tracked independently.",
+      "evidence": [
+        {
+          "source_id": "NET3-KB",
+          "locator": "Article"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 5A; PDF pages 227-248; printed chapter date 2026-05-04"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Two simulator-side GT connections A/B and four external Ethernet connections AA/AB/BA/BB are documented.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.228,231 / printed pp.2,5"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Module A and Module B are separate processing sections.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.227 / printed p.1"
+            }
+          ],
+          "gaps": [
+            "Physical module population, port ordering and board/backplane keying need source-photo acceptance."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "Do not convert this to GTNETx2 by hiding two ports.",
+        "The GTNET enclosure is a separate asset; its November-2024 front-panel change is independent of card generation."
+      ]
+    },
+    {
+      "id": "gtnet-x2",
+      "family": "GTNET",
+      "generation": "x2",
+      "identity_scope": "Card chapter dated 2025-03-18; separate pre-/post-November-2024 enclosure configurations.",
+      "evidence": [
+        {
+          "source_id": "NET2-KB",
+          "locator": "Article"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 5B; PDF pages 249-275; printed chapter date 2025-03-18"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "documented",
+          "facts": [
+            {
+              "claim": "Two processing modules have simulator-side GT ports A/B and external LAN ports A/B.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.251,254 / printed pp.3,6"
+            }
+          ],
+          "gaps": []
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Manual distinguishes enclosure front features shipped before November 2024 from those shipped from November 2024.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF pp.250-251 / printed pp.2-3"
+            }
+          ],
+          "gaps": [
+            "The four visible silver assemblies must not all be labelled Ethernet; match each physical position to its role."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "Copper/fibre external media options need distinct populated connector variants."
+      ]
+    },
+    {
+      "id": "gtnet-legacy",
+      "family": "GTNET",
+      "generation": "original / legacy",
+      "identity_scope": "Comparison evidence only; no full standalone legacy GTNET chapter in this compilation.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 5B; PDF pages 252; printed chapter date 2025-03-18"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The comparison distinguishes one processing module on original GTNET from two on GTNETx2.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.252 / printed p.4, Fig.5.5"
+            }
+          ],
+          "gaps": [
+            "A physical port inventory has not been established."
+          ]
+        },
+        "layout": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "A legacy comparison photo is not enough to reproduce full backplane, connector or jumper geometry."
+      ]
+    },
+    {
+      "id": "gtfpi-v2",
+      "family": "GTFPI",
+      "generation": "V2",
+      "identity_scope": "Manual chapter dated 2024-09-24; component-side reference identifies PCB Version 2.01.",
+      "evidence": [
+        {
+          "source_id": "GTFPI-PHOTO",
+          "locator": "Visible PCB marking"
+        },
+        {
+          "source_id": "GTFPI-KB",
+          "locator": "Card/panel distinction"
+        },
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Reference shows two ribbon interface headers, two optical cages and two power headers.",
+              "source_refs": [
+                "GTFPI-PHOTO"
+              ],
+              "locator": "Component-side photo"
+            }
+          ],
+          "gaps": [
+            "Ribbon contact count is not certified by this catalog."
+          ]
+        },
+        "layout": {
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "The manual photo distinguishes upper high-voltage-panel ribbon, lower low-voltage-panel ribbon and an intermediate two-terminal 5V supply connection.",
+              "source_refs": [
+                "MANUAL-605"
+              ],
+              "locator": "PDF p.449 / printed p.2, Fig.10.1"
+            }
+          ],
+          "gaps": [
+            "Verify shroud notch, pin-one mark, ribbon stripe and mating orientation independently."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "The card is a bridge to separate interface panels; it is not itself a high-voltage contact panel."
+      ]
+    },
+    {
+      "id": "gtfpi-v1",
+      "family": "GTFPI",
+      "generation": "V1 / unconfirmed legacy",
+      "identity_scope": "Placeholder identity only; no standalone V1 chapter was located in the supplied compilation.",
+      "evidence": [
+        {
+          "source_id": "MANUAL-605",
+          "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
+        }
+      ],
+      "confidence": {
+        "count": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "layout": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "keying": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "contacts": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "physical_dimensions": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No version-matched evidence reviewed for this dimension."
+          ]
+        },
+        "electrical_compatibility": {
+          "status": "unknown",
+          "facts": [],
+          "gaps": [
+            "No connection-validation rule is approved by this catalog. Hardware revision, installed options, firmware and full electrical/optical conditions must be checked separately."
+          ]
+        }
+      },
+      "release_gate": {
+        "stage": "catalog_only",
+        "accurate_connector_release_passed": false,
+        "blockers": [
+          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
+          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+        ]
+      },
+      "notes": [
+        "Do not relabel the Version 2.01 image as V1."
+      ]
+    }
+  ]
+}

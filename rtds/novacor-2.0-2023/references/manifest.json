@@ -1,0 +1,34 @@
+{
+  "asset_id": "novacor-2.0-2023",
+  "sources": [
+    {
+      "id": "rtds-nc2-brochure-2023",
+      "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/16079537928727",
+      "pages": [
+        1,
+        2
+      ],
+      "observed_date": "2026-10-21",
+      "purpose": "dimensions and exterior appearance",
+      "media_redistribution": "not included; original geometry only"
+    },
+    {
+      "id": "manual-user-compilation",
+      "title": "RTDS Hardware Manual",
+      "sha256": "c621dc48408d091eaa1a2fa4a1a253c83db49a2e7f85aa67a2754a56cf4cfaaf",
+      "access": "user-provided private reference; not redistributed",
+      "chapter": "NovaCor 2.0",
+      "chapter_revision": "20250916",
+      "pdf_pages": [
+        70,
+        71,
+        72,
+        73,
+        81,
+        82
+      ],
+      "purpose": "interface roles, numbered layout and key orientation"
+    }
+  ],
+  "claim_scope": "source-grounded visible topology; photo-estimated mechanical placement; no mating/electrical certification"
+}

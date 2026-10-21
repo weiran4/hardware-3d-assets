@@ -1,0 +1,92 @@
+{
+  "asset_id": "gtdi-v2-2.01",
+  "asset_state": "visual_candidate_with_service_detail_gaps",
+  "overall_connector_accuracy": "PARTIAL_NOT_CERTIFIED",
+  "scope": "Source-grounded core visual interfaces; unknown auxiliary/service contacts are omitted, not guessed.",
+  "geometry_revision": "r05",
+  "checks": [
+    {
+      "name": "manifest topology/version/pitch/unknown gates",
+      "result": "PASS",
+      "test_count": 5,
+      "test_script": "../tests/test_gtdi_manifest.py",
+      "reproduction": "python3 -m unittest discover -s rtds/tests -p test_gtdi_manifest.py -v"
+    },
+    {
+      "name": "actual reopened native geometry, visibility rays and assembly seating",
+      "result": "PASS",
+      "test_count": 12,
+      "test_script": "source/test_geometry.py",
+      "reproduction": "blender -b rtds/gtdi-v2-2.01/source/asset.blend --python rtds/gtdi-v2-2.01/source/test_geometry.py"
+    },
+    {
+      "name": "actual GLB imported geometry with the same regressions",
+      "result": "PASS",
+      "test_count": 12,
+      "test_script": "source/test_roundtrip_geometry.py",
+      "reproduction": "blender -b --python rtds/gtdi-v2-2.01/source/test_roundtrip_geometry.py"
+    },
+    {
+      "name": "native asset contract",
+      "result": "PASS",
+      "report": "qa/report.json"
+    },
+    {
+      "name": "GLB dimensions/materials/hierarchy/anchors",
+      "result": "PASS",
+      "report": "qa/roundtrip.json"
+    }
+  ],
+  "actual_counts": {
+    "terminal_plugs": 16,
+    "positions_per_plug": 5,
+    "physical_terminal_positions": 80,
+    "signal_channels": 64,
+    "wet_positions": 8,
+    "ground_positions": 8,
+    "power_headers": 2,
+    "contacts_per_power_header": 4,
+    "duplex_optical_ports": 2,
+    "receptacles_per_optical_port": 2,
+    "dip_rockers": 8,
+    "service_outlines_without_contacts": 4,
+    "anchors": 24,
+    "placed_triangles": 41592,
+    "objects": 1494
+  },
+  "open_gates": [
+    "Three black auxiliary/service header contact rows and key notches need perpendicular close-up.",
+    "Small USB-like connector mouth and PCB revision need the same evidence set.",
+    "Lower power pin order unknown; DIP state unverified visual, not default.",
+    "PCB, placement and header mechanics estimated; no mechanical-fit or electrical-compatibility certification."
+  ],
+  "validated_mating": false,
+  "evidence": "README.md and references/manifest.json",
+  "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+  "export_glb_sha256": "cb44803bd765e7ba5259e969bade71c42ccf639a747be083b1c67e58d59165ef",
+  "preview_provenance": "qa/preview-provenance.json",
+  "local_transient_logs_distributed": false,
+  "visual_review": {
+    "revision": "r05",
+    "side_diagnostics": "inspected before final top/iso render; major connector bodies reach PCB, fins connect to core",
+    "native_pin_contact_topology_unchanged": true,
+    "decorative_component_mechanical_fit": "not certified; tiny components remain simplified, not a BOM",
+    "reviewed_views": [
+      "front",
+      "rear",
+      "left",
+      "right",
+      "top",
+      "iso",
+      "terminal-closeup",
+      "optical-closeup",
+      "power-closeup",
+      "neutral",
+      "wireframe"
+    ],
+    "nonblocking_cosmetic_limits": [
+      "Some non-contact board text is partly occluded in oblique views; upright top is preferred for labels.",
+      "Simplified heatsink core/top surfaces overlap at the top plane, yielding a dark centre; no mechanical or thermal certification is claimed."
+    ]
+  }
+}

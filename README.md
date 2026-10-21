@@ -6,6 +6,14 @@
 
 Rotate the original generic models, inspect ports, and try a conceptual **OUT → CH1** pulse sequence. Desktop/mobile browser checks gate deployment, followed by anonymous checks of the live page. This is **not** an electrical simulator, compatibility certification, or real-device wiring guide.
 
+## RTDS hardware library · Phase 2
+
+[Browse the RTDS library](rtds/) · [18-entry version-specific source catalog](rtds/catalog/) · [Interactive review page](https://weiran4.github.io/hardware-3d-assets/)
+
+Two original editable visual candidates are included: **NovaCor 2.0 (2023 exterior)** and **GTDI V2 (PCB 2.01)**. Each includes Blender/GLB files, interface metadata, diagnostic previews, regeneration sources and QA. Catalog entries without a model are explicitly not modeled; catalog evidence is not a geometry release or compatibility certification.
+
+Key visible ports, contacts, numbering and key orientation receive dedicated checks. Remaining mechanical/mating uncertainties are stated per model. The gallery is inspection-only: it does not validate or instruct real-device wiring. Manufacturer PDFs and photographs are not distributed. See [independent review](rtds/qa/independent-review.json).
+
 ## Generic hardware · Phase 1
 
 Original, editable low-poly practice models for a future wiring tutorial. **Not product replicas, a circuit simulation, or real-device wiring instructions.** Dimensions are fictional concept parameters. All physical/electrical compatibility and limits remain unknown.
@@ -53,14 +61,14 @@ Final illustrations use 1024² PNG, Standard color transform, 128 CPU samples. T
 This is the public source repository, published with the owner's authorization.
 
 - `generic/`: original fictional, reusable hardware assets; four editable masters, four GLBs, and 32 diagnostic/illustration views.
-- `rtds/`: reserved for separately verified RTDS-specific assets; currently a placeholder only.
+- `rtds/`: two version-pinned visual model candidates and an 18-entry source catalog; unknown mechanical/electrical properties remain explicit.
 - `deliverables/`: overview images and a SHA-256 manifest, without duplicate ZIP archives.
 - `tools/`, `tests/`, `skills/`: procedural sources, tests, and the working Blender skill.
 - `docs/`, `qa/`: historical design/plan and measured review evidence. Historical documents describe their original pre-publication scope, not the current repository status; see `docs/README.md`.
 
-The reference artwork and personal/social screenshots are not included or embedded. No credentials, Library receipts, historical checkpoint binaries, caches, or render-temporary files are included. See `qa/publication-audit.json` for the explicit file allowlist and publication checks. The original frozen delivery ZIP was not modified.
+The reference artwork and personal/social screenshots are not included or embedded. No credentials, Library receipts, historical checkpoint binaries, caches, or render-temporary files are included. See `qa/publication-audit.json` for the historical phase-1 file allowlist and publication checks; RTDS-specific checks are under `rtds/qa/`. The original frozen delivery ZIP was not modified.
 
-Technical QA does not replace user aesthetic scoring or acceptance. RTDS models remain future work. Any interactive review page is a separate layer and does not certify real-device wiring.
+Technical QA does not replace user aesthetic scoring or acceptance. RTDS phase-2 visual candidates are documented separately under `rtds/`. Any interactive review page is a separate layer and does not certify real-device wiring.
 
 ## Rights and dependencies
 

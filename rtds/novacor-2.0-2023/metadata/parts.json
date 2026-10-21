@@ -1,0 +1,7 @@
+{
+  "asset_id": "novacor-2.0-2023",
+  "hardware_version": "NovaCor 2.0",
+  "purpose": "visual reference only",
+  "main_root": "novacor-2.0-2023.root",
+  "component_style": "source-grounded critical interfaces; estimated noncritical mechanics"
+}

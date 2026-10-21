@@ -57,3 +57,7 @@ Read [workflow and style](references/workflow-and-style.md) for construction dec
 - Count actual distinct mesh datablocks separately from placements and exported GLB primitives. Geometrically identical but separate native datablocks must not silently become one unique mesh count.
 
 These lessons came from actual saved-file tests and an independent reviewer, not only written answers. Keep user acceptance separate from technical QA.
+
+## Source-grounded ports — phase 2
+
+For real-hardware interfaces, read [evidence gates](references/rtds-evidence-gates.md). Keep count, visible contacts, keying, estimated placement and compatibility confidence separate. **A correct anchor is not a correct connector.** Physically model the keyed mouth and check contact visibility against enclosure geometry in the saved file and actual GLB. The RTDS exercise exposed and regression-tested flipped copper key geometry, an invisible “slot” marker and a chassis strip occluding a correctly counted optical contact. The skill remains a learning candidate; these specific checks are practical evidence, not manufacturing/electrical certification or proof of all future reference-transfer tasks.

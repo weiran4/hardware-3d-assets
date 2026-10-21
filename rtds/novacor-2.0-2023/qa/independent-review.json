@@ -1,0 +1,46 @@
+{
+  "asset_id": "novacor-2.0-2023",
+  "status": "CORE_INTERFACE_VISUAL_QA_PASS_USER_ENGINEERING_REVIEW_PENDING",
+  "reviewer": "independent key-interface QA",
+  "files": {
+    "source/asset.blend": {
+      "size": 616577,
+      "sha256": "d67ba6cdbece5d15cbf0ec310edd0b972fbed8ef3d266351673f14ea9e538766"
+    },
+    "exports/asset.glb": {
+      "size": 3649136,
+      "sha256": "2a0b313de7814df39999027e428b818c5099f48455119c35dc086cfa83ec8099"
+    }
+  },
+  "independent_native_check": true,
+  "independent_glb_check": true,
+  "reviewed_topology": "51 interfaces:12+3 front,24GT,6IRC,GTSYNC,ETH, WIF,GBH,FPLEDpower,ACpower; oddtop/evenbottom; fibrekeytopUP/bottomDOWN; EthernetWIFkeyUP/ETHkeyDOWN",
+  "source_pdf_pages": [
+    42,
+    43,
+    70,
+    71,
+    72,
+    73,
+    81,
+    82
+  ],
+  "known_limits": [
+    "Front analogue/ground socket standard, exact dimensions and insertion depth unknown.",
+    "GBH part/module variant not certified; not an LC substitute.",
+    "Copper and optical mouth topology is detailed, but not a manufacturer mechanical drawing.",
+    "Brochure overall483x522x178 mm differs from manual PDF42 front450x175 mm and depth522 mm, PDF43 rear428 mm; extents/generation not reconciled.",
+    "Noncritical chassis hardware/vents/fans/rails are visual approximations.",
+    "No firmware state or actual data traffic is animated."
+  ],
+  "validated_mating": false,
+  "visuals_reviewed": [
+    "iso",
+    "front",
+    "rear",
+    "front-interfaces",
+    "rear-interfaces",
+    "optical-keying",
+    "copper-and-sync"
+  ]
+}

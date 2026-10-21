@@ -2,7 +2,7 @@ name: Verify and publish wiring lab
 on:
   push:
     branches: [main]
-    paths: ['web/**', '.github/workflows/deploy-pages.yml']
+    paths: ['web/**', 'rtds/**', '.github/workflows/deploy-pages.yml']
   workflow_dispatch:
 permissions:
   contents: read

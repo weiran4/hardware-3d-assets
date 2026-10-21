@@ -74,11 +74,12 @@ export async function createLabScene(container, labelLayer, onSelect) {
     }
     for(const p of layoutPortLabels(visible,w,h)){const{btn,leader}=labels[p.key];btn.style.left=p.x+'px';btn.style.top=p.y+'px';leader.style.left=p.anchorX+'px';leader.style.top=p.anchorY+'px';leader.style.width=Math.hypot(p.x-p.anchorX,p.y-p.anchorY)+'px';leader.style.transform=`rotate(${Math.atan2(p.y-p.anchorY,p.x-p.anchorX)}rad)`;}
   }
-  let disposed=false;
-  function frame(now){if(disposed)return;controls.update();updateLabels();const visual=pulseVisualState(now,pulseStart,reducedMotion);pulse.visible=connected&&visual.particleVisible;if(pulse.visible)pulse.position.copy(cableCurve.getPoint(visual.elapsed));scopePulseTrace.visible=connected&&visual.traceVisible;renderer.render(scene,camera);requestAnimationFrame(frame);}
-  requestAnimationFrame(frame);
+  let disposed=false,active=true,frameId=0;
+  function frame(now){if(disposed||!active)return;controls.update();updateLabels();const visual=pulseVisualState(now,pulseStart,reducedMotion);pulse.visible=connected&&visual.particleVisible;if(pulse.visible)pulse.position.copy(cableCurve.getPoint(visual.elapsed));scopePulseTrace.visible=connected&&visual.traceVisible;renderer.render(scene,camera);frameId=requestAnimationFrame(frame);}
+  frameId=requestAnimationFrame(frame);
   container.dataset.loaded='true';container.dataset.meshes=meshes.length;container.dataset.anchors=Object.keys(anchors).join(',');
   return {
+    setActive(value){if(active===value)return;active=value;if(!value){cancelAnimationFrame(frameId);}else{resize();frameId=requestAnimationFrame(frame);}},
     update(state){selected=state.selected;if(state.stage==='connected'&&!connected){connected=true;addConnection();}else if(state.stage!=='connected'&&connected)removeConnection();container.dataset.connection=connected?'out-ch1':'none';},
     pulse(){pulseStart=performance.now();if(reducedMotion)scopePulseTrace.visible=true;},
     view(action){if(action==='reset'){controls.reset();camera.position.copy(initialPosition);controls.target.fromArray(defaultCamera.target);camera.zoom=1;}else if(action==='in')camera.zoom=Math.min(2.5,camera.zoom*1.16);else if(action==='out')camera.zoom=Math.max(.7,camera.zoom/1.16);else{const offset=camera.position.clone().sub(controls.target);offset.applyAxisAngle(new THREE.Vector3(0,1,0),action==='left'?.22:-.22);camera.position.copy(controls.target).add(offset);}camera.updateProjectionMatrix();controls.update();container.dataset.view=`${camera.position.x.toFixed(3)},${camera.position.z.toFixed(3)},${camera.zoom.toFixed(3)}`;},

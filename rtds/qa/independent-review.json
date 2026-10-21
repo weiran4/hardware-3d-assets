@@ -1,0 +1,92 @@
+{
+  "reviewer": "independent key-interface QA",
+  "status": "core interface visual candidate; pending user engineering review",
+  "private_sources_inspected_pdf_pages": [
+    42,
+    43,
+    70,
+    71,
+    72,
+    73,
+    81,
+    82,
+    405,
+    406,
+    408,
+    411,
+    414
+  ],
+  "manufacturer_source": "https://www.phoenixcontact.com/en-us/products/pcb-plug-mc-15-5-st-381-1803604",
+  "assets": {
+    "novacor-2.0-2023": {
+      "files": {
+        "source/asset.blend": {
+          "size": 616577,
+          "sha256": "d67ba6cdbece5d15cbf0ec310edd0b972fbed8ef3d266351673f14ea9e538766"
+        },
+        "exports/asset.glb": {
+          "size": 3649136,
+          "sha256": "2a0b313de7814df39999027e428b818c5099f48455119c35dc086cfa83ec8099"
+        }
+      },
+      "independent_native_check": true,
+      "independent_glb_check": true,
+      "core_facts": "51 interfaces:12+3 front,24GT,6IRC,GTSYNC,ETH, WIF,GBH,FPLEDpower,ACpower; oddtop/evenbottom; fibrekeytopUP/bottomDOWN; EthernetWIFkeyUP/ETHkeyDOWN"
+    },
+    "gtdi-v2-2.01": {
+      "files": {
+        "source/asset.blend": {
+          "size": 491296,
+          "sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60"
+        },
+        "exports/asset.glb": {
+          "size": 2954628,
+          "sha256": "cb44803bd765e7ba5259e969bade71c42ccf639a747be083b1c67e58d59165ef"
+        }
+      },
+      "independent_native_check": true,
+      "independent_glb_check": true,
+      "core_facts": "24 anchors:16 installed5position terminalplugs=80positions (64channels+8wet+8ground),2keyed1x4power,2duplexoptical,4unresolvedservice; exact3.81mm pitch; oddtierupper/inward; contactlabels sourceordered",
+      "reviewed_build": "r05 final frozen",
+      "seating_review": {
+        "pass": true,
+        "scope": "Seated terminal header supports, power/service housing bases at actual PCB top; upper power text on PCB plane; hidden heatsink core joins all fins; original core interface topology, labels, anchors and contact visibility unchanged.",
+        "native_check_count": 99,
+        "glb_check_count": 83,
+        "visual_views": [
+          "front.png",
+          "right.png",
+          "top.png"
+        ]
+      }
+    }
+  },
+  "resolved_findings": [
+    "NovaCor Ethernet subgeometry key/contact sides reversed",
+    "NovaCor Ethernet mouth needed visible stepped key recess",
+    "NovaCor GT17 optical receptacle occluded by centre spine",
+    "NovaCor front-LED rear jack overlapped edge",
+    "GTDI optical cage solids occluded receptacles",
+    "GTDI terminal label normals pointed edge-on",
+    "GTDI estimated terminal header supports now reach PCB instead of floating",
+    "GTDI power/service housing bases and power labels seated on PCB",
+    "GTDI hidden support core connects heatsink fins"
+  ],
+  "limitations": [
+    "No electrical, optical or physical mating validation",
+    "NovaCor front round socket exact family remains unknown, not BNC",
+    "GBH remains distinct from LC; exact part unknown",
+    "Chassis source dimensions differ: brochure overall 483x522x178mm; manual front450x175, rear428, depth522mm",
+    "GTDI four auxiliary/service interfaces have no claimed contact count; silhouettes only, non-interactive",
+    "GTDI lower power-header pin order remains unknown",
+    "GTDI16plug populated state derives manual414, not exact photographic population",
+    "Most dimensions and placements estimated; Phoenix1803604 plug pitch3.81mm and W19.84xH11.1xL16.1mm documented"
+  ],
+  "source_media_privacy": "Manufacturer reference media is not distributed; only original models, fact citations and review notes are included.",
+  "visual_checks": [
+    "NovaCor corrected front/rear/iso rendered views inspected",
+    "GTDI installed terminal, keyed power and optical close-ups inspected; count/order/key topology consistent with cited pages"
+  ],
+  "no_remaining_core_interface_blockers": true,
+  "reviewed_utc": "2026-10-21T20:35:00Z"
+}

@@ -1,0 +1,180 @@
+{
+  "asset_id": "novacor-2.0-2023",
+  "source_blend_sha256": "d67ba6cdbece5d15cbf0ec310edd0b972fbed8ef3d266351673f14ea9e538766",
+  "renderer": "Blender 4.3.2 / Cycles CPU",
+  "denoising": false,
+  "rendered_from_reopened_saved_master": true,
+  "scope": "Original render pixels. Publication may replace private filesystem prefixes in PNG text metadata without changing IDAT or pixels; see publication receipt for published byte hashes.",
+  "previews": [
+    {
+      "file": "previews/iso.png",
+      "source_render_sha256": "27900bcda81fb6628cfe5c4a0b0edd548dc31eba65f08061e4b0fe9249f6db3f",
+      "pixel_sha256": "7bcde063a64ed445dfa0f0db15dbe7d7a8c7b30392dde6ae2a61a586e5b1cf67",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "e246bcf17772f7e9c78691e1a2dc7d307374614a3c772acd3e7d6642736cb117",
+      "sha256": "e246bcf17772f7e9c78691e1a2dc7d307374614a3c772acd3e7d6642736cb117",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/front.png",
+      "source_render_sha256": "7ec263f46810e474553efd1d3d00f88b35f15fbe6b4ba057328f8ec669983efb",
+      "pixel_sha256": "3b38474170e178d7a1f79e11f6bca11f717578f0ba965620ab7be4592e8332de",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "02c90ba4204c50d999e3a7b095c5773cfd8d2810a001895524c680ab4dfdeed7",
+      "sha256": "02c90ba4204c50d999e3a7b095c5773cfd8d2810a001895524c680ab4dfdeed7",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/rear.png",
+      "source_render_sha256": "5bf1af1be370a72c49270406a0a41bbc0e8c5133599e80e2dbe5fb093c3ca2bd",
+      "pixel_sha256": "a1de5db79ee8de1a8ed4df63a644aff6db87dc9790c1fbf509f532f6927511db",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "1afe36a3bfbd1d4a0cdd3ae26444ab4f01c7d01493e762f9cd236c8b106dd070",
+      "sha256": "1afe36a3bfbd1d4a0cdd3ae26444ab4f01c7d01493e762f9cd236c8b106dd070",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/left.png",
+      "source_render_sha256": "c3859d84e6961d25595e79b894193148e24e77bff30715d1fb6a6350bcd40841",
+      "pixel_sha256": "d574db613a72144fc89df3dced5caf8a4ceded699e83f311adec4904e0f23458",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "44b1cc890b28102caf5e4d0fa1f78bec4425a37349e7a8e483c43835f349d99e",
+      "sha256": "44b1cc890b28102caf5e4d0fa1f78bec4425a37349e7a8e483c43835f349d99e",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/right.png",
+      "source_render_sha256": "d22b573686e6d43984776d16e8299b7646a20059f3de02ad1e63f3f8f63ca781",
+      "pixel_sha256": "a58864db389fda1c5437844ff43119150fbfa31b9ab3690cc66410e3c8e52115",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "8ed4227d3dba14d89b0ac14fcbf1542e9b238af23078ef6673a9668b69d41889",
+      "sha256": "8ed4227d3dba14d89b0ac14fcbf1542e9b238af23078ef6673a9668b69d41889",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/top.png",
+      "source_render_sha256": "896edaed4ebb805768821665edd3219381185c981ab7797a31e26ed7441efcd1",
+      "pixel_sha256": "04aa85ae6d3b869aad7b15125460d94eba62ead0398fc7800ca8c2eaa4f86e45",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "68392a996f6e2f563731354a5ba7a93caab1c8841c397c74d22f7a174c781796",
+      "sha256": "68392a996f6e2f563731354a5ba7a93caab1c8841c397c74d22f7a174c781796",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/neutral.png",
+      "source_render_sha256": "ef12a71c338ffb03f75182b42cfa78e6ee65c6659a6533c2a508135bd36ab1ea",
+      "pixel_sha256": "7bcde063a64ed445dfa0f0db15dbe7d7a8c7b30392dde6ae2a61a586e5b1cf67",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "eed5828e10dcfdc15def7dd548c6b9cb45f02be406db48736db6e80c86368743",
+      "sha256": "eed5828e10dcfdc15def7dd548c6b9cb45f02be406db48736db6e80c86368743",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/wireframe.png",
+      "source_render_sha256": "af2d52a45bee9ccffe97117bc1744dbb51fe7e24947d0b1c11dc9190b1e99803",
+      "pixel_sha256": "80ecd395edd6be5a38db64cd48e0af63b6246a8ab449ddd2fd14a9ef537cb64f",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "samples": 64,
+      "source_master": "source/asset.blend",
+      "published_sha256": "9d7cea794a18e11c3dc8ab6ac0e8f3b5e7b9382605278606d6b132be0855c527",
+      "sha256": "9d7cea794a18e11c3dc8ab6ac0e8f3b5e7b9382605278606d6b132be0855c527",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/front-interfaces.png",
+      "source_render_sha256": "c929a979a4bddb83f7f32d4ebdfe75e7dbd241bb2488e05fb9ed512880ae5598",
+      "pixel_sha256": "e71a36e8e70b63d06abe875360cc2af9eed81733a8d660cdb6c11f7f39ad7b74",
+      "dimensions_px": [
+        1800,
+        1000
+      ],
+      "samples": 96,
+      "source_master": "source/asset.blend",
+      "published_sha256": "eb29dba9414be9075aa21d0852daeefcf061498b737d32dc825792b03f6fddef",
+      "sha256": "eb29dba9414be9075aa21d0852daeefcf061498b737d32dc825792b03f6fddef",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/rear-interfaces.png",
+      "source_render_sha256": "e613aee988c143ad6015bbcca67a30ecc10855c9941ead08a4193ab5cb23e388",
+      "pixel_sha256": "5c633b86442f563c6a455b975e67114cf92f92108d2d41cabb145b2631d1650c",
+      "dimensions_px": [
+        1800,
+        1000
+      ],
+      "samples": 96,
+      "source_master": "source/asset.blend",
+      "published_sha256": "e56329ecf61ed242989ba3384952ff33770ad2e100dd72d626f4662c30653382",
+      "sha256": "e56329ecf61ed242989ba3384952ff33770ad2e100dd72d626f4662c30653382",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/optical-keying.png",
+      "source_render_sha256": "d0f074e87ec43d6228eb54db6fab1dbf9e5e1b5aade81c380e4eea528f999443",
+      "pixel_sha256": "3395649c6eacb55a0e086febdc069a43c4f974e42b1ba77694df576b964cd446",
+      "dimensions_px": [
+        1800,
+        1000
+      ],
+      "samples": 96,
+      "source_master": "source/asset.blend",
+      "published_sha256": "74e8d384028cc98465b90c57189da94c31d1f3f343dab790b46906b0f08d8a3b",
+      "sha256": "74e8d384028cc98465b90c57189da94c31d1f3f343dab790b46906b0f08d8a3b",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    {
+      "file": "previews/copper-and-sync.png",
+      "source_render_sha256": "634a83e92716df94c8af39947777fae6b99f4bdf336f201f49e2a211baa9d1c6",
+      "pixel_sha256": "86aa0f31ec47c59238e454b880a1bbb676c8014099ae98a3929d5ac295dcb157",
+      "dimensions_px": [
+        1800,
+        1000
+      ],
+      "samples": 96,
+      "source_master": "source/asset.blend",
+      "published_sha256": "b6f2b19139936e2e03920d5f11e48adfe937b67eae7e46e328b64a931f37a288",
+      "sha256": "b6f2b19139936e2e03920d5f11e48adfe937b67eae7e46e328b64a931f37a288",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    }
+  ],
+  "publication_metadata_receipt": "../../qa/png-publication-metadata.json",
+  "render_run_log_distributed": false
+}

@@ -1,0 +1,273 @@
+{
+  "source_blend": "source/asset.blend",
+  "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+  "source_glb_sha256": "cb44803bd765e7ba5259e969bade71c42ccf639a747be083b1c67e58d59165ef",
+  "geometry_revision": "r05",
+  "render_script": "source/render_views.py",
+  "reproduction": "From repository root: blender -b --python rtds/gtdi-v2-2.01/source/render_views.py",
+  "local_transient_logs_distributed": false,
+  "previews": {
+    "front": {
+      "path": "previews/front.png",
+      "sha256": "a2944edb158aa825e0ce0af37c28cf17e25ea878d8da8f0dcbe4940a6e390649",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:28:10.927789+00:00",
+      "source_render_sha256": "e590c64b64f1bca051825bc1915f5645890da81ec5d91b359d003842df88582e",
+      "published_sha256": "a2944edb158aa825e0ce0af37c28cf17e25ea878d8da8f0dcbe4940a6e390649",
+      "pixel_sha256": "a491c4554dea677c03fb72829ce6aeb7b9d72791f69d7785a98e36438ef7bb3d",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "rear": {
+      "path": "previews/rear.png",
+      "sha256": "d5f9052588e6da68a6b9dbb334a5b7f674081023b3b5d09e2d58f755b20546c4",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:28:12.887825+00:00",
+      "source_render_sha256": "fec0868556dea1b799a0e6c3709874dcd607ab0bebbe80fb643e2ca03f75cc6a",
+      "published_sha256": "d5f9052588e6da68a6b9dbb334a5b7f674081023b3b5d09e2d58f755b20546c4",
+      "pixel_sha256": "5a3e481b4c21b65b096fdc56809463287a21c6648023ef14d5c8ff32b6878907",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "left": {
+      "path": "previews/left.png",
+      "sha256": "f4edf976d49a57baaa37807cd730a293682de880944ab31601c668a3a5e7d5b4",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:28:14.823860+00:00",
+      "source_render_sha256": "50ae8747f2e028ca22fe43ef9fc0fa740ce82f58e4950bfefeecd54d3438d344",
+      "published_sha256": "f4edf976d49a57baaa37807cd730a293682de880944ab31601c668a3a5e7d5b4",
+      "pixel_sha256": "71456fb7e480669cefc3a39fdc0987615427d7d3559fcd82e2f9e185173acbc1",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "right": {
+      "path": "previews/right.png",
+      "sha256": "5e476f4cac93310ba7368697f2a0a746452a37230f025480c651044730850d31",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:28:16.895898+00:00",
+      "source_render_sha256": "9191697d03b2ea6780267e1d375f7c70cb51a8a1c3488677fb177f89e49ead97",
+      "published_sha256": "5e476f4cac93310ba7368697f2a0a746452a37230f025480c651044730850d31",
+      "pixel_sha256": "7b9cde599f113e4ead9794cfb977bca28fe81ca31847f9ebb176db9cc30bd570",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "top": {
+      "path": "previews/top.png",
+      "sha256": "19ef2c24e27f1fe3aa098ab6a7e65d6a9f159da6b8836bd8d34586965aaf68ad",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 48,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 180,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:29:51.209701+00:00",
+      "source_render_sha256": "27bd935be1b91e7299b47940854ee145150b09f2691b0fef53f0b160c9648fc3",
+      "published_sha256": "19ef2c24e27f1fe3aa098ab6a7e65d6a9f159da6b8836bd8d34586965aaf68ad",
+      "pixel_sha256": "d99db78eede2e032ba8c19966a24e285980ddca8996ba06c404bab9910d23195",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "iso": {
+      "path": "previews/iso.png",
+      "sha256": "21a9d117752b6553eb5e603e73e2bb5895a7a0c324f94265e1a71c7735c135ca",
+      "dimensions_px": [
+        1400,
+        1400
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 48,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:30:19.734242+00:00",
+      "source_render_sha256": "6993e5dd28138c80672d783366d38dd1e415aa44b82c6db2577d6ebc2bc00450",
+      "published_sha256": "21a9d117752b6553eb5e603e73e2bb5895a7a0c324f94265e1a71c7735c135ca",
+      "pixel_sha256": "ec9e9c5b81e2f78d892b9d7f0b21b95b6330237ae7ad138dfae782d9ca6b333b",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "terminal-closeup": {
+      "path": "previews/terminal-closeup.png",
+      "sha256": "a6df8858b306f9fc34fbb6ec0f75777a1b9c0df59ec0d09a91f8b83bb721c9a1",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:30:31.310462+00:00",
+      "source_render_sha256": "b0cee1001ccf74e437270bfee371f136c6e035886aca328e793e1e954ae3ef0e",
+      "published_sha256": "a6df8858b306f9fc34fbb6ec0f75777a1b9c0df59ec0d09a91f8b83bb721c9a1",
+      "pixel_sha256": "5f38a48aea600db5dc7f818ff40d6d89d4b632bba696c9182939f83910627cfd",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "optical-closeup": {
+      "path": "previews/optical-closeup.png",
+      "sha256": "b9595a9e28a2567b49beb920be1e61230c7f9ac82604ec58692a9ba606e8ca66",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:30:40.178631+00:00",
+      "source_render_sha256": "8f9f393f330e06eb5bfeb9e957176f6cc641553fa3990ed9b01924df2ea347b1",
+      "published_sha256": "b9595a9e28a2567b49beb920be1e61230c7f9ac82604ec58692a9ba606e8ca66",
+      "pixel_sha256": "b3a0c4f4710b9bcb088b4fbe161aa543c52a033cf68a91424fc3b245ce0dc708",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "power-closeup": {
+      "path": "previews/power-closeup.png",
+      "sha256": "b380017c41a8be97a9fb14896ff54d4c8370cd120c0047ad789622d8797c2b85",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:30:51.858852+00:00",
+      "source_render_sha256": "3fddde710a0f46e1b6fd9e31ac83dcc7d96cfc9acb0a120c0abbd631f4ecb9f6",
+      "published_sha256": "b380017c41a8be97a9fb14896ff54d4c8370cd120c0047ad789622d8797c2b85",
+      "pixel_sha256": "77c9e2f7bbb90fb982394e395abf3f605a0b237ae4f3890790880223c427b5ed",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "neutral": {
+      "path": "previews/neutral.png",
+      "sha256": "49ecf266fbcbe72beb916efe1f60b35219c683cc9f37505389eaef0e8e36a2da",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:31:00.787021+00:00",
+      "source_render_sha256": "16cae0dfdc4a936c51eb4bb716782d01455c74c2dd87fc88ef4dce3fc1fd8f63",
+      "published_sha256": "49ecf266fbcbe72beb916efe1f60b35219c683cc9f37505389eaef0e8e36a2da",
+      "pixel_sha256": "0f4cf4c8e075840480b886bedb3fa1f8c9fdcb35dea8e030371d79e80313068f",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    },
+    "wireframe": {
+      "path": "previews/wireframe.png",
+      "sha256": "c115682ec54c7b75e09b92f9b83fb08fdd5ab0c8ec15c91fc2bf99dbfb135414",
+      "dimensions_px": [
+        1024,
+        1024
+      ],
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 24,
+      "freestyle": false,
+      "denoising": false,
+      "view_transform": "Standard",
+      "exposure": 0,
+      "camera_roll_top_deg": 0,
+      "source_blend_sha256": "0a7904a1827866e9c1ff5aa351da8241bf684c0d747a42407f13bd3813b52b60",
+      "render_completed_utc": "2026-10-21T20:31:12.215238+00:00",
+      "source_render_sha256": "d83d8323c7485acc10141eb2b5bd9ab5e1272f065d31ed6147dd983f5c17d5b1",
+      "published_sha256": "c115682ec54c7b75e09b92f9b83fb08fdd5ab0c8ec15c91fc2bf99dbfb135414",
+      "pixel_sha256": "a931aa4b218b4542078b2045c1e84a841d1b12ae2540f070e34a6e1813cbbf3d",
+      "publication_change": "PNG source-path text made project-relative; compressed image data and decoded pixels unchanged"
+    }
+  },
+  "expected_standard_views": [
+    "iso",
+    "neutral",
+    "wireframe",
+    "front",
+    "rear",
+    "left",
+    "right",
+    "top"
+  ],
+  "missing_standard_views": [],
+  "review_preferred": [
+    "top",
+    "iso",
+    "terminal-closeup",
+    "optical-closeup",
+    "power-closeup"
+  ],
+  "publication_metadata_receipt": "../../qa/png-publication-metadata.json",
+  "render_run_log_distributed": false
+}
