@@ -19,8 +19,8 @@ async function centerMobileViewport(page,selector){
  const stable=(a,b)=>['x','y','width','height','docTop','scrollY','documentHeight'].every(k=>Math.abs(a[k]-b[k])<.25)&&a.capable===b.capable&&a.pipState===b.pipState;
  let evidence;
  try{await expect.poll(async()=>{
-  // Resize and PiP's breakpoint/gutter update are RAF-driven. Do not center
-  // against the pre-RAF document then mistake its later reflow for overflow.
+  // Viewport resize and PiP's eligibility update are RAF-driven. Center only
+  // after the responsive document layout has settled.
   await page.clock.runFor(50);const first=await measure();
   await page.clock.runFor(50);const before=await measure();
   evidence={selector,first,before};
@@ -31,30 +31,30 @@ async function centerMobileViewport(page,selector){
   evidence={...evidence,placed,settled};
   const inside=settled.x>=0&&settled.y>=0&&settled.right<=settled.viewportWidth&&settled.bottom<=settled.viewportHeight;
   const unobscured=settled.pipHidden||settled.right<=settled.pipLeft||settled.x>=settled.pipRight||settled.bottom<=settled.pipTop||settled.y>=settled.pipBottom;
-  return stable(placed,settled)&&settled.capable===settled.expectedCapable&&Math.abs(settled.scrollY-settled.target)<1&&inside&&unobscured;
+  return stable(placed,settled)&&settled.capable===settled.expectedCapable&&Math.abs(settled.scrollY-settled.target)<1&&inside&&(settled.expectedCapable||unobscured);
  }).toBe(true);}finally{await test.info().attach(`mobile-scroll-${selector.replace(/[^a-z0-9-]/g,'')}-${evidence?.before?.viewportWidth}`,{body:Buffer.from(JSON.stringify(evidence,null,2)),contentType:'application/json'});}
 }
-async function viewportEssentials(page,label){
+async function viewportEssentials(page,label,{unobscured=false}={}){
  let evidence;
- await expect.poll(async()=>{evidence=await page.evaluate(()=>{
+ await expect.poll(async()=>{evidence=await page.evaluate(unobscured=>{
   const selectors=['#analog-heading','#analog-play','#analog-model-scene canvas','#analog-output-anchor-label','#analog-ground-anchor-label','.analog-meter','#analog-red-probe','#analog-black-probe','#analog-red-wire','#analog-black-wire','#analog-source-wave','#analog-output-wave','#analog-source-value','#analog-output-value','.analog-card h4','.analog-wave-axis','.analog-wave-time','.analog-fpao-path img','.analog-fpao-path b','.analog-rms-note'];
   if(!document.getElementById('analog-pause').hidden)selectors.push('#analog-pause');
   const rect=b=>({left:b.left,top:b.top,right:b.right,bottom:b.bottom,width:b.width,height:b.height});
-  const pip=rect(document.querySelector('.rtds-pip').getBoundingClientRect()),items=[],violations=[];
+  const panel=document.querySelector('.rtds-pip'),pip=rect(panel.getBoundingClientRect()),items=[],violations=[];
   for(const selector of selectors){const nodes=[...document.querySelectorAll(selector)];if(!nodes.length)violations.push({selector,reason:'missing'});
    for(const n of nodes){const raw=rect(n.getBoundingClientRect());let pad=0;
     // SVG geometry bounds exclude stroke: these vertical probes have geometric width 0.
     // Conservatively include the real painted stroke, scaled into screen pixels.
     if(n.matches('.analog-probe,.analog-wire'))for(const path of n.matches('path')?[n]:n.querySelectorAll('path')){const m=path.getScreenCTM();if(m)pad=Math.max(pad,parseFloat(getComputedStyle(path).strokeWidth)/2*Math.max(Math.hypot(m.a,m.b),Math.hypot(m.c,m.d)));}
     const painted={left:raw.left-pad,right:raw.right+pad,top:raw.top-pad,bottom:raw.bottom+pad,width:raw.width+2*pad,height:raw.height+2*pad};
-    const overlap=painted.left<pip.right&&painted.right>pip.left&&painted.top<pip.bottom&&painted.bottom>pip.top;
+    const overlap=!panel.hidden&&painted.left<pip.right&&painted.right>pip.left&&painted.top<pip.bottom&&painted.bottom>pip.top;
     const visible=!n.closest('[hidden]')&&getComputedStyle(n).visibility!=='hidden'&&getComputedStyle(n).opacity!=='0';
     const item={selector,id:n.id,raw,strokePad:pad,painted,overlap,visible};items.push(item);
-    if(!visible||painted.width<=0||painted.height<=0||painted.left<0||painted.right>innerWidth||painted.top<0||painted.bottom>innerHeight||overlap)violations.push(item);
+    if(!visible||painted.width<=0||painted.height<=0||painted.left<0||painted.right>innerWidth||painted.top<0||painted.bottom>innerHeight||(unobscured&&overlap))violations.push(item);
    }
   }
-  return{viewport:{width:innerWidth,height:innerHeight},pip,items,violations};
- });return evidence.violations;}).toEqual([]);
+  return{viewport:{width:innerWidth,height:innerHeight},pip,pipHidden:panel.hidden,unobscured,items,violations};
+ },unobscured);return evidence.violations;}).toEqual([]);
  await test.info().attach(`viewport-bounds-${label}`,{body:Buffer.from(JSON.stringify(evidence,null,2)),contentType:'application/json'});
 }
 async function contact(page){await page.locator('#analog-play').click();await page.clock.runFor(1200);await page.locator('#analog-pause').click();await expect(page.locator('#analog-meter-value')).toHaveText('3.54');}
@@ -63,8 +63,14 @@ async function aligned(page){await expect.poll(()=>page.evaluate(()=>Math.max(..
 async function inspectButton(page){await page.locator('.analog-evidence summary').click();await page.locator('#analog-inspect-output').click();}
 async function modelEvidence(page,name){const png=await page.locator('#analog-model-scene canvas').screenshot();const fraction=await page.evaluate(async base64=>{const image=new Image();image.src=`data:image/png;base64,${base64}`;await image.decode();const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const ctx=c.getContext('2d');ctx.drawImage(image,0,0);const bytes=ctx.getImageData(0,0,c.width,c.height).data;let pixels=0;for(let i=0;i<bytes.length;i+=4){const max=Math.max(bytes[i],bytes[i+1],bytes[i+2]),min=Math.min(bytes[i],bytes[i+1],bytes[i+2]);if(bytes[i+3]>200&&max<180&&max-min<35)pixels++;}return pixels/(c.width*c.height);},png.toString('base64'));expect(fraction,'nonempty rendered model region; screenshot is composited, not raw framebuffer').toBeGreaterThan(.05);await mkdir('screenshots',{recursive:true});await page.locator('#analog-bench').screenshot({path:`screenshots/novacor-compact-bench-${name}.png`});}
 
-for(const [width,height]of [[1366,768],[1440,900]])test(`real wiring, meter, waves and FPAO share the ${width}×${height} viewport with default PiP open`,async({page})=>{
+for(const [width,height]of [[1366,768],[1440,900]])test(`real wiring, meter, waves and FPAO fill the ${width}×${height} viewport while PiP overlays without reserving width`,async({page})=>{
   await page.setViewportSize({width,height});await ready(page);await expect.poll(async()=>(await page.locator(lesson).boundingBox()).y).toBeLessThan(200);await controlledClock(page);await expect(page.locator('.rtds-pip')).toBeVisible();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-view','detail');await expect(page.locator('#analog-step,#analog-restart,[data-analog-stage],#rtds-signal-flow')).toHaveCount(0);await expect(page.locator('#analog-meter-value')).toHaveText('— —');await expect(page.locator('#analog-output-wave')).toBeVisible();await viewportEssentials(page,'ready');await shot(page,`ready-viewport-${width}x${height}`,true);
+  const geometry=()=>page.locator(lesson).evaluate(n=>{const r=n.getBoundingClientRect(),p=n.parentElement.getBoundingClientRect();return {x:r.x,top:r.top,width:r.width,height:r.height,scrollY,right:r.right,parentRight:p.right,marginRight:parseFloat(getComputedStyle(n).marginRight)};});
+  const full=await geometry();expect(full.marginRight).toBe(0);expect(Math.abs(full.right-full.parentRight)).toBeLessThan(1);
+  async function unchanged(){const now=await geometry();for(const key of ['x','top','width','height','scrollY'])expect(Math.abs(now[key]-full[key]),`lesson ${key} remains stable`).toBeLessThan(1);}
+  await page.locator('[data-pip-action="minimize"]').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await unchanged();await viewportEssentials(page,'minimized',{unobscured:true});await shot(page,`minimized-viewport-${width}x${height}`,true);
+  await page.locator('[data-pip-action="minimize"]').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','expanded');await unchanged();
+  await page.locator('[data-pip-action="close"]').click();await expect(page.locator('.rtds-pip')).toBeHidden();await unchanged();await viewportEssentials(page,'closed',{unobscured:true});await shot(page,`closed-viewport-${width}x${height}`,true);
   await contact(page);await aligned(page);await viewportEssentials(page,'contact');
   expect((await page.locator('#analog-model-scene canvas').boundingBox()).width).toBeGreaterThan(300);expect((await page.locator('#analog-source-wave').boundingBox()).width).toBeGreaterThan(180);expect((await page.locator('.analog-fpao-path img').boundingBox()).width).toBeGreaterThanOrEqual(80);
   for(const s of ['.analog-anchor-label','.analog-wave-axis','.analog-fpao-path b','.analog-card h4','.analog-meter-screen>span'])expect(await page.locator(s).first().evaluate(n=>parseFloat(getComputedStyle(n).fontSize))).toBeGreaterThanOrEqual(12);await shot(page,`contact-viewport-${width}x${height}`,true);

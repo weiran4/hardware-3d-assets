@@ -13,7 +13,7 @@ function fitRtdsPip(rect,view){
  return {width,height,right:clamp(rect.right,PIP_GAP,view.width-PIP_GAP-width),bottom:clamp(rect.bottom,PIP_GAP,view.height-PIP_GAP-height)};
 }
 // Each dragged edge follows the pointer; its opposite edge stays put. Keep this
-// geometry independent of the viewer/camera and of the document's reading gutter.
+// geometry independent of the viewer/camera and of the full-width document layout.
 export function resizeRtdsPip(rect,edge,dx,dy,view){
  const start=fitRtdsPip(rect,view),minWidth=Math.min(280,view.width-2*PIP_GAP),minHeight=Math.min(240,view.height-2*PIP_GAP);
  let right=view.width-start.right,bottom=view.height-start.bottom,left=right-start.width,top=bottom-start.height;
@@ -107,8 +107,8 @@ export function initRtdsPip({wrap,onView=()=>{}}){
  }
  function sync(){
   if(disposed)return;
-  // Reserve reading space for the whole ready desktop session, not just while
-  // floating: dock/minimize/close must not rewrap the paragraph being read.
+  // Eligibility is lifecycle state only. Content layout never depends on it:
+  // the fixed overlay must not reserve space or rewrap the paragraph being read.
   doc.body.classList.toggle('rtds-pip-capable',active&&ready&&desktop.matches);
   const rect=slot.getBoundingClientRect(),hasLayout=rect.width>0&&rect.height>0;
   const sourceVisible=hasLayout&&rect.bottom>0&&rect.top<win.innerHeight;

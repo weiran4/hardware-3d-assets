@@ -53,9 +53,9 @@ test('eligibility requires ready desktop RTDS, a passed source frame and no dism
  assert.equal(pip.rtdsPipState({...state,minimized:true}),'minimized');
 });
 
-test('desktop reading gutter capability stays stable across inline, dock, minimize and close, but cleans up on lifecycle changes',()=>{
+test('desktop PiP eligibility stays stable across inline, dock, minimize and close, but cleans up on lifecycle changes',()=>{
  const f=fixture(),capable=()=>f.doc.body.classList.contains('rtds-pip-capable');
- assert.equal(capable(),false);f.api.setActive(true);assert.equal(capable(),false);f.api.setReady(true);assert.equal(capable(),true,'reserve the reading gutter before docking');
+ assert.equal(capable(),false);f.api.setActive(true);assert.equal(capable(),false);f.api.setReady(true);assert.equal(capable(),true,'mark desktop PiP eligibility before docking');
  f.scroll(-500);assert.equal(capable(),true);f.action('minimize').click();assert.equal(capable(),true);f.action('close').click();assert.equal(capable(),true);f.scroll(100);assert.equal(capable(),true);
  for(const [disable,enable]of [[()=>f.api.setReady(false),()=>f.api.setReady(true)],[()=>f.api.setActive(false),()=>f.api.setActive(true)],[()=>f.desktop(false),()=>f.desktop(true)]]){disable();assert.equal(capable(),false);enable();assert.equal(capable(),true);}
  f.api.dispose();assert.equal(capable(),false);

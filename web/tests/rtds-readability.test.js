@@ -3,3 +3,10 @@ test('RTDS primary reading and controls use readable defaults instead of microty
  const css=readFileSync('src/styles.css','utf8');
  assert.match(css,/body\{font-size:16px\}/);assert.match(css,/#rtds-detail-copy\{font-size:16px/);assert.match(css,/#rtds-port-facts dl\{[^}]*font-size:15px/);assert.match(css,/\.rtds-group\{[^}]*font-size:14px/);
 });
+
+test('floating PiP eligibility and visibility never reserve width or force narrow reading layouts',()=>{
+ for(const path of ['src/styles.css','src/rtds-analog.css']){
+  const css=readFileSync(path,'utf8');
+  assert.doesNotMatch(css,/\.rtds-pip-(?:capable|active)\b/,`${path}: responsive reading layout must not depend on the floating overlay`);
+ }
+});

@@ -28,10 +28,15 @@ test('DI/DO share a numbered eight-bank map while optical, power and GTAO specia
 });
 
 test('larger primary fonts and grouped bank details fit desktop and mobile widths',async({page})=>{
- for(const width of [1440,1100,1024,800,768,560,390,320]){
+ for(const width of [1440,1366,1100,1024,800,768,560,390,320]){
   await page.setViewportSize({width,height:900});await loaded(page);await page.locator('[data-group=gbh]').click();expect(await page.locator('body').evaluate(n=>parseFloat(getComputedStyle(n).fontSize))).toBeGreaterThanOrEqual(16);
   for(const [selector,min]of [['#rtds-detail-copy',16],['.rtds-functional-facts',15],['.rtds-shared-label',14],['.rtds-port-evidence',13]])expect(await page.locator(selector).first().evaluate(n=>parseFloat(getComputedStyle(n).fontSize))).toBeGreaterThanOrEqual(min);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await shot(page,`readability-${width}`);
-  await page.locator('[data-variant="gtdi-v2"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group=digital_input]').click();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await shot(page,`bank-map-${width}`);
+  await page.locator('[data-variant="gtdi-v2"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group=digital_input]').click();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  if(width>=1024){
+   const layout=await page.locator('.rtds-bank-map').evaluate(n=>{const table=n.querySelector('table'),head=n.querySelector('thead'),r=table.getBoundingClientRect(),p=n.getBoundingClientRect();return {table:getComputedStyle(table).display,head:getComputedStyle(head).display,left:r.left,right:r.right,parentLeft:p.left,parentRight:p.right};});
+   expect(layout.table).toBe('table');expect(layout.head).toBe('table-header-group');expect(Math.abs(layout.left-layout.parentLeft)).toBeLessThan(1);expect(Math.abs(layout.right-layout.parentRight)).toBeLessThan(1);
+  }
+  await shot(page,`bank-map-${width}`);
  }
 });

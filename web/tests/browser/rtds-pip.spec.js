@@ -37,6 +37,47 @@ async function shot(page,name){await mkdir('screenshots',{recursive:true});await
 async function selectAurora(page){await page.locator('[data-group=aurora]').click();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');}
 const action=(page,name)=>page.locator(`[data-pip-action="${name}"]`);
 
+async function fullWidthReading(page){
+ const layout=await page.evaluate(()=>{
+  const selectors=['.rtds-camera','.rtds-tour-row','#rtds-group-list','#rtds-detail','#rtds-detail-copy','.rtds-provenance','.analog-lesson'];
+  const geometry=selectors.map(selector=>{
+   const node=document.querySelector(selector),r=node.getBoundingClientRect(),s=getComputedStyle(node),p=node.parentElement.getBoundingClientRect(),ps=getComputedStyle(node.parentElement);
+   return {selector,x:r.x,docTop:r.top+scrollY,width:r.width,height:r.height,right:r.right,expectedLeft:p.left+parseFloat(ps.borderLeftWidth)+parseFloat(ps.paddingLeft),expectedRight:p.right-parseFloat(ps.borderRightWidth)-parseFloat(ps.paddingRight),marginRight:parseFloat(s.marginRight),paddingRight:parseFloat(s.paddingRight)};
+  });
+  const alignment=['.rtds-camera','.rtds-tour-row','.analog-heading'].map(selector=>{
+   const n=document.querySelector(selector),r=n.getBoundingClientRect();return {selector,left:r.left,first:n.firstElementChild.getBoundingClientRect().left,right:r.right,last:n.lastElementChild.getBoundingClientRect().right};
+  });
+  const groupList=document.querySelector('#rtds-group-list'),list=groupList.getBoundingClientRect(),buttons=[...groupList.querySelectorAll('.rtds-group')].map(n=>{const r=n.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width};});
+  return {geometry,alignment,list:{left:list.left,right:list.right,top:list.top,bottom:list.bottom,width:list.width,gap:parseFloat(getComputedStyle(groupList).columnGap)},buttons};
+ });
+ for(const r of layout.geometry){
+  expect(Math.abs(r.x-r.expectedLeft),`${r.selector} full-width left edge`).toBeLessThan(1);
+  expect(Math.abs(r.right-r.expectedRight),`${r.selector} full-width right edge`).toBeLessThan(1);
+  expect(r.marginRight,`${r.selector} no reserved right margin`).toBe(0);expect(r.paddingRight,`${r.selector} no reserved right padding`).toBe(0);
+ }
+ for(const r of layout.alignment){expect(Math.abs(r.left-r.first),`${r.selector} title left aligned`).toBeLessThan(1);expect(Math.abs(r.right-r.last),`${r.selector} actions right aligned`).toBeLessThan(1);}
+ for(const r of layout.buttons){expect(r.left).toBeGreaterThanOrEqual(layout.list.left);expect(r.right).toBeLessThanOrEqual(layout.list.right+.1);expect(r.top).toBeGreaterThanOrEqual(layout.list.top);expect(r.bottom).toBeLessThanOrEqual(layout.list.bottom+.1);}
+ if(layout.buttons.reduce((sum,r)=>sum+r.width,0)>layout.list.width)expect(layout.list.right-Math.max(...layout.buttons.map(r=>r.right)),'wrapped buttons use available row width, not an invisible narrow column').toBeLessThan(Math.max(...layout.buttons.map(r=>r.width))+layout.list.gap+1);
+ return layout.geometry;
+}
+
+for(const width of [1024,1366,1440])test(`full-width reading and opposite-edge actions stay unchanged through every PiP state at ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:900});await loaded(page);await selectAurora(page);await sourceVisible(page);
+ const before=await fullWidthReading(page);
+ async function unchanged(){
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  const after=await fullWidthReading(page);
+  for(let i=0;i<before.length;i++)for(const key of ['x','docTop','width','height'])expect(Math.abs(after[i][key]-before[i][key]),`${before[i].selector} stable ${key}`).toBeLessThan(1);
+ }
+ await dock(page);await unchanged();await shot(page,`full-width-tour-default-${width}`);
+ await resizeDrag(page,'nw',-120,-90);await unchanged();await shot(page,`full-width-tour-resized-${width}`);
+ await action(page,'minimize').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await unchanged();
+ await action(page,'minimize').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','expanded');await unchanged();
+ await action(page,'close').click();await expect(page.locator('.rtds-pip')).toBeHidden();await unchanged();
+ await sourceVisible(page);await dock(page);await action(page,'return').click();await expect(page.locator('.rtds-pip')).toBeHidden();await unchanged();
+ await dock(page);await resetSize(page);await page.locator('#rtds-detail').evaluate(n=>n.scrollIntoView({block:'center',behavior:'instant'}));await expect(page.locator('.rtds-pip')).toBeVisible();await unchanged();await shot(page,`full-width-detail-default-${width}`);await sameCanvas(page);
+});
+
 test('desktop scroll docks one real canvas, preserves orbit/zoom and restores its original footprint',async({page})=>{
  await loaded(page);await selectAurora(page);await sourceVisible(page);await page.locator('#rtds-in').click();
  const canvas=page.locator('#rtds-scene canvas'),box=await canvas.boundingBox();
@@ -76,7 +117,7 @@ test('03 paragraph and DI/DO bank rows keep their reading position through dock,
  }
 });
 
-test('dock tracks shared-group and physical-port selection, orbit and keyboard camera controls without covering reading',async({page})=>{
+test('dock tracks shared-group and physical-port selection, orbit and keyboard camera controls over full-width reading',async({page})=>{
  await loaded(page);await selectAurora(page);await dock(page);
  const overlay=page.locator('.rtds-highlight');await expect(overlay).toHaveAttribute('data-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-label')).toHaveText('GT 21–24 · Aurora');
  const old=await rect(page);await action(page,'in').focus();await page.keyboard.press('Enter');await expect.poll(async()=>(await rect(page)).width).toBeGreaterThan(old.width);
@@ -84,8 +125,7 @@ test('dock tracks shared-group and physical-port selection, orbit and keyboard c
  await page.mouse.move(box.x+box.width*.42,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.48,box.y+box.height*.5,{steps:8});await page.mouse.up();await expect.poll(()=>rect(page)).not.toEqual(zoomed);
  await page.locator('.rtds-model-notes summary').click();await page.locator('#rtds-physical-port').selectOption('novacor-2.0-2023.gt23');await dock(page);
  await expect(overlay).toHaveAttribute('data-kind','port');await expect(overlay).toHaveAttribute('data-ids','novacor-2.0-2023.gt23');await expect(page.locator('#rtds-label')).toHaveText('GT23');await insideFrame(page);
- const panel=await page.locator('.rtds-pip').boundingBox();
- for(const selector of ['#rtds-detail-copy','.rtds-functional-facts','#rtds-physical-port']){const text=await page.locator(selector).boundingBox();expect(text.x+text.width).toBeLessThan(panel.x);}
+ await fullWidthReading(page);
  expect(await overlay.locator('.rtds-highlight-main').evaluate(node=>getComputedStyle(node).stroke)).toBe('rgb(255, 106, 0)');expect(await overlay.evaluate(node=>getComputedStyle(node).pointerEvents)).toBe('none');
  for(const view of ['front','rear','top','out']){await action(page,view).focus();await page.keyboard.press('Enter');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-view',view);}
  await action(page,'rear').click();await insideFrame(page);await sameCanvas(page);await shot(page,'physical-port-and-reading');
