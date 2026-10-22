@@ -12,8 +12,27 @@ async function controlledClock(page){await page.clock.install();await page.clock
 // Center the real mobile scroll viewport, rather than leaving a fractional edge
 // at y≈0 after nearest scrolling. Keep the later painted-content bounds strict.
 async function centerMobileViewport(page,selector){
- await page.locator(selector).evaluate(n=>n.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'}));
- await expect.poll(()=>page.locator(selector).evaluate(n=>{const b=n.getBoundingClientRect(),target=Math.max(0,Math.min(b.top+scrollY+(b.height-innerHeight)/2,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-target);})).toBeLessThan(1);
+ const node=page.locator(selector),measure=()=>node.evaluate(n=>{
+  const b=n.getBoundingClientRect(),p=document.querySelector('.rtds-pip'),r=p.getBoundingClientRect();
+  return {x:b.x,y:b.y,width:b.width,height:b.height,right:b.right,bottom:b.bottom,docTop:b.top+scrollY,scrollY,documentHeight:document.documentElement.scrollHeight,viewportWidth:innerWidth,viewportHeight:innerHeight,target:Math.max(0,Math.min(b.top+scrollY+(b.height-innerHeight)/2,document.documentElement.scrollHeight-innerHeight)),capable:document.body.classList.contains('rtds-pip-capable'),expectedCapable:matchMedia('(min-width:1024px)').matches,pipState:p.dataset.state,pipHidden:p.hidden,pipLeft:r.left,pipTop:r.top,pipRight:r.right,pipBottom:r.bottom};
+ });
+ const stable=(a,b)=>['x','y','width','height','docTop','scrollY','documentHeight'].every(k=>Math.abs(a[k]-b[k])<.25)&&a.capable===b.capable&&a.pipState===b.pipState;
+ let evidence;
+ try{await expect.poll(async()=>{
+  // Resize and PiP's breakpoint/gutter update are RAF-driven. Do not center
+  // against the pre-RAF document then mistake its later reflow for overflow.
+  await page.clock.runFor(50);const first=await measure();
+  await page.clock.runFor(50);const before=await measure();
+  evidence={selector,first,before};
+  if(!stable(first,before)||before.capable!==before.expectedCapable)return false;
+  await node.evaluate(n=>n.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'}));
+  await page.clock.runFor(50);const placed=await measure();
+  await page.clock.runFor(50);const settled=await measure();
+  evidence={...evidence,placed,settled};
+  const inside=settled.x>=0&&settled.y>=0&&settled.right<=settled.viewportWidth&&settled.bottom<=settled.viewportHeight;
+  const unobscured=settled.pipHidden||settled.right<=settled.pipLeft||settled.x>=settled.pipRight||settled.bottom<=settled.pipTop||settled.y>=settled.pipBottom;
+  return stable(placed,settled)&&settled.capable===settled.expectedCapable&&Math.abs(settled.scrollY-settled.target)<1&&inside&&unobscured;
+ }).toBe(true);}finally{await test.info().attach(`mobile-scroll-${selector.replace(/[^a-z0-9-]/g,'')}-${evidence?.before?.viewportWidth}`,{body:Buffer.from(JSON.stringify(evidence,null,2)),contentType:'application/json'});}
 }
 async function viewportEssentials(page,label){
  let evidence;
