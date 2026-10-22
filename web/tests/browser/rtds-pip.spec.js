@@ -142,6 +142,24 @@ async function resizeDrag(page,edge,dx,dy,release=true){
 function closeRect(actual,expected,keys=['x','y','width','height']){for(const key of keys)expect(Math.abs(actual[key]-expected[key]),key).toBeLessThan(.6);}
 async function resetSize(page){await grip(page).focus();await page.keyboard.press('Home');}
 async function readingAnchor(page){return page.locator('#rtds-detail-copy').evaluate(node=>{const r=node.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,scrollY};});}
+// A DOM highlight can survive a cleared WebGL backing buffer. Inspect actual
+// compositor screenshot pixels too: the selected NovaCor chassis covers far more
+// than 5% of this canvas; its label/outline alone cover less than 2%.
+async function renderedModelPixels(page,name='resize-returned-inline',immediate=false){
+ await mkdir('screenshots',{recursive:true});
+ const canvas=page.locator('#rtds-scene canvas'),path=`screenshots/rtds-pip-${name}-canvas.png`;
+ // Page-level capture avoids locator.screenshot's stable-element wait while a
+ // pointer is held; the immediate path intentionally adds no RAF/frame wait.
+ const png=immediate?await page.screenshot({path,clip:await canvas.boundingBox()}):await canvas.screenshot({path});
+ const fraction=await page.evaluate(async base64=>{
+  const image=new Image();image.src=`data:image/png;base64,${base64}`;await image.decode();
+  const sample=document.createElement('canvas');sample.width=image.width;sample.height=image.height;const context=sample.getContext('2d');context.drawImage(image,0,0);
+  const pixels=context.getImageData(0,0,sample.width,sample.height).data;let model=0;
+  for(let i=0;i<pixels.length;i+=4){const max=Math.max(pixels[i],pixels[i+1],pixels[i+2]),min=Math.min(pixels[i],pixels[i+1],pixels[i+2]);if(pixels[i+3]>200&&max<180&&max-min<32)model++;}
+  return model/(sample.width*sample.height);
+ },png.toString('base64'));
+ expect(fraction,'rendered chassis pixels, not only SVG highlight/label').toBeGreaterThan(.05);
+}
 
 test('mouse corner enlargement preserves the exact camera, highlight, canvas and reading position',async({page})=>{
  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;window.__pipContexts=new Set();HTMLCanvasElement.prototype.getContext=function(type,...args){const context=original.call(this,type,...args);if(context&&['webgl','webgl2','experimental-webgl'].includes(type))window.__pipContexts.add(context);return context;};});
@@ -190,7 +208,13 @@ test('user size survives minimize and viewport changes; interrupted drag restore
  await page.setViewportSize({width:1024,height:280});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(244);const bounded=await page.locator('.rtds-pip').boundingBox();expect(bounded.y).toBe(18);await shot(page,'resize-short-viewport');await page.setViewportSize({width:1440,height:1050});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(enlarged.height);closeRect(await page.locator('.rtds-pip').boundingBox(),enlarged);
  await resizeDrag(page,'nw',-30,-20,false);await page.setViewportSize({width:390,height:900});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await sameCanvas(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);await shot(page,'resize-interrupted-mobile');
  await page.setViewportSize({width:1440,height:1050});await dock(page);await resizeDrag(page,'nw',-20,-20,false);await page.evaluate(()=>{location.hash='#generic';});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await expect(page.locator('#generic-panel')).toBeVisible();await expect(page.locator('#scene canvas')).toHaveCount(1);
- await page.evaluate(()=>{location.hash='#rtds';});await dock(page);await sameCanvas(page);await action(page,'return').click();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await shot(page,'resize-returned-inline');
+ await page.evaluate(()=>{location.hash='#rtds';});await dock(page);await sameCanvas(page);const frames=Number(await page.locator('#rtds-scene').getAttribute('data-frames'));await action(page,'return').click();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');
+ // Restoring inline changes the backing-buffer size in ResizeObserver, then the
+ // demand renderer draws on the next RAF. Wait for that observable render, not
+ // just DOM relocation; an immediate screenshot can otherwise catch the clear.
+ await expect.poll(async()=>Number(await page.locator('#rtds-scene').getAttribute('data-frames'))).toBeGreaterThan(frames);await rect(page);
+ const drawn=await page.locator('#rtds-scene').evaluate(node=>{const canvas=node.querySelector('canvas');return {width:node.clientWidth,height:node.clientHeight,buffer:[canvas.width,canvas.height],ratio:Number(node.dataset.pixelRatio),viewBox:node.querySelector('.rtds-highlight').getAttribute('viewBox'),triangles:Number(node.dataset.triangles)};});
+ expect(drawn.buffer).toEqual([Math.floor(drawn.width*drawn.ratio),Math.floor(drawn.height*drawn.ratio)]);expect(drawn.viewBox).toBe(`0 0 ${drawn.width} ${drawn.height}`);expect(drawn.triangles).toBeGreaterThan(0);await renderedModelPixels(page);await shot(page,'resize-returned-inline');
 });
 
 test('resized card overview keeps its identity badge and model changes safely interrupt a captured resize',async({page})=>{
@@ -208,4 +232,19 @@ test('resized card overview keeps its identity badge and model changes safely in
  await page.locator('[data-group="analogue_input"]').evaluate(node=>node.click());await expect(badge).toBeHidden();await expect(page.locator('.rtds-card-identity-leader')).toBeHidden();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await insideFrame(page);
  await page.locator('.rtds-model-notes').evaluate(node=>{node.open=true;});await page.locator('#rtds-physical-port').selectOption('gtai-v2-2.31.input1');await dock(page);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids','gtai-v2-2.31.input1');await expect(badge).toBeHidden();const selected=await rect(page);await resizeDrag(page,'nw',-40,-40);await insideFrame(page);await shot(page,'resize-AI-selected-port');await resizeDrag(page,'nw',40,40);closeRect(await rect(page),selected);await sameCanvas(page);
  await page.locator('#rtds-reset').evaluate(node=>node.click());await expect(badge).toBeVisible();expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__pipIdentity)).toBe(true);await action(page,'return').click();await expect(page.locator('.rtds-pip')).toBeHidden();await sameCanvas(page);
+});
+
+
+test('held-pointer intermediate resize frames keep actual model pixels visible before mouseup',async({page})=>{
+ await loaded(page);await selectAurora(page);await dock(page);await rect(page);
+ const handle=await grip(page).boundingBox(),x=handle.x+handle.width/2,y=handle.y+handle.height/2;
+ await page.mouse.move(x,y);await page.mouse.down();
+ for(let step=1;step<=3;step++){
+  await page.mouse.move(x-step*50,y-step*35,{steps:6});
+  // Deliberately capture the compositor immediately after an intermediate move:
+  // no mouseup, explicit frame settling or stable-element screenshot here.
+  await renderedModelPixels(page,`resize-held-drag-${step}`,true);
+  await expect(page.locator('.rtds-pip')).toHaveAttribute('data-resizing','nw');await expect(page.locator('body')).toHaveClass(/rtds-pip-resizing/);await sameCanvas(page);
+ }
+ await page.mouse.up();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await shot(page,'resize-held-drag-finished');
 });

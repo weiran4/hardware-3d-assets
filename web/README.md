@@ -84,7 +84,7 @@ Drag any edge or corner to resize the desktop window; its opposite edge stays an
 
 Keyboard users can Tab to the upper-left resize grip: arrow keys adjust the corresponding edge by 16px, Shift + arrow uses 48px, and Home restores the default window size. Escape during a drag cancels that resize; otherwise it closes the following viewer. Pointer capture and temporary resize listeners are released on completion, cancellation, focus loss, dismissal and mode/viewport changes. Mobile remains inline-only.
 
-The release suite contains 98 unit tests and 59 browser scenarios. Real browser screenshot acceptance is performed by the existing GitHub Actions verify → deploy → smoke-live workflow, not by a local/browser-policy bypass.
+The release suite contains 98 unit tests and 60 browser scenarios. Return-to-inline browser evidence waits for a real render-frame advance and verifies canvas pixels, not just a retained DOM highlight. Separate immediate compositor samples inspect model pixels during three intermediate held-pointer size changes, without waiting for mouseup or explicitly settling frames. Real browser screenshot acceptance is performed by the existing GitHub Actions verify → deploy → smoke-live workflow, not by a local/browser-policy bypass.
 
 ### Floating card identity
 
