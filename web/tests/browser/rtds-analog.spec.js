@@ -9,6 +9,12 @@ async function ready(page){await page.goto('./#rtds');await expect(page.locator(
 }
 // install() alone still advances in real time. Pause before sampling short approach phases.
 async function controlledClock(page){await page.clock.install();await page.clock.pauseAt(await page.evaluate(()=>Date.now()+1000));await page.clock.runFor(50);}
+// Center the real mobile scroll viewport, rather than leaving a fractional edge
+// at y≈0 after nearest scrolling. Keep the later painted-content bounds strict.
+async function centerMobileViewport(page,selector){
+ await page.locator(selector).evaluate(n=>n.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'}));
+ await expect.poll(()=>page.locator(selector).evaluate(n=>{const b=n.getBoundingClientRect(),target=Math.max(0,Math.min(b.top+scrollY+(b.height-innerHeight)/2,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-target);})).toBeLessThan(1);
+}
 async function viewportEssentials(page,label){
  let evidence;
  await expect.poll(async()=>{evidence=await page.evaluate(()=>{
@@ -57,10 +63,10 @@ test('mobile and tablet stack readable real wiring and both signals without hori
  for(const width of [320,390,768,1024]){const frames=Number(await page.locator('#analog-model-scene').getAttribute('data-frames'));await page.setViewportSize({width,height:1000});
   // A long element screenshot can composite offscreen WebGL as blank. Prove the live
   // phone/tablet viewport after resize + natural scroll, with a fresh rendered frame.
-  await page.locator('#analog-bench').scrollIntoViewIfNeeded();await expect.poll(async()=>{await page.clock.runFor(50);return Number(await page.locator('#analog-model-scene').getAttribute('data-frames'));}).toBeGreaterThan(frames);await page.clock.runFor(100);await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await aligned(page);await expect(page.locator('#analog-meter-value')).toHaveText('3.54');await expect(page.locator('#analog-output-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.ao1');await expect(page.locator('#analog-ground-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.gnd1');
+  await centerMobileViewport(page,'#analog-bench');await expect.poll(async()=>{await page.clock.runFor(50);return Number(await page.locator('#analog-model-scene').getAttribute('data-frames'));}).toBeGreaterThan(frames);await page.clock.runFor(100);await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await aligned(page);await expect(page.locator('#analog-meter-value')).toHaveText('3.54');await expect(page.locator('#analog-output-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.ao1');await expect(page.locator('#analog-ground-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.gnd1');
   for(const id of ['analog-play','analog-pause','analog-model-front','analog-model-detail']){const box=await page.locator('#'+id).boundingBox();expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(width);}const gain=await page.locator('.analog-fpao-path>div').boundingBox(),icon=await page.locator('.analog-fpao-path figure').boundingBox();expect(gain.x+gain.width).toBeLessThanOrEqual(icon.x);
   const bench=await page.locator('#analog-bench').boundingBox();expect(bench.y).toBeGreaterThanOrEqual(0);expect(bench.y+bench.height).toBeLessThanOrEqual(1000);await modelEvidence(page,`stacked-${width}`);await shot(page,`mobile-wiring-viewport-${width}`,true);
-  await page.locator('.analog-signals').scrollIntoViewIfNeeded();const signals=await page.locator('.analog-signals').boundingBox();expect(signals.y).toBeGreaterThanOrEqual(0);expect(signals.y+signals.height).toBeLessThanOrEqual(1000);await shot(page,`mobile-signals-viewport-${width}`,true);
+  await centerMobileViewport(page,'.analog-signals');const signals=await page.locator('.analog-signals').boundingBox();expect(signals.y).toBeGreaterThanOrEqual(0);expect(signals.y+signals.height).toBeLessThanOrEqual(1000);await shot(page,`mobile-signals-viewport-${width}`,true);
  }
 });
 
