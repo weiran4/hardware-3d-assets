@@ -3,7 +3,7 @@ const sourceRms=220,sourcePeak=sourceRms*Math.SQRT2,outputPeak=5,frequencyHz=50,
 export const analogLesson=Object.freeze({
  sourceRms,sourcePeak,outputPeak,frequencyHz,hardwarePeak:10,
  gain:outputPeak/sourcePeak,outputRms:outputPeak/Math.SQRT2,
- displayCycleMs,slowdown:displayCycleMs/(1000/frequencyHz),stageMs:4000,durationMs:16000,
+ displayCycleMs,slowdown:displayCycleMs/(1000/frequencyHz),contactMs:800,durationMs:8000,
  endpoint:Object.freeze({variantId:'novacor-2.0',portId:'novacor-2.0-2023.ao1',groundId:'novacor-2.0-2023.gnd1'})
 });
 export function analogSample(simulatedSeconds){
@@ -14,22 +14,20 @@ export function analogDisplaySample(elapsedMs){
  const simulatedSeconds=elapsedMs/1000/analogLesson.slowdown;
  return{...analogSample(simulatedSeconds),simulatedSeconds,meterRms:analogLesson.outputRms};
 }
-export function createAnalogLessonState(){return{stage:0,elapsedMs:0,playing:false};}
-export function analogPresentation(state){return{probesConnected:state.stage>=2,meterReady:state.stage>=3,scaled:state.stage>=1};}
+export function createAnalogLessonState(){return{elapsedMs:0,playing:false,started:false};}
 export function analogProbeProgress(state,reducedMotion=false){
- return state.stage<2?0:reducedMotion?1:Math.max(0,Math.min(1,(state.elapsedMs-8000)/800));
+ return !state.started?0:reducedMotion?1:Math.max(0,Math.min(1,state.elapsedMs/analogLesson.contactMs));
 }
+export function analogPresentation(state,reducedMotion=false){const contact=analogProbeProgress(state,reducedMotion)>=1;return{probesConnected:contact,meterReady:contact,scaled:true};}
 export function analogLessonTransition(state,action){
  switch(action.type){
- case 'play':return state.elapsedMs>=analogLesson.durationMs?{...createAnalogLessonState(),playing:true}:{...state,playing:true};
+ case 'replay':return{...createAnalogLessonState(),playing:true,started:true};
+ case 'play':return state.elapsedMs>=analogLesson.durationMs?analogLessonTransition(state,{type:'replay'}):{...state,playing:true,started:true};
  case 'pause':return{...state,playing:false};
- case 'restart':return createAnalogLessonState();
- case 'stage':return Number.isInteger(action.stage)&&action.stage>=0&&action.stage<=3?{stage:action.stage,elapsedMs:action.stage*analogLesson.stageMs+1000,playing:false}:state;
- case 'step':return analogLessonTransition(state,{type:'stage',stage:Math.min(state.stage+1,3)});
  case 'tick':{
   if(!state.playing||!Number.isFinite(action.deltaMs)||action.deltaMs<0)return state;
   const elapsedMs=Math.min(state.elapsedMs+action.deltaMs,analogLesson.durationMs);
-  return{stage:Math.min(Math.floor(elapsedMs/analogLesson.stageMs),3),elapsedMs,playing:elapsedMs<analogLesson.durationMs};
+  return{...state,elapsedMs,playing:elapsedMs<analogLesson.durationMs};
  }
  default:return state;
  }

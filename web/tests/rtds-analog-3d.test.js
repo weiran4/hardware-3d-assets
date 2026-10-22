@@ -31,7 +31,7 @@ test('teaching camera stays on the actual front surface with a context-preservin
 });
 test('hardware stage embeds the real model and exact-anchor overlays rather than a substitute panel',()=>{
  const html=readFileSync('index.html','utf8');for(const id of ['analog-model-scene','analog-model-loading','analog-model-front','analog-model-detail','analog-model-retry'])assert.ok(html.includes(`id="${id}"`),id);
- assert.ok(!html.includes('class="analog-frontpanel"'));assert.ok(!html.includes('class="analog-sockets"'));assert.ok(html.indexOf('id="analog-bench"')<html.indexOf('class="analog-virtual-grid"'),'actual hardware is the primary visual');
+ assert.ok(!html.includes('class="analog-frontpanel"'));assert.ok(!html.includes('class="analog-sockets"'));assert.ok(html.indexOf('id="analog-bench"')<html.indexOf('class="analog-signals"'),'actual hardware is the primary visual');
  const source=readFileSync('src/rtds-analog-lesson.js','utf8');assert.match(source,/createRtdsScene/);assert.match(source,/subscribeAnchors/);assert.match(source,/publishedModels\['novacor-2.0'\]/);
 });
 test('lesson viewer preserves the default gallery namespace and exposes render-synchronized projection without another model copy',()=>{
