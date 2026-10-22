@@ -34,6 +34,13 @@ function fixture(){
  assert.equal(typeof pip.initRtdsPip,'function','the desktop mini-viewer controller must exist');
  const doc=new Target();doc.rect={top:100,bottom:550,width:900,height:450};doc.createElement=tag=>new Node(tag,doc);doc.body=doc.createElement('body');doc.activeElement=doc.body;
  const win=new Target(),media=new Target();media.matches=true;win.innerWidth=1440;win.innerHeight=900;win.matchMedia=()=>media;const pending=new Map();let next=0;win.requestAnimationFrame=fn=>{pending.set(++next,fn);return next;};win.cancelAnimationFrame=id=>pending.delete(id);doc.defaultView=win;
+ const resizeObservers=[];win.ResizeObserver=class {
+  constructor(callback){this.callback=callback;this.targets=new Map();this.disconnected=false;resizeObservers.push(this);}
+  observe(target){this.targets.set(target,null);}
+  disconnect(){this.targets.clear();this.disconnected=true;}
+  deliver(){const entries=[];for(const [target,previous]of this.targets){const rect=target.getBoundingClientRect(),size=`${rect.width},${rect.height}`;if(size!==previous){this.targets.set(target,size);entries.push({target,contentRect:rect});}}if(entries.length)this.callback(entries,this);}
+ };
+ const deliverResize=()=>resizeObservers.forEach(observer=>observer.deliver());
  const original=doc.createElement('section'),before=doc.createElement('p'),wrap=doc.createElement('div'),canvas=doc.createElement('canvas'),after=doc.createElement('button');wrap.className='rtds-viewer-wrap';canvas.modelState={selection:'GT23',zoom:2,orbit:[1,2,3]};wrap.append(canvas);original.append(before,wrap,after);doc.body.append(original);const views=[];
  const api=pip.initRtdsPip({wrap,onView:action=>views.push(action)});
  const walk=(node)=>[node,...node.children.flatMap(walk)];const find=(name)=>walk(doc.body).find(node=>node.classList.contains(name));const action=(name)=>walk(doc.body).find(node=>node.dataset.pipAction===name);const handle=(edge)=>walk(doc.body).find(node=>node.dataset.pipResize===edge);
@@ -41,7 +48,7 @@ function fixture(){
  const scroll=(top)=>{Object.assign(doc.rect,{top,bottom:top+450});win.dispatchEvent(new Event('scroll'));flush();};
  const desktop=(value)=>{media.matches=value;media.dispatchEvent(new Event('change'));win.dispatchEvent(new Event('resize'));flush();};
  const ready=()=>{api.setActive(true);api.setReady(true);};
- return {api,doc,win,media,wrap,canvas,original,before,after,views,find,action,handle,flush,scroll,desktop,ready,pending};
+ return {api,doc,win,media,wrap,canvas,original,before,after,views,find,action,handle,flush,scroll,desktop,ready,pending,resizeObservers,deliverResize};
 }
 
 test('eligibility requires ready desktop RTDS, a passed source frame and no dismissal',()=>{
@@ -161,6 +168,35 @@ test('expanded geometry survives minimize, return, close, viewport clamps and mo
  f.action('return').click();f.scroll(-500);assert.deepEqual(size(f),expanded);f.action('close').click();f.scroll(100);f.scroll(-500);assert.deepEqual(size(f),expanded);
  f.win.innerHeight=280;f.win.dispatchEvent(new Event('resize'));f.flush();assert.equal(size(f).height,244);assert.equal(size(f).bottom,18);
  f.desktop(false);assert.equal(f.wrap.parentNode,f.find('rtds-pip-slot'));f.win.innerHeight=900;f.desktop(true);assert.deepEqual(size(f),expanded);f.api.dispose();
+});
+
+test('responsive source footprint redocks after restoring a stale placeholder, then settles without idle frames',()=>{
+ const f=fixture();f.ready();f.scroll(-500);key(f.handle('nw'),'ArrowLeft',true);key(f.handle('nw'),'ArrowUp',true);
+ const expanded=size(f),slot=f.find('rtds-pip-slot'),state=f.canvas.modelState;
+ f.deliverResize();f.flush();
+ // Official 1024×280 regression: the old 450px placeholder ends below y=0,
+ // but removing its fixed height reveals the 420px responsive source above it.
+ slot.getBoundingClientRect=()=>{const height=parseFloat(slot.style.height)||420;return {width:708,height,top:-432,bottom:-432+height};};
+ f.win.innerWidth=1024;f.win.innerHeight=280;f.win.dispatchEvent(new Event('resize'));f.flush();
+ assert.equal(slot.getBoundingClientRect().bottom,-12);
+ f.deliverResize();f.flush();
+ assert.equal(f.find('rtds-pip').hidden,false,'actual offscreen source must redock without another scroll');
+ assert.equal(slot.style.height,'420px');assert.equal(size(f).height,244);assert.equal(size(f).bottom,18);
+ assert.equal(f.wrap.parentNode,f.find('rtds-pip-stage'));assert.equal(f.wrap.children[0],f.canvas);assert.equal(f.canvas.modelState,state);assert.deepEqual(f.views,[]);
+ f.deliverResize();f.flush();f.deliverResize();assert.equal(f.pending.size,0,'the measured placeholder converges instead of oscillating');
+ f.win.innerWidth=1440;f.win.innerHeight=900;f.win.dispatchEvent(new Event('resize'));f.flush();assert.deepEqual(size(f),expanded,'temporary viewport clamp does not replace desired size');
+ f.api.dispose();
+});
+
+test('source footprint-only changes recheck eligibility, respect dismissal and disconnect on disposal',()=>{
+ const f=fixture();f.ready();f.deliverResize();f.flush();
+ Object.assign(f.doc.rect,{top:-450,bottom:-30,height:420});f.deliverResize();
+ assert.equal(f.pending.size,1,'a real source size change schedules one frame without window resize');f.deliverResize();assert.equal(f.pending.size,1);f.flush();
+ assert.equal(f.find('rtds-pip').hidden,false);
+ f.action('close').click();Object.assign(f.doc.rect,{height:400,bottom:-50});f.deliverResize();f.flush();assert.equal(f.find('rtds-pip').hidden,true,'a dismissed window stays dismissed');
+ Object.assign(f.doc.rect,{height:390,bottom:-60});f.deliverResize();assert.equal(f.pending.size,1);f.api.dispose();
+ assert.equal(f.pending.size,0);assert.ok(f.resizeObservers.every(observer=>observer.disconnected));
+ for(const observer of f.resizeObservers)observer.callback([]);assert.equal(f.pending.size,0,'a queued late observer delivery cannot revive disposal');
 });
 
 test('resize grip offers keyboard dimensions, reset and no camera action',()=>{

@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
-import {renderedFrame,imageDifference,canvasChromeRegions} from './rtds-test-helpers.js';
+import {settledPageScreenshot} from './rtds-test-helpers.js';
 
 test.setTimeout(120000);
 const white='rgb(255, 255, 255)',navy='rgb(10, 34, 64)',red='rgb(228, 27, 72)';
@@ -12,16 +12,7 @@ async function loaded(page,width){
  await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
 }
 async function shot(page,name){
- // Settled region pictures must wait for reparenting/ResizeObserver and the new
- // compositor frame. This does not affect deliberately immediate held-drag tests.
- if(await page.locator('#rtds-scene').getAttribute('data-loaded')==='true'){
-  await renderedFrame(page);
-  if(await page.locator('.rtds-pip').isVisible())await expect.poll(async()=>{
-   const box=await page.locator('#rtds-scene canvas').boundingBox(),png=await page.screenshot({clip:box});
-   return (await imageDifference(page,png,png,{ignore:await canvasChromeRegions(page)})).darkFraction;
-  },{message:'settled PiP screenshot contains real hardware, not a resized blank buffer'}).toBeGreaterThan(.01);
- }
- await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-regions-${name}.png`,fullPage:false});
+ await mkdir('screenshots',{recursive:true});await settledPageScreenshot(page,{path:`screenshots/rtds-regions-${name}.png`,fullPage:false});
 }
 async function hierarchy(page,width){
  await expect(page.getByRole('complementary',{name:'选择版本'})).toHaveCount(1);

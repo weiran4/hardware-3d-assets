@@ -1,4 +1,4 @@
-import {canvasCapture,canvasChromeRegions,renderedBounds,renderedFrame,imageDifference} from './rtds-test-helpers.js';
+import {canvasCapture,canvasChromeRegions,renderedBounds,renderedFrame,imageDifference,settledPageScreenshot} from './rtds-test-helpers.js';
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 
@@ -30,7 +30,7 @@ async function insideFrame(page){
  expect(bounds.x).toBeGreaterThanOrEqual(0);expect(bounds.y).toBeGreaterThanOrEqual(0);expect(bounds.x+bounds.width).toBeLessThanOrEqual(scene.width+1);expect(bounds.y+bounds.height).toBeLessThanOrEqual(scene.height+1);
  await expect(page.locator('#rtds-inspection-summary')).toBeVisible();await expect(page.locator('.rtds-highlight')).toHaveCount(0);await expect(page.locator('#rtds-label')).toBeHidden();
 }
-async function shot(page,name){await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-pip-${name}.png`,fullPage:false});}
+async function shot(page,name){await mkdir('screenshots',{recursive:true});await settledPageScreenshot(page,{path:`screenshots/rtds-pip-${name}.png`,fullPage:false});}
 async function selectAurora(page){await page.locator('[data-group=aurora]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');}
 const action=(page,name)=>page.locator(`[data-pip-action="${name}"]`);
 
@@ -250,7 +250,7 @@ test('keyboard resize and Escape cancellation leave camera and selection untouch
 test('user size survives minimize and viewport changes; interrupted drag restores safe mobile and generic behavior',async({page})=>{
  await loaded(page);await selectAurora(page);await dock(page);await resizeDrag(page,'nw',-200,-180);const enlarged=await page.locator('.rtds-pip').boundingBox(),anchor=await readingAnchor(page);
  await action(page,'minimize').click();await expect(grip(page)).toBeHidden();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await action(page,'minimize').click();closeRect(await page.locator('.rtds-pip').boundingBox(),enlarged);closeRect(await readingAnchor(page),anchor,['x','y','width','height','scrollY']);
- await page.setViewportSize({width:1024,height:280});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(244);const bounded=await page.locator('.rtds-pip').boundingBox();expect(bounded.y).toBe(18);await shot(page,'resize-short-viewport');await page.setViewportSize({width:1440,height:1050});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(enlarged.height);closeRect(await page.locator('.rtds-pip').boundingBox(),enlarged);
+ await page.setViewportSize({width:1024,height:280});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox())?.height??null).toBe(244);const bounded=await page.locator('.rtds-pip').boundingBox();expect(bounded.y).toBe(18);await shot(page,'resize-short-viewport');await page.setViewportSize({width:1440,height:1050});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox())?.height??null).toBe(enlarged.height);closeRect(await page.locator('.rtds-pip').boundingBox(),enlarged);
  await resizeDrag(page,'nw',-30,-20,false);await page.setViewportSize({width:390,height:900});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await sameCanvas(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);await shot(page,'resize-interrupted-mobile');
  await page.setViewportSize({width:1440,height:1050});await dock(page);await resizeDrag(page,'nw',-20,-20,false);await page.evaluate(()=>{location.hash='#generic';});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await expect(page.locator('#generic-panel')).toBeVisible();await expect(page.locator('#scene canvas')).toHaveCount(1);
  await page.evaluate(()=>{location.hash='#rtds';});await dock(page);await sameCanvas(page);const frames=Number(await page.locator('#rtds-scene').getAttribute('data-frames'));await action(page,'return').click();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');

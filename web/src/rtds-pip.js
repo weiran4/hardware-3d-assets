@@ -129,6 +129,11 @@ export function initRtdsPip({wrap,onView=()=>{}}){
   minimizeButton.setAttribute('aria-label',label);minimizeButton.title=label;minimizeButton.setAttribute('aria-expanded',String(!minimized));
  }
  function schedule(){if(!disposed&&!frame)frame=win.requestAnimationFrame(()=>{frame=0;sync();});}
+ // Restoring inline removes the frozen placeholder height. At a responsive
+ // breakpoint the real source can then become shorter and fully offscreen;
+ // recheck that measured footprint rather than waiting for another scroll.
+ // Docking freezes this same measured height, so the observer settles at idle.
+ const sourceObserver=new win.ResizeObserver(schedule);sourceObserver.observe(slot);
  listen(win,'scroll',schedule,{passive:true});listen(win,'resize',()=>{stopResize();schedule();});listen(desktop,'change',()=>{stopResize();schedule();});listen(win,'blur',stopResize);
  listen(doc,'focusin',event=>{if(!panel.contains(event.target)&&event.target!==doc.body)lastExternalFocus=event.target;});
  listen(panel,'keydown',event=>{if(event.key==='Escape'){event.preventDefault();if(drag){geometry=drag.original;stopResize();applyGeometry();return;}dismissed=true;minimized=false;sync();}});
@@ -137,7 +142,7 @@ export function initRtdsPip({wrap,onView=()=>{}}){
   setActive(value){if(disposed)return;active=!!value;sync();},
   setReady(value){if(disposed)return;ready=!!value;sync();},
   dispose(){
-   if(disposed)return;win.cancelAnimationFrame(frame);frame=0;restoreInline();disposed=true;
+   if(disposed)return;win.cancelAnimationFrame(frame);frame=0;sourceObserver.disconnect();restoreInline();disposed=true;
    doc.body.classList.remove('rtds-pip-capable');
    for(const remove of removers)remove();
    slot.parentNode?.insertBefore(wrap,slot);slot.remove();panel.remove();
