@@ -1,0 +1,49 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "source_media_redistributed": false,
+  "sources": [
+    {
+      "id": "official-gtfpi-article",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/360034817173-GTFPI-Card",
+      "supports": [
+        "product role",
+        "LV and HV panel connection"
+      ]
+    },
+    {
+      "id": "official-gtfpi-photo",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873",
+      "supports": [
+        "PCB2.01 identity",
+        "HV2x25 and LV2x17 visible pins",
+        "outward ribbon key gaps",
+        "capped GT population",
+        "open green2pin twin-lobe mouth",
+        "major component placement"
+      ]
+    },
+    {
+      "id": "rtds-hardware-manual",
+      "title": "RTDS Hardware Manual",
+      "chapter": "10 GTFPI V2",
+      "revision": "20240924",
+      "printed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        20,
+        21,
+        22
+      ],
+      "supports": [
+        "GT roles",
+        "eight DIP/status LED count",
+        "24V supply and maximum5W",
+        "power function set without resolved viewpoint"
+      ]
+    }
+  ]
+}

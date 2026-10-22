@@ -1,0 +1,68 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "seed": 42,
+  "body_dimensions_m": [
+    0.426,
+    0.3,
+    0.088
+  ],
+  "dimension_scope": "estimated visual envelope, not exact fit",
+  "triangle_budget": 60000,
+  "required_part_ids": [
+    "gtsoc-v2-2a-copper16.body",
+    "gtsoc-v2-2a-copper16.front_panel",
+    "gtsoc-v2-2a-copper16.rear_panel"
+  ],
+  "required_anchor_ids": [
+    "gtsoc-v2-2a-copper16.front1",
+    "gtsoc-v2-2a-copper16.front2",
+    "gtsoc-v2-2a-copper16.front3",
+    "gtsoc-v2-2a-copper16.front4",
+    "gtsoc-v2-2a-copper16.front5",
+    "gtsoc-v2-2a-copper16.front6",
+    "gtsoc-v2-2a-copper16.front7",
+    "gtsoc-v2-2a-copper16.front8",
+    "gtsoc-v2-2a-copper16.front9",
+    "gtsoc-v2-2a-copper16.front10",
+    "gtsoc-v2-2a-copper16.front11",
+    "gtsoc-v2-2a-copper16.front12",
+    "gtsoc-v2-2a-copper16.front13",
+    "gtsoc-v2-2a-copper16.front14",
+    "gtsoc-v2-2a-copper16.front15",
+    "gtsoc-v2-2a-copper16.front16",
+    "gtsoc-v2-2a-copper16.monitor_ps",
+    "gtsoc-v2-2a-copper16.monitor_pl",
+    "gtsoc-v2-2a-copper16.prog_jtag",
+    "gtsoc-v2-2a-copper16.eth",
+    "gtsoc-v2-2a-copper16.rear1",
+    "gtsoc-v2-2a-copper16.rear2",
+    "gtsoc-v2-2a-copper16.rear3",
+    "gtsoc-v2-2a-copper16.rear4",
+    "gtsoc-v2-2a-copper16.ac"
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 1400,
+    "samples": 48,
+    "view_transform": "Standard",
+    "exposure": 0,
+    "camera_direction": [
+      -1,
+      -1.6,
+      1.2
+    ],
+    "camera_margin": 1.12,
+    "light_position": [
+      -0.8,
+      -1.1,
+      1.8
+    ],
+    "light_energy": 70,
+    "light_size": 1,
+    "denoising": false,
+    "world_strength": 0.65,
+    "fill_energy": 30,
+    "outline_px": 0.5
+  }
+}

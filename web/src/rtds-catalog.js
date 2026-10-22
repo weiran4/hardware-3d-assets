@@ -17,7 +17,7 @@ export const catalog=[
         "locator": "Article"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 2A; PDF pages 65-105; printed chapter date 2025-09-16"
       }
     ],
@@ -43,7 +43,7 @@ export const catalog=[
         "locator": "Brochure front/rear and dimensions"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 2B; PDF pages 106-142; printed chapter date 2025-05-29"
       }
     ],
@@ -69,7 +69,7 @@ export const catalog=[
         "locator": "NovaCor article"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 2C; PDF pages 143-180; printed chapter date 2023-05-23"
       }
     ],
@@ -99,7 +99,7 @@ export const catalog=[
         "locator": "GTDI entry"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 9A; PDF pages 404-425; printed chapter date 2024-12-19"
       }
     ],
@@ -121,7 +121,7 @@ export const catalog=[
     "summary": "64 路数字输入与 2 个光传输接口；不能把 V2 外观直接改名为 V1。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 9B; PDF pages 426-447; printed chapter date 2020-02-03"
       }
     ],
@@ -151,7 +151,7 @@ export const catalog=[
         "locator": "GTDO entry"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 8A; PDF pages 362-381; printed chapter date 2024-09-24"
       }
     ],
@@ -173,7 +173,7 @@ export const catalog=[
     "summary": "64 路数字输出，2 组 × 32 路；不同于 V2 的分组布局。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 8B; PDF pages 382-403; printed chapter date not found"
       }
     ],
@@ -203,7 +203,7 @@ export const catalog=[
         "locator": "GTAI entry"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
       }
     ],
@@ -225,7 +225,7 @@ export const catalog=[
     "summary": "目前仅保留版本条目；尚无足够匹配资料确认实体接口。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
       }
     ],
@@ -255,7 +255,7 @@ export const catalog=[
         "locator": "GTAO entry"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 6A; PDF pages 276-307; printed chapter date 2024-09-24"
       }
     ],
@@ -277,7 +277,7 @@ export const catalog=[
     "summary": "记载 12 路模拟输出；与 16 路版本分开追踪。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 6B; PDF pages 308-335; printed chapter date 2020-02-03"
       }
     ],
@@ -293,28 +293,29 @@ export const catalog=[
   {
     "id": "gtsoc-v2",
     "name": "GTSOC V2",
-    "revision": "V2 / 2026 资料",
+    "revision": "V2 / Model GTSOC-2A / 16 铜 RJ45 SFP",
     "family": "GTSOC",
     "type": "FPGA 协处理硬件",
-    "summary": "记载前部 16 个 SFP 位置、后部 4 个光接口、前部 3 个 USB；仍需交叉核对图文。",
+    "summary": "在 NovaCor 旁执行专用计算的辅助平台。本模型固定为 16 个铜 RJ45 SFP 的 SV 外观配置；服务口、后部 MMC 监测与光链路各有不同用途，实际应用由固件、模块和许可决定。",
+    "scopeNote": "版本边界：铭牌 Model GTSOC-2A；151 个电气接点不包含后部 4 个双工光组件的 8 个白色可见面。白色面是盖还是套筒尚未确认；当前铜模块不作为通用 Aurora / 光纤配接依据。",
     "evidence": [
       {
         "source_id": "SOC2-2026",
-        "locator": "Brochure"
+        "locator": "官方宣传册，第 1–2 页；固件相关应用与后部黑盒链路"
       },
       {
         "source_id": "SOC2-PHOTO",
-        "locator": "Populated front photograph"
+        "locator": "16 个铜 RJ45 SFP 前部配置；上下排键位相反"
       },
       {
-        "source_id": "MANUAL-605",
-        "locator": "Chapter 13A; PDF pages 528-535; printed chapter date 2024-09-27"
+        "source_id": "MANUAL",
+        "locator": "13A GTSOC V2；修订 20240927；章节印刷页 1–8（含第 4 页的前 / 后部措辞冲突）"
       }
     ],
     "confidence": {
       "count": "documented",
       "layout": "partial",
-      "keying": "unknown",
+      "keying": "partial",
       "contacts": "partial",
       "physical_dimensions": "unknown",
       "electrical_compatibility": "unknown"
@@ -333,7 +334,7 @@ export const catalog=[
         "locator": "Brochure"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 13B; PDF pages 536-542; printed chapter date 2023-10-02"
       }
     ],
@@ -359,7 +360,7 @@ export const catalog=[
         "locator": "Article"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 5A; PDF pages 227-248; printed chapter date 2026-05-04"
       }
     ],
@@ -385,7 +386,7 @@ export const catalog=[
         "locator": "Article"
       },
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 5B; PDF pages 249-275; printed chapter date 2025-03-18"
       }
     ],
@@ -407,7 +408,7 @@ export const catalog=[
     "summary": "对比资料记载一个处理模块；不能由 x2 隐藏端口推导完整旧版。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 5B; PDF pages 252; printed chapter date 2025-03-18"
       }
     ],
@@ -423,29 +424,30 @@ export const catalog=[
   {
     "id": "gtfpi-v2",
     "name": "GTFPI V2",
-    "revision": "V2 / PCB 2.01 参考图",
+    "revision": "V2 / PCB 2.01 / GT 光口带防尘盖",
     "family": "GTFPI",
     "type": "接口面板桥接卡",
-    "summary": "两组排线座、两个光笼与两组供电连接；它不是高压接触面板本身。",
+    "summary": "连接一块 LV 数字 I/O 面板和一块 HV 输出面板的桥接卡，不是高压接点面板本体。当前展示 PCB 2.01、两只 GT 防尘盖及 94 个可见电气针脚；针脚数不等于信号通道数。",
+    "scopeNote": "版本边界：HV / LV 排针分别为 50 / 34 针，24 V 供电共 8 针、HV 辅助 5 V 共 2 针。两只 GT 组件保留防尘盖；电源空间针序、辅助极性与盖下插接几何未确认。",
     "evidence": [
       {
         "source_id": "GTFPI-PHOTO",
-        "locator": "Visible PCB marking"
+        "locator": "PCB 2.01；两只 GT 防尘盖，HV / LV 排针与绿色开放式两针外观"
       },
       {
         "source_id": "GTFPI-KB",
-        "locator": "Card/panel distinction"
+        "locator": "GTFPI 桥接卡与独立 HV / LV 面板的功能区别"
       },
       {
-        "source_id": "MANUAL-605",
-        "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
+        "source_id": "MANUAL",
+        "locator": "10 GTFPI V2；修订 20240924；章节印刷页 1–6、20–22"
       }
     ],
     "confidence": {
-      "count": "partial",
+      "count": "observed",
       "layout": "partial",
-      "keying": "unknown",
-      "contacts": "unknown",
+      "keying": "partial",
+      "contacts": "partial",
       "physical_dimensions": "unknown",
       "electrical_compatibility": "unknown"
     }
@@ -459,7 +461,7 @@ export const catalog=[
     "summary": "仅保留待核实条目；不能把 PCB 2.01 参考图直接标成 V1。",
     "evidence": [
       {
-        "source_id": "MANUAL-605",
+        "source_id": "MANUAL",
         "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
       }
     ],
@@ -474,7 +476,7 @@ export const catalog=[
   }
 ];
 export const sources={
-  "MANUAL-605": {
+  "MANUAL": {
     "title": "RTDS Hardware Manual",
     "url": null,
     "access": "private_user_provided"

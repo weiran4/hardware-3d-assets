@@ -1,0 +1,60 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "status": "PASS",
+  "geometry_revision": "r04",
+  "source_blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "source_glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24",
+  "review": "All11 final images visually inspected; independent source-pixel and hash audit passed",
+  "views": {
+    "iso": {
+      "passed": true,
+      "note": "Board arrangement, seated components, cap-on GT and outward header gaps visible"
+    },
+    "neutral": {
+      "passed": true,
+      "note": "No disconnected components, unintended occlusion or crop in this diagnostic view"
+    },
+    "wireframe": {
+      "passed": true,
+      "note": "Shaded wire mesh clearly legible; printed glyphs excluded from wire modifier to avoid skinny-triangle spikes"
+    },
+    "front": {
+      "passed": true,
+      "note": "No disconnected components, unintended occlusion or crop in this diagnostic view"
+    },
+    "rear": {
+      "passed": true,
+      "note": "No disconnected components, unintended occlusion or crop in this diagnostic view"
+    },
+    "left": {
+      "passed": true,
+      "note": "No disconnected components, unintended occlusion or crop in this diagnostic view"
+    },
+    "right": {
+      "passed": true,
+      "note": "No disconnected components, unintended occlusion or crop in this diagnostic view"
+    },
+    "top": {
+      "passed": true,
+      "note": "HV50 and LV34, true two-row topology and major placements clear"
+    },
+    "terminal-closeup": {
+      "passed": true,
+      "note": "Both full ribbon headers including lower LV1/2 ends lie inside camera with >2% margin"
+    },
+    "optical-closeup": {
+      "passed": true,
+      "note": "Both photographed black GT caps retained, no invented exposed optical bore"
+    },
+    "power-closeup": {
+      "passed": true,
+      "note": "Open2pin green mouth has observed twin-lobe inner wall; no screw terminals"
+    }
+  },
+  "remaining_visual_uncertainties": [
+    "GT mouths concealed by photographed black caps",
+    "Four-position power spatial mapping and green polarity unresolved",
+    "Service silhouettes unqualified",
+    "Unseen minor components and carrier approximate"
+  ]
+}

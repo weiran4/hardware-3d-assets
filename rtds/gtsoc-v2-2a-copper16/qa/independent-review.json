@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "review_type": "independent source-pixel and physical audit",
+  "source_views": [
+    "official copper front",
+    "manual rear exterior",
+    "manual service roles"
+  ],
+  "native_checks": 669,
+  "actual_glb_checks": 669,
+  "contact_bases_inside_real_solid_face_planes": 151,
+  "contact_inventory": {
+    "front_copper": 128,
+    "three_usb_service_ports": 12,
+    "rear_eth": 8,
+    "ac_blades": 3,
+    "total_asserted_metal_contacts": 151,
+    "rear_optical_observed_white_faces": 8,
+    "rear_optical_asserted_contacts": 0
+  },
+  "annotations_checked": 36,
+  "exact_glyph_samples": 3888,
+  "geometry_release_scope": "approved for final render; final image/hash inspection required separately",
+  "remaining_unknowns": [
+    "all mechanical dimensions estimated",
+    "rear white face cap-versus-sleeve status unknown",
+    "side and underside simplified",
+    "all electrical/optical mating validation disabled",
+    "no insertion-animation readiness"
+  ],
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e",
+  "panel_collar_count": 100,
+  "ports_with_at_least_two_actual_panel_support_sides": 25
+}

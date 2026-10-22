@@ -1,0 +1,45 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "status": "visual_reference_not_mating_certified",
+  "documented": [
+    "16 front SFP positions",
+    "4 rear duplex optical links",
+    "three service connector roles",
+    "GTSOC V2 identity",
+    "AC inlet fused supply"
+  ],
+  "observed": [
+    "copper8contact mouth topology",
+    "upper/lower opposite key orientation",
+    "front16 numbering",
+    "rear upper1/3 lower2/4",
+    "rear GTSOC-2A model plate",
+    "blue rear exterior with eight white circular faces"
+  ],
+  "estimated": [
+    "all enclosure dimensions",
+    "all connector dimensions and exact mating depths",
+    "side and underside construction",
+    "decorative fan mechanics",
+    "hidden panel mounting collars and internal support construction"
+  ],
+  "unknown": [
+    "rear white-feature cap-versus-exposed-sleeve status",
+    "exact rear adapter manufacturer and optical polish/polarity",
+    "copper module manufacturer part",
+    "certified USB connector dimensions",
+    "physical/electrical/optical compatibility"
+  ],
+  "connection_training": {
+    "placement_anchors_only": true,
+    "validated_mating": false,
+    "insertion_animation_ready": false,
+    "reason": "visual geometry is not a verified mating or electrical specification"
+  },
+  "application_population": "Copper16 is an SV/Ethernet visual population; other unit applications require appropriate firmware and transceivers.",
+  "source_conflict_resolution": "Use rear1\u20134 for black-box links from current official brochure plus manual link figure; do not adopt contradictory front1\u20134 prose.",
+  "future_evidence_needed": [
+    "perpendicular rear connector face with caps explicitly removed before insertion geometry",
+    "dimensioned enclosure side/depth drawing before exact-fit claims"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "probes": [
+    {
+      "source": "native",
+      "mutation": "missing_contact",
+      "test": "test_exact_physical_contacts_and_frames",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "native",
+      "mutation": "flipped_key",
+      "test": "test_exact_physical_contacts_and_frames",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "native",
+      "mutation": "blocked_key",
+      "test": "test_every_key_slot_has_outward_clearance",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "native",
+      "mutation": "blocked_glyph",
+      "test": "test_every_annotation_glyph_unoccluded",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "native",
+      "mutation": "detached_contact_base",
+      "test": "test_each_metal_contact_base_is_in_real_insulator",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "native",
+      "mutation": "detached_panel_collars",
+      "test": "test_mount_collars_intersect_actual_panel_geometry",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "missing_contact",
+      "test": "test_exact_physical_contacts_and_frames",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "flipped_key",
+      "test": "test_exact_physical_contacts_and_frames",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "blocked_key",
+      "test": "test_every_key_slot_has_outward_clearance",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "blocked_glyph",
+      "test": "test_every_annotation_glyph_unoccluded",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "detached_contact_base",
+      "test": "test_each_metal_contact_base_is_in_real_insulator",
+      "detected": true,
+      "unexpected_error": false
+    },
+    {
+      "source": "glb",
+      "mutation": "detached_panel_collars",
+      "test": "test_mount_collars_intersect_actual_panel_geometry",
+      "detected": true,
+      "unexpected_error": false
+    }
+  ],
+  "mutations_saved": false,
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e"
+}

@@ -1,0 +1,5592 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "mode": "native",
+  "blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e",
+  "checks": [
+    {
+      "name": "same_original_sid_inventory",
+      "passed": true,
+      "detail": {
+        "native": 704,
+        "current": 704,
+        "missing": []
+      }
+    },
+    {
+      "name": "exact_anchor_set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_linked_or_packed_source_bitmap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front1.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front2.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front3.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front4.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front5.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front6.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front7.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front8.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front9.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front10.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front11.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front12.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front13.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front14.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front15.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.front16.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:actual_contact_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_ps.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_ps.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_ps.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_ps.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:actual_contact_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_pl.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_pl.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_pl.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.monitor_pl.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:actual_contact_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.prog_jtag.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.prog_jtag.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.prog_jtag.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.prog_jtag.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:actual_contact_count",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact3"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact4"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact5"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact6"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact7"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.contact8"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.key_slot:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.eth.key_slot"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.key_slot1:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.key_slot1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.key_slot2:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.key_slot2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face1:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face1:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face1:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face1:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face2:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face2:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face2:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1.white_face2:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear1.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.key_slot1:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.key_slot1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.key_slot2:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.key_slot2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face1:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face1:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face1:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face1:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face2:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face2:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face2:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2.white_face2:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear2.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.key_slot1:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.key_slot1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.key_slot2:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.key_slot2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face1:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face1:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face1:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face1:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face2:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face2:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face2:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3.white_face2:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear3.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.key_slot1:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.key_slot1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.key_slot2:key_access_visible",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.key_slot2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face1:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face1:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face1:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face1:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face2:white_face_visible_(1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face2:white_face_visible_(-1, 0)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face2:white_face_visible_(0, 1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4.white_face2:white_face_visible_(0, -1)",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.rear4.white_face2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:actual_contact_count",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.ac.blade1"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.ac.blade2"
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtsoc-v2-2a-copper16.ac.blade3"
+    },
+    {
+      "name": "source_total_exposed_metal_contacts_151",
+      "passed": true,
+      "detail": 151
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front1.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front1.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front1.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front2.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front2.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front2.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front3.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front3.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front3.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front4.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front4.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front4.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front5.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front5.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front5.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front5.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front6.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front6.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front6.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front6.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front7.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front7.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0.0003,
+              0
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front7.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front7.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front8.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front8.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front8.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front8.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front9.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front9.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front9.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front9.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front10.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front10.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front10.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front10.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front11.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front11.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front11.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front11.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front12.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front12.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front12.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front12.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front13.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front13.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front13.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front13.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front14.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front14.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front14.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front14.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front15.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front15.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front15.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front15.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.front16.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front16.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front16.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.front16.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_ps.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_ps.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0.0003,
+              0
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_ps.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_ps.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_pl.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_pl.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_pl.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.monitor_pl.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.prog_jtag.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.prog_jtag.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0.0003,
+              0
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.prog_jtag.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.prog_jtag.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.eth.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.eth.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.eth.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.eth.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear1:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear1.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear1.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear2:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear2.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear2.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear3:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear3.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear3.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear4:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear4.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.rear4.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:four_hidden_mount_collars",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac:at_least_two_collars_intersect_real_panel_solid",
+      "passed": true,
+      "detail": [
+        {
+          "collar": "gtsoc-v2-2a-copper16.ac.panel_collar_0_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.ac.panel_collar_0_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.ac.panel_collar_1_-1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              -0.0003
+            ]
+          ]
+        },
+        {
+          "collar": "gtsoc-v2-2a-copper16.ac.panel_collar_1_1",
+          "actual_panel_overlap_samples": [
+            [
+              0,
+              0
+            ],
+            [
+              0.0003,
+              0
+            ],
+            [
+              -0.0003,
+              0
+            ],
+            [
+              0,
+              0.0003
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front1.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front1.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front2.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front2.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front3.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front3.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front4.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front4.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front5.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front5.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front6.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front6.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front7.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front7.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front8.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front8.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front9.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front9.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front10.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front10.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front11.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front11.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front12.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front12.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front13.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front13.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front14.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front14.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front15.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front15.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639847029466182
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front16.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.front16.contact_carrier",
+        "max_face_plane_outside_distance": -0.000463962962385267
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_ps.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_ps.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_ps.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_ps.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_ps.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_pl.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_pl.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_pl.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor_pl.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.monitor_pl.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.prog_jtag.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.prog_jtag.tongue",
+        "max_face_plane_outside_distance": -0.00014999997802078724
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.prog_jtag.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog_jtag.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.prog_jtag.tongue",
+        "max_face_plane_outside_distance": -0.0001500002108514309
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact4:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact5:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact6:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact7:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.eth.contact8:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.eth.contact_carrier",
+        "max_face_plane_outside_distance": -0.0004639600228983909
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade1:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.ac.well",
+        "max_face_plane_outside_distance": -4.9980299081653357e-05
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade2:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.ac.well",
+        "max_face_plane_outside_distance": -4.9980299081653357e-05
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac.blade3:actual_inward_end_inside_own_solid_support",
+      "passed": true,
+      "detail": {
+        "support": "gtsoc-v2-2a-copper16.ac.well",
+        "max_face_plane_outside_distance": -4.9979425966739655e-05
+      }
+    },
+    {
+      "name": "front1:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front1:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front1:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front1:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front2:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front2:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front2:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front3:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front3:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front3:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front3:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front4:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front4:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front4:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front5:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front5:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front5:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front5:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front6:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front6:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front6:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front7:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front7:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front7:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front7:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front8:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front8:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front8:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front9:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front9:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front9:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front9:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front10:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front10:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front10:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front11:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front11:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front11:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front11:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front12:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front12:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front12:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front13:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front13:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front13:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front13:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front14:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front14:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front14:left_to_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front15:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front15:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front15:above_even",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front16:photo_contacts_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "front16:photo_key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear1:two_observed_faces_no_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear1:cap_classification_withheld",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear1:key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear2:two_observed_faces_no_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear2:cap_classification_withheld",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear2:key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear3:two_observed_faces_no_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear3:cap_classification_withheld",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear3:key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear4:two_observed_faces_no_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear4:cap_classification_withheld",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear4:key_opposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear_source_order_1_3_2_4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear_ETH_photo_left_of_optical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rear_AC_photo_right",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.model:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "GTSOC V2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.front_title:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "SFP PORTS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.brand_original:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "RTDS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number0:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "1",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number0:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "3",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "4",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "5",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "6",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number3:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "7",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number3:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "8",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number4:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "9",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number4:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "10",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number5:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "11",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number5:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "12",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number6:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "13",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number6:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "14",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.upper_number7:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "15",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.lower_number7:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "16",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.monitor:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "MONITOR",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ps:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "PS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.pl:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "PL",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.prog:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "PROG",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.jtag:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "JTAG",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.pwr:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "PWR",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rst:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "RST",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_eth:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "ETH",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_ports:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "PORTS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_number1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "1",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_number3:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "3",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_number2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.rear_number4:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "4",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.plate_brand:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "RTDS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.plate_model:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "GTSOC-2A",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.plate_input:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "100-240 V\n50 / 60 Hz",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtsoc-v2-2a-copper16.ac_state:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "I  O",
+        "occluders": []
+      }
+    },
+    {
+      "name": "artifacts_unchanged_through_audit",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "check_count": 669,
+  "passed": true,
+  "actual_contact_count": 151,
+  "contact_breakdown": {
+    "rear_eth": 8,
+    "service": 12,
+    "front_sfp": 128,
+    "rear_optical": 0,
+    "ac_power": 3
+  },
+  "annotation_count": 36,
+  "exact_glyph_triangle_sample_count": 3888,
+  "blocked_annotations": []
+}

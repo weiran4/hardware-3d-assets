@@ -1,0 +1,12 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "status": "PASS",
+  "errors": [],
+  "geometry_digest": "10b96762c0bb56b7ad80c3f31cd423f78cee501231eae57eeae6533ce6ba7b1e",
+  "semantic_digest": "c60e52641ff1ef0a29e5b50a6d3c7db7c15329d69a6720652f898ed59dbf345f",
+  "material_digest": "5d0fa1240a9c3c897bfaf1f5e2aaf25e0557589a6ef47c2a159ac3b5294cc93d",
+  "placed_triangles": 16552,
+  "master_replaced": false,
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e"
+}

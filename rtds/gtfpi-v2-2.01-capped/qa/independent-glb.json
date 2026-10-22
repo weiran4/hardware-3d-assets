@@ -1,0 +1,1645 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "mode": "glb",
+  "blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24",
+  "checks": [
+    {
+      "name": "same_original_sid_inventory",
+      "passed": true,
+      "detail": {
+        "native": 373,
+        "current": 373,
+        "missing": []
+      }
+    },
+    {
+      "name": "exact_anchor_set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_linked_or_packed_source_bitmap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:actual_contact_count",
+      "passed": true,
+      "detail": 50
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_10:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_10"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_11:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_11"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_12:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_12"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_13:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_13"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_14:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_14"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_15:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_15"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_16:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_16"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_17:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_17"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_18:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_18"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_19:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_19"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_20:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_20"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_21:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_21"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_22:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_22"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_23:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_23"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_24:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_24"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_4"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_5"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_6"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_7"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_8"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_9:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_0_9"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_10:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_10"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_11:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_11"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_12:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_12"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_13:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_13"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_14:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_14"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_15:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_15"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_16:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_16"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_17:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_17"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_18:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_18"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_19:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_19"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_20:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_20"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_21:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_21"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_22:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_22"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_23:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_23"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_24:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_24"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_4"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_5"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_6"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_7"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_8"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_9:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv.pin_1_9"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:actual_contact_count",
+      "passed": true,
+      "detail": 34
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_10:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_10"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_11:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_11"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_12:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_12"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_13:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_13"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_14:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_14"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_15:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_15"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_16:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_16"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_4"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_5"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_6"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_7"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_8"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_9:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_0_9"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_10:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_10"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_11:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_11"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_12:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_12"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_13:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_13"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_14:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_14"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_15:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_15"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_16:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_16"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_4:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_4"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_5:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_5"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_6:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_6"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_7:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_7"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_8:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_8"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_9:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.lv.pin_1_9"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:actual_contact_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power1.pin0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power1.pin1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power1.pin2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power1.pin3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:actual_contact_count",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power2.pin0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power2.pin1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin2:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power2.pin2"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin3:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.power2.pin3"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:actual_contact_count",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v.pin0:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv5v.pin0"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v.pin1:visible_from_insertion_side",
+      "passed": true,
+      "detail": "gtfpi-v2-2.01-capped.hv5v.pin1"
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt1:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt2:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_header:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:record",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:position",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:frame_normal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:frame_key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:actual_contact_count",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.service_receptacle:no_mating_certification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_total_pins_94",
+      "passed": true,
+      "detail": 94
+    },
+    {
+      "name": "hv:two_actual_columns",
+      "passed": true,
+      "detail": {
+        "0.04173": 25,
+        "0.04427": 25
+      }
+    },
+    {
+      "name": "hv:actual_longitudinal_positions",
+      "passed": true,
+      "detail": {
+        "0.07648": 2,
+        "0.07394": 2,
+        "0.05108": 2,
+        "0.04854": 2,
+        "0.046": 2,
+        "0.04346": 2,
+        "0.04092": 2,
+        "0.03838": 2,
+        "0.03584": 2,
+        "0.0333": 2,
+        "0.03076": 2,
+        "0.02822": 2,
+        "0.0714": 2,
+        "0.02568": 2,
+        "0.02314": 2,
+        "0.0206": 2,
+        "0.01806": 2,
+        "0.01552": 2,
+        "0.06886": 2,
+        "0.06632": 2,
+        "0.06378": 2,
+        "0.06124": 2,
+        "0.0587": 2,
+        "0.05616": 2,
+        "0.05362": 2
+      }
+    },
+    {
+      "name": "hv:photo_top_bottom_order",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv:outward_key_metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv:two_actual_columns",
+      "passed": true,
+      "detail": {
+        "0.04173": 17,
+        "0.04427": 17
+      }
+    },
+    {
+      "name": "lv:actual_longitudinal_positions",
+      "passed": true,
+      "detail": {
+        "-0.03568": 2,
+        "-0.03822": 2,
+        "-0.06108": 2,
+        "-0.06362": 2,
+        "-0.06616": 2,
+        "-0.0687": 2,
+        "-0.07124": 2,
+        "-0.07378": 2,
+        "-0.07632": 2,
+        "-0.04076": 2,
+        "-0.0433": 2,
+        "-0.04584": 2,
+        "-0.04838": 2,
+        "-0.05092": 2,
+        "-0.05346": 2,
+        "-0.056": 2,
+        "-0.05854": 2
+      }
+    },
+    {
+      "name": "lv:photo_top_bottom_order",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv:outward_key_metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv:two_physical_outward_notch_shoulders",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv:central_outer_key_gap_open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv:opposite_inner_wall_not_notched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv:two_physical_outward_notch_shoulders",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv:central_outer_key_gap_open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv:opposite_inner_wall_not_notched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv_source_end_mark_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "lv_source_end_mark_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "power1:actual_chamfer_outside_negative_x",
+      "passed": true,
+      "detail": {
+        "outer_end_extent": 0.010599999688565731,
+        "inner_end_extent": 0.012000000104308128
+      }
+    },
+    {
+      "name": "power2:actual_chamfer_outside_negative_x",
+      "passed": true,
+      "detail": {
+        "outer_end_extent": 0.010599999688565731,
+        "inner_end_extent": 0.012000000104308128
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_10:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_11:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_12:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_13:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_14:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_15:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_16:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_17:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_18:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_19:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_20:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_21:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_22:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_23:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_24:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_4:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_5:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_6:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_7:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_8:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_0_9:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_10:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_11:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_12:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_13:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_14:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_15:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_16:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_17:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_18:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_19:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_20:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_21:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_22:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_23:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_24:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_4:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_5:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_6:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_7:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_8:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv.pin_1_9:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_10:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_11:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_12:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_13:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_14:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_15:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_16:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_4:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_5:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_6:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_7:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_8:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_0_9:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_10:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_11:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_12:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_13:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_14:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_15:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_16:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_4:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_5:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_6:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_7:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_8:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv.pin_1_9:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power1.pin3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin2:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power2.pin3:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v.pin0:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v.pin1:reaches_own_base",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "green_two_actual_concave_mouth_lobes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "power1:no_asserted_spatial_polarity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "power1:no_spatial_pinout_text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "power2:no_asserted_spatial_polarity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "power2:no_spatial_pinout_text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv5v:no_asserted_spatial_polarity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "hv5v:no_spatial_pinout_text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gt1:cap_on_no_internal_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "gt2:cap_on_no_internal_contacts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pcb_1p6mm",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_physical_meshes_PCB_connected_AABB_support_graph",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt_label1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "GT 1",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.gt_label2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "GT 2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "1",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label3:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "3",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label4:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "4",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label5:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "5",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label6:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "6",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label7:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "7",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_label8:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "8",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.dip_on:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "ON",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.card_id:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "CARD ID",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.reset_label:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "CARD RESET",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.board_model:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "GTFPI Version 2.01",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.maker_plain:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "RTDS",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv_legend:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "TO HIGH VOLTAGE INTERFACE PANEL",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv_legend:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "TO LOW VOLTAGE INTERFACE PANEL",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv_end_1:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "1",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.lv_end_2:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.hv5v_label:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "+5V RET",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.power_status:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "POWER\n+24V\n+5V\nBANK 1\nBANK 2",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.config_error:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "CONFIG\nERROR",
+        "occluders": []
+      }
+    },
+    {
+      "name": "gtfpi-v2-2.01-capped.run_error:all_glyph_samples_visible",
+      "passed": true,
+      "detail": {
+        "text": "RUN\nERROR",
+        "occluders": []
+      }
+    },
+    {
+      "name": "artifacts_unchanged_through_audit",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "check_count": 299,
+  "passed": true,
+  "actual_contact_count": 94,
+  "annotation_count": 23,
+  "exact_glyph_triangle_sample_count": 5740,
+  "blocked_annotations": [],
+  "contact_breakdown": {
+    "ribbon_header": 84,
+    "power": 8,
+    "aux_power": 2,
+    "optical": 0,
+    "service_unresolved": 0
+  }
+}

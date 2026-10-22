@@ -1,0 +1,645 @@
+{
+  "schema_version": "rtds.ports.v1",
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "asset_version": "0.1.0",
+  "hardware_version": "GTFPI V2",
+  "pcb_revision": "2.01",
+  "appearance_revision": "Official PCB 2.01 photo, black dust caps on both GT ports",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y; PCB component face +Z, board top +Y; ribbon key +X",
+  "board_dimensions_m_estimated": [
+    0.104,
+    0.196,
+    0.0016
+  ],
+  "critical_interface_status": "source-grounded visible topology; no hidden optical geometry or spatial power pinout",
+  "ports": [
+    {
+      "id": "gtfpi-v2-2.01-capped.hv",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.hv",
+      "label": "HIGH VOLTAGE INTERFACE PANEL",
+      "group": "ribbon_header",
+      "connector": "observed_shrouded_male_2x25",
+      "signal_type": "ribbon_header",
+      "direction": "unknown",
+      "position_m": [
+        0.043,
+        0.046,
+        0.019
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0,
+        0,
+        -0.7071067811865476
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        1,
+        0,
+        0
+      ],
+      "visible_contact_count": 50,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "contact_rows": 2,
+      "contacts_per_row": 25,
+      "pin_pitch_m_estimated": 0.00254,
+      "key_profile": "central gap in outer (+X board) long wall",
+      "observed_end_marks": {},
+      "pinout_status": "not_established",
+      "panel_role": "external HV-panel bridge; no high-voltage rating asserted for this header"
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.lv",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.lv",
+      "label": "LOW VOLTAGE INTERFACE PANEL",
+      "group": "ribbon_header",
+      "connector": "observed_shrouded_male_2x17",
+      "signal_type": "ribbon_header",
+      "direction": "unknown",
+      "position_m": [
+        0.043,
+        -0.056,
+        0.019
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0,
+        0,
+        -0.7071067811865476
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        1,
+        0,
+        0
+      ],
+      "visible_contact_count": 34,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "contact_rows": 2,
+      "contacts_per_row": 17,
+      "pin_pitch_m_estimated": 0.00254,
+      "key_profile": "central gap in outer (+X board) long wall",
+      "observed_end_marks": {
+        "board_footer_outer": "1",
+        "board_footer_inner": "2"
+      },
+      "pinout_status": "not_established",
+      "panel_role": "external LV-panel bridge; up to sixteen digital inputs and outputs"
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.power1",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.power1",
+      "label": "24 V POWER 1",
+      "group": "power",
+      "connector": "observed_white_1x4_power_header",
+      "signal_type": "power",
+      "direction": "unknown",
+      "position_m": [
+        -0.044,
+        0.08,
+        0.022
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "contact_labels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "unordered_functions": [
+        "+24V",
+        "GND",
+        "GND",
+        "NC"
+      ],
+      "pinout_status": "viewpoint_of_diagrams_not_aligned_no_spatial_mapping",
+      "power_role": "supply / jumper connection; position-specific electrical pinout withheld"
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.power2",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.power2",
+      "label": "24 V POWER 2",
+      "group": "power",
+      "connector": "observed_white_1x4_power_header",
+      "signal_type": "power",
+      "direction": "unknown",
+      "position_m": [
+        -0.044,
+        -0.08,
+        0.022
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "contact_labels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "unordered_functions": [
+        "+24V",
+        "GND",
+        "GND",
+        "NC"
+      ],
+      "pinout_status": "viewpoint_of_diagrams_not_aligned_no_spatial_mapping",
+      "power_role": "supply / jumper connection; position-specific electrical pinout withheld"
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.hv5v",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.hv5v",
+      "label": "HV PANEL 5 V",
+      "group": "aux_power",
+      "connector": "observed_green_open_1x2_header",
+      "signal_type": "aux_power",
+      "direction": "unknown",
+      "position_m": [
+        0.043,
+        -0.015,
+        0.019
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": 2,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "key_profile": "two concave lobes on inner (-X board) cavity wall",
+      "contact_labels": [
+        null,
+        null
+      ],
+      "unordered_functions": [
+        "+5V",
+        "RET"
+      ],
+      "pinout_status": "polarity_position_not_established"
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.gt1",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.gt1",
+      "label": "GT PORT 1",
+      "group": "optical",
+      "connector": "observed_capped_duplex_sfp_assembly",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.056,
+        0.026,
+        0.0125
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "population": "black_dust_cap_on",
+      "under_cap_geometry": "not_modelled_not_observed",
+      "chain_role": "upstream",
+      "optical_paths": 2,
+      "duplex": true,
+      "gt_links": 1
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.gt2",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.gt2",
+      "label": "GT PORT 2",
+      "group": "optical",
+      "connector": "observed_capped_duplex_sfp_assembly",
+      "signal_type": "optical",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.056,
+        -0.026,
+        0.0125
+      ],
+      "orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": true,
+      "accuracy": {
+        "count": "observed",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "population": "black_dust_cap_on",
+      "under_cap_geometry": "not_modelled_not_observed",
+      "chain_role": "downstream",
+      "optical_paths": 2,
+      "duplex": true,
+      "gt_links": 1
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.service_header",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.service_header",
+      "label": "SERVICE HEADER",
+      "group": "service_unresolved",
+      "connector": "observed_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        -0.02,
+        0.062,
+        0.014
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "unresolved": "Exact contact count, mouth/key geometry and electrical role not established; non-interactive outline only."
+    },
+    {
+      "id": "gtfpi-v2-2.01-capped.service_receptacle",
+      "parent_id": "gtfpi-v2-2.01-capped.root",
+      "anchor_name": "gtfpi-v2-2.01-capped.service_receptacle",
+      "label": "SERVICE RECEPTACLE",
+      "group": "service_unresolved",
+      "connector": "observed_outline_only",
+      "signal_type": "service_unresolved",
+      "direction": "unknown",
+      "position_m": [
+        0.002,
+        0.096,
+        0.011
+      ],
+      "orientation_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "keyed_up": [
+        0,
+        1,
+        0
+      ],
+      "visible_contact_count": null,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "interactive": false,
+      "accuracy": {
+        "count": "unresolved",
+        "layout": "observed",
+        "keying": "observed_not_manufacturer_fit_verified",
+        "placement": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "title": "RTDS Hardware Manual",
+          "chapter": "10 GTFPI V2",
+          "chapter_revision": "20240924",
+          "printed_pages": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source_id": "official-gtfpi-photo",
+          "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+        }
+      ],
+      "unresolved": "Exact contact count, mouth/key geometry and electrical role not established; non-interactive outline only."
+    }
+  ]
+}

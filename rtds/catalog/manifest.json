@@ -25,7 +25,7 @@
   ],
   "sources": [
     {
-      "id": "MANUAL-605",
+      "id": "MANUAL",
       "title": "RTDS Hardware Manual",
       "access": "private_user_provided",
       "date": null,
@@ -201,7 +201,7 @@
           "locator": "Article"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 2A; PDF pages 65-105; printed chapter date 2025-09-16"
         }
       ],
@@ -219,7 +219,7 @@
             {
               "claim": "Rear groups: 20 GT I/O, four Aurora-designated GT positions 21-24, six IRC, one GTSYNC, one GBH, one UDP Ethernet and one workstation Ethernet.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.71 / printed p.7, Fig.2.9"
             }
@@ -239,7 +239,7 @@
             {
               "claim": "GT numbering uses odd positions above even positions; 1-8, 9-16 and 17-24 are separate blocks. IRC follows at right.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.72 / printed p.8, Fig.2.11"
             }
@@ -254,14 +254,14 @@
             {
               "claim": "The top and bottom GT fibre rows have opposite mating-latch orientations; top row tab up, bottom row tab down.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.72 / printed p.8, Fig.2.10"
             },
             {
               "claim": "GBH mating tab faces up; its POF and HCS cable variants are distinct.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.81-82 / printed pp.17-18"
             }
@@ -277,14 +277,14 @@
             {
               "claim": "The manual lists Finisar FTLF8519P3BNL for GT1-24, IRC1-6 and GTSYNC.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.72 / printed p.8"
             },
             {
               "claim": "UDP is populated by a copper SFP, separate from the workstation Ethernet connector.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.71 / printed p.7"
             }
@@ -344,7 +344,7 @@
           "locator": "Brochure front/rear and dimensions"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 2B; PDF pages 106-142; printed chapter date 2025-05-29"
         }
       ],
@@ -406,7 +406,7 @@
             {
               "claim": "Manual prints W x L x H as 20 x 19 x 7 inches, alongside 50.8 x 48.3 x 17.8 cm.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.107 / printed p.2, section 2.3"
             }
@@ -446,7 +446,7 @@
           "locator": "NovaCor article"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 2C; PDF pages 143-180; printed chapter date 2023-05-23"
         }
       ],
@@ -457,7 +457,7 @@
             {
               "claim": "The chapter identifies 12 built-in front analogue outputs.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.148-150 / chapter 2C section 2.3"
             }
@@ -529,7 +529,7 @@
           "locator": "GTDI entry"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 9A; PDF pages 404-425; printed chapter date 2024-12-19"
         },
         {
@@ -544,14 +544,14 @@
             {
               "claim": "64 digital input channels form eight banks of eight, with two optical transport ports.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.404 / printed p.1; p.406 / printed p.3"
             },
             {
               "claim": "Each bank uses a pair of removable five-position terminal plugs: four signals plus a shared auxiliary/return position per row.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.414 / printed p.11, Fig.9.9"
             }
@@ -564,21 +564,21 @@
             {
               "claim": "In the connector-end view of Fig.9.9, the first bank is shown as top V+(WET),7,5,3,1 and bottom GND,8,6,4,2. Those rows describe this end view, not top/bottom board coordinates.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.414 / printed p.11, Fig.9.9"
             },
             {
               "claim": "Optical port 1 is the upstream connection; port 2 is the downstream connection.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.404 / printed p.1"
             },
             {
               "claim": "In the upright component-side board frame, odd signals run downward on the inner tier and even signals downward on the outer tier, with bank numbering progressing independently of the connector-end view.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.405 / printed p.2, Fig.9.1, cross-checked with PDF p.414 / printed p.11, Fig.9.9"
             }
@@ -594,7 +594,7 @@
             {
               "claim": "The two four-contact power connections are keyed; the manual distinguishes the first connector with the card upright.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.408 / printed p.5, Fig.9.4"
             }
@@ -610,14 +610,14 @@
             {
               "claim": "Manual identifies the terminal block as Phoenix Contact 1803604.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.406 / printed p.3"
             },
             {
               "claim": "Both white power headers have four visible contacts. The upper power header has +24V,GND,GND,NC top-to-bottom in the illustrated frame; the lower power header pin order remains unknown.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.405 / printed p.2, Fig.9.1; PDF p.408 / printed p.5, Fig.9.4"
             },
@@ -683,7 +683,7 @@
       "identity_scope": "Chapter applies to v1.10 and later within V1; Fig.9.1 photo is marked 1.11. Do not use V2 field terminals.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 9B; PDF pages 426-447; printed chapter date 2020-02-03"
         }
       ],
@@ -694,7 +694,7 @@
             {
               "claim": "64 digital inputs and two optical transport ports are described.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.426 / printed p.9.1"
             }
@@ -707,7 +707,7 @@
             {
               "claim": "Port 1 connects upstream and port 2 connects downstream in the chapter.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.426 / printed p.9.1"
             }
@@ -772,7 +772,7 @@
           "locator": "GTDO entry"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 8A; PDF pages 362-381; printed chapter date 2024-09-24"
         },
         {
@@ -787,14 +787,14 @@
             {
               "claim": "64 digital outputs are arranged as eight banks of eight; two optical ports are shown.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.362-363 / printed pp.1-2"
             },
             {
               "claim": "16 separate 5-position removable plugs give 80 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF363 and PDF370"
             }
@@ -809,7 +809,7 @@
             {
               "claim": "In connector-end view each bank is V+,7,5,3,1 over V-,8,6,4,2. Upright board top-to-bottom: inner tier 1,3,5,7,V+ and outer tier 2,4,6,8,V-; subsequent banks add 8.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF363 Figure8.1 and PDF370 Figure8.7"
             }
@@ -824,7 +824,7 @@
             {
               "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF363, power close-up PDF365"
             }
@@ -841,14 +841,14 @@
               "claim": "Phoenix Contact item 1803604 identifies the 5-position screw plug; each modeled wire entry has a distinct recessed contact.",
               "source_refs": [
                 "PHOENIX-1803604",
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF364 plus official product properties"
             },
             {
               "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF365"
             }
@@ -864,7 +864,7 @@
             {
               "claim": "Manual gives card length as 19.7 cm.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.362 / printed p.1"
             },
@@ -911,7 +911,7 @@
       "identity_scope": "Dedicated legacy chapter 8B; opening printed revision date not found.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 8B; PDF pages 382-403; printed chapter date not found"
         }
       ],
@@ -922,7 +922,7 @@
             {
               "claim": "64 digital outputs are grouped into two banks of 32; two optical transport ports are described.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.382 / printed p.8.1"
             }
@@ -935,7 +935,7 @@
             {
               "claim": "The power section describes two keyed supply connections.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.385 / printed p.8.4"
             }
@@ -998,7 +998,7 @@
           "locator": "GTAI entry"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
         },
         {
@@ -1013,14 +1013,14 @@
             {
               "claim": "Twelve differential analogue input channels are documented.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.336 / printed p.1"
             },
             {
               "claim": "12 separate 3-position removable plugs give 36 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF337 and PDF347"
             }
@@ -1035,7 +1035,7 @@
             {
               "claim": "Twelve three-position plugs run top-to-bottom as channels 1-12; within each upright plug the order is positive,negative,ground. Two optical cages face outward on the left.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF337 Figure7.1 and PDF347 Figure7.8"
             }
@@ -1050,7 +1050,7 @@
             {
               "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF337, power close-up PDF341"
             }
@@ -1067,14 +1067,14 @@
               "claim": "Phoenix Contact item 1803581 identifies the 3-position screw plug; each modeled wire entry has a distinct recessed contact.",
               "source_refs": [
                 "PHOENIX-1803581",
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF339 plus official product properties"
             },
             {
               "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF341"
             }
@@ -1129,7 +1129,7 @@
       "identity_scope": "Placeholder identity only; the supplied compilation has a GTAI V2 chapter, not a standalone V1 chapter.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 7; PDF pages 336-361; printed chapter date 2024-09-24"
         }
       ],
@@ -1205,7 +1205,7 @@
           "locator": "GTAO entry"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 6A; PDF pages 276-307; printed chapter date 2024-09-24"
         },
         {
@@ -1220,14 +1220,14 @@
             {
               "claim": "Sixteen analogue outputs are documented; access to the last four is described as NovaCor-dependent.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.276 / printed p.1"
             },
             {
               "claim": "16 separate 2-position removable plugs give 32 physical terminal positions. Two optical ports and two four-contact power headers are modeled.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF279 and PDF290"
             }
@@ -1242,7 +1242,7 @@
             {
               "claim": "Sixteen two-position plugs run top-to-bottom as channels 1-16; upright per-channel order is positive above return. This is not the older twelve-output card.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF279 Figure6.2 and PDF289-290 Figure6.10"
             }
@@ -1257,7 +1257,7 @@
             {
               "claim": "Two keyed single-row power shrouds have observed asymmetric corner profiles. Optical duplex mouths use visible keyed topology; exact module mating dimensions remain unverified.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF279, power close-up PDF282"
             }
@@ -1274,14 +1274,14 @@
               "claim": "Phoenix Contact item 1803578 identifies the 2-position screw plug; each modeled wire entry has a distinct recessed contact.",
               "source_refs": [
                 "PHOENIX-1803578",
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF278 plus official product properties"
             },
             {
               "claim": "Upper power header order is +24V,GND,GND,NC from board top to bottom; lower power header pin order remains unknown.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF282"
             }
@@ -1336,7 +1336,7 @@
       "identity_scope": "Legacy chapter 6B dated 2020-02-03; exact PCB revision remains unestablished.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 6B; PDF pages 308-335; printed chapter date 2020-02-03"
         }
       ],
@@ -1347,7 +1347,7 @@
             {
               "claim": "Twelve analogue outputs are documented.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.308 / printed p.6.1"
             }
@@ -1360,7 +1360,7 @@
             {
               "claim": "Field connections use terminal blocks and the card is rail-mounted.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.308 / printed p.6.1"
             }
@@ -1412,85 +1412,98 @@
       "id": "gtsoc-v2",
       "family": "GTSOC",
       "generation": "V2",
-      "identity_scope": "2024-09-27 manual chapter; 2026 brochure/photo is a separate populated-module configuration.",
+      "identity_scope": "GTSOC V2, rear nameplate Model GTSOC-2A; exact visual candidate with16 copper RJ45 SFP front modules and source-matched rear optical exterior. Other populations are not silently substituted.",
       "evidence": [
         {
           "source_id": "SOC2-2026",
-          "locator": "Brochure"
+          "locator": "Official brochure printed pp.1-2; firmware-dependent applications and current rear blackbox link assignment"
         },
         {
           "source_id": "SOC2-PHOTO",
-          "locator": "Populated front photograph"
+          "locator": "16 populated copper RJ45 SFP front photograph, alternating upper/lower key directions"
         },
         {
-          "source_id": "MANUAL-605",
-          "locator": "Chapter 13A; PDF pages 528-535; printed chapter date 2024-09-27"
+          "source_id": "MANUAL",
+          "locator": "13A GTSOC V2; revision20240927; printed pp.1-8, including rear nameplate and printed p.4 wording conflict"
         }
       ],
       "confidence": {
         "count": {
-          "status": "documented",
+          "status": "observed",
           "facts": [
             {
-              "claim": "Sixteen front SFP positions, four rear optical positions and three front USB interfaces are documented.",
+              "claim": "151 electrical contacts:16 front copper RJ45 x8 +3 USB-B service x4 +rear ETH8 +AC3. Four rear duplex optical units have8 white visible exterior features, not electrical contacts.",
               "source_refs": [
-                "MANUAL-605"
+                "SOC2-PHOTO",
+                "MANUAL"
               ],
-              "locator": "PDF p.529 / printed p.2"
+              "locator": "Official copper front photograph; chapter13A printed pp.2-3"
             }
           ],
-          "gaps": []
+          "gaps": [
+            "Rear white cap-versus-sleeve classification is unknown; no covered internal contacts are asserted."
+          ]
         },
         "layout": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Rear photo places Ethernet left of a two-by-two optical group; optical labels are 1,3 above 2,4; AC power is at far right.",
+              "claim": "Front left upper1,3,5,7 /lower2,4,6,8 and right upper9,11,13,15 /lower10,12,14,16. Rear optical upper1,3 /lower2,4. Rear ETH is left of the blue optical group; switched/fused AC inlet is at right.",
               "source_refs": [
-                "MANUAL-605"
+                "SOC2-PHOTO",
+                "MANUAL"
               ],
-              "locator": "PDF p.530 / printed p.3"
-            },
-            {
-              "claim": "Public front photograph is populated with copper RJ45 SFP modules.",
-              "source_refs": [
-                "SOC2-PHOTO"
-              ],
-              "locator": "Front photograph"
+              "locator": "Official copper front photograph; chapter13A printed pp.2-3"
             }
           ],
           "gaps": [
-            "Do not universally represent the front population as LC fibre.",
-            "USB connector families and installed SFP variants need close-up acceptance."
+            "Enclosure depth, side/bottom details and precise placement are visual estimates."
           ]
         },
         "keying": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Front copper upper-row latch/bail points up with contacts below; lower row reverses. Rear blue optical key openings point up in the upper row and down in the lower row.",
+              "source_refs": [
+                "SOC2-PHOTO",
+                "MANUAL"
+              ],
+              "locator": "Official copper front photograph; chapter13A printed p.3 rear view"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Exact mating parts, optical polarity and manufacturer dimensions remain unverified."
           ]
         },
         "contacts": {
           "status": "partial",
           "facts": [
             {
-              "claim": "Front monitor/programming interfaces are labelled Prog JTAG, PS Monitor and PL Monitor.",
+              "claim": "MONITOR PS is application/debug UART monitoring; MONITOR PL is RTDS hardware-test monitoring; PROG JTAG is programming. Each has four observed contacts. Rear ETH serves MMC submodule monitoring to a workstation.",
               "source_refs": [
-                "MANUAL-605"
+                "SOC2-PHOTO",
+                "MANUAL"
               ],
-              "locator": "PDF p.529 / printed p.2"
+              "locator": "Chapter13A printed pp.2-3 and official copper front photo"
+            },
+            {
+              "claim": "Rear four duplex optical units retain8 white exterior faces, not electrical contacts; cap-versus-sleeve status remains unknown.",
+              "source_refs": [
+                "MANUAL"
+              ],
+              "locator": "Chapter13A printed p.3 rear photograph"
             }
           ],
           "gaps": [
-            "USB mouth/contact details and SFP-module mating mechanics remain unverified."
+            "No uncapped rear insertion geometry or electrical compatibility is asserted."
           ]
         },
         "physical_dimensions": {
           "status": "unknown",
           "facts": [],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Enclosure size/depth, side details and mating tolerances remain visual estimates; no exact-fit chassis claim."
           ]
         },
         "electrical_compatibility": {
@@ -1502,16 +1515,19 @@
         }
       },
       "release_gate": {
-        "stage": "catalog_only",
+        "stage": "connector_research_candidate",
         "accurate_connector_release_passed": false,
         "blockers": [
-          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
-          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+          "Rear white feature cap-versus-sleeve classification and uncovered insertion detail remain unresolved.",
+          "Firmware, licensing, installed modules and application configuration require separate confirmation.",
+          "Exact dimensions, connector mating and electrical/protocol compatibility are not validated."
         ]
       },
       "notes": [
-        "Manual p.529 assigns Blackbox use to rear ports 1-4, while p.531 refers to front ports 1-4. Treat that role wording as an unresolved source contradiction; do not implement an automatic route.",
-        "Firmware/application semantics are separate from physical port population."
+        "Original visual candidate: rtds/gtsoc-v2-2a-copper16/source/asset.blend and rtds/gtsoc-v2-2a-copper16/exports/asset.glb; Model GTSOC-2A comes from the rear nameplate, not a chapter number.",
+        "The16 copper SFP modules are documented for SV. Other applications require the appropriate firmware, modules and licensing; socket count does not establish16 universal Aurora or blackbox channels.",
+        "Current blackbox association uses rear ports 1-4: official brochure and rear-link figure agree. The conflicting front-port sentence in manual printed p.4 is retained as a source conflict but not used as a current mapping. Rear1 additionally supports firmware loading.",
+        "Rear AC input100-240V50/60Hz, maximum consumption32W. The3A/250V label is the fuse specification, not operating consumption."
       ]
     },
     {
@@ -1525,7 +1541,7 @@
           "locator": "Brochure"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 13B; PDF pages 536-542; printed chapter date 2023-10-02"
         }
       ],
@@ -1536,7 +1552,7 @@
             {
               "claim": "The front has eight GT fibre ports, three USB interfaces and a power switch.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.537 / printed p.2"
             }
@@ -1549,7 +1565,7 @@
             {
               "claim": "The cited chapter distinguishes ports 1-4 from reserved positions 5-8.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.537 / printed p.2"
             }
@@ -1609,7 +1625,7 @@
           "locator": "Article"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 5A; PDF pages 227-248; printed chapter date 2026-05-04"
         }
       ],
@@ -1620,7 +1636,7 @@
             {
               "claim": "Two simulator-side GT connections A/B and four external Ethernet connections AA/AB/BA/BB are documented.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.228,231 / printed pp.2,5"
             }
@@ -1633,7 +1649,7 @@
             {
               "claim": "Module A and Module B are separate processing sections.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.227 / printed p.1"
             }
@@ -1695,7 +1711,7 @@
           "locator": "Article"
         },
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 5B; PDF pages 249-275; printed chapter date 2025-03-18"
         }
       ],
@@ -1706,7 +1722,7 @@
             {
               "claim": "Two processing modules have simulator-side GT ports A/B and external LAN ports A/B.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.251,254 / printed pp.3,6"
             }
@@ -1719,7 +1735,7 @@
             {
               "claim": "Manual distinguishes enclosure front features shipped before November 2024 from those shipped from November 2024.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF pp.250-251 / printed pp.2-3"
             }
@@ -1776,7 +1792,7 @@
       "identity_scope": "Comparison evidence only; no full standalone legacy GTNET chapter in this compilation.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 5B; PDF pages 252; printed chapter date 2025-03-18"
         }
       ],
@@ -1787,7 +1803,7 @@
             {
               "claim": "The comparison distinguishes one processing module on original GTNET from two on GTNETx2.",
               "source_refs": [
-                "MANUAL-605"
+                "MANUAL"
               ],
               "locator": "PDF p.252 / printed p.4, Fig.5.5"
             }
@@ -1848,71 +1864,92 @@
       "id": "gtfpi-v2",
       "family": "GTFPI",
       "generation": "V2",
-      "identity_scope": "Manual chapter dated 2024-09-24; component-side reference identifies PCB Version 2.01.",
+      "identity_scope": "Exact visual candidate PCB Version 2.01 with two capped GT optical assemblies; covered interiors are not modeled. Stable GTFPI V2 catalog identity is retained.",
       "evidence": [
         {
           "source_id": "GTFPI-PHOTO",
-          "locator": "Visible PCB marking"
+          "locator": "PCB 2.01 component-side photograph; black GT caps, 50/34-pin ribbon headers and open green two-pin header"
         },
         {
           "source_id": "GTFPI-KB",
-          "locator": "Card/panel distinction"
+          "locator": "Card versus separate HV/LV panel roles"
         },
         {
-          "source_id": "MANUAL-605",
-          "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
+          "source_id": "MANUAL",
+          "locator": "10 GTFPI V2; revision 20240924; printed pp.1-6,20-22"
         }
       ],
       "confidence": {
         "count": {
-          "status": "partial",
+          "status": "observed",
           "facts": [
             {
-              "claim": "Reference shows two ribbon interface headers, two optical cages and two power headers.",
+              "claim": "94 exposed electrical pins: 50 HV ribbon +34 LV ribbon +8 power +2 auxiliary; two capped duplex GT assemblies. Each GT assembly has two optical paths forming one duplex link.",
               "source_refs": [
-                "GTFPI-PHOTO"
+                "GTFPI-PHOTO",
+                "MANUAL"
               ],
-              "locator": "Component-side photo"
+              "locator": "Official PCB 2.01 photo; chapter10 printed pp.2-4"
             }
           ],
           "gaps": [
-            "Ribbon contact count is not certified by this catalog."
+            "Two service outlines retain unknown contact counts and remain noninteractive."
           ]
         },
         "layout": {
           "status": "partial",
           "facts": [
             {
-              "claim": "The manual photo distinguishes upper high-voltage-panel ribbon, lower low-voltage-panel ribbon and an intermediate two-terminal 5V supply connection.",
+              "claim": "Upper HV ribbon is 2x25, lower LV ribbon is 2x17; open two-pin +5V auxiliary header lies between them. GT1 is upstream and GT2 downstream.",
               "source_refs": [
-                "MANUAL-605"
+                "GTFPI-PHOTO",
+                "MANUAL"
               ],
-              "locator": "PDF p.449 / printed p.2, Fig.10.1"
+              "locator": "Official PCB 2.01 photo; chapter10 printed pp.2-6"
             }
           ],
           "gaps": [
-            "Verify shroud notch, pin-one mark, ribbon stripe and mating orientation independently."
+            "Placement and dimensions are photo estimates, not manufacturer-fit measurements."
           ]
         },
         "keying": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Both ribbon headers have a central outer-board-wall key gap. LV footer marks show 1 outer /2 inner; HV first-pin marking is not established. Green open two-pin header has two inner-wall scallops.",
+              "source_refs": [
+                "GTFPI-PHOTO"
+              ],
+              "locator": "Official PCB 2.01 photograph, connector close-ups"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Complete ribbon pin mapping, precise mating parts and covered optical key geometry remain unvalidated."
           ]
         },
         "contacts": {
-          "status": "unknown",
-          "facts": [],
+          "status": "partial",
+          "facts": [
+            {
+              "claim": "Visible ribbon topology and white four-contact power headers are source-matched. Power function set is +24V,GND,GND,NC, but spatial order is unknown; green two-pin spatial polarity is unknown.",
+              "source_refs": [
+                "GTFPI-PHOTO",
+                "MANUAL"
+              ],
+              "locator": "Official PCB 2.01 photo; chapter10 printed pp.3-4"
+            }
+          ],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "Power drawings lack aligned view directions; no spatial pinout is published.",
+            "GT dust caps remain fitted; uncapped optical interiors and insertion geometry are not modeled.",
+            "Service connector exact types and contacts remain unresolved."
           ]
         },
         "physical_dimensions": {
           "status": "unknown",
           "facts": [],
           "gaps": [
-            "No version-matched evidence reviewed for this dimension."
+            "PCB, placement and connector dimensions remain visual estimates; no exact-fit mechanical claim."
           ]
         },
         "electrical_compatibility": {
@@ -1924,15 +1961,18 @@
         }
       },
       "release_gate": {
-        "stage": "catalog_only",
+        "stage": "connector_research_candidate",
         "accurate_connector_release_passed": false,
         "blockers": [
-          "Match the exact hardware/PCB revision and inspect all connector mouths, labels, keying and contact arrangements before detailed asset release.",
-          "Obtain missing physical dimensions; do not infer a mechanical standard from a silhouette."
+          "Power spatial pin order, auxiliary polarity and full ribbon signal mapping remain unknown.",
+          "Uncapped optical geometry, service interiors and manufacturer mating tolerances are outside this visual variant.",
+          "No electrical or cable-insertion validation is approved."
         ]
       },
       "notes": [
-        "The card is a bridge to separate interface panels; it is not itself a high-voltage contact panel."
+        "The card bridges to one LV panel with up to16 digital inputs and16 digital outputs and one HV panel; it is not itself the high-voltage contact panel. HV panel ratings do not apply to board ribbon pins.",
+        "Original visual candidate: rtds/gtfpi-v2-2.01-capped/source/asset.blend and rtds/gtfpi-v2-2.01-capped/exports/asset.glb. Exact metadata and source-local verification records accompany the asset.",
+        "Board supply is +24V DC, maximum5W; auxiliary +5V is for the HV panel. This does not establish any position-specific power-wire exercise."
       ]
     },
     {
@@ -1942,7 +1982,7 @@
       "identity_scope": "Placeholder identity only; no standalone V1 chapter was located in the supplied compilation.",
       "evidence": [
         {
-          "source_id": "MANUAL-605",
+          "source_id": "MANUAL",
           "locator": "Chapter 10; PDF pages 448-469; printed chapter date 2024-09-24"
         }
       ],

@@ -1,0 +1,14 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "hardware_version": "GTFPI V2",
+  "pcb_revision": "2.01",
+  "population": "Two capped GT optical assemblies; observed HV50/LV34 male ribbon headers",
+  "source_photo_reproduction": false,
+  "asset_state": "visual_candidate_not_insertion_animation_ready",
+  "uncertainties": [
+    "Power diagrams lack aligned viewing direction; no spatial electrical pinout",
+    "Optical interior hidden by photographed dust caps and intentionally absent",
+    "Service interfaces show outlines only",
+    "Dimensions and decorative electronics estimated"
+  ]
+}

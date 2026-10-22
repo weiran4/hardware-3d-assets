@@ -1,0 +1,30 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "scene": "native",
+  "status": "PASS",
+  "mutations": [
+    {
+      "mutation": "contact missing from actual interface",
+      "caught": true
+    },
+    {
+      "mutation": "pin detached from its base",
+      "caught": true
+    },
+    {
+      "mutation": "physical ribbon key wall on wrong side",
+      "caught": true
+    },
+    {
+      "mutation": "opaque plane blocks actual contact",
+      "caught": true
+    },
+    {
+      "mutation": "opaque plane hides annotation glyphs",
+      "caught": true
+    }
+  ],
+  "master_modified": false,
+  "source_blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "source_glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24"
+}

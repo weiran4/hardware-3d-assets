@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "annotation_count": 36,
+  "exact_glyph_triangle_samples": 3888,
+  "blocked": [],
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e"
+}

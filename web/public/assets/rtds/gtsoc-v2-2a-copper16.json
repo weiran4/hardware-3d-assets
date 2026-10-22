@@ -1,0 +1,1531 @@
+{
+  "schema_version": "rtds.ports.v1",
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "asset_version": "0.1.0",
+  "hardware_version": "GTSOC V2",
+  "model_plate": "GTSOC-2A",
+  "front_population": "16 copper RJ45 SFP modules",
+  "unit": "m",
+  "frame": "BLENDER_Z_UP_FRONT_NEG_Y",
+  "envelope_mm_W_D_H": [
+    483,
+    300,
+    88
+  ],
+  "envelope_scope": "entire envelope is a visual estimate; no dimensioned mechanical source",
+  "asset_state": "source_grounded_visual_variant_with_explicit_secondary_gaps",
+  "ports": [
+    {
+      "id": "gtsoc-v2-2a-copper16.front1",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front1",
+      "label": "1",
+      "group": "front_sfp",
+      "channel": 1,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.09,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front2",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front2",
+      "label": "2",
+      "group": "front_sfp",
+      "channel": 2,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.09,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front3",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front3",
+      "label": "3",
+      "group": "front_sfp",
+      "channel": 3,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.075,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front4",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front4",
+      "label": "4",
+      "group": "front_sfp",
+      "channel": 4,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.075,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front5",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front5",
+      "label": "5",
+      "group": "front_sfp",
+      "channel": 5,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.06,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front6",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front6",
+      "label": "6",
+      "group": "front_sfp",
+      "channel": 6,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.06,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front7",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front7",
+      "label": "7",
+      "group": "front_sfp",
+      "channel": 7,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.045,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front8",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front8",
+      "label": "8",
+      "group": "front_sfp",
+      "channel": 8,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.045,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front9",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front9",
+      "label": "9",
+      "group": "front_sfp",
+      "channel": 9,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.018,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front10",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front10",
+      "label": "10",
+      "group": "front_sfp",
+      "channel": 10,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.018,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front11",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front11",
+      "label": "11",
+      "group": "front_sfp",
+      "channel": 11,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.003,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front12",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front12",
+      "label": "12",
+      "group": "front_sfp",
+      "channel": 12,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.003,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front13",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front13",
+      "label": "13",
+      "group": "front_sfp",
+      "channel": 13,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        0.012,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front14",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front14",
+      "label": "14",
+      "group": "front_sfp",
+      "channel": 14,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        0.012,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front15",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front15",
+      "label": "15",
+      "group": "front_sfp",
+      "channel": 15,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        0.027,
+        -0.155,
+        0.034
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.front16",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.front16",
+      "label": "16",
+      "group": "front_sfp",
+      "channel": 16,
+      "connector": "copper_rj45_sfp_visual",
+      "signal_type": "application-dependent SFP channel",
+      "direction": "bidirectional",
+      "position_m": [
+        0.027,
+        -0.155,
+        0.017
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        -0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.monitor_ps",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.monitor_ps",
+      "label": "MONITOR PS",
+      "group": "service",
+      "channel": null,
+      "connector": "usb_b_shaped_visual",
+      "signal_type": "application/debug UART monitoring",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.157,
+        -0.153,
+        0.021
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.monitor_pl",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.monitor_pl",
+      "label": "MONITOR PL",
+      "group": "service",
+      "channel": null,
+      "connector": "usb_b_shaped_visual",
+      "signal_type": "RTDS hardware-test monitoring",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.138,
+        -0.153,
+        0.021
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.prog_jtag",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.prog_jtag",
+      "label": "PROG JTAG",
+      "group": "service",
+      "channel": null,
+      "connector": "usb_b_shaped_visual",
+      "signal_type": "programming",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.119,
+        -0.153,
+        0.021
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 4,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.eth",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.eth",
+      "label": "ETH",
+      "group": "rear_eth",
+      "channel": null,
+      "connector": "8p8c_ethernet_visual",
+      "signal_type": "MMC submodule monitoring workstation link",
+      "direction": "bidirectional",
+      "position_m": [
+        0.002,
+        0.153,
+        0.044
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 8,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.rear1",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.rear1",
+      "label": "1",
+      "group": "rear_optical",
+      "channel": 1,
+      "connector": "blue_duplex_observed_exterior",
+      "signal_type": "general-purpose NovaCor link; firmware-dependent role",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.031,
+        0.154,
+        0.048
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "not_confirmed_as_contacts",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ],
+      "visible_face_feature_count": 2,
+      "cap_status": "unknown",
+      "appearance": "blue duplex adapter with white annular faces and neutral filled centers; no asserted internal bore"
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.rear2",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.rear2",
+      "label": "2",
+      "group": "rear_optical",
+      "channel": 2,
+      "connector": "blue_duplex_observed_exterior",
+      "signal_type": "general-purpose NovaCor link; firmware-dependent role",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.031,
+        0.154,
+        0.039
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        -0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "not_confirmed_as_contacts",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ],
+      "visible_face_feature_count": 2,
+      "cap_status": "unknown",
+      "appearance": "blue duplex adapter with white annular faces and neutral filled centers; no asserted internal bore"
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.rear3",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.rear3",
+      "label": "3",
+      "group": "rear_optical",
+      "channel": 3,
+      "connector": "blue_duplex_observed_exterior",
+      "signal_type": "general-purpose NovaCor link; firmware-dependent role",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.045,
+        0.154,
+        0.048
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "not_confirmed_as_contacts",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ],
+      "visible_face_feature_count": 2,
+      "cap_status": "unknown",
+      "appearance": "blue duplex adapter with white annular faces and neutral filled centers; no asserted internal bore"
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.rear4",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.rear4",
+      "label": "4",
+      "group": "rear_optical",
+      "channel": 4,
+      "connector": "blue_duplex_observed_exterior",
+      "signal_type": "general-purpose NovaCor link; firmware-dependent role",
+      "direction": "bidirectional",
+      "position_m": [
+        -0.045,
+        0.154,
+        0.039
+      ],
+      "orientation_wxyz": [
+        0.7071067811865476,
+        -0.7071067811865476,
+        0,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        -1
+      ],
+      "visible_contact_count": 0,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "not_confirmed_as_contacts",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ],
+      "visible_face_feature_count": 2,
+      "cap_status": "unknown",
+      "appearance": "blue duplex adapter with white annular faces and neutral filled centers; no asserted internal bore"
+    },
+    {
+      "id": "gtsoc-v2-2a-copper16.ac",
+      "parent_id": "gtsoc-v2-2a-copper16.root",
+      "anchor_name": "gtsoc-v2-2a-copper16.ac",
+      "label": "AC INPUT",
+      "group": "ac_power",
+      "channel": null,
+      "connector": "three_blade_switched_fused_inlet_visual",
+      "signal_type": "AC supply",
+      "direction": "power",
+      "position_m": [
+        -0.184,
+        0.154,
+        0.025
+      ],
+      "orientation_wxyz": [
+        0,
+        0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "keyed_up": [
+        0,
+        0,
+        1
+      ],
+      "visible_contact_count": 3,
+      "physical_compatibility": "unknown",
+      "electrical_constraints": null,
+      "validated_mating": false,
+      "insertion_animation_ready": false,
+      "accuracy": {
+        "inventory": "observed_and_documented",
+        "contacts": "observed_visual_topology",
+        "keying": "observed_not_manufacturer_fit",
+        "position": "photo_estimated",
+        "mechanical_dimensions": "photo_estimated",
+        "electrical_compatibility": "not_validated"
+      },
+      "evidence": [
+        {
+          "source_id": "rtds-hardware-manual",
+          "chapter": "13A \u2014 GTSOC V2",
+          "revision": "20240927",
+          "printed_pages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source_id": "official-copper-front"
+        }
+      ]
+    }
+  ]
+}

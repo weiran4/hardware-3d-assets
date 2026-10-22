@@ -1,0 +1,10 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "status": "PASS",
+  "scope": "Every annotation glyph triangle centroid and three inset-vertex rays along label normal",
+  "label_count": 23,
+  "sample_count": 5740,
+  "blocked": [],
+  "source/asset.blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "exports/asset.glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24"
+}

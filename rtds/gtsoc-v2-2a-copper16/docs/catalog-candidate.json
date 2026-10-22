@@ -1,0 +1,28 @@
+{
+  "status": "prepared_not_applied",
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "family": "GTSOC",
+  "hardware_version": "GTSOC V2",
+  "model_plate": "GTSOC-2A",
+  "appearance_variant": "official front with16copperRJ45SFPmodules; observed rearblue/whiteexterior",
+  "candidate_state": "source_grounded_visual_reference_with_secondary_gaps",
+  "asset_directory": "rtds/gtsoc-v2-2a-copper16",
+  "ports_manifest": "rtds/gtsoc-v2-2a-copper16/metadata/ports.json",
+  "unresolved": [
+    "rear white-feature cap-versus-exposed-sleeve status",
+    "exact rear adapter manufacturer and optical polish/polarity",
+    "copper module manufacturer part",
+    "certified USB connector dimensions",
+    "physical/electrical/optical compatibility",
+    "all enclosure dimensions",
+    "all connector dimensions and exact mating depths",
+    "side and underside construction",
+    "decorative fan mechanics"
+  ],
+  "readiness": {
+    "visual_asset": true,
+    "insertion_animation": false,
+    "mating_certified": false
+  },
+  "note": "Release owner must reconcile this distinct population with catalog schema; no shared catalog edited."
+}

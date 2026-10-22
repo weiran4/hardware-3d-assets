@@ -1,3 +1,4 @@
+import {auxiliaryPortContent} from './rtds-auxiliary-content.js';
 // Functional descriptions are source facts, separate from unvalidated model geometry.
 // PDF page numbers refer to the user-provided compilation; no manual/media is shipped.
 const source=(chapter,revision,pages)=>({chapter,revision,pages});
@@ -19,6 +20,7 @@ const ncContent={
 };
 export function portContent(metadata,port){
  if(!port||port.interactive===false)return null;
+ const auxiliary=auxiliaryPortContent(metadata,port);if(auxiliary)return auxiliary;
  if(metadata.asset_id==='novacor-2.0-2023'){const content=ncContent[port.group];if(!content)return null;const links=['gtio','aurora','irc','gtsync'].includes(port.group)?[{title:'Coherent · FTLF8519P3BNL 收发器规格',url:'https://www.coherent.com/networking/transceivers/datacom/FTLF8519P3BNL'}]:port.group==='gbh'?[{title:'RTDS · Global Bus Hub',url:'https://knowledge.rtds.com/hc/en-us/articles/360034815313-Global-Bus-Hub'}]:[];return{...content,links};}
  if(metadata.asset_id==='gtdi-v2-2.01'){
   if(port.group==='digital_input')return{purpose:'将外部设备的数字状态或控制脉冲输入 RTDS 仿真。',rows:[['连接对象','外部数字信号源；干接点使用方式需按手册配置。'],['通道配置','整卡 64 个输入通道，分为 8 个相互隔离的 BANK；16 个五位插头共 80 个端子位置。'],['逻辑电平','手册逻辑高为 3–50 V，逻辑低为 0–1.5 V；V2 输入电流限制为 3.5–7 mA。'],['本插头标识',port.contact_labels.join(' · ')],['端子插头','Phoenix Contact 1803604']],note:'V+(WET) 用于干接点湿润电源。外部信号源主动驱动输入时，不得向该组 V+(WET) 加电（手册警告）。',source:gtdi([404,406,407,414])};

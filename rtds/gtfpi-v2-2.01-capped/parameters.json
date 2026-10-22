@@ -1,0 +1,51 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "seed": 42,
+  "body_dimensions_m": [
+    0.104,
+    0.196,
+    0.0016
+  ],
+  "dimension_scope": "PCB, carrier and connector dimensions photo-estimated; not manufacturing CAD",
+  "triangle_budget": 60000,
+  "required_part_ids": [
+    "gtfpi-v2-2.01-capped.body",
+    "gtfpi-v2-2.01-capped.carrier"
+  ],
+  "required_anchor_ids": [
+    "gtfpi-v2-2.01-capped.hv",
+    "gtfpi-v2-2.01-capped.lv",
+    "gtfpi-v2-2.01-capped.power1",
+    "gtfpi-v2-2.01-capped.power2",
+    "gtfpi-v2-2.01-capped.hv5v",
+    "gtfpi-v2-2.01-capped.gt1",
+    "gtfpi-v2-2.01-capped.gt2",
+    "gtfpi-v2-2.01-capped.service_header",
+    "gtfpi-v2-2.01-capped.service_receptacle"
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 1400,
+    "samples": 48,
+    "view_transform": "Standard",
+    "exposure": 0,
+    "camera_direction": [
+      -1.25,
+      -1.5,
+      2.7
+    ],
+    "camera_margin": 1.16,
+    "light_position": [
+      -0.8,
+      -1.1,
+      1.8
+    ],
+    "light_energy": 40,
+    "light_size": 1,
+    "denoising": false,
+    "world_strength": 0.65,
+    "fill_energy": 20,
+    "outline_px": 0.5
+  }
+}

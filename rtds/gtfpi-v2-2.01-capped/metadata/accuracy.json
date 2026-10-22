@@ -1,0 +1,29 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "classification": "photo_matching_visual_variant_not_insertion_ready",
+  "not_manufacturing_cad": true,
+  "field_accuracy": {
+    "PCB identity": "observed2.01",
+    "ribbon_count": "observed50_and34",
+    "ribbon_key_direction": "observed_outer_right",
+    "power_contact_count": "observed4_plus4_plus2",
+    "green_mouth": "observed_two_lobe_inner_wall",
+    "optical_population": "observed_black_caps_on",
+    "detailed_dimensions": "photo_estimated",
+    "spatial_power_pinout": "unresolved_withheld",
+    "optical_under_cap_geometry": "unobserved_not_modelled",
+    "service_contact_geometry": "unresolved_not_modelled",
+    "decorative_electronics": "simplified",
+    "underside_carrier": "approximate"
+  },
+  "compatibility": {
+    "physical": "unknown",
+    "electrical": "not_validated",
+    "insertion_animation_ready": false
+  },
+  "needed_for_future_insertion": [
+    "uncapped perpendicular optical mouth view",
+    "unambiguously oriented power pin diagram"
+  ],
+  "source_media_included": false
+}

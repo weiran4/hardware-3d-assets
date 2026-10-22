@@ -1,0 +1,33 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "status": "PASS",
+  "errors": [],
+  "metadata_errors": [],
+  "sidecar_present": true,
+  "dimension_error_m": 1.4901161193847656e-08,
+  "axis_min_dot": 1.0,
+  "anchor_max_error_m": 0.0,
+  "missing_ids": [],
+  "duplicate_ids": [],
+  "parent_mismatches": [],
+  "material_mismatches": [],
+  "curve_mesh_present": true,
+  "unique_triangles": 10231,
+  "placed_triangles": 10231,
+  "exported_vertices": 16780,
+  "imported_object_count": 373,
+  "export_settings": {
+    "format": "GLB",
+    "export_yup": true,
+    "export_extras": true,
+    "export_apply": true,
+    "export_animations": false,
+    "outline_exported": false,
+    "background_exported": false
+  },
+  "limitations": [
+    "Freestyle contours, studio background and illumination are Blender presentation only",
+    "No electrical compatibility, simulation or animation clips claimed",
+    "Blender round trip is not certification of every external viewer"
+  ]
+}

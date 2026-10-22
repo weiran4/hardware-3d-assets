@@ -28,7 +28,7 @@ test('GTDI distinguishes 80 terminal positions and excludes four unresolved serv
 
 test('reference-only variants show useful facts, no stale model and no dead enabled 3D controls',async({page})=>{
  await rtdsLoaded(page);await page.locator('[data-variant="novacor-light"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');await expect(page.locator('#rtds-scene canvas')).toHaveCount(0);await expect(page.locator('#rtds-reference-placeholder')).toBeVisible();await expect(page.locator('#rtds-summary')).toContainText('D-sub');await expect(page.locator('#rtds-front')).toBeDisabled();await expect(page.locator('#rtds-tour')).toBeDisabled();await expect(page.locator('#rtds-source-list')).toContainText('私有参考');await screenshot(page,'reference-only');
- await page.locator('#rtds-filter').selectOption('modeled');await expect(page.locator('#rtds-catalog button')).toHaveCount(5);await page.locator('[data-variant="novacor-2.0"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);expect(failures).toEqual([]);
+ await page.locator('#rtds-filter').selectOption('modeled');await expect(page.locator('#rtds-catalog button')).toHaveCount(7);await page.locator('[data-variant="novacor-2.0"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);expect(failures).toEqual([]);
 });
 
 test('320px and touch mobile keep inspection controls and one selected label within viewport',async({page})=>{

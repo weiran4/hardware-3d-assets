@@ -45,14 +45,14 @@ Three.js is MIT-licensed; see `public/third-party-notices.txt`.
 
 Use the **RTDS 素材库** mode, or link directly to `#rtds`. The original generic lesson remains the default and its connection state survives mode switches.
 
-- 18 distinct version entries, with **five original 3D visual candidates**: NovaCor 2.0 (2023 exterior), GTDI V2 PCB 2.01, GTDO V2 PCB 2.00, GTAI V2 PCB 2.31 and GTAO V2 PCB 2.20. Remaining entries are reference-only, not completed models.
+- 18 distinct version entries, with **seven original 3D visual candidates**: NovaCor 2.0 (2023 exterior), GTDI V2 PCB 2.01, GTDO V2 PCB 2.00, GTAI V2 PCB 2.31, GTAO V2 PCB 2.20, GTFPI V2 PCB 2.01 (capped GT ports), and GTSOC V2 / Model GTSOC-2A (16 copper RJ45 SFP modules). Remaining entries are reference-only, not completed models.
 - The RTDS viewer uses each asset's real `sid` and `ports.json`; it never uses generic OUT/CH1 identities or wiring compatibility rules.
 - Front/rear/top bookmarks, one-group-at-a-time inspection, exact-ID detail, one high-contrast orange projected rectangle with a dark understroke and thick corner brackets around the selected group (or just the selected port), isolation, and a play/pause group tour. The rectangle follows orbit, zoom and resize; it hides for rear-facing/offscreen targets and clears on reset/version change. The tour is an inspection aid, not LED behaviour, firmware timing, real device control, electrical simulation or certification.
 - GTDI's 16 installed five-position plugs represent 80 terminal positions / 64 input channels. Four unresolved service regions remain informational only; they are excluded from selection and automatic tours. Any unverified pin assignment stays unknown.
 - Metadata keeps source facts separate from photo-estimated placement/dimensions. Model availability never implies approved mating or electrical compatibility. Manufacturer images and the private manual are not copied into the website.
 - RTDS renders only when the camera or selection changes, caps DPR at 1.5, and pauses when inactive. The existing generic renderer is paused while its mode is hidden.
 
-`src/rtds-catalog.js` contains condensed authored facts and citations. `src/rtds-models.js` registers the five reviewed integration candidates; `public/assets/rtds/` contains public GLBs and metadata only. Inspect these assets before publication for embedded source paths or images. Do not copy research folders, reference screenshots, `.blend` files or the private manual into `public/`.
+`src/rtds-catalog.js` contains condensed authored facts and citations. `src/rtds-models.js` registers the seven exact integration candidates; `public/assets/rtds/` contains public GLBs and metadata only. Inspect these assets before publication for embedded source paths or images. Do not copy research folders, reference screenshots, `.blend` files or the private manual into `public/`.
 
 `tests/browser/rtds.spec.js` adds real-model inspection, mobile width, rear-surface camera, tour scheduling, reference-only fallback, mode switching, failed-load recovery and stale async-load coverage. CI screenshot review is still required for visual acceptance.
 
@@ -80,8 +80,20 @@ The gallery now includes GTDO V2 PCB 2.00, GTAI V2 PCB 2.31 and GTAO V2 PCB 2.20
 
 At desktop widths of 1024px and above, scrolling below the main model moves the **same** viewer element/canvas into a bottom-right mini-window. A same-height source slot preserves the layout; scrolling back returns it. No second Three.js scene or WebGL context is created. The mini-window supports orbit/zoom, projected highlights, keyboard view controls, minimize, close and return-to-main. A stable right reading gutter is reserved whenever the desktop RTDS model is ready, not toggled during docking/close/minimize, so controls and details neither sit underneath the mini-viewer nor reflow when it opens or closes. It is disabled on mobile, reference-only/error/loading states and the generic mode; event listeners/animation scheduling are disposed together.
 
-The release suite contains 80 unit tests and 45 browser scenarios. Real browser screenshot acceptance is performed by the existing GitHub Actions verify → deploy → smoke-live workflow, not by a local/browser-policy bypass.
+The release suite contains 91 unit tests and 53 browser scenarios. Real browser screenshot acceptance is performed by the existing GitHub Actions verify → deploy → smoke-live workflow, not by a local/browser-policy bypass.
 
 ### Floating card identity
 
 GTDI / GTDO / GTAI / GTAO carry a screen-space DI / DO / AI / AO annotation anchored to an existing decorative component. The visible “视觉标注” caption distinguishes this from physical silkscreen. Fixed pixel text follows orbit/zoom/resize and the reused desktop floating viewer. Collision checks protect every projected interface; the leader is masked over those regions, and all interface inspection hides the badge until reset. No GLB, materials, pin mappings or electrical claims change.
+
+
+### Auxiliary interface batch
+
+The existing `gtfpi-v2` and `gtsoc-v2` catalog placeholders are upgraded in place: stable IDs, 18 entries, 7 modeled assets, no duplicate V2 rows. All previous five GLB/metadata pairs remain byte-identical. The new GLBs are unchanged copies of their independently audited source exports; source originals stay in their original asset folders.
+
+- **GTFPI PCB 2.01, capped GT ports:** 94 exposed electrical pins = 50 HV + 34 LV + 8 board-power + 2 auxiliary. HV and LV connect separate panels; the board is not itself the HV contact panel. The two GT assemblies each represent one duplex link and remain capped. Both four-position power pin orders, the green open two-pin header's spatial polarity, complete ribbon pin mappings, and covered optical geometry remain unverified. Two unresolved service regions stay noninteractive.
+- **GTSOC V2, nameplate Model GTSOC-2A, copper16:** 151 electrical contacts = 16 × 8 front RJ45 + 3 × 4 USB-B service + 8 rear ETH + 3 AC. The 4 rear duplex optical units have 8 white exterior features, not asserted electrical contacts; cap-versus-sleeve remains unresolved. Copper SV population is not universal Aurora/fibre compatibility. PS, PL and JTAG have distinct source-documented service roles; rear ETH is MMC workstation monitoring. Application capacity depends on firmware, modules and licensing. AC input, maximum consumption and fuse ratings are stated separately.
+
+The common 03 panel opens automatically, merges genuinely repeated ports, and retains HV/LV, upstream/downstream, service-purpose and rear-port-1 distinctions. Important wiring uncertainties remain in the main facts; estimated model geometry remains in collapsed notes. The existing same-canvas desktop PiP, four card identity badges, orange highlights, conceptual GTDI flow, and generic lesson remain unchanged.
+
+`tests/rtds-auxiliary.test.js` checks exact public metadata/GLB agreement, counts, identities, grouping and functional limits. `tests/browser/rtds-auxiliary.spec.js` adds desktop/mobile facts, highlights, same-canvas PiP, and superseded-load coverage for both models. Collection or Node success is not a claim that browser execution passed; acceptance still requires the existing official verify → deploy → smoke-live workflow and screenshot review.

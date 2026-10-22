@@ -11,7 +11,7 @@ export function galleryTransition(state,action){
  default:return state;
  }
 }
-const names={analogue:'前部 · 模拟输出',ground:'前部 · 接地孔',gtio:'GT 1–20 · I/O',aurora:'GT 21–24 · Aurora',irc:'IRC 1–6 · 机箱互联',gtsync:'GTSYNC · 同步',udp:'ETH · UDP',wif:'WIF · 工作站网络',gbh:'GBH · 光连接',front_led_power:'前面板 LED 供电',ac_power:'交流电源入口',digital_input:'数字输入端子',digital_output:'数字输出端子',analogue_input:'差分模拟输入',analog_output:'模拟输出端子',power:'供电连接',optical:'光传输接口',service_unresolved:'辅助 / 服务区域 · 待核对'};
+const names={analogue:'前部 · 模拟输出',ground:'前部 · 接地孔',gtio:'GT 1–20 · I/O',aurora:'GT 21–24 · Aurora',irc:'IRC 1–6 · 机箱互联',gtsync:'GTSYNC · 同步',udp:'ETH · UDP',wif:'WIF · 工作站网络',gbh:'GBH · 光连接',front_led_power:'前面板 LED 供电',ac_power:'交流电源入口',digital_input:'数字输入端子',digital_output:'数字输出端子',analogue_input:'差分模拟输入',analog_output:'模拟输出端子',power:'供电连接',optical:'光传输接口',service_unresolved:'辅助 / 服务区域 · 待核对',ribbon_header:'HV / LV · 外接面板排针',aux_power:'HV 面板 · 辅助 5 V',front_sfp:'前部 16 铜 SFP · SV 配置',service:'监视 / 测试 / 编程服务',rear_optical:'后部 4 个双工光链路',rear_eth:'后部 ETH · MMC 监测'};
 export function portGroups(metadata){
  const groups=new Map();
  for(const p of metadata?.ports||[]){if(!groups.has(p.group))groups.set(p.group,{id:p.group,label:names[p.group]||p.group,ports:[],interactive:false});const group=groups.get(p.group);group.ports.push(p);group.interactive ||= p.interactive!==false;}

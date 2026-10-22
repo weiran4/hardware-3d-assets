@@ -10,9 +10,11 @@ Rotate the original generic models, inspect ports, and try a conceptual **OUT �
 
 [Browse the RTDS library](rtds/) · [18-entry version-specific source catalog](rtds/catalog/) · [Interactive review page](https://weiran4.github.io/hardware-3d-assets/#rtds)
 
-Five original editable visual candidates are included: **NovaCor 2.0 (2023 exterior)**, **GTDI V2 (PCB 2.01)**, **GTDO V2 (PCB 2.00)**, **GTAI V2 (PCB 2.31)**, and **GTAO V2 (PCB 2.20)**. Each includes Blender/GLB files, interface metadata, diagnostic previews, regeneration sources and QA. Catalog entries without a model are explicitly not modeled; catalog evidence is not a geometry release or compatibility certification.
+Seven original editable visual candidates are included: **NovaCor 2.0 (2023 exterior)**, **GTDI V2 (PCB 2.01)**, **GTDO V2 (PCB 2.00)**, **GTAI V2 (PCB 2.31)**, **GTAO V2 (PCB 2.20)**, **GTFPI V2 (PCB 2.01, capped optical ports)**, and **GTSOC V2 (Model GTSOC-2A, 16 copper RJ45 modules)**. Each includes Blender/GLB files, interface metadata, diagnostic previews, regeneration sources and QA. Catalog entries without a model are explicitly not modeled; catalog evidence is not a geometry release or compatibility certification.
 
 Key visible ports, contacts, numbering and key orientation receive dedicated checks. Remaining mechanical/mating uncertainties are stated per model. The gallery supports inspection and explicitly conceptual signal visualization only: it does not validate or instruct real-device wiring. Manufacturer PDFs and photographs are not distributed. See [first-batch independent review](rtds/qa/independent-review.json), [GTIO batch independent review](rtds/qa/batch-2-independent-review.json), and [publication metadata receipt](rtds/qa/batch-2-publication-metadata.json).
+
+The two auxiliary models upgrade the existing `gtfpi-v2` and `gtsoc-v2` catalog entries in place: the catalog remains at 18 entries, with seven modeled and 11 reference-only variants. See the [GTFPI interface and QA notes](rtds/gtfpi-v2-2.01-capped/), [GTSOC interface and QA notes](rtds/gtsoc-v2-2a-copper16/), and [auxiliary preview metadata publication receipt](rtds/qa/batch-3-publication-metadata.json). Capped or unidentified interfaces remain explicitly limited; the gallery does not enable connector insertion or electrical compatibility validation.
 
 ## Generic hardware · Phase 1
 
@@ -61,7 +63,7 @@ Final illustrations use 1024² PNG, Standard color transform, 128 CPU samples. T
 This is the public source repository, published with the owner's authorization.
 
 - `generic/`: original fictional, reusable hardware assets; four editable masters, four GLBs, and 32 diagnostic/illustration views.
-- `rtds/`: five version-pinned visual model candidates and an 18-entry source catalog; unknown mechanical/electrical properties remain explicit.
+- `rtds/`: seven version-pinned visual model candidates and an 18-entry source catalog; unknown mechanical/electrical properties remain explicit.
 - `deliverables/`: overview images and a SHA-256 manifest, without duplicate ZIP archives.
 - `tools/`, `tests/`, `skills/`: procedural sources, tests, and the working Blender skill.
 - `docs/`, `qa/`: historical design/plan and measured review evidence. Historical documents describe their original pre-publication scope, not the current repository status; see `docs/README.md`.

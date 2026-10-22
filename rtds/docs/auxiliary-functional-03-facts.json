@@ -1,0 +1,560 @@
+{
+  "schema_version": "rtds.functional03_facts.v1",
+  "status": "source_reviewed_visual_model_reference",
+  "audience": "03 product-understanding page and port selection; original explanatory text",
+  "common_contract": {
+    "unit": "m",
+    "no_hardware_control": true,
+    "connection_validation_enabled": false,
+    "physical_compatibility": "unknown",
+    "insertion_animation_ready": false,
+    "limits_must_be_in_primary_connection_facts": true
+  },
+  "assets": [
+    {
+      "asset_id": "gtfpi-v2-2.01-capped",
+      "title": "GTFPI V2 · PCB 2.01 · GT光口带防尘盖",
+      "summary_zh": "把 GT 数据信号接到独立的前面板：一块低压数字输入/输出面板和一块高压输出面板。它是接口桥接卡，不是高压接点面板本体。",
+      "primary_connection_facts": [
+        {
+          "id": "capped-gt",
+          "text_zh": "GT1/GT2 按照片保留黑色防尘盖；盖下结构未建模，当前不可用于无盖插拔演示。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            },
+            {
+              "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+            }
+          ]
+        },
+        {
+          "id": "power-no-pinout",
+          "text_zh": "两只白色四接点电源口对应 +24 V、GND、GND、NC 功能集合，但图示视向尚未对齐；不显示位置针脚映射，也不启用电源接线判断。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                3,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "panel-not-pin-rating",
+          "text_zh": "HV/LV 指外接面板用途；HV 面板的额定电压不能套用到板上排针。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "id": "supply",
+          "text_zh": "板卡使用 +24 V 供电，最大功耗 5 W；另设两接点接口为 HV 面板提供 +5 V。两接点的空间极性仍未确认。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                3,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lv-capacity",
+          "text_zh": "连接一块 LV 面板，可提供最多16路数字输入及16路数字输出；这些逻辑路数不等于排针接点数。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                1,
+                2,
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "card-id",
+          "text_zh": "七段显示用于板卡枚举/编号，不是输入输出通道。八位DIP和八个状态LED为独立板上部件。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                4,
+                5
+              ]
+            }
+          ]
+        }
+      ],
+      "port_groups": [
+        {
+          "id": "gt-link",
+          "label_zh": "GT上下游链路",
+          "port_ids": [
+            "gtfpi-v2-2.01-capped.gt1",
+            "gtfpi-v2-2.01-capped.gt2"
+          ],
+          "roles": {
+            "gt1": "上游：NovaCor或前一块板卡",
+            "gt2": "下游：后续板卡"
+          },
+          "primary_limit_zh": "当前带盖；不提供盖下插接几何或兼容性判定。",
+          "insertion_animation_ready": false,
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "panel-ribbons",
+          "label_zh": "外接面板排针",
+          "port_ids": [
+            "gtfpi-v2-2.01-capped.hv",
+            "gtfpi-v2-2.01-capped.lv"
+          ],
+          "roles": {
+            "hv": "HV面板接口：2×25＝50个可见针",
+            "lv": "LV面板接口：2×17＝34个可见针"
+          },
+          "primary_limit_zh": "双排针中央键槽朝板外侧；仅确认LV底端1外/2内标记，不推导HV编号或完整电气针脚。",
+          "evidence": [
+            {
+              "url": "https://knowledge.rtds.com/hc/article_attachments/360100284873"
+            },
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "supply-24v",
+          "label_zh": "24 V供电/跳接",
+          "port_ids": [
+            "gtfpi-v2-2.01-capped.power1",
+            "gtfpi-v2-2.01-capped.power2"
+          ],
+          "primary_limit_zh": "仅展示4接点外形；空间针脚顺序未验证。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                3,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "supply-hv5v",
+          "label_zh": "HV面板辅助5 V",
+          "port_ids": [
+            "gtfpi-v2-2.01-capped.hv5v"
+          ],
+          "primary_limit_zh": "开放式2针、内壁双弧口；极性位置及精确配对零件未确认。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "service",
+          "label_zh": "辅助服务接口（未验证）",
+          "port_ids": [
+            "gtfpi-v2-2.01-capped.service_header",
+            "gtfpi-v2-2.01-capped.service_receptacle"
+          ],
+          "primary_limit_zh": "仅按可见轮廓保留，不猜USB子型、接点数或电气用途，不可交互。",
+          "interactive": false,
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "10 GTFPI V2",
+              "revision": "20240924",
+              "printed_pages": [
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "gtsoc-v2-2a-copper16",
+      "title": "GTSOC V2 · GTSOC-2A · 16铜SFP前面板",
+      "summary_zh": "在NovaCor实时仿真旁并行执行专用计算的辅助平台。用途由固件、许可和插入模块共同决定；本模型固定为官网照片的16个铜RJ45 SFP配置。",
+      "primary_connection_facts": [
+        {
+          "id": "copper-sv-population",
+          "text_zh": "本资产是16铜RJ45 SFP配置，手册将铜SFP用于SV通信。机箱支持Aurora等应用，不表示当前铜插入模块自动适用于光纤/Aurora连接。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                8
+              ]
+            },
+            {
+              "type": "official_brochure",
+              "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+              "printed_pages": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-is-service",
+          "text_zh": "MONITOR PS、MONITOR PL和PROG JTAG是监视/测试/编程服务口，不作为运行时信号I/O或以太网口。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear-visible-only",
+          "text_zh": "后部4个蓝色双工接口按照片保留8个白色圆形可见面；无法确认其为盖面还是裸套筒。只保证观察到的外观，不提供无盖内部插接几何。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "blackbox-rear",
+          "text_zh": "当前黑盒连接说明采用后部4口：现行官方宣传册与后部连接图一致。不沿用与其冲突的“前部1–4”段落，也不把前口编号当ARM核号。",
+          "evidence": [
+            {
+              "type": "official_brochure",
+              "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+              "printed_pages": [
+                1,
+                2
+              ]
+            },
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                2,
+                3,
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "id": "sv-streams",
+          "text_zh": "SV应用的主时间步可同时发布和订阅最多16条独立流；子步有不同限制，不能直接套用16条双向流。",
+          "evidence": [
+            {
+              "type": "official_brochure",
+              "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+              "printed_pages": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "firmware-applications",
+          "text_zh": "黑盒控制、MMC、SV、Aurora Mux、线路/电缆模型及GPES是不同应用。单元附带1个ARM核许可，可许可至最多4核；能力不表示所有应用能同时启用。",
+          "evidence": [
+            {
+              "type": "official_brochure",
+              "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+              "printed_pages": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power",
+          "text_zh": "交流输入100–240 V、50/60 Hz；手册给出最大功耗32 W。3 A/250 V是保险丝规格，不是设备功耗。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                2,
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "port_groups": [
+        {
+          "id": "front-copper-sv",
+          "label_zh": "前部16铜SFP（SV配置）",
+          "port_ids": [
+            "gtsoc-v2-2a-copper16.front1",
+            "gtsoc-v2-2a-copper16.front2",
+            "gtsoc-v2-2a-copper16.front3",
+            "gtsoc-v2-2a-copper16.front4",
+            "gtsoc-v2-2a-copper16.front5",
+            "gtsoc-v2-2a-copper16.front6",
+            "gtsoc-v2-2a-copper16.front7",
+            "gtsoc-v2-2a-copper16.front8",
+            "gtsoc-v2-2a-copper16.front9",
+            "gtsoc-v2-2a-copper16.front10",
+            "gtsoc-v2-2a-copper16.front11",
+            "gtsoc-v2-2a-copper16.front12",
+            "gtsoc-v2-2a-copper16.front13",
+            "gtsoc-v2-2a-copper16.front14",
+            "gtsoc-v2-2a-copper16.front15",
+            "gtsoc-v2-2a-copper16.front16"
+          ],
+          "order": {
+            "left_upper": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "left_lower": [
+              2,
+              4,
+              6,
+              8
+            ],
+            "right_upper": [
+              9,
+              11,
+              13,
+              15
+            ],
+            "right_lower": [
+              10,
+              12,
+              14,
+              16
+            ]
+          },
+          "primary_limit_zh": "每口8触点；上排键朝上、下排朝下。所装模块为铜SV配置，不作为通用光口/Aurora配对依据。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                8
+              ]
+            },
+            {
+              "url": "https://knowledge.rtds.com/hc/article_attachments/19752419176215"
+            }
+          ]
+        },
+        {
+          "id": "service",
+          "label_zh": "监视与编程服务",
+          "port_ids": [
+            "gtsoc-v2-2a-copper16.monitor_ps",
+            "gtsoc-v2-2a-copper16.monitor_pl",
+            "gtsoc-v2-2a-copper16.prog_jtag"
+          ],
+          "roles": {
+            "monitor_ps": "应用/调试UART监视",
+            "monitor_pl": "RTDS硬件测试监视",
+            "prog_jtag": "编程"
+          },
+          "primary_limit_zh": "非运行时信号I/O，不当作普通Ethernet连接。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear-novacor-links",
+          "label_zh": "后部4个双工光链路",
+          "port_ids": [
+            "gtsoc-v2-2a-copper16.rear1",
+            "gtsoc-v2-2a-copper16.rear2",
+            "gtsoc-v2-2a-copper16.rear3",
+            "gtsoc-v2-2a-copper16.rear4"
+          ],
+          "order": {
+            "upper": [
+              1,
+              3
+            ],
+            "lower": [
+              2,
+              4
+            ]
+          },
+          "primary_limit_zh": "后部1口用于固件更新；其余应用路由取决于固件。白圆面内部状态不确定，禁止基于此模型进行无盖插拔教学。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                2,
+                3
+              ]
+            },
+            {
+              "type": "official_brochure",
+              "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+              "printed_pages": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear-workstation",
+          "label_zh": "后部ETH监测",
+          "port_ids": [
+            "gtsoc-v2-2a-copper16.eth"
+          ],
+          "primary_limit_zh": "用于完整MMC子模块监测到工作站，不当作第二种通用NovaCor GT链路。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ac-supply",
+          "label_zh": "交流电源入口",
+          "port_ids": [
+            "gtsoc-v2-2a-copper16.ac"
+          ],
+          "primary_limit_zh": "三片式、带开关/保险丝的可见入口；不提供电气安全或配线验证。",
+          "evidence": [
+            {
+              "type": "manual",
+              "title": "RTDS Hardware Manual",
+              "chapter": "13A GTSOC V2",
+              "revision": "20240927",
+              "printed_pages": [
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

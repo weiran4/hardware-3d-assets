@@ -1,0 +1,59 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "status": "PASS",
+  "geometry_revision": "r04",
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e",
+  "review_scope": "Original visible exterior and source-supported topology only, not mating/electrical qualification",
+  "views": {
+    "iso": {
+      "passed": true,
+      "note": "Front16 copper mouths, opposite row keys, service cluster and rack outline visible"
+    },
+    "neutral": {
+      "passed": true,
+      "note": "Whole assembly intact and front labels legible"
+    },
+    "wireframe": {
+      "passed": true,
+      "note": "Darker diagnostic face and thicker wire reveal topology without printed-glyph spikes"
+    },
+    "front": {
+      "passed": true,
+      "note": "Exact odd upper/even lower numbering in two groups; upper contacts below and lower contacts above"
+    },
+    "rear": {
+      "passed": true,
+      "note": "ETH left of4 blue duplex ports;1/3 upper and2/4 lower; AC at photo right"
+    },
+    "left": {
+      "passed": true,
+      "note": "Simplified unreferenced side and connector projection shown without extra invented vents"
+    },
+    "right": {
+      "passed": true,
+      "note": "Simplified unreferenced side and connector projection shown without extra invented vents"
+    },
+    "top": {
+      "passed": true,
+      "note": "Estimated enclosure envelope and complete front/rear extents visible"
+    },
+    "copper-closeup": {
+      "passed": true,
+      "note": "All16 complete mouths with128 contacts, opposing key recesses and unobstructed lower key openings"
+    },
+    "rear-closeup": {
+      "passed": true,
+      "note": "ETH8 contacts and8 white face features visible; upper/lower keys opposed; no asserted uncovered bore"
+    },
+    "service-closeup": {
+      "passed": true,
+      "note": "Three4-contact service mouths, PWR and RST are clear; printed labels unoccluded"
+    }
+  },
+  "remaining_unknowns": [
+    "Rear white face cap-versus-sleeve state",
+    "All detailed dimensions and chassis side/bottom construction",
+    "Exact part numbers, mating depth and electrical compatibility"
+  ]
+}

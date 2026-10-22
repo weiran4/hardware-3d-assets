@@ -2,7 +2,7 @@
 
 **18 separately identified variants; source inventory, not a connector-accuracy certificate.**
 
-This catalog supports original educational 3D assets. NovaCor 2.0 r05 and GTDI V2 / PCB 2.01 now have independently reviewed **core visual candidates**; this does not close their remaining mechanical/contact-detail gates. It keeps channel count, physical connector count, contact count, layout, keying, dimensions and compatibility separate. A familiar connector silhouette is never enough to enable a validated connection.
+This catalog supports original educational 3D assets. The catalog retains 18 stable identities and seven **original visual candidates**: NovaCor 2.0, GTDI/GTDO/GTAI/GTAO V2, GTFPI PCB 2.01 with capped GT ports, and GTSOC V2 Model GTSOC-2A with 16 copper front SFP modules; this does not close their remaining mechanical/contact-detail gates. It keeps channel count, physical connector count, contact count, layout, keying, dimensions and compatibility separate. A familiar connector silhouette is never enough to enable a validated connection.
 
 ## Files
 
@@ -41,7 +41,7 @@ Refer to the manifest for the exact official links and manual page locators behi
 ## Contradictions and unknowns retained
 
 - **NovaCor Light dimensions:** the brochure gives 483 × 522 × 178 mm. Manual PDF p.107 prints W × L × H as 20 × 19 × 7 inches (50.8 × 48.3 × 17.8 cm). This catalog preserves the disagreement rather than silently swapping axes or choosing a depth.
-- **GTSOC V2 role wording:** PDF p.529 assigns Blackbox use to rear ports 1–4, while p.531 refers to front ports in that discussion. No automatic route is derived from the conflict.
+- **GTSOC V2 role wording:** the manual rear-link figure and current official brochure agree on rear ports 1–4 for blackbox use. The conflicting front-port sentence in chapter 13A printed p.4 remains recorded but is not used as a current mapping. No automatic wiring or compatibility rule is derived.
 - **GTSOC V2 front population:** the public reference photo has copper RJ45 SFP modules. Sixteen SFP positions do not mean sixteen permanently fixed LC receptacles.
 - **GTNETx2:** four visible metal assemblies are not four Ethernet ports; the simulator-side and LAN-side roles are distinct.
 - **Legacy records:** full original GTNET, GTAI V1 and GTFPI V1 chapters were not found in the inspected hardware manual. V2 geometry is not a substitute.
@@ -63,3 +63,13 @@ python3 -m unittest discover -s rtds/catalog -p 'test_catalog*.py' -v
 ```
 
 The schema test uses the already-available `jsonschema` package. No installation or network call is required in the verified environment. The checks include structural rejection of private file-identity fields; regression tests use no real private fingerprints.
+
+
+## Auxiliary visual candidates
+
+The existing `gtfpi-v2` and `gtsoc-v2` placeholders are upgraded in place; no duplicate versions or aliases are introduced. Exact original masters, exports and source-local verification records reside in `../gtfpi-v2-2.01-capped/` and `../gtsoc-v2-2a-copper16/`.
+
+- GTFPI has 94 exposed electrical pins: 50 HV ribbon, 34 LV ribbon, 8 board-power and 2 auxiliary. It bridges separate LV/HV panels, not high-voltage contacts on the PCB itself. The two capped GT assemblies each form one duplex link. Power spatial order, auxiliary polarity, complete ribbon pin assignments, service interiors and uncapped optical geometry remain unresolved.
+- GTSOC has 151 electrical contacts: 16 × 8 copper front, 3 × 4 USB-B service, 8 rear ETH and 3 AC. Four rear duplex optical units have 8 observed white faces, not asserted electrical contacts; cap-versus-sleeve is unknown. Copper SV population, documented service purposes, rear MMC monitoring, and application firmware/module/licensing conditions remain separate.
+
+These are visual candidates, not insertion-ready or electrically qualified connections. The accurate-connector release gate stays false, and every unresolved boundary remains explicit. Public functional summaries are in `../docs/auxiliary-functional-03-facts.json`; source media and private source-container identity are not included.

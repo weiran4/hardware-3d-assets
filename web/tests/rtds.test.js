@@ -47,7 +47,7 @@ test('camera envelope includes diagonal projection instead of only largest axis'
 });
 
 test('public RTDS GLBs retain all source identities, no images/private paths and unknown mating',async()=>{
- const {readFileSync}=await import('node:fs');const {publishedModels}=await import('../src/rtds-models.js');assert.equal(Object.keys(publishedModels).length,5);
+ const {readFileSync}=await import('node:fs');const {publishedModels}=await import('../src/rtds-models.js');assert.equal(Object.keys(publishedModels).length,7);
  for(const info of Object.values(publishedModels)){
   const file=readFileSync('public/'+info.glb.replace('./',''));const data=JSON.parse(readFileSync('public/'+info.metadata.replace('./',''),'utf8'));const doc=JSON.parse(file.toString('utf8',20,20+file.readUInt32LE(12)));
   assert.equal(file.toString('ascii',0,4),'glTF');assert.equal(doc.images?.length??0,0);assert.ok(doc.meshes.length>100);
@@ -95,6 +95,6 @@ test('group selection opens its first verified port details without narrowing th
 });
 
 test('public manual citation retains only a generic title and chapter/page references',()=>{
- assert.equal(sources['MANUAL-605'].title,'RTDS Hardware Manual');
- for(const key of Object.keys(sources['MANUAL-605']))assert.doesNotMatch(key,/sha|hash|filename|page_count|modification/i);
+ assert.equal(sources['MANUAL'].title,'RTDS Hardware Manual');
+ for(const key of Object.keys(sources['MANUAL']))assert.doesNotMatch(key,/sha|hash|filename|page_count|modification/i);
 });

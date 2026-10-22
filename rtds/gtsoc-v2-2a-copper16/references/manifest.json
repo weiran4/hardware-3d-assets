@@ -1,0 +1,59 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "source_media_included": false,
+  "sources": [
+    {
+      "id": "official-copper-front",
+      "title": "GTSOC V2 official copper-populated front photograph",
+      "url": "https://knowledge.rtds.com/hc/article_attachments/19752419176215",
+      "used_for": [
+        "front16copper appearance",
+        "odd upper/even lower numbering",
+        "upper/lower opposite keys",
+        "PWR/RST and service layout"
+      ]
+    },
+    {
+      "id": "official-gtsoc-article",
+      "title": "GTSOC V2: Multi-Function Auxiliary Simulation Hardware",
+      "url": "https://knowledge.rtds.com/hc/en-us/articles/7817390306199-GTSOC-V2-Multi-Function-Auxiliary-Simulation-Hardware",
+      "used_for": [
+        "application-dependent capabilities",
+        "SV copper/fibre population context"
+      ]
+    },
+    {
+      "id": "official-gtsoc-brochure",
+      "title": "GTSOC V2 auxiliary simulation hardware brochure",
+      "url": "https://knowledge.rtds.com/hc/en-us/article_attachments/30065880593303",
+      "printed_pages": [
+        1,
+        2
+      ],
+      "used_for": [
+        "rear4black-box connections",
+        "firmware/transceiver-dependent applications"
+      ]
+    },
+    {
+      "id": "rtds-hardware-manual",
+      "title": "RTDS Hardware Manual",
+      "chapter": "13A \u2014 GTSOC V2",
+      "revision": "20240927",
+      "printed_pages": [
+        1,
+        2,
+        3,
+        8
+      ],
+      "used_for": [
+        "rear observed exterior and GTSOC-2A model plate",
+        "service functions",
+        "rear port grouping",
+        "AC inlet and power context",
+        "copper-SFP population in SV configuration"
+      ],
+      "redistribution": "excluded"
+    }
+  ]
+}

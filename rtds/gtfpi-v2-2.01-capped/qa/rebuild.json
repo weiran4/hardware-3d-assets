@@ -1,0 +1,12 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "status": "PASS",
+  "errors": [],
+  "geometry_digest": "6b7cfee9c3c8f671ab26dbe5312e75f555ea6d61f6caf8d4dc8ae9b4ef17d4b7",
+  "semantic_digest": "c6b570ac5d4a54ab47e62c1366cc5726523155da40d63c1f931d7cd3e99d21c5",
+  "material_digest": "12c1b665657d03aad998bfc45598a988d0c5c8679d2ea2dbbefac2a9da831d32",
+  "placed_triangles": 10231,
+  "master_replaced": false,
+  "source_blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "source_glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24"
+}

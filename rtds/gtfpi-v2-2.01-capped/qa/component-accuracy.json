@@ -1,0 +1,43 @@
+{
+  "asset_id": "gtfpi-v2-2.01-capped",
+  "status": "PASS",
+  "geometry_revision": "r04",
+  "source_blend_sha256": "ebe2a28d08c33522589482732a7158e965fc0f5a63c3817bc95866df671264aa",
+  "source_glb_sha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24",
+  "qa_scope": "Original visible exterior and connector topology; no mating/electrical certification",
+  "test_first_cycles": [
+    "Manifest absent:6 failures then6 passes",
+    "Geometry absent:expected failures then12 native and12 actualGLB passes",
+    "Whole-component graph and own-base test detected floating pin ends, repaired without moving tips or anchors",
+    "Green two-lobe cavity test failed rectangular mouth then passed actual scalloped mesh",
+    "Projected-header closeup bounds rejected cropped LV before corrected camera"
+  ],
+  "native_geometry_tests_passed": 12,
+  "actual_glb_geometry_tests_passed": 12,
+  "manifest_tests_passed": 6,
+  "package_tests_passed": 5,
+  "independent_checks_each_native_and_glb": 299,
+  "mutation_probes_each_native_and_glb": 5,
+  "exposed_contact_count": 94,
+  "annotation_count": 23,
+  "glyph_visibility_samples_each_native_and_glb": 5740,
+  "placed_triangles": 10231,
+  "unique_triangles": 10231,
+  "exported_vertices": 16780,
+  "anchor_max_error_m": 0.0,
+  "missing_resources": [],
+  "existing_regression_suites": {
+    "generic_contract": 13,
+    "rtds_prior_manifests": 10,
+    "catalog": 13
+  },
+  "known_limits": [
+    "All dimensions estimated",
+    "Power pinout spatial order withheld pending aligned diagram viewpoint",
+    "Two GT caps intentionally conceal unmodelled optical interior",
+    "Service details unresolved and non-interactive",
+    "Small components and underside simplified",
+    "No insertion animation or real-device wiring validation"
+  ],
+  "source_rebuild_equivalence": "PASS: complete geometry, semantic and material digests; frozen master not replaced"
+}

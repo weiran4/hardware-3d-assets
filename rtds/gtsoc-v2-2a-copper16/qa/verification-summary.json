@@ -1,0 +1,56 @@
+{
+  "asset_id": "gtsoc-v2-2a-copper16",
+  "status": "PASS",
+  "scope": "source-grounded visual geometry only, not certified fit/connection",
+  "native_physical_tests": 11,
+  "actual_glb_physical_tests": 11,
+  "manifest_tests": 2,
+  "generic_regression_tests": 13,
+  "existing_rtds_manifest_tests": 10,
+  "catalog_regression_tests": 13,
+  "contact_inventory": {
+    "front_copper": 128,
+    "three_usb_service_ports": 12,
+    "rear_eth": 8,
+    "ac_blades": 3,
+    "total_asserted_metal_contacts": 151,
+    "rear_optical_observed_white_faces": 8,
+    "rear_optical_asserted_contacts": 0
+  },
+  "annotation_count": 36,
+  "exact_glyph_triangle_ray_samples_per_representation": 3888,
+  "mutation_tests": {
+    "native": 6,
+    "actual_glb": 6,
+    "all_detected": true,
+    "mutations_saved": false
+  },
+  "physical_checks": [
+    "source-view front numbering and rear1/3 upper2/4 lower",
+    "physical latch/key opposition",
+    "contact and four-quadrant white-face clearance",
+    "every key-slot outward ray clear",
+    "real aperture not blocked by chassis",
+    "all151 contact base points inside solid insulating support",
+    "connector pieces connected to chassis supports",
+    "each module has at least two collar attachment sides intersecting actual solid panel triangles",
+    "all36 annotations with exact glyph triangle centroid and interior-vertex samples",
+    "no source bitmap dependencies"
+  ],
+  "regressions_discovered_and_fixed": [
+    "white panel grouping ink spanned eight lower copper latch openings; clipped all ink at real panel apertures",
+    "unattached inset backing, rear-white appearance faces and AC components; extended local supports",
+    "copper spring contact rear ends lacked dielectric seating; added17solid rear carriers",
+    "small module-to-panel clearances lacked modeled mounting support; added estimated hidden collars and direct panel-ray regression"
+  ],
+  "limitations": [
+    "all mechanical dimensions estimated",
+    "rear white face cap-versus-sleeve status unknown",
+    "side and underside simplified",
+    "all electrical/optical mating validation disabled",
+    "no insertion-animation readiness"
+  ],
+  "source_blend_sha256": "316077ff4ef7b2ddbb3e13fb585f6103b89c1d6aff8936abcfe06677ed822b49",
+  "source_glb_sha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e",
+  "rebuild_equivalence": "PASS in-memory full geometry, materials and semantic digest match without replacing frozen master"
+}
