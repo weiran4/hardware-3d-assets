@@ -34,8 +34,8 @@ test('hardware stage embeds the real model and exact-anchor overlays rather than
  assert.ok(!html.includes('class="analog-frontpanel"'));assert.ok(!html.includes('class="analog-sockets"'));assert.ok(html.indexOf('id="analog-bench"')<html.indexOf('class="analog-signals"'),'actual hardware is the primary visual');
  const source=readFileSync('src/rtds-analog-lesson.js','utf8');assert.match(source,/createRtdsScene/);assert.match(source,/subscribeAnchors/);assert.match(source,/publishedModels\['novacor-2.0'\]/);
 });
-test('lesson viewer preserves the default gallery namespace and exposes render-synchronized projection without another model copy',()=>{
- const source=readFileSync('src/rtds-scene.js','utf8');assert.match(source,/options\.overlayPrefix\|\|'rtds'/);assert.match(source,/subscribeAnchors/);assert.match(source,/projectModelAnchors/);assert.match(source,/projectionListeners\.clear/);
+test('lesson viewer disables gallery-only pointer inspection and exposes render-synchronized projection without another model copy',()=>{
+ const source=readFileSync('src/rtds-scene.js','utf8');assert.match(source,/options\.directInspection!==false/);assert.match(readFileSync('src/rtds-analog-lesson.js','utf8'),/directInspection:false/);assert.match(source,/subscribeAnchors/);assert.match(source,/projectModelAnchors/);assert.match(source,/projectionListeners\.clear/);
 });
 test('front teaching view fits visible chassis width rather than wasting the frame on hidden chassis depth',()=>{
  assert.equal(typeof projection.frontInspectionFrame,'function','front model framing is not implemented');

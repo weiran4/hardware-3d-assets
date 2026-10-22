@@ -32,7 +32,7 @@ export function initAnalogLesson(inspectEndpoint){
   try{
    const info=publishedModels['novacor-2.0'],response=await fetch(new URL(info.metadata,document.baseURI));if(!response.ok)throw Error('NovaCor 接口数据加载失败');const metadata=await response.json();
    if(disposed||token!==modelToken)return;
-   const loaded=await createRtdsScene($('analog-model-scene'),$('analog-model-label'),info,metadata,()=>{},()=>!disposed&&token===modelToken,{overlayPrefix:'analog-model',frontOnly:true,controlsLimits:lessonCameraLimits,detailMinimum:lessonDetailMinimum});
+   const loaded=await createRtdsScene($('analog-model-scene'),$('analog-model-label'),info,metadata,()=>{},()=>!disposed&&token===modelToken,{directInspection:false,frontOnly:true,controlsLimits:lessonCameraLimits,detailMinimum:lessonDetailMinimum});
    if(!loaded)return;if(disposed||token!==modelToken){loaded.dispose();return;}model=loaded;model.setActive(false);
    unsubscribe=model.subscribeAnchors(endpointIds,points=>{projected=points;measure();});modelCamera('detail');settleModel();
    $('analog-model-loading').hidden=true;setModelControls(true);render();

@@ -30,8 +30,8 @@ test('viewer framing keeps model header, original viewer and camera together wit
  assert.match(pip,/stage\.append\(wrap\)/);
 });
 
-test('functional hierarchy uses white square frames, visible spacing and readable numbered headings',()=>{
- assert.match(css,/\.rtds-region\{[^}]*border:1px solid #[\da-f]{6};[^}]*border-top:3px solid var\(--brand-navy\);[^}]*border-radius:0;[^}]*padding:16px;[^}]*background:var\(--paper\)/);
+test('functional hierarchy uses white framed cards, visible spacing and readable numbered headings',()=>{
+ assert.match(css,/\.rtds-region\{[^}]*border:1px solid var\(--line\);[^}]*border-top:3px solid var\(--brand-navy\);[^}]*border-radius:var\(--panel-radius\);[^}]*padding:16px;[^}]*background:var\(--paper\)/);
  assert.match(css,/\.rtds-workbench\{[^}]*gap:20px;[^}]*border:0/);
  assert.match(css,/\.rtds-inspection\{[^}]*display:grid;[^}]*gap:20px;[^}]*padding:0/);
  assert.match(css,/\.rtds-region-title\{[^}]*font-size:18px;[^}]*font-weight:700/);

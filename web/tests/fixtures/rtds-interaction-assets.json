@@ -1,0 +1,1089 @@
+[
+  {
+    "variant": "novacor-2.0",
+    "glbSha256": "2a0b313de7814df39999027e428b818c5099f48455119c35dc086cfa83ec8099",
+    "metadataSha256": "7bb011a96eceafd1b99f949f0b141622a0336728c5b00a2066abe39c70e7ce53",
+    "ports": [
+      {
+        "id": "novacor-2.0-2023.ao1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao7",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao8",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao9",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao10",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao11",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ao12",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.gnd1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.gnd2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.gnd3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt7",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt8",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt9",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt10",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt11",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt12",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt13",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt14",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt15",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt16",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt17",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt18",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt19",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt20",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt21",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt22",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt23",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gt24",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.irc6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.gtsync",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "novacor-2.0-2023.udp",
+        "interactive": true,
+        "node": true,
+        "meshCount": 16
+      },
+      {
+        "id": "novacor-2.0-2023.wif",
+        "interactive": true,
+        "node": true,
+        "meshCount": 18
+      },
+      {
+        "id": "novacor-2.0-2023.gbh",
+        "interactive": true,
+        "node": true,
+        "meshCount": 8
+      },
+      {
+        "id": "novacor-2.0-2023.front_led_power",
+        "interactive": true,
+        "node": true,
+        "meshCount": 3
+      },
+      {
+        "id": "novacor-2.0-2023.ac_power",
+        "interactive": true,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtdi-v2",
+    "glbSha256": "cb44803bd765e7ba5259e969bade71c42ccf639a747be083b1c67e58d59165ef",
+    "metadataSha256": "cf5a3ee189401957082e1ddca679d21d21c30a3c4dfb87c1daf73ae7675f38c8",
+    "ports": [
+      {
+        "id": "gtdi-v2-2.01.bank1_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank1_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank2_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank2_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank3_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank3_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank4_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank4_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank5_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank5_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank6_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank6_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank7_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank7_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank8_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.bank8_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdi-v2-2.01.power1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 10
+      },
+      {
+        "id": "gtdi-v2-2.01.power2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtdi-v2-2.01.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtdi-v2-2.01.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtdi-v2-2.01.aux_pullup_top",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdi-v2-2.01.service_jtag",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdi-v2-2.01.aux_pullup_bottom",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdi-v2-2.01.service_usb",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtdo-v2",
+    "glbSha256": "e05a28d4fa60e5a538ba8234137a60fc81cb3274ea1f0abe4565e99eaf70169a",
+    "metadataSha256": "337d548c153546979b92104cbc989dec5a856509fe5581c6b27428f3ddc3921b",
+    "ports": [
+      {
+        "id": "gtdo-v2-2.00.bank1_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank1_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank2_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank2_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank3_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank3_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank4_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank4_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank5_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank5_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank6_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank6_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank7_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank7_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank8_odd",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.bank8_even",
+        "interactive": true,
+        "node": true,
+        "meshCount": 46
+      },
+      {
+        "id": "gtdo-v2-2.00.power1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 10
+      },
+      {
+        "id": "gtdo-v2-2.00.power2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtdo-v2-2.00.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtdo-v2-2.00.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtdo-v2-2.00.service_top",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdo-v2-2.00.service_jtag",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdo-v2-2.00.service_lower",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtdo-v2-2.00.service_usb",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtai-v2",
+    "glbSha256": "9d2721e486ca61c529fb4e7fe73c026c67d3b69d3de6aabb96cf1877b9b4e9f5",
+    "metadataSha256": "0a5ec030f2bf7dc631eb50fc3db2a790d8bb2a50c08ece0bf7760b98680e8856",
+    "ports": [
+      {
+        "id": "gtai-v2-2.31.input1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input7",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input8",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input9",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input10",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input11",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.input12",
+        "interactive": true,
+        "node": true,
+        "meshCount": 30
+      },
+      {
+        "id": "gtai-v2-2.31.power1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtai-v2-2.31.power2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtai-v2-2.31.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtai-v2-2.31.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtai-v2-2.31.service_jtag",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtai-v2-2.31.service_usb",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtao-v2",
+    "glbSha256": "bb74f7acd7fc9553806a99ff172a16816ba89c7b8b5cf33d603da49301f32f2b",
+    "metadataSha256": "12e132765210a92286ac47972dcb4e2362a1535946db8a7f4b82410f5e2258ec",
+    "ports": [
+      {
+        "id": "gtao-v2-2.20.channel1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel7",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel8",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel9",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel10",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel11",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel12",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel13",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel14",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel15",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.channel16",
+        "interactive": true,
+        "node": true,
+        "meshCount": 22
+      },
+      {
+        "id": "gtao-v2-2.20.power1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 10
+      },
+      {
+        "id": "gtao-v2-2.20.power2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtao-v2-2.20.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtao-v2-2.20.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 26
+      },
+      {
+        "id": "gtao-v2-2.20.service_header",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtao-v2-2.20.service_usb",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtfpi-v2",
+    "glbSha256": "a1afe9f544791c4284f0dbfcb5a88a6247b0d4e8c45f419ae47bdccbf71c7a24",
+    "metadataSha256": "250d38575f8909b84751600e681c36c72e608b79a58d4ef9eb9694848eef5499",
+    "ports": [
+      {
+        "id": "gtfpi-v2-2.01-capped.hv",
+        "interactive": true,
+        "node": true,
+        "meshCount": 56
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.lv",
+        "interactive": true,
+        "node": true,
+        "meshCount": 40
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.power1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.power2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 6
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.hv5v",
+        "interactive": true,
+        "node": true,
+        "meshCount": 7
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.gt1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 9
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.gt2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 9
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.service_header",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      },
+      {
+        "id": "gtfpi-v2-2.01-capped.service_receptacle",
+        "interactive": false,
+        "node": true,
+        "meshCount": 5
+      }
+    ]
+  },
+  {
+    "variant": "gtsoc-v2",
+    "glbSha256": "7cf483c2e4a482813da1416c1a485999e8e47b72143317711ea8840a92cca48e",
+    "metadataSha256": "2d1db9823ac98bf521ca0b99efe680ad3f52b9035b1801264ddc22d95045027f",
+    "ports": [
+      {
+        "id": "gtsoc-v2-2a-copper16.front1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front5",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front6",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front7",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front8",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front9",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front10",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front11",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front12",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front13",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front14",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front15",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.front16",
+        "interactive": true,
+        "node": true,
+        "meshCount": 27
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.monitor_ps",
+        "interactive": true,
+        "node": true,
+        "meshCount": 11
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.monitor_pl",
+        "interactive": true,
+        "node": true,
+        "meshCount": 11
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.prog_jtag",
+        "interactive": true,
+        "node": true,
+        "meshCount": 11
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.eth",
+        "interactive": true,
+        "node": true,
+        "meshCount": 24
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.rear1",
+        "interactive": true,
+        "node": true,
+        "meshCount": 19
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.rear2",
+        "interactive": true,
+        "node": true,
+        "meshCount": 19
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.rear3",
+        "interactive": true,
+        "node": true,
+        "meshCount": 19
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.rear4",
+        "interactive": true,
+        "node": true,
+        "meshCount": 19
+      },
+      {
+        "id": "gtsoc-v2-2a-copper16.ac",
+        "interactive": true,
+        "node": true,
+        "meshCount": 14
+      }
+    ]
+  }
+]

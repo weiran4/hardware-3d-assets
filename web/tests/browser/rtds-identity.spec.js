@@ -50,8 +50,8 @@ test('identity tracks the projected heatsink anchor, keeps pixel-sized text and 
  expect(await badge(page).evaluate(node=>{const r=node.getBoundingClientRect();return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===document.querySelector('#rtds-scene canvas');})).toBe(true);
  await dock(page);await inside(page);expect((await textMetrics(page)).font).toBe(metrics.font);await expect(page.locator('.rtds-pip .rtds-card-identity')).toHaveCount(1);
  expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__identityOriginal&&document.querySelector('#rtds-scene canvas')===window.__identityCanvas)).toBe(true);await shot(page,'AI-floating-overview',true);
- await page.locator(`[data-group="${card.group}"]`).evaluate(node=>node.click());await expect(badge(page)).toBeHidden();await expect(badge(page)).toHaveAttribute('hidden','');await expect(leader(page)).toBeHidden();await expect(page.locator('.rtds-highlight')).toBeVisible();await shot(page,'AI-floating-inspection-priority',true);
- await page.locator('#rtds-reset').evaluate(node=>node.click());await inside(page);await expect(page.locator('.rtds-highlight')).toBeHidden();expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__identityOriginal)).toBe(true);
+ await page.locator(`[data-group="${card.group}"]`).evaluate(node=>node.click());await expect(badge(page)).toBeHidden();await expect(badge(page)).toHaveAttribute('hidden','');await expect(leader(page)).toBeHidden();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',/.+/);await shot(page,'AI-floating-inspection-priority',true);
+ await page.locator('#rtds-reset').evaluate(node=>node.click());await inside(page);await expect(page.locator('#rtds-scene')).not.toHaveAttribute('data-highlight-ids',/.+/);expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__identityOriginal)).toBe(true);
  await page.locator('[data-pip-action="return"]').click();await inline(page);await inside(page);await shot(page,'AI-restored-inline');
 });
 
@@ -59,10 +59,10 @@ test('every card yields to group, physical-port and unresolved inspection, then 
  await loaded(page);
  for(const card of cards){
   await selectCard(page,card);await inline(page);await inside(page);
-  await page.locator(`[data-group="${card.group}"]`).click();await expect(badge(page)).toHaveCount(1);await expect(badge(page)).toHaveAttribute('hidden','');await expect(badge(page)).toBeHidden();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');
-  await selectPhysical(page,`${card.asset}.${card.port}`);await expect(badge(page)).toBeHidden();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids',`${card.asset}.${card.port}`);await expect(page.locator('#rtds-label')).toBeVisible();
-  await page.locator('[data-group="service_unresolved"]').click();await expect(badge(page)).toBeHidden();await expect(page.locator('.rtds-highlight')).toBeHidden();
-  await page.locator('#rtds-reset').click();await inline(page);await inside(page);await expect(badge(page).locator('strong')).toHaveText(card.type);await expect(page.locator('.rtds-highlight')).toBeHidden();
+  await page.locator(`[data-group="${card.group}"]`).click();await expect(badge(page)).toHaveCount(1);await expect(badge(page)).toHaveAttribute('hidden','');await expect(badge(page)).toBeHidden();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');
+  await selectPhysical(page,`${card.asset}.${card.port}`);await expect(badge(page)).toBeHidden();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',`${card.asset}.${card.port}`);await expect(page.locator('#rtds-inspection-summary')).toBeVisible();
+  await page.locator('[data-group="service_unresolved"]').click();await expect(badge(page)).toBeHidden();await expect(page.locator('#rtds-scene')).not.toHaveAttribute('data-highlight-ids',/.+/);
+  await page.locator('#rtds-reset').click();await inline(page);await inside(page);await expect(badge(page).locator('strong')).toHaveText(card.type);await expect(page.locator('#rtds-scene')).not.toHaveAttribute('data-highlight-ids',/.+/);
  }
 });
 

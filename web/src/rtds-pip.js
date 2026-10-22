@@ -1,5 +1,5 @@
 // Presentation only: the original viewer, renderer, selection and OrbitControls
-// stay alive. Moving the whole wrap also keeps its projected highlight and label.
+// stay alive. Moving the whole wrap also keeps its semantic-mesh hover and selection.
 export function rtdsPipState({active,ready,desktop,pastViewer,dismissed,minimized}){
  if(!active||!ready||!desktop||!pastViewer||dismissed)return 'inline';
  return minimized?'minimized':'expanded';

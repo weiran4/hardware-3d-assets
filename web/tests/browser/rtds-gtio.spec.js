@@ -1,5 +1,5 @@
 // Software-rendered screenshots across all breakpoints may take longer than one default case.
-import {selectPhysical} from './rtds-test-helpers.js';
+import {selectPhysical,renderedBounds} from './rtds-test-helpers.js';
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test.setTimeout(120000);
@@ -15,16 +15,16 @@ async function resizedProjection(page,width,asset){
  let evidence;
  try{await expect.poll(async()=>{
   evidence=await page.evaluate(()=>{
-   const scene=document.getElementById('rtds-scene'),canvas=scene.querySelector('canvas'),overlay=scene.querySelector('.rtds-highlight'),panel=document.querySelector('.rtds-pip');
-   return {viewportWidth:innerWidth,documentHidden:document.hidden,instance:scene.dataset.instance,selection:scene.dataset.selection,frames:Number(scene.dataset.frames||0),triangles:Number(scene.dataset.triangles||0),width:scene.clientWidth,height:scene.clientHeight,pixelRatio:Number(scene.dataset.pixelRatio),canvas:canvas?{width:canvas.width,height:canvas.height,cssWidth:canvas.clientWidth,cssHeight:canvas.clientHeight}:null,viewBox:overlay?.getAttribute('viewBox'),highlightHidden:overlay?.hasAttribute('hidden'),pipHidden:panel.hidden,pipCapable:document.body.classList.contains('rtds-pip-capable')};
+   const scene=document.getElementById('rtds-scene'),canvas=scene.querySelector('canvas'),panel=document.querySelector('.rtds-pip');
+   return {viewportWidth:innerWidth,documentHidden:document.hidden,instance:scene.dataset.instance,selection:scene.dataset.selection,frames:Number(scene.dataset.frames||0),triangles:Number(scene.dataset.triangles||0),width:scene.clientWidth,height:scene.clientHeight,pixelRatio:Number(scene.dataset.pixelRatio),canvas:canvas?{width:canvas.width,height:canvas.height,cssWidth:canvas.clientWidth,cssHeight:canvas.clientHeight}:null,highlightIds:scene.dataset.highlightIds,pipHidden:panel.hidden,pipCapable:document.body.classList.contains('rtds-pip-capable')};
   });
-  // Visibility alone can pass against the old desktop SVG. Require the actual
+  // Selection attributes can survive a cleared canvas. Require the actual
   // ResizeObserver/render result, not a delay or a camera action that masks it.
   const sameSelection=evidence.instance===before.instance&&evidence.selection===before.selection;
   const freshRender=evidence.frames>before.frames&&evidence.triangles>0&&evidence.width>0&&evidence.height>0;
   const sizedCanvas=evidence.canvas?.cssWidth===evidence.width&&evidence.canvas?.cssHeight===evidence.height&&evidence.canvas?.width===Math.floor(evidence.width*evidence.pixelRatio)&&evidence.canvas?.height===Math.floor(evidence.height*evidence.pixelRatio);
-  const sizedProjection=evidence.viewBox===`0 0 ${evidence.width} ${evidence.height}`&&!evidence.highlightHidden;
-  return evidence.viewportWidth===width&&!evidence.documentHidden&&sameSelection&&freshRender&&sizedCanvas&&sizedProjection&&evidence.pipHidden&&!evidence.pipCapable;
+  const selectedMesh=evidence.highlightIds===before.selection;
+  return evidence.viewportWidth===width&&!evidence.documentHidden&&sameSelection&&freshRender&&sizedCanvas&&selectedMesh&&evidence.pipHidden&&!evidence.pipCapable;
  }).toBe(true);}finally{
   await test.info().attach(`resize-projection-${asset}-${width}`,{body:Buffer.from(JSON.stringify({before,after:evidence},null,2)),contentType:'application/json'});
  }
@@ -32,12 +32,12 @@ async function resizedProjection(page,width,asset){
 for(const c of cards)test(`${c.asset}: real interfaces, exact revision, unknowns, highlights and responsive inspection`,async({page})=>{
  const errors=[];page.on('pageerror',error=>errors.push(error.message));await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
  await page.locator(`[data-variant="${c.variant}"]`).click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-asset',c.asset);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-anchors',String(c.anchors));await expect(page.locator('#rtds-model-revision')).toContainText(c.pcb);await shot(page,c.asset+'-overview');
- await page.locator('#rtds-top').click();await shot(page,c.asset+'-top');await page.locator(`[data-group="${c.group}"]`).click();await expect(page.locator('#rtds-port-list button')).toHaveCount(c.variant==='gtao-v2'?2:0);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');
- await selectPhysical(page,`${c.asset}.${c.port}`);await expect(page.locator('#rtds-port-facts')).toContainText(c.contacts);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids',`${c.asset}.${c.port}`);await expect(page.locator('.rtds-model-notes')).toHaveAttribute('open','');if(c.variant==='gtao-v2')await expect(page.locator('#rtds-port-facts')).toContainText('仅 NovaCor');await shot(page,c.asset+'-terminal-detail');
+ await page.locator('#rtds-top').click();await shot(page,c.asset+'-top');await page.locator(`[data-group="${c.group}"]`).click();await expect(page.locator('#rtds-port-list button')).toHaveCount(c.variant==='gtao-v2'?2:0);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');
+ await selectPhysical(page,`${c.asset}.${c.port}`);await expect(page.locator('#rtds-port-facts')).toContainText(c.contacts);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',`${c.asset}.${c.port}`);await expect(page.locator('.rtds-model-notes')).toHaveAttribute('open','');if(c.variant==='gtao-v2')await expect(page.locator('#rtds-port-facts')).toContainText('仅 NovaCor');await shot(page,c.asset+'-terminal-detail');
  await page.locator('[data-group="power"]').click();await selectPhysical(page,`${c.asset}.power2`);await expect(page.locator('#rtds-port-facts')).toContainText('引脚顺序未核对');
- await page.locator('[data-group="optical"]').click();await expect(page.locator('#rtds-port-list button')).toHaveCount(2);await selectPhysical(page,`${c.asset}.gt1`);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids',`${c.asset}.gt1`);await shot(page,c.asset+'-optical-detail');
- await page.locator('[data-group="service_unresolved"]').click();await expect(page.locator('#rtds-port-list button')).toHaveCount(0);await expect(page.locator('#rtds-port-list [data-unresolved]')).toHaveCount(c.unresolved);await expect(page.locator('.rtds-highlight')).toBeHidden();
+ await page.locator('[data-group="optical"]').click();await expect(page.locator('#rtds-port-list button')).toHaveCount(2);await selectPhysical(page,`${c.asset}.gt1`);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',`${c.asset}.gt1`);await shot(page,c.asset+'-optical-detail');
+ await page.locator('[data-group="service_unresolved"]').click();await expect(page.locator('#rtds-port-list button')).toHaveCount(0);await expect(page.locator('#rtds-port-list [data-unresolved]')).toHaveCount(c.unresolved);await expect(page.locator('#rtds-scene')).not.toHaveAttribute('data-highlight-ids',/.+/);
  await page.locator(`[data-group="${c.group}"]`).click();await selectPhysical(page,`${c.asset}.${c.port}`);
- for(const width of [320,390,560,768,800]){await resizedProjection(page,width,c.asset);await expect(page.locator('.rtds-highlight')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();const label=await page.locator('#rtds-label').boundingBox();expect(label.x).toBeGreaterThanOrEqual(0);expect(label.x+label.width).toBeLessThanOrEqual(width);await shot(page,`${c.asset}-mobile-${width}`);}
+ for(const width of [320,390,560,768,800]){await resizedProjection(page,width,c.asset);await page.locator('.rtds-pip-slot').scrollIntoViewIfNeeded();await renderedBounds(page);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',/.+/);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();const label=await page.locator('#rtds-inspection-summary').boundingBox();expect(label.x).toBeGreaterThanOrEqual(0);expect(label.x+label.width).toBeLessThanOrEqual(width);await shot(page,`${c.asset}-mobile-${width}`);}
  await page.locator(`[data-variant="${c.variant.replace('-v2','-v1')}"]`).click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');await expect(page.locator('#rtds-scene canvas')).toHaveCount(0);await expect(page.locator('.rtds-highlight')).toHaveCount(0);expect(errors).toEqual([]);
 });

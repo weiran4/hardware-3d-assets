@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
+import {renderedFrame,imageDifference,canvasChromeRegions} from './rtds-test-helpers.js';
 
 test.setTimeout(120000);
 const white='rgb(255, 255, 255)',navy='rgb(10, 34, 64)',red='rgb(228, 27, 72)';
@@ -10,7 +11,18 @@ async function loaded(page,width){
  await expect(page.locator('#rtds-scene')).toHaveAttribute('data-asset','novacor-2.0-2023');
  await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
 }
-async function shot(page,name){await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-regions-${name}.png`,fullPage:false});}
+async function shot(page,name){
+ // Settled region pictures must wait for reparenting/ResizeObserver and the new
+ // compositor frame. This does not affect deliberately immediate held-drag tests.
+ if(await page.locator('#rtds-scene').getAttribute('data-loaded')==='true'){
+  await renderedFrame(page);
+  if(await page.locator('.rtds-pip').isVisible())await expect.poll(async()=>{
+   const box=await page.locator('#rtds-scene canvas').boundingBox(),png=await page.screenshot({clip:box});
+   return (await imageDifference(page,png,png,{ignore:await canvasChromeRegions(page)})).darkFraction;
+  },{message:'settled PiP screenshot contains real hardware, not a resized blank buffer'}).toBeGreaterThan(.01);
+ }
+ await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-regions-${name}.png`,fullPage:false});
+}
 async function hierarchy(page,width){
  await expect(page.getByRole('complementary',{name:'选择版本'})).toHaveCount(1);
  for(const name of ['选择版本','接口巡览','用途与参数'])await expect(page.getByRole('heading',{name,exact:true,level:3})).toHaveCount(1);
@@ -18,12 +30,12 @@ async function hierarchy(page,width){
  await expect(page.getByRole('region',{name:'接口巡览',exact:true})).toHaveCount(1);
  await expect(page.getByRole('region',{name:'用途与参数',exact:true})).toHaveCount(1);
  await expect(page.locator('#rtds-viewer-region > .rtds-model-head')).toHaveCount(1);
- await expect(page.locator('#rtds-viewer-region > .rtds-pip-slot')).toHaveCount(1);
+ await expect(page.locator('#rtds-viewer-region > .rtds-viewer-layout > .rtds-pip-slot')).toHaveCount(1);
  await expect(page.locator('#rtds-viewer-region > .rtds-camera')).toHaveCount(1);
  await expect(page.locator('#rtds-interface-region #rtds-group-list')).toHaveCount(1);
  await expect(page.locator('#rtds-interface-region #rtds-detail')).toHaveCount(0);
  for(const selector of ['.rtds-library','#rtds-viewer-region','#rtds-interface-region','#rtds-detail']){
-  const region=page.locator(selector);await expect(region).toHaveCSS('background-color',white);await expect(region).toHaveCSS('border-radius','0px');
+  const region=page.locator(selector);await expect(region).toHaveCSS('background-color',white);await expect(region).toHaveCSS('border-radius','10px');
   const border=await region.evaluate(n=>{const s=getComputedStyle(n);return ['Top','Right','Bottom','Left'].map(side=>({width:parseFloat(s[`border${side}Width`]),style:s[`border${side}Style`]}));});
   expect(border[0].width).toBe(3);for(const side of border){expect(side.width).toBeGreaterThanOrEqual(1);expect(side.style).toBe('solid');}
  }
@@ -70,10 +82,10 @@ test('mobile keeps separate white functional panels, readable headings and all c
 
 test('the framed 3D region retains the same source slot and canvas through PiP and reference transitions',async({page})=>{
  await loaded(page,1440);
- await page.evaluate(()=>{window.__regionCanvas=document.querySelector('#rtds-scene canvas');window.__regionSlot=document.querySelector('#rtds-viewer-region > .rtds-pip-slot');});
+ await page.evaluate(()=>{window.__regionCanvas=document.querySelector('#rtds-scene canvas');window.__regionSlot=document.querySelector('#rtds-viewer-region > .rtds-viewer-layout > .rtds-pip-slot');});
  const originalHeight=await page.locator('#rtds-viewer-region').evaluate(n=>n.getBoundingClientRect().height);
  await page.locator('#rtds-detail').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));await expect(page.locator('.rtds-pip')).toBeVisible();
- expect(await page.evaluate(()=>document.querySelector('.rtds-pip canvas')===window.__regionCanvas&&document.querySelector('#rtds-viewer-region > .rtds-pip-slot')===window.__regionSlot)).toBe(true);
+ expect(await page.evaluate(()=>document.querySelector('.rtds-pip canvas')===window.__regionCanvas&&document.querySelector('#rtds-viewer-region > .rtds-viewer-layout > .rtds-pip-slot')===window.__regionSlot)).toBe(true);
  expect(await page.locator('#rtds-viewer-region').evaluate(n=>n.getBoundingClientRect().height)).toBe(originalHeight);
  await page.locator('[data-pip-action="return"]').click();await expect(page.locator('.rtds-pip')).toBeHidden();
  expect(await page.evaluate(()=>document.querySelector('#rtds-viewer-region canvas')===window.__regionCanvas)).toBe(true);

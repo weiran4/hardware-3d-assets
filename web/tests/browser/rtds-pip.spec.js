@@ -1,3 +1,4 @@
+import {canvasCapture,canvasChromeRegions,renderedBounds,renderedFrame,imageDifference} from './rtds-test-helpers.js';
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 
@@ -23,18 +24,14 @@ async function sameCanvas(page){
  expect(await page.evaluate(()=>document.querySelector('#rtds-scene canvas')===window.__pipOriginalCanvas&&document.querySelector('.rtds-viewer-wrap')===window.__pipOriginalWrap)).toBe(true);
  expect(await page.locator('[id]').evaluateAll(nodes=>{const ids=nodes.map(node=>node.id);return ids.length===new Set(ids).size;})).toBe(true);
 }
-async function rect(page){
- await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
- return page.locator('.rtds-highlight-main').evaluate(node=>Object.fromEntries(['x','y','width','height'].map(key=>[key,Number(node.getAttribute(key))])));
-}
+async function rect(page){return renderedBounds(page);}
 async function insideFrame(page){
- const bounds=await rect(page);await expect(page.locator('#rtds-label')).toBeVisible();
- const scene=await page.locator('#rtds-scene').boundingBox(),label=await page.locator('#rtds-label').boundingBox();
- expect(bounds.x).toBeGreaterThanOrEqual(0);expect(bounds.y).toBeGreaterThanOrEqual(0);expect(bounds.x+bounds.width).toBeLessThanOrEqual(scene.width+.1);expect(bounds.y+bounds.height).toBeLessThanOrEqual(scene.height+.1);
- expect(label.x).toBeGreaterThanOrEqual(scene.x-.1);expect(label.y).toBeGreaterThanOrEqual(scene.y-.1);expect(label.x+label.width).toBeLessThanOrEqual(scene.x+scene.width+.1);expect(label.y+label.height).toBeLessThanOrEqual(scene.y+scene.height+.1);
+ await renderedFrame(page);const bounds=await rect(page),scene=await page.locator('#rtds-scene').boundingBox();
+ expect(bounds.x).toBeGreaterThanOrEqual(0);expect(bounds.y).toBeGreaterThanOrEqual(0);expect(bounds.x+bounds.width).toBeLessThanOrEqual(scene.width+1);expect(bounds.y+bounds.height).toBeLessThanOrEqual(scene.height+1);
+ await expect(page.locator('#rtds-inspection-summary')).toBeVisible();await expect(page.locator('.rtds-highlight')).toHaveCount(0);await expect(page.locator('#rtds-label')).toBeHidden();
 }
 async function shot(page,name){await mkdir('screenshots',{recursive:true});await page.screenshot({path:`screenshots/rtds-pip-${name}.png`,fullPage:false});}
-async function selectAurora(page){await page.locator('[data-group=aurora]').click();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');}
+async function selectAurora(page){await page.locator('[data-group=aurora]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');}
 const action=(page,name)=>page.locator(`[data-pip-action="${name}"]`);
 
 async function fullWidthReading(page){
@@ -43,10 +40,13 @@ async function fullWidthReading(page){
   const selectors=['#rtds-viewer-region','#rtds-interface-region','.rtds-camera','.rtds-tour-row','#rtds-group-list','#rtds-detail','#rtds-detail-copy','.rtds-provenance','.analog-lesson'];
   const geometry=selectors.map(selector=>{
    const node=document.querySelector(selector),r=node.getBoundingClientRect(),s=getComputedStyle(node),p=node.parentElement.getBoundingClientRect(),ps=getComputedStyle(node.parentElement);
-   return {selector,x:r.x,docTop:r.top+scrollY,width:r.width,height:r.height,right:r.right,expectedLeft:p.left+parseFloat(ps.borderLeftWidth)+parseFloat(ps.paddingLeft),expectedRight:p.right-parseFloat(ps.borderRightWidth)-parseFloat(ps.paddingRight),marginRight:parseFloat(s.marginRight),paddingRight:parseFloat(s.paddingRight)};
+   // The tinted 02 header intentionally spans the card's 16px inner padding.
+   // This is explicit chrome, not permission to shrink any reading container.
+   const headerBleed=selector==='.rtds-tour-row'?16:0;
+   return {selector,x:r.x,docTop:r.top+scrollY,width:r.width,height:r.height,right:r.right,expectedLeft:p.left+parseFloat(ps.borderLeftWidth)+parseFloat(ps.paddingLeft)-headerBleed,expectedRight:p.right-parseFloat(ps.borderRightWidth)-parseFloat(ps.paddingRight)+headerBleed,marginRight:parseFloat(s.marginRight),paddingRight:parseFloat(s.paddingRight),headerBleed};
   });
   const alignment=['.rtds-camera','.rtds-tour-row','.analog-heading'].map(selector=>{
-   const n=document.querySelector(selector),r=n.getBoundingClientRect();return {selector,left:r.left,first:n.firstElementChild.getBoundingClientRect().left,right:r.right,last:n.lastElementChild.getBoundingClientRect().right};
+   const n=document.querySelector(selector),r=n.getBoundingClientRect(),s=getComputedStyle(n);return {selector,left:r.left+parseFloat(s.borderLeftWidth)+parseFloat(s.paddingLeft),first:n.firstElementChild.getBoundingClientRect().left,right:r.right-parseFloat(s.borderRightWidth)-parseFloat(s.paddingRight),last:n.lastElementChild.getBoundingClientRect().right,padding:parseFloat(s.paddingRight)};
   });
   const groupList=document.querySelector('#rtds-group-list'),list=groupList.getBoundingClientRect(),buttons=[...groupList.querySelectorAll('.rtds-group')].map(n=>{const r=n.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width};});
   return {geometry,alignment,list:{left:list.left,right:list.right,top:list.top,bottom:list.bottom,width:list.width,gap:parseFloat(getComputedStyle(groupList).columnGap)},buttons};
@@ -54,11 +54,11 @@ async function fullWidthReading(page){
  for(const r of layout.geometry){
   expect(Math.abs(r.x-r.expectedLeft),`${r.selector} full-width left edge`).toBeLessThan(1);
   expect(Math.abs(r.right-r.expectedRight),`${r.selector} full-width right edge`).toBeLessThan(1);
-  expect(r.marginRight,`${r.selector} no reserved right margin`).toBe(0);
+  expect(r.marginRight,`${r.selector} no reserved right margin; only documented header bleed`).toBe(r.headerBleed?-r.headerBleed:0);
   const framed=['#rtds-viewer-region','#rtds-interface-region','#rtds-detail'].includes(r.selector);
-  expect(r.paddingRight,`${r.selector} only explicit 16px panel padding, never a PiP gutter`).toBe(framed?16:0);
+  expect(r.paddingRight,`${r.selector} only explicit 16px panel padding, never a PiP gutter`).toBe(framed||r.headerBleed?16:0);
  }
- for(const r of layout.alignment){expect(Math.abs(r.left-r.first),`${r.selector} title left aligned`).toBeLessThan(1);expect(Math.abs(r.right-r.last),`${r.selector} actions right aligned`).toBeLessThan(1);}
+ for(const r of layout.alignment){expect(r.padding,`${r.selector} explicit compact header inset`).toBe(r.selector==='.rtds-tour-row'?16:r.selector==='.analog-heading'?12:0);expect(Math.abs(r.left-r.first),`${r.selector} title left aligned`).toBeLessThan(1);expect(Math.abs(r.right-r.last),`${r.selector} actions right aligned`).toBeLessThan(1);}
  for(const r of layout.buttons){expect(r.left).toBeGreaterThanOrEqual(layout.list.left);expect(r.right).toBeLessThanOrEqual(layout.list.right+.1);expect(r.top).toBeGreaterThanOrEqual(layout.list.top);expect(r.bottom).toBeLessThanOrEqual(layout.list.bottom+.1);}
  if(layout.buttons.reduce((sum,r)=>sum+r.width,0)>layout.list.width)expect(layout.list.right-Math.max(...layout.buttons.map(r=>r.right)),'wrapped buttons use available row width, not an invisible narrow column').toBeLessThan(Math.max(...layout.buttons.map(r=>r.width))+layout.list.gap+1);
  return layout.geometry;
@@ -85,14 +85,14 @@ test('desktop scroll docks one real canvas, preserves orbit/zoom and restores it
  await loaded(page);await selectAurora(page);await sourceVisible(page);await page.locator('#rtds-in').click();
  const canvas=page.locator('#rtds-scene canvas'),box=await canvas.boundingBox();
  await page.mouse.move(box.x+box.width*.45,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.48,box.y+box.height*.52,{steps:8});await page.mouse.up();
- await expect(page.locator('.rtds-highlight')).toBeVisible();const before=await rect(page),height=await page.locator('.rtds-pip-slot').evaluate(node=>node.getBoundingClientRect().height),instance=await page.locator('#rtds-scene').getAttribute('data-instance');
+ await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',/.+/);const before=await rect(page),beforePixels=await canvasCapture(page),ignored=await canvasChromeRegions(page),height=await page.locator('.rtds-pip-slot').evaluate(node=>node.getBoundingClientRect().height),instance=await page.locator('#rtds-scene').getAttribute('data-instance');
  await dock(page);await sameCanvas(page);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-instance',instance);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-view','in');
  await expect(page.locator('.rtds-pip .rtds-viewer-wrap')).toHaveCount(1);await expect(page.locator('body')).toHaveClass(/rtds-pip-active/);
  expect(await page.locator('.rtds-pip-slot').evaluate(node=>node.getBoundingClientRect().height)).toBe(height);
  const panel=await page.locator('.rtds-pip').boundingBox();expect(panel.width).toBe(320);expect(panel.x+panel.width).toBe(page.viewportSize().width-18);expect(panel.y+panel.height).toBe(page.viewportSize().height-18);
- await expect(page.locator('.rtds-highlight')).toBeVisible();await insideFrame(page);await shot(page,'desktop-orbit-preserved');
+ await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',/.+/);await insideFrame(page);await shot(page,'desktop-orbit-preserved');
  await action(page,'return').click();await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await sameCanvas(page);
- const restored=await rect(page);for(const key of Object.keys(before))expect(Math.abs(restored[key]-before[key])).toBeLessThan(.5);
+ const restored=await rect(page);for(const key of Object.keys(before))expect(Math.abs(restored[key]-before[key])).toBeLessThan(.5);expect((await imageDifference(page,beforePixels,await canvasCapture(page),{ignore:ignored})).fraction,'same actual model projection after docking and return').toBeLessThan(.001);
  await expect(page.locator('body')).not.toHaveClass(/rtds-pip-active/);
  await shot(page,'restored-inline-after-return');
 });
@@ -122,14 +122,14 @@ test('03 paragraph and DI/DO bank rows keep their reading position through dock,
 
 test('dock tracks shared-group and physical-port selection, orbit and keyboard camera controls over full-width reading',async({page})=>{
  await loaded(page);await selectAurora(page);await dock(page);
- const overlay=page.locator('.rtds-highlight');await expect(overlay).toHaveAttribute('data-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-label')).toHaveText('GT 21–24 · Aurora');
- const old=await rect(page);await action(page,'in').focus();await page.keyboard.press('Enter');await expect.poll(async()=>(await rect(page)).width).toBeGreaterThan(old.width);
- const canvas=page.locator('#rtds-scene canvas'),box=await canvas.boundingBox(),zoomed=await rect(page);
- await page.mouse.move(box.x+box.width*.42,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.48,box.y+box.height*.5,{steps:8});await page.mouse.up();await expect.poll(()=>rect(page)).not.toEqual(zoomed);
+ const overlay=page.locator('#rtds-scene');await expect(overlay).toHaveAttribute('data-highlight-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-inspection-title')).toHaveText('GT 21–24 · Aurora');
+ const old=await canvasCapture(page);await action(page,'in').focus();await page.keyboard.press('Enter');expect((await imageDifference(page,old,await canvasCapture(page))).fraction,'actual zoomed model pixels').toBeGreaterThan(.005);
+ const canvas=page.locator('#rtds-scene canvas'),box=await canvas.boundingBox(),zoomed=await canvasCapture(page);
+ await page.mouse.move(box.x+box.width*.42,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.48,box.y+box.height*.5,{steps:8});await page.mouse.up();expect((await imageDifference(page,zoomed,await canvasCapture(page))).fraction,'actual orbited model pixels').toBeGreaterThan(.005);
  await page.locator('.rtds-model-notes summary').click();await page.locator('#rtds-physical-port').selectOption('novacor-2.0-2023.gt23');await dock(page);
- await expect(overlay).toHaveAttribute('data-kind','port');await expect(overlay).toHaveAttribute('data-ids','novacor-2.0-2023.gt23');await expect(page.locator('#rtds-label')).toHaveText('GT23');await insideFrame(page);
+ await expect(overlay).toHaveAttribute('data-highlight-kind','port');await expect(overlay).toHaveAttribute('data-highlight-ids','novacor-2.0-2023.gt23');await expect(page.locator('#rtds-inspection-title')).toHaveText('GT23');await insideFrame(page);
  await fullWidthReading(page);
- expect(await overlay.locator('.rtds-highlight-main').evaluate(node=>getComputedStyle(node).stroke)).toBe('rgb(255, 106, 0)');expect(await overlay.evaluate(node=>getComputedStyle(node).pointerEvents)).toBe('none');
+ await expect(page.locator('.rtds-highlight')).toHaveCount(0);await expect(page.locator('#rtds-label')).toBeHidden();await renderedModelPixels(page,'selected-real-mesh');
  for(const view of ['front','rear','top','out']){await action(page,view).focus();await page.keyboard.press('Enter');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-view',view);}
  await action(page,'rear').click();await insideFrame(page);await sameCanvas(page);await shot(page,'physical-port-and-reading');
 });
@@ -140,7 +140,7 @@ test('keyboard minimize, expand, Escape, close and return have predictable dismi
  await page.keyboard.press('Enter');await expect(page.locator('.rtds-pip-stage')).toBeVisible();await expect(action(page,'minimize')).toHaveAttribute('aria-expanded','true');
  await page.keyboard.press('Escape');await expect(page.locator('.rtds-pip')).toBeHidden();await page.evaluate(()=>scrollBy(0,40));await expect(page.locator('.rtds-pip')).toBeHidden();await sameCanvas(page);
  await sourceVisible(page);await dock(page);await action(page,'close').focus();await page.keyboard.press('Enter');await expect(page.locator('.rtds-pip')).toBeHidden();await page.evaluate(()=>scrollBy(0,30));await expect(page.locator('.rtds-pip')).toBeHidden();
- await sourceVisible(page);await dock(page);await action(page,'return').focus();await page.keyboard.press('Enter');await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('#rtds-label')).toHaveText('GT 21–24 · Aurora');await sameCanvas(page);
+ await sourceVisible(page);await dock(page);await action(page,'return').focus();await page.keyboard.press('Enter');await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('#rtds-inspection-title')).toHaveText('GT 21–24 · Aurora');await sameCanvas(page);
 });
 
 test('mode, reference-only, failed model and recovery transitions never leave an old model floating',async({page})=>{
@@ -151,7 +151,7 @@ test('mode, reference-only, failed model and recovery transitions never leave an
  // these checks exercise lifecycle restoration, not auto-restoration on scroll-up.
  await page.locator('[data-variant="novacor-light"]').evaluate(node=>node.click());await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(0);await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);
  await page.route('**/assets/rtds/gtdi-v2-2.01.glb',route=>route.abort());await page.locator('[data-variant="gtdi-v2"]').evaluate(node=>node.click());await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','error');await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(0);await expect(page.locator('body')).not.toHaveClass(/rtds-pip-active/);
- await page.locator('[data-variant="novacor-2.0"]').evaluate(node=>node.click());await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await dock(page);await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);await expect(page.locator('.rtds-highlight')).toBeHidden();await shot(page,'recovered-model');
+ await page.locator('[data-variant="novacor-2.0"]').evaluate(node=>node.click());await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await dock(page);await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);await expect(page.locator('#rtds-scene')).not.toHaveAttribute('data-highlight-ids',/.+/);await shot(page,'recovered-model');
 });
 
 test('pending or superseded model loads hide the dock until the current renderer is ready',async({page})=>{
@@ -168,7 +168,7 @@ test('mobile widths never dock; desktop/mobile resize restores minimized viewers
   await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);await expect(page.locator('body')).not.toHaveClass(/rtds-pip-active/);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await sameCanvas(page);await shot(page,`mobile-inline-${width}`);
  }
  for(const width of [1024,1440]){
-  await page.setViewportSize({width,height:900});await dock(page);await expect(page.locator('.rtds-pip-stage')).toBeVisible();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await insideFrame(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await sameCanvas(page);await shot(page,`desktop-${width}`);
+  await page.setViewportSize({width,height:900});await dock(page);await expect(page.locator('.rtds-pip-stage')).toBeVisible();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');await insideFrame(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await sameCanvas(page);await shot(page,`desktop-${width}`);
  }
 });
 
@@ -185,9 +185,9 @@ async function resizeDrag(page,edge,dx,dy,release=true){
 function closeRect(actual,expected,keys=['x','y','width','height']){for(const key of keys)expect(Math.abs(actual[key]-expected[key]),key).toBeLessThan(.6);}
 async function resetSize(page){await grip(page).focus();await page.keyboard.press('Home');}
 async function readingAnchor(page){return page.locator('#rtds-detail-copy').evaluate(node=>{const r=node.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,scrollY};});}
-// A DOM highlight can survive a cleared WebGL backing buffer. Inspect actual
-// compositor screenshot pixels too: the selected NovaCor chassis covers far more
-// than 5% of this canvas; its label/outline alone cover less than 2%.
+// Selection state can survive a cleared WebGL backing buffer. Inspect actual
+// compositor screenshot pixels too: the selected NovaCor chassis must remain
+// visible through every backing-buffer resize, not just semantic data attributes.
 async function renderedModelPixels(page,name='resize-returned-inline',immediate=false){
  await mkdir('screenshots',{recursive:true});
  const canvas=page.locator('#rtds-scene canvas'),path=`screenshots/rtds-pip-${name}-canvas.png`;
@@ -201,23 +201,25 @@ async function renderedModelPixels(page,name='resize-returned-inline',immediate=
   for(let i=0;i<pixels.length;i+=4){const max=Math.max(pixels[i],pixels[i+1],pixels[i+2]),min=Math.min(pixels[i],pixels[i+1],pixels[i+2]);if(pixels[i+3]>200&&max<180&&max-min<32)model++;}
   return model/(sample.width*sample.height);
  },png.toString('base64'));
- expect(fraction,'rendered chassis pixels, not only SVG highlight/label').toBeGreaterThan(.05);
+ expect(fraction,'rendered chassis pixels, not only a selection dataset').toBeGreaterThan(.05);
 }
 
 test('mouse corner enlargement preserves the exact camera, highlight, canvas and reading position',async({page})=>{
  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;window.__pipContexts=new Set();HTMLCanvasElement.prototype.getContext=function(type,...args){const context=original.call(this,type,...args);if(context&&['webgl','webgl2','experimental-webgl'].includes(type))window.__pipContexts.add(context);return context;};});
  await loaded(page);await selectAurora(page);await dock(page);await action(page,'in').click();
  const canvas=await page.locator('#rtds-scene canvas').boundingBox();await page.mouse.move(canvas.x+canvas.width*.45,canvas.y+canvas.height*.5);await page.mouse.down();await page.mouse.move(canvas.x+canvas.width*.48,canvas.y+canvas.height*.52,{steps:5});await page.mouse.up();
- const projected=await rect(page),before=await page.locator('.rtds-pip').boundingBox(),anchor=await readingAnchor(page),slot=await page.locator('.rtds-pip-slot').boundingBox(),instance=await page.locator('#rtds-scene').getAttribute('data-instance'),contexts=await page.evaluate(()=>window.__pipContexts.size);
+ const projected=await rect(page),beforePixels=await canvasCapture(page),ignored=await canvasChromeRegions(page),before=await page.locator('.rtds-pip').boundingBox(),anchor=await readingAnchor(page),slot=await page.locator('.rtds-pip-slot').boundingBox(),instance=await page.locator('#rtds-scene').getAttribute('data-instance'),contexts=await page.evaluate(()=>window.__pipContexts.size);
  await shot(page,'resize-default');const enlarged=await resizeDrag(page,'nw',-180,-120);
  expect(enlarged.width).toBe(before.width+180);expect(enlarged.height).toBe(before.height+120);expect(enlarged.x+enlarged.width).toBe(before.x+before.width);expect(enlarged.y+enlarged.height).toBe(before.y+before.height);
  closeRect(await readingAnchor(page),anchor,['x','y','width','height','scrollY']);closeRect(await page.locator('.rtds-pip-slot').boundingBox(),slot);await sameCanvas(page);
- await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-scene')).toHaveAttribute('data-instance',instance);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-view','in');await insideFrame(page);
+ await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids',[21,22,23,24].map(n=>`novacor-2.0-2023.gt${n}`).join(','));await expect(page.locator('#rtds-scene')).toHaveAttribute('data-instance',instance);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-view','in');await insideFrame(page);
  const scene=await page.locator('#rtds-scene').boundingBox(),adapted=await page.locator('#rtds-scene canvas').boundingBox();closeRect(adapted,scene);expect(scene.height).toBeGreaterThan(canvas.height);expect(await page.evaluate(()=>getSelection().toString())).toBe('');expect(await page.evaluate(()=>window.__pipContexts.size)).toBe(contexts);await shot(page,'resize-enlarged');
- await resizeDrag(page,'nw',180,120);closeRect(await page.locator('.rtds-pip').boundingBox(),before);closeRect(await rect(page),projected);closeRect(await readingAnchor(page),anchor,['x','y','width','height','scrollY']);await sameCanvas(page);expect(await page.evaluate(()=>window.__pipContexts.size)).toBe(contexts);
+ await resizeDrag(page,'nw',180,120);closeRect(await page.locator('.rtds-pip').boundingBox(),before);closeRect(await rect(page),projected);expect((await imageDifference(page,beforePixels,await canvasCapture(page),{ignore:ignored})).fraction,'same actual model projection after reversible resize').toBeLessThan(.001);closeRect(await readingAnchor(page),anchor,['x','y','width','height','scrollY']);await sameCanvas(page);expect(await page.evaluate(()=>window.__pipContexts.size)).toBe(contexts);
 });
 
 test('all eight mouse resize handles follow their edge and retain the opposite anchor',async({page})=>{
+ // Sixteen software-rendered drags retain all geometry/canvas assertions; give this exhaustive case its own budget.
+ test.setTimeout(60000);
  await loaded(page);await dock(page);
  for(const edge of ['n','e','s','w','nw','ne','se','sw']){
   await resetSize(page);await resizeDrag(page,'nw',-160,-140);const before=await page.locator('.rtds-pip').boundingBox();
@@ -251,13 +253,13 @@ test('user size survives minimize and viewport changes; interrupted drag restore
  await page.setViewportSize({width:1024,height:280});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(244);const bounded=await page.locator('.rtds-pip').boundingBox();expect(bounded.y).toBe(18);await shot(page,'resize-short-viewport');await page.setViewportSize({width:1440,height:1050});await expect.poll(async()=>(await page.locator('.rtds-pip').boundingBox()).height).toBe(enlarged.height);closeRect(await page.locator('.rtds-pip').boundingBox(),enlarged);
  await resizeDrag(page,'nw',-30,-20,false);await page.setViewportSize({width:390,height:900});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await sameCanvas(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);await shot(page,'resize-interrupted-mobile');
  await page.setViewportSize({width:1440,height:1050});await dock(page);await resizeDrag(page,'nw',-20,-20,false);await page.evaluate(()=>{location.hash='#generic';});await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await page.mouse.up();await expect(page.locator('#generic-panel')).toBeVisible();await expect(page.locator('#scene canvas')).toHaveCount(1);
- await page.evaluate(()=>{location.hash='#rtds';});await dock(page);await sameCanvas(page);const frames=Number(await page.locator('#rtds-scene').getAttribute('data-frames'));await action(page,'return').click();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');
+ await page.evaluate(()=>{location.hash='#rtds';});await dock(page);await sameCanvas(page);const frames=Number(await page.locator('#rtds-scene').getAttribute('data-frames'));await action(page,'return').click();await expect(page.locator('.rtds-pip-slot')).toBeFocused();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');
  // Restoring inline changes the backing-buffer size in ResizeObserver, then the
  // demand renderer draws on the next RAF. Wait for that observable render, not
  // just DOM relocation; an immediate screenshot can otherwise catch the clear.
  await expect.poll(async()=>Number(await page.locator('#rtds-scene').getAttribute('data-frames'))).toBeGreaterThan(frames);await rect(page);
- const drawn=await page.locator('#rtds-scene').evaluate(node=>{const canvas=node.querySelector('canvas');return {width:node.clientWidth,height:node.clientHeight,buffer:[canvas.width,canvas.height],ratio:Number(node.dataset.pixelRatio),viewBox:node.querySelector('.rtds-highlight').getAttribute('viewBox'),triangles:Number(node.dataset.triangles)};});
- expect(drawn.buffer).toEqual([Math.floor(drawn.width*drawn.ratio),Math.floor(drawn.height*drawn.ratio)]);expect(drawn.viewBox).toBe(`0 0 ${drawn.width} ${drawn.height}`);expect(drawn.triangles).toBeGreaterThan(0);await renderedModelPixels(page);await shot(page,'resize-returned-inline');
+ const drawn=await page.locator('#rtds-scene').evaluate(node=>{const canvas=node.querySelector('canvas');return {width:node.clientWidth,height:node.clientHeight,buffer:[canvas.width,canvas.height],ratio:Number(node.dataset.pixelRatio),triangles:Number(node.dataset.triangles)};});
+ expect(drawn.buffer).toEqual([Math.floor(drawn.width*drawn.ratio),Math.floor(drawn.height*drawn.ratio)]);expect(drawn.triangles).toBeGreaterThan(0);await renderedModelPixels(page);await shot(page,'resize-returned-inline');
 });
 
 test('resized card overview keeps its identity badge and model changes safely interrupt a captured resize',async({page})=>{
@@ -272,8 +274,8 @@ test('resized card overview keeps its identity badge and model changes safely in
  await page.evaluate(()=>{window.__pipOriginalCanvas=document.querySelector('#rtds-scene canvas');window.__pipOriginalWrap=document.querySelector('.rtds-viewer-wrap');window.__pipIdentity=document.querySelector('.rtds-card-identity');});
  const font=await badge.locator('strong').evaluate(node=>getComputedStyle(node).fontSize);await resizeDrag(page,'nw',-120,-80);await expect(badge).toBeVisible();
  const scene=await page.locator('#rtds-scene').boundingBox(),identity=await badge.boundingBox();expect(identity.x).toBeGreaterThanOrEqual(scene.x);expect(identity.y).toBeGreaterThanOrEqual(scene.y);expect(identity.x+identity.width).toBeLessThanOrEqual(scene.x+scene.width);expect(identity.y+identity.height).toBeLessThanOrEqual(scene.y+scene.height);expect(await badge.locator('strong').evaluate(node=>getComputedStyle(node).fontSize)).toBe(font);expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__pipIdentity)).toBe(true);await sameCanvas(page);await shot(page,'resize-AI-identity-enlarged');
- await page.locator('[data-group="analogue_input"]').evaluate(node=>node.click());await expect(badge).toBeHidden();await expect(page.locator('.rtds-card-identity-leader')).toBeHidden();await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await insideFrame(page);
- await page.locator('.rtds-model-notes').evaluate(node=>{node.open=true;});await page.locator('#rtds-physical-port').selectOption('gtai-v2-2.31.input1');await dock(page);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-ids','gtai-v2-2.31.input1');await expect(badge).toBeHidden();const selected=await rect(page);await resizeDrag(page,'nw',-40,-40);await insideFrame(page);await shot(page,'resize-AI-selected-port');await resizeDrag(page,'nw',40,40);closeRect(await rect(page),selected);await sameCanvas(page);
+ await page.locator('[data-group="analogue_input"]').evaluate(node=>node.click());await expect(badge).toBeHidden();await expect(page.locator('.rtds-card-identity-leader')).toBeHidden();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');await insideFrame(page);
+ await page.locator('.rtds-model-notes').evaluate(node=>{node.open=true;});await page.locator('#rtds-physical-port').selectOption('gtai-v2-2.31.input1');await dock(page);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-ids','gtai-v2-2.31.input1');await expect(badge).toBeHidden();const selected=await rect(page);await resizeDrag(page,'nw',-40,-40);await insideFrame(page);await shot(page,'resize-AI-selected-port');await resizeDrag(page,'nw',40,40);closeRect(await rect(page),selected);await sameCanvas(page);
  await page.locator('#rtds-reset').evaluate(node=>node.click());await expect(badge).toBeVisible();expect(await page.evaluate(()=>document.querySelector('.rtds-card-identity')===window.__pipIdentity)).toBe(true);await action(page,'return').click();await expect(page.locator('.rtds-pip')).toBeHidden();await sameCanvas(page);
 });
 
@@ -289,5 +291,5 @@ test('held-pointer intermediate resize frames keep actual model pixels visible b
   await renderedModelPixels(page,`resize-held-drag-${step}`,true);
   await expect(page.locator('.rtds-pip')).toHaveAttribute('data-resizing','nw');await expect(page.locator('body')).toHaveClass(/rtds-pip-resizing/);await sameCanvas(page);
  }
- await page.mouse.up();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await expect(page.locator('.rtds-highlight')).toHaveAttribute('data-kind','group');await shot(page,'resize-held-drag-finished');
+ await page.mouse.up();await expect(page.locator('body')).not.toHaveClass(/rtds-pip-resizing/);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');await shot(page,'resize-held-drag-finished');
 });
