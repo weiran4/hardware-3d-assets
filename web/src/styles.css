@@ -97,3 +97,33 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{
 .rtds-intro>p{font-size:16px}
 @media(max-width:800px){.intro{align-items:flex-start}.field-note{grid-template-columns:165px minmax(0,1fr)}}
 @media(max-width:560px){.intro .eyebrow,.lesson>.eyebrow,.field-note .eyebrow,.response-title .eyebrow,.rtds-intro .eyebrow{font-size:11px;letter-spacing:.03em}.intro-copy{font-size:16px}.intro-copy>span{font-size:12px}.rtds-intro>p{font-size:16px}.field-note{grid-template-columns:1fr}.field-note #note-body{grid-column:1;grid-row:auto;margin-top:12px}.port-btn>span:not(.port-dot):not(.button-arrow){font-size:12px}.steps strong{font-size:14px}.steps p{font-size:14px}.response-title{padding-right:0;min-height:0}.response-title h2{font-size:20px}.pulse-button{position:static;margin-top:14px;min-width:175px}.pulse-button>span{display:block}.scene-instruction{display:none}.rtds-model-head h3{font-size:26px}}
+
+/* Functional regions: white, square frames separate choosing, observing and reading.
+   These are document containers; floating-view eligibility never changes their width. */
+.rtds-workbench{grid-template-columns:220px minmax(0,1fr);align-items:start;gap:20px;border:0}
+.rtds-inspection{min-width:0;display:grid;gap:20px;padding:0}
+.rtds-region{min-width:0;border:1px solid #b8c1cb;border-top:3px solid var(--brand-navy);border-radius:0;padding:16px;background:var(--paper)}
+.rtds-region-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid var(--line)}
+.rtds-region-title{display:flex;align-items:center;gap:10px;margin:0;color:var(--brand-navy);font-size:18px;font-weight:700;line-height:1.45;letter-spacing:normal}
+.rtds-region-number{display:inline-grid;place-items:center;flex:none;min-width:32px;height:32px;padding:0 4px;background:var(--brand-navy);color:var(--paper);font-size:14px;font-weight:700;line-height:1;letter-spacing:.03em}
+.rtds-region-hint{color:var(--muted);font-size:13px;line-height:1.5}
+.rtds-library{align-self:start}
+.rtds-library-title{float:none}
+.rtds-library-title>span{margin:0;color:var(--muted);font-size:13px}
+.rtds-library .rtds-filter-label{display:block;position:static;width:auto;height:auto;clip-path:none;overflow:visible;margin:0 0 7px}
+.rtds-library #rtds-filter{width:100%;margin:0;font-family:var(--sans)}
+.rtds-library .rtds-library-note{margin-bottom:0}
+.rtds-catalog-item[aria-pressed=true] strong{color:var(--brand-red)}
+.rtds-model-head{padding:0 0 4px}
+.rtds-model-head .eyebrow{margin-top:0}
+.rtds-camera{padding:12px 0 0;border-bottom:0}
+.rtds-tour-row{padding:0 0 14px;margin:0 0 16px;border-bottom:1px solid var(--line)}
+.rtds-tour-row .rtds-region-title{margin:0 0 8px}
+.rtds-group-list{margin:0}
+.rtds-detail.rtds-region{border-top-color:var(--brand-red)}
+.rtds-detail .rtds-region-number{background:var(--brand-red)}
+.rtds-context-label{margin:0 0 4px;color:var(--muted);font-size:13px;font-weight:700;line-height:1.5}
+.rtds-detail h4{color:var(--brand-navy);font-weight:700}
+@media(max-width:1100px){.rtds-workbench{grid-template-columns:200px minmax(0,1fr)}}
+@media(max-width:800px){.rtds-library{margin-bottom:20px}.rtds-library-title{margin-top:0}.rtds-library-title>span{margin-left:0}}
+@media(max-width:560px){.rtds-viewer-region>.rtds-region-heading .rtds-region-hint{display:none}.rtds-tour-row{gap:12px}.rtds-tour-row>div:last-child{gap:6px}.rtds-tour-row button{padding:8px}.rtds-camera>div{gap:6px}.rtds-camera button{padding:9px 8px}}

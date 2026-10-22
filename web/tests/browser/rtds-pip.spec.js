@@ -39,7 +39,8 @@ const action=(page,name)=>page.locator(`[data-pip-action="${name}"]`);
 
 async function fullWidthReading(page){
  const layout=await page.evaluate(()=>{
-  const selectors=['.rtds-camera','.rtds-tour-row','#rtds-group-list','#rtds-detail','#rtds-detail-copy','.rtds-provenance','.analog-lesson'];
+  // Outer frames must fill the inspection column, not merely a newly narrowed wrapper.
+  const selectors=['#rtds-viewer-region','#rtds-interface-region','.rtds-camera','.rtds-tour-row','#rtds-group-list','#rtds-detail','#rtds-detail-copy','.rtds-provenance','.analog-lesson'];
   const geometry=selectors.map(selector=>{
    const node=document.querySelector(selector),r=node.getBoundingClientRect(),s=getComputedStyle(node),p=node.parentElement.getBoundingClientRect(),ps=getComputedStyle(node.parentElement);
    return {selector,x:r.x,docTop:r.top+scrollY,width:r.width,height:r.height,right:r.right,expectedLeft:p.left+parseFloat(ps.borderLeftWidth)+parseFloat(ps.paddingLeft),expectedRight:p.right-parseFloat(ps.borderRightWidth)-parseFloat(ps.paddingRight),marginRight:parseFloat(s.marginRight),paddingRight:parseFloat(s.paddingRight)};
@@ -53,7 +54,9 @@ async function fullWidthReading(page){
  for(const r of layout.geometry){
   expect(Math.abs(r.x-r.expectedLeft),`${r.selector} full-width left edge`).toBeLessThan(1);
   expect(Math.abs(r.right-r.expectedRight),`${r.selector} full-width right edge`).toBeLessThan(1);
-  expect(r.marginRight,`${r.selector} no reserved right margin`).toBe(0);expect(r.paddingRight,`${r.selector} no reserved right padding`).toBe(0);
+  expect(r.marginRight,`${r.selector} no reserved right margin`).toBe(0);
+  const framed=['#rtds-viewer-region','#rtds-interface-region','#rtds-detail'].includes(r.selector);
+  expect(r.paddingRight,`${r.selector} only explicit 16px panel padding, never a PiP gutter`).toBe(framed?16:0);
  }
  for(const r of layout.alignment){expect(Math.abs(r.left-r.first),`${r.selector} title left aligned`).toBeLessThan(1);expect(Math.abs(r.right-r.last),`${r.selector} actions right aligned`).toBeLessThan(1);}
  for(const r of layout.buttons){expect(r.left).toBeGreaterThanOrEqual(layout.list.left);expect(r.right).toBeLessThanOrEqual(layout.list.right+.1);expect(r.top).toBeGreaterThanOrEqual(layout.list.top);expect(r.bottom).toBeLessThanOrEqual(layout.list.bottom+.1);}
