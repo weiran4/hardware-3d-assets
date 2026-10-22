@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
-async function ready(page){await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');}
+async function ready(page){await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');await expect.poll(async()=>Number(await page.locator('#analog-model-scene').getAttribute('data-frames'))).toBeGreaterThan(0);}
 async function chapter(page,stage){await page.locator(`[data-analog-stage="${stage}"]`).click();await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-stage',String(stage));}
 async function shot(page,name){await mkdir('screenshots',{recursive:true});await page.locator('#rtds-analog-lesson').screenshot({path:`screenshots/novacor-analog-${name}.png`});}
 
@@ -30,7 +30,7 @@ test('both physical probe tips touch only their low-voltage output and ground an
   })).toBeLessThan(1.5);
   const gain=await page.locator('.analog-fpao-path>div').boundingBox(),icon=await page.locator('.analog-fpao-path figure').boundingBox();expect(gain.x+gain.width).toBeLessThanOrEqual(icon.x+1);expect(await page.locator('.analog-fpao-path>div b').evaluate(n=>{const b=n.getBoundingClientRect(),p=n.parentElement.getBoundingClientRect();return b.right<=p.right+1&&n.scrollWidth<=n.clientWidth+1;})).toBeTruthy();
   for(const id of ['analog-play','analog-step','analog-restart','analog-inspect-output']){const b=await page.locator('#'+id).boundingBox();expect(b.x).toBeGreaterThanOrEqual(0);expect(b.x+b.width).toBeLessThanOrEqual(width);}
-  expect(await page.locator('.analog-sockets').evaluate(n=>[...n.children].every(c=>c.querySelector('small').getBoundingClientRect().bottom<c.querySelector('i').getBoundingClientRect().top))).toBeTruthy();
+  await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-asset','novacor-2.0-2023');await expect(page.locator('#analog-model-scene canvas')).toHaveCount(1);
   await expect(page.locator('#analog-output-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.ao1');await expect(page.locator('#analog-ground-socket')).toHaveAttribute('data-endpoint','novacor-2.0-2023.gnd1');await expect(page.locator('#analog-meter-value')).toHaveText('3.54');await shot(page,`04-meter-${width}`);
  }
 });
@@ -49,4 +49,37 @@ test('analog controls support keyboard and reduced motion, hidden document pause
  await page.locator('#analog-restart').click();await page.locator('#analog-play').click();await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator('#analog-play')).toHaveAttribute('aria-pressed','false');
  await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator('#analog-play')).toHaveAttribute('aria-pressed','false');
  await page.locator('[data-variant="gtdi-v2"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.route('**/assets/rtds/novacor-2.0-2023.glb',route=>route.abort());await page.locator('#analog-inspect-output').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','error');await expect(page.locator('#analog-inspect-status')).toContainText('未能定位');await chapter(page,3);await expect(page.locator('#analog-meter-value')).toHaveText('3.54');
+});
+
+async function actualModelPixels(page,name){
+ await mkdir('screenshots',{recursive:true});const png=await page.locator('#analog-model-scene canvas').screenshot({path:`screenshots/novacor-real-model-${name}.png`});
+ const fraction=await page.evaluate(async base64=>{const image=new Image();image.src=`data:image/png;base64,${base64}`;await image.decode();const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const ctx=c.getContext('2d');ctx.drawImage(image,0,0);const bytes=ctx.getImageData(0,0,c.width,c.height).data;let pixels=0;for(let i=0;i<bytes.length;i+=4){const max=Math.max(bytes[i],bytes[i+1],bytes[i+2]),min=Math.min(bytes[i],bytes[i+1],bytes[i+2]);if(bytes[i+3]>200&&max<180&&max-min<35)pixels++;}return pixels/(c.width*c.height);},png.toString('base64'));
+ expect(fraction,'visible original chassis pixels, not merely overlays').toBeGreaterThan(.05);await page.locator('#analog-bench').screenshot({path:`screenshots/novacor-real-bench-${name}.png`});
+}
+
+test('actual NovaCor chassis is the primary animation viewport and real probes stay aligned through closeup and camera movement',async({page})=>{
+ await ready(page);await expect(page.locator('.analog-frontpanel')).toHaveCount(0);await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-view','front');
+ expect(await page.evaluate(()=>document.querySelector('#analog-bench').getBoundingClientRect().top<document.querySelector('.analog-virtual-grid').getBoundingClientRect().top)).toBeTruthy();
+ const original=await page.locator('#analog-model-scene').getAttribute('data-instance');await expect.poll(async()=>Number(await page.locator('#analog-model-scene').getAttribute('data-triangles'))).toBeGreaterThan(1000);await actualModelPixels(page,'whole-front-desktop');
+ await chapter(page,3);await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-view','detail');await actualModelPixels(page,'contact-closeup-desktop');
+ const before=await page.locator('#analog-output-socket').getAttribute('style'),canvas=page.locator('#analog-model-scene canvas'),box=await canvas.boundingBox();await page.mouse.move(box.x+box.width*.45,box.y+box.height*.45);await page.mouse.down();await page.mouse.move(box.x+box.width*.50,box.y+box.height*.48,{steps:8});await page.mouse.up();
+ await expect(page.locator('#analog-output-socket')).not.toHaveAttribute('style',before);await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-probes-connected','true');await expect(page.locator('#analog-meter-value')).toHaveText('3.54');
+ await expect.poll(()=>page.evaluate(()=>{const a=document.getElementById('analog-red-probe'),b=document.getElementById('analog-output-socket').getBoundingClientRect(),p=new DOMPoint(0,0).matrixTransform(a.getScreenCTM());return Math.hypot(p.x-b.x-b.width/2,p.y-b.y-b.height/2);})).toBeLessThan(1.5);await actualModelPixels(page,'contact-after-orbit');
+ await page.locator('#analog-model-front').click();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-view','front');await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-instance',original);await actualModelPixels(page,'connected-whole-front');
+ for(const width of [320,390]){await page.setViewportSize({width,height:900});await page.locator('#analog-model-detail').click();await actualModelPixels(page,`contact-closeup-${width}`);await page.locator('#analog-model-front').click();await actualModelPixels(page,`whole-front-${width}`);}
+});
+
+test('real lesson model loading failure has no fake panel fallback, retry recovers one canvas, and inactive rendering stops',async({page})=>{
+ await page.goto('./');await page.route('**/assets/rtds/novacor-2.0-2023.glb',route=>route.abort());await page.locator('#mode-rtds').click();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','error');await expect(page.locator('#analog-model-loading')).toContainText('不会用抽象面板替代');await expect(page.locator('#analog-model-scene canvas')).toHaveCount(0);await chapter(page,3);await expect(page.locator('#analog-meter-value')).toHaveText('— —');await expect(page.locator('#analog-probe-overlay')).toBeHidden();
+ await page.unroute('**/assets/rtds/novacor-2.0-2023.glb');await page.locator('#analog-model-retry').click();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#analog-model-scene canvas')).toHaveCount(1);await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-probes-connected','true');await expect(page.locator('#analog-meter-value')).toHaveText('3.54');
+ const identity=await page.locator('#analog-model-scene').getAttribute('data-instance');await page.locator('#mode-generic').click();const frames=await page.locator('#analog-model-scene').getAttribute('data-frames');await page.waitForTimeout(200);await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-frames',frames);await page.locator('#mode-rtds').click();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-instance',identity);await expect(page.locator('#analog-model-scene canvas')).toHaveCount(1);await expect(page.locator('.rtds-highlight')).toHaveCount(0);await expect(page.locator('.analog-model-highlight')).toHaveCount(1);
+});
+
+test('late real-model completion cannot wake a generic-mode or hidden-document lesson renderer',async({page})=>{
+ for(const interruption of ['generic','document-hidden']){
+  await page.goto('./');let release;const gate=new Promise(resolve=>{release=resolve;});await page.route('**/assets/rtds/novacor-2.0-2023.glb',async route=>{await gate;await route.continue();});await page.locator('#mode-rtds').click();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','loading');
+  if(interruption==='generic')await page.locator('#mode-generic').click();else await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});
+  release();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');const before=await page.locator('#analog-model-scene').getAttribute('data-frames');await page.waitForTimeout(250);expect(await page.locator('#analog-model-scene').getAttribute('data-frames')).toBe(before);expect(Number(before||0)).toBe(0);
+  await page.unroute('**/assets/rtds/novacor-2.0-2023.glb');if(interruption==='generic')await page.locator('#mode-rtds').click();else await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'));});await page.locator('#analog-model-scene').scrollIntoViewIfNeeded();await expect.poll(async()=>Number(await page.locator('#analog-model-scene').getAttribute('data-frames'))).toBeGreaterThan(0);await chapter(page,3);await expect(page.locator('#analog-meter-value')).toHaveText('3.54');await expect(page.locator('#analog-model-scene canvas')).toHaveCount(1);
+ }
 });
