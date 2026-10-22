@@ -22,7 +22,10 @@ class Node extends Target {
  removeAttribute(name){this.attributes.delete(name);}
  contains(node){return node===this||this.children.some(child=>child.contains(node));}
  get isConnected(){return this===this.ownerDocument.body||!!this.parentNode?.isConnected;}
- getBoundingClientRect(){if(this.classList.contains('rtds-pip-slot'))return {...this.ownerDocument.rect};return {top:100,bottom:550,width:900,height:450};}
+ getBoundingClientRect(){if(this.classList.contains('rtds-pip-slot'))return {...this.ownerDocument.rect};if(this.classList.contains('rtds-pip')){const width=parseFloat(this.style.width)||320,height=parseFloat(this.style.height)||306,right=this.ownerDocument.defaultView.innerWidth-(parseFloat(this.style.right)||18),bottom=this.ownerDocument.defaultView.innerHeight-(parseFloat(this.style.bottom)||18);return {x:right-width,y:bottom-height,left:right-width,top:bottom-height,right,bottom,width,height};}return {top:100,bottom:550,width:900,height:450};}
+ setPointerCapture(id){this.captured=id;}
+ hasPointerCapture(id){return this.captured===id;}
+ releasePointerCapture(id){if(this.captured===id)this.captured=null;}
  focus(){this.ownerDocument.activeElement=this;const event=new Event('focusin');Object.defineProperty(event,'target',{value:this});this.ownerDocument.dispatchEvent(event);}
  click(){this.dispatchEvent(new Event('click'));}
  scrollIntoView(options){this.scrollOptions=options;Object.assign(this.ownerDocument.rect,{top:120,bottom:570});}
@@ -30,15 +33,15 @@ class Node extends Target {
 function fixture(){
  assert.equal(typeof pip.initRtdsPip,'function','the desktop mini-viewer controller must exist');
  const doc=new Target();doc.rect={top:100,bottom:550,width:900,height:450};doc.createElement=tag=>new Node(tag,doc);doc.body=doc.createElement('body');doc.activeElement=doc.body;
- const win=new Target(),media=new Target();media.matches=true;win.innerHeight=900;win.matchMedia=()=>media;const pending=new Map();let next=0;win.requestAnimationFrame=fn=>{pending.set(++next,fn);return next;};win.cancelAnimationFrame=id=>pending.delete(id);doc.defaultView=win;
+ const win=new Target(),media=new Target();media.matches=true;win.innerWidth=1440;win.innerHeight=900;win.matchMedia=()=>media;const pending=new Map();let next=0;win.requestAnimationFrame=fn=>{pending.set(++next,fn);return next;};win.cancelAnimationFrame=id=>pending.delete(id);doc.defaultView=win;
  const original=doc.createElement('section'),before=doc.createElement('p'),wrap=doc.createElement('div'),canvas=doc.createElement('canvas'),after=doc.createElement('button');wrap.className='rtds-viewer-wrap';canvas.modelState={selection:'GT23',zoom:2,orbit:[1,2,3]};wrap.append(canvas);original.append(before,wrap,after);doc.body.append(original);const views=[];
  const api=pip.initRtdsPip({wrap,onView:action=>views.push(action)});
- const walk=(node)=>[node,...node.children.flatMap(walk)];const find=(name)=>walk(doc.body).find(node=>node.classList.contains(name));const action=(name)=>walk(doc.body).find(node=>node.dataset.pipAction===name);
+ const walk=(node)=>[node,...node.children.flatMap(walk)];const find=(name)=>walk(doc.body).find(node=>node.classList.contains(name));const action=(name)=>walk(doc.body).find(node=>node.dataset.pipAction===name);const handle=(edge)=>walk(doc.body).find(node=>node.dataset.pipResize===edge);
  const flush=()=>{for(const [id,fn]of [...pending]){pending.delete(id);fn();}};
  const scroll=(top)=>{Object.assign(doc.rect,{top,bottom:top+450});win.dispatchEvent(new Event('scroll'));flush();};
  const desktop=(value)=>{media.matches=value;media.dispatchEvent(new Event('change'));win.dispatchEvent(new Event('resize'));flush();};
  const ready=()=>{api.setActive(true);api.setReady(true);};
- return {api,doc,win,media,wrap,canvas,original,before,after,views,find,action,flush,scroll,desktop,ready,pending};
+ return {api,doc,win,media,wrap,canvas,original,before,after,views,find,action,handle,flush,scroll,desktop,ready,pending};
 }
 
 test('eligibility requires ready desktop RTDS, a passed source frame and no dismissal',()=>{
@@ -118,4 +121,66 @@ test('dispose cancels queued frames and listeners, restores exact DOM order and 
 test('mini styling is desktop-only and retains readable non-blocking captions without restyling the orange highlight',()=>{
  assert.ok(existsSync('src/rtds-pip.css'),'mini-viewer stylesheet must exist');const css=readFileSync('src/rtds-pip.css','utf8');
  assert.match(css,/@media\s*\(min-width:\s*1024px\)/);assert.match(css,/--rtds-pip-width:\s*320px/);assert.match(css,/pointer-events:\s*none/);assert.ok(!/\.rtds-highlight[^}]*stroke/.test(css));
+});
+
+
+function pointer(node,type,values={}){const event=new Event(type,{cancelable:true});for(const [key,value]of Object.entries({pointerId:1,button:0,isPrimary:true,clientX:0,clientY:0,...values}))Object.defineProperty(event,key,{value});node.dispatchEvent(event);return event;}
+function key(node,key,shiftKey=false){return pointer(node,'keydown',{key,shiftKey});}
+function size(f){const panel=f.find('rtds-pip');return Object.fromEntries(['width','height','right','bottom'].map(key=>[key,parseFloat(panel.style[key])]));}
+
+test('resize geometry clamps every edge and corner without moving the opposite anchor',()=>{
+ assert.equal(typeof pip.resizeRtdsPip,'function','resize geometry must exist');
+ const view={width:1440,height:900},start={width:320,height:306,right:18,bottom:18};
+ assert.deepEqual(pip.resizeRtdsPip(start,'nw',-180,-120,view),{width:500,height:426,right:18,bottom:18});
+ assert.deepEqual(pip.resizeRtdsPip(start,'nw',1000,1000,view),{width:280,height:240,right:18,bottom:18});
+ assert.deepEqual(pip.resizeRtdsPip(start,'nw',-9999,-9999,view),{width:1404,height:864,right:18,bottom:18});
+ assert.deepEqual(pip.resizeRtdsPip(start,'nw',-9999,-9999,{width:1024,height:280}),{width:988,height:244,right:18,bottom:18});
+ const inset={width:400,height:350,right:150,bottom:140};
+ assert.deepEqual(pip.resizeRtdsPip(inset,'se',80,50,view),{width:480,height:400,right:70,bottom:90});
+ for(const edge of ['n','e','s','w','ne','nw','se','sw']){
+  const next=pip.resizeRtdsPip(inset,edge,20,20,view);
+  if(!edge.includes('n')&&!edge.includes('s'))assert.equal(next.height,inset.height);
+  if(!edge.includes('w')&&!edge.includes('e'))assert.equal(next.width,inset.width);
+ }
+});
+
+test('dragging the visible corner resizes only the frame and preserves source, selection and camera state',()=>{
+ const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle,'a top-left resize grip must exist');
+ const state=f.canvas.modelState,slot=f.find('rtds-pip-slot'),before=size(f);const down=pointer(handle,'pointerdown',{clientX:1102,clientY:576});
+ assert.equal(down.defaultPrevented,true);assert.equal(handle.captured,1);assert.ok(f.doc.body.classList.contains('rtds-pip-resizing'));
+ pointer(handle,'pointermove',{pointerId:2,clientX:922,clientY:456});assert.deepEqual(size(f),before);
+ pointer(handle,'pointermove',{clientX:922,clientY:456});assert.equal(size(f).width,before.width+180);assert.equal(size(f).height,before.height+120);
+ assert.equal(slot.style.height,'450px');assert.equal(f.canvas.modelState,state);assert.deepEqual(f.views,[]);assert.equal(f.wrap.children[0],f.canvas);
+ pointer(handle,'pointerup');assert.equal(handle.captured,null);assert.ok(!f.doc.body.classList.contains('rtds-pip-resizing'));const end=size(f);
+ pointer(handle,'pointermove',{clientX:100,clientY:100});assert.deepEqual(size(f),end);f.api.dispose();
+});
+
+test('expanded geometry survives minimize, return, close, viewport clamps and mobile restoration',()=>{
+ const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);key(handle,'ArrowLeft',true);key(handle,'ArrowUp',true);const expanded=size(f);
+ f.action('minimize').click();assert.equal(f.find('rtds-pip').dataset.state,'minimized');assert.equal(handle.hidden,true);f.action('minimize').click();assert.deepEqual(size(f),expanded);
+ f.action('return').click();f.scroll(-500);assert.deepEqual(size(f),expanded);f.action('close').click();f.scroll(100);f.scroll(-500);assert.deepEqual(size(f),expanded);
+ f.win.innerHeight=280;f.win.dispatchEvent(new Event('resize'));f.flush();assert.equal(size(f).height,244);assert.equal(size(f).bottom,18);
+ f.desktop(false);assert.equal(f.wrap.parentNode,f.find('rtds-pip-slot'));f.win.innerHeight=900;f.desktop(true);assert.deepEqual(size(f),expanded);f.api.dispose();
+});
+
+test('resize grip offers keyboard dimensions, reset and no camera action',()=>{
+ const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);assert.equal(handle.tagName,'BUTTON');assert.match(handle.getAttribute('aria-label'),/调整/);
+ const before=size(f);assert.equal(key(handle,'ArrowLeft').defaultPrevented,true);assert.equal(size(f).width,before.width+16);key(handle,'ArrowUp',true);assert.equal(size(f).height,before.height+48);
+ key(handle,'ArrowRight');key(handle,'ArrowDown',true);assert.deepEqual(size(f),before);key(handle,'ArrowLeft');key(handle,'Home');assert.deepEqual(size(f),before);assert.deepEqual(f.views,[]);f.api.dispose();
+});
+
+test('interrupted resizing releases capture and transient listeners on every lifecycle boundary',()=>{
+ for(const stop of [f=>f.action('minimize').click(),f=>f.action('close').click(),f=>f.action('return').click(),f=>f.api.setActive(false),f=>f.api.setReady(false),f=>f.desktop(false),f=>f.scroll(100),f=>f.win.dispatchEvent(new Event('blur')),f=>pointer(f.handle('nw'),'pointercancel'),f=>pointer(f.handle('nw'),'lostpointercapture'),f=>{f.win.dispatchEvent(new Event('resize'));f.flush();},f=>f.api.dispose()]){
+  const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);const count=handle.listenerCount();pointer(handle,'pointerdown');assert.equal(handle.captured,1);assert.ok(handle.listenerCount()>count);stop(f);assert.equal(handle.captured,null);assert.ok(handle.listenerCount()<=count);assert.ok(!f.doc.body.classList.contains('rtds-pip-resizing'));const after={...f.find('rtds-pip')?.style};pointer(handle,'pointermove',{clientX:-100,clientY:-100});assert.deepEqual({...f.find('rtds-pip')?.style},after);f.api.dispose();
+ }
+});
+
+test('non-primary buttons and pointers cannot start a resize',()=>{
+ const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);const before=size(f);
+ for(const values of [{button:2},{isPrimary:false}]){assert.equal(pointer(handle,'pointerdown',values).defaultPrevented,false);assert.equal(handle.captured,undefined);}
+ assert.deepEqual(size(f),before);f.api.dispose();
+});
+
+test('Escape cancels an active drag without closing the window or leaving capture behind',()=>{
+ const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);const before=size(f);pointer(handle,'pointerdown',{clientX:1102,clientY:576});pointer(handle,'pointermove',{clientX:1002,clientY:476});assert.notDeepEqual(size(f),before);key(f.find('rtds-pip'),'Escape');assert.equal(f.find('rtds-pip').hidden,false);assert.deepEqual(size(f),before);assert.equal(handle.captured,null);f.api.dispose();
 });
