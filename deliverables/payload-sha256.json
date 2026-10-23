@@ -477,7 +477,7 @@
   "web/tests/browser/rtds-gtio.spec.js": "5e61b2d1991934c209f7c09ea96aef394072d09ef075b8af898f9c1839f7aa18",
   "web/tests/browser/rtds-identity.spec.js": "4620c9a98df6d6c8e030b697eb4a5f37abbadd5463f1cc6bd95c2da9c0829ab3",
   "web/tests/browser/rtds-mesh-test-helpers.js": "56e226b927d11445b533717e83644f1ef1e10a128d2b1f3f2455a2f503257e64",
-  "web/tests/browser/rtds-pip.spec.js": "97cce5fff3166a02d9b9f5f510bc02ee588c9b85cf5eb52ba7b115c7d57a8505",
+  "web/tests/browser/rtds-pip.spec.js": "47caf71cb4f5b90c15bbfa3404a6208d3fa8d0a17d033f6304cea1f72176affe",
   "web/tests/browser/rtds-readability.spec.js": "8adfcb32b2627559dfabe1eaa3be773ef67cd262d9c85aef494ba11cbd6f3644",
   "web/tests/browser/rtds-regions.spec.js": "9723c51808350821d0edd9e927f7345f44b7c23ef56c547df2a3d35c6d8d5d09",
   "web/tests/browser/rtds-test-helpers.js": "306bd11f0b166bd149765177c847f8833c2d3b586d14399bcd0f4d6a155b34c5",

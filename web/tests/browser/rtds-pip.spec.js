@@ -17,6 +17,24 @@ async function dock(page){
 }
 async function sourceVisible(page){
  await page.locator('.rtds-pip-slot').evaluate(node=>node.scrollIntoView({block:'center',behavior:'instant'}));
+ // Hidden/inline is already true after dismissal. The source must actually
+ // remain visible across native frames so the scroll observer can rearm PiP;
+ // an immediate second scroll can otherwise coalesce away the source visit.
+ const frames=await page.locator('.rtds-pip-slot').evaluate(node=>new Promise(resolve=>{
+  const samples=[];
+  function observe(time){
+   const r=node.getBoundingClientRect();
+   samples.push({time,top:r.top,bottom:r.bottom,width:r.width,height:r.height,viewportHeight:innerHeight,scrollY});
+   if(samples.length===2)resolve(samples);else requestAnimationFrame(observe);
+  }
+  requestAnimationFrame(observe);
+ }));
+ expect(frames[1].time,'source visibility observed on distinct native frames').toBeGreaterThan(frames[0].time);
+ for(const frame of frames){
+  expect(frame.width,'source has rendered width').toBeGreaterThan(0);expect(frame.height,'source has rendered height').toBeGreaterThan(0);
+  expect(frame.top,'source intersects viewport before redocking').toBeLessThan(frame.viewportHeight);expect(frame.bottom,'source intersects viewport before redocking').toBeGreaterThan(0);
+ }
+ await test.info().attach('pip-source-visible-frames',{body:JSON.stringify(frames),contentType:'application/json'});
  await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('.rtds-pip-slot > .rtds-viewer-wrap')).toHaveCount(1);
 }
 async function sameCanvas(page){
