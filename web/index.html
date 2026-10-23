@@ -68,6 +68,33 @@
   <details class="analog-evidence"><summary>参数、依据与边界</summary><p>沿用原有模型的估计几何，不验证插孔规格、配接或插入深度。按理想高输入阻抗万用表显示正弦理论读数；不代表真实测量。</p><p>等效缩放 k = 5 / (220√2)，不对应已核实的软件参数栏。50 Hz 示例采用 200 倍慢放：屏幕 4 秒 = 仿真 20 ms，非硬件实时运行。</p><div class="analog-footer"><button id="analog-inspect-output">在素材库单独查看输出 1 ↗</button><p id="analog-inspect-status" role="status"></p></div><p>NovaCor 2.0 前面板有 12 路、12-bit D/A 监视输出，范围 ±10 V 峰值，最大 20 mA，以及 3 个模拟地接口。这些输出用于监视；手册不建议直接接外部控制或保护设备，精密硬件接口采用 GTAO。</p><p>本例在原有 NovaCor 3D 模型的真实接口锚点上，选输出 1 和模拟地 1 作接触示意。插孔配接标准、探针插入深度与安全接线条件未验证；不据此操作真实设备。没有运行 RTDS case，没有连接或控制设备；不模拟 12-bit 量化、输出负载或仪表内部算法。</p><p>硬件依据：RTDS Hardware Manual，NovaCor 2.0，修订 20250916，§2.5 与 §2.5.1（章节页 6、8–9；PDF 70、72–73）。只整理事实，不分发私有手册。FPAO 图片为用户所给元件截图的透明背景整理版；等效缩放不宣称当前 FPAO 配置字段或单位约定。</p></details>
  </section>
 
+ <section id="rtds-power-lesson" class="power-lesson" aria-labelledby="power-heading" data-playing="false" data-connected="false" data-energized="false">
+  <header class="power-heading"><div><p class="eyebrow">05 / GTIO · 24 V DC POWER</p><h3 id="power-heading" tabindex="-1">两张卡，同一条 24 V 母线。</h3></div><div class="power-actions"><button id="power-play" disabled>▶ 一键播放</button><button id="power-pause" hidden>Ⅱ 暂停</button></div></header>
+  <p class="power-safety"><strong>先断电接线，再共同供电。</strong>复现图 1.18 的接头级布局；不是带电插拔或针脚安装指导。仅演示低压 DC 侧。</p>
+  <div id="power-dashboard" class="power-dashboard">
+   <article class="power-hardware"><div class="power-toolbar"><div><button id="power-model-front" aria-pressed="true" disabled>接线全貌</button><button id="power-model-detail" aria-pressed="false" disabled>卡间接头</button></div><div><button id="power-model-in" aria-label="放大供电模型" disabled>＋</button><button id="power-model-out" aria-label="缩小供电模型" disabled>−</button></div></div>
+    <div class="power-model-wrap">
+     <div id="power-model-scene" role="img" aria-label="两张原有 GTAO V2 三维模型竖直排列：24 V 直流电源接下卡下侧供电口；下卡上侧供电口通过跳线连接上卡下侧供电口。三条线束导线为黄色正24伏与两根黑色返回线。"></div>
+     <div id="power-model-loading" role="status">进入供电动画后载入原有 GTAO 3D 模型…</div><button id="power-model-retry" hidden>重试载入 3D 模型</button>
+     <i id="power-upper-input" class="power-contact" hidden></i><i id="power-lower-input" class="power-contact" hidden></i><i id="power-lower-link" class="power-contact" hidden></i><i id="power-supply-output" class="power-contact" hidden></i>
+     <i id="power-feed-plug" class="power-plug" hidden></i><i id="power-jumper-plug" class="power-plug" hidden></i><i id="power-jumper-start-plug" class="power-plug" hidden></i>
+     <span id="power-upper-input-label" class="power-connector-label" hidden>上卡 · 下侧口</span><span id="power-lower-input-label" class="power-connector-label" hidden>下卡 · 下侧口</span><span id="power-lower-link-label" class="power-connector-label" hidden>下卡 · 上侧口</span><span id="power-supply-output-label" class="power-connector-label" hidden>DC 输出</span>
+     <div id="power-upper-board" class="power-board-label" hidden><b>上卡 · GTAO V2</b><strong id="power-upper-voltage">未供电</strong><small>模拟量输出卡</small></div>
+     <div id="power-lower-board" class="power-board-label" hidden><b>下卡 · GTAO V2</b><strong id="power-lower-voltage">未供电</strong><small>模拟量输出卡</small></div>
+     <div id="power-supply-label" class="power-board-label" hidden><b>24 V DC 电源</b><strong id="power-supply-status">输出 OFF</strong><small>图示供电单元 · 100 W</small></div>
+    </div>
+    <div class="power-legend"><span><i></i>+24 V · 黄色</span><span><i class="black"></i>2 × GND · 黑色</span><small>不表示 PE 保护地；亮点仅标示路径。</small></div>
+   </article>
+   <aside class="power-notes" aria-label="供电路径与原理">
+    <article class="power-note"><h4>电源线 + 卡间跳线</h4><p class="power-path"><span>电源 → 下卡下侧供电口</span><span>下卡上侧口 → 上卡下侧口</span></p><p id="power-feed-state" class="power-state">等待模型</p><p id="power-jumper-state" class="power-state">等待模型</p></article>
+    <article class="power-note"><h4>线束逐卡接，负载并联</h4><div class="power-parallel"><strong>上卡 24 V = 下卡 24 V</strong><p>不是两卡串联分压。两卡共用同一电源的正极与返回线。</p></div></article>
+    <article class="power-note"><h4>本例电源容量</h4><div class="power-budget">2 × 15 W = 30 W</div><p>两卡最大额定功率合计，非实时测量。图示 Cubicle V1 电源 <strong>100 W</strong>，其他负载另计。</p></article>
+   </aside>
+  </div>
+  <p id="power-caption" class="power-caption" role="status">等待原有 GTAO 3D 模型；不以抽象板卡代替。</p>
+  <details class="power-evidence"><summary>依据、接头边界与安装提醒</summary><p>按 Cubicle &amp; Power 章节图 1.18（章节页 19；PDF 55）与 GTAO V2 图 6.6（PDF 284）的图示路线整理。图示与部分正文的上下供电口描述有差异；本动画复现用户指定图示，实际安装以设备手册及实际标识为准。</p><p>使用原有 GTAO V2 / PCB 2.20 的原创 Blender 导出模型；电源、DIN 导轨和线束为独立原创外形示意，不声称复制某款电源机械结构。接头与走线的几何仅供辨认，未验证配接公差、插入深度、线规、额定电流或实际安装路径。</p><p>线束有一根黄色 +24 V 与两根黑色 GND 返回线。已核对的上侧接头针序为 +24 V / GND / GND / NC，NC 不接；下侧接头的空间针序未核实，因此线束收进不透明插头，不把颜色映射到其针脚。电源 DC 端子图示为 −、−、+、+：两根黑线接两个 −，黄线接一个 +，余下 + 仅在此图中空置，不是 NC。</p><p>GND 返回线不等于 PE 保护地。未假定 DC 负极与 PE 相连；AC 的 L/N/PE 安装不在本课范围。连接或拆卸供电线应先关闭供电；本页不控制硬件，不检测短路、过流、启动时序或真实电压。</p><p>上卡最上侧供电口在本例中空置。供电标记不代表光纤链路、卡号枚举或仿真已就绪；100 W 只适用于本例所述电源，不是所有 GTIO 系统的统一上限。</p><p>容量依据：Cubicle V1 所述 I/O 电源 24 V DC / 100 W（PDF 53–54）；GTAO V2 每卡最大 15 W（PDF 281–282）。黄色/黑色线束功能亦见 GT Front Panel Interface 章节（PDF 450–451）。页面只使用原创模型与事实摘要，不提供手册页、原图或私有文件下载。</p></details>
+ </section>
+
 </section>
 
 <footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创模型；接口观察与概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>
