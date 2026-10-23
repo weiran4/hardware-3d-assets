@@ -71,6 +71,29 @@ async function essentials(page,name){
  await test.info().attach(`gtio-power-bounds-${name}`,{body:Buffer.from(JSON.stringify(evidence,null,2)),contentType:'application/json'});
  expect(evidence.violations,'all primary teaching content is visible, without PiP covering it').toEqual([]);
 }
+// ResizeObserver / IntersectionObserver are native browser deliveries. A single
+// fake-clock burst can finish before they schedule the resized draw; require a
+// real render handshake, not elapsed wall time or retained contact attributes.
+async function responsiveFrame(page,width,{clockPaused=true}={}){
+ const beforeFrames=Number(await page.locator(scene).getAttribute('data-frames')||0);
+ await page.setViewportSize({width,height:1000});
+ const advance=async()=>{if(clockPaused)await page.clock.runFor(50);else await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));};
+ const measure=()=>page.locator(scene).evaluate(n=>{
+  const r=n.getBoundingClientRect(),c=n.querySelector('canvas'),p=document.querySelector('.rtds-pip');
+  return{width:innerWidth,height:innerHeight,x:r.x,y:r.y,right:r.right,bottom:r.bottom,sceneWidth:n.clientWidth,sceneHeight:n.clientHeight,docTop:r.top+scrollY,documentHeight:document.documentElement.scrollHeight,scrollY,target:Math.max(0,Math.min(r.top+scrollY+(r.height-innerHeight)/2,document.documentElement.scrollHeight-innerHeight)),frames:Number(n.dataset.frames||0),pixelRatio:Math.min(devicePixelRatio,1.5),canvas:c?{width:c.width,height:c.height,cssWidth:c.clientWidth,cssHeight:c.clientHeight}:null,capable:document.body.classList.contains('rtds-pip-capable'),expectedCapable:matchMedia('(min-width:1024px)').matches,pipHidden:p.hidden,labels:['upper-board','lower-board','supply-label','upper-input','lower-input','lower-link'].map(id=>document.getElementById('power-'+id).getAttribute('style'))};
+ });
+ const stable=(a,b)=>['x','sceneWidth','sceneHeight','docTop','documentHeight'].every(k=>Math.abs(a[k]-b[k])<.25)&&a.capable===b.capable&&JSON.stringify(a.labels)===JSON.stringify(b.labels);
+ let evidence;
+ try{await expect.poll(async()=>{
+  await advance();const first=await measure();await advance();const before=await measure();evidence={beforeFrames,first,before};
+  if(!stable(first,before)||before.capable!==before.expectedCapable)return false;
+  await page.locator(scene).evaluate(n=>n.scrollIntoView({block:'center',behavior:'instant'}));
+  await advance();const placed=await measure();await advance();const settled=await measure();evidence={...evidence,placed,settled};
+  const c=settled.canvas,sized=!!c&&c.cssWidth===settled.sceneWidth&&c.cssHeight===settled.sceneHeight&&c.width===Math.floor(settled.sceneWidth*settled.pixelRatio)&&c.height===Math.floor(settled.sceneHeight*settled.pixelRatio);
+  const visible=settled.x>=0&&settled.y>=0&&settled.right<=settled.width&&settled.bottom<=settled.height;
+  return stable(placed,settled)&&Math.abs(placed.scrollY-settled.scrollY)<.25&&Math.abs(settled.scrollY-settled.target)<1&&settled.frames>beforeFrames&&sized&&visible&&settled.capable===settled.expectedCapable&&settled.pipHidden;
+ },{timeout:10000,message:'responsive scene reaches a fresh rendered frame and settled native observer layout'}).toBe(true);}finally{await test.info().attach(`gtio-power-resize-${clockPaused?'controlled':'native'}-${width}`,{body:Buffer.from(JSON.stringify(evidence,null,2)),contentType:'application/json'});}
+}
 async function annotationsInside(page,name){
  const evidence=await page.locator(scene).evaluate(node=>{
   const scene=node.getBoundingClientRect(),ids=['power-upper-board','power-lower-board','power-supply-label','power-upper-input-label','power-lower-input-label','power-lower-link-label','power-supply-output-label'];
@@ -140,7 +163,7 @@ test('projected opaque plugs stay on real connector-level anchors after camera c
  await page.locator('#power-model-detail').click();await page.clock.runFor(100);await contacts(page,{pairs:contactPairs.slice(1)});await page.locator('#power-model-front').click();await page.clock.runFor(100);await contacts(page);
  const box=await page.locator(scene+' canvas').boundingBox();await page.mouse.move(box.x+box.width*.45,box.y+box.height*.45);await page.mouse.down();await page.mouse.move(box.x+box.width*.50,box.y+box.height*.48,{steps:8});await page.mouse.up();await page.clock.runFor(100);await expect(page.locator('#power-lower-input')).not.toHaveAttribute('style',start);await contacts(page);await capture(page,'after-orbit',{viewport:false});
  for(const width of [320,390,768]){
-  await page.setViewportSize({width,height:1000});await page.locator(scene).evaluate(n=>n.scrollIntoView({block:'center',behavior:'instant'}));await page.clock.runFor(150);await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await responsiveFrame(page,width);await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await contacts(page);await powered(page);await annotationsInside(page,'mobile-'+width);await renderedBoards(page,'mobile-'+width);await capture(page,'mobile-'+width);
   const c=await page.locator(scene+' canvas').boundingBox();expect(c.x).toBeGreaterThanOrEqual(0);expect(c.y).toBeGreaterThanOrEqual(0);expect(c.x+c.width).toBeLessThanOrEqual(width);expect(c.y+c.height).toBeLessThanOrEqual(1000);
  }
@@ -183,4 +206,10 @@ test('direct power-lesson link remains focused and in view after asynchronous ga
  await expect.poll(()=>page.locator(lesson).evaluate(n=>{const b=n.getBoundingClientRect(),m=parseFloat(getComputedStyle(n).scrollMarginTop)||0,target=Math.max(0,Math.min(scrollY+b.top-m,document.documentElement.scrollHeight-innerHeight));return Math.abs(scrollY-target)<2;})).toBe(true);
  await expect.poll(()=>page.locator('#power-heading').evaluate(n=>{const r=n.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
  await expect(page.locator('#power-play')).toBeInViewport();await expect(page.locator(scene+' canvas')).toBeInViewport({ratio:1});if(await page.locator('.rtds-pip').isVisible())await page.locator('[data-pip-action="close"]').click();await essentials(page,'direct-entry');await renderedBoards(page,'direct-entry');await capture(page,'direct-entry');
+});
+
+
+test('native-clock responsive playback preserves the real powered assembly and unclipped labels',async({page})=>{
+ await ready(page);await page.locator('#power-play').click();await expect(page.locator(lesson)).toHaveAttribute('data-energized','true',{timeout:15000});await page.locator('#power-pause').click();await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');
+ for(const width of [320,390,768]){await responsiveFrame(page,width,{clockPaused:false});await powered(page);await annotationsInside(page,'native-mobile-'+width);await renderedBoards(page,'native-mobile-'+width);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await capture(page,'native-mobile-'+width);}
 });

@@ -423,7 +423,7 @@
   "web/.gitignore": "798c23fcabc6fdc57f147b4d46566ebdfd9ab9ccbd2c6a8248ca583b4fc0f97c",
   "web/README.md": "841124b635f980c9c1a735081b6035e7512d08fad9b0f7db52fc02e949a64d25",
   "web/build.mjs": "774a3fc25df4eae386909a2a2cf28167fc5bf96fac4fa22548eec2a5c8b4a97a",
-  "web/index.html": "f7dfa7a918ca6bd15f7b6958f848a74df09531efb29d16b5b99c70991b72be17",
+  "web/index.html": "6667e54fe9309cec6e5bacde3ee98239274af8adff126648ee84a32f31879140",
   "web/package-lock.json": "fa09d4c1999a75b67d3a3384feddbe546ea4fdc901757d8cd9247e532741e24d",
   "web/package.json": "45f2a37c6869d6c4c623fe3f142f6d625167532517d5518e6fde51e0eb05bb38",
   "web/playwright.config.js": "c76384c0da6ab972d190dc1fb3e44eb2c5e4a714717988d610ba6c27473209cd",
@@ -510,7 +510,7 @@
   "web/src/rtds-power-scene.js": "34b8f55e342a8afefe14049311fbd9e74e80458e7e03cfafc02000e4099752c9",
   "web/src/rtds-power-state.js": "d130f54d43fe76c4ae39e0647d0c9c3221b58023752c0681127e4cae7aab5ff1",
   "web/src/rtds-power.css": "fde831eb0bd243fa0ee11afa4a822cd72fe16624e572da7737c455fb01c80f88",
-  "web/tests/browser/rtds-power.spec.js": "fd6b4bd7bc0fd76931edd2344dbfb704c5e4b155248a2d5ae49beeb742828684",
+  "web/tests/browser/rtds-power.spec.js": "5173442a34c7198cee98cff665bcc4a68aaffdb47ef664a79ec94b8c32f879e4",
   "web/tests/rtds-power-3d.test.js": "2f63033c05227a2a800680f555292bf03a72a1c687fdae7fbd5baa2c877e3200",
   "web/tests/rtds-power.test.js": "d51860b02a51e8a289796b820deed462013b61086737ed435258a2efdad0e770"
 }
