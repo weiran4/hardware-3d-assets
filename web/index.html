@@ -30,13 +30,14 @@
 <section id="rtds-panel" aria-labelledby="rtds-heading" hidden>
  <div class="rtds-intro"><div><p class="eyebrow">HARDWARE ATLAS / RTDS · VERSION BY VERSION</p><h2 id="rtds-heading">先看清接口，<em>再理解硬件。</em></h2></div><p>按版本建立的原创三维素材库。<br>从接口分组开始，逐个观察形状、编号与键位。<small id="rtds-library-count"></small><a href="#rtds-chapter-1a">手册逐章学习 · 1A 机柜 V2 ↗</a></p></div>
  <div class="rtds-workbench">
-  <aside class="rtds-library rtds-region" aria-labelledby="rtds-library-heading"><header class="rtds-library-title rtds-region-heading"><h3 class="rtds-region-title" id="rtds-library-heading"><span class="rtds-region-number" aria-hidden="true">01</span>选择版本</h3><span aria-label="18 个版本">18</span></header><label class="rtds-filter-label" for="rtds-filter">筛选素材</label><select id="rtds-filter"><option value="all">全部版本</option><option value="modeled">可查看 3D</option><option value="reference">仅资料条目</option></select><div id="rtds-catalog" aria-label="RTDS 硬件版本目录"></div><p class="rtds-library-note">每一代单独核对。<br>目录条目 ≠ 已完成模型。</p></aside>
+  <aside class="rtds-library rtds-region" aria-labelledby="rtds-library-heading"><header class="rtds-library-title rtds-region-heading"><h3 class="rtds-region-title" id="rtds-library-heading"><span class="rtds-region-number" aria-hidden="true">01</span>选择版本</h3><span aria-label="19 个版本">19</span></header><label class="rtds-filter-label" for="rtds-filter">筛选素材</label><select id="rtds-filter"><option value="all">全部版本</option><option value="modeled">可查看 3D</option><option value="reference">仅资料条目</option></select><div id="rtds-catalog" aria-label="RTDS 硬件版本目录"></div><p class="rtds-library-note">每一代单独核对。<br>目录条目 ≠ 已完成模型。</p></aside>
   <div class="rtds-inspection">
    <section class="rtds-viewer-region rtds-region" id="rtds-viewer-region" aria-labelledby="rtds-viewer-heading rtds-model-title">
    <header class="rtds-region-heading"><p class="rtds-region-title" id="rtds-viewer-heading"><span class="rtds-region-number">3D</span> 模型观察</p><span class="rtds-region-hint">旋转 · 缩放 · 定位接口</span></header>
    <div class="rtds-model-head"><div><p class="eyebrow" id="rtds-model-kicker">RTDS / INTERFACE STUDY</p><h3 id="rtds-model-title">NovaCor 2.0</h3><p id="rtds-model-revision"></p></div><span id="rtds-model-status" class="rtds-badge"></span></div>
    <div class="rtds-viewer-layout"><div class="rtds-viewer-wrap"><div id="rtds-scene" role="img" aria-label="RTDS 原创三维接口模型。悬停接口查看柔光，点击打开简览；也可通过下方 02、03 的键盘控件查看全部接口信息。"></div><div id="rtds-loading" role="status"></div><div id="rtds-reference-placeholder" hidden><span>REFERENCE ONLY</span><strong>先留资料，不用猜测补齐。</strong><p>这一版本尚未发布三维模型。下方可查看已知事实与参考来源；待接口、键位与版本核对后再建模。</p></div><div id="rtds-label" hidden></div><div class="rtds-view-caption"><span id="rtds-view-state">整体观察</span><span>悬停辨认 · 点击审阅 · 拖动旋转</span></div></div>
    <aside id="rtds-inspection-summary" class="rtds-inspection-summary" aria-labelledby="rtds-inspection-title" hidden><div class="rtds-inspection-head"><p class="rtds-inspection-kicker">接口简览</p><button id="rtds-inspection-close" type="button" aria-label="清除接口选择并关闭简览">×</button></div><div id="rtds-inspection-content" aria-live="polite" aria-atomic="true"></div><a id="rtds-summary-details" href="#rtds-detail">查看 03 · 完整用途与参数 ↓</a><p class="rtds-inspection-note">柔光仅用于定位，不表示设备已通电。</p></aside></div>
+   <button id="rtds-open-teaching" class="context-teaching-launch" hidden>查看本硬件教学 ↓</button>
    <div class="rtds-camera" aria-label="RTDS 三维视角"><div><button id="rtds-front">正面</button><button id="rtds-rear">背面</button><button id="rtds-top">顶部</button><button id="rtds-reset">↺ 全貌</button></div><div><button id="rtds-in" aria-label="放大 RTDS 模型">＋</button><button id="rtds-out" aria-label="缩小 RTDS 模型">−</button></div></div>
    </section>
    <section class="rtds-interface-region rtds-region" id="rtds-interface-region" aria-labelledby="rtds-interfaces-heading" aria-describedby="rtds-tour-copy">
@@ -45,10 +46,9 @@
    </section>
    <section class="rtds-detail rtds-region" id="rtds-detail" aria-labelledby="rtds-details-heading" aria-describedby="rtds-detail-title"><header class="rtds-region-heading"><h3 class="rtds-region-title" id="rtds-details-heading"><span class="rtds-region-number" aria-hidden="true">03</span>用途与参数</h3><span class="rtds-region-hint">对应 02 所选分组</span></header><div class="rtds-detail-context"><p class="rtds-context-label">当前查看</p><h4 id="rtds-detail-title">从一个分组开始</h4><p id="rtds-detail-copy">选择 02 分组后，自动查看共同用途、参数与连接对象；不同功能单独列出。</p></div><div id="rtds-port-list" aria-label="当前组功能类别"></div><div id="rtds-port-facts"></div></section>
   </div>
- </div>
- <details class="rtds-provenance"><summary>版本资料与模型说明 <span>来源、几何估计与验证边界</span></summary><div class="rtds-evidence"><section><p class="eyebrow">KNOWN / ESTIMATED / UNKNOWN</p><h3>把确定的，和未确定的分开。</h3><p id="rtds-summary"></p><div class="rtds-certainty"><div><span class="rtds-badge known">已核对的资料事实</span><p id="rtds-known-copy"></p></div><div><span class="rtds-badge estimated">照片估计的几何</span><p id="rtds-estimate-copy"></p></div><div><span class="rtds-badge unknown">未验证的兼容性</span><p>不能据此外接真实设备。模型不验证配接、电气条件、固件时序或安全认证。</p></div></div><p class="rtds-scope-note" id="rtds-scope-note"></p></section><section class="rtds-sources"><p class="eyebrow">SOURCE NOTES</p><h3>版本与依据</h3><ul id="rtds-source-list"></ul><p>仅发布原创几何、整理的事实与来源引用；不托管制造商图片或私有手册。此页面不是 RTDS 官方产品。</p></section></div>
- </details>
- <section id="rtds-analog-lesson" class="analog-lesson" aria-labelledby="analog-heading" data-playing="false">
+ <section id="rtds-teaching" class="rtds-teaching" aria-labelledby="rtds-teaching-heading" hidden>
+  <header class="rtds-teaching-context"><h3 id="rtds-teaching-heading">所选硬件 · 教学演示</h3><p id="rtds-teaching-version"></p></header>
+ <section id="rtds-analog-lesson" hidden class="analog-lesson" aria-labelledby="analog-heading" data-playing="false">
   <header class="analog-heading"><div><p class="eyebrow">04 / NOVACOR 2.0 · ANALOG OUTPUT</p><h3 id="analog-heading" tabindex="-1">真实接法与波形，一起看。</h3></div><div class="analog-actions"><button id="analog-play">▶ 一键播放</button><button id="analog-pause" hidden>Ⅱ 暂停</button></div></header>
   <p class="analog-safety">220 V 仅为仿真数值（<strong>不是市电输入</strong>，也不是二进制数字 I/O）；表笔只接低压输出与模拟地。<span>50 Hz 示例 · <b>200 倍慢放</b> · 未连接硬件</span></p>
   <div id="analog-dashboard" class="analog-dashboard">
@@ -68,7 +68,7 @@
   <details class="analog-evidence"><summary>参数、依据与边界</summary><p>沿用原有模型的估计几何，不验证插孔规格、配接或插入深度。按理想高输入阻抗万用表显示正弦理论读数；不代表真实测量。</p><p>等效缩放 k = 5 / (220√2)，不对应已核实的软件参数栏。50 Hz 示例采用 200 倍慢放：屏幕 4 秒 = 仿真 20 ms，非硬件实时运行。</p><div class="analog-footer"><button id="analog-inspect-output">在素材库单独查看输出 1 ↗</button><p id="analog-inspect-status" role="status"></p></div><p>NovaCor 2.0 前面板有 12 路、12-bit D/A 监视输出，范围 ±10 V 峰值，最大 20 mA，以及 3 个模拟地接口。这些输出用于监视；手册不建议直接接外部控制或保护设备，精密硬件接口采用 GTAO。</p><p>本例在原有 NovaCor 3D 模型的真实接口锚点上，选输出 1 和模拟地 1 作接触示意。插孔配接标准、探针插入深度与安全接线条件未验证；不据此操作真实设备。没有运行 RTDS case，没有连接或控制设备；不模拟 12-bit 量化、输出负载或仪表内部算法。</p><p>硬件依据：RTDS Hardware Manual，NovaCor 2.0，修订 20250916，§2.5 与 §2.5.1（章节页 6、8–9；PDF 70、72–73）。只整理事实，不分发私有手册。FPAO 图片为用户所给元件截图的透明背景整理版；等效缩放不宣称当前 FPAO 配置字段或单位约定。</p></details>
  </section>
 
- <section id="rtds-power-lesson" class="power-lesson" aria-labelledby="power-heading" data-playing="false" data-connected="false" data-energized="false">
+ <section id="rtds-power-lesson" hidden class="power-lesson" aria-labelledby="power-heading" data-playing="false" data-connected="false" data-energized="false">
   <header class="power-heading"><div><p class="eyebrow">05 / GTIO · 24 V DC POWER</p><h3 id="power-heading" tabindex="-1">两张卡，同一条 24 V 母线。</h3></div><div class="power-actions"><button id="power-play" disabled>▶ 一键播放</button><button id="power-pause" hidden>Ⅱ 暂停</button></div></header>
   <p class="power-safety"><strong>先断电接线，再共同供电。</strong>复现图 1.18 的接头级布局；不是带电插拔或针脚安装指导。仅演示低压 DC 侧。</p>
   <div id="power-dashboard" class="power-dashboard">
@@ -95,7 +95,12 @@
   <details class="power-evidence"><summary>依据、接头边界与安装提醒</summary><p>按 Cubicle &amp; Power 章节图 1.18（章节页 19；PDF 55）与 GTAO V2 图 6.6（PDF 284）的图示路线整理。图示与部分正文的上下供电口描述有差异；本动画复现用户指定图示，实际安装以设备手册及实际标识为准。</p><p>使用原有 GTAO V2 / PCB 2.20 的原创 Blender 导出模型；电源、DIN 导轨和线束为独立原创外形示意，不声称复制某款电源机械结构。接头与走线的几何仅供辨认，未验证配接公差、插入深度、线规、额定电流或实际安装路径。</p><p>线束有一根黄色 +24 V 与两根黑色 GND 返回线。已核对的上侧接头针序为 +24 V / GND / GND / NC，NC 不接；下侧接头的空间针序未核实，因此线束收进不透明插头，不把颜色映射到其针脚。电源 DC 端子图示为 −、−、+、+：两根黑线接两个 −，黄线接一个 +，余下 + 仅在此图中空置，不是 NC。</p><p>GND 返回线不等于 PE 保护地。未假定 DC 负极与 PE 相连；AC 的 L/N/PE 安装不在本课范围。连接或拆卸供电线应先关闭供电；本页不控制硬件，不检测短路、过流、启动时序或真实电压。</p><p>上卡最上侧供电口在本例中空置。供电标记不代表光纤链路、卡号枚举或仿真已就绪；100 W 只适用于本例所述电源，不是所有 GTIO 系统的统一上限。</p><p>容量依据：Cubicle V1 所述 I/O 电源 24 V DC / 100 W（PDF 53–54）；GTAO V2 每卡最大 15 W（PDF 281–282）。黄色/黑色线束功能亦见 GT Front Panel Interface 章节（PDF 450–451）。页面只使用原创模型与事实摘要，不提供手册页、原图或私有文件下载。</p></details>
  </section>
 
- <section id="rtds-chapter-1a" class="cabinet-chapter" aria-label="第 1A 章 新版机柜与供电"></section>
+ <section id="rtds-chapter-1a" hidden class="cabinet-chapter" aria-label="第 1A 章 新版机柜与供电"></section>
+ </section>
+ </div>
+ <details class="rtds-provenance"><summary>版本资料与模型说明 <span>来源、几何估计与验证边界</span></summary><div class="rtds-evidence"><section><p class="eyebrow">KNOWN / ESTIMATED / UNKNOWN</p><h3>把确定的，和未确定的分开。</h3><p id="rtds-summary"></p><div class="rtds-certainty"><div><span class="rtds-badge known">已核对的资料事实</span><p id="rtds-known-copy"></p></div><div><span class="rtds-badge estimated">照片估计的几何</span><p id="rtds-estimate-copy"></p></div><div><span class="rtds-badge unknown">未验证的兼容性</span><p>不能据此外接真实设备。模型不验证配接、电气条件、固件时序或安全认证。</p></div></div><p class="rtds-scope-note" id="rtds-scope-note"></p></section><section class="rtds-sources"><p class="eyebrow">SOURCE NOTES</p><h3>版本与依据</h3><ul id="rtds-source-list"></ul><p>仅发布原创几何、整理的事实与来源引用；不托管制造商图片或私有手册。此页面不是 RTDS 官方产品。</p></section></div>
+ </details>
+
 </section>
 
 <footer><p><span class="footer-mark">✳</span><b>学的是路径，不是接线规范。</b><span>原创模型；接口观察与概念演示，不代表实际电气仿真、兼容性或安全验证。</span></p><span class="footer-edition">MADE TO BE EXPLORED.</span></footer>

@@ -174,7 +174,7 @@ test('mode, card selection and document-hidden interruptions pause without silen
  await ready(page);await freeze(page);await page.locator('#power-play').click();await page.clock.runFor(500);await page.locator('[data-variant="gtdi-v2"]').click();await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');
  await page.locator('#power-play').click();await page.clock.runFor(500);await page.locator('#mode-generic').click();await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');const elapsed=await page.locator(lesson).getAttribute('data-elapsed');await page.clock.runFor(1000);await expect(page.locator(lesson)).toHaveAttribute('data-elapsed',elapsed);await page.locator('#mode-rtds').click();await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');
  await page.locator('#power-play').click();await page.clock.runFor(500);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');const hidden=await page.locator(lesson).getAttribute('data-elapsed');await page.clock.runFor(1000);await expect(page.locator(lesson)).toHaveAttribute('data-elapsed',hidden);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'));});await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');
- await expect(page.locator('#rtds-library-count')).toContainText('18 个版本条目 / 7 个 3D');
+ await expect(page.locator('#rtds-library-count')).toContainText('19 个版本条目 / 7 个 3D');
 });
 
 test('keyboard reduced-motion playback preserves safe initial state and static connected 24 V outcome',async({page})=>{
@@ -184,7 +184,7 @@ test('keyboard reduced-motion playback preserves safe initial state and static c
 });
 
 test('failed real-card loads stay visibly unavailable and retry creates one truthful scene, not substitute boards',async({page})=>{
- await page.goto('./');await page.route('**/assets/rtds/gtao-v2-2.20.glb',route=>route.abort());await page.locator('#mode-rtds').click();await page.locator(scene).scrollIntoViewIfNeeded();
+ await page.goto('./');await page.route('**/assets/rtds/gtao-v2-2.20.glb',route=>route.abort());await page.locator('#mode-rtds').click();await page.locator('[data-variant="gtao-v2"]').click();await page.locator(scene).scrollIntoViewIfNeeded();
  await expect(page.locator(scene)).toHaveAttribute('data-loaded','error');await expect(page.locator('#power-model-loading')).toContainText(/未能|失败/);await expect(page.locator(scene+' canvas')).toHaveCount(0);await powerOff(page);
  await page.unroute('**/assets/rtds/gtao-v2-2.20.glb');await page.locator('#power-model-retry').click();await expect(page.locator(scene)).toHaveAttribute('data-loaded','true');await page.locator(scene).scrollIntoViewIfNeeded();await expect.poll(async()=>Number(await page.locator(scene).getAttribute('data-frames'))).toBeGreaterThan(0);await expect(page.locator(scene+' canvas')).toHaveCount(1);await renderedBoards(page,'retried');await capture(page,'retried',{viewport:false});
 });
@@ -192,7 +192,7 @@ test('failed real-card loads stay visibly unavailable and retry creates one trut
 test('late real-card completion cannot wake a hidden or inactive power scene',async({page})=>{
  for(const interruption of ['generic','document-hidden']){
   await page.goto('./');let release,seen;const hold=new Promise(resolve=>release=resolve),requested=new Promise(resolve=>seen=resolve);
-  await page.route('**/assets/rtds/gtao-v2-2.20.glb',async route=>{seen();await hold;await route.continue();});await page.locator('#mode-rtds').click();await page.locator(scene).scrollIntoViewIfNeeded();await requested;await expect(page.locator(scene)).toHaveAttribute('data-loaded','loading');
+  await page.route('**/assets/rtds/gtao-v2-2.20.glb',async route=>{seen();await hold;await route.continue();});await page.locator('#mode-rtds').click();await page.locator('[data-variant="gtao-v2"]').click();await page.locator(scene).scrollIntoViewIfNeeded();await requested;await expect(page.locator(scene)).toHaveAttribute('data-loaded','loading');
   if(interruption==='generic')await page.locator('#mode-generic').click();else await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});
   release();await expect(page.locator(scene)).toHaveAttribute('data-loaded','true');const frames=await page.locator(scene).getAttribute('data-frames');await page.waitForTimeout(250);expect(await page.locator(scene).getAttribute('data-frames')).toBe(frames);expect(Number(frames||0)).toBe(0);await expect(page.locator(lesson)).toHaveAttribute('data-playing','false');await page.unroute('**/assets/rtds/gtao-v2-2.20.glb');
   if(interruption==='generic')await page.locator('#mode-rtds').click();else await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'));});

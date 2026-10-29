@@ -473,7 +473,8 @@ export const catalog=[
       "physical_dimensions": "unknown",
       "electrical_compatibility": "unknown"
     }
-  }
+  },
+  {id:'cubicle-v2',name:'Cubicle V2 · 新版机柜',revision:'V2 / 20260506 章节',family:'Cubicle',type:'机柜与供电',summary:'左右 DIN 导轨各自 24 V DC / 100 W 供电；后部 LED 与内部灯条开关依赖。基础版参数教学，不提供未核对的机柜机械模型。',scopeNote:'当前覆盖四款 V2 I/O 卡的独立导轨功率预算与照明逻辑；不验证导轨空间、交流安装、线缆额定值或整机配置。',evidence:[{source_id:'MANUAL',locator:'Chapter 1A; PDF 16–36; revision 20260506; rail capacity PDF 28, card power PDF 32, lighting PDF 23'}],confidence:{count:'documented',layout:'unknown',keying:'unknown',contacts:'unknown',physical_dimensions:'unknown',electrical_compatibility:'unknown'}}
 ];
 export const sources={
   "MANUAL": {

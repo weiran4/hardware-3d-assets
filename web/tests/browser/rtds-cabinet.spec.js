@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test('1A independent budgets, errors, lighting and chapter coverage',async({page})=>{
  await page.goto('./#rtds-chapter-1a');
+ await expect(page.locator('[data-variant="cubicle-v2"]')).toHaveAttribute('aria-pressed','true');
  const section=page.locator('#rtds-chapter-1a');await expect(section).toBeVisible();
  await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
  await page.getByRole('button',{name:'错误例：左侧 105 W / 右侧空载'}).click();
@@ -17,7 +18,7 @@ test('1A independent budgets, errors, lighting and chapter coverage',async({page
  await expect(page.locator('.rtds-pip')).toBeHidden();
  await section.screenshot({path:'screenshots/chapter-1a-desktop.png'});
  await page.getByRole('link',{name:'已有真实模型：GTIO 供电演示 ↗'}).click();
- await expect(page).toHaveURL(/#rtds-power-lesson$/);
+ await expect(page).toHaveURL(/#rtds-power-lesson$/);await expect(page.locator('[data-variant="gtao-v2"]')).toHaveAttribute('aria-pressed','true');await expect(section).toBeHidden();
  await expect(page.locator('#power-heading')).toBeInViewport();
 });
 test('1A mobile, reduced motion and non-WebGL parameter fallback',async({page})=>{

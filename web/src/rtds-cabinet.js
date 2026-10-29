@@ -2,7 +2,7 @@ import './rtds-cabinet.css';
 import {cards,railBudget,lightState,chapters} from './rtds-cabinet-state.js';
 export function initCabinet(){
  const root=document.getElementById('rtds-chapter-1a');
- root.innerHTML=`<header class="cabinet-heading"><div><p class="eyebrow">MANUAL STUDY / 1A · CUBICLE V2</p><h3>两条导轨，两份独立预算。</h3><p>新版机柜与供电 · 基础版 / 完善中</p></div><a href="#rtds-power-lesson">已有真实模型：GTIO 供电演示 ↗</a></header>
+ root.innerHTML=`<header class="cabinet-heading"><div><p class="eyebrow">MANUAL STUDY / 1A · CUBICLE V2</p><h3 id="cabinet-heading" tabindex="-1">两条导轨，两份独立预算。</h3><p>新版机柜与供电 · 基础版 / 完善中</p></div><a href="#rtds-power-lesson">已有真实模型：GTIO 供电演示 ↗</a></header>
  <details class="chapter-nav"><summary>章节导航与覆盖进度 · 29 个推进单元</summary><p>按手册顺序推进；已有模型与专题不等于整章完成。固件附录拆为 5 单元，非原书 5 章。</p><ol>${chapters.map(c=>`<li><b>${c.id} ${c.title}</b><span>PDF ${c.pages}</span><span>${c.status}</span></li>`).join('')}</ol></details>
  <div class="cabinet-tabs"><button type="button" data-preset="normal">正常例：左右各 30 W</button><button type="button" data-preset="over">错误例：左侧 105 W / 右侧空载</button><button type="button" data-preset="boundary">边界例：100 W</button></div>
  <p class="cabinet-note">每条 DIN 导轨各有独立的 <b>24 V DC / 100 W</b> 电源。右侧余量不能借给左侧；不是共享的 200 W 池。</p>

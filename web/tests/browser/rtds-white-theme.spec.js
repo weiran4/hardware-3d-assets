@@ -44,7 +44,7 @@ test('white-body UI, colored chrome and rounded controls stay readable across de
 
 test('all seven original models render against actual green-grid stages, including floating PiP',async({page})=>{
  await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
- await expect(page.locator('#rtds-catalog button')).toHaveCount(18);
+ await expect(page.locator('#rtds-catalog button')).toHaveCount(19);
  const variants=await page.locator('.rtds-catalog-item.modeled').evaluateAll(nodes=>nodes.map(n=>n.dataset.variant));expect(variants).toHaveLength(7);
  for(const variant of variants){
   await page.locator(`[data-variant="${variant}"]`).click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
@@ -61,7 +61,7 @@ test('all seven original models render against actual green-grid stages, includi
 });
 
 test('white analog cards preserve the real model, meter and distinct red-black probes; generic mode matches',async({page})=>{
- await page.setViewportSize({width:1366,height:768});await page.goto('./#rtds');await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
+ await page.setViewportSize({width:1366,height:768});await page.goto('./#rtds-analog');await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
  await surfaces(page,['#rtds-analog-lesson','.analog-dashboard','.analog-bench','.analog-hardware','.analog-signals','.analog-source-card','.analog-scale-card','.analog-output-card']);
  await stages(page,['.analog-model-wrap']);await page.locator('#analog-play').click();await expect(page.locator('#analog-meter-value')).toHaveText('3.54');await page.locator('#analog-pause').click();
  if(await page.locator('.rtds-pip').isVisible())await page.locator('[data-pip-action="close"]').click();
@@ -82,7 +82,7 @@ test('control states and compact footer are intentional, distinct and keyboard-v
  await expect(chosen).toHaveCSS('background-color',selected);await expect(chosen).toHaveCSS('border-color',red);
  await expect(other).toHaveCSS('background-color',chrome);await expect(other).not.toHaveCSS('border-color',red);
  await shot(page,'selected-and-hover');await chosen.focus();await page.keyboard.press('Enter');await expect(chosen).toHaveCSS('outline-color',red);await expect(chosen).toHaveCSS('outline-style','solid');await shot(page,'keyboard-focus');
- await page.locator('#analog-play').scrollIntoViewIfNeeded();await page.mouse.move(0,0);await expect(page.locator('#analog-play')).toHaveCSS('background-color',red);await page.locator('#analog-play').hover();await expect(page.locator('#analog-play')).toHaveCSS('background-color',navy);await shot(page,'primary-hover');
+ await page.locator('[data-variant="novacor-2.0"]').click();await page.locator('#analog-play').scrollIntoViewIfNeeded();await page.mouse.move(0,0);await expect(page.locator('#analog-play')).toHaveCSS('background-color',red);await page.locator('#analog-play').hover();await expect(page.locator('#analog-play')).toHaveCSS('background-color',navy);await shot(page,'primary-hover');
  if(await page.locator('.rtds-pip').isVisible())await page.locator('[data-pip-action="close"]').click();await page.locator('footer').scrollIntoViewIfNeeded();await expect(page.locator('footer')).toHaveCSS('background-color',chrome);await shot(page,'footer');
  await page.locator('[data-variant="novacor-light"]').click();await expect(page.locator('#rtds-tour')).toBeDisabled();await page.locator('#rtds-interface-region').scrollIntoViewIfNeeded();await expect(page.locator('#rtds-tour')).toHaveCSS('background-color','rgb(234, 238, 242)');await expect(page.locator('#rtds-isolate')).toHaveCSS('color','rgb(98, 112, 126)');await shot(page,'reference-disabled');
  await page.locator('#mode-generic').click();await expect(page.locator('#scene')).toHaveAttribute('data-loaded','true');await page.locator('#reset-lesson').click();
@@ -91,5 +91,5 @@ test('control states and compact footer are intentional, distinct and keyboard-v
  await page.locator('#view-in').focus();await page.keyboard.press('Enter');await expect(page.locator('#view-in')).toHaveCSS('outline-offset','-3px');await expect(page.locator('#view-in')).toHaveCSS('outline-style','solid');await shot(page,'generic-camera-focus');
  // A hash-only goto reuses the already loaded lesson. Force a new document so
  // this fixture exercises a real failed request, not cached in-memory state.
- let abortedModels=0;await page.route('**/assets/rtds/novacor-2.0-2023.glb',route=>{abortedModels++;return route.abort();});await page.reload();await page.locator('#mode-rtds').click();await expect.poll(()=>abortedModels,{message:'fresh-document GLB failure fixture must intercept an actual request'}).toBeGreaterThan(0);await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','error');await expect(page.locator('#analog-model-detail')).toBeDisabled();await page.locator('#analog-model-detail').hover();await expect(page.locator('#analog-model-detail')).toHaveCSS('background-color','rgb(234, 238, 242)');await expect(page.locator('#analog-model-detail')).toHaveCSS('color','rgb(98, 112, 126)');await shot(page,'disabled-model-controls');
+ let abortedModels=0;await page.route('**/assets/rtds/novacor-2.0-2023.glb',route=>{abortedModels++;return route.abort();});await page.reload();await page.locator('#mode-rtds').click();await page.locator('[data-variant="novacor-2.0"]').click();await expect.poll(()=>abortedModels,{message:'fresh-document GLB failure fixture must intercept an actual request'}).toBeGreaterThan(0);await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','error');await expect(page.locator('#analog-model-detail')).toBeDisabled();await page.locator('#analog-model-detail').hover();await expect(page.locator('#analog-model-detail')).toHaveCSS('background-color','rgb(234, 238, 242)');await expect(page.locator('#analog-model-detail')).toHaveCSS('color','rgb(98, 112, 126)');await shot(page,'disabled-model-controls');
 });

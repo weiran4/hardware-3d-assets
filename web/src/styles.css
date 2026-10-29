@@ -224,3 +224,6 @@ footer b{color:var(--brand-navy);font-weight:700}.footer-mark{color:var(--brand-
 .rtds-inspection-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}.rtds-inspection-head .rtds-inspection-kicker{margin:0}#rtds-inspection-close{width:44px;height:44px;border:0;background:transparent;border-radius:6px;color:var(--muted);font-size:22px;line-height:1}#rtds-inspection-close:hover{background:var(--paper);color:var(--ink)}
 
 .rtds-inspection-caution{font-size:12px;line-height:1.75;color:#6b573a;border-left:2px solid #d6b78c;padding-left:9px;margin:8px 0 12px}
+
+/* Contextual teaching belongs to the selected hardware workbench, not a global stack. */
+.rtds-teaching{grid-column:1/-1;min-width:0;border-top:1px solid var(--line);margin-top:20px}.rtds-teaching-context{padding:20px 0 4px}.rtds-teaching-context h3{font-size:18px;margin:0 0 8px}.rtds-teaching-context p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.context-teaching-launch{margin:12px 0;padding:10px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;cursor:pointer}.rtds-teaching .cabinet-chapter{margin:20px 0}.rtds-teaching .analog-lesson,.rtds-teaching .power-lesson{margin-top:20px}

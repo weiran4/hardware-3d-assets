@@ -7,7 +7,7 @@ test.beforeEach(async({page})=>{pageErrors=[];page.on('pageerror',error=>pageErr
 test.afterEach(()=>{expect(pageErrors).toEqual([]);});
 
 async function loaded(page){
- await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
+ await page.goto('./#rtds-hardware-novacor-2.0');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
  await page.evaluate(()=>{window.__pipOriginalCanvas=document.querySelector('#rtds-scene canvas');window.__pipOriginalWrap=document.querySelector('.rtds-viewer-wrap');});
 }
 async function dock(page){
