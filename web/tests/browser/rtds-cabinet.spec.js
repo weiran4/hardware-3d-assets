@@ -1,0 +1,28 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+test('1A independent budgets, errors, lighting and chapter coverage',async({page})=>{
+ await page.goto('./#rtds-chapter-1a');
+ const section=page.locator('#rtds-chapter-1a');await expect(section).toBeVisible();
+ await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
+ await page.getByRole('button',{name:'错误例：左侧 105 W / 右侧空载'}).click();
+ await expect(page.locator('#cabinet-left')).toHaveAttribute('data-status','over');await expect(page.locator('#cabinet-right')).toContainText('0 / 100 W');
+ await page.getByRole('button',{name:'边界例：100 W'}).click();await expect(page.locator('#cabinet-left')).toHaveAttribute('data-status','within');
+ await page.getByLabel('左侧 GTAO V2 数量').fill('-1');await expect(page.locator('#cabinet-left')).toHaveAttribute('data-status','invalid');
+ await page.getByLabel('左侧 GTAO V2 数量').fill('');await expect(page.locator('#cabinet-left')).toHaveAttribute('data-status','invalid');
+ await page.getByRole('button',{name:'正常例：左右各 30 W'}).click();
+ await page.getByLabel('内部灯条本地开关').check();await expect(page.locator('#cabinet-light-state')).toContainText('内部灯条：OFF');
+ await page.getByLabel('后部 LED 开关').focus();await page.keyboard.press('Space');await expect(page.locator('#cabinet-light-state')).toContainText('内部灯条：ON');
+ await page.locator('.chapter-nav summary').click();await expect(page.locator('.chapter-nav li')).toHaveCount(29);await page.locator('.chapter-nav summary').click();
+ await mkdir('screenshots',{recursive:true});await section.screenshot({path:'screenshots/chapter-1a-desktop.png'});
+ await page.getByRole('link',{name:'已有真实模型：GTIO 供电演示 ↗'}).click();
+ await expect(page).toHaveURL(/#rtds-power-lesson$/);
+ await expect(page.locator('#power-heading')).toBeInViewport();
+});
+test('1A mobile, reduced motion and non-WebGL parameter fallback',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});
+ await page.goto('./#rtds-chapter-1a');await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
+ await page.getByRole('button',{name:'错误例：左侧 105 W / 右侧空载'}).click();await expect(page.locator('#cabinet-left')).toContainText('超出 5 W');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await mkdir('screenshots',{recursive:true});await page.locator('#rtds-chapter-1a').screenshot({path:'screenshots/chapter-1a-mobile.png'});
+});

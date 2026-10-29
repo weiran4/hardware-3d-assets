@@ -1,3 +1,4 @@
+import {initCabinet} from './rtds-cabinet.js';
 import './rtds-pip.css';
 import {createInitialState,transition} from './lesson.js';
 import {createLabScene} from './scene.js';
@@ -34,5 +35,6 @@ for(const btn of document.querySelectorAll('[data-inspect]'))btn.addEventListene
 $('reset-lesson').addEventListener('click',()=>dispatch({type:'reset'}));$('send-pulse').addEventListener('click',()=>dispatch({type:'pulse'}));
 for(const action of ['left','right','in','out','reset'])$('view-'+action).addEventListener('click',()=>lab?.view(action));
 draw();
+initCabinet();
 const gallery=initRtdsGallery(active=>lab?.setActive(!active));
 try{lab=await createLabScene($('scene'),$('port-labels'),dispatch);$('loading').remove();lab.setActive(!gallery.isActive());draw();}catch(error){console.error('3D scene load failed:',error);$('loading').textContent='三维场景暂时无法加载。请检查网络或使用支持 WebGL 的浏览器。下方文字练习仍可使用。';$('scene').dataset.loaded='error';document.querySelectorAll('.view-controls button').forEach(b=>b.disabled=true);}
