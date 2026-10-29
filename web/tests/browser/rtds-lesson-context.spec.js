@@ -9,7 +9,7 @@ test('initial markup and implicit hardware selection never expose a global lesso
  await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await only(page,null);await expect(page.locator('#rtds-teaching')).toBeHidden();
  expect(await page.locator('#rtds-teaching').evaluate(n=>!!n.closest('.rtds-workbench'))).toBe(true);
  await page.locator('[data-variant="novacor-2.0"]').focus();await page.keyboard.press('Enter');await only(page,'analog');await selected(page,'novacor-2.0');
- await page.locator('#rtds-open-teaching').click();await expect(page.locator('#analog-heading')).toBeFocused();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');await mkdir('screenshots',{recursive:true});await page.locator('#rtds-teaching').screenshot({path:'screenshots/context-novacor-desktop.png'});
+ await page.locator('#rtds-open-teaching').click();await expect(page.locator('#analog-heading')).toBeFocused();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('.rtds-pip')).toBeHidden();await mkdir('screenshots',{recursive:true});await page.locator('#rtds-teaching').screenshot({path:'screenshots/context-novacor-desktop.png'});
  await page.locator('[data-variant="novacor-light"]').click();await only(page,null);await expect(page.locator('#rtds-teaching')).toBeHidden();
 });
 
@@ -37,4 +37,14 @@ test('late analog loading cannot wake hidden teaching after an incompatible hard
  await page.locator('#mode-rtds').click();await page.locator('[data-variant="novacor-2.0"]').click();await requested;await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','loading');
  await page.locator('[data-variant="novacor-light"]').click();await selected(page,'novacor-light');await only(page,null);release();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
  const frames=await page.locator('#analog-model-scene').getAttribute('data-frames');await page.waitForTimeout(250);expect(await page.locator('#analog-model-scene').getAttribute('data-frames')).toBe(frames);expect(Number(frames||0)).toBe(0);await expect(page.locator(lessonIds.analog)).toHaveAttribute('data-playing','false');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');
+});
+
+
+test('contextual teaching yields PiP and restores minimized or dismissed preferences outside it',async({page})=>{
+ await page.goto('./#rtds-hardware-novacor-2.0');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group="aurora"]').click();
+ const reading=async()=>{await page.locator('#rtds-interface-region').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));};
+ await reading();await expect(page.locator('.rtds-pip')).toBeVisible();await page.locator('[data-pip-action="minimize"]').click();
+ await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('#analog-heading')).toBeFocused();await expect(page.locator('.rtds-pip')).toBeHidden();
+ await reading();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await page.locator('[data-pip-action="close"]').click();
+ await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('.rtds-pip')).toBeHidden();await reading();await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);
 });

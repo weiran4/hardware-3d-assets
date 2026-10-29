@@ -15,3 +15,5 @@ Mapping: NovaCor 2.0 → existing analog lesson; GTAO/GTAI/GTDI/GTDO V2 → exis
 Non-goals: new models, source factual changes, new firmware/wiring procedures, changing values or geometry, reconstructing removed GTDI abstract flow. Private manuals and images remain excluded.
 
 Review focus: late async model loads after switches; stale hidden animation frames; legacy hash aliases/back-forward; hardware-version mismatches; PiP/canvas identity and one-screen teaching layout.
+
+Visual acceptance update: when a contextual teaching result occupies the upper reading band, temporarily return the same gallery canvas inline so it cannot obscure waveforms/results. Keep user minimized/dismissed preferences and normal PiP behavior outside teaching. Existing 1A suppression uses the same controller mechanism; no reserved gutter or renderer recreation. Cover automatic yield and preference restoration in browser tests.

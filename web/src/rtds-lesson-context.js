@@ -10,3 +10,6 @@ export function parseTeachingRoute(hash){
  const hardware=hash.startsWith('#rtds-hardware-')?hash.slice(15):null;
  return hardware&&catalog.some(c=>c.id===hardware)?{hardware,lesson:lessonForHardware(hardware)}:null;
 }
+// Yield while a lesson occupies the upper reading band, not when its preview
+// merely peeks below interface facts. No gutter, new renderer or preference reset.
+export function teachingOwnsViewport(rect,height){return rect.top<height/3&&rect.bottom>height/3;}

@@ -55,9 +55,9 @@ test('all seven original models render against actual green-grid stages, includi
  await page.locator('[data-variant="novacor-2.0"]').click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group="aurora"]').click();
  await expect(page.locator('.rtds-highlight')).toHaveCount(0);await expect(page.locator('#rtds-scene')).toHaveAttribute('data-highlight-kind','group');await expect(page.locator('#rtds-inspection-summary')).toBeVisible();await pixels(page,'#rtds-scene canvas',{backgroundVisible:false});
  await page.locator('#rtds-tour').click();await page.mouse.move(0,0);await expect(page.locator('#rtds-tour')).toHaveCSS('background-color',red);await shot(page,'tour-active');await page.locator('#rtds-tour').click();
- // Return to overview so the floating canvas has exposed background to measure.
+ // Keep interface facts as the reading context, with the whole-front camera exposing the stage background.
  await page.locator('#rtds-reset').click();
- await page.locator('#rtds-analog-lesson').scrollIntoViewIfNeeded();await expect(page.locator('.rtds-pip')).toBeVisible();await surfaces(page,['.rtds-pip']);await stages(page,['.rtds-pip .rtds-viewer-wrap']);await expect(page.locator('.rtds-pip-header')).toHaveCSS('background-color',navy);await pixels(page,'.rtds-pip canvas');await shot(page,'floating-pip');
+ await page.locator('[data-group="aurora"]').click();await page.locator('#rtds-front').click();await page.evaluate(()=>{const slot=document.querySelector('.rtds-pip-slot');scrollTo(0,scrollY+slot.getBoundingClientRect().bottom+24);});await expect(page.locator('.rtds-pip')).toBeVisible();await surfaces(page,['.rtds-pip']);await stages(page,['.rtds-pip .rtds-viewer-wrap']);await expect(page.locator('.rtds-pip-header')).toHaveCSS('background-color',navy);await pixels(page,'.rtds-pip canvas');await shot(page,'floating-pip');
 });
 
 test('white analog cards preserve the real model, meter and distinct red-black probes; generic mode matches',async({page})=>{

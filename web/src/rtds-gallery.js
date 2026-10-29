@@ -1,4 +1,4 @@
-import {lessonForHardware,parseTeachingRoute,hardwareHash} from './rtds-lesson-context.js';
+import {lessonForHardware,parseTeachingRoute,hardwareHash,teachingOwnsViewport} from './rtds-lesson-context.js';
 import {chapterOwnsViewport} from './rtds-cabinet-state.js';
 import {initPowerLesson} from './rtds-power-lesson.js';
 import {initAnalogLesson} from './rtds-analog-lesson.js';
@@ -71,7 +71,7 @@ export function initRtdsGallery(onMode){
  $('rtds-next').addEventListener('click',()=>nextGroup());
  $('rtds-tour').addEventListener('click',()=>{if(state.playing){stopTour();return;}state=galleryTransition(state,{type:'tour',playing:true});$('rtds-tour').textContent='暂停巡览';$('rtds-tour').setAttribute('aria-pressed','true');nextGroup(true);timer=setInterval(()=>nextGroup(true),6500);});
  $('rtds-filter').addEventListener('change',drawCatalog);
- function syncChapterPip(){const chapter=$('rtds-chapter-1a');pip.setSuppressed(!!(active&&chapter&&!chapter.hidden&&chapterOwnsViewport(chapter.getBoundingClientRect(),innerHeight)));}
+ function syncChapterPip(){const chapter=$('rtds-chapter-1a'),lessons=[$('rtds-analog-lesson'),$('rtds-power-lesson')];pip.setSuppressed(!!(active&&((!chapter.hidden&&chapterOwnsViewport(chapter.getBoundingClientRect(),innerHeight))||lessons.some(section=>!section.hidden&&teachingOwnsViewport(section.getBoundingClientRect(),innerHeight)))));}
  window.addEventListener('scroll',syncChapterPip,{passive:true});window.addEventListener('resize',syncChapterPip);document.addEventListener('toggle',syncChapterPip,true);
 
  function syncTeaching(){
