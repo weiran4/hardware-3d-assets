@@ -220,3 +220,7 @@ test('non-primary buttons and pointers cannot start a resize',()=>{
 test('Escape cancels an active drag without closing the window or leaving capture behind',()=>{
  const f=fixture();f.ready();f.scroll(-500);const handle=f.handle('nw');assert.ok(handle);const before=size(f);pointer(handle,'pointerdown',{clientX:1102,clientY:576});pointer(handle,'pointermove',{clientX:1002,clientY:476});assert.notDeepEqual(size(f),before);key(f.find('rtds-pip'),'Escape');assert.equal(f.find('rtds-pip').hidden,false);assert.deepEqual(size(f),before);assert.equal(handle.captured,null);f.api.dispose();
 });
+
+test('temporary reading suppression restores the same canvas and user preference',()=>{
+ for(const preference of ['expanded','minimized','dismissed']){const f=fixture();f.ready();f.scroll(-500);if(preference==='minimized')f.action('minimize').click();if(preference==='dismissed')f.action('close').click();f.api.setSuppressed(true);assert.equal(f.find('rtds-pip').hidden,true);f.api.setSuppressed(false);assert.equal(f.find('rtds-pip').hidden,preference==='dismissed');if(preference!=='dismissed')assert.equal(f.find('rtds-pip').dataset.state,preference);f.api.dispose();}
+});

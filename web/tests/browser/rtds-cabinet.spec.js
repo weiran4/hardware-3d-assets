@@ -13,7 +13,9 @@ test('1A independent budgets, errors, lighting and chapter coverage',async({page
  await page.getByLabel('内部灯条本地开关').check();await expect(page.locator('#cabinet-light-state')).toContainText('内部灯条：OFF');
  await page.getByLabel('后部 LED 开关').focus();await page.keyboard.press('Space');await expect(page.locator('#cabinet-light-state')).toContainText('内部灯条：ON');
  await page.locator('.chapter-nav summary').click();await expect(page.locator('.chapter-nav li')).toHaveCount(29);await page.locator('.chapter-nav summary').click();
- await mkdir('screenshots',{recursive:true});await section.screenshot({path:'screenshots/chapter-1a-desktop.png'});
+ await mkdir('screenshots',{recursive:true});await page.locator('#cabinet-light-state').scrollIntoViewIfNeeded();
+ await expect(page.locator('.rtds-pip')).toBeHidden();
+ await section.screenshot({path:'screenshots/chapter-1a-desktop.png'});
  await page.getByRole('link',{name:'已有真实模型：GTIO 供电演示 ↗'}).click();
  await expect(page).toHaveURL(/#rtds-power-lesson$/);
  await expect(page.locator('#power-heading')).toBeInViewport();

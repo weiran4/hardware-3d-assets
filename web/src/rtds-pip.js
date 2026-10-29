@@ -1,7 +1,7 @@
 // Presentation only: the original viewer, renderer, selection and OrbitControls
 // stay alive. Moving the whole wrap also keeps its semantic-mesh hover and selection.
-export function rtdsPipState({active,ready,desktop,pastViewer,dismissed,minimized}){
- if(!active||!ready||!desktop||!pastViewer||dismissed)return 'inline';
+export function rtdsPipState({active,ready,desktop,pastViewer,dismissed,minimized,suppressed=false}){
+ if(suppressed||!active||!ready||!desktop||!pastViewer||dismissed)return 'inline';
  return minimized?'minimized':'expanded';
 }
 
@@ -27,7 +27,7 @@ export function resizeRtdsPip(rect,edge,dx,dy,view){
 export function initRtdsPip({wrap,onView=()=>{}}){
  if(!wrap?.parentNode)throw new TypeError('A connected RTDS viewer wrap is required');
  const doc=wrap.ownerDocument,win=doc.defaultView,desktop=win.matchMedia('(min-width: 1024px)');
- let active=false,ready=false,dismissed=false,minimized=false,disposed=false,frame=0,lastExternalFocus=null;
+ let active=false,ready=false,suppressed=false,dismissed=false,minimized=false,disposed=false,frame=0,lastExternalFocus=null;
  let geometry={...DEFAULT_PIP},drag=null;
  const removers=[];
  function listen(target,type,handler,options){target.addEventListener(type,handler,options);removers.push(()=>target.removeEventListener(type,handler,options));}
@@ -113,7 +113,7 @@ export function initRtdsPip({wrap,onView=()=>{}}){
   const rect=slot.getBoundingClientRect(),hasLayout=rect.width>0&&rect.height>0;
   const sourceVisible=hasLayout&&rect.bottom>0&&rect.top<win.innerHeight;
   if(sourceVisible||!active||!ready||!desktop.matches){dismissed=false;minimized=false;}
-  const state=rtdsPipState({active,ready,desktop:desktop.matches,pastViewer:hasLayout&&rect.bottom<=0,dismissed,minimized});
+  const state=rtdsPipState({active,ready,desktop:desktop.matches,pastViewer:hasLayout&&rect.bottom<=0,dismissed,minimized,suppressed});
   if(state==='inline'){restoreInline();return;}
   if(wrap.parentNode===slot){
    // Keep the original footprint before detaching: docking must not shorten the
@@ -140,6 +140,7 @@ export function initRtdsPip({wrap,onView=()=>{}}){
  sync();
  return {
   setActive(value){if(disposed)return;active=!!value;sync();},
+  setSuppressed(value){if(disposed)return;suppressed=!!value;sync();},
   setReady(value){if(disposed)return;ready=!!value;sync();},
   dispose(){
    if(disposed)return;win.cancelAnimationFrame(frame);frame=0;sourceObserver.disconnect();restoreInline();disposed=true;
