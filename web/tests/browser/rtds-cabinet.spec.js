@@ -29,3 +29,38 @@ test('1A mobile, reduced motion and non-WebGL parameter fallback',async({page})=
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await mkdir('screenshots',{recursive:true});await page.locator('#rtds-chapter-1a').screenshot({path:'screenshots/chapter-1a-mobile.png'});
 });
+test('1A rear-view length is independent of power and survives contextual navigation',async({page})=>{
+ await page.goto('./#rtds-chapter-1a');
+ const left=page.locator('#cabinet-left-space'),right=page.locator('#cabinet-right-space');
+ await page.locator('[data-preset="space"]').focus();await page.keyboard.press('Enter');
+ await expect(page.locator('#cabinet-left')).toContainText('35 / 100 W');
+ await expect(page.locator('#cabinet-right')).toHaveAttribute('data-status','within');
+ await expect(left).toHaveAttribute('data-status','within');await expect(left).toContainText('137.9');
+ await expect(right).toHaveAttribute('data-status','over');await expect(right).toContainText('3.9');
+ await expect(page.locator('.cabinet-space-map')).toHaveCount(2);
+ await page.locator('[data-preset="boundary"]').click();
+ await expect(page.locator('#cabinet-left')).toHaveAttribute('data-status','within');await expect(left).toHaveAttribute('data-status','over');
+ await page.getByLabel('左侧 GTAO V2 数量').fill('');await expect(left).toHaveAttribute('data-status','invalid');
+ await expect(page.locator('[data-space-map=left]')).toHaveAttribute('data-status','invalid');
+ await expect(page.locator('[data-space-map=left] > *')).toHaveCount(0);
+ await page.locator('[data-preset="space"]').click();await expect(left).toHaveAttribute('data-status','within');
+ await expect(page.locator('[data-space-map=left]')).toHaveAttribute('data-status','within');
+ await expect(page.locator('[data-space-map=left] > *')).toHaveCount(7);
+ await mkdir('screenshots',{recursive:true});
+ await page.locator('.cabinet-rails').scrollIntoViewIfNeeded();await expect(page.locator('.rtds-pip')).toBeHidden();
+ await page.locator('#rtds-chapter-1a').screenshot({path:'screenshots/chapter-1a-space-desktop.png'});
+ await page.locator('[data-variant="novacor-2.0"]').click();await expect(left).toBeHidden();
+ await page.goBack();await expect(left).toBeVisible();await expect(right).toHaveAttribute('data-status','over');
+});
+test('1A length budget is readable on mobile without WebGL and with large counts',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});
+ await page.goto('./#rtds-chapter-1a');await page.locator('[data-preset="space"]').click();
+ await expect(page.locator('#cabinet-right-space')).toHaveAttribute('data-status','over');
+ await page.getByLabel('右侧 GTAO V2 数量').fill('1000');
+ await expect(page.locator('#cabinet-right-space')).toHaveAttribute('data-status','over');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ expect(await page.locator('.cabinet-space-map *').count()).toBeLessThan(100);
+ await page.locator('[data-preset="space"]').click();
+ await mkdir('screenshots',{recursive:true});await page.locator('#rtds-chapter-1a').screenshot({path:'screenshots/chapter-1a-space-mobile.png'});
+});

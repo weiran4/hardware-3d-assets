@@ -1,6 +1,15 @@
 // Cubicle V2, revision 20260506, PDF 28–32. Maximum rated card power, not measurements.
-export const cards=Object.freeze({gtaov2:{name:'GTAO V2',watts:15},gtaiv2:{name:'GTAI V2',watts:12},gtdiv2:{name:'GTDI V2',watts:8},gtdov2:{name:'GTDO V2',watts:5}});
-export function railBudget(counts){let watts=0;for(const [key,n] of Object.entries(counts)){if(!cards[key]||!Number.isSafeInteger(n)||n<0||n>1000)return {status:'invalid'};watts+=cards[key].watts*n;}return {watts,amps:watts/24,remaining:100-watts,status:watts>100?'over':'within'};}
+export const cards=Object.freeze({gtaov2:{name:'GTAO V2',watts:15,lengthMm:197},gtaiv2:{name:'GTAI V2',watts:12,lengthMm:197},gtdiv2:{name:'GTDI V2',watts:8,lengthMm:197},gtdov2:{name:'GTDO V2',watts:5,lengthMm:197}});
+export function railBudget(counts){let watts=0;for(const [key,n] of Object.entries(counts)){if(!Object.hasOwn(cards,key)||!Number.isSafeInteger(n)||n<0||n>1000)return {status:'invalid'};watts+=cards[key].watts*n;}return {watts,amps:watts/24,remaining:100-watts,status:watts>100?'over':'within'};}
+// Fig. 1.15 (PDF 31): Cubicle V2 May 2025+, viewed from the rear.
+// PDF 32 card lengths; integer millimetres avoid decimal accumulation drift.
+export const railLengthsMm=Object.freeze({left:1440,right:1340});
+export function railSpaceBudget(counts,side){
+ if(!Object.hasOwn(railLengthsMm,side)||railBudget(counts).status==='invalid')return {status:'invalid'};
+ const usedMm=Object.entries(counts).reduce((sum,[key,n])=>sum+cards[key].lengthMm*n,0);
+ const capacityMm=railLengthsMm[side],remainingMm=capacityMm-usedMm;
+ return {usedMm,capacityMm,remainingMm,status:remainingMm<0?'over':'within'};
+}
 export function lightState(rear,local){return {blue:!!rear,internal:!!rear&&!!local};}
 const queue=[['1A','机柜 V2','16–36'],['1B','机柜 V1','37–64'],['2A','NovaCor 2.0','65–105'],['2B','NovaCor Light','106–142'],['2C','NovaCor 1.0','143–180'],['3','IRC Switch V2','181–196'],['4A','GBH V3','197–213'],['4B','GBH V2','214–226'],['5A','GTNET v3','227–248'],['5B','GTNET x2','249–275'],['6A','GTAO V2','276–307'],['6B','GTAO V1','308–335'],['7','GTAI V2','336–361'],['8A','GTDO V2','362–381'],['8B','GTDO V1','382–403'],['9A','GTDI V2','404–425'],['9B','GTDI V1','426–447'],['10','GTFPI V2','448–469'],['11A','GTSYNC v2','470–488'],['11B','GTSYNC V1','489–513'],['12','GTFPGA','514–527'],['13A','GTSOC V2','528–535'],['13B','GTSOC V1','536–542'],['14','辅助硬件','543–546'],['F1','NovaCor / SSH 迁移','547–556'],['F2','GTWIF / PB5 旧硬件','556–565'],['F3','GTNET / I/O / GTSYNC','565–583'],['F4','GTSOC v2 固件与许可','583–594'],['F5','GBH / GTECAT / 恢复','595–605']];
 export const chapters=queue.map(([id,title,pages],i)=>({id,title,pages,status:i===0?'基础版 · 完善中':'待推进'}));

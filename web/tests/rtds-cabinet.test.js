@@ -8,3 +8,36 @@ test('internal light depends on rear LED switch and local light switch',()=>{ass
 test('29 units preserve V2/V1 split and do not claim complete coverage',()=>{assert.equal(chapters.length,29);assert.equal(chapters[0].pages,'16–36');assert.equal(chapters[0].status,'基础版 · 完善中');assert.equal(chapters[1].pages,'37–64');assert.ok(chapters.slice(1).every(c=>c.status==='待推进'));});
 
 test('chapter reading center temporarily yields the floating model',async()=>{const {chapterOwnsViewport}=await import('../src/rtds-cabinet-state.js');assert.equal(chapterOwnsViewport({top:100,bottom:1100},900),true);assert.equal(chapterOwnsViewport({top:850,bottom:1800},900),false);assert.equal(chapterOwnsViewport({top:-1000,bottom:-100},900),false);});
+
+test('physical rail capacity uses rear-view V2 millimetres, not pooled space',async()=>{
+ const {railSpaceBudget,railLengthsMm}=await import('../src/rtds-cabinet-state.js');
+ assert.deepEqual(railLengthsMm,{left:1440,right:1340});
+ assert.equal(railSpaceBudget({},'left').usedMm,0);
+ const left=railSpaceBudget({gtdov2:7},'left'),right=railSpaceBudget({gtdov2:7},'right');
+ assert.equal(left.usedMm,1379);assert.equal(left.remainingMm,61);assert.equal(left.status,'within');
+ assert.equal(right.usedMm,1379);assert.equal(right.remainingMm,-39);assert.equal(right.status,'over');
+ assert.equal(railBudget({gtdov2:7}).watts,35);
+});
+test('space sums mixed V2 cards exactly and remains separate from power',async()=>{
+ const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
+ assert.equal(railSpaceBudget({gtaov2:1,gtaiv2:2,gtdiv2:1,gtdov2:2},'right').usedMm,1182);
+ assert.equal(railBudget({gtdov2:20}).status,'within');
+ assert.equal(railSpaceBudget({gtdov2:20},'left').status,'over');
+ assert.equal(railSpaceBudget({gtdov2:20},'left').usedMm,3940);
+ assert.ok(Object.values(cards).every(c=>c.lengthMm===197));
+});
+test('invalid rail and counts never receive a passing physical budget',async()=>{
+ const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
+ for(const n of [-1,1.5,NaN,Infinity,'','2',1001])assert.equal(railSpaceBudget({gtaov2:n},'left').status,'invalid');
+ assert.equal(railSpaceBudget({madeup:1},'left').status,'invalid');
+ assert.equal(railSpaceBudget({},'front').status,'invalid');
+});
+
+test('prototype property names are not valid card identities',async()=>{
+ const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
+ for(const key of ['toString','constructor','__proto__']){
+  const counts=Object.fromEntries([[key,1]]);
+  assert.equal(railBudget(counts).status,'invalid');
+  assert.equal(railSpaceBudget(counts,'left').status,'invalid');
+ }
+});
