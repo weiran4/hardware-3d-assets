@@ -15,6 +15,7 @@ for(const mobile of [false,true])test(`1A cable entry and side-panel assumptions
  await page.locator('[data-access-preset=conflict]').click();await root.scrollIntoViewIfNeeded();await expect(page.locator('.rtds-pip')).toBeHidden();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await expect(root.locator('[data-access-zone=side]')).toHaveAttribute('data-selected','true');
+ const marker=await root.locator('.access-side i').boundingBox();expect(marker.width).toBeGreaterThanOrEqual(40);expect(marker.height).toBeGreaterThanOrEqual(28);
  await mkdir('screenshots',{recursive:true});await root.screenshot({path:`screenshots/chapter-1a-access-${mobile?'mobile':'desktop'}.png`});
  await page.locator('[data-variant="novacor-2.0"]').click();await expect(root).toBeHidden();await page.goBack();await expect(root).toBeVisible();await expect(out).toHaveAttribute('data-status','conflict');
  await page.goForward();await expect(root).toBeHidden();await page.goBack();await expect(root).toBeVisible();

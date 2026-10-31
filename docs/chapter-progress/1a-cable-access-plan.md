@@ -15,3 +15,5 @@ Tasks / acceptance:
 Review focus: stale side assumptions on top/bottom; incomplete fields; impossible removed/connected state; invalid enum/prototype names; misleading approval language or schematic dimensions.
 
 Local verification: 173 unit tests/build and 111 browser tests passed; actual desktop/mobile screenshots reviewed; independent reviewer found no blocker. Release verification remains pending at commit creation and is established only by exact-commit Actions plus live evidence.
+
+Online visual correction: exact-commit CI screenshots showed the vertical side-panel marker rendered poorly with the CI CJK font. Replace vertical text with a fixed minimum-size horizontal marker; desktop/mobile bounding-box regression first failed, then passed. Re-run all release gates for the correction.
