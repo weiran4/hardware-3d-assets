@@ -24,7 +24,7 @@ test('space sums mixed V2 cards exactly and remains separate from power',async()
  assert.equal(railBudget({gtdov2:20}).status,'within');
  assert.equal(railSpaceBudget({gtdov2:20},'left').status,'over');
  assert.equal(railSpaceBudget({gtdov2:20},'left').usedMm,3940);
- assert.ok(Object.values(cards).every(c=>c.lengthMm===197));
+ assert.ok(['gtaov2','gtaiv2','gtdiv2','gtdov2'].every(key=>cards[key].lengthMm===197));
 });
 test('invalid rail and counts never receive a passing physical budget',async()=>{
  const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
@@ -40,4 +40,25 @@ test('prototype property names are not valid card identities',async()=>{
   assert.equal(railBudget(counts).status,'invalid');
   assert.equal(railSpaceBudget(counts,'left').status,'invalid');
  }
+});
+
+test('legacy digital cards retain exact power revisions and V1 nominal lengths',()=>{
+ assert.deepEqual(cards.gtdiv111,{name:'GTDI V1.11',watts:6,lengthMm:266});
+ assert.deepEqual(cards.gtdov121,{name:'GTDO V1.21',watts:12,lengthMm:285});
+ assert.equal(railBudget({gtdiv1:1}).status,'invalid');
+ assert.equal(railBudget({gtdov1:1}).status,'invalid');
+});
+test('mixed-generation normal example uses heterogeneous lengths and separate power',async()=>{
+ const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
+ const counts={gtdiv111:1,gtdov121:1,gtdiv2:1,gtdov2:1};
+ assert.equal(railBudget(counts).watts,31);
+ assert.equal(railSpaceBudget(counts,'left').usedMm,945);
+ assert.equal(railSpaceBudget(counts,'right').remainingMm,395);
+});
+test('five GTDO V1.21 cards fit left nominal length but not right while both power budgets fit',async()=>{
+ const {railSpaceBudget}=await import('../src/rtds-cabinet-state.js');
+ assert.equal(railBudget({gtdov121:5}).watts,60);
+ assert.equal(railSpaceBudget({gtdov121:5},'left').remainingMm,15);
+ assert.equal(railSpaceBudget({gtdov121:5},'right').remainingMm,-85);
+ for(const n of [-1,1.5,NaN,1001])assert.equal(railSpaceBudget({gtdiv111:n},'left').status,'invalid');
 });

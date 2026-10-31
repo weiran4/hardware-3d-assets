@@ -1,5 +1,5 @@
 // Cubicle V2, revision 20260506, PDF 28–32. Maximum rated card power, not measurements.
-export const cards=Object.freeze({gtaov2:{name:'GTAO V2',watts:15,lengthMm:197},gtaiv2:{name:'GTAI V2',watts:12,lengthMm:197},gtdiv2:{name:'GTDI V2',watts:8,lengthMm:197},gtdov2:{name:'GTDO V2',watts:5,lengthMm:197}});
+export const cards=Object.freeze({gtaov2:{name:'GTAO V2',watts:15,lengthMm:197},gtaiv2:{name:'GTAI V2',watts:12,lengthMm:197},gtdiv2:{name:'GTDI V2',watts:8,lengthMm:197},gtdov2:{name:'GTDO V2',watts:5,lengthMm:197},gtdiv111:{name:'GTDI V1.11',watts:6,lengthMm:266},gtdov121:{name:'GTDO V1.21',watts:12,lengthMm:285}});
 export function railBudget(counts){let watts=0;for(const [key,n] of Object.entries(counts)){if(!Object.hasOwn(cards,key)||!Number.isSafeInteger(n)||n<0||n>1000)return {status:'invalid'};watts+=cards[key].watts*n;}return {watts,amps:watts/24,remaining:100-watts,status:watts>100?'over':'within'};}
 // Fig. 1.15 (PDF 31): Cubicle V2 May 2025+, viewed from the rear.
 // PDF 32 card lengths; integer millimetres avoid decimal accumulation drift.
