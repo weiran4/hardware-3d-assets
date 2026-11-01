@@ -1,4 +1,5 @@
 import './rtds-cabinet.css';
+import {initCabinetDoor} from './rtds-cabinet-door.js';
 import {initCabinetChassis} from './rtds-cabinet-chassis.js';
 import {initCabinetAccess} from './rtds-cabinet-access.js';
 import {initCabinetEnvironment} from './rtds-cabinet-environment.js';
@@ -15,7 +16,9 @@ export function initCabinet(){
  <section id="cabinet-chassis" class="cabinet-chassis" aria-labelledby="cabinet-chassis-heading"></section>
  <section id="cabinet-environment" class="cabinet-environment" aria-labelledby="cabinet-env-heading"></section>
  <section id="cabinet-access" class="cabinet-access" aria-labelledby="cabinet-access-heading"></section>
- <details class="cabinet-evidence"><summary>适用版本、依据与未覆盖项</summary><p>适用于 Cubicle V2，手册修订 20260506，PDF 16–36。供电与组件：PDF 25–30；每轨独立 24 V / 100 W：PDF 28；板卡功耗与长度：PDF 32；导轨可用长度与后视方向：PDF 30–31（2025 年 5 月及以后的 V2）；照明开关依赖：PDF 23；运行环境条件：PDF 34 §1.9。只作离线参数与状态教学，不连接真实设备，不演示交流接线或带电操作。</p><p>V2 使用一个断路器，不再使用旧版烟雾探测器与机械接触器；I/O 与 LED 控制位于后部。已有 GTIO 三维专题依据 Cubicle V1 图示，保留其版本标签，不作为 V2 机械接线证据。</p><ul><li>已覆盖：四款 V2 I/O 卡及 GTDI V1.11 / GTDO V1.21 的双导轨功率与长度预算、原创比例占用图、正常/超限/功率边界/空间反例、照明逻辑、运行环境四条件检查、顶部/底部/侧面入口位置对照及侧板/LED 约束情景、机箱功耗范围与条件参考和/重复计数检查、版本区别与章节队列。</li><li>待完善：机柜真实机械结构/门板操作、详细线缆路径及安装约束、其余板卡、机柜基线的附件包含范围及完整交流负荷预算；现阶段不宣称整章完成。</li><li>待证据：原文部分光纤单位疑似排印问题，不用于连接建议或计算；没有足够证据的针脚/机械结构不建模。</li></ul><p>所有状态即时响应输入，不表示硬件时序或保护动作。超限提示是预算检查，不模拟断路器跳闸。公开内容仅为原创交互和事实摘要，不提供私人手册或原图。</p></details>`;
+ <section id="cabinet-door" class="cabinet-door" aria-labelledby="cabinet-door-heading"></section>
+ <details class="cabinet-evidence"><summary>适用版本、依据与未覆盖项</summary><p>适用于 Cubicle V2，手册修订 20260506，PDF 16–36。供电与组件：PDF 25–30；每轨独立 24 V / 100 W：PDF 28；板卡功耗与长度：PDF 32；导轨可用长度与后视方向：PDF 30–31（2025 年 5 月及以后的 V2）；照明开关依赖：PDF 23；运行环境条件：PDF 34 §1.9。只作离线参数与状态教学，不连接真实设备，不演示交流接线或带电操作。</p><p>V2 使用一个断路器，不再使用旧版烟雾探测器与机械接触器；I/O 与 LED 控制位于后部。已有 GTIO 三维专题依据 Cubicle V1 图示，保留其版本标签，不作为 V2 机械接线证据。</p><ul><li>已覆盖：四款 V2 I/O 卡及 GTDI V1.11 / GTDO V1.21 的双导轨功率与长度预算、原创比例占用图、正常/超限/功率边界/空间反例、照明逻辑、运行环境四条件检查、顶部/底部/侧面入口位置对照及侧板/LED 约束情景、机箱功耗范围与条件参考和/重复计数检查、门锁销拆装顺序的非比例状态教学、版本区别与章节队列。</li><li>待完善：机柜真实机械结构/完整门板操作、详细线缆路径及安装约束、其余板卡、机柜基线的附件包含范围及完整交流负荷预算；现阶段不宣称整章完成。</li><li>待证据：原文部分光纤单位疑似排印问题，不用于连接建议或计算；没有足够证据的针脚/机械结构不建模。</li></ul><p>所有状态即时响应输入，不表示硬件时序或保护动作。超限提示是预算检查，不模拟断路器跳闸。公开内容仅为原创交互和事实摘要，不提供私人手册或原图。</p></details>`;
+ initCabinetDoor(root.querySelector('#cabinet-door'));
  initCabinetChassis(root.querySelector('#cabinet-chassis'));
  initCabinetEnvironment(root.querySelector('#cabinet-environment'));
  initCabinetAccess(root.querySelector('#cabinet-access'));
