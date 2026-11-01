@@ -48,3 +48,20 @@ test('contextual teaching yields PiP and restores minimized or dismissed prefere
  await reading();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await page.locator('[data-pip-action="close"]').click();
  await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('.rtds-pip')).toBeHidden();await reading();await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);
 });
+
+for(const activation of ['pointer','keyboard','native-click'])test(`late gallery completion respects ${activation} playback already chosen in teaching`,async({page})=>{
+ let count=0,release,seen;const held=new Promise(r=>release=r),requested=new Promise(r=>seen=r);
+ await page.route('**/assets/rtds/novacor-2.0-2023.json',async route=>{if(++count===2){seen();await held;}await route.continue();});
+ try{
+ await page.goto('./#rtds-analog');await requested;
+ await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
+ await page.locator('#analog-play').focus();
+ if(activation==='pointer')await page.locator('#analog-play').click();else if(activation==='keyboard')await page.keyboard.press('Enter');else await page.locator('#analog-play').evaluate(n=>n.click());
+ await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-playing','true');
+ release();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('#rtds-loading')).toBeHidden();
+ await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-playing','true');
+ await expect.poll(async()=>Number(await page.locator('#rtds-analog-lesson').getAttribute('data-elapsed'))).toBeGreaterThan(300);
+ await expect(page.locator('#analog-play')).toBeFocused();
+ await page.locator('[data-variant="cubicle-v2"]').click();await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-playing','false');
+ }finally{release();}
+});

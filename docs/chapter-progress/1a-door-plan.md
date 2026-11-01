@@ -15,3 +15,5 @@ Acceptance:
 - [ ] Nonforce main update after fresh-head/no-active-run check; exact verify→deploy→smoke-live plus anonymous file hashes and actual online screenshots.
 
 Chapter stays partial: verified complete mechanical geometry, detailed handling/installation, cable routing, remaining cards and AC baseline inclusions remain unaccepted.
+
+Release regression correction: the first CI verify prevented deployment after an existing analog-context test exposed a race. The lesson model can be ready before the gallery model; late route presentation then paused a user's newly started playback. A held-response test reproduced the failure. Explicit pointer/keyboard input in the teaching region now supersedes only the deferred route presentation; new hardware navigation still pauses hidden lessons. No retries or checks were weakened.
