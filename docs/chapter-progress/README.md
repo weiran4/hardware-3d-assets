@@ -4,7 +4,9 @@ Updated 2026-11-02. 1A Cubicle V2 (PDF 16–36, revision 20260506) is **foundati
 
 Implemented: independent 24 V / 100 W per-rail power budget for GTAO V2, GTAI V2, GTDI V2 and GTDO V2; normal, overload and power-boundary presets; independent nominal-length budget (rear-view left 144 cm / right 134 cm, May 2025+ V2 cabinets), four V2 card types at 19.7 cm each plus revision-specific GTDI V1.11 and GTDO V1.21 at 26.6/28.5 cm, original proportional occupancy bars and a 7-card GTDO V2 counterexample (35 W fits both power budgets but 137.9 cm exceeds the right rail by 3.9 cm); invalid input handling; rear LED / local internal-light dependency; independent operating-environment checks for temperature, relative humidity, user-assessed non-condensing and office-like cleanliness conditions; 29-unit chapter navigator. The existing actual-model GTIO lesson retains its Cubicle V1 source labels.
 
-Remaining: cabinet mechanical operations and verified model geometry; detailed cable routing and installation constraints; other card types and full chassis/cubicle power budget. Uncertain fiber units are excluded. No private manuals or third-party illustrations are included.
+Current consolidation: front 2U/4U blank panels, side panels and door mechanisms are distinguished in one identity checker; grounding locations and seven source-listed power components are read-only. The old blanket phrase “maximum rated card power” is corrected to “listed power consumption”: PDF 32 does not label every table value a maximum.
+
+Remaining **verified work**: whole-chapter source/version, contextual interaction and regression acceptance. Missing evidence is not an invitation to invent more tools: full envelope/handling/anchorage/floor load/maintenance spacing, 120 W baseline inclusions/additivity, unspecified GTFPI/GTSYNC generations and absent GTAI V1 power remain unresolved. PDF 28 cable length/plug part-number inconsistencies and PDF 29 fibre units are excluded from sizing/wiring. No private manuals or third-party illustrations are included.
 
 Verification: the length-budget slice adds unit and browser coverage for left/right asymmetry, independent power and space results, invalid-input recovery, large counts without layout overflow, contextual navigation, keyboard, and mobile/reduced-motion/non-WebGL operation. Test counts and release status must be read from the exact-commit Actions result, not inferred from this progress document. The existing CI verify → deploy → smoke-live workflow must pass for the exact publishing commit, and screenshot evidence must be inspected. See the repository Actions result for that commit; this document alone does not certify deployment.
 
@@ -57,3 +59,22 @@ PDF 17–18 nominal outline annotations (23 × 32.5 × 75 inches) and PDF 36 fra
 PDF 24 approximate configured weights remain paired as printed: one-chassis cabinet 185 kg / 408 lb and two-chassis cabinet 198 kg / 436 lb. The selector does not extrapolate an empty cabinet, other configurations, floor loading or lifting equipment. Detailed handling, anchorage, load-bearing conditions and complete projecting geometry remain unverified. Chapter 1A stays foundational/in progress; no advance to 1B.
 
 Tests include both sources, conversion, orientation, equality, invalid/prototype input, configured mass, keyboard, repeated contextual history and desktop/mobile/reduced-motion/no-WebGL evidence. Local unit/build checks passed; the current local browser runtime could not launch, so browser validation and actual screenshot inspection are delegated to the existing exact-commit CI verify → deploy → smoke-live gates, not represented as a local pass. Exact Actions results and inspected artifacts, not this document alone, determine release acceptance.
+
+
+## 1A consolidated source-to-coverage register
+
+| Section / reader pages | Delivered learning scope | Explicit boundary |
+| --- | --- | --- |
+| §1.1 / 16 | Standalone/cabinet use, skilled-person condition | No operation qualification |
+| §1.2 / 17–23, appendix 35–36 | Separated dimensions, panel/door identities, latch ordering, lighting dependency | No complete envelope, mechanical CAD, service or handling approval |
+| §1.3 / 24 | One/two-chassis cabinet masses and standalone NovaCor 2.0 mass | No empty-cabinet extrapolation, floor loading or lift selection |
+| §1.4 / 24–28 | Revision differences, ground locations, seven component identities | No copied circuit, pinout, AC wiring, substitution or procurement advice |
+| §1.5 / 28–32 | Independent rail supply and length budgets with six named card versions | Unknown-generation/absent-power cards excluded; no cross-version compatibility |
+| §1.6 / 32 | Listed powers, conditional arithmetic reference and double-count warning | Not verified AC load; 120 W scope unresolved |
+| §1.7–1.8 / 33–34 | Cable-entry locations, side LED constraints, front-panel identity | No routing approval, cable fill/bend radius or complete service steps |
+| §1.9 / 34 | Four independent environment conditions | Not measurement or environmental certification |
+| §1.10 / 34 | Manual-declared safety-standard statement only | Website, illustrations and actual installation are not thereby certified |
+
+PDF 28 says both 16 feet and 4 m, and some described plug part numbers differ from linked parameters. PDF 29's 62.5/125 nm wavelength wording is suspect. Neither is silently corrected or used as a sizing/matching input. Unknown card generations, missing GTAI V1 power, 120 W baseline composition, dimension-source discrepancy and complete external/installation conditions remain registered separately.
+
+Next continuation: one chapter-level source/version/interaction acceptance pass, with a bounded assessment of remaining evidence—not more arbitrary parameter widgets. 1A stays foundational/in progress until that acceptance; no date-driven advance to 1B. The existing verify → deploy → smoke-live gates and actual online screenshot review determine release status.
