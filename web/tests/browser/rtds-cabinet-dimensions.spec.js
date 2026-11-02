@@ -8,7 +8,7 @@ test('1A dimension sources, orientation, equality and input recovery',async({pag
  await page.getByLabel('标注来源（不是完整外包络）').selectOption('frame');await expect(values).toContainText('590.042 × 深 827.532 × 高 1909.826 mm');
  await page.getByLabel('交换宽 / 深数值（非搬运演示）').check();await expect(result).toHaveAttribute('data-status','smaller');await expect(values).toContainText('827.532 × 深 590.042');
  await page.getByRole('button',{name:'边界例：等于正文标注'}).focus();await page.keyboard.press('Enter');await expect(result).toHaveAttribute('data-status','equal');await expect(result).toContainText('零差值不是可用净空');
- await page.getByLabel('宽方向比较值（mm）').fill('');await expect(result).toHaveAttribute('data-status','invalid');await expect(section.locator('svg')).toBeHidden();await expect(page.getByLabel('宽方向比较值（mm）')).toHaveAttribute('aria-invalid','true');
+ await page.getByLabel('宽方向比较值（mm）').fill('');await expect(result).toHaveAttribute('data-status','invalid');await expect(section.locator('svg')).toHaveAttribute('hidden','');await expect(section.locator('svg')).toBeHidden();await expect(page.getByLabel('宽方向比较值（mm）')).toHaveAttribute('aria-invalid','true');
  await page.getByRole('button',{name:'错误例：宽度仅 580 mm'}).click();await expect(result).toContainText('-4.2 mm');await expect(section.locator('svg')).toBeVisible();
  await page.getByLabel('配置重量参考 · PDF 24 §1.3').selectOption('two');await expect(page.locator('#cabinet-dimensions-mass-result')).toHaveText('约 198 kg / 436 lb（2 个机箱配置）');
  await page.getByRole('button',{name:'数值例：700 × 1000 × 2100 mm'}).click();await section.scrollIntoViewIfNeeded();await expect(page.locator('.rtds-pip')).toBeHidden();

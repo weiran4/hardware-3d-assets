@@ -17,3 +17,5 @@ Acceptance:
 1A remains partial. This closes dimension-annotation and configured-mass reference coverage, not full mechanical geometry or installation qualification.
 
 Local verification note: 186 unit tests and build passed. Local Chromium launch is unavailable in the current execution sandbox; no local browser/screenshot pass is claimed. Existing CI is the permitted rendering/verification fallback. Source/code review completed; visual acceptance remains tied to exact CI artifacts.
+
+CI caught a genuine SVG invalid-input visibility defect: assigning `.hidden` does not reflect an SVG attribute. The component now toggles the `hidden` attribute explicitly; the original visibility assertion is retained and strengthened with an attribute assertion. The failed verify prevented deployment and kept the old site intact.

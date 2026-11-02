@@ -29,7 +29,7 @@ export function initCabinetDimensions(root){
  function update(){
   const input=Object.fromEntries(Object.entries(fields).map(([k,f])=>[k,f.value===''?NaN:Number(f.value)])),r=dimensionComparison({...input,source:source.value,rotated:rotated.checked});
   for(const [key,field] of Object.entries(fields))field.setAttribute('aria-invalid',String(!Number.isFinite(input[key])||input[key]<=0||input[key]>100000));
-  out.dataset.status=r.status;svg.hidden=r.status==='invalid';
+  out.dataset.status=r.status;svg.toggleAttribute('hidden',r.status==='invalid');
   if(r.status==='invalid'){out.textContent='请输入大于 0 且不超过 100000 mm 的有效比较值；当前不显示尺寸比较。';values.textContent='输入无效；没有可用的比较结论。';return;}
   const labels={width:'宽',depth:'深',height:'高'};
   out.textContent=Object.entries(r.differences).map(([k,n])=>`${labels[k]}方向数值差 ${n>0?'+':''}${fmt(n)} mm`).join(' · ')+'。'+({greater:'三个输入均大于所选标注数值；仍不能判断设备可放入。',smaller:'至少一个输入小于所选标注数值；不构成任何通过/安装许可。',equal:'至少一项恰好等于标注数值；零差值不是可用净空。'}[r.status]);
