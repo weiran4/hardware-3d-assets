@@ -1,0 +1,30 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+test('1A dimension sources, orientation, equality and input recovery',async({page})=>{
+ await page.goto('./#rtds-chapter-1a');
+ const section=page.locator('#cabinet-dimensions'),result=page.locator('#cabinet-dimensions-result'),values=page.locator('#cabinet-dimensions-values');
+ await expect(result).toHaveAttribute('data-status','greater');await expect(values).toContainText('584.2 × 深 825.5 × 高 1905 mm');
+ await expect(section).toContainText('两组数值分别保留');await expect(section).toContainText('附录高度尺寸线不包含上方突出的吊环');
+ await page.getByLabel('标注来源（不是完整外包络）').selectOption('frame');await expect(values).toContainText('590.042 × 深 827.532 × 高 1909.826 mm');
+ await page.getByLabel('交换宽 / 深数值（非搬运演示）').check();await expect(result).toHaveAttribute('data-status','smaller');await expect(values).toContainText('827.532 × 深 590.042');
+ await page.getByRole('button',{name:'边界例：等于正文标注'}).focus();await page.keyboard.press('Enter');await expect(result).toHaveAttribute('data-status','equal');await expect(result).toContainText('零差值不是可用净空');
+ await page.getByLabel('宽方向比较值（mm）').fill('');await expect(result).toHaveAttribute('data-status','invalid');await expect(section.locator('svg')).toBeHidden();await expect(page.getByLabel('宽方向比较值（mm）')).toHaveAttribute('aria-invalid','true');
+ await page.getByRole('button',{name:'错误例：宽度仅 580 mm'}).click();await expect(result).toContainText('-4.2 mm');await expect(section.locator('svg')).toBeVisible();
+ await page.getByLabel('配置重量参考 · PDF 24 §1.3').selectOption('two');await expect(page.locator('#cabinet-dimensions-mass-result')).toHaveText('约 198 kg / 436 lb（2 个机箱配置）');
+ await page.getByRole('button',{name:'数值例：700 × 1000 × 2100 mm'}).click();await section.scrollIntoViewIfNeeded();await expect(page.locator('.rtds-pip')).toBeHidden();
+ await mkdir('screenshots',{recursive:true});await section.screenshot({path:'screenshots/chapter-1a-dimensions-desktop.png'});
+ await page.locator('[data-variant="novacor-2.0"]').click();await expect(section).toBeHidden();await page.goBack();await expect(result).toHaveAttribute('data-status','greater');
+ await page.goForward();await expect(section).toBeHidden();await page.goBack();await expect(section).toBeVisible();
+});
+test('1A dimension mobile no-WebGL, reduced motion and source-boundary',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,...args){return /webgl/.test(t)?null:old.call(this,t,...args);};});
+ await page.goto('./#rtds-chapter-1a');
+ const section=page.locator('#cabinet-dimensions'),result=page.locator('#cabinet-dimensions-result');
+ await page.getByLabel('高方向比较值（mm）').fill('-1');await expect(result).toHaveAttribute('data-status','invalid');
+ await page.getByRole('button',{name:'边界例：等于正文标注'}).click();await page.getByLabel('标注来源（不是完整外包络）').selectOption('frame');
+ await expect(result).toHaveAttribute('data-status','smaller');await expect(result).toContainText('-5.842 mm');await expect(result).toContainText('-4.826 mm');
+ await expect(page.locator('#cabinet-dimensions-mass-result')).toContainText('185 kg / 408 lb');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await mkdir('screenshots',{recursive:true});await section.screenshot({path:'screenshots/chapter-1a-dimensions-mobile.png'});
+});
