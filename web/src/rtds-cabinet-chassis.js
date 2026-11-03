@@ -25,7 +25,7 @@ export function initCabinetChassis(root){
  <label class="cabinet-chassis-trap"><input type="checkbox" id="cabinet-count-cards-again"> 试着把已包含的 GTNETx2 按每卡 18 W 再加一次</label>
  <output id="cabinet-chassis-result" aria-live="polite"></output>
  <p class="cabinet-chassis-assumption"><b>假设与限制：</b>算式仅假定上述机柜基线、NovaCor 2.0 与 GTNET 项彼此不重叠。手册没有完整界定 120 W 基线，也没有证明这个可加假设。<b>这个参考和不等于整柜最大输入功率</b>，更不是测量结果或供电许可。数量范围仅用于练习，不证明可安装的机箱数量。</p>
- <details><summary>为什么不把所有 W 都直接加在一起？</summary><p class="cabinet-note">90 W 是装有 3 张 GTNETx2 的机箱参考值，不能再加 3 × 18 W；也不能用 90 − 54 W 推断空机箱功耗，或据此估计其他卡数。上方导轨计算属于 24 V 侧，100 W 是每路电源的容量，不是实际消耗。由于基线包含范围与转换损耗未确定，本练习不把导轨负荷或 2 × 100 W 自动加到参考和。其他附件、功率因数、启动电流及配电条件仍须另外核实；这里不计算交流电流、断路器、电缆或 UPS 选型。</p></details>`;
+ <details><summary>为什么不把所有 W 都直接加在一起？</summary><p class="cabinet-note">90 W 是装有 3 张 GTNETx2 的机箱参考值，不能再加 3 × 18 W；也不能用 90 − 54 W 推断空机箱功耗，或据此估计其他卡数。上方导轨计算属于 24 V 侧，100 W 是本页采用的正文教学阈值，图示额定标注仍有冲突，不是已核实的实物容量，不是实际消耗。由于基线包含范围与转换损耗未确定，本练习不把导轨负荷或 2 × 100 W 自动加到参考和。其他附件、功率因数、启动电流及配电条件仍须另外核实；这里不计算交流电流、断路器、电缆或 UPS 选型。</p></details>`;
  const nc=root.querySelector('#cabinet-novacor-count'),gt=root.querySelector('#cabinet-gtnet-count'),population=root.querySelector('#cabinet-gtnet-population'),again=root.querySelector('#cabinet-count-cards-again'),result=root.querySelector('#cabinet-chassis-result');
  function update(){
   const novacor=nc.value===''?NaN:Number(nc.value),gtnet=gt.value===''?NaN:Number(gt.value);

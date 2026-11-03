@@ -62,3 +62,13 @@ test('five GTDO V1.21 cards fit left nominal length but not right while both pow
  assert.equal(railSpaceBudget({gtdov121:5},'right').remainingMm,-85);
  for(const n of [-1,1.5,NaN,1001])assert.equal(railSpaceBudget({gtdiv111:n},'left').status,'invalid');
 });
+
+test('rail budget displays both contradictory supply sources without certifying current',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const source=await readFile(new URL('../src/rtds-cabinet.js',import.meta.url),'utf8');
+ assert.match(source,/id="cabinet-supply-conflict"/);
+ assert.match(source,/3\.8 A/);assert.match(source,/91\.2 W/);
+ assert.match(source,/4\.17 A.*不是.*额定/);
+ assert.equal(railBudget({gtdov2:20}).watts,100);
+ const chassis=await readFile(new URL('../src/rtds-cabinet-chassis.js',import.meta.url),'utf8');assert.doesNotMatch(chassis,/100 W 是每路电源的容量/);
+});
