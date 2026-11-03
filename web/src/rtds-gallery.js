@@ -81,7 +81,7 @@ export function initRtdsGallery(onMode){
   $('rtds-teaching').hidden=!shown;$('rtds-open-teaching').hidden=!shown;
   const item=catalog.find(c=>c.id===state.variantId);
   $('rtds-teaching-heading').textContent=(item?.name||'所选硬件')+' · 教学演示';
-  $('rtds-teaching-version').textContent=lesson==='power'?'本例使用 GTAO V2 双卡与 Cubicle V1 图示；用于理解 24 V 并联供电，不代表所选板卡的机械接线或新版机柜安装。':lesson==='analog'?'仅适用于 NovaCor 2.0；不借用到 NovaCor Light 或 NovaCor 1.0。':lesson==='cabinet'?'Cubicle V2 · PDF 16–36 · 基础版 / 完善中；参数教学，无机柜机械模型。':'';
+  $('rtds-teaching-version').textContent=lesson==='power'?'本例使用 GTAO V2 双卡与 Cubicle V1 图示；用于理解 24 V 并联供电，不代表所选板卡的机械接线或新版机柜安装。':lesson==='analog'?'仅适用于 NovaCor 2.0；不借用到 NovaCor Light 或 NovaCor 1.0。':lesson==='cabinet'?'接线学习入口 · 各示例分别标注硬件版本与来源；机柜安装、环境与尺寸仅为可选辅助资料。':'';
   analogLesson.setActive(!!(active&&!document.hidden&&lesson==='analog'));
   powerLesson.setActive(!!(active&&!document.hidden&&lesson==='power'));
   syncChapterPip();
@@ -102,6 +102,7 @@ export function initRtdsGallery(onMode){
   if(route){initialized=true;initialLoad=selectVariant(route.hardware,{teach:true});await initialLoad;}
   else if(!initialized){initialized=true;initialLoad=selectVariant(state.variantId,{teach:false});await initialLoad;}
   if(token!==routeGeneration||hash!==location.hash||!active)return;
+  if(interaction===teachingInteraction&&route?.group){selectGroup(route.group);const target=$('rtds-group-list').querySelector(`[data-group="${route.group}"]`);if(target){target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});}return;}
   if(interaction===teachingInteraction&&route?.lesson&&!hash.startsWith('#rtds-hardware-')){if(route.lesson==='analog')selectGroup('analogue');if(route.lesson==='power')selectGroup('power');openTeaching(route.lesson);}
  }
  $('mode-generic').addEventListener('click',()=>navigate('#generic'));$('mode-rtds').addEventListener('click',()=>navigate('#rtds'));

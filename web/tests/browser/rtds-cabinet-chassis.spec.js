@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 
 test('1A chassis scopes reject double counting and unknown populations',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const result=page.locator('#cabinet-chassis-result'),section=page.locator('#cabinet-chassis');
  await expect(result).toHaveAttribute('data-status','reference');await expect(result).toContainText('790 W');
  await expect(section).toContainText('不等于整柜最大输入功率');
@@ -22,7 +22,7 @@ test('1A chassis scopes reject double counting and unknown populations',async({p
 test('1A chassis reference mobile keyboard and no-WebGL fallback',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,...args){return /webgl/.test(t)?null:old.call(this,t,...args);};});
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  await page.getByLabel('NovaCor 2.0 机箱数量').fill('-1');await expect(page.locator('#cabinet-chassis-result')).toHaveAttribute('data-status','invalid');
  await page.getByRole('button',{name:'错误例：把 GTNET 卡再加一次'}).click();
  await expect(page.locator('#cabinet-chassis-result')).toContainText('54 W');

@@ -1,87 +1,47 @@
-# Chapter coverage
+# 接线、接口、规格与延时：教学进度
 
-Updated 2026-11-03. 1A Cubicle V2 (PDF 16–36, revision 20260506) is **foundational / in progress**, not accepted as a complete chapter.
+更新：2026-11-03。本项目的主课是硬件如何连接，而不是把参考手册的每一段做成安装教程。
 
-Implemented: independent 24 V / 100 W per-rail power budget for GTAO V2, GTAI V2, GTDI V2 and GTDO V2; normal, overload and power-boundary presets; independent nominal-length budget (rear-view left 144 cm / right 134 cm, May 2025+ V2 cabinets), four V2 card types at 19.7 cm each plus revision-specific GTDI V1.11 and GTDO V1.21 at 26.6/28.5 cm, original proportional occupancy bars and a 7-card GTDO V2 counterexample (35 W fits both power budgets but 137.9 cm exceeds the right rail by 3.9 cm); invalid input handling; rear LED / local internal-light dependency; independent operating-environment checks for temperature, relative humidity, user-assessed non-condensing and office-like cleanliness conditions; 29-unit chapter navigator. The existing actual-model GTIO lesson retains its Cubicle V1 source labels.
+## 当前学习主线
 
-Current consolidation: front 2U/4U blank panels, side panels and door mechanisms are distinguished in one identity checker; grounding locations and seven source-listed power components are read-only. The old blanket phrase “maximum rated card power” is corrected to “listed power consumption”: PDF 32 does not label every table value a maximum.
+每个硬件/连接场景优先回答：
 
-Chapter-level source/version review now completed against PDF 16–36, including diagram pixels and independent read-only review. It found an additional supply-rating conflict: PDF 25–26 show 24 V / 3.8 A (91.2 W by multiplication), while PDF 28 states 100 W per rail. The UI retains 100 W only as the prose teaching threshold and prominently states that calculated 4.17 A is not verified current capability. Release/regression acceptance of this correction remains dependent on its exact-commit pipeline. Missing evidence is not an invitation to invent more tools: full envelope/handling/anchorage/floor load/maintenance spacing, 120 W baseline inclusions/additivity, unspecified GTFPI/GTSYNC generations and absent GTAI V1 power remain unresolved. PDF 28 cable length/plug part-number inconsistencies and PDF 29 fibre units are excluded from sizing/wiring. No private manuals or third-party illustrations are included.
+1. 哪个硬件的哪个接口，接到哪个硬件的哪个接口？
+2. 使用什么线缆、供电和电气/协议条件？
+3. 应用信号往哪个方向传，光链路本身是否双工？
+4. 对应哪个硬件版本，什么组合不能混接？
+5. 延时指哪一段，单位和测试条件是什么？采样周期、更新间隔与端到端延时不能混为一谈。
 
-Verification: the length-budget slice adds unit and browser coverage for left/right asymmetry, independent power and space results, invalid-input recovery, large counts without layout overflow, contextual navigation, keyboard, and mobile/reduced-motion/non-WebGL operation. Test counts and release status must be read from the exact-commit Actions result, not inferred from this progress document. The existing CI verify → deploy → smoke-live workflow must pass for the exact publishing commit, and screenshot evidence must be inspected. See the repository Actions result for that commit; this document alone does not certify deployment.
+正常接法、典型错配和必要限制紧邻对应硬件。未知针脚、未证实的接法和延时不填猜测值，动画不暗示实际时序。高压只讲隔离边界和参数，不演示危险带电操作。
 
-Other units remain pending; a model or earlier individual lesson does not count as chapter acceptance. The in-page navigator lists their precise PDF reading-page ranges. The 5 firmware units are a teaching partition of the appendix, not 5 original chapters.
+## 本次纠偏
 
-Visual review caught the floating model covering the lighting result on desktop. The chapter now temporarily returns the same canvas inline while its parameter section occupies the reading center, restoring normal floating behavior outside the chapter; a browser visibility assertion guards this. This does not recreate a renderer or reserve a layout gutter.
+原 1A 深链接保留。默认显示接线入口：
+- GTAO V2 双卡 24 V 供电：既有真实模型、线束连接与电气并联关系。使用 Cubicle V1 图示来源，不当作 V2 机柜实物接线，也不照搬至 GTDI。
+- NovaCor 2.0 前面板模拟监视：输出1到仪表V、模拟地1到COM，保留监视用途和电气范围。
+- NovaCor GT 1–20 与 GTI/O 的 GT1、允许组合中的 GT2到下一卡GT1，端口设置与实际插口一致。GT21–24/Aurora与GTSYNC专用口不能混用。
+- GTAI/GTAO规格与采样/更新条件；GTDO传播时间只在给定30V、100Ω、30pF条件下展示，不代表完整闭环延时。
 
-## Contextual lesson navigation
+机柜尺寸、安装、门/面板、环境温湿度和一般长度预算全部保留在默认关闭的辅助资料中，方便需要时查看。它们不再占据主课，也不阻塞后续接线章节。既有电气预算仍是参考工具，不是实际额定或安装许可。
 
-Teaching is scoped to the explicitly selected hardware, inside its workbench rather than a global bottom-of-page stack. NovaCor 2.0 exposes its analog-output lesson; supported V2 I/O cards expose the existing GTAO dual-card supply example with its Cubicle V1 boundary; the parameter-only Cubicle V2 catalog entry exposes chapter 1A. Other hardware versions do not borrow these lessons. Initial implicit selection leaves lessons hidden. Known deep links route the matching hardware before revealing teaching; switching hardware pauses irrelevant lessons. Chapter coverage remains foundational/in progress.
+## 覆盖与后续
 
-## 1A nominal rail-space budget
+1A当前为**接线参考／部分覆盖**，不冒称整本章节全部完成。既有源码、来源页码及错误案例保留；辅助资料完整度不再作为章节验收条件。后续按手册顺序推进1B及NovaCor各版本的连接内容，优先补齐实际端点、线缆、电气/协议约束和有条件的延时；不再为机柜机械细节继续增加小工具。
 
-Source facts: PDF 30–32; Figure 1.15 is explicitly a rear view for Cubicle V2 May 2025 and newer. The state uses integer millimetres (1440 / 1340 mm; 197 mm per V2 card, 266/285 mm for the supported legacy digital cards), displaying cm. Existing power limits remain independent. A 100 W power-boundary configuration can still fail the length check. The original graphic clips its drawn occupancy to rail capacity while the text reports the full excess; it is not a reproduced manual illustration, exact mechanical model, wiring plan or installation approval. Clearances, tolerances, connectors, cable ratings and thermal conditions are not checked.
+已有7类模型、模拟输出和GTIO供电专题不等于对应所有章节已完成。29个名义推进单元保留，固件附录的5单元是教学划分，不是原书5章，也不承诺29天完成。
 
-## 1A operating-environment conditions
+所有课程仍由硬件选择触发；切换硬件暂停隐藏课程。跨硬件入口显式选择对应版本。旧深链接、键盘、前进后退、重复切换、手机、减少动态、加载失败恢复以及同画布悬浮窗必须回归。
 
-PDF reading page 34, §1.9 (Cubicle V2, revision 20260506) states ambient 15–30 °C, relative humidity 30–60%, non-condensing, and a relatively clean office-like environment. The contextual checker evaluates these independently, defaults qualitative assumptions to unknown, and provides synthetic normal, endpoint and condensation-error examples. Empty/non-finite numeric entries and RH outside 0–100% are invalid. Numeric values alone cannot establish the qualitative conditions. No sensor, dew-point model, dust-limit threshold, permission to operate or whole-cabinet certification is implied.
+## 必须保留的来源边界
 
-New tests cover independent statuses, exact endpoints, invalid recovery, unknown conditions, keyboard and contextual history, plus mobile/reduced-motion/no-WebGL screenshots. The exact-commit release pipeline and actual screenshot inspection remain the release gate. This increment does not complete chapter 1A or advance to 1B.
+- Cubicle V2 PDF25–26：24V/3.8A，与PDF28每轨100W不一致。预算只保留正文教学阈值，P/24算术不是确认的额定电流。
+- PDF32：120W基线范围未清晰，不能据此得到真实整柜AC负荷；未知代际GTFPI/GTSYNC、缺失GTAI V1功耗不补猜。
+- PDF28线长/插头编号和PDF29光纤单位疑点不作为选型或接线依据。
+- 机柜尺寸/承载等未核实参数作为辅助边界保留，不是接线主课的推进障碍。
+- 源页只给某种负载、链路或工作条件下延时的，必须同时显示那些条件；不外推其他组合。
 
-## 1A revision-specific legacy digital cards
+## 验证与发布
 
-PDF 32 now also drives GTDI V1.11 (6 W; V1 nominal length 26.6 cm) and GTDO V1.21 (12 W; V1 nominal length 28.5 cm). Each input displays its own length as well as power. The original four V2 entries are unchanged. A mixed arithmetic example uses one of each legacy digital entry plus GTDI V2 and GTDO V2: 31 W and 94.5 cm per rail. Five GTDO V1.21 cards use 60 W and 142.5 cm: 1.5 cm left-side nominal spare, but 8.5 cm right-side excess. The graphic uses actual per-entry nominal lengths, not uniform card widths.
+本次变更只重排教学入口和资料层级，复用真实模型与既有接线演示。辅助工具测试必须先显式展开辅助资料，新测试检查默认主次、移动端、键盘展开/收起、硬件路由和历史。全部单测、build及完整浏览器回归仍必需。
 
-These examples establish neither cross-version electrical/interface compatibility nor installation clearance. The old-card power figures must not be applied to unspecified V1 revisions. GTFPI/GTSYNC version identification and GTAI V1 power are not assumed. Normal/reset, invalid-input recovery, keyboard/history, desktop/mobile and reduced-motion/no-WebGL tests are included. Later increments below add door/panel, cable-entry, dimensions and chassis-scope teaching. Only the explicitly listed evidence exclusions remain; this older slice is not a current feature backlog.
-
-## 1A cable-entry and side-panel constraints
-
-PDF 21–22 (§1.2.1) and 33 (§1.7), Cubicle V2 revision 20260506, support a new contextual location comparison. Top has four corner entries; the bottom opening is illustrated as 12 × 3 inches (304.8 × 76.2 mm). Side-by-side routing must distinguish an installed panel, unknown condition and a removed panel. A removed panel with its LED still connected is flagged as a contradictory/risky assumption; removed plus disconnected only satisfies these two teaching assumptions, not an installation check. State selectors remain explicit, default side assumptions unknown, and top/bottom do not inherit side restrictions.
-
-The original non-scale location graphic is not a detailed cabinet model, removal animation or cable-fill/clearance calculation. No actual operation, wiring sequence or electrical-isolation assertion is provided. Manual cautions about skilled personnel and heavy panels remain visible. The adjacent cabinet's panel requires separate consideration. No private pictures or manual are published. Desktop/mobile, keyboard, repeated selection, history, reduced-motion and no-WebGL cases are covered by tests; actual exact-commit CI and screenshot review determine publication status. Later increments cover the bounded door, dimensional and chassis-scope lessons. Detailed installation conditions and unverified board identities remain explicit exclusions, not inferred features.
-
-## 1A chassis power-scope reference
-
-PDF 32 §1.6 (revision 20260506) distinguishes the cabinet without NovaCor (approximately 120 W maximum), each NovaCor 2.0 chassis (approximately 290 W maximum), and a GTNET chassis **including three GTNETx2 cards** (approximately 90 W, not labeled maximum). The new contextual ledger illustrates an explicitly assumed non-overlapping sum: two NovaCor chassis and one populated GTNET chassis give 790 W. It is not a verified whole-cabinet AC demand or installation rating: the 120 W baseline's inclusions and additivity remain unresolved. No current, breaker, cable or UPS sizing is derived. The existing 24 V I/O budgets and supply capacities remain separate.
-
-The error example identifies the 54 W that would be double-counted by adding three individual 18 W cards to the populated 90 W chassis; it leaves the reference sum unchanged. Partial/unknown GTNET populations suppress the aggregate rather than infer empty-chassis consumption or scale the 90 W figure. Invalid/empty counts are rejected. Count selections are limited teaching cases, not mechanical-fit assertions. New unit/browser cases cover reference, duplicate, unknown and invalid states, reset, keyboard and contextual history, plus mobile/reduced-motion/no-WebGL operation. Independent read-only source/code and local screenshot review found no blockers. Release remains subject to the exact-commit pipeline and online screenshot inspection. Later door/dimension/component increments complete those bounded teaching topics. Full AC baseline composition, detailed installation conditions and unidentified card revisions remain excluded.
-
-## 1A door-latch ordering
-
-PDF 22–23 §1.2.2 (revision 20260506) supports a discrete door removal/reinstallation lesson. Opening precedes releasing the upper latch and removal; reinstallation starts by seating the lower latch, then holding the upper latch while aligning and releasing it. The state graph rejects skipped steps without changing state, supports keyboard actions/reset/repeat and remains static when hidden. The original non-scale diagram has no reproduced photos, dimensions, pinouts or force model. It is not a complete service procedure or installation approval. Skilled-person and heavy-door precautions from PDF 16/21 remain visible; side-panel LED requirements are not incorrectly assigned to the separate door-latch mechanism.
-
-New unit/browser checks cover valid and invalid sequences, prototype input names, reset, keyboard/contextual history, desktop/mobile and reduced-motion/no-WebGL behavior. The exact-commit pipeline and actual online screenshot review remain mandatory. Complete mechanical/handling certification, detailed installation conditions, unidentified card revisions and AC baseline scope remain outside verified teaching evidence.
-
-## 1A dimensional annotations and configured weights
-
-PDF 17–18 nominal outline annotations (23 × 32.5 × 75 inches) and PDF 36 frame-reference annotations (23.23 × 32.58 × 75.19 inches) are preserved as separate sources. The appendix height dimension excludes the projecting lifting eyes; no cause for the discrepancy is inferred. An original proportional top-view rectangle and three-axis numerical comparison support source selection, width/depth exchange, greater/smaller/equality examples and invalid-input recovery. Differences are explicitly not usable clearance. Neither source establishes a complete shipping/handling envelope, doorway passage, maintenance spacing or installation approval. Unit conversion adds no source precision.
-
-PDF 24 approximate configured weights remain paired as printed: one-chassis cabinet 185 kg / 408 lb and two-chassis cabinet 198 kg / 436 lb. The selector does not extrapolate an empty cabinet, other configurations, floor loading or lifting equipment. Detailed handling, anchorage, load-bearing conditions and complete projecting geometry remain unverified. Chapter 1A stays foundational/in progress; no advance to 1B.
-
-Tests include both sources, conversion, orientation, equality, invalid/prototype input, configured mass, keyboard, repeated contextual history and desktop/mobile/reduced-motion/no-WebGL evidence. Local unit/build checks passed; the current local browser runtime could not launch, so browser validation and actual screenshot inspection are delegated to the existing exact-commit CI verify → deploy → smoke-live gates, not represented as a local pass. Exact Actions results and inspected artifacts, not this document alone, determine release acceptance.
-
-
-## 1A consolidated source-to-coverage register
-
-| Section / reader pages | Delivered learning scope | Explicit boundary |
-| --- | --- | --- |
-| §1.1 / 16 | Standalone/cabinet use, skilled-person condition | No operation qualification |
-| §1.2 / 17–23, appendix 35–36 | Separated dimensions, panel/door identities, latch ordering, lighting dependency | No complete envelope, mechanical CAD, service or handling approval |
-| §1.3 / 24 | One/two-chassis cabinet masses and standalone NovaCor 2.0 mass | No empty-cabinet extrapolation, floor loading or lift selection |
-| §1.4 / 24–28 | Revision differences, ground locations, seven component identities | No copied circuit, pinout, AC wiring, substitution or procurement advice |
-| §1.5 / 28–32 | Independent rail supply and length budgets with six named card versions | Unknown-generation/absent-power cards excluded; no cross-version compatibility. The 20 I/O ports and LC duplex facts are handled by version-pinned NovaCor interface content, not complete coverage on this page |
-| §1.6 / 32 | Listed powers, conditional arithmetic reference and double-count warning | Not verified AC load; 120 W scope unresolved |
-| §1.7–1.8 / 33–34 | Cable-entry locations, side LED constraints, front-panel identity | No routing approval, cable fill/bend radius or complete service steps |
-| §1.9 / 34 | Four independent environment conditions | Not measurement or environmental certification |
-| §1.10 / 34 | Manual-declared safety-standard statement only | Website, illustrations and actual installation are not thereby certified |
-
-PDF 25–26 label the I/O supply 24 V / 3.8 A, while PDF 28 says 100 W per rail. Neither is silently corrected: the calculator follows the prose threshold only and cannot certify actual supply capacity. PDF 28 also says both 16 feet and 4 m, and some described plug part numbers differ from linked parameters. PDF 29's 62.5/125 nm wavelength wording is suspect. Neither is silently corrected or used as a sizing/matching input. Unknown card generations, missing GTAI V1 power, 120 W baseline composition, dimension-source discrepancy and complete external/installation conditions remain registered separately.
-
-Current decision: the explicitly declared bounded parameter/state teaching is covered, not every clear fact in the manual, subject to release verification of the newly qualified supply conflict. Keep 1A labeled foundational/partial, not whole-chapter complete. This run does not advance to 1B. Missing installation evidence is not an endless feature backlog; subsequent advancement must explicitly accept the declared teaching scope rather than imply every manual fact or installation condition is implemented. The unchanged verify → deploy → smoke-live gates and actual online screenshots determine publication, never this document alone.
-
-
-## Auditable acceptance evidence
-
-The prior consolidation commit [d06d878](https://github.com/weiran4/hardware-3d-assets/commit/d06d87872ac6f31cbb9c84d34894e2621bdc58ff) passed [workflow 41450893362](https://github.com/weiran4/hardware-3d-assets/actions/runs/41450893362): 190 unit tests, build, 122 prepublication browser tests and 122 anonymous-live tests. Its live artifact SHA256 is `205c9463483baf655c899da1a2bb9dcfa88c6280cc60f51f73ade0ed13f5ec83`. On November 3 the actual desktop/mobile component and dimension/environment/door screenshots, NovaCor front, analog model-and-meter, GTIO running and same-canvas floating-view screenshots were inspected. Models rendered; text and controls were readable; mobile sections scroll naturally. This is prior-commit evidence, not a claim that the current correction has already deployed.
-
-Fresh local baseline: 190 unit tests and build passed. Local system Chromium failed before page creation with a socket permission error; no local WebGL/browser pass is claimed. New source-boundary regression first failed because the conflict note was absent, then passed after the qualification. Current full browser evidence must come from the authorized CI renderer and be inspected for this exact publishing commit.
+不变更现有 verify → deploy → smoke-live 门槛；只有精确提交CI通过、实际桌面/手机及旧3D截图检查、匿名线上资源核对后，才视为发布完成。本地浏览器不能启动时如实记录，使用已授权CI渲染证据，不冒称本地通过。没有私人手册、原图或凭据进入公开仓库。

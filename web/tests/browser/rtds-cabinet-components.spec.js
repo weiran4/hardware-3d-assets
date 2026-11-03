@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test('1A consolidated component identities, mismatch recovery, references and history',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const section=page.locator('#cabinet-components'),result=page.locator('#cabinet-component-result'),part=page.getByLabel('要辨识的部件'),answer=page.getByLabel('这类部件使用哪一种连接？');
  await expect(result).toHaveAttribute('data-status','unknown');
  await page.getByRole('button',{name:'正常例：4U 前板与前部螺钉'}).click();await expect(result).toHaveAttribute('data-status','match');await expect(page.locator('#cabinet-component-name')).toHaveText('前部 4U 空白面板');
@@ -20,7 +20,7 @@ test('1A consolidated component identities, mismatch recovery, references and hi
 test('1A component mobile reduced-motion no-WebGL reference and mismatch recovery',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,...args){return /webgl/.test(t)?null:old.call(this,t,...args);};});
- await page.goto('./#rtds-chapter-1a');const section=page.locator('#cabinet-components'),result=page.locator('#cabinet-component-result');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();const section=page.locator('#cabinet-components'),result=page.locator('#cabinet-component-result');
  await page.getByRole('button',{name:'错误例：把门当成侧板'}).click();await expect(result).toHaveAttribute('data-status','mismatch');
  await page.getByLabel('要辨识的部件').selectOption('front2');await expect(result).toHaveAttribute('data-status','unknown');await page.getByLabel('这类部件使用哪一种连接？').selectOption('screws');await expect(result).toHaveAttribute('data-status','match');
  await section.locator('summary').click();await expect(section).toContainText('RSEN-2020D');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

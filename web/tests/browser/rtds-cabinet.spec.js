@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test('1A independent budgets, errors, lighting and chapter coverage',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  await expect(page.locator('[data-variant="cubicle-v2"]')).toHaveAttribute('aria-pressed','true');
  const section=page.locator('#rtds-chapter-1a');await expect(section).toBeVisible();
  await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
@@ -24,13 +24,13 @@ test('1A independent budgets, errors, lighting and chapter coverage',async({page
 test('1A mobile, reduced motion and non-WebGL parameter fallback',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});
- await page.goto('./#rtds-chapter-1a');await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
  await page.getByRole('button',{name:'错误例：左侧 105 W / 右侧空载'}).click();await expect(page.locator('#cabinet-left')).toContainText('超出 5 W');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await mkdir('screenshots',{recursive:true});await page.locator('#rtds-chapter-1a').screenshot({path:'screenshots/chapter-1a-mobile.png'});
 });
 test('1A rear-view length is independent of power and survives contextual navigation',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const left=page.locator('#cabinet-left-space'),right=page.locator('#cabinet-right-space');
  await page.locator('[data-preset="space"]').focus();await page.keyboard.press('Enter');
  await expect(page.locator('#cabinet-left')).toContainText('35 / 100 W');
@@ -55,7 +55,7 @@ test('1A rear-view length is independent of power and survives contextual naviga
 test('1A length budget is readable on mobile without WebGL and with large counts',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});
- await page.goto('./#rtds-chapter-1a');await page.locator('[data-preset="space"]').click();
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();await page.locator('[data-preset="space"]').click();
  await expect(page.locator('#cabinet-right-space')).toHaveAttribute('data-status','over');
  await page.getByLabel('右侧 GTAO V2 数量').fill('1000');
  await expect(page.locator('#cabinet-right-space')).toHaveAttribute('data-status','over');

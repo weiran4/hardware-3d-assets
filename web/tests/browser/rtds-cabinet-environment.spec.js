@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test('1A environmental conditions are independent assumptions with keyboard recovery and contextual history',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const result=page.locator('#cabinet-env-result');
  await expect(result).toHaveAttribute('data-status','unknown');
  await expect(page.locator('#cabinet-left')).toContainText('30 / 100 W');
@@ -29,7 +29,7 @@ test('1A environmental conditions are independent assumptions with keyboard reco
 test('1A environment checker remains usable on mobile reduced motion without WebGL',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});
- await page.goto('./#rtds-chapter-1a');await page.locator('[data-env-preset=normal]').click();
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();await page.locator('[data-env-preset=normal]').click();
  await page.locator('#cabinet-env-temperature').fill('31');await expect(page.locator('#cabinet-env-temperature-result')).toHaveAttribute('data-status','outside');
  await page.locator('[data-env-preset=normal]').click();await expect(page.locator('#cabinet-env-result')).toHaveAttribute('data-status','within');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

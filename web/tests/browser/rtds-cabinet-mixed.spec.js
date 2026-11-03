@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 for(const mobile of [false,true])test(`1A mixed card revisions and heterogeneous lengths ${mobile?'mobile':'desktop'}`,async({page})=>{
  if(mobile){await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:old.call(this,type,...args);};});}
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  await page.locator('[data-preset=mixed]').focus();await page.keyboard.press('Enter');
  await expect(page.locator('#cabinet-left')).toContainText('31 / 100 W');
  await expect(page.locator('#cabinet-right-space')).toContainText('94.5 / 134 cm');

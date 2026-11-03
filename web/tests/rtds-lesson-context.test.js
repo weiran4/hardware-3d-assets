@@ -6,3 +6,9 @@ test('legacy deep links choose correct hardware and lesson',()=>{for(const hash 
 test('hardware routes preserve selection and default entry does not activate a lesson',()=>{assert.equal(parseTeachingRoute('#rtds'),null);assert.equal(parseTeachingRoute('#generic'),null);assert.equal(parseTeachingRoute('#rtds-hardware-unknown'),null);assert.deepEqual(parseTeachingRoute(hardwareHash('gtdi-v2')),{hardware:'gtdi-v2',lesson:'power'});assert.equal(lessonHash('cabinet'),'#rtds-chapter-1a');});
 
 test('active teaching yields the floating model, but a lower-page preview does not',async()=>{const {teachingOwnsViewport}=await import('../src/rtds-lesson-context.js');assert.equal(teachingOwnsViewport({top:16,bottom:850},900),true);assert.equal(teachingOwnsViewport({top:650,bottom:1400},900),false);assert.equal(teachingOwnsViewport({top:-900,bottom:-20},900),false);});
+
+test('wiring interface routes pin the exact version and group without requesting a lesson jump',()=>{
+ assert.deepEqual(parseTeachingRoute('#rtds-interface:novacor-2.0:gtio'),{hardware:'novacor-2.0',group:'gtio'});
+ assert.deepEqual(parseTeachingRoute('#rtds-interface:gtai-v2:analogue_input'),{hardware:'gtai-v2',group:'analogue_input'});
+ for(const hash of ['#rtds-interface:novacor-light:gtio','#rtds-interface:gtdi-v2:power','#rtds-interface:__proto__:gtio','#rtds-interface:gtao-v2:constructor'])assert.equal(parseTeachingRoute(hash),null);
+});

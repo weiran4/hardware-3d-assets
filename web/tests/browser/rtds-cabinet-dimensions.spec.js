@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 test('1A dimension sources, orientation, equality and input recovery',async({page})=>{
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const section=page.locator('#cabinet-dimensions'),result=page.locator('#cabinet-dimensions-result'),values=page.locator('#cabinet-dimensions-values');
  await expect(result).toHaveAttribute('data-status','greater');await expect(values).toContainText('584.2 × 深 825.5 × 高 1905 mm');
  await expect(section).toContainText('两组数值分别保留');await expect(section).toContainText('附录高度尺寸线不包含上方突出的吊环');
@@ -19,7 +19,7 @@ test('1A dimension sources, orientation, equality and input recovery',async({pag
 test('1A dimension mobile no-WebGL, reduced motion and source-boundary',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,...args){return /webgl/.test(t)?null:old.call(this,t,...args);};});
- await page.goto('./#rtds-chapter-1a');
+ await page.goto('./#rtds-chapter-1a');await page.locator('#cabinet-auxiliary > summary').click();
  const section=page.locator('#cabinet-dimensions'),result=page.locator('#cabinet-dimensions-result');
  await page.getByLabel('高方向比较值（mm）').fill('-1');await expect(result).toHaveAttribute('data-status','invalid');
  await page.getByRole('button',{name:'边界例：等于正文标注'}).click();await page.getByLabel('标注来源（不是完整外包络）').selectOption('frame');
