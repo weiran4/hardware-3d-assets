@@ -1,0 +1,15 @@
+import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';
+for(const mobile of [false,true])test(`1B connection categories ${mobile?'mobile no-WebGL':'desktop'} preserve version and recovery`,async({page})=>{
+ if(mobile){await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.addInitScript(()=>{const old=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,...args){return /webgl/.test(t)?null:old.call(this,t,...args);};});}
+ await page.goto('./#rtds-chapter-1b');const section=page.locator('#rtds-chapter-1b'),result=page.locator('#v1-result');
+ await expect(page.locator('[data-variant="cubicle-v1"]')).toHaveAttribute('aria-pressed','true');await expect(section).toBeVisible();await expect(page.locator('#rtds-chapter-1a')).toBeHidden();await expect(result).toHaveAttribute('data-status','unknown');
+ await page.getByRole('button',{name:'正常例：断电后接首卡电源'}).focus();await page.keyboard.press('Enter');await expect(result).toHaveAttribute('data-status','match');
+ await page.getByRole('button',{name:'错误例：光纤接电源口'}).click();await expect(result).toHaveAttribute('data-status','mismatch');await expect(page.locator('#v1-power')).toBeDisabled();
+ await page.locator('#v1-target').selectOption('gt');await expect(result).toHaveAttribute('data-status','match');await expect(page.locator('#v1-detail')).toContainText('不等于通信或仿真已就绪');
+ await page.getByRole('button',{name:'错误例：仍带电插拔电源线'}).click();await expect(result).toHaveAttribute('data-status','blocked');await page.locator('#v1-power').selectOption('off');await expect(result).toHaveAttribute('data-status','match');
+ await page.locator('#v1-link').selectOption('jumper');await expect(page.locator('#v1-path')).toContainText('后卡');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await mkdir('screenshots',{recursive:true});await section.screenshot({path:`screenshots/chapter-1b-wiring-${mobile?'mobile':'desktop'}.png`});
+ await section.getByRole('link',{name:'查看既有 GTAO V2 双卡真实模型接法 ↗'}).click();await expect(page.locator('[data-variant="gtao-v2"]')).toHaveAttribute('aria-pressed','true');await expect(section).toBeHidden();await expect(page.locator('#rtds-power-lesson')).toBeVisible();await page.goBack();await expect(section).toBeVisible();await expect(page.locator('#rtds-power-lesson')).toBeHidden();await expect(page.locator('#rtds-power-lesson')).toHaveAttribute('data-playing','false');await expect(result).toHaveAttribute('data-status','match');
+ await page.getByRole('button',{name:'重置选择'}).click();await expect(result).toHaveAttribute('data-status','unknown');
+ await page.locator('[data-variant="cubicle-v2"]').click();await expect(section).toBeHidden();await expect(page.locator('#rtds-chapter-1a')).toBeVisible();await page.goBack();await expect(section).toBeVisible();await expect(page.locator('#rtds-chapter-1a')).toBeHidden();await page.goForward();await expect(section).toBeHidden();
+});

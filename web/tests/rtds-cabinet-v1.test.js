@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {checkV1Connection} from '../src/rtds-cabinet-v1.js';
+test('V1 feed and jumper require a power endpoint and power off',()=>{for(const link of ['feed','jumper']){assert.equal(checkV1Connection(link,'power','off').status,'match');assert.equal(checkV1Connection(link,'gt','off').status,'mismatch');assert.equal(checkV1Connection(link,'power','on').status,'blocked');assert.equal(checkV1Connection(link,'power','unknown').status,'unknown');}});
+test('optical path uses GT not power and does not certify device readiness',()=>{assert.equal(checkV1Connection('optical','gt','unknown').status,'match');assert.equal(checkV1Connection('optical','power','off').status,'mismatch');assert.equal(checkV1Connection('feed','unknown','off').status,'unknown');});
+test('invalid and prototype inputs fail closed',()=>{for(const v of ['constructor','__proto__','bad',null,42]){assert.equal(checkV1Connection(v,'power','off').status,'invalid');assert.equal(checkV1Connection('feed',v,'off').status,'invalid');assert.equal(checkV1Connection('feed','power',v).status,'invalid');}});

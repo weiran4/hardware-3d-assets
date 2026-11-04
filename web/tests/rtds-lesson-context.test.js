@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {lessonForHardware,parseTeachingRoute,hardwareHash,lessonHash} from '../src/rtds-lesson-context.js';
-test('only exact supported hardware versions receive a contextual lesson',()=>{assert.equal(lessonForHardware('novacor-2.0'),'analog');assert.equal(lessonForHardware('novacor-light'),null);assert.equal(lessonForHardware('novacor-1.0'),null);for(const id of ['gtao-v2','gtai-v2','gtdi-v2','gtdo-v2'])assert.equal(lessonForHardware(id),'power');assert.equal(lessonForHardware('gtao-v1'),null);assert.equal(lessonForHardware('cubicle-v2'),'cabinet');assert.equal(lessonForHardware('cubicle-v1'),null);});
+test('only exact supported hardware versions receive a contextual lesson',()=>{assert.equal(lessonForHardware('novacor-2.0'),'analog');assert.equal(lessonForHardware('novacor-light'),null);assert.equal(lessonForHardware('novacor-1.0'),null);for(const id of ['gtao-v2','gtai-v2','gtdi-v2','gtdo-v2'])assert.equal(lessonForHardware(id),'power');assert.equal(lessonForHardware('gtao-v1'),null);assert.equal(lessonForHardware('cubicle-v2'),'cabinet');assert.equal(lessonForHardware('cubicle-v1'),'cabinetV1');});
 test('legacy deep links choose correct hardware and lesson',()=>{for(const hash of ['#rtds-power','#rtds-power-lesson'])assert.deepEqual(parseTeachingRoute(hash),{hardware:'gtao-v2',lesson:'power'});for(const hash of ['#rtds-analog','#rtds-analog-lesson'])assert.deepEqual(parseTeachingRoute(hash),{hardware:'novacor-2.0',lesson:'analog'});assert.deepEqual(parseTeachingRoute('#rtds-chapter-1a'),{hardware:'cubicle-v2',lesson:'cabinet'});});
 test('hardware routes preserve selection and default entry does not activate a lesson',()=>{assert.equal(parseTeachingRoute('#rtds'),null);assert.equal(parseTeachingRoute('#generic'),null);assert.equal(parseTeachingRoute('#rtds-hardware-unknown'),null);assert.deepEqual(parseTeachingRoute(hardwareHash('gtdi-v2')),{hardware:'gtdi-v2',lesson:'power'});assert.equal(lessonHash('cabinet'),'#rtds-chapter-1a');});
 
@@ -12,3 +12,5 @@ test('wiring interface routes pin the exact version and group without requesting
  assert.deepEqual(parseTeachingRoute('#rtds-interface:gtai-v2:analogue_input'),{hardware:'gtai-v2',group:'analogue_input'});
  for(const hash of ['#rtds-interface:novacor-light:gtio','#rtds-interface:gtdi-v2:power','#rtds-interface:__proto__:gtio','#rtds-interface:gtao-v2:constructor'])assert.equal(parseTeachingRoute(hash),null);
 });
+
+test('1B route stays on Cubicle V1, separate from V2 and GTAO',()=>{assert.deepEqual(parseTeachingRoute('#rtds-chapter-1b'),{hardware:'cubicle-v1',lesson:'cabinetV1'});assert.equal(lessonHash('cabinetV1'),'#rtds-chapter-1b');});
