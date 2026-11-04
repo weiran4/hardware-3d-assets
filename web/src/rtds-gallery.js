@@ -71,13 +71,14 @@ export function initRtdsGallery(onMode){
  $('rtds-next').addEventListener('click',()=>nextGroup());
  $('rtds-tour').addEventListener('click',()=>{if(state.playing){stopTour();return;}state=galleryTransition(state,{type:'tour',playing:true});$('rtds-tour').textContent='暂停巡览';$('rtds-tour').setAttribute('aria-pressed','true');nextGroup(true);timer=setInterval(()=>nextGroup(true),6500);});
  $('rtds-filter').addEventListener('change',drawCatalog);
- function syncChapterPip(){const chapter=$('rtds-chapter-1a'),chapterV1=$('rtds-chapter-1b'),lessons=[$('rtds-analog-lesson'),$('rtds-power-lesson')];pip.setSuppressed(!!(active&&(([chapter,chapterV1].some(c=>!c.hidden&&chapterOwnsViewport(c.getBoundingClientRect(),innerHeight)))||lessons.some(section=>!section.hidden&&teachingOwnsViewport(section.getBoundingClientRect(),innerHeight)))));}
+ function syncChapterPip(){const chapter=$('rtds-chapter-1a'),chapterV1=$('rtds-chapter-1b'),lessons=[$('rtds-chapter-2a'),$('rtds-analog-lesson'),$('rtds-power-lesson')];pip.setSuppressed(!!(active&&(([chapter,chapterV1].some(c=>!c.hidden&&chapterOwnsViewport(c.getBoundingClientRect(),innerHeight)))||lessons.some(section=>!section.hidden&&teachingOwnsViewport(section.getBoundingClientRect(),innerHeight)))));}
  window.addEventListener('scroll',syncChapterPip,{passive:true});window.addEventListener('resize',syncChapterPip);document.addEventListener('toggle',syncChapterPip,true);
 
  function syncTeaching(){
   const lesson=contextActivated?lessonForHardware(state.variantId):null,shown=active&&lesson;
   const sections={analog:'rtds-analog-lesson',power:'rtds-power-lesson',cabinet:'rtds-chapter-1a',cabinetV1:'rtds-chapter-1b'};
   for(const [key,id]of Object.entries(sections))$(id).hidden=!shown||key!==lesson;
+  $('rtds-chapter-2a').hidden=!shown||lesson!=='analog';
   $('rtds-teaching').hidden=!shown;$('rtds-open-teaching').hidden=!shown;
   const item=catalog.find(c=>c.id===state.variantId);
   $('rtds-teaching-heading').textContent=(item?.name||'所选硬件')+' · 教学演示';
@@ -103,6 +104,7 @@ export function initRtdsGallery(onMode){
   else if(!initialized){initialized=true;initialLoad=selectVariant(state.variantId,{teach:false});await initialLoad;}
   if(token!==routeGeneration||hash!==location.hash||!active)return;
   if(interaction===teachingInteraction&&route?.group){selectGroup(route.group);const target=$('rtds-group-list').querySelector(`[data-group="${route.group}"]`);if(target){target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});}return;}
+  if(interaction===teachingInteraction&&route?.chapter==='2a'){selectGroup('gtio');$('rtds-chapter-2a').scrollIntoView({block:'start',behavior:'instant'});$('novacor-connections-heading').focus({preventScroll:true});return;}
   if(interaction===teachingInteraction&&route?.lesson&&!hash.startsWith('#rtds-hardware-')){if(route.lesson==='analog')selectGroup('analogue');if(route.lesson==='power')selectGroup('power');openTeaching(route.lesson);}
  }
  $('mode-generic').addEventListener('click',()=>navigate('#generic'));$('mode-rtds').addEventListener('click',()=>navigate('#rtds'));

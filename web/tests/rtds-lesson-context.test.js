@@ -14,3 +14,12 @@ test('wiring interface routes pin the exact version and group without requesting
 });
 
 test('1B route stays on Cubicle V1, separate from V2 and GTAO',()=>{assert.deepEqual(parseTeachingRoute('#rtds-chapter-1b'),{hardware:'cubicle-v1',lesson:'cabinetV1'});assert.equal(lessonHash('cabinetV1'),'#rtds-chapter-1b');});
+
+test('2A chapter route preserves NovaCor2 version and legacy analog lesson identity',()=>{
+ assert.deepEqual(parseTeachingRoute('#rtds-chapter-2a'),{hardware:'novacor-2.0',lesson:'analog',chapter:'2a'});
+});
+
+test('2A model links allow only known NovaCor2 interface groups',()=>{
+ for(const group of ['gtio','aurora','irc','gtsync','wif','udp','gbh','analogue'])assert.deepEqual(parseTeachingRoute('#rtds-interface:novacor-2.0:'+group),{hardware:'novacor-2.0',group});
+ for(const group of ['constructor','__proto__','fake','power'])assert.equal(parseTeachingRoute('#rtds-interface:novacor-2.0:'+group),null);
+});

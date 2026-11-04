@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
 const lessonIds={analog:'#rtds-analog-lesson',power:'#rtds-power-lesson',cabinet:'#rtds-chapter-1a',cabinetV1:'#rtds-chapter-1b'};
-async function only(page,key){for(const [id,selector]of Object.entries(lessonIds))await expect(page.locator(selector))[id===key?'toBeVisible':'toBeHidden']();}
+async function only(page,key){await expect(page.locator('#rtds-chapter-2a'))[key==='analog'?'toBeVisible':'toBeHidden']();for(const [id,selector]of Object.entries(lessonIds))await expect(page.locator(selector))[id===key?'toBeVisible':'toBeHidden']();}
 async function selected(page,id){await expect(page.locator(`[data-variant="${id}"]`)).toHaveAttribute('aria-pressed','true');}
 
 test('initial markup and implicit hardware selection never expose a global lesson stack',async({page,request})=>{
