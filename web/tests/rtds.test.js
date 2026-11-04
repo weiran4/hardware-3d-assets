@@ -98,3 +98,8 @@ test('public manual citation retains only a generic title and chapter/page refer
  assert.equal(sources['MANUAL'].title,'RTDS Hardware Manual');
  for(const key of Object.keys(sources['MANUAL']))assert.doesNotMatch(key,/sha|hash|filename|page_count|modification/i);
 });
+
+test('visible version badge matches the source catalog',async()=>{
+ const {readFileSync}=await import('node:fs');const html=readFileSync('index.html','utf8');
+ assert.ok(html.includes(`aria-label="${catalog.length} 个版本">${catalog.length}</span>`));
+});
