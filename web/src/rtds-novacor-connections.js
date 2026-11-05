@@ -1,3 +1,4 @@
+import {initNovacorSync} from './rtds-novacor-sync.js';
 // Original, offline category teaching. NovaCor 2.0 chapter revision 20250916.
 // Source page numbers are PDF reading pages, not the chapter's printed pages.
 const purposes=Object.freeze({
@@ -78,9 +79,10 @@ export function initNovacorConnections(root=globalThis.document?.getElementById(
  <div class="cabinet-wiring-grid"><article class="cabinet-v1-controls"><h4>有序卡链</h4><label for="novacor-chain">近端 → 远端卡型</label><input id="novacor-chain" type="text" maxlength="160" value="GTAI, GTAO, GTAO, GTDO" spellcheck="false" autocomplete="off" aria-describedby="novacor-chain-help novacor-chain-result"><label><input id="novacor-time-critical" type="checkbox"> 假设 GTDI 接收时敏输入</label><p id="novacor-chain-path" class="wiring-path"></p></article><article><h4>已知组合规则</h4><p>GTNET、GTFPGA、GTSOC 不级联，各自独占端口。含 GTAI 的链不能加入其他输入卡，包括 GTDI 和第二张 GTAI。GTFPI 的具体输入角色须按其专章核对，本页不批准 GTAI + GTFPI 组合。</p><p>时敏输入如 GTDI 应放在链首，属于定性的延时提醒，不是把所有非链首 GTDI 判为硬件禁配。来源：PDF 74。</p></article><article><h4>当前卡链检查</h4><output id="novacor-chain-result" aria-live="polite" aria-atomic="true"></output><ul id="novacor-chain-reasons"></ul></article></div>
  <div class="cabinet-tabs"><button type="button" data-novacor-example="normal">正常例：GTAI → GTAO → GTAO → GTDO</button><button type="button" data-novacor-example="mixed-input">错误例：GTDI 与 GTAI 共链</button><button type="button" data-novacor-example="exclusive">错误例：GTNET 未独占端口</button><button type="button" data-novacor-example="over">错误例：9 张卡超过上限</button><button type="button" data-novacor-example="latency">时序提醒：时敏 GTDI 在链尾</button><button type="button" data-novacor-example="reset">重置选择</button></div>
  <p class="cabinet-note">这里的 GTAI / GTAO 等是卡型规则，不是对所有版本混接的许可。具体卡侧 GT1 / GT2、供电、外部信号端子与配置，应转到对应版本接口课程核对；本章不补造未确认针脚。</p></section>
+ <section id="novacor-sync-lesson" class="cabinet-wiring-focus" aria-labelledby="novacor-sync-heading"></section>
  <div class="cabinet-timing-note"><h4>延时：有顺序建议，没有本链路的端到端数值</h4><p>PDF 74 提醒对时敏输入优先考虑链首，但没有给出这条 GT I/O 链的数值延时。本页不把采样 / 更新间隔、网页响应或动画速度当作端到端延时，也不从卡数编造每跳耗时。Aurora、IRC、WIF / UDP 和 GTSYNC 同样不在本页推算端到端延时。</p></div>
  <p><a href="#rtds-interface:novacor-2.0:gtio">定位 NovaCor 2.0 的 GT I/O 真实模型接口 ↗</a> · <a href="#rtds-analog">继续：前面板模拟监视输出与测量 ↗</a></p>
- <details class="cabinet-evidence"><summary>适用版本、来源与本单元边界</summary><p>仅适用 NovaCor 2.0，修订 20250916。端口区分：PDF 71–72；GT I/O 卡链：PDF 74；工作站连接：PDF 66–67、79–80；UDP 地址：PDF 95；IRC 与同步分别配置：PDF 97–100。页码为 PDF 阅读页，不是章节印刷页。</p><p>本单元为接线基础版，不等于整章完成。真实机间 / 同步拓扑、线缆细项、板卡版本约束及运行配置须另行核对。未核对的端点和组合保持“待确认”，不以模型外观补齐。公开内容是原创交互与事实摘要，不包含手册原图或文件。</p></details>`;
+ <details class="cabinet-evidence"><summary>适用版本、来源与本单元边界</summary><p>仅适用 NovaCor 2.0，修订 20250916。端口区分：PDF 71–72；GT I/O 卡链：PDF 74；工作站连接：PDF 66–67、79–80；UDP 地址：PDF 95；IRC 与同步分别配置：PDF 97–100。页码为 PDF 阅读页，不是章节印刷页。</p><p>本单元为接线基础版，不等于整章完成。机间数据 / 同步的三种连接类别已加入本页；具体多机端口分配、线缆细项、板卡版本约束及真实配置内容仍须另行核对。未核对的端点和组合保持“待确认”，不以模型外观补齐。公开内容是原创交互与事实摘要，不包含手册原图或文件。</p></details>`;
  const control=id=>root.querySelector(`#novacor-${id}`);
  const purpose=control('purpose'),port=control('port'),cable=control('cable'),license=control('aurora-license'),connectionOut=control('connection-result');
  const chainInput=control('chain'),timeCritical=control('time-critical'),chainOut=control('chain-result'),reasons=control('chain-reasons');
@@ -111,5 +113,5 @@ export function initNovacorConnections(root=globalThis.document?.getElementById(
   const name=button.dataset.novacorExample;chainInput.value=examples[name];timeCritical.checked=name==='latency';
   purpose.value='gtio';port.value=name==='reset'?'unknown':'gt1-20';cable.value=name==='reset'?'unknown':'optical';license.value='unknown';updateConnection();updateChain();
  }));
- updateConnection();updateChain();return root;
+ updateConnection();updateChain();initNovacorSync(root.querySelector('#novacor-sync-lesson'));return root;
 }
