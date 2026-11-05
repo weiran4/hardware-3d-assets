@@ -1,3 +1,4 @@
+import {initNovacorGtsync} from './rtds-novacor-gtsync.js';
 import {initNovacorSync} from './rtds-novacor-sync.js';
 // Original, offline category teaching. NovaCor 2.0 chapter revision 20250916.
 // Source page numbers are PDF reading pages, not the chapter's printed pages.
@@ -5,7 +6,7 @@ const purposes=Object.freeze({
  gtio:{label:'GT I/O 卡通信',port:'gt1-20',cable:'optical',endpoint:'GT I/O 卡的光通信接口；允许的卡型与链长见下方检查器',detail:'GT 1–20 用于 I/O。每端口最多 8 张卡，卡型组合仍受限制；光数据链路不向板卡提供 24 V 电源。',pages:[71,74]},
  aurora:{label:'Aurora 通信',port:'gt21-24',cable:'optical',endpoint:'Aurora 对端；本章未核对具体对端型号、协议配置或速率',detail:'GT 21–24 为 Aurora 专用。该功能单独购买，未配备时端口禁用，不能改作 GT I/O 或其他连接。',pages:[71,72]},
  interrack:{label:'机架间数据通信',port:'irc1-6',cable:'optical',endpoint:'另一台 NovaCor 的 IRC 端口，或 IRC Switch 的机箱连接端口；具体拓扑仍须核对',detail:'IRC 1–6 是机架间数据通信，不是同步口。数据链路匹配不能替代 GBH 同步链路与系统配置。',pages:[71,97,98,99,100]},
- sync:{label:'专用 GTSYNC 光通信',port:'gtsync',cable:'optical',endpoint:'专用 GTSYNC 对端；本章未建立具体对端接法与同步协议',detail:'GTSYNC、IRC 和 GBH 是分别列出的端口。不能因为同用光收发器，就把它们当成可互换接口。',pages:[71,72]},
+ sync:{label:'专用 GTSYNC 光通信',port:'gtsync',cable:'optical',endpoint:'GTSYNCv2 的 GT 口或旧 GTSYNC 的 GT #1；按下方版本检查器核对',detail:'GTSYNC、IRC 和 GBH 是分别列出的端口。不能因为同用光收发器，就把它们当成可互换接口。',pages:[71,72,471,491]},
  host:{label:'工作站 / RSCAD 主机连接',port:'wif',cable:'ethernet',endpoint:'工作站 / PC 的局域网接口，可直连或经以太网交换机',detail:'使用独立 WIF Gigabit Ethernet 端口；WIF 的工作站通信路径不是实时仿真数据通路，也不是 ETH 铜 SFP UDP 口。',pages:[66,67,79,80]},
  udp:{label:'以太网 UDP 数据通信',port:'eth',cable:'ethernet',endpoint:'UDP 网络对端；对端设备与应用通信配置须按任务核对',detail:'ETH 使用受支持的铜 SFP，再接以太网线。各机箱 UDP 口须配置互不重复的 IP 和 MAC 地址；不能拿 WIF 管理地址代替。',pages:[71,72,95]}
 });
@@ -31,7 +32,7 @@ export function checkNovacorConnection(input){
  if(port==='unknown'||cable==='unknown')return {...result,message:'尚未选定源端口或线缆类别，不判定匹配。'};
  result.categoryMatch=true;
  if(purpose==='aurora')return {...result,message:auroraLicense==='unknown'?'类别相符，但 Aurora 许可尚未确认；对端型号、协议配置和速率也未核对。':'类别相符且已假设配备 Aurora，但本章未确认具体对端和协议配置，仍不能判断整条连接可用。'};
- if(purpose==='sync')return {...result,message:'光口类别相符，但具体 GTSYNC 对端、同步协议和接法尚未核对；不能替代 IRC 或 GBH。'};
+ if(purpose==='sync')return {...result,message:'光口类别相符；请继续下方版本检查器确认 GTSYNC 对端、介质与配置。这里不能替代 IRC 或 GBH，也不判断时源锁定。'};
  return {...result,status:'match',message:'类别匹配：仅核对本页列出的用途、源端口和线缆类别，不代表具体对端、配置或真实接线已获确认。'};
 }
 
@@ -80,9 +81,10 @@ export function initNovacorConnections(root=globalThis.document?.getElementById(
  <div class="cabinet-tabs"><button type="button" data-novacor-example="normal">正常例：GTAI → GTAO → GTAO → GTDO</button><button type="button" data-novacor-example="mixed-input">错误例：GTDI 与 GTAI 共链</button><button type="button" data-novacor-example="exclusive">错误例：GTNET 未独占端口</button><button type="button" data-novacor-example="over">错误例：9 张卡超过上限</button><button type="button" data-novacor-example="latency">时序提醒：时敏 GTDI 在链尾</button><button type="button" data-novacor-example="reset">重置选择</button></div>
  <p class="cabinet-note">这里的 GTAI / GTAO 等是卡型规则，不是对所有版本混接的许可。具体卡侧 GT1 / GT2、供电、外部信号端子与配置，应转到对应版本接口课程核对；本章不补造未确认针脚。</p></section>
  <section id="novacor-sync-lesson" class="cabinet-wiring-focus" aria-labelledby="novacor-sync-heading"></section>
+ <section id="novacor-gtsync-lesson" class="cabinet-wiring-focus" aria-labelledby="novacor-gtsync-heading"></section>
  <div class="cabinet-timing-note"><h4>延时：有顺序建议，没有本链路的端到端数值</h4><p>PDF 74 提醒对时敏输入优先考虑链首，但没有给出这条 GT I/O 链的数值延时。本页不把采样 / 更新间隔、网页响应或动画速度当作端到端延时，也不从卡数编造每跳耗时。Aurora、IRC、WIF / UDP 和 GTSYNC 同样不在本页推算端到端延时。</p></div>
  <p><a href="#rtds-interface:novacor-2.0:gtio">定位 NovaCor 2.0 的 GT I/O 真实模型接口 ↗</a> · <a href="#rtds-analog">继续：前面板模拟监视输出与测量 ↗</a></p>
- <details class="cabinet-evidence"><summary>适用版本、来源与本单元边界</summary><p>仅适用 NovaCor 2.0，修订 20250916。端口区分：PDF 71–72；GT I/O 卡链：PDF 74；工作站连接：PDF 66–67、79–80；UDP 地址：PDF 95；IRC 与同步分别配置：PDF 97–100。页码为 PDF 阅读页，不是章节印刷页。</p><p>本单元为接线基础版，不等于整章完成。机间数据 / 同步的三种连接类别已加入本页；具体多机端口分配、线缆细项、板卡版本约束及真实配置内容仍须另行核对。未核对的端点和组合保持“待确认”，不以模型外观补齐。公开内容是原创交互与事实摘要，不包含手册原图或文件。</p></details>`;
+ <details class="cabinet-evidence"><summary>适用版本、来源与本单元边界</summary><p>仅适用 NovaCor 2.0，修订 20250916。端口区分：PDF 71–72；GT I/O 卡链：PDF 74；工作站连接：PDF 66–67、79–80；UDP 地址：PDF 95；IRC 与同步分别配置：PDF 97–100。页码为 PDF 阅读页，不是章节印刷页。</p><p>本单元为接线基础版，不等于整章完成。机间数据 / 同步的三种连接类别，以及专用 GTSYNC 对端与补偿设定边界已加入本页；具体多机端口分配、线缆细项、板卡版本约束及真实配置内容仍须另行核对。未核对的端点和组合保持“待确认”，不以模型外观补齐。公开内容是原创交互与事实摘要，不包含手册原图或文件。</p></details>`;
  const control=id=>root.querySelector(`#novacor-${id}`);
  const purpose=control('purpose'),port=control('port'),cable=control('cable'),license=control('aurora-license'),connectionOut=control('connection-result');
  const chainInput=control('chain'),timeCritical=control('time-critical'),chainOut=control('chain-result'),reasons=control('chain-reasons');
@@ -113,5 +115,5 @@ export function initNovacorConnections(root=globalThis.document?.getElementById(
   const name=button.dataset.novacorExample;chainInput.value=examples[name];timeCritical.checked=name==='latency';
   purpose.value='gtio';port.value=name==='reset'?'unknown':'gt1-20';cable.value=name==='reset'?'unknown':'optical';license.value='unknown';updateConnection();updateChain();
  }));
- updateConnection();updateChain();initNovacorSync(root.querySelector('#novacor-sync-lesson'));return root;
+ updateConnection();updateChain();initNovacorSync(root.querySelector('#novacor-sync-lesson'));initNovacorGtsync(root.querySelector('#novacor-gtsync-lesson'));return root;
 }

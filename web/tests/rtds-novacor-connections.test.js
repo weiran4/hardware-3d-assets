@@ -93,3 +93,10 @@ test('malformed chain input and nonboolean timing assumptions cannot pass',()=>{
 test('initializer is a safe no-op without the optional chapter container',()=>{
  assert.equal(initNovacorConnections(null),null);
 });
+
+test('GTSYNC category includes both counterpart source pages and directs to version checks',()=>{
+ const result=checkNovacorConnection({purpose:'sync',port:'gtsync',cable:'optical'});
+ assert.deepEqual(result.sourcePages,[71,72,471,491]);
+ assert.match(result.message,/下方.*版本/);
+ assert.doesNotMatch(result.message,/具体 GTSYNC 对端.*尚未核对/);
+});
