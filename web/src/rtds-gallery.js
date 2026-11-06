@@ -71,18 +71,18 @@ export function initRtdsGallery(onMode){
  $('rtds-next').addEventListener('click',()=>nextGroup());
  $('rtds-tour').addEventListener('click',()=>{if(state.playing){stopTour();return;}state=galleryTransition(state,{type:'tour',playing:true});$('rtds-tour').textContent='暂停巡览';$('rtds-tour').setAttribute('aria-pressed','true');nextGroup(true);timer=setInterval(()=>nextGroup(true),6500);});
  $('rtds-filter').addEventListener('change',drawCatalog);
- function syncChapterPip(){const chapter=$('rtds-chapter-1a'),chapterV1=$('rtds-chapter-1b'),lessons=[$('rtds-chapter-2a'),$('rtds-analog-lesson'),$('rtds-power-lesson')];pip.setSuppressed(!!(active&&(([chapter,chapterV1].some(c=>!c.hidden&&chapterOwnsViewport(c.getBoundingClientRect(),innerHeight)))||lessons.some(section=>!section.hidden&&teachingOwnsViewport(section.getBoundingClientRect(),innerHeight)))));}
+ function syncChapterPip(){const chapter=$('rtds-chapter-1a'),chapterV1=$('rtds-chapter-1b'),lessons=[$('rtds-chapter-2b'),$('rtds-chapter-2a'),$('rtds-analog-lesson'),$('rtds-power-lesson')];pip.setSuppressed(!!(active&&(([chapter,chapterV1].some(c=>!c.hidden&&chapterOwnsViewport(c.getBoundingClientRect(),innerHeight)))||lessons.some(section=>!section.hidden&&teachingOwnsViewport(section.getBoundingClientRect(),innerHeight)))));}
  window.addEventListener('scroll',syncChapterPip,{passive:true});window.addEventListener('resize',syncChapterPip);document.addEventListener('toggle',syncChapterPip,true);
 
  function syncTeaching(){
   const lesson=contextActivated?lessonForHardware(state.variantId):null,shown=active&&lesson;
-  const sections={analog:'rtds-analog-lesson',power:'rtds-power-lesson',cabinet:'rtds-chapter-1a',cabinetV1:'rtds-chapter-1b'};
+  const sections={light:'rtds-chapter-2b',analog:'rtds-analog-lesson',power:'rtds-power-lesson',cabinet:'rtds-chapter-1a',cabinetV1:'rtds-chapter-1b'};
   for(const [key,id]of Object.entries(sections))$(id).hidden=!shown||key!==lesson;
   $('rtds-chapter-2a').hidden=!shown||lesson!=='analog';
   $('rtds-teaching').hidden=!shown;$('rtds-open-teaching').hidden=!shown;
   const item=catalog.find(c=>c.id===state.variantId);
   $('rtds-teaching-heading').textContent=(item?.name||'所选硬件')+' · 教学演示';
-  $('rtds-teaching-version').textContent=lesson==='power'?'本例使用 GTAO V2 双卡与 Cubicle V1 图示；用于理解 24 V 并联供电，不代表所选板卡的机械接线或新版机柜安装。':lesson==='analog'?'仅适用于 NovaCor 2.0；不借用到 NovaCor Light 或 NovaCor 1.0。':lesson==='cabinetV1'?'Cubicle V1 · 修订20250417 · 供电与通信类别检查；不是V2机柜或通用板卡针脚图。':lesson==='cabinet'?'接线学习入口 · 各示例分别标注硬件版本与来源；机柜安装、环境与尺寸仅为可选辅助资料。':'';
+  $('rtds-teaching-version').textContent=lesson==='light'?'NovaCor Light · 修订20250529 · 独立内部I/O与外接GT检查，不沿用2.0端口布局。':lesson==='power'?'本例使用 GTAO V2 双卡与 Cubicle V1 图示；用于理解 24 V 并联供电，不代表所选板卡的机械接线或新版机柜安装。':lesson==='analog'?'仅适用于 NovaCor 2.0；不借用到 NovaCor Light 或 NovaCor 1.0。':lesson==='cabinetV1'?'Cubicle V1 · 修订20250417 · 供电与通信类别检查；不是V2机柜或通用板卡针脚图。':lesson==='cabinet'?'接线学习入口 · 各示例分别标注硬件版本与来源；机柜安装、环境与尺寸仅为可选辅助资料。':'';
   analogLesson.setActive(!!(active&&!document.hidden&&lesson==='analog'));
   powerLesson.setActive(!!(active&&!document.hidden&&lesson==='power'));
   syncChapterPip();
@@ -90,7 +90,7 @@ export function initRtdsGallery(onMode){
  function openTeaching(lesson=lessonForHardware(state.variantId)){
   if(!active||!lesson||lesson!==lessonForHardware(state.variantId))return;
   contextActivated=true;syncTeaching();
-  if(lesson==='analog')analogLesson.open();else if(lesson==='power')powerLesson.open();else if(lesson==='cabinetV1'){$('rtds-chapter-1b').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-v1-heading').focus({preventScroll:true});}else{$('rtds-chapter-1a').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-heading').focus({preventScroll:true});}
+  if(lesson==='light'){$('rtds-chapter-2b').scrollIntoView({block:'start',behavior:'instant'});$('novacor-light-heading').focus({preventScroll:true});}else if(lesson==='analog')analogLesson.open();else if(lesson==='power')powerLesson.open();else if(lesson==='cabinetV1'){$('rtds-chapter-1b').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-v1-heading').focus({preventScroll:true});}else{$('rtds-chapter-1a').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-heading').focus({preventScroll:true});}
  }
  // Explicit teaching input wins over a still-loading deep-link presentation.
  for(const event of ['pointerdown','keydown','click'])$('rtds-teaching').addEventListener(event,()=>{teachingInteraction++;},{capture:true});

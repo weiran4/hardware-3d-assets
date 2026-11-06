@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
-const lessonIds={analog:'#rtds-analog-lesson',power:'#rtds-power-lesson',cabinet:'#rtds-chapter-1a',cabinetV1:'#rtds-chapter-1b'};
+const lessonIds={light:'#rtds-chapter-2b',analog:'#rtds-analog-lesson',power:'#rtds-power-lesson',cabinet:'#rtds-chapter-1a',cabinetV1:'#rtds-chapter-1b'};
 async function only(page,key){await expect(page.locator('#rtds-chapter-2a'))[key==='analog'?'toBeVisible':'toBeHidden']();for(const [id,selector]of Object.entries(lessonIds))await expect(page.locator(selector))[id===key?'toBeVisible':'toBeHidden']();}
 async function selected(page,id){await expect(page.locator(`[data-variant="${id}"]`)).toHaveAttribute('aria-pressed','true');}
 
@@ -10,7 +10,7 @@ test('initial markup and implicit hardware selection never expose a global lesso
  expect(await page.locator('#rtds-teaching').evaluate(n=>!!n.closest('.rtds-workbench'))).toBe(true);
  await page.locator('[data-variant="novacor-2.0"]').focus();await page.keyboard.press('Enter');await only(page,'analog');await selected(page,'novacor-2.0');
  await page.locator('#rtds-open-teaching').click();await expect(page.locator('#analog-heading')).toBeFocused();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');await expect(page.locator('.rtds-pip')).toBeHidden();await mkdir('screenshots',{recursive:true});await page.locator('#rtds-teaching').screenshot({path:'screenshots/context-novacor-desktop.png'});
- await page.locator('[data-variant="novacor-light"]').click();await only(page,null);await expect(page.locator('#rtds-teaching')).toBeHidden();
+ await page.locator('[data-variant="novacor-light"]').click();await only(page,'light');await expect(page.locator('#rtds-teaching')).toBeVisible();
 });
 
 test('hardware changes stop hidden playback and back-forward restores exact teaching context',async({page})=>{
@@ -21,7 +21,7 @@ test('hardware changes stop hidden playback and back-forward restores exact teac
  await page.goBack();await selected(page,'gtdi-v2');await only(page,'power');await page.goBack();await selected(page,'novacor-2.0');await only(page,'analog');await expect(page.locator(lessonIds.analog)).toHaveAttribute('data-playing','false');
  await page.goForward();await selected(page,'gtdi-v2');await only(page,'power');
  for(const id of ['novacor-light','cubicle-v2','novacor-2.0','gtdi-v2','novacor-light']){await page.locator(`[data-variant="${id}"]`).click();await selected(page,id);}
- await only(page,null);expect(await page.locator('[id]').evaluateAll(ns=>new Set(ns.map(n=>n.id)).size===ns.length)).toBe(true);
+ await only(page,'light');expect(await page.locator('[id]').evaluateAll(ns=>new Set(ns.map(n=>n.id)).size===ns.length)).toBe(true);
 });
 
 test('legacy lesson links route the matching hardware and mobile layout stays contained',async({page})=>{
@@ -35,7 +35,7 @@ test('late analog loading cannot wake hidden teaching after an incompatible hard
  await page.goto('./');let release,seen;const held=new Promise(r=>release=r),requested=new Promise(r=>seen=r);
  await page.route('**/assets/rtds/novacor-2.0-2023.glb',async route=>{seen();await held;await route.continue();});
  await page.locator('#mode-rtds').click();await page.locator('[data-variant="novacor-2.0"]').click();await requested;await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','loading');
- await page.locator('[data-variant="novacor-light"]').click();await selected(page,'novacor-light');await only(page,null);release();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
+ await page.locator('[data-variant="novacor-light"]').click();await selected(page,'novacor-light');await only(page,'light');release();await expect(page.locator('#analog-model-scene')).toHaveAttribute('data-loaded','true');
  const frames=await page.locator('#analog-model-scene').getAttribute('data-frames');await page.waitForTimeout(250);expect(await page.locator('#analog-model-scene').getAttribute('data-frames')).toBe(frames);expect(Number(frames||0)).toBe(0);await expect(page.locator(lessonIds.analog)).toHaveAttribute('data-playing','false');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');
 });
 

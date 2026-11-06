@@ -1,0 +1,15 @@
+/* Scoped parameter teaching. No dimensions imply a real chassis or connector. */
+#rtds-chapter-2b .light-grid{display:grid;grid-template-columns:minmax(220px,.85fr) minmax(0,1.3fr);gap:24px;align-items:start}
+#rtds-chapter-2b .light-result{background:#f5f8f7;border:1px solid #dce7e1;border-radius:12px;padding:22px;min-width:0;overflow-wrap:anywhere}
+#rtds-chapter-2b .light-kicker{font-size:11px;letter-spacing:.12em;color:#63736c}
+#rtds-chapter-2b output{display:block;padding:14px 16px;border-left:3px solid #b89043;background:#fff8e9;line-height:1.7;border-radius:4px}
+#rtds-chapter-2b output[data-status=match],#rtds-chapter-2b output[data-status=known]{border-color:#397c61;background:#eff9f2}
+#rtds-chapter-2b output[data-status=invalid],#rtds-chapter-2b output[data-status=mismatch]{border-color:#b34a35;background:#fff1ed}
+#rtds-chapter-2b .light-facts{display:grid;grid-template-columns:minmax(90px,.7fr) minmax(0,1.3fr);gap:8px 16px;line-height:1.6}
+#rtds-chapter-2b dt{font-weight:600}#rtds-chapter-2b dd{margin:0}
+#rtds-chapter-2b .light-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+#rtds-chapter-2b .light-specs article{border-top:2px solid #d3e2d9;padding-top:12px}#rtds-chapter-2b h5{font-size:15px;margin:0 0 8px}
+#rtds-chapter-2b .light-specs p{font-size:14px;line-height:1.7}
+#rtds-chapter-2b .light-port-guide dt{margin-top:18px}#rtds-chapter-2b .light-port-guide dd{line-height:1.7;margin-top:6px}
+#rtds-chapter-2b li{line-height:1.65;margin-bottom:6px}#rtds-chapter-2b .cabinet-tabs{margin-top:16px}
+@media(max-width:720px){#rtds-chapter-2b .light-grid,#rtds-chapter-2b .light-specs{grid-template-columns:1fr;gap:16px}#rtds-chapter-2b .light-result{padding:16px}#rtds-chapter-2b .light-facts{grid-template-columns:85px minmax(0,1fr);gap:8px}#rtds-chapter-2b .cabinet-tabs button{flex:1 1 145px}}

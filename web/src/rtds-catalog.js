@@ -33,7 +33,7 @@ export const catalog=[
   {
     "id": "novacor-light",
     "name": "NovaCor Light",
-    "revision": "Light / 2024 资料",
+    "revision": "Light / 20250529 章节",
     "family": "NovaCor",
     "type": "实时仿真机箱",
     "summary": "独立的 D-sub 数字与模拟 I/O、内部 I/O、光通信和工作站连接；不能沿用 2.0 的端口布局。",
