@@ -1,3 +1,4 @@
+import {initialRouteReady} from './rtds-route-ready.js';
 import {lessonForHardware,parseTeachingRoute,hardwareHash,teachingOwnsViewport} from './rtds-lesson-context.js';
 import {chapterOwnsViewport} from './rtds-cabinet-state.js';
 import {initPowerLesson} from './rtds-power-lesson.js';
@@ -14,7 +15,8 @@ const el=(tag,text,className)=>{const n=document.createElement(tag);if(text!==un
 const statusNames={documented:'资料明确记载',observed_and_documented:'图示与资料交叉核对',observed_not_mechanically_certified:'外观核对；未作机械认证',photo_estimated:'照片估计',not_validated:'未验证',unknown:'未知',partial:'部分已知',observed:'图示可见'};
 const connectorNames={round_single_contact_socket_standard_unknown:'圆形单接点插孔 · 标准未确认（不是已确认 BNC）',lc_duplex_sfp_ftlf8519p3bnl_visual:'双 LC 光接口 / FTLF8519P3BNL 外观',copper_sfp_8p8c:'铜缆 SFP / 8P8C', '8p8c_ethernet':'8P8C Ethernet',gbh_duplex_pof_visual:'GBH 双孔 POF 外观 · 不等同于 LC',round_dc_power_visual_standard_unknown:'圆形供电入口 · 配接标准未确认',three_blade_ac_inlet_visual:'三片式交流入口 · 未验证配接'};
 export function initRtdsGallery(onMode){
- let state=createGalleryState(),viewer=null,metadata=null,groups=[],generation=0,timer=null,active=false,initialized=false,isolate=false,initialLoad=null,contextActivated=false,routeGeneration=0,teachingInteraction=0;
+ let state=createGalleryState(),viewer=null,metadata=null,groups=[],generation=0,timer=null,active=false,initialized=false,isolate=false,initialLoad=null,contextActivated=false,routeGeneration=0,routeInteraction=0;
+ const navigationReady=initialRouteReady();
  const pip=initRtdsPip({wrap:document.querySelector('.rtds-viewer-wrap'),onView:action=>{stopTour();viewer?.view(action);}});
  const powerLesson=initPowerLesson();
  const analogLesson=initAnalogLesson(async endpoint=>{const pending=selectVariant(endpoint.variantId),token=generation;await pending;if(token!==generation||!active||state.group||state.portId||state.variantId!==endpoint.variantId||!viewer||!metadata?.ports.some(p=>p.id===endpoint.portId))return false;selectPort(endpoint.portId);$('rtds-scene').scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});return true;});
@@ -92,20 +94,21 @@ export function initRtdsGallery(onMode){
   contextActivated=true;syncTeaching();
   if(lesson==='light'){$('rtds-chapter-2b').scrollIntoView({block:'start',behavior:'instant'});$('novacor-light-heading').focus({preventScroll:true});}else if(lesson==='analog')analogLesson.open();else if(lesson==='power')powerLesson.open();else if(lesson==='cabinetV1'){$('rtds-chapter-1b').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-v1-heading').focus({preventScroll:true});}else{$('rtds-chapter-1a').scrollIntoView({block:'start',behavior:'instant'});$('cabinet-heading').focus({preventScroll:true});}
  }
- // Explicit teaching input wins over a still-loading deep-link presentation.
- for(const event of ['pointerdown','keydown','click'])$('rtds-teaching').addEventListener(event,()=>{teachingInteraction++;},{capture:true});
+ // Any explicit page input wins over a still-loading deep-link presentation.
+ for(const event of ['pointerdown','keydown','click'])document.addEventListener(event,()=>{routeInteraction++;},{capture:true});
  $('rtds-open-teaching').addEventListener('click',()=>openTeaching());
  function mode(modeName){active=modeName==='rtds';$('generic-panel').hidden=active;$('rtds-panel').hidden=!active;pip.setActive(active);syncTeaching();$('mode-generic').setAttribute('aria-pressed',String(!active));$('mode-rtds').setAttribute('aria-pressed',String(active));document.querySelector('.skip').href=active?'#rtds-heading':'#lesson';document.querySelector('.skip').textContent=active?'跳到 RTDS 素材库':'跳到接线操作';onMode(active);viewer?.setActive(active&&!document.hidden);if(!active)stopTour();}
  function navigate(hash){if(location.hash===hash)applyRoute();else location.hash=hash;}
  async function applyRoute(){
-  const token=++routeGeneration,interaction=teachingInteraction,hash=location.hash,route=parseTeachingRoute(hash);
+  const token=++routeGeneration,interaction=routeInteraction,hash=location.hash,route=parseTeachingRoute(hash);
   mode(galleryModeFromHash(hash));if(!active)return;
   if(route){initialized=true;initialLoad=selectVariant(route.hardware,{teach:true});await initialLoad;}
   else if(!initialized){initialized=true;initialLoad=selectVariant(state.variantId,{teach:false});await initialLoad;}
+  await navigationReady;
   if(token!==routeGeneration||hash!==location.hash||!active)return;
-  if(interaction===teachingInteraction&&route?.group){selectGroup(route.group);const target=$('rtds-group-list').querySelector(`[data-group="${route.group}"]`);if(target){target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});}return;}
-  if(interaction===teachingInteraction&&route?.chapter==='2a'){selectGroup('gtio');$('rtds-chapter-2a').scrollIntoView({block:'start',behavior:'instant'});$('novacor-connections-heading').focus({preventScroll:true});return;}
-  if(interaction===teachingInteraction&&route?.lesson&&!hash.startsWith('#rtds-hardware-')){if(route.lesson==='analog')selectGroup('analogue');if(route.lesson==='power')selectGroup('power');openTeaching(route.lesson);}
+  if(interaction===routeInteraction&&route?.group){selectGroup(route.group);const target=$('rtds-group-list').querySelector(`[data-group="${route.group}"]`);if(target){target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});}return;}
+  if(interaction===routeInteraction&&route?.chapter==='2a'){selectGroup('gtio');$('rtds-chapter-2a').scrollIntoView({block:'start',behavior:'instant'});$('novacor-connections-heading').focus({preventScroll:true});return;}
+  if(interaction===routeInteraction&&route?.lesson&&!hash.startsWith('#rtds-hardware-')){if(route.lesson==='analog')selectGroup('analogue');if(route.lesson==='power')selectGroup('power');openTeaching(route.lesson);}
  }
  $('mode-generic').addEventListener('click',()=>navigate('#generic'));$('mode-rtds').addEventListener('click',()=>navigate('#rtds'));
  window.addEventListener('hashchange',applyRoute);

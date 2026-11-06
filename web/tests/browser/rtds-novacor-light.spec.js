@@ -33,3 +33,16 @@ for(const mode of ['desktop','mobile','fallback'])test(`2B Light independent I/O
  for(const id of ['gtao-v2','novacor-light','novacor-1.0','novacor-light']){await page.locator(`[data-variant="${id}"]`).click();await expect(lesson)[id==='novacor-light'?'toBeVisible':'toBeHidden']();}
  await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-playing','false');await expect(page.locator('#rtds-power-lesson')).toHaveAttribute('data-playing','false');expect(await page.locator('[id]').evaluateAll(nodes=>new Set(nodes.map(n=>n.id)).size===nodes.length)).toBe(true);
 });
+
+for(const action of ['input','new-route'])test(`initial Light navigation does not override later ${action}`,async({page})=>{
+ let release,seen;const held=new Promise(resolve=>{release=resolve;}),requested=new Promise(resolve=>{seen=resolve;});
+ await page.route('**/route-load-barrier.svg',async route=>{seen();await held;await route.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>'});});
+ await page.addInitScript(()=>document.addEventListener('DOMContentLoaded',()=>{const image=document.createElement('img');image.src='route-load-barrier.svg';image.alt='';image.hidden=true;document.body.append(image);},{once:true}));
+ await page.goto('./#rtds-chapter-2b',{waitUntil:'domcontentloaded'});await requested;
+ await expect(page.locator('#rtds-chapter-2b')).toBeVisible();
+ if(action==='input'){await page.locator('[data-light-loop="digital"]').click();await expect(page.locator('#light-loop-result')).toHaveAttribute('data-status','match');}
+ else{await page.locator('#mode-generic').click();await expect(page.locator('#generic-panel')).toBeVisible();}
+ release();await page.waitForLoadState('load');await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+ if(action==='input'){await expect(page.locator('[data-light-loop="digital"]')).toBeFocused();await expect(page.locator('#light-loop-result')).toHaveAttribute('data-status','match');}
+ else{await expect(page.locator('#rtds-panel')).toBeHidden();await expect(page.locator('#mode-generic')).toBeFocused();expect(new URL(page.url()).hash).toBe('#generic');}
+});

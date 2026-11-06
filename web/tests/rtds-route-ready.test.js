@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {initialRouteReady} from '../src/rtds-route-ready.js';
+function browser(readyState){const listeners=new Map(),frames=[];return{doc:{readyState},win:{addEventListener(type,fn,options){listeners.set(type,{fn,options});},requestAnimationFrame(fn){frames.push(fn);}},listeners,frames};}
+test('initial route focus waits for load and its following frame',async()=>{const b=browser('interactive');let ready=false;const pending=initialRouteReady(b.doc,b.win).then(()=>{ready=true;});await Promise.resolve();assert.equal(ready,false);assert.equal(b.frames.length,0);assert.deepEqual(b.listeners.get('load').options,{once:true});b.listeners.get('load').fn();await Promise.resolve();assert.equal(ready,false);assert.equal(b.frames.length,1);b.frames.shift()();await pending;assert.equal(ready,true);});
+test('already loaded documents settle on the next frame without waiting for another load',async()=>{const b=browser('complete');let ready=false;const pending=initialRouteReady(b.doc,b.win).then(()=>{ready=true;});assert.equal(b.listeners.size,0);assert.equal(b.frames.length,1);await Promise.resolve();assert.equal(ready,false);b.frames.shift()();await pending;assert.equal(ready,true);});
