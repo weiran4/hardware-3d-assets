@@ -14,3 +14,9 @@ test('Light UI is optional and has no hidden animation or borrowed physical mode
  assert.match(text,/PDF 109–111/);assert.match(text,/PDF 112–118/);assert.match(text,/PDF 119/);
  assert.match(text,/pin 13/);assert.match(text,/pin 14\/15/);assert.match(text,/端到端延时/);
 });
+test('Light controls have their own readable scoped layout rather than relying on 2A styles',()=>{
+ const css=read('../src/rtds-novacor-light.css');
+ assert.match(css,/#rtds-chapter-2b label\{[^}]*display:block/);
+ assert.match(css,/#rtds-chapter-2b select[^}]*min-height:44px/);
+ assert.match(css,/#rtds-chapter-2b select[^}]*width:100%/);
+});

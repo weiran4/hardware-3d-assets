@@ -13,3 +13,7 @@
 #rtds-chapter-2b .light-port-guide dt{margin-top:18px}#rtds-chapter-2b .light-port-guide dd{line-height:1.7;margin-top:6px}
 #rtds-chapter-2b li{line-height:1.65;margin-bottom:6px}#rtds-chapter-2b .cabinet-tabs{margin-top:16px}
 @media(max-width:720px){#rtds-chapter-2b .light-grid,#rtds-chapter-2b .light-specs{grid-template-columns:1fr;gap:16px}#rtds-chapter-2b .light-result{padding:16px}#rtds-chapter-2b .light-facts{grid-template-columns:85px minmax(0,1fr);gap:8px}#rtds-chapter-2b .cabinet-tabs button{flex:1 1 145px}}
+#rtds-chapter-2b .light-grid>article{min-width:0}
+#rtds-chapter-2b label{display:block;font-size:14px;line-height:1.6;margin:10px 0 5px}
+#rtds-chapter-2b select,#rtds-chapter-2b input[type=text],#rtds-chapter-2b input[type=number]{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;min-height:44px;padding:10px;border:1px solid #afc5c8;border-radius:5px;background:#fff;color:#203c43;font:inherit;font-size:16px}
+#rtds-chapter-2b input[aria-invalid=true]{border-color:#b34a35}

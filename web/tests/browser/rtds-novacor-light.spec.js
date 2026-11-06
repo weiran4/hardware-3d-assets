@@ -8,6 +8,7 @@ for(const mode of ['desktop','mobile','fallback'])test(`2B Light independent I/O
  const lesson=page.locator('#rtds-chapter-2b'),loop=page.locator('#light-loop-result'),pins=page.locator('#light-pin-result'),chain=page.locator('#light-chain-result');
  await expect(lesson).toBeVisible();await expect(page.locator('[data-variant="novacor-light"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','reference');await expect(page.locator('#rtds-scene canvas')).toHaveCount(0);
  await expect(page.locator('#rtds-chapter-2a')).toBeHidden();await expect(page.locator('#rtds-analog-lesson')).toBeHidden();await expect(page.locator('#novacor-light-heading')).toBeFocused();
+ expect((await page.locator('#light-kind').boundingBox()).height).toBeGreaterThanOrEqual(44);
  await expect(loop).toHaveAttribute('data-status','unknown');await page.locator('[data-light-loop="digital"]').focus();await page.keyboard.press('Enter');await expect(loop).toHaveAttribute('data-status','match');
  await page.locator('[data-light-loop="crossed"]').click();await expect(loop).toHaveAttribute('data-status','mismatch');await page.locator('[data-light-loop="analogue"]').click();await expect(loop).toHaveAttribute('data-status','match');await expect(page.locator('#light-loop-path')).toContainText('I2');
  await page.locator('#light-medium').selectOption('copper');await expect(loop).toHaveAttribute('data-status','mismatch');await page.locator('[data-light-loop="digital"]').click();
