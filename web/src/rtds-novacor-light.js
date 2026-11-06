@@ -1,3 +1,4 @@
+import {initLightSync} from './rtds-novacor-light-sync.js';
 import {checkLightLoop,lightChannelPins,checkLightChain} from './rtds-novacor-light-state.js';
 // Original offline teaching, NovaCor Light revision 20250529. No physical model is substituted.
 export function initNovacorLight(root=globalThis.document?.getElementById('rtds-chapter-2b')){
@@ -21,6 +22,7 @@ export function initNovacorLight(root=globalThis.document?.getElementById('rtds-
  <article class="light-result"><p id="light-chain-path" class="wiring-path"></p><output id="light-chain-result" aria-live="polite" aria-atomic="true"></output><ul id="light-chain-reasons"></ul><p>GTNET / GTSOC 不级联，各自独占端口。含 GTAI 的链不能再有输入卡；GTFPI 混链角色未核对时不判通过。时敏 GTDI 宜在链首，但不由卡数虚构每跳延时。</p></article></div>
  <div class="cabinet-tabs"><button type="button" data-light-chain="normal">正常例：V2 模拟输入与输出链</button><button type="button" data-light-chain="v1">错误例：V1 外部卡</button><button type="button" data-light-chain="mixed">错误例：GTDI 与 GTAI</button><button type="button" data-light-chain="exclusive">错误例：GTNET 级联</button><button type="button" data-light-chain="latency">时序提醒：GTDI 在末端</button><button type="button" data-light-chain="reset">重置卡链</button></div>
  <p class="cabinet-note">GT 光链路不替代板卡供电。GTFPGA 在本页只出现于“不支持级联”的限制，并未列入明确支持清单，因此不会据此批准独立兼容。许可、固件、电气及卡侧端口仍须按对应版本核对。</p></section>
+ <section class="cabinet-wiring-focus" id="light-sync-unit" aria-labelledby="light-sync-heading"></section>
  <details class="cabinet-evidence light-port-guide"><summary>其他端口怎么区分：工作站、UDP、IRC、同步与供电</summary><dl>
  <dt>WIF Ethernet ↔ 工作站 / 以太网交换机</dt><dd>独立 Gigabit Ethernet 主机接口，可直连工作站或共接局域网。不是 ETH UDP，也不替代 IRC。WIF Console USB 是终端配置接口。PDF109、121–122、128。</dd>
  <dt>ETH 铜 SFP ↔ UDP 网络对端</dt><dd>使用受支持铜 SFP 和以太网线；每机箱 UDP IP / MAC 须各自唯一。对端协议、报文及系统配置不能仅凭插口判断。PDF109–110、127。</dd>
@@ -30,7 +32,7 @@ export function initNovacorLight(root=globalThis.document?.getElementById('rtds-
  <dt>GTSYNC ↔ 另行核对的同步设备接口</dt><dd>专用光通信口，不等于外部时源电气输入，也不与IRC/GBH互换。本轮只确认Light口的身份，不套用2A的完整对端检查器。PDF109–110。</dd>
  <dt>AC入口 ← 随产品提供的交流电源线</dt><dd>100–120 / 220–240 VAC，50/60 Hz；最大250 W、最大2.5 A为手册参数，不做交流端子接线演示。PDF107–108。Light仅支持RSCAD FX；机间可与NovaCor1.0/2.0组合，不兼容PB5/GPC（PDF106、133）。</dd></dl>
  <p>光 SFP FTLF8519P3BNL 列于 I1/I2、GT3–6、AUR1/2、IRC1–3及GTSYNC（PDF110），同一收发器不代表协议可互换。ETH铜SFP明确列有FCLF8522P2BTL（仅1G）与ABCU-5731R（10/100/1000）；另列“ABCU-1000baseX”的型号不完整，不补成采购料号。</p></details>
- <details class="cabinet-evidence"><summary>本轮覆盖、来源与待证据项</summary><p>基础版 / 部分覆盖：已核对内部I/O回接、已明确通道针脚、模拟参数/采样更新、V2外部GT链和其他端口角色。页码为PDF阅读器页码，2B修订20250529，范围106–142。本轮没有发布Light三维模型，也不声称整章手册已全部覆盖。</p><p>待核对：AO13、DI14/15、第二只DI针脚表与数字完整电气条件；Light实物机械/接口几何；具体多机逐端口映射、固件组合、光纤精确选型与端到端延时。原文PDF109第1项的“标号8”与图/第9项交叉引用不一致，本页只用明确的I1/I2名称。</p><p>不操作真实RTDS设备，不申请许可，不提供私人手册或第三方原图。安装、温度和一般尺寸不作为本轮主课或推进门槛。</p></details>
+ <details class="cabinet-evidence"><summary>本轮覆盖、来源与待证据项</summary><p>基础版 / 部分覆盖：已核对内部I/O回接、已明确通道针脚、模拟参数/采样更新、V2外部GT链、其他端口角色，以及GBH/IRC多机配置检查与配置文件更新说明。页码为PDF阅读器页码，2B修订20250529，范围106–142。本轮没有发布Light三维模型，也不声称整章手册已全部覆盖。</p><p>待核对：AO13、DI14/15、第二只DI针脚表与数字完整电气条件；Light实物机械/接口几何；具体多机逐端口映射、固件组合、光纤精确选型与端到端延时。原文PDF109第1项的“标号8”与图/第9项交叉引用不一致，本页只用明确的I1/I2名称。</p><p>不操作真实RTDS设备，不申请许可，不提供私人手册或第三方原图。安装、温度和一般尺寸不作为本轮主课或推进门槛。</p></details>
  <p><a href="#rtds-chapter-2a">返回 NovaCor 2.0 独立接线课 ↗</a> · <a href="#rtds-chapter-1a">章节导航与覆盖进度 ↗</a></p>`;
  const q=id=>root.querySelector(`#light-${id}`),setResult=(id,result)=>{q(id).dataset.status=result.status;q(id).textContent=result.message;};
  const list=(id,entries)=>{q(id).replaceChildren();for(const entry of entries){const li=root.ownerDocument.createElement('li');li.textContent=entry.message;q(id).append(li);}};
@@ -60,5 +62,5 @@ export function initNovacorLight(root=globalThis.document?.getElementById('rtds-
  q('chain').addEventListener('input',updateChain);for(const id of ['chain-port','chain-version','time-critical'])q(id).addEventListener('change',updateChain);
  const chains={normal:'GTAI, GTAO, GTAO, GTDO',v1:'GTAO',mixed:'GTDI, GTAI, GTAO',exclusive:'GTNET, GTAO',latency:'GTAO, GTDO, GTDI',reset:''};
  root.querySelectorAll('[data-light-chain]').forEach(button=>button.addEventListener('click',()=>{const name=button.dataset.lightChain;q('chain').value=chains[name];q('chain-port').value=name==='reset'?'unknown':'gt3';q('chain-version').value=name==='reset'?'unknown':name==='v1'?'v1':'v2';q('time-critical').checked=name==='latency';updateChain();}));
- updateLoop();updatePins();updateChain();return root;
+ updateLoop();updatePins();updateChain();initLightSync(root.querySelector('#light-sync-unit'));return root;
 }
