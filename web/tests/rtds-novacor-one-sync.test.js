@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {checkNovaOneSync} from '../src/rtds-novacor-one-sync.js';
+const pair={count:2,sync:'direct',data:'direct',p2p:'on',addresses:true,files:true,family:'one',protocol:'a',subnet:'normal',legacyStep:true};
+for(const [name,change,config] of [['pair',{},1],['hub',{count:7,sync:'hub',p2p:'off'},2],['switch',{count:8,sync:'hub',data:'switch',p2p:'off'},3],['mixed pair',{family:'legacy'},1]])test(`Nova1 sync matches ${name}`,()=>{const r=checkNovaOneSync({...pair,...change});assert.equal(r.status,'match');assert.equal(r.configuration,config);});
+for(const [change,code] of [[{count:3},'hub-required'],[{count:8,sync:'hub',p2p:'off'},'switch-required'],[{sync:'none'},'sync-missing'],[{sync:'irc'},'sync-role'],[{data:'none'},'data-missing'],[{data:'gbh'},'data-role'],[{p2p:'off'},'p2p-on'],[{sync:'hub'},'p2p-off'],[{family:'legacy',protocol:'b'},'legacy-protocol'],[{family:'legacy',subnet:'small'},'legacy-subnet']])test(`Nova1 rejects ${code}`,()=>{const r=checkNovaOneSync({...pair,...change});assert.equal(r.status,'invalid');assert.ok(r.issues.some(x=>x.code===code));});
+for(const change of [{sync:'unknown'},{data:'unknown'},{p2p:'unknown'},{family:'unknown'},{family:'other'},{protocol:'unknown'},{subnet:'unknown'},{addresses:false},{files:false},{data:'switch'},{family:'legacy',legacyStep:false},{subnet:'small'}])test(`Nova1 unresolved ${JSON.stringify(change)}`,()=>assert.equal(checkNovaOneSync({...pair,...change}).status,'unknown'));
+for(const input of [null,[],{}, {...pair,count:NaN},{...pair,count:Infinity},{...pair,count:'2'},{...pair,count:2.1},{...pair,count:1},{...pair,family:'__proto__'},{...pair,protocol:'constructor'},{...pair,files:'yes'}])test('Nova1 malformed never matches',()=>assert.equal(checkNovaOneSync(input).status,'invalid'));
+for(const data of ['direct','switch'])test(`Nova1 two units may use hub ${data}`,()=>assert.equal(checkNovaOneSync({...pair,sync:'hub',data,p2p:'off',addresses:false}).status,'match'));
+test('Nova1 seven allowed, eight blocked with truthful message',()=>{assert.equal(checkNovaOneSync({...pair,count:7,sync:'hub',p2p:'off'}).status,'match');assert.match(checkNovaOneSync({...pair,count:8,sync:'hub',p2p:'off'}).issues.find(i=>i.code==='switch-required').message,/七台/);});
+test('Nova1 source and no latency estimates',()=>{const r=checkNovaOneSync(pair);assert.ok(r.sourcePages.includes(177));assert.match(r.boundary,/端到端延时/);assert.equal('latency' in r,false);});
+import {readFileSync} from 'node:fs';
+test('2C initializes checker only in its own course',()=>{const s=readFileSync(new URL('../src/rtds-novacor-one.js',import.meta.url),'utf8');assert.match(s,/initNovaOneSync/);assert.match(s,/id="one-sync-lesson"/);});
