@@ -1,0 +1,19 @@
+/* Scoped parameter teaching. No dimensions imply a real chassis or connector. */
+#rtds-chapter-2c .one-grid{display:grid;grid-template-columns:minmax(220px,.85fr) minmax(0,1.3fr);gap:24px;align-items:start}
+#rtds-chapter-2c .one-result{background:#f5f8f7;border:1px solid #dce7e1;border-radius:12px;padding:22px;min-width:0;overflow-wrap:anywhere}
+#rtds-chapter-2c .one-kicker{font-size:11px;letter-spacing:.12em;color:#63736c}
+#rtds-chapter-2c output{display:block;padding:14px 16px;border-left:3px solid #b89043;background:#fff8e9;line-height:1.7;border-radius:4px}
+#rtds-chapter-2c output[data-status=match],#rtds-chapter-2c output[data-status=known]{border-color:#397c61;background:#eff9f2}
+#rtds-chapter-2c output[data-status=invalid],#rtds-chapter-2c output[data-status=mismatch]{border-color:#b34a35;background:#fff1ed}
+#rtds-chapter-2c .one-facts{display:grid;grid-template-columns:minmax(90px,.7fr) minmax(0,1.3fr);gap:8px 16px;line-height:1.6}
+#rtds-chapter-2c dt{font-weight:600}#rtds-chapter-2c dd{margin:0}
+#rtds-chapter-2c .one-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+#rtds-chapter-2c .one-specs article{border-top:2px solid #d3e2d9;padding-top:12px}#rtds-chapter-2c h5{font-size:15px;margin:0 0 8px}
+#rtds-chapter-2c .one-specs p{font-size:14px;line-height:1.7}
+#rtds-chapter-2c .one-port-guide dt{margin-top:18px}#rtds-chapter-2c .one-port-guide dd{line-height:1.7;margin-top:6px}
+#rtds-chapter-2c li{line-height:1.65;margin-bottom:6px}#rtds-chapter-2c .cabinet-tabs{margin-top:16px}
+@media(max-width:720px){#rtds-chapter-2c .one-grid,#rtds-chapter-2c .one-specs{grid-template-columns:1fr;gap:16px}#rtds-chapter-2c .one-result{padding:16px}#rtds-chapter-2c .one-facts{grid-template-columns:85px minmax(0,1fr);gap:8px}#rtds-chapter-2c .cabinet-tabs button{flex:1 1 145px}}
+#rtds-chapter-2c .one-grid>article{min-width:0}
+#rtds-chapter-2c label{display:block;font-size:14px;line-height:1.6;margin:10px 0 5px}
+#rtds-chapter-2c select,#rtds-chapter-2c input[type=text],#rtds-chapter-2c input[type=number]{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;min-height:44px;padding:10px;border:1px solid #afc5c8;border-radius:5px;background:#fff;color:#203c43;font:inherit;font-size:16px}
+#rtds-chapter-2c input[aria-invalid=true]{border-color:#b34a35}
