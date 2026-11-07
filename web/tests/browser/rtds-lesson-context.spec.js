@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
+import {scrollDestinationError} from '../helpers/scroll-destination.js';
 const lessonIds={light:'#rtds-chapter-2b',analog:'#rtds-analog-lesson',power:'#rtds-power-lesson',cabinet:'#rtds-chapter-1a',cabinetV1:'#rtds-chapter-1b'};
 async function only(page,key){await expect(page.locator('#rtds-chapter-2a'))[key==='analog'?'toBeVisible':'toBeHidden']();for(const [id,selector]of Object.entries(lessonIds))await expect(page.locator(selector))[id===key?'toBeVisible':'toBeHidden']();}
 async function selected(page,id){await expect(page.locator(`[data-variant="${id}"]`)).toHaveAttribute('aria-pressed','true');}
@@ -43,13 +44,14 @@ test('late analog loading cannot wake hidden teaching after an incompatible hard
 for(const reducedMotion of ['no-preference','reduce'])test(`contextual teaching yields PiP and restores minimized or dismissed preferences outside it (${reducedMotion})`,async({page})=>{
  await page.emulateMedia({reducedMotion});
  await page.goto('./#rtds-hardware-novacor-2.0');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group="aurora"]').click();
- const reading=async()=>{await page.locator('#rtds-interface-region').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));await expect.poll(()=>page.locator('#rtds-interface-region').evaluate(n=>Math.abs(n.getBoundingClientRect().top))).toBeLessThanOrEqual(1);};
+ const reading=async()=>{await page.locator('#rtds-interface-region').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));await expect.poll(()=>page.locator('#rtds-interface-region').evaluate(scrollDestinationError)).toBeLessThanOrEqual(1);};
  const teaching=async()=>{
   await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('#analog-heading')).toBeFocused();
   // Focus is immediate and PiP yields as soon as teaching enters the reading
   // band, both BEFORE smooth scrolling ends. Wait for the actual destination
   // before issuing the opposite scroll, rather than racing a compositor frame.
-  await expect.poll(()=>page.locator('#rtds-analog-lesson').evaluate(n=>Math.abs(n.getBoundingClientRect().top-parseFloat(getComputedStyle(n).scrollMarginTop)))).toBeLessThanOrEqual(1);
+  // The last visible lesson may hit maxScroll before its top reaches the margin.
+  await expect.poll(()=>page.locator('#rtds-analog-lesson').evaluate(scrollDestinationError)).toBeLessThanOrEqual(1);
   await expect(page.locator('.rtds-pip')).toBeHidden();
  };
  await reading();await expect(page.locator('.rtds-pip')).toBeVisible();await page.locator('[data-pip-action="minimize"]').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');
