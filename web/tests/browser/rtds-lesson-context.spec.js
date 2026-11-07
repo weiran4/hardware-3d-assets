@@ -40,13 +40,22 @@ test('late analog loading cannot wake hidden teaching after an incompatible hard
 });
 
 
-test('contextual teaching yields PiP and restores minimized or dismissed preferences outside it',async({page})=>{
+for(const reducedMotion of ['no-preference','reduce'])test(`contextual teaching yields PiP and restores minimized or dismissed preferences outside it (${reducedMotion})`,async({page})=>{
+ await page.emulateMedia({reducedMotion});
  await page.goto('./#rtds-hardware-novacor-2.0');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');await page.locator('[data-group="aurora"]').click();
- const reading=async()=>{await page.locator('#rtds-interface-region').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));};
- await reading();await expect(page.locator('.rtds-pip')).toBeVisible();await page.locator('[data-pip-action="minimize"]').click();
- await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('#analog-heading')).toBeFocused();await expect(page.locator('.rtds-pip')).toBeHidden();
+ const reading=async()=>{await page.locator('#rtds-interface-region').evaluate(n=>n.scrollIntoView({block:'start',behavior:'instant'}));await expect.poll(()=>page.locator('#rtds-interface-region').evaluate(n=>Math.abs(n.getBoundingClientRect().top))).toBeLessThanOrEqual(1);};
+ const teaching=async()=>{
+  await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('#analog-heading')).toBeFocused();
+  // Focus is immediate and PiP yields as soon as teaching enters the reading
+  // band, both BEFORE smooth scrolling ends. Wait for the actual destination
+  // before issuing the opposite scroll, rather than racing a compositor frame.
+  await expect.poll(()=>page.locator('#rtds-analog-lesson').evaluate(n=>Math.abs(n.getBoundingClientRect().top-parseFloat(getComputedStyle(n).scrollMarginTop)))).toBeLessThanOrEqual(1);
+  await expect(page.locator('.rtds-pip')).toBeHidden();
+ };
+ await reading();await expect(page.locator('.rtds-pip')).toBeVisible();await page.locator('[data-pip-action="minimize"]').click();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');
+ await teaching();
  await reading();await expect(page.locator('.rtds-pip')).toHaveAttribute('data-state','minimized');await page.locator('[data-pip-action="close"]').click();
- await page.locator('#rtds-open-teaching').evaluate(n=>n.click());await expect(page.locator('.rtds-pip')).toBeHidden();await reading();await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);
+ await teaching();await reading();await expect(page.locator('.rtds-pip')).toBeHidden();await expect(page.locator('#rtds-scene canvas')).toHaveCount(1);
 });
 
 for(const activation of ['pointer','keyboard','native-click'])test(`late gallery completion respects ${activation} playback already chosen in teaching`,async({page})=>{
