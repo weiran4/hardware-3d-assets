@@ -28,3 +28,26 @@ export function checkSwitchManagement(x){
  if(x.card!==1)return result('invalid','仅第1张IRC Switch卡的Ethernet和USB用于管理；不要接第2–6张卡的管理口。');
  return result('match',x.medium==='ethernet'?'第1卡前面板Ethernet → 工作站LAN（100BASE-TX或千兆）；还须核对静态IP和网络配置。':'第1卡前面板USB → Windows工作站配置接口；驱动与COM口需确认，手册波特率115200。');
 }
+
+// Offline IPv4 classroom prerequisites, not a probe or a real configuration tool.
+function ipv4(s){
+ if(typeof s!=='string'||! /^(0|[1-9]\d{0,2})(\.(0|[1-9]\d{0,2})){3}$/.test(s))return null;
+ const bytes=s.split('.').map(Number);if(bytes.some(n=>n>255))return null;
+ return bytes.reduce((a,b)=>a*256+b,0);
+}
+function prefix(mask){const bits=mask.toString(2).padStart(32,'0');return /^1*0*$/.test(bits)?bits.indexOf('0')===-1?32:bits.indexOf('0'):null;}
+function host(ip,mask){const first=Math.floor(ip/16777216),part=ip&(~mask);return first>0&&first<224&&first!==127&&part!==0&&(part>>>0)!==((~mask)>>>0);}
+export function checkSwitchNetwork(x){
+ if(!obj(x)||x.card!==1||!['ethernet','usb'].includes(x.medium))return result('invalid','管理网络只适用于第1卡Ethernet；接口或输入无效。');
+ if(x.medium==='usb')return result('unknown','USB是独立的Windows配置连接，不以LAN地址判断其通信状态。');
+ const pc=ipv4(x.pc),ip=ipv4(x.ip),mask=ipv4(x.mask),pcMask=ipv4(x.pcMask),gateway=ipv4(x.gateway);
+ if([pc,ip,mask,pcMask,gateway].some(n=>n===null))return result('invalid','请填写完整规范的IPv4地址和掩码，四段均为0–255，不使用前导零。');
+ const a=prefix(mask),b=prefix(pcMask);
+ if(a===null||b===null)return result('invalid','掩码必须是连续的1后接0；10.0.0.0不是合法子网掩码。');
+ if(a<1||a>30||b<1||b>30)return result('unknown','本工具只检查普通/1–/30局域网；/0、/31、/32不在教学范围内。');
+ if(!host(ip,mask)||!host(pc,pcMask)||pc===ip)return result('invalid','工作站和交换机必须使用不同的普通单播主机地址，不能使用网络、广播、环回或组播地址。');
+ if(gateway!==0&&(!host(gateway,mask)||(gateway&mask)!==(ip&mask)||gateway===ip||gateway===pc))return result('invalid','所填交换机网关应是交换机子网内另一有效主机地址，不能与本例工作站或交换机重复。');
+ if(mask!==pcMask)return result('unknown','两端掩码不同，需要核对实际网络设计；本工具不据此确认同网直连。');
+ if((pc&mask)!==(ip&mask))return result('unknown',gateway===0?'两端不同子网且未填写交换机网关；需核对路由、两端配置及返回路径。':'两端不同子网；交换机网关格式合理，但路由、访问控制及返回路径尚未确认。');
+ return result('match','两端地址满足本例同子网必要条件；不代表物理链路、地址唯一性、访问控制或实际通信已验证。');
+}

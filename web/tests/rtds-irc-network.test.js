@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';import * as rules from '../src/rtds-irc-switch-state.js';
+const good={card:1,medium:'ethernet',pc:'192.168.1.20',pcMask:'255.255.255.0',ip:'192.168.1.240',mask:'255.255.255.0',gateway:'0.0.0.0'};
+const check=x=>rules.checkSwitchNetwork(x);
+test('offline network checker exists',()=>assert.equal(typeof rules.checkSwitchNetwork,'function'));
+test('ordinary same subnet only matches address prerequisites',()=>{const r=check(good);assert.equal(r.status,'match');assert.match(r.message,/不代表/);});
+for(const [key,value] of [['ip','192.168.1.20'],['ip','192.168.1.0'],['ip','192.168.1.255'],['ip','127.0.0.1'],['ip','224.0.0.1'],['ip','999.1.1.1'],['ip',''],['ip','192.168.01.1'],['mask','10.0.0.0'],['mask','255.0.255.0'],['pcMask','255.255.255.0x'],['gateway','192.168.2.1'],['gateway','192.168.1.240'],['gateway','192.168.1.20'],['card',2],['medium','optical']])test(`rejects ${key}=${value}`,()=>assert.equal(check({...good,[key]:value}).status,'invalid'));
+test('different subnets without gateway cannot match',()=>assert.equal(check({...good,pc:'192.168.2.20'}).status,'unknown'));
+test('plausible gateway cannot establish routes or connectivity',()=>{const r=check({...good,pc:'192.168.2.20',gateway:'192.168.1.1'});assert.equal(r.status,'unknown');assert.match(r.message,/路由/);});
+test('different masks cannot establish ordinary LAN match',()=>assert.equal(check({...good,pcMask:'255.255.0.0'}).status,'unknown'));
+for(const mask of ['0.0.0.0','255.255.255.254','255.255.255.255'])test(`out of scope prefix ${mask}`,()=>assert.equal(check({...good,mask}).status,'unknown'));
+test('USB is separate from LAN conditions',()=>assert.equal(check({...good,medium:'usb'}).status,'unknown'));
+for(const x of [null,[],{},'test'])test(`malformed input ${JSON.stringify(x)}`,()=>assert.equal(check(x).status,'invalid'));
+import {readFileSync} from 'node:fs';
+const ui=()=>readFileSync(new URL('../src/rtds-irc-switch.js',import.meta.url),'utf8');
+test('network controls and dated version warning visible in lesson',()=>{assert.match(ui(),/irc-network-result/);assert.match(ui(),/5\.122 build 8/);assert.match(ui(),/全部仿真/);assert.match(ui(),/3\.12/);});

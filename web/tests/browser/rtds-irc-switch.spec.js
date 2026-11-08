@@ -13,3 +13,15 @@ for(const mode of ['desktop','mobile','fallback'])test(`IRC Switch V2 mapping an
  await lesson.locator('a[href="#rtds-chapter-2c"]').click();await expect(lesson).toBeHidden();await page.goBack();await expect(lesson).toBeVisible();await page.goForward();await expect(lesson).toBeHidden();await page.goBack();await expect(lesson).toBeVisible();
  for(const id of ['novacor-2.0','irc-switch-v2','gtao-v2','irc-switch-v2']){await page.locator(`[data-variant="${id}"]`).click();await expect(lesson)[id==='irc-switch-v2'?'toBeVisible':'toBeHidden']();}await expect(page.locator('#rtds-analog-lesson')).toHaveAttribute('data-playing','false');await expect(page.locator('#rtds-power-lesson')).toHaveAttribute('data-playing','false');expect(await page.locator('[id]').evaluateAll(nodes=>new Set(nodes.map(n=>n.id)).size===nodes.length)).toBe(true);
 });
+for(const mobile of [false,true])test(`IRC Switch offline network and safety ${mobile?'mobile':'desktop'}`,async({page})=>{
+ if(mobile){await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});}
+ await page.goto('./#rtds-chapter-3');const result=page.locator('#irc-network-result');await expect(result).toHaveAttribute('data-status','match');
+ for(const key of ['duplicate','mask']){await page.locator(`[data-irc-net="${key}"]`).click();await expect(result).toHaveAttribute('data-status','invalid');}
+ await page.locator('[data-irc-net="routed"]').click();await expect(result).toHaveAttribute('data-status','unknown');await expect(result).toContainText('路由');
+ await page.locator('[data-irc-net="normal"]').focus();await page.keyboard.press('Enter');await expect(result).toHaveAttribute('data-status','match');
+ await page.locator('#irc-net-pc').fill('192.168.1.240');await expect(result).toHaveAttribute('data-status','invalid');await page.locator('[data-irc-net="normal"]').click();
+ await page.locator('#irc-management-medium').selectOption('usb');await expect(result).toHaveAttribute('data-status','unknown');await page.locator('#irc-management-card').selectOption('2');await expect(result).toHaveAttribute('data-status','invalid');await page.locator('[data-irc-net="normal"]').click();
+ await page.locator('#rtds-chapter-3 summary').filter({hasText:'最低版本参考'}).click();await expect(page.locator('#rtds-chapter-3')).toContainText('5.122 build 8');await expect(page.locator('#rtds-chapter-3')).toContainText('全部仿真');
+ expect((await page.locator('#irc-net-ip').boundingBox()).height).toBeGreaterThanOrEqual(44);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await mkdir('screenshots',{recursive:true});await page.locator('#irc-network-section').screenshot({path:`screenshots/chapter-3-network-${mobile?'mobile':'desktop'}.png`});
+ await page.locator('[data-variant="novacor-1.0"]').click();await expect(page.locator('#rtds-chapter-3')).toBeHidden();await page.goBack();await expect(result).toHaveAttribute('data-status','match');
+});

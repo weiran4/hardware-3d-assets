@@ -15,7 +15,7 @@
 @media(max-width:720px){#rtds-chapter-3 .irc-grid,#rtds-chapter-3 .irc-specs{grid-template-columns:1fr;gap:16px}#rtds-chapter-3 .irc-result{padding:16px}#rtds-chapter-3 .irc-facts{grid-template-columns:85px minmax(0,1fr);gap:8px}#rtds-chapter-3 .cabinet-tabs button{flex:1 1 145px}}
 #rtds-chapter-3 .irc-grid>article{min-width:0}
 #rtds-chapter-3 label{display:block;font-size:14px;line-height:1.6;margin:10px 0 5px}
-#rtds-chapter-3 select,#rtds-chapter-3 textarea,#rtds-chapter-3 input[type=number]{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;min-height:44px;padding:10px;border:1px solid #afc5c8;border-radius:5px;background:#fff;color:#203c43;font:inherit;font-size:16px}
+#rtds-chapter-3 select,#rtds-chapter-3 textarea,#rtds-chapter-3 input[type=number],#rtds-chapter-3 input[type=text]{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;min-height:44px;padding:10px;border:1px solid #afc5c8;border-radius:5px;background:#fff;color:#203c43;font:inherit;font-size:16px}
 #rtds-chapter-3 textarea[aria-invalid=true]{border-color:#b34a35}
 
 #rtds-chapter-3 textarea{resize:vertical;line-height:1.5}
