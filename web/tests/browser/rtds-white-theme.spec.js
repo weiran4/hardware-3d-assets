@@ -44,7 +44,7 @@ test('white-body UI, colored chrome and rounded controls stay readable across de
 
 test('all seven original models render against actual green-grid stages, including floating PiP',async({page})=>{
  await page.goto('./#rtds');await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');
- await expect(page.locator('#rtds-catalog button')).toHaveCount(20);
+ await expect(page.locator('#rtds-catalog button')).toHaveCount(21);
  const variants=await page.locator('.rtds-catalog-item.modeled').evaluateAll(nodes=>nodes.map(n=>n.dataset.variant));expect(variants).toHaveLength(7);
  for(const variant of variants){
   await page.locator(`[data-variant="${variant}"]`).click();await expect(page.locator('#rtds-scene')).toHaveAttribute('data-loaded','true');

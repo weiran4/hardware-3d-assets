@@ -1,5 +1,7 @@
 // Original, condensed source facts. Reference media are linked, never redistributed.
 export const catalog=[
+  {id:'irc-switch-v2',name:'IRC Switch V2',revision:'V2 / 20250910 章节',family:'IRC Switch',type:'机间数据交换机',summary:'1–6张卡，每卡24个IRC端口；机间数据映射与第1卡管理连接。',evidence:[{source_id:'MANUAL',locator:'Chapter 3; PDF pages 181–196; revision 20250910'}],confidence:{count:'documented',layout:'unknown',keying:'unknown',contacts:'unknown',physical_dimensions:'unknown',electrical_compatibility:'partial'}},
+
   {
     "id": "novacor-2.0",
     "name": "NovaCor 2.0",
