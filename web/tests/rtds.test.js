@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {catalog, sources} from '../src/rtds-catalog.js';
 import {createGalleryState, galleryTransition, portGroups, gltfDirection, inspectionFrame} from '../src/rtds-state.js';
 
-test('RTDS catalog preserves 21 distinct reference identities and source-only media links',()=>{
- assert.equal(catalog.length,21);assert.equal(new Set(catalog.map(a=>a.id)).size,21);
+test('RTDS catalog preserves 22 distinct reference identities and source-only media links',()=>{
+ assert.equal(catalog.length,22);assert.equal(new Set(catalog.map(a=>a.id)).size,22);
  assert.ok(catalog.find(a=>a.id==='novacor-2.0'));assert.ok(catalog.find(a=>a.id==='gtdi-v2'));
  for(const a of catalog){assert.ok(a.name&&a.summary&&a.revision);assert.ok(a.evidence.length);}
  for(const s of Object.values(sources))if(s.url)assert.match(s.url,/^https:\/\/(knowledge\.|www\.)?rtds\.com\//);
