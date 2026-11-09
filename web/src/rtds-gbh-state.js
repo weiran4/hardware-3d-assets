@@ -15,3 +15,16 @@ export function checkGbh({capacity,count,start,fleet,cases}){
  }
  return {status:'match',message:'分组条件通过。每个案例有自己的首机架master；这不是实物接线或运行确认。',mapping,groups,unused:mapping.map(m=>m.rack).filter(n=>!used.has(n))};
 }
+
+// Scope: NovaCor rear GBH port ↔ GBH V3. Not a NovaCor point-to-point checker.
+export function checkGbhLink({hub,node,media,length,irc}){
+ const result=(status,message)=>({status,message});
+ if(!['A','B'].includes(hub)||!['A','B'].includes(node)||!['pof','hcs'].includes(media)||!['none','v1','v2'].includes(irc)||!Number.isFinite(length)||length<=0)return result('invalid','输入无效：选择已列出的版本/介质，并输入大于0的有限长度（m）。');
+ if(hub!==node)return result('invalid','两端协议不一致：检查GBH V3与NovaCor的Protocol设置，不能只改一端。');
+ if(hub==='A'&&length>30)return result('invalid','Protocol A超过30m上限；不能通过更换IRC版本延长A同步光路。');
+ if(irc==='v1'&&length>30)return result('invalid','该GBH光路超过30m且使用IRC V1：需要IRC V2，并确认两端Protocol B。');
+ if(hub==='A'&&media==='hcs')return result('unverified','待核对：所核对表格未确认Protocol A + HCS组合，长度小于等于30m也不判定可接。');
+ const max=hub==='A'?30:media==='pof'?50:100;
+ if(length>max)return result('invalid',`超过此组合${max}m上限；不要将另一介质或直连方式的条件混用。`);
+ return result('match',`所选长度/协议/IRC条件通过：两端${hub}，${media==='pof'?'1mm POF':'200µm HCS'}，${length}m ≤ ${max}m。${irc==='none'?'本例不使用IRC交换机，不表示Protocol B必须配IRC交换机。':''}仍须核对各代固件、实际光端部件与系统配置；这不是现场接线许可或时延测量。`);
+}

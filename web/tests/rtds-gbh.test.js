@@ -9,3 +9,11 @@ test('unsupported and noninteger inputs fail closed',()=>{for(const change of [{
 test('single cases and all rack case valid; input must ascend',()=>{assert.equal(checkGbh({...base,cases:'1\n2\n3\n4\n5\n6\n7\n8'}).groups.length,8);assert.equal(checkGbh({...base,cases:'1,2,3,4,5,6,7,8'}).groups[0].master,1);assert.equal(checkGbh({...base,cases:'3,2,1'}).status,'invalid');});
 
 test('unsafe final rack rejects before constructing mapping',()=>{assert.equal(checkGbh({...base,start:Number.MAX_SAFE_INTEGER,count:2,cases:String(Number.MAX_SAFE_INTEGER)}).status,'invalid');});
+
+import {checkGbhLink} from '../src/rtds-gbh-state.js';
+const link={hub:'A',node:'A',media:'pof',length:30,irc:'none'};
+test('GBH A inclusive 30m maximum and not point-to-point 20m',()=>{assert.equal(checkGbhLink(link).status,'match');assert.equal(checkGbhLink({...link,length:30.1}).status,'invalid');});
+test('GBH B media boundaries',()=>{for(const [media,max] of [['pof',50],['hcs',100]]){assert.equal(checkGbhLink({...link,hub:'B',node:'B',media,length:max}).status,'match');assert.equal(checkGbhLink({...link,hub:'B',node:'B',media,length:max+.1}).status,'invalid');}});
+test('IRC V2 conditional on greater than30m, not B alone',()=>{for(const irc of ['none','v2'])assert.equal(checkGbhLink({...link,hub:'B',node:'B',length:50,irc}).status,'match');assert.equal(checkGbhLink({...link,hub:'B',node:'B',irc:'v1'}).status,'match');assert.equal(checkGbhLink({...link,hub:'B',node:'B',length:30.1,irc:'v1'}).status,'invalid');});
+test('GBH protocol mismatch and unsupported A HCS fail closed',()=>{assert.equal(checkGbhLink({...link,node:'B'}).status,'invalid');assert.equal(checkGbhLink({...link,media:'hcs'}).status,'unverified');});
+test('GBH malformed inputs fail closed',()=>{for(const change of [{length:NaN},{length:Infinity},{length:0},{length:-1},{hub:'X'},{node:'X'},{irc:'X'},{media:'X'}])assert.equal(checkGbhLink({...link,...change}).status,'invalid');});
