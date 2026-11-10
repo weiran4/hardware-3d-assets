@@ -77,3 +77,7 @@ Technical QA does not replace user aesthetic scoring or acceptance. RTDS phase-2
 No project license has been selected. Public visibility is not a blanket permission grant; no MIT or other license is implied. Original procedural geometry and project code are included. Blender and Pillow are external runtime dependencies, not vendored here. Labels use Blender's built-in font; no third-party font file is bundled.
 
 `tools/package_delivery.py` is the historical packaging procedure and requires the original local checkpoints named in it. Use `tools/rebuild_all.sh` for a fresh project-relative rebuild; the historical package command is not the repository publication command.
+
+## 接线课程进度 · 2026-11-10
+
+[4B GBH V2 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-4b)：单箱容量、同步/管理/USB连接用途、对应通道、案例连续分组与边界灯；与V3分离。仅手册部分覆盖，双箱连线、完整混代兼容与精确时延等待证据。详见[覆盖与验收记录](docs/chapter-progress/README.md)。发布状态须以对应提交GitHub Pages检查为准。

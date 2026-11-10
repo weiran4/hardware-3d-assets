@@ -1,5 +1,6 @@
 // Original, condensed source facts. Reference media are linked, never redistributed.
 export const catalog=[
+  {id:'gbh-v2',name:'GBH V2',revision:'V2 / 20190606 章节',family:'Global Bus Hub',type:'全局同步集线器',summary:'单箱10/20/30通道，同步接线、管理连接与案例边界检查。',evidence:[{source_id:'MANUAL',locator:'Chapter 4B; PDF pages 214–226; revision 20190606'}],confidence:{count:'documented',layout:'unknown',keying:'unknown',contacts:'unknown',physical_dimensions:'unknown',electrical_compatibility:'partial'}},
   {id:'gbh-v3',name:'GBH V3',revision:'V3 / 20250910 章节',family:'Global Bus Hub',type:'全局同步集线器',summary:'同步连接与版本边界检查；GBH 同步不替代 IRC 机间数据。',evidence:[{source_id:'MANUAL',locator:'Chapter 4A; PDF pages 197–213; revision 20250910'}],confidence:{count:'unknown',layout:'unknown',keying:'unknown',contacts:'unknown',physical_dimensions:'unknown',electrical_compatibility:'partial'}},
   {id:'irc-switch-v2',name:'IRC Switch V2',revision:'V2 / 20250910 章节',family:'IRC Switch',type:'机间数据交换机',summary:'1–6张卡，每卡24个IRC端口；机间数据映射与第1卡管理连接。',evidence:[{source_id:'MANUAL',locator:'Chapter 3; PDF pages 181–196; revision 20250910'}],confidence:{count:'documented',layout:'unknown',keying:'unknown',contacts:'unknown',physical_dimensions:'unknown',electrical_compatibility:'partial'}},
 

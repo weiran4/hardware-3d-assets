@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {checkGbhV2,checkGbhV2Connection} from '../src/rtds-gbh-v2-state.js';
+const base={boards:1,count:8,cases:'1,2,3,4\n5,6'};
+test('V2 consecutive cases identify independent masters and boundary lights',()=>{const r=checkGbhV2(base);assert.equal(r.status,'match');assert.deepEqual(r.groups,[{master:1,racks:[1,2,3,4]},{master:5,racks:[5,6]}]);assert.deepEqual(r.litBoundaries,[1,2,3,5]);assert.deepEqual(r.unused,[7,8]);assert.deepEqual(r.mapping[7],{port:8,rack:8});});
+for(const boards of [1,2,3])test(`V2 ${boards} board capacity is ${boards*10}`,()=>{assert.equal(checkGbhV2({...base,boards,count:boards*10}).status,'match');assert.equal(checkGbhV2({...base,boards,count:boards*10+1}).status,'invalid');});
+for(const cases of ['1,3','1,2\n2,3','2,1','1,1','0','9','1,','1,,2','1.5','Infinity','','   ','1\n\n2'])test(`V2 rejects invalid cases ${JSON.stringify(cases)}`,()=>{const r=checkGbhV2({...base,cases});assert.equal(r.status,'invalid');assert.deepEqual(r.mapping,[]);assert.deepEqual(r.litBoundaries,[]);});
+for(const [key,value]of [['boards',4],['boards',0],['boards',1.5],['count',0],['count',NaN],['count',Infinity],['count',1.5],['count',31],['cases',null]])test(`V2 rejects invalid ${key}:${value}`,()=>assert.equal(checkGbhV2({...base,[key]:value}).status,'invalid'));
+test('V2 independent single cases light no boundaries',()=>{const r=checkGbhV2({...base,cases:'1\n2\n3'});assert.equal(r.status,'match');assert.deepEqual(r.litBoundaries,[]);});
+const link={role:'sync',medium:'global-bus',length:30,mapped:true};
+test('V2 dedicated global bus up to30m has known conditions',()=>assert.equal(checkGbhV2Connection(link).status,'match'));
+for(const length of [0,-1,30.01,50,100,NaN,Infinity,'30'])test(`V2 rejects length ${length}`,()=>assert.equal(checkGbhV2Connection({...link,length}).status,'invalid'));
+for(const medium of ['ethernet','usb','unknown'])test(`V2 ${medium} cannot replace sync`,()=>assert.equal(checkGbhV2Connection({...link,medium}).status,'invalid'));
+test('V2 physical mapping mismatch fails',()=>assert.equal(checkGbhV2Connection({...link,mapped:false}).status,'invalid'));
+test('V2 unknown mapping fails closed',()=>assert.equal(checkGbhV2Connection({...link,mapped:'true'}).status,'invalid'));
+for(const role of ['lan','usb'])test(`V2 management ${role} independent of sync distance`,()=>{assert.equal(checkGbhV2Connection({role,medium:role==='lan'?'ethernet':'usb',length:NaN,mapped:false}).status,'match');assert.equal(checkGbhV2Connection({role,medium:'global-bus',length:30,mapped:true}).status,'invalid');});
+test('V2 unknown role fails closed',()=>assert.equal(checkGbhV2Connection({...link,role:'other'}).status,'invalid'));
