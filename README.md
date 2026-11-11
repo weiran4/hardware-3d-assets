@@ -81,3 +81,7 @@ No project license has been selected. Public visibility is not a blanket permiss
 ## 接线课程进度 · 2026-11-10
 
 [4B GBH V2 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-4b)：单箱容量、同步/管理/USB连接用途、对应通道、案例连续分组与边界灯；与V3分离。仅手册部分覆盖，双箱连线、完整混代兼容与精确时延等待证据。详见[覆盖与验收记录](docs/chapter-progress/README.md)。发布状态须以对应提交GitHub Pages检查为准。
+
+## 接线课程进度 · 2026-11-11
+
+[5A GTNETv3 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-5a)：双模块SV/GOOSE闭环、GT与Ethernet端口映射、PRP资源和连接条件检查。手册部分覆盖，背板照片、完整协议配置与真实时延仍待证据；上线以精确提交Pages流程和匿名线上验收为准。
