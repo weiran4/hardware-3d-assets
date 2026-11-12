@@ -88,3 +88,9 @@ No project license has been selected. Public visibility is not a blanket permiss
 
 
 [5B GTNETx2 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-5b)：普通双协议与PRP整卡单协议、四功能口、初始配置/运行边界、整组适用版本及介质线序检查。角色示意、手册部分覆盖，不保证通信成功；发布以精确提交Pages门槛和匿名线上验收为准。
+
+## Presentation pages13–14: interactive 3D digital input lab
+
+Open [`#rtds-digital-input`](https://weiran4.github.io/hardware-3d-assets/#rtds-digital-input), or slide-specific routes [`#rtds-presentation-13`](https://weiran4.github.io/hardware-3d-assets/#rtds-presentation-13) and [`#rtds-presentation-14`](https://weiran4.github.io/hardware-3d-assets/#rtds-presentation-14). The existing GTDI V2 GLB is reused alongside original procedural relay, active-source controller and DC supply geometry. Select endpoints to make/remove visible cables, operate the dry contact, adjust the active-source teaching voltage and inspect the raw input bit. Power-off wiring interlocks, missing common, an undefined threshold region and the forbidden active-source/wetting combination have explicit feedback.
+
+This is an educational input-state model, not a commissioning tool: external-device geometry is not manufacturer CAD, field voltage labels are teaching settings, and card logic supply/GT/RSCAD are not simulated as a complete loop. Only pages13–14 are covered here; GTDO pages15–17 and GTFPI pages18–20 remain pending. Original external geometry and animation source are in `web/src/rtds-digital-input-geometry.js`; no private manual, slide PDF or third-party source image is included. See the [design](docs/superpowers/specs/2026-11-12-digital-io-design.md) and [implementation plan](docs/superpowers/plans/2026-11-12-digital-io.md).
