@@ -85,3 +85,6 @@ No project license has been selected. Public visibility is not a blanket permiss
 ## 接线课程进度 · 2026-11-11
 
 [5A GTNETv3 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-5a)：双模块SV/GOOSE闭环、GT与Ethernet端口映射、PRP资源和连接条件检查。手册部分覆盖，背板照片、完整协议配置与真实时延仍待证据；上线以精确提交Pages流程和匿名线上验收为准。
+
+
+[5B GTNETx2 核心基础版](https://weiran4.github.io/hardware-3d-assets/#rtds-chapter-5b)：普通双协议与PRP整卡单协议、四功能口、初始配置/运行边界、整组适用版本及介质线序检查。角色示意、手册部分覆盖，不保证通信成功；发布以精确提交Pages门槛和匿名线上验收为准。
