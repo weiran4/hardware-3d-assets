@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createBanksState,transitionBanks,evaluateOutput} from '../src/rtds-digital-output-state.js';
+const act=(s,type,extra={})=>transitionBanks(s,{type,...extra});
+test('two banks drive different voltage simultaneously',()=>{let s=act(createBanksState(),'bothExample');for(const index of [0,1]){s=act(s,'selectBank',{index});s=act(s,'power');s=act(s,'logic');}assert.deepEqual(s.banks.map(b=>evaluateOutput(b).loadVolts),[12,24]);s=act(s,'logic');assert.deepEqual(s.banks.map(b=>evaluateOutput(b).driver),['V+','HIGH-Z']);});
+test('both supplies must be off before any wiring or setting edits',()=>{let s=act(createBanksState(),'bothExample');s=act(s,'power');s=act(s,'selectBank',{index:1});for(const type of ['example','voltage','terminal','remove','bothExample']){const n=act(s,type,{kind:'return',value:30,id:'plus'});assert.deepEqual(n.banks,s.banks);assert.match(n.notice,/关闭/);}});
+test('bank2 missing return leaves bank1 independently functional',()=>{let s=act(createBanksState(),'bothExample',{kind:'return'});for(const index of [0,1]){s=act(s,'selectBank',{index});s=act(s,'power');s=act(s,'logic');}assert.equal(evaluateOutput(s.banks[0]).status,'ready');assert.equal(evaluateOutput(s.banks[1]).status,'incomplete');});
+test('bank2 conflict prevents its power without affecting bank1',()=>{let s=act(createBanksState(),'bothExample',{kind:'conflict'});s=act(s,'selectBank',{index:1});s=act(s,'power');assert.equal(s.banks[1].power,false);assert.equal(evaluateOutput(s.banks[1]).status,'unsafe');});
+test('reset powers off both groups before clearing wiring',()=>{let s=act(createBanksState(),'bothExample');for(const index of [0,1]){s=act(s,'selectBank',{index});s=act(s,'power');}s=act(s,'reset');assert.ok(s.banks.every(b=>!b.power&&b.wires.length===0));});

@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 import {outputWires} from './rtds-digital-output-state.js';
-export function createOutputAssembly(template){
+export function createOutputAssembly(template,bankNumber=1){
  const board=template.clone(true),lookup=new Map();board.traverse(n=>{if(n.userData.sid)lookup.set(n.userData.sid,n);});
  const sources={};
- for(const [name,port,label]of [['output','bank1_odd','1'],['vplus','bank1_odd','V+'],['vminus','bank1_even','V-']]){
+ for(const [name,port,label]of [['output',`bank${bankNumber}_odd`,String((bankNumber-1)*8+1)],['vplus',`bank${bankNumber}_odd`,'V+'],['vminus',`bank${bankNumber}_even`,'V-']]){
   const bank=lookup.get('gtdo-v2-2.00.'+port);if(!bank)throw Error('GTDO 模型缺少接口 '+port);
   let record;try{record=JSON.parse(bank.userData.port_record);}catch{throw Error('GTDO 接口缺少元数据');}
   const index=record.contact_labels?.indexOf(label),source=lookup.get(`gtdo-v2-2.00.${port}.wire_recess${index}`);
@@ -16,8 +16,9 @@ export function createOutputAssembly(template){
  function box(size,pos,mat=paint,parent=group){const m=mesh(new THREE.BoxGeometry(...size),mat,parent);m.position.fromArray(pos);return m;}
  function node(pos,parent=group,name=''){const n=new THREE.Object3D();n.position.fromArray(pos);n.name=name;parent.add(n);return n;}
  function cylinder(r,depth,pos,mat,parent){const m=mesh(new THREE.CylinderGeometry(r,r,depth,20),mat,parent);m.rotation.x=Math.PI/2;m.position.fromArray(pos);return m;}
- function device(name,pos){const g=new THREE.Group();g.name=name;g.position.fromArray(pos);g.rotation.y=-.10;g.userData={origin:'original-illustrative',mechanicalAccuracy:'functional teaching equipment; no manufacturer rating or mating claim'};group.add(g);return g;}
+ function device(name,pos){const g=new THREE.Group();g.name=name;g.position.fromArray([pos[0]+shift,pos[1],pos[2]]);g.rotation.y=-.10;g.userData={origin:'original-illustrative',mechanicalAccuracy:'functional teaching equipment; no manufacturer rating or mating claim'};group.add(g);return g;}
  board.rotation.set(Math.PI/2,0,0);board.position.set(.102,.005,0);group.add(board);
+ const shift=bankNumber===2?-.23:0;
  for(const [name,{source,portId,contactLabel}]of Object.entries(sources)){anchors[name]=node([0,0,0],source,name);anchors[name].userData={portId,contactLabel,sourceSid:source.userData.sid,mapping:'functional-illustration'};}
  box([.43,.009,.20],[0,-.118,.012],material(0xdce4e1));for(const x of [.065,.14]){box([.014,.013,.064],[x,-.106,.008],metal);box([.006,.065,.007],[x,-.074,-.008],metal);}
  const devices={load:device('resistive-load-box',[-.112,.037,.024]),supply:device('external-dc-supply',[-.112,-.075,.024])};
@@ -37,11 +38,12 @@ export function createOutputAssembly(template){
  for(let i=0;i<7;i++)box([.036,.0012,.002],[.002,-.004-i*.0026,.026],metal,supply);
  function terminal(parent,pos,color,name){box([.014,.015,.013],[pos[0]-.003,pos[1],pos[2]-.005],green,parent);cylinder(.0032,.002,pos,metal,parent);box([.004,.0008,.0008],[pos[0],pos[1],pos[2]+.0011],ink,parent);const ring=mesh(new THREE.TorusGeometry(.005,.001,6,20),color,parent);ring.position.fromArray([pos[0],pos[1],pos[2]+.001]);const a=node([pos[0],pos[1],pos[2]+.002],parent,name);a.userData.mapping='functional-illustration';return a;}
  anchors.loadIn=terminal(load,[.048,.015,.034],blue,'loadIn');anchors.loadReturn=terminal(load,[.048,-.025,.034],ink,'loadReturn');anchors.plus=terminal(supply,[.048,.014,.029],red,'plus');anchors.minus=terminal(supply,[.048,-.016,.029],ink,'minus');
- anchors.loadLabel=node([-.112,.110,.024]);anchors.supplyLabel=node([-.112,-.108,.024]);anchors.boardLabel=node([.102,.123,.015]);
+ anchors.loadLabel=node([-.112+shift,.110,.024]);anchors.supplyLabel=node([-.112+shift,-.108,.024]);anchors.boardLabel=node([.102,.123,.015]);
+ if(bankNumber===2){group.updateMatrixWorld(true);for(const name of ['output','vplus','vminus'])group.attach(anchors[name]);board.visible=false;}
  group.updateMatrixWorld(true);const world=n=>n.getWorldPosition(new THREE.Vector3()),cables={};
  for(const [id,def]of Object.entries(outputWires)){
   const [start,end]=def.ends,a=world(anchors[start]),b=world(anchors[end]),h={supply:-.064,reference:-.099,signal:.052,return:.006,conflict:.078}[id];
-  const curve=new THREE.CatmullRomCurve3([a,new THREE.Vector3(a.x+.020,a.y,.080),new THREE.Vector3(.005,h,.092),new THREE.Vector3(b.x+.022,b.y,.075),b]);
+  const curve=new THREE.CatmullRomCurve3([a,new THREE.Vector3(a.x+.020,a.y,.080),new THREE.Vector3(.005+shift/2,h,.092+bankNumber*.008),new THREE.Vector3(b.x+.022,b.y,.075),b]);
   const line=mesh(new THREE.TubeGeometry(curve,64,.0014,8,false),material(def.color));line.visible=false;
   const pulse=mesh(new THREE.SphereGeometry(.0032,12,8),material(0xffeab5,{emissive:0xffbb55,emissiveIntensity:.8}));pulse.visible=false;
   cables[id]={mesh:line,pulse,curve,start,end};

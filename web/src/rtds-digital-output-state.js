@@ -47,3 +47,17 @@ export function transitionOutput(s,a){
  }
  return s;
 }
+
+// Two independently powered groups, not a claim of galvanic isolation.
+export function createBanksState(){return {banks:[createOutputState(16),{...createOutputState(16),voltage:12}],activeBank:0,notice:''};}
+export function transitionBanks(s,a){
+ if(a.type==='selectBank'&&[0,1].includes(a.index))return {...s,activeBank:a.index};
+ if(a.type==='resetAll'||a.type==='reset')return createBanksState();
+ const edit=['terminal','remove','example','page','voltage','resistance'].includes(a.type);
+ if(edit&&s.banks.some(b=>b.power))return {...s,notice:'请先关闭两组外部信号电源，再修改接线或参数。'};
+ if(a.type==='bothExample'){
+  if(s.banks.some(b=>b.power))return {...s,notice:'请先关闭两组外部信号电源。'};
+  return {...s,banks:s.banks.map((b,i)=>transitionOutput({...b,voltage:i?24:12},{type:'example',kind:i&&a.kind==='return'?'return':i&&a.kind==='conflict'?'conflict':'correct'})),notice:'两组示例已载入，电源均保持 OFF。'};
+ }
+ return {...s,banks:s.banks.map((b,i)=>i===s.activeBank?transitionOutput(b,a):b),notice:''};
+}
