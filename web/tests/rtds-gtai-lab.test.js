@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createGtaiState,evaluateGtai,transitionGtai} from '../src/rtds-gtai-lab-state.js';
+test('normal three wire differential reading',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'correct'});s=transitionGtai(s,{type:'power'});assert.equal(evaluateGtai(s,.25).voltage,5);});
+test('swapping plus and minus reverses voltage',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'reversed'});s=transitionGtai(s,{type:'power'});assert.equal(evaluateGtai(s,.25).voltage,-5);});
+test('missing reference cannot provide trusted reading',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'ground'});assert.equal(evaluateGtai(s).status,'reference');assert.equal(transitionGtai(s,{type:'power'}).power,false);});
+test('overrange never energizes',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'range'});assert.equal(evaluateGtai(s).status,'range');assert.equal(transitionGtai(s,{type:'power'}).power,false);});
+test('powered rewiring blocked',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'correct'});s=transitionGtai(s,{type:'power'});assert.deepEqual(transitionGtai(s,{type:'wire',from:'gp',to:'im'}).wires,s.wires);});
+test('invalid amplitude rejected',()=>{for(const value of [NaN,Infinity,-1,21])assert.equal(transitionGtai(createGtaiState(),{type:'amplitude',value}).amplitude,5);});
+test('reset powers down and clears wiring',()=>{assert.deepEqual(transitionGtai({power:true},{type:'reset'}),createGtaiState());});
+test('0 and 10V peak remain valid, exceeding 10 does not',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'correct'});for(const value of [0,10])assert.equal(evaluateGtai(transitionGtai(s,{type:'amplitude',value})).valid,true);assert.equal(evaluateGtai(transitionGtai(s,{type:'amplitude',value:11})).valid,false);});
+test('ground miswired to signal is invalid',()=>{let s=transitionGtai(createGtaiState(),{type:'example',kind:'correct'});s=transitionGtai(s,{type:'wire',from:'gg',to:'ip'});assert.equal(evaluateGtai(s).status,'wrong');});
+test('terminal pairing replaces conflicting leads, repeat removes',()=>{let s=transitionGtai(createGtaiState(),{type:'wire',from:'gp',to:'ip'});s=transitionGtai(s,{type:'wire',from:'gm',to:'ip'});assert.deepEqual(s.wires,[['gm','ip']]);assert.deepEqual(transitionGtai(s,{type:'wire',from:'gm',to:'ip'}).wires,[]);});

@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createHvState,evaluateHv,transitionHv,hvWires} from '../src/rtds-hv-state.js';
+const example=kind=>transitionHv(createHvState(),{type:'example',kind});
+test('dry switch closure only bridges Vdc and Load without external supply',()=>{let s=example('dry');s=transitionHv(s,{type:'simulate'});assert.equal(evaluateHv(s).contact,'open');s=transitionHv(s,{type:'switch'});assert.equal(evaluateHv(s).contact,'closed');assert.equal(evaluateHv(s).voltage,null);assert.equal(evaluateHv(s).status,'ready');});
+test('wet output illustrates external 125V not GTFPI 5V generation',()=>{let s=example('wet');s=transitionHv(s,{type:'simulate'});s=transitionHv(s,{type:'switch'});assert.equal(evaluateHv(s).voltage,125);assert.equal(evaluateHv({...s,closed:false}).voltage,0);});
+test('wrong dry external supply blocks simulation',()=>{let s=example('drySupply');assert.equal(evaluateHv(s).status,'unsafe');assert.equal(transitionHv(s,{type:'simulate'}).simulating,false);});
+test('wet receiver mismatch blocks simulation',()=>{assert.equal(evaluateHv(example('mismatch')).status,'unsafe');});
+test('missing return produces unknown not zero voltage',()=>{let s=transitionHv(example('missing'),{type:'simulate'});s.closed=true;assert.equal(evaluateHv(s).voltage,null);assert.equal(evaluateHv(s).status,'incomplete');});
+test('rewiring and mode changes locked during simulation',()=>{let s=transitionHv(example('wet'),{type:'simulate'});for(const a of [{type:'mode',mode:'dry'},{type:'terminal',id:'vp'},{type:'remove',id:'supply'},{type:'example',kind:'dry'}])assert.deepEqual(transitionHv(s,a).wires,s.wires);});
+test('reset stops and clears circuit',()=>{const s=transitionHv({...example('wet'),simulating:true},{type:'reset'});assert.equal(s.simulating,false);assert.deepEqual(s.wires,[]);});
+test('invalid states fail closed',()=>{for(const bad of [{...createHvState(),wires:['bogus']},{...createHvState(),mode:'hvinput'},{...createHvState(),supply:251}])assert.equal(evaluateHv(bad).status,'unsafe');});
+test('terminal pair selects a documented connection only',()=>{let s=transitionHv(createHvState(),{type:'terminal',id:'vp'});s=transitionHv(s,{type:'terminal',id:'rp'});assert.deepEqual(s.wires,['dryA']);s=transitionHv(s,{type:'terminal',id:'vp'});s=transitionHv(s,{type:'terminal',id:'rm'});assert.deepEqual(s.wires,['dryA']);});
+test('all defined wires have valid distinct endpoints',()=>{for(const w of Object.values(hvWires))assert.notEqual(w.ends[0],w.ends[1]);});

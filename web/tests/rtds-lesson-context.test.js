@@ -25,3 +25,13 @@ test('2A model links allow only known NovaCor2 interface groups',()=>{
 });
 
 test('Light has an independent chapter route and never borrows NovaCor2 analog lesson',()=>{assert.deepEqual(parseTeachingRoute('#rtds-chapter-2b'),{hardware:'novacor-light',lesson:'light'});assert.equal(lessonHash('light'),'#rtds-chapter-2b');assert.deepEqual(parseTeachingRoute('#rtds-hardware-novacor-light'),{hardware:'novacor-light',lesson:'light'});});
+
+test('HV page20 deep link selects GTFPI while keeping low voltage default',()=>{
+ for(const h of ['#rtds-hv-panel','#rtds-presentation-20'])assert.deepEqual(parseTeachingRoute(h),{hardware:'gtfpi-v2',lesson:'hv'});
+ assert.equal(lessonHash('hv'),'#rtds-hv-panel');
+ assert.equal(lessonForHardware('gtfpi-v2'),'gtfpi');
+});
+
+test('parallel presentation experiments map to their own version',()=>{
+ for(const [hash,hardware,lesson] of [['#rtds-presentation-8','gtao-v2','gtaoScope'],['#rtds-presentation-9','gtao-v2','gtaoScope'],['#rtds-presentation-10','gtai-v2','gtaiLab'],['#rtds-presentation-12','gtai-v2','gtaiLab'],['#rtds-presentation-21','novacor-2.0','ioChain'],['#rtds-presentation-23','novacor-2.0','ioChain']])assert.deepEqual(parseTeachingRoute(hash),{hardware,lesson});
+});
