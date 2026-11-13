@@ -14,3 +14,6 @@ Independent review found the common Enter teaching button chose the hardware def
 
 ## Evidence
 781 unit tests and build passed before final navigation correction. Focused independent integration browser review passed 26 tests. Desktop/mobile GTAO, GTAI and HV screenshots were visually inspected with actual WebGL rendering; no final mobile HV label overlap. Full regression and exact deployed-commit workflow results remain the release gate, not this note.
+
+## CI keyboard repair
+The first integrated CI passed 213/214 browser checks but blocked deployment: availability/model redraw could replace a focused chain-card action before Enter, leaving a link disconnected. A deterministic reduced-motion availability regression reproduced lost focus. Rendering now restores the same available card action without scrolling, only while the lesson is visible. Electrical validation and timeouts are unchanged. This is a product keyboard repair, not a test retry workaround.
