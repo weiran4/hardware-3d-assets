@@ -33,5 +33,5 @@ test('HV page20 deep link selects GTFPI while keeping low voltage default',()=>{
 });
 
 test('parallel presentation experiments map to their own version',()=>{
- for(const [hash,hardware,lesson] of [['#rtds-presentation-8','gtao-v2','gtaoScope'],['#rtds-presentation-9','gtao-v2','gtaoScope'],['#rtds-presentation-10','gtai-v2','gtaiLab'],['#rtds-presentation-12','gtai-v2','gtaiLab'],['#rtds-presentation-21','novacor-2.0','ioChain'],['#rtds-presentation-23','novacor-2.0','ioChain']])assert.deepEqual(parseTeachingRoute(hash),{hardware,lesson});
+ for(const [hash,hardware,lesson] of [['#rtds-presentation-8','gtao-v2','gtaoScope'],['#rtds-presentation-9','gtao-v2','gtaoScope'],['#rtds-presentation-10','gtai-v2','gtaiLab'],['#rtds-presentation-11','gtai-v2','gtaiLab'],['#rtds-presentation-12','gtai-v2','gtaiLab'],['#rtds-presentation-21','novacor-2.0','ioChain'],['#rtds-presentation-23','novacor-2.0','ioChain']])assert.deepEqual(parseTeachingRoute(hash),{hardware,lesson});
 });

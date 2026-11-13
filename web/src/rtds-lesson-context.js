@@ -5,7 +5,7 @@ export function hardwareHash(id){return '#rtds-hardware-'+id;}
 export function lessonHash(lesson){return {gtaoScope:'#rtds-gtao-scope',gtaiLab:'#rtds-analog-input',ioChain:'#rtds-io-chain',hv:'#rtds-hv-panel',gtfpi:'#rtds-gtfpi-protection',digitalOutput:'#rtds-digital-output',digitalInput:'#rtds-digital-input',gtnetX2:'#rtds-chapter-5b',gtnetV3:'#rtds-chapter-5a',gbhV2:'#rtds-chapter-4b',gbh:'#rtds-chapter-4a',irc:'#rtds-chapter-3',one:'#rtds-chapter-2c',light:'#rtds-chapter-2b',analog:'#rtds-analog',power:'#rtds-power',cabinet:'#rtds-chapter-1a',cabinetV1:'#rtds-chapter-1b'}[lesson]||'#rtds';}
 export function parseTeachingRoute(hash){
  if(['#rtds-gtao-scope','#rtds-presentation-8','#rtds-presentation-9'].includes(hash))return {hardware:'gtao-v2',lesson:'gtaoScope'};
- if(['#rtds-analog-input','#rtds-presentation-10','#rtds-presentation-12'].includes(hash))return {hardware:'gtai-v2',lesson:'gtaiLab'};
+ if(['#rtds-analog-input','#rtds-presentation-10','#rtds-presentation-11','#rtds-presentation-12'].includes(hash))return {hardware:'gtai-v2',lesson:'gtaiLab'};
  if(['#rtds-io-chain','#rtds-presentation-21','#rtds-presentation-22','#rtds-presentation-23'].includes(hash))return {hardware:'novacor-2.0',lesson:'ioChain'};
  if(['#rtds-hv-panel','#rtds-presentation-20'].includes(hash))return {hardware:'gtfpi-v2',lesson:'hv'};
  if(['#rtds-gtfpi-protection','#rtds-presentation-18','#rtds-presentation-19'].includes(hash))return {hardware:'gtfpi-v2',lesson:'gtfpi'};

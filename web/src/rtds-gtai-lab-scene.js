@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {evaluateGtai} from './rtds-gtai-lab-state.js';
 import {publishedModels} from './rtds-models.js';
 export async function createGtaiScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));
@@ -23,6 +24,8 @@ export async function createGtaiScene(container,project){
  }
  // Signal trace on the physical generator display, illustrative waveform not hardware timing.
  const traceGeo=new THREE.BufferGeometry(),traceMat=new THREE.LineBasicMaterial({color:0x72e6bc});geo.add(traceGeo);mats.add(traceMat);const trace=new THREE.Line(traceGeo,traceMat);generator.add(trace);
+ // Floating teaching readout, not a physical device or extra hardware interface.
+ const readout=document.createElement('canvas');readout.width=768;readout.height=144;const ctx=readout.getContext('2d'),texture=new THREE.CanvasTexture(readout);texture.colorSpace=THREE.SRGBColorSpace;const readoutMaterial=new THREE.MeshBasicMaterial({map:texture,transparent:true,depthTest:false});mats.add(readoutMaterial);const readoutGeo=new THREE.PlaneGeometry(.34,.064);geo.add(readoutGeo);const panel=new THREE.Mesh(readoutGeo,readoutMaterial);panel.position.set(0,-.095,.1);panel.renderOrder=10;scene.add(panel);
  let state={wires:[],power:false,amplitude:5},phase=0,active=true,disposed=false,frame=0,signature='';
  function updateWires(){const sig=JSON.stringify(state.wires);if(sig===signature)return;signature=sig;
   while(wireGroup.children.length){const n=wireGroup.children[0];wireGroup.remove(n);n.geometry.dispose();n.material.dispose();}
@@ -30,7 +33,7 @@ export async function createGtaiScene(container,project){
    const curve=new THREE.CatmullRomCurve3([p,new THREE.Vector3(-.035,p.y,.12),new THREE.Vector3(.04,q.y,.12),q]);
    wireGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve,32,.0015,8,false),new THREE.MeshStandardMaterial({color:a==='gg'?0x40966e:a==='gp'?0xd35a47:0x467da5})));}
  }
- function draw(){frame=0;if(disposed||!active||document.hidden)return;updateWires();const pts=[];for(let i=0;i<=80;i++){const x=i/80;pts.push(new THREE.Vector3(-.046+x*.064,.012+(state.power?.012*Math.sin(2*Math.PI*(x+phase)):0),.043));}traceGeo.setFromPoints(pts);dial.rotation.z=state.amplitude/20*Math.PI;renderer.render(scene,camera);
+ function draw(){frame=0;if(disposed||!active||document.hidden)return;updateWires();const pts=[];for(let i=0;i<=80;i++){const x=i/80;pts.push(new THREE.Vector3(-.046+x*.064,.012+(state.power?.012*Math.sin(2*Math.PI*(x+phase)):0),.043));}traceGeo.setFromPoints(pts);dial.rotation.z=state.amplitude/20*Math.PI;const reading=evaluateGtai(state,phase);ctx.clearRect(0,0,768,144);ctx.fillStyle='#edfafa';ctx.fillRect(0,0,768,144);ctx.fillStyle='#173942';ctx.font='28px sans-serif';ctx.fillText('TEACHING READOUT: input / SC',20,38);ctx.font='36px monospace';ctx.fillText(reading.engineering===null?'OUTPUT OFF':`${reading.voltage.toFixed(2)} V / ${state.scale} = ${reading.engineering.toFixed(3)} u`,20,90);texture.needsUpdate=true;renderer.render(scene,camera);
   const points={};for(const [k,n]of Object.entries(anchors)){const p=n.getWorldPosition(new THREE.Vector3()).project(camera);points[k]={x:(p.x*.5+.5)*container.clientWidth,y:(.5-p.y*.5)*container.clientHeight};}project(points);container.dataset.loaded='true';container.dataset.wires=state.wires.length;container.dataset.triangles=renderer.info.render.triangles;}
  function invalidate(){if(active&&!disposed&&!frame)frame=requestAnimationFrame(draw);}
  function resize(){if(disposed)return;const w=container.clientWidth,h=container.clientHeight;if(!w||!h)return;renderer.setSize(w,h);const aspect=w/h,span=Math.max(.28,.43/aspect);camera.left=-span*aspect/2;camera.right=span*aspect/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();invalidate();}

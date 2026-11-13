@@ -3,3 +3,5 @@
 .gtai-lab,.gtai-lab *{box-sizing:border-box}.gtai-lab .gtai-grid>*{min-width:0}.gtai-lab .gtai-stage canvas{position:absolute;inset:0;width:100%;height:100%}.gtai-lab .gtai-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.gtai-lab .gtai-leaders line{stroke:#688d7d;stroke-width:1}.gtai-lab .gtai-stage .gtai-labels button{color:#194f41;opacity:1}
 @media(max-width:720px){.gtai-lab .gtai-grid{grid-template-columns:minmax(0,1fr)}}
 .gtai-lab .gtai-leaders{z-index:1}.gtai-lab .gtai-labels{z-index:2}
+
+.gtai-scaling{display:grid;gap:6px;padding:10px;border:1px solid #317881;border-radius:8px;background:#edfafa;color:#173942}.gtai-engineering{font-size:1.45rem;font-weight:700}.gtai-meter{width:100%;height:20px}.gtai-fullscale{font-size:.85rem}
