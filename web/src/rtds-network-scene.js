@@ -1,0 +1,41 @@
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {publishedModels} from './rtds-models.js';
+
+// Original teaching apparatus is schematic; only NovaCor uses inspected model anchors.
+const colors={lan:0x2478ac,sync:0x9a6330,data:0x8d51b5};
+export async function createNetworkScene(container,project){
+ const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
+ let template;try{template=(await new GLTFLoader().loadAsync(new URL(publishedModels['novacor-2.0'].glb,document.baseURI).href)).scene;}catch(e){renderer.dispose();throw e;}
+ const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
+ const owned=new Set();let anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
+ container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
+ function own(x){owned.add(x);return x;}
+ function box(parent,size,pos,color){const m=new THREE.Mesh(own(new THREE.BoxGeometry(...size)),own(new THREE.MeshStandardMaterial({color,roughness:.62})));m.position.fromArray(pos);parent.add(m);return m;}
+ function label(text,pos,width=.24,parent=group){const canvas=document.createElement('canvas');canvas.width=768;canvas.height=96;const c=canvas.getContext('2d');c.fillStyle='#ffffff';c.fillRect(0,0,768,96);c.fillStyle='#193a4c';c.font='bold 40px sans-serif';c.textAlign='center';c.fillText(text,384,61);const texture=own(new THREE.CanvasTexture(canvas));texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(own(new THREE.SpriteMaterial({map:texture,depthTest:false})));sprite.scale.set(width,width/8,1);sprite.position.fromArray(pos);sprite.renderOrder=20;parent.add(sprite);return sprite;}
+ function port(parent,key,pos,color){anchors[key]=box(parent,[.012,.009,.008],pos,color);}
+ function clearWires(){for(const c of cables){c.mesh.geometry.dispose();c.mesh.material.dispose();c.dot.geometry.dispose();c.dot.material.dispose();}cables=[];wireGroup.clear();signature='';}
+ function clearLayout(){clearWires();group.clear();for(const r of owned)r.dispose();owned.clear();anchors={};}
+ function find(root,suffix){let result;root.traverse(n=>{if(n.userData.sid?.endsWith('.'+suffix))result=n;});if(!result)throw Error('Confirmed NovaCor anchor unavailable: '+suffix);return result;}
+ function apparatus(name,position,count,color){const device=new THREE.Group();device.position.fromArray(position);group.add(device);box(device,[.23,.07,.07],[0,0,0],0xd2dade);box(device,[.222,.055,.004],[0,0,.038],0x243a47);const first=name==='LAN'?0:1;for(let i=0;i<count;i++)port(device,`${name}.p${i+first}`,[-.094+i*.188/Math.max(1,count-1),-.006,.043],color);label(name+' · SCHEMATIC',[0,.056,.04],.24,device);}
+ function rebuild(n){clearLayout();layout=n;
+  const cols=Math.min(4,n),rows=Math.ceil(n/cols);for(let i=0;i<n;i++){const model=template.clone(true);model.scale.setScalar(.42);model.rotation.y=Math.PI;model.position.set((i%cols-(cols-1)/2)*.29,Math.floor(i/cols)*.27-.06,0);group.add(model);for(const suffix of ['wif','udp','gbh','irc1','irc2','irc3','irc4','irc5','irc6'])anchors[`N${i+1}.${suffix}`]=find(model,suffix);label('NovaCor 2.0 · N'+(i+1),[model.position.x,model.position.y+.105,.12],.235);}
+  const y=-.32;apparatus('LAN',[-.16,y,0],n+1,colors.lan);if(n>2)apparatus('GBH',[.15,y,0],n,colors.sync);if(n>7)apparatus('IRC',[.46,y,0],n,colors.data);
+  const pc=new THREE.Group();pc.position.set(-.48,y,0);group.add(pc);box(pc,[.15,.11,.018],[0,.022,0],0x30495b);box(pc,[.135,.09,.004],[0,.022,.012],0xb4e8ef);box(pc,[.02,.035,.02],[0,-.045,0],0x778c98);box(pc,[.105,.008,.05],[0,-.061,.015],0x9dafb6);port(pc,'PC.lan',[.063,-.017,.02],colors.lan);label('Workstation · SCHEMATIC',[0,.10,.025],.255,pc);
+  group.updateMatrixWorld(true);container.dataset.modelCount=String(n);container.dataset.anchorCount=String(Object.keys(anchors).length);fit();
+ }
+ function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
+ function buildWires(){const sig=JSON.stringify(state.links);if(sig===signature)return;clearWires();signature=sig;group.updateMatrixWorld(true);
+  state.links.forEach((link,i)=>{const a=world(link.a),b=world(link.b);if(!a||!b)return;const color=colors[link.network]||0xc64b40;const lift=.18+(i%7)*.012;const curve=new THREE.CatmullRomCurve3([a,a.clone().add(new THREE.Vector3(0,0,.045)),new THREE.Vector3((a.x+b.x)/2,(a.y+b.y)/2,lift),b.clone().add(new THREE.Vector3(0,0,.045)),b]);const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.0018,5,false),new THREE.MeshStandardMaterial({color,roughness:.6}));wireGroup.add(mesh);const dot=new THREE.Mesh(new THREE.SphereGeometry(.005,10,7),new THREE.MeshBasicMaterial({color:0xffc22b}));wireGroup.add(dot);cables.push({mesh,dot,curve,network:link.network,index:i});});container.dataset.wires=String(cables.length);
+ }
+ function render(){frame=0;if(disposed||!active||document.hidden||!state)return;buildWires();for(const c of cables){const on=!!state.enabled[c.network];c.mesh.material.opacity=on?1:.24;c.mesh.material.transparent=!on;c.dot.visible=on&&Number.isFinite(phase);if(c.dot.visible){const f=((phase+c.index*.09)%1+1)%1;c.dot.position.copy(c.curve.getPoint(f<.5?f*2:2-f*2));}}
+  renderer.render(scene,camera);const points={};for(const key of Object.keys(anchors)){const v=world(key).project(camera);points[key]={x:(v.x*.5+.5)*container.clientWidth,y:(.5-v.y*.5)*container.clientHeight,visible:Math.abs(v.x)<1&&Math.abs(v.y)<1&&v.z>-1&&v.z<1};}project(points);container.dataset.loaded='true';container.dataset.frames=String(++frames);container.dataset.triangles=String(renderer.info.render.triangles);
+ }
+ function invalidate(){if(!disposed&&active&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
+ function fit(){const n=state?.count||2,cols=Math.min(n,4),rows=Math.ceil(n/cols),width=Math.max(.9,cols*.29+.15),height=.6+(rows-1)*.27;const centerY=(rows-1)*.135-.16;const distance=Math.max(height,width/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.2;controls.target.set(-.02,centerY,.035);camera.position.set(-.02,centerY+.12,distance);controls.update();invalidate();}
+ function resize(){if(disposed)return;const w=container.clientWidth,h=container.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();fit();}
+ const ro=new ResizeObserver(resize);ro.observe(container);resize();const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else invalidate();};document.addEventListener('visibilitychange',visibility);
+ const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('network-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
+ return {update(s,p=null){state=s;phase=p;if(layout!==s.count)rebuild(s.count);invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+}

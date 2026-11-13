@@ -1,0 +1,9 @@
+# Course 25–31: three independent NovaCor networks, basic 3D lab
+
+Implementation choice: one shared scene with 2 / 3 / 8 chassis presets, real NovaCor 2.0 models and original simplified workstation, Ethernet switch, GBH and IRC enclosures. Simplified enclosures and port placement are not mechanical certification. All operation is offline.
+
+Page mapping: 25 Ethernet; 26 three-network overview; 27 two chassis; 28 GBH; 29 three-to-seven chassis; 30 IRC Switch; 31 eight-plus chassis. Sources: course 25–31; manual PDF71–72,79–81,97–100,181,187–188,198. Management uses WIF 8P8C, not the UDP ETH port. GBH dedicated Global Bus optical links coordinate synchronization; IRC optical links carry bidirectional real-time data. A master time-step distribution does not imply the physical Global Bus link is unidirectional. Hub management/configuration is assumed ready and outside this simplified lab.
+
+Plan: model port-level wiring and validate each independent network; render actual NovaCor anchors and selectable projected ports; distinguish copper, Global Bus, and IRC media. Two chassis use direct GBH and IRC with point-to-point enabled. Three chassis use GBH star and complete IRC mesh. Eight chassis requiring complete IRC exchange use the IRC switch, with IRC1 connected to channel matching chassis number. Include missing-network, UDP-port, wrong media, missing mesh edge and wrong point-to-point configuration examples. Show independently paused animated link activity, never latency.
+
+Acceptance: state tests for all valid presets, network-specific failures, topology and distinct port occupancy, playback shutdown on hidden views, reduced motion, keyboard controls, browser routes for every page25–31, desktop/mobile screenshots and real WebGL rendering. Preserve existing lessons and models. Coverage is basic and does not claim arbitrary networks, mixed versions, exact mechanical interfaces, hardware configuration, full144-capacity or real measured timing.

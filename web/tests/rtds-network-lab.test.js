@@ -1,0 +1,14 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createNetworkState,networkExample,evaluateNetwork,transitionNetwork} from '../src/rtds-network-state.js';
+for(const count of [2,3,8])test(`all three networks valid for ${count}`,()=>{const s=networkExample(count,'correct');const e=evaluateNetwork(s);for(const n of ['lan','sync','data'])assert.equal(e[n].valid,true,JSON.stringify(e));});
+test('Ethernet alone is not synchronization or realtime exchange',()=>{const e=evaluateNetwork(networkExample(3,'lan-only'));assert.equal(e.lan.valid,true);assert.equal(e.sync.valid,false);assert.equal(e.data.valid,false);});
+test('UDP ETH is not WIF management port',()=>assert.equal(evaluateNetwork(networkExample(2,'udp')).lan.valid,false));
+test('GBH cannot be replaced by IRC media',()=>assert.equal(evaluateNetwork(networkExample(2,'cross')).sync.valid,false));
+test('missing pair breaks three chassis complete IRC mesh only',()=>{const e=evaluateNetwork(networkExample(3,'missing'));assert.equal(e.data.valid,false);assert.equal(e.sync.valid,true);});
+test('Hub cannot use point-to-point configuration',()=>assert.equal(evaluateNetwork(networkExample(3,'point')).sync.valid,false));
+test('switch channel must match chassis number',()=>{const s=networkExample(8,'correct');s.links.find(l=>l.b==='IRC.p1').b='IRC.p2';assert.equal(evaluateNetwork(s).data.valid,false);});
+test('network toggle does not alter wiring',()=>{const s=networkExample(3,'correct'),next=transitionNetwork(s,{type:'toggle',network:'sync'});assert.deepEqual(next.links,s.links);assert.equal(evaluateNetwork(next).sync.active,false);assert.equal(evaluateNetwork(next).data.active,true);});
+test('wire toggle removes existing connection',()=>{const s=createNetworkState();const a={type:'wire',a:'N1.wif',b:'LAN.p1',network:'lan'};assert.equal(transitionNetwork(transitionNetwork(s,a),a).links.length,0);});
+test('unknown endpoints rejected',()=>assert.deepEqual(transitionNetwork(createNetworkState(),{type:'wire',a:'fake',b:'LAN.p1',network:'lan'}).links,[]));
+import {parseTeachingRoute,lessonHash} from '../src/rtds-lesson-context.js';
+test('course25–31 route to NovaCor network lesson',()=>{for(let p=25;p<=31;p++)assert.deepEqual(parseTeachingRoute(`#rtds-presentation-${p}`),{hardware:'novacor-2.0',lesson:'networks'});assert.equal(lessonHash('networks'),'#rtds-three-networks');});
