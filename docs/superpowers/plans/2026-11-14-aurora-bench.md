@@ -1,0 +1,5 @@
+# Course 34 Aurora bench
+Implement a NovaCor 2.0 model plus an original, visibly schematic four-quadrant amplifier, as an offline digital-interface lesson. No energized power stage or equipment control. Show persistent strong outlines on ports 21–24; retain selectable unique terminals and one shared group explanation.
+Source: course page 34; manual PDF 71/74 (2.0), 147/150 (1.0), 109–110/119 (Light). Light AUR1/AUR2 are a textual version distinction, not borrowed geometry. Vendor Aurora note supplies 2 Gbps link rate, never measured latency.
+Acceptance: selectable real model endpoints; connect/disconnect fibre; license and explicit compatible endpoint gating; invalid media and GT1 examples; forward command and return measurement symbolic animation, one playback control, static step, hidden pause, keyboard, reduced motion, retry, route and page coverage. Tests fail first, then unit/build and desktop/mobile WebGL checks. Source PDFs stay private.
+Deferred: amplifier-specific profile/firmware/SFP and component definitions, real hardware timing, true PHIL energized loop, Light model.
