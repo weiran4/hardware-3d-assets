@@ -1,0 +1,67 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+
+for(const width of [1200,390]) {
+  test(`course 32 GTNETx2 real 3D bench ${width}`, async ({page}) => {
+    test.setTimeout(90000);
+    await page.setViewportSize({width,height:1000});
+    await page.goto('./#rtds-presentation-32');
+    const root=page.locator('#rtds-chapter-5b'), bench=root.locator('.x2-bench'), stage=bench.locator('.network-stage');
+    const status=bench.locator('.x2-choice'), result=root.locator('#gtnet-x2-result');
+    const port=(id)=>bench.locator(`[data-x2-port="${id}"]`);
+    const play=root.locator('#gtnet-x2-play'), step=root.locator('#gtnet-x2-step');
+    await expect(root).toBeVisible();
+    await expect(stage).toHaveAttribute('data-loaded','true');
+    expect(Number(await stage.getAttribute('data-triangles'))).toBeGreaterThan(1000);
+    await expect(stage.locator('canvas')).toHaveCount(1);
+    expect(await stage.locator('canvas').evaluate(c=>Boolean(c.getContext('webgl2')))).toBe(true);
+    await expect(result).toHaveAttribute('data-status','match');
+    await mkdir('screenshots',{recursive:true});
+    await stage.screenshot({path:`screenshots/gtnet-x2-normal-${width}.png`});
+    await port('N.GT1').focus();
+    await page.keyboard.press('Enter');
+    await expect(status).toContainText('N.GT1');
+    await port('X.GT_A').click();
+    await expect(result).toHaveAttribute('data-status','invalid');
+    await bench.locator('[data-medium]').selectOption('ethernet');
+    await port('N.GT1').click();
+    await port('X.GT_A').click();
+    await expect(status).toContainText('不匹配');
+    await expect(result).toHaveAttribute('data-status','invalid');
+    await bench.locator('[data-medium]').selectOption('gt');
+    if(width===1200){
+      await stage.locator('.network-labels').getByRole('button',{name:'N.GT1',exact:true}).click();
+      await expect(status).toContainText('N.GT1');
+    }else await port('N.GT1').click();
+    await port('X.GT_A').click();
+    await expect(result).toHaveAttribute('data-status','match');
+    await play.click();
+    await expect(root).toHaveAttribute('data-playing','true');
+    await page.evaluate(()=>{location.hash='#rtds-presentation-25';});
+    await expect(root).toBeHidden();
+    await expect(root).toHaveAttribute('data-playing','false');
+    await page.goBack();
+    await expect(root).toBeVisible();
+    await page.goForward();
+    await expect(root).toBeHidden();
+    await page.goBack();
+    await root.locator('[data-gtnet-x2-example="prp"]').click();
+    await expect(result).toHaveAttribute('data-status','match');
+    await step.click();
+    await expect(root.locator('#gtnet-x2-path li[aria-current="true"]')).toHaveCount(2);
+    await stage.screenshot({path:`screenshots/gtnet-x2-prp-${width}.png`});
+    await root.locator('[data-gtnet-x2-example="lan"]').click();
+    await expect(result).toHaveAttribute('data-status','invalid');
+    await expect(play).toBeDisabled();
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await root.locator('[data-gtnet-x2-example="normal"]').click();
+    await expect(play).toBeDisabled();
+    await expect(step).toBeEnabled();
+    await stage.locator('canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());
+    await expect(bench.locator('[data-retry]')).toBeVisible();
+    await bench.locator('[data-retry]').click();
+    await expect(stage).toHaveAttribute('data-loaded','true');
+    await expect(stage.locator('canvas')).toHaveCount(1);
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  });
+}

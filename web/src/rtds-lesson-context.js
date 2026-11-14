@@ -16,7 +16,7 @@ export function parseTeachingRoute(hash){
  if(hash.startsWith('#rtds-interface:')){const [,hardware,group]=hash.split(':');return Object.hasOwn(interfaceGroups,hardware)&&interfaceGroups[hardware].includes(group)?{hardware,group}:null;}
  if(['#rtds-analog','#rtds-analog-lesson'].includes(hash))return {hardware:'novacor-2.0',lesson:'analog'};
  if(['#rtds-power','#rtds-power-lesson'].includes(hash))return {hardware:'gtao-v2',lesson:'power'};
- if(hash==='#rtds-chapter-5b')return {hardware:'gtnet-x2',lesson:'gtnetX2'};
+ if(['#rtds-chapter-5b','#rtds-presentation-32'].includes(hash))return {hardware:'gtnet-x2',lesson:'gtnetX2'};
  if(hash==='#rtds-chapter-5a')return {hardware:'gtnet-v3',lesson:'gtnetV3'};
  if(hash==='#rtds-chapter-4b')return {hardware:'gbh-v2',lesson:'gbhV2'};
  if(hash==='#rtds-chapter-4a')return {hardware:'gbh-v3',lesson:'gbh'};
