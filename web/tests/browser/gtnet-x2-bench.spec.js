@@ -11,7 +11,10 @@ for(const width of [1200,390]) {
     const port=(id)=>bench.locator(`[data-x2-port="${id}"]`);
     const play=root.locator('#gtnet-x2-play'), step=root.locator('#gtnet-x2-step');
     await expect(root).toBeVisible();
+    // Deep-link first paint must succeed without a scroll/resize wake-up.
     await expect(stage).toHaveAttribute('data-loaded','true');
+    await stage.scrollIntoViewIfNeeded();
+    await expect(stage).toBeInViewport();
     expect(Number(await stage.getAttribute('data-triangles'))).toBeGreaterThan(1000);
     await expect(stage.locator('canvas')).toHaveCount(1);
     expect(await stage.locator('canvas').evaluate(c=>Boolean(c.getContext('webgl2')))).toBe(true);
@@ -42,6 +45,9 @@ for(const width of [1200,390]) {
     await expect(root).toHaveAttribute('data-playing','false');
     await page.goBack();
     await expect(root).toBeVisible();
+    await stage.scrollIntoViewIfNeeded();
+    await expect(stage).toBeInViewport();
+    await expect(stage).toHaveAttribute('data-loaded','true');
     await page.goForward();
     await expect(root).toBeHidden();
     await page.goBack();
@@ -60,6 +66,8 @@ for(const width of [1200,390]) {
     await stage.locator('canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());
     await expect(bench.locator('[data-retry]')).toBeVisible();
     await bench.locator('[data-retry]').click();
+    await stage.scrollIntoViewIfNeeded();
+    await expect(stage).toBeInViewport();
     await expect(stage).toHaveAttribute('data-loaded','true');
     await expect(stage.locator('canvas')).toHaveCount(1);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
