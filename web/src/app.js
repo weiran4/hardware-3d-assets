@@ -1,3 +1,4 @@
+import './rtds-gtsync-bench.css';
 import {initNetworkLab} from './rtds-network-lab.js';
 import {initIoChain} from './rtds-io-chain.js';
 import {initHvPanel} from './rtds-hv.js';
