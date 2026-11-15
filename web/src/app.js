@@ -1,3 +1,4 @@
+import './rtds-udp-bench.css';
 import './rtds-aurora-bench.css';
 import './rtds-gtsync-bench.css';
 import {initNetworkLab} from './rtds-network-lab.js';
