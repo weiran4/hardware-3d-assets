@@ -1,3 +1,4 @@
+import './rtds-gtsoc-bench.css';
 import './rtds-udp-bench.css';
 import './rtds-aurora-bench.css';
 import './rtds-gtsync-bench.css';
