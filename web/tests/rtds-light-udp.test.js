@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {defaultLightUdp,evaluateLightUdp,stepLightUdp} from '../src/rtds-light-udp-state.js';
+const ready={...defaultLightUdp,connected:true};
+test('UDP disconnected first',()=>assert.equal(evaluateLightUdp().status,'disconnected'));
+test('Light UDP direct and switch examples',()=>{for(const topology of ['direct','switch'])assert.equal(evaluateLightUdp({...ready,topology}).ready,true);});
+for(const [key,value]of [['port','wif'],['medium','fiber'],['listener',false],['identitiesDistinct',false],['receiverPort',5001],['destinationPort',0],['destinationPort',65536],['destinationPort',1.5],['topology','ring']])test('Light UDP blocks '+key+value,()=>assert.equal(evaluateLightUdp({...ready,[key]:value}).status,'blocked'));
+test('teaching step only accepts valid receive path',()=>{assert.equal(stepLightUdp({...ready,listener:false},[]).length,0);const a=stepLightUdp(ready,[],0);assert.equal(a.length,1);assert.equal(typeof a[0],'number');let values=[];for(let i=0;i<50;i++)values=stepLightUdp(ready,values,i);assert.equal(values.length,24);assert.ok(new Set(values.map(v=>v.toFixed(5))).size>4);assert.throws(()=>stepLightUdp(ready,[]),RangeError);});

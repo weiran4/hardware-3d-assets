@@ -7,3 +7,5 @@
 @media(min-width:900px){.lightbench-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.lightbench-budget-panel .lightbench-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .lightdio-bench{margin-top:1rem;padding:1rem;border:1px solid #ccd9df;border-radius:12px;background:white;color:#193a4c}.lightdio-status{display:block;background:#eff6fa;padding:.5rem}.lightdio-bench button:focus-visible,.lightdio-bench select:focus-visible,.lightdio-bench input:focus-visible{outline:3px solid #1976d2;outline-offset:2px}.lightdio-loading{position:absolute;left:1rem;top:1rem}.lightdio-bench details{font-size:.9rem}
+
+.lightudp-bench{margin-top:1rem;padding:1rem;border:1px solid #ccd9df;border-radius:12px;background:white;color:#193a4c}.lightudp-status{display:block;background:#eff6fa;padding:.5rem}.lightudp-bench button:focus-visible,.lightudp-bench select:focus-visible,.lightudp-bench input:focus-visible{outline:3px solid #1976d2;outline-offset:2px}.lightudp-loading{position:absolute;left:1rem;top:1rem}.lightudp-bench details{font-size:.9rem}.lightudp-plot{display:block;width:100%;height:75px;background:#f4f8fa}
