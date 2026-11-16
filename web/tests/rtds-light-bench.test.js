@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import * as lab from '../src/rtds-light-bench-state.js';import {parseTeachingRoute} from '../src/rtds-lesson-context.js';
+for(const page of [38,39])test('Light course '+page,()=>assert.deepEqual(parseTeachingRoute('#rtds-presentation-'+page),{hardware:'novacor-light',lesson:'lightBench'}));
+test('disconnected initial',()=>assert.equal(lab.evaluateLightBench().status,'disconnected'));
+test('AO paired logical pins and load current',()=>{const r=lab.evaluateLightBench({...lab.defaultLightBench,connected:true,voltage:5,resistance:1000});assert.equal(r.status,'ready');assert.equal(r.currentMA,5);assert.equal(r.signalPin,1);assert.equal(r.returnPin,14);});
+for(const [key,value]of [['loop','i1'],['port','ai'],['paired',false],['voltage',11],['resistance',100]])test('blocks '+key,()=>assert.equal(lab.evaluateLightBench({...lab.defaultLightBench,connected:true,[key]:value}).status,'blocked'));
+test('AI differential voltage, no scope load assumption',()=>{const r=lab.evaluateLightBench({...lab.defaultLightBench,connected:true,mode:'ai',port:'ai',voltage:-8,channel:12});assert.equal(r.status,'ready');assert.equal(r.returnPin,25);assert.equal(r.currentMA,null);});
+for(const channel of [0,13,1.5])test('channel range '+channel,()=>assert.equal(lab.evaluateLightBench({...lab.defaultLightBench,connected:true,channel}).status,'blocked'));

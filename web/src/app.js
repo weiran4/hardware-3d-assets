@@ -1,3 +1,4 @@
+import './rtds-light-bench.css';
 import './rtds-blackbox.css';
 import './rtds-gtsoc-bench.css';
 import './rtds-udp-bench.css';
