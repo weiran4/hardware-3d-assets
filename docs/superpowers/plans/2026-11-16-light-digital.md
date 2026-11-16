@@ -1,0 +1,7 @@
+# Light page 39 digital I/O foundation
+
+Extend the existing Light-only functional 3D scene with a co-located digital panel, leaving the analogue panel unchanged. Bank 1 / first DB25 / channel 1 only: DI logical pin 1 and ground 10; DO logical pin 1, bank ground 11, bank + supply terminals 12/13. Terminal identifiers are not physical pin coordinates. I1 digital optical loop is independent from I2 analogue loop. External active-source PLC and separate external DO bank supply/load are original schematic geometry. Controls are keyboard-accessible and support reduced motion, hidden-view shutdown and context recovery.
+
+Implementation: (1) test digital state checks before implementation; (2) add independent state and panel modules and extend reusable scene geometry for digital equipment; (3) mount with existing lifecycle and update partial-coverage wording; (4) add desktop/mobile browser regression including wiring faults and verify unit/build/browser results.
+
+Accept: correct DI 0/24 V source path with return and I1; correct DO supplied-bank/load path at 5–30 V; missing loop/reference/supply and wrong functional group stop the teaching signal. DO OFF is a non-driven output, not a guaranteed 0 V load voltage. No threshold, real-time latency, load-current rating, bank isolation, second-bank suspect pinout, or physical mating claims. Show connected cables even for fault cases; no activity until valid. Page 39 remains partial, coverage count remains 30/37. UDP, all-channel behavior, dry-contact wetting and real commissioning remain outside this increment.

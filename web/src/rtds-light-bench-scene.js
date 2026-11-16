@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 // Original Light-specific teaching arrangement. No borrowed NovaCor2.0 geometry or physical pin coordinates.
-const colors={signal:0xb45749,return:0x425b78,optical:0x9a6330,copper:0xc64b40,fiber:0x9a6330,gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
+const colors={power:0x7650a2,signal:0xb45749,return:0x425b78,optical:0x9a6330,copper:0xc64b40,fiber:0x9a6330,gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
 export async function createLightBenchScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
@@ -18,19 +18,32 @@ export async function createLightBenchScene(container,project){
 
  function rebuild(){
  clearLayout();layout=1;
+ const digital=['di','do'].includes(state?.mode);
  const lx=compact?0:-.36,ly=compact?.32:.10,ex=compact?0:.36,ey=compact?-.30:.10;
  const chassis=new THREE.Group();chassis.position.set(lx,ly,0);group.add(chassis);box(chassis,[.44,.25,.14],[0,0,0],0xd0dade);box(chassis,[.43,.24,.008],[0,0,.075],0x2b414b);
  label('NOVACOR LIGHT · SCHEMATIC',[0,.18,.08],.56,chassis);
  // Layout is a functional teaching arrangement, not a pin-coordinate or mating model.
+ const upper=digital?'do':'ao',lower=digital?'di':'ai',loop=digital?'I1':'I2';
  box(chassis,[.13,.025,.009],[.13,.075,.085],0xaab8c2);box(chassis,[.13,.025,.009],[.13,.015,.085],0xaab8c2);
- port(chassis,'L.ao',[.13,.075,.10],0xd2a15c);port(chassis,'L.ai',[.13,.015,.10],0x6aa2c3);label('AO',[.13,.11,.10],.08,chassis);label('AI',[.13,-.02,.10],.08,chassis);
- port(chassis,'L.topI2',[-.035,.07,.10],0x54a9bd);port(chassis,'L.bottomI2',[-.035,-.08,.10],0x54a9bd);label('I2',[-.08,.07,.10],.07,chassis);label('I2',[-.08,-.08,.10],.07,chassis);
- label('DI / DO · REFERENCE',[-.13,-.01,.10],.16,chassis);
- const terminal=new THREE.Group();terminal.position.set(lx,ly-.20,.12);group.add(terminal);box(terminal,[.23,.045,.04],[0,0,0],0x557e71);port(terminal,'T.signal',[-.07,0,.03],0xcb6c51);port(terminal,'T.return',[.07,0,.03],0x4c6177);label('SIGNAL       RETURN',[0,-.048,.03],.30,terminal);
+ port(chassis,'L.'+upper,[.13,.075,.10],0xd2a15c);port(chassis,'L.'+lower,[.13,.015,.10],0x6aa2c3);label(upper.toUpperCase(),[.13,.11,.10],.08,chassis);label(lower.toUpperCase(),[.13,-.02,.10],.08,chassis);
+ port(chassis,'L.top'+loop,[-.035,.07,.10],0x54a9bd);port(chassis,'L.bottom'+loop,[-.035,-.08,.10],0x54a9bd);label(loop,[-.08,.07,.10],.07,chassis);label(loop,[-.08,-.08,.10],.07,chassis);
+ if(digital){
+ port(chassis,'L.topI2',[-.17,.075,.10],0x929da5);port(chassis,'L.bottomI2',[-.17,-.08,.10],0x929da5);label('I2',[-.21,.075,.10],.05,chassis);label('I2',[-.21,-.08,.10],.05,chassis);
+ port(chassis,'L.ai',[-.14,-.005,.10],0x929da5);label('AI',[-.18,-.005,.10],.05,chassis);
+ }else label('DI / DO · REFERENCE',[-.13,-.01,.10],.16,chassis);
+ const terminal=new THREE.Group();terminal.position.set(lx,ly-.20,.12);group.add(terminal);box(terminal,[.23,.045,.04],[0,0,0],0x557e71);port(terminal,'T.signal',[-.07,0,.03],0xcb6c51);port(terminal,'T.return',[.07,0,.03],0x4c6177);label(digital?'CH1          COMMON':'SIGNAL       RETURN',[0,-.048,.03],.30,terminal);
  const device=new THREE.Group();device.position.set(ex,ey,0);group.add(device);box(device,[.30,.18,.14],[0,0,0],0xdce3e5);box(device,[.28,.16,.008],[0,0,.075],0x2c4b58);box(device,[.15,.08,.009],[-.045,.015,.09],0x76bec6);for(let i=0;i<3;i++)box(device,[.025,.018,.012],[.105,-.035+i*.035,.09],0xaabac0);port(device,'E.signal',[-.055,-.06,.10],0xcb6c51);port(device,'E.return',[.055,-.06,.10],0x4c6177);
- label(state?.reading||'NO SIGNAL',[-.045,.015,.105],.15,device);
- label(state?.mode==='ai'?'SIGNAL GENERATOR · SCHEMATIC':'OSCILLOSCOPE · SCHEMATIC',[0,.14,.08],.53,device);
- group.updateMatrixWorld(true);container.dataset.modelCount='3';container.dataset.asset='original-light-only-schematic';container.dataset.mode=state?.mode||'ao';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
+ if(state?.mode==='do'){
+ box(device,[.16,.055,.02],[-.045,.015,.11],0xb88a52);
+ for(let i=0;i<4;i++)box(device,[.009,.055,.004],[-.10+i*.035,.015,.122],[0x6c4137,0x191919,0xab4037,0xc7a257][i]);
+ label(state?.reading||'NO SIGNAL',[0,-.115,.105],.29,device);
+ }else label(state?.reading||'NO SIGNAL',[-.045,.015,.105],.15,device);
+ label(state?.mode==='di'?'ACTIVE PLC OUTPUT · SCHEMATIC':state?.mode==='do'?'RESISTIVE LOAD · SCHEMATIC':state?.mode==='ai'?'SIGNAL GENERATOR · SCHEMATIC':'OSCILLOSCOPE · SCHEMATIC',[0,.14,.08],.53,device);
+ if(state?.mode==='do'){
+ const supply=new THREE.Group();supply.position.set(ex,ey-.25,.0);group.add(supply);box(supply,[.25,.11,.10],[0,0,0],0xd5e0e3);label('EXTERNAL BANK DC',[0,.09,.07],.34,supply);port(supply,'P.plus',[-.065,0,.06],0xcb6c51);port(supply,'P.common',[.065,0,.06],0x4c6177);
+ port(terminal,'T.supply',[0,0,.03],0x7650a2);label('BANK +',[0,.05,.03],.10,terminal);
+ }
+ group.updateMatrixWorld(true);container.dataset.modelCount=state?.mode==='do'?'4':'3';container.dataset.asset='original-light-only-schematic';container.dataset.mode=state?.mode||'ao';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
  }
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
  function buildWires(){const sig=JSON.stringify(state.links);if(sig===signature)return;clearWires();signature=sig;group.updateMatrixWorld(true);

@@ -5,3 +5,5 @@
 .lightbench-timeline{height:16px;background:linear-gradient(to right,#e5edf1 0,#e5edf1 96%,white 96%,white 100%);margin:.5rem 0;border:1px solid #879ba6}.lightbench-work{display:block;height:100%;opacity:.8}.lightbench-controls input[type=number]{width:100%;box-sizing:border-box;min-height:36px}
 
 @media(min-width:900px){.lightbench-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.lightbench-budget-panel .lightbench-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.lightdio-bench{margin-top:1rem;padding:1rem;border:1px solid #ccd9df;border-radius:12px;background:white;color:#193a4c}.lightdio-status{display:block;background:#eff6fa;padding:.5rem}.lightdio-bench button:focus-visible,.lightdio-bench select:focus-visible,.lightdio-bench input:focus-visible{outline:3px solid #1976d2;outline-offset:2px}.lightdio-loading{position:absolute;left:1rem;top:1rem}.lightdio-bench details{font-size:.9rem}
