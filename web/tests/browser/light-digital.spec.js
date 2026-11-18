@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';
 for(const width of [1200,390])test('Light built-in digital bank1 '+width,async({page})=>{
  test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-39');const b=page.locator('.lightdio-bench'),s=b.locator('.lightdio-stage'),pick=k=>b.locator('[data-lightdio="'+k+'"]');
- await b.scrollIntoViewIfNeeded();await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect.poll(async()=>Number(await s.getAttribute('data-triangles'))).toBeGreaterThan(100);
+ await b.scrollIntoViewIfNeeded();await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-photo-status','ready');await expect.poll(async()=>Number(await s.getAttribute('data-triangles'))).toBeGreaterThan(100);
  await b.locator('[data-lightdio-connect]').focus();await page.keyboard.press('Enter');await expect(b).toHaveAttribute('data-status','ready');await expect(b.locator('.lightdio-reading')).toContainText('1 · 24 V');await expect(s).toHaveAttribute('data-mode','di');
  await pick('high').uncheck();await expect(b.locator('.lightdio-reading')).toContainText('0 · 0 V');await pick('high').check();
  for(const [k,v,good]of [['loop','i2','i1'],['loop','none','i1'],['port','do','di'],['port','ai','di']]){await pick(k).selectOption(v);await expect(b).toHaveAttribute('data-status','blocked');await pick(k).selectOption(good);}

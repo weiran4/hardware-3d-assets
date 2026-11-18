@@ -1,0 +1,57 @@
+{
+  "gbh": {
+    "a": [
+      -0.06037934869527817,
+      0.021356502547860146,
+      0.13429999351501465
+    ],
+    "b": [
+      0.02923387661576271,
+      0.021356502547860146,
+      0.13429999351501465
+    ]
+  },
+  "irc": {
+    "a": [
+      -0.065,
+      0.0781,
+      0.0425
+    ],
+    "b": [
+      0.0605,
+      0.1859,
+      0.0425
+    ]
+  },
+  "ircRearMains": [
+    [
+      -0.144,
+      0.304,
+      -0.313
+    ],
+    [
+      -0.08,
+      0.304,
+      -0.313
+    ]
+  ],
+  "schemaVersion": 1,
+  "units": "model metres",
+  "coordinateFrame": "glTF root local; +Y up; +Z forward",
+  "visualIds": {
+    "gbh": {
+      "a": "CH17.optical1",
+      "b": "CH20.optical1"
+    },
+    "irc": {
+      "a": "card-2.bank-1.row-2.col-3",
+      "b": "card-5.bank-2.row-1.col-4"
+    }
+  },
+  "sha256": {
+    "light": "ffde8cf77f686a82f25104c55344a670e7ae37ba38628925c7879748dce87440",
+    "gbh": "88c2d5769536de0a79b9413c1cb2cc8b0004054883bc330d40830ee426b9d8d1",
+    "irc": "1a54761d5bede57b0dcdbcb1d1b354e39a11b1dc6c646a6961aff4aa92a47b91"
+  },
+  "meaning": "Modeled cap face markers only. No electrical port/channel mapping or insertable socket geometry."
+}

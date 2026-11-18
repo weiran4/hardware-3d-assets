@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';
 for(const width of [1200,390])test('course38 39 Light '+width,async({page})=>{
  test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-39');const b=page.locator('.lightbench-bench'),s=b.locator('.lightbench-stage'),pick=k=>b.locator('[data-lightbench="'+k+'"]');
- await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-asset','original-light-only-schematic');await expect.poll(async()=>Number(await s.getAttribute('data-triangles'))).toBeGreaterThan(100);
+ await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-photo-status','ready');await expect(s).toHaveAttribute('data-asset',/^original-(light-only-schematic|photo-bench-with-schematic-peripherals)$/);await expect.poll(async()=>Number(await s.getAttribute('data-triangles'))).toBeGreaterThan(100);
  await b.locator('[data-lightbench-connect]').focus();await page.keyboard.press('Enter');await expect(b).toHaveAttribute('data-status','ready');await expect(b.locator('.lightbench-reading')).toContainText('5.00mA');
  for(const [k,v,good]of [['loop','i1','i2'],['port','ai','ao']]){await pick(k).selectOption(v);await expect(b).toHaveAttribute('data-status','blocked');await pick(k).selectOption(good);}
  await pick('paired').uncheck();await expect(b).toHaveAttribute('data-status','blocked');await pick('paired').check();
