@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 // Original Light-specific teaching arrangement. No borrowed NovaCor2.0 geometry or physical pin coordinates.
-const colors={power:0x7650a2,signal:0xb45749,return:0x425b78,optical:0x9a6330,copper:0xc64b40,fiber:0x9a6330,gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
+const colors={sync:0xa16929,data:0x2178b4,power:0x7650a2,signal:0xb45749,return:0x425b78,optical:0x9a6330,copper:0xc64b40,fiber:0x9a6330,gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
 export async function createLightBenchScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
@@ -10,7 +10,7 @@ export async function createLightBenchScene(container,project){
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
  function own(x){owned.add(x);return x;}
  function box(parent,size,pos,color){const m=new THREE.Mesh(own(new THREE.BoxGeometry(...size)),own(new THREE.MeshStandardMaterial({color,roughness:.62})));m.position.fromArray(pos);parent.add(m);return m;}
- function label(text,pos,width=.24,parent=group){const canvas=document.createElement('canvas');canvas.width=768;canvas.height=96;const c=canvas.getContext('2d');c.fillStyle='#ffffff';c.fillRect(0,0,768,96);c.fillStyle='#193a4c';c.font='bold 56px sans-serif';c.textAlign='center';c.fillText(text,384,61,740);const texture=own(new THREE.CanvasTexture(canvas));texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(own(new THREE.SpriteMaterial({map:texture,depthTest:false})));sprite.scale.set(width,width/8,1);sprite.position.fromArray(pos);sprite.renderOrder=20;parent.add(sprite);return sprite;}
+ function label(text,pos,width=.24,parent=group,tight=false){const canvas=document.createElement('canvas');canvas.width=tight?Math.max(128,text.length*40):768;canvas.height=96;const c=canvas.getContext('2d');c.fillStyle='#ffffff';c.fillRect(0,0,canvas.width,96);c.fillStyle='#193a4c';c.font='bold 56px sans-serif';c.textAlign='center';c.fillText(text,canvas.width/2,61,canvas.width-12);const texture=own(new THREE.CanvasTexture(canvas));texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(own(new THREE.SpriteMaterial({map:texture,depthTest:false})));sprite.scale.set(width,width*96/canvas.width,1);sprite.position.fromArray(pos);sprite.renderOrder=20;parent.add(sprite);return sprite;}
  function port(parent,key,pos,color){anchors[key]=box(parent,[.012,.009,.008],pos,color);}
  function clearWires(){for(const c of cables){c.mesh.geometry.dispose();c.mesh.material.dispose();c.dot.geometry.dispose();c.dot.material.dispose();}cables=[];wireGroup.clear();signature='';}
  function clearLayout(){clearWires();group.clear();for(const r of owned)r.dispose();owned.clear();anchors={};}
@@ -19,6 +19,7 @@ export async function createLightBenchScene(container,project){
  function rebuild(){
  clearLayout();layout=1;
  if(state?.mode==='udp'){rebuildUdp();return;}
+ if(state?.mode==='network'){rebuildNetwork();return;}
  const digital=['di','do'].includes(state?.mode);
  const lx=compact?0:-.36,ly=compact?.32:.10,ex=compact?0:.36,ey=compact?-.30:.10;
  const chassis=new THREE.Group();chassis.position.set(lx,ly,0);group.add(chassis);box(chassis,[.44,.25,.14],[0,0,0],0xd0dade);box(chassis,[.43,.24,.008],[0,0,.075],0x2b414b);
@@ -59,9 +60,24 @@ export async function createLightBenchScene(container,project){
  }
  group.updateMatrixWorld(true);container.dataset.modelCount=state?.topology==='switch'?'3':'2';container.dataset.asset='original-light-only-schematic';container.dataset.mode='udp';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
  }
+ function rebuildNetwork(){
+ for(const [i,key] of ['A','B'].entries()){
+ const chassis=new THREE.Group();chassis.position.set(compact?0:(i===0?-.36:.36),compact?(i===0?.34:-.34):.10,0);group.add(chassis);
+ box(chassis,[.44,.25,.14],[0,0,0],0xd0dade);box(chassis,[.43,.24,.008],[0,0,.075],0x2b414b);label('LIGHT '+key+' · SCHEMATIC',[0,.18,.08],.48,chassis);
+ for(let c=0;c<4;c++){box(chassis,[.065,.045,.01],[-.135+c*.09,.065,.087],0x6a9c99);label('C'+(c+1),[-.135+c*.09,.065,.10],.055,chassis,true);}
+ for(const [j,k] of ['gb','irc','wif'].entries()){const x=-.14+j*.14;port(chassis,key+'.'+k,[x,-.035,.10],k==='gb'?colors.sync:k==='irc'?colors.data:0x969ea4);label(k==='gb'?'GB SYNC':k.toUpperCase(),[x,-.075,.10],.12,chassis,true);}
+ }
+ if(state.topology!=='direct'){
+ const hub=new THREE.Group();hub.position.set(compact?-.18:-.20,compact?0:-.22,0);group.add(hub);box(hub,[.26,.085,.08],[0,0,0],0x697b85);port(hub,'H.a',[-.075,0,.05],colors.sync);port(hub,'H.b',[.075,0,.05],colors.sync);label('GBH · SYNC',[0,.075,.06],.27,hub);
+ }
+ if(state.topology==='switch'){
+ const sw=new THREE.Group();sw.position.set(compact?.18:.20,compact?0:-.22,0);group.add(sw);box(sw,[.26,.085,.08],[0,0,0],0x697b85);port(sw,'S.a',[-.075,0,.05],colors.data);port(sw,'S.b',[.075,0,.05],colors.data);label('IRC SWITCH · DATA',[0,-.075,.06],.30,sw);
+ }
+ group.updateMatrixWorld(true);container.dataset.modelCount=state.topology==='switch'?'4':state.topology==='hub'?'3':'2';container.dataset.asset='original-light-only-schematic';container.dataset.mode='network';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
+ }
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
  function buildWires(){const sig=JSON.stringify(state.links);if(sig===signature)return;clearWires();signature=sig;group.updateMatrixWorld(true);
-  state.links.forEach((link,i)=>{const a=world(link.a),b=world(link.b);if(!a||!b)return;const color=colors[link.network]||0xc64b40;const lift=.18+(i%7)*.012;const curve=new THREE.CatmullRomCurve3([a,a.clone().add(new THREE.Vector3(0,0,.045)),new THREE.Vector3((a.x+b.x)/2,(a.y+b.y)/2,lift),b.clone().add(new THREE.Vector3(0,0,.045)),b]);const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.0018,5,false),new THREE.MeshStandardMaterial({color,roughness:.6}));wireGroup.add(mesh);const dot=new THREE.Mesh(new THREE.SphereGeometry(.005,10,7),new THREE.MeshBasicMaterial({color:0xffc22b}));wireGroup.add(dot);cables.push({mesh,dot,curve,network:link.network,index:i,signal:link.signal,reverse:link.reverse,returnPath:link.returnPath});});container.dataset.wires=String(cables.length);container.dataset.links=JSON.stringify(state.links);
+  state.links.forEach((link,i)=>{const a=world(link.a),b=world(link.b);if(!a||!b)return;const color=colors[link.network]||0xc64b40;const lift=.18+(i%7)*.012;const curve=new THREE.CatmullRomCurve3([a,a.clone().add(new THREE.Vector3(0,0,.045)),new THREE.Vector3((a.x+b.x)/2+(state.mode==='network'&&state.topology==='direct'&&compact?(link.network==='sync'?-.10:.10):0),(a.y+b.y)/2+(state.mode==='network'&&state.topology==='direct'&&!compact?(link.network==='sync'?.08:-.08):0),lift),b.clone().add(new THREE.Vector3(0,0,.045)),b]);const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.0018,5,false),new THREE.MeshStandardMaterial({color,roughness:.6}));wireGroup.add(mesh);const dot=new THREE.Mesh(new THREE.SphereGeometry(.005,10,7),new THREE.MeshBasicMaterial({color:0xffc22b}));wireGroup.add(dot);cables.push({mesh,dot,curve,network:link.network,index:i,signal:link.signal,reverse:link.reverse,returnPath:link.returnPath});});container.dataset.wires=String(cables.length);container.dataset.links=JSON.stringify(state.links);
  }
  function render(force=false){frame=0;if(disposed||(!active&&!force)||document.hidden||!state||!container.clientWidth||!container.clientHeight)return;buildWires();for(const c of cables){const on=!!state.enabled[c.network];c.mesh.material.opacity=on?1:.24;c.mesh.material.transparent=!on;c.dot.visible=on&&Number.isFinite(phase);if(c.dot.visible){const f=((phase%1)+1)%1;c.dot.position.copy(c.curve.getPoint((c.reverse||(c.returnPath&&Math.floor(phase)===2))?1-f:f));}}
 

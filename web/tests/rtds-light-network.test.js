@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {defaultLightNetwork,evaluateLightNetwork} from '../src/rtds-light-network-state.js';
+test('direct two-Light requires independent sync and IRC paths and P2P',()=>{assert.equal(evaluateLightNetwork().ready,false);assert.equal(evaluateLightNetwork({sync:true,data:true}).ready,true);assert.equal(evaluateLightNetwork({sync:true,data:true,p2p:false}).ready,false);});
+test('hub sync is not the data path',()=>{const r=evaluateLightNetwork({topology:'hub',sync:true,data:false,p2p:false});assert.equal(r.syncReady,true);assert.equal(r.dataReady,false);assert.equal(r.links.length,2);});
+test('hub and switched modes disable P2P and carry separate paths',()=>{for(const topology of ['hub','switch']){const r=evaluateLightNetwork({topology,sync:true,data:true,p2p:false});assert.equal(r.ready,true);assert.equal(r.links.length,topology==='hub'?3:4);assert.equal(evaluateLightNetwork({topology,sync:true,data:true,p2p:true}).ready,false);}});
+test('WIF cannot replace IRC and optical path needs compatible media',()=>{for(const change of [{port:'wif'},{medium:'copper'}])assert.equal(evaluateLightNetwork({sync:true,data:true,...change}).ready,false);});
+test('unsupported topology never considered ready',()=>assert.equal(evaluateLightNetwork({sync:true,data:true,topology:'six-light'}).ready,false));
+test('evaluations do not mutate defaults or retain links after reset',()=>{const snapshot={...defaultLightNetwork};evaluateLightNetwork({topology:'switch',sync:true,data:true,p2p:false});assert.deepEqual(defaultLightNetwork,snapshot);assert.deepEqual(evaluateLightNetwork(defaultLightNetwork).links,[]);});
