@@ -1,0 +1,47 @@
+import {test,expect} from '@playwright/test';
+const optical='/models/photo-bench/gtsoc-v2-optical.glb';
+const bbox='/models/photo-bench/imperix-bbox-rcp.glb';
+const copper='/assets/rtds/gtsoc-v2-2a-copper16.glb';
+for(const width of [1200,390])test('P36 optical exteriors correspond to both named devices at '+width,async({page})=>{
+ test.setTimeout(90000);
+ await page.setViewportSize({width,height:1000});
+ const fetched=new Set();
+ page.on('response',r=>{if(r.ok())fetched.add(new URL(r.url()).pathname);});
+ await page.goto('./#rtds-presentation-36');
+ const bench=page.locator('.gtsoc-bench'),stage=bench.locator('.gtsoc-stage');
+ await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');
+ expect(fetched.has(optical)).toBe(true);
+ expect(fetched.has(bbox)).toBe(true);
+ await expect(stage).toHaveAttribute('data-anchor-scope','functional-groups-no-insertion');
+ await expect(stage).toHaveAttribute('data-wires','0');
+ await bench.locator('[data-gtsoc-connect]').click();
+ await expect(bench).toHaveAttribute('data-status','ready');
+ await expect(stage).toHaveAttribute('data-wires','1');
+ await bench.locator('[data-gtsoc="app"]').selectOption('sv');
+ await expect(stage).toHaveAttribute('data-asset','gtsoc-copper16-glb');
+ expect(fetched.has(copper)).toBe(true);
+ await expect(stage).toHaveAttribute('data-wires','0');
+ await bench.locator('[data-gtsoc="app"]').selectOption('mmc');
+ await expect(stage).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');
+ await expect(stage.locator('canvas')).toHaveCount(1);
+});
+
+test('P36 model failure shows retry without losing the selected connection',async({page})=>{
+ test.setTimeout(90000);
+ await page.route('**'+bbox,route=>route.abort('failed'));
+ await page.goto('./#rtds-presentation-36');
+ const bench=page.locator('.gtsoc-bench'),stage=bench.locator('.gtsoc-stage'),retry=bench.locator('[data-gtsoc-retry]');
+ await expect(retry).toBeVisible();
+ await expect(stage).toHaveAttribute('data-loaded','false');
+ expect(await stage.locator('canvas').count()).toBe(0);
+ await bench.locator('[data-gtsoc-connect]').click();
+ await expect(bench).toHaveAttribute('data-status','ready');
+ await expect(bench.locator('[data-gtsoc-play]')).toBeDisabled();
+ await page.unroute('**'+bbox);
+ await retry.click();
+ await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');
+ await expect(stage).toHaveAttribute('data-wires','1');
+ await expect(stage.locator('canvas')).toHaveCount(1);
+});

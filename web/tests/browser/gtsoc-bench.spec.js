@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';
 for(const width of [1200,390])test('course36 GTSOC firmware and optical loop '+width,async({page})=>{
  test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-36');const b=page.locator('.gtsoc-bench'),s=b.locator('.gtsoc-stage'),pick=k=>b.locator('[data-gtsoc="'+k+'"]');
- await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-asset','original-optical-schematic');await expect(b).toHaveAttribute('data-status','disconnected');
+ await expect(b).toBeVisible();await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');await expect(b).toHaveAttribute('data-status','disconnected');
  await b.locator('[data-gtsoc-connect]').focus();await page.keyboard.press('Enter');await expect(b).toHaveAttribute('data-status','ready');await expect(s).toHaveAttribute('data-wires','1');
  for(const [k,v,normal]of [['firmware','sv','mmc'],['group','rear','front'],['medium','copper','optical']]){await pick(k).selectOption(v);await expect(b).toHaveAttribute('data-status','blocked');await expect(b.locator('.gtsoc-direction')).toContainText('无传输');await pick(k).selectOption(normal);}
  for(const k of ['compatible','returnPath']){await pick(k).uncheck();await expect(b).toHaveAttribute('data-status','blocked');await pick(k).check();}
