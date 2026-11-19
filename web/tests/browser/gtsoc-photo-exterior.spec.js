@@ -8,11 +8,13 @@ for(const width of [1200,390])test('P36 optical exteriors correspond to both nam
  const fetched=new Set();
  page.on('response',r=>{if(r.ok())fetched.add(new URL(r.url()).pathname);});
  await page.goto('./#rtds-presentation-36');
+ // GitHub Pages mounts this site below the repository path.
+ const assetPath=(path)=>new URL('.'+path,page.url()).pathname;
  const bench=page.locator('.gtsoc-bench'),stage=bench.locator('.gtsoc-stage');
  await expect(stage).toHaveAttribute('data-loaded','true');
  await expect(stage).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');
- expect(fetched.has(optical)).toBe(true);
- expect(fetched.has(bbox)).toBe(true);
+ expect(fetched.has(assetPath(optical))).toBe(true);
+ expect(fetched.has(assetPath(bbox))).toBe(true);
  await expect(stage).toHaveAttribute('data-anchor-scope','functional-groups-no-insertion');
  await expect(stage).toHaveAttribute('data-wires','0');
  await bench.locator('[data-gtsoc-connect]').click();
@@ -20,7 +22,7 @@ for(const width of [1200,390])test('P36 optical exteriors correspond to both nam
  await expect(stage).toHaveAttribute('data-wires','1');
  await bench.locator('[data-gtsoc="app"]').selectOption('sv');
  await expect(stage).toHaveAttribute('data-asset','gtsoc-copper16-glb');
- expect(fetched.has(copper)).toBe(true);
+ expect(fetched.has(assetPath(copper))).toBe(true);
  await expect(stage).toHaveAttribute('data-wires','0');
  await bench.locator('[data-gtsoc="app"]').selectOption('mmc');
  await expect(stage).toHaveAttribute('data-asset','gtsoc-optical-bbox-rcp-glbs');
