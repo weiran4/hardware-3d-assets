@@ -56,3 +56,22 @@ test('Phoenix Contact exterior examples are distinguishable from the separate co
   await page.locator(id('power')).click();await page.locator(id('page13')).click();await expect(page.locator(id('schematic'))).toBeHidden();
  }
 });
+
+test('P13 shows the photographed Siemens exterior separately from virtual threshold nodes',async({page})=>{
+ await open(page,'#rtds-presentation-13');
+ await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');
+ await expect(page.locator(id('reference-plc'))).toHaveAttribute('href',/6es7212-1ae40-0xb0$/);
+ await expect(page.locator(id('plc-refs'))).toContainText('标称 24 V 晶体管输出');
+ await expect(page.locator(id('pin-out'))).toHaveText('OUT 模拟节点');
+ await expect(page.locator(id('wire-list')+' button')).toHaveCount(0);
+ await page.locator(id('example-correct')).click();
+ await page.locator(id('power')).click();
+ await page.locator(id('voltage')).fill('2');
+ await expect(page.locator(id('raw'))).toHaveText('?');
+ await page.locator(id('voltage')).fill('3');
+ await expect(page.locator(id('raw'))).toHaveText('1');
+ await page.locator(id('power')).click();
+ await page.locator(id('page14')).click();
+ await expect(page.locator(id('reference-plc'))).toBeHidden();
+ await expect(page.locator(id('reference-relay'))).toBeVisible();
+});

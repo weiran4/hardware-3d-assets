@@ -11,7 +11,7 @@ export async function createGtfpiScene(container,onProjection=()=>{}){
  renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  renderer.domElement.setAttribute('aria-hidden','true');renderer.domElement.style.touchAction='pan-y';
- let template,assembly,controls,observer,disposed=false,active=true,frame=0,detail=false,frames=0;
+ let template,assembly,controls,observer,disposed=false,active=true,frame=0,panelView=false,frames=0;
  let latestState={mode:'dry',wires:[],power:false,closed:false},latestResult={status:'off',flow:false},latestPhase=null;
  const releaseTemplate=()=>{
   const geometries=new Set(),materials=new Set(),textures=new Set();
@@ -48,7 +48,7 @@ export async function createGtfpiScene(container,onProjection=()=>{}){
  }
  function resize(){
   if(disposed)return;const width=container.clientWidth,height=container.clientHeight;if(!width||!height)return;
-  renderer.setSize(width,height);const aspect=width/height,span=detail?Math.max(.25,.35/aspect):Math.max(.32,.465/aspect);
+  renderer.setSize(width,height);const aspect=width/height,span=panelView?Math.max(.052,.219/aspect):Math.max(.32,.465/aspect);
   camera.left=-span*aspect/2;camera.right=span*aspect/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();invalidate();
  }
  function view(action){
@@ -56,9 +56,11 @@ export async function createGtfpiScene(container,onProjection=()=>{}){
   if(['in','out','zoomIn','zoomOut'].includes(action)){
    camera.zoom=THREE.MathUtils.clamp(camera.zoom*(['in','zoomIn'].includes(action)?1.2:1/1.2),limits.minZoom,limits.maxZoom);camera.updateProjectionMatrix();invalidate();return;
   }
-  detail=action==='detail';const center=new THREE.Vector3(detail?.025:0,.003,.024);
-  controls=applyInspectionPose(camera,controls,center,new THREE.Vector3(.17,.19,1),1,renderer.domElement,invalidate);Object.assign(controls,limits);controls.enabled=running();
-  setData('view',detail?'detail':'front');resize();
+  panelView=action==='panel';
+  for(const item of [assembly.board,assembly.diagram,assembly.relay,assembly.receiver])item.visible=!panelView;
+  const center=panelView?assembly.panel.position.clone():new THREE.Vector3(0,.003,.024);
+  controls=applyInspectionPose(camera,controls,center,new THREE.Vector3(...(panelView?[.012,.028,1]:[.17,.19,1])),1,renderer.domElement,invalidate);Object.assign(controls,limits);controls.enabled=running();
+  setData('view',panelView?'panel':'front');resize();
  }
  function availability(){
   if(disposed)return;controls.enabled=running();cancelAnimationFrame(frame);frame=0;applyState();setData('active',running());if(running())resize();
@@ -68,7 +70,7 @@ export async function createGtfpiScene(container,onProjection=()=>{}){
  function setActive(value){active=!!value;availability();}
  observer=new ResizeObserver(resize);observer.observe(container);
  document.addEventListener('visibilitychange',availability);reduced?.addEventListener('change',motionChanged);renderer.domElement.addEventListener('webglcontextlost',contextLost);
- setData('loaded',true);setData('asset','gtfpi-v2-2.01-capped');setData('externalDeviceCount',3);setData('frames',0);setData('triangles',0);setData('active',running());
+ setData('loaded',true);setData('asset','gtfpi-v2-2.01-capped');setData('externalDeviceCount',3);setData('panelSocketCount',assembly.sockets.children.length);setData('frames',0);setData('triangles',0);setData('active',running());
  applyState();view('front');
  return{
   update(state,result,phase=null){if(disposed)return;latestState=state;latestResult=result;latestPhase=phase;applyState();invalidate();},

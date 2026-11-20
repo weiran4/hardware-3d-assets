@@ -8,3 +8,24 @@ test('GTFPI animation pauses hidden background reduced motion and repeats safely
 test('GTFPI slide routes and browser history retain state without rewiring',async({page})=>{await open(page,'#rtds-presentation-18');await ready(page);await page.locator(root).locator('a[href="#rtds-presentation-19"]').click();await expect(page.locator(root)).toBeVisible();await page.goBack();await expect(page.locator(root)).toHaveAttribute('data-power','true');await expect(page.locator(q('wires')+' button')).toHaveCount(4);await page.goForward();await expect(page.locator(root)).toBeVisible();await page.evaluate(()=>location.hash='#rtds-digital-output');await expect(page.locator(root)).toBeHidden();await page.goBack();await expect(page.locator(root)).toBeVisible();});
 test('GTFPI runtime context loss and model retry',async({page})=>{await open(page);await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await ready(page);await page.locator(q('play')).click();await page.locator(q('scene')+' canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','error');await expect(page.locator(root)).toHaveAttribute('data-playing','false');await page.locator(q('retry')).click();await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await expect(page.locator(q('scene')+' canvas')).toHaveCount(1);});
 test('GTFPI mobile play reveals scene and pause resumes without resetting stage',async({page})=>{await page.setViewportSize({width:390,height:844});await open(page);await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await ready(page);await page.locator(q('play')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','true');await expect(page.locator(root)).toHaveAttribute('data-stage','1');await page.locator(q('play')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','false');const pausedStage=await page.locator(root).getAttribute('data-stage');expect(['1','2']).toContain(pausedStage);await expect(page.locator(q('raw'))).toHaveText('0');await page.locator(q('play')).click();await expect(page.locator(root)).not.toHaveAttribute('data-stage','0');await expect(page.locator(q('raw'))).toHaveText('0');await expect(page.locator(q('breaker'))).toHaveText('分',{timeout:6000});await page.locator(q('replay')).click();await expect(page.locator(root)).toHaveAttribute('data-stage','0');await expect(page.locator(q('breaker'))).toHaveText('合');await expect(page.locator(q('breaker'))).toHaveText('分',{timeout:6000});});
+
+for(const width of [1200,390])test(`GTFPI source-backed low-voltage front view ${width}`,async({page})=>{
+ await page.setViewportSize({width,height:880});await open(page,'#rtds-presentation-19');
+ const scene=page.locator(q('scene'));
+ await expect(scene).toHaveAttribute('data-loaded','true');
+ await expect(scene).toHaveAttribute('data-panel-socket-count','48');
+ await expect(page.locator(q('panel-photo'))).toHaveAttribute('href','https://knowledge.rtds.com/hc/en-us/articles/360034817373-Low-Voltage-Digital-Input-Output-Interface-Panel');
+ await ready(page);
+ await page.locator(q('view-panel')).focus();await page.keyboard.press('Enter');
+ await expect(scene).toHaveAttribute('data-view','panel');
+ await expect(page.locator(q('labels'))).toBeHidden();
+ await expect(page.locator(root)).toHaveAttribute('data-power','true');
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
+ await expect.poll(async()=>Number(await scene.getAttribute('data-triangles'))).toBeGreaterThan(5000);
+ await mkdir('screenshots',{recursive:true});
+ await scene.screenshot({path:`screenshots/gtfpi-photo-panel-${width}.png`});
+ await page.locator(q('view-reset')).click();
+ await expect(scene).toHaveAttribute('data-view','front');
+ await expect(page.locator(q('labels'))).toBeVisible();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
+});

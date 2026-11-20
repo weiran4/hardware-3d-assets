@@ -29,17 +29,16 @@ test('CH1, WET and GND use bank1 metadata and existing contact geometry',()=>{
  assert.ok(world(a.anchors.input).distanceTo(world(a.anchors.wet))>.01);
  a.dispose();
 });
-test('photo-grounded exteriors and illustrative controller are distinct and mode swaps functional terminals',()=>{
+test('photo-grounded exteriors are distinct and mode swaps functional terminals',()=>{
  const a=assembly();assert.deepEqual(Object.keys(a.devices).sort(),['relay','source','supply']);
- assert.equal(a.devices.source.userData.origin,'original-illustrative');
- for(const device of [a.devices.relay,a.devices.supply])assert.equal(device.userData.origin,'original-photo-grounded');
+ for(const device of Object.values(a.devices))assert.equal(device.userData.origin,'original-photo-grounded');
  for(const device of Object.values(a.devices))assert.ok(meshes(device).length>8);
  a.update(state,ready,.2);const out=world(a.anchors.out),common=world(a.anchors.common);
  assert.equal(a.devices.relay.visible,true);assert.equal(a.devices.source.visible,false);
  assert.equal(a.anchors.out.parent,a.devices.relay);assert.equal(a.anchors.common.parent,a.devices.relay);
  a.update({...state,mode:'wet',wires:['signal','return']},{...ready,raw:1},.2);
  assert.equal(a.devices.relay.visible,false);assert.equal(a.devices.source.visible,true);assert.equal(a.devices.supply.visible,true);
- assert.equal(a.anchors.out.parent,a.devices.source);assert.equal(a.anchors.common.parent,a.devices.source);
+ assert.equal(a.anchors.out.parent.name,'ideal-source-nodes');assert.equal(a.anchors.common.parent,a.anchors.out.parent);
  assert.ok(world(a.anchors.out).distanceTo(out)>.001);assert.ok(world(a.anchors.common).distanceTo(common)>.001);
  a.dispose();
 });
@@ -118,5 +117,24 @@ test('GTDI dry-contact bench uses photo-grounded Phoenix exteriors and verified 
  assert.equal(a.anchors.plus.userData.role,'DC+');
  assert.equal(a.anchors.minus.userData.role,'DC−');
  assert.ok(!relay.getObjectByName('moving-contact-tip'),'physical relay model must not double as an exposed internal diagram');
+ a.dispose();
+});
+
+test('P13 wet mode renders exact Siemens DC/DC/DC exterior rather than generic controller',()=>{
+ const a=assembly();
+ a.update({...state,mode:'wet',wires:['signal','return']},ready,null);
+ const plc=a.devices.source;
+ assert.equal(plc.userData.model,'SIMATIC S7-1200 CPU 1212C DC/DC/DC');
+ assert.equal(plc.userData.sku,'6ES7212-1AE40-0XB0');
+ assert.deepEqual(plc.userData.dimensionsMm,[90,100,75]);
+ assert.ok(plc.getObjectByName('plc-right-io-cover'));
+ assert.ok(plc.getObjectByName('plc-recessed-top-bay').position.y<.045);
+ assert.equal(plc.getObjectByName('plc-output-status').children.length,6);
+ assert.equal(a.anchors.out.userData.mapping,'virtual node, not a physical PLC pin');
+ assert.equal(a.anchors.common.userData.mapping,'virtual node, not a physical PLC pin');
+ assert.equal(a.devices.relay.visible,false);
+ a.update(state,ready,null);
+ assert.equal(a.devices.relay.visible,true);
+ assert.equal(plc.visible,false);
  a.dispose();
 });
