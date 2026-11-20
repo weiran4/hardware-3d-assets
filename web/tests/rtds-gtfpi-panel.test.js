@@ -22,3 +22,22 @@ test('the photographed LV panel has two banks of three-row recessed jacks with r
   assert.notEqual(terminal(1,'in').children[0].material,terminal(1,'ground').children[0].material);
  }finally{model.dispose();}
 });
+
+test('photographed SEL-751A sender is a detached enclosure, not the animated NO/COM terminals',()=>{
+ const board=new THREE.Group();const lv=new THREE.Object3D();lv.userData.sid='gtfpi-v2-2.01-capped.lv';board.add(lv);
+ const model=createGtfpiAssembly(board);
+ try{
+  const shell=model.group.getObjectByName('sel-751a-photo-exterior');
+  assert.ok(shell,'missing exact SEL-751A exterior');
+  for(const [name,count] of [['navigation-keys',7],['left-indicators',8],['right-control-strips',4],['port-f-serial-socket-holes',9]]){
+   assert.equal(shell.getObjectByName(name)?.children.length,count,name);
+  }
+  assert.ok(shell.getObjectByName('recessed-lcd-glass'));
+  for(const id of ['no','com','sense','zero']){
+   for(let part=model.anchors[id];part;part=part.parent)assert.notEqual(part,shell);
+  }
+  const shellBox=new THREE.Box3().setFromObject(shell);
+  const contactBox=new THREE.Box3().setFromObject(model.relay);
+  assert.equal(shellBox.intersectsBox(contactBox),false);
+ }finally{model.dispose();}
+});

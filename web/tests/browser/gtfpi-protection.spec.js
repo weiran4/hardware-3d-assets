@@ -29,3 +29,23 @@ for(const width of [1200,390])test(`GTFPI source-backed low-voltage front view $
  await expect(page.locator(q('labels'))).toBeVisible();
  await expect(page.locator(q('wires')+' button')).toHaveCount(4);
 });
+
+for(const width of [1200,390])test(`GTFPI SEL-751A exterior isolates symbolic wiring ${width}`,async({page},testInfo)=>{
+ await page.setViewportSize({width,height:880});
+ await open(page,width===1200?'#rtds-presentation-18':'#rtds-presentation-19');
+ const scene=page.locator(q('scene'));
+ await expect(scene).toHaveAttribute('data-loaded','true');
+ await expect(page.locator(q('sender-photo'))).toHaveAttribute('href','https://selinc.com/products/751a/');
+ await ready(page);
+ await page.locator(q('view-sender')).click();
+ await expect(scene).toHaveAttribute('data-view','sender');
+ await expect(page.locator(q('labels'))).toBeHidden();
+ await expect(page.locator(root)).toHaveAttribute('data-power','true');
+ await expect.poll(async()=>Number(await scene.getAttribute('data-triangles'))).toBeGreaterThan(1200);
+ await scene.screenshot({path:testInfo.outputPath(`sel-751a-${width}.png`)});
+ await page.locator(q('view-reset')).click();
+ await expect(scene).toHaveAttribute('data-view','front');
+ await expect(page.locator(q('labels'))).toBeVisible();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
+ await expect(page.locator(q('receiver'))).toHaveText('5 V');
+});

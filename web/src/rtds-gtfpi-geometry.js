@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {createSel751aExterior} from './rtds-gtfpi-sel751a.js';
 import {wires} from './rtds-gtfpi-state.js';
 // Original functional panel and external equipment; not mechanical CAD or IDC pinout.
 export function createGtfpiAssembly(template){
@@ -53,12 +54,14 @@ export function createGtfpiAssembly(template){
   const textMat=new THREE.MeshBasicMaterial({map:tex,transparent:true,depthWrite:false});materials.add(textMat);
   const print=mesh(new THREE.PlaneGeometry(panelW,panelH),textMat,panel);print.position.z=.0022;
  }
- const relay=new THREE.Group();relay.position.set(-.133,.059,.03);group.add(relay);
- box([.096,.074,.032],[0,0,0],pale,relay);box([.083,.06,.004],[0,0,.018],dark,relay);
- // Visible dry contact mechanism, distinct from supply terminals.
- const arm=new THREE.Group();arm.position.set(-.03,.01,.023);relay.add(arm);box([.05,.004,.004],[.025,0,0],gold,arm);box([.012,.005,.005],[.026,.01,.023],gold,relay);
- for(let i=0;i<8;i++)box([.003,.019,.01],[-.025+i*.006,-.018,.024],gold,relay);
- terminal('no',[.043,.018,.024],relay);terminal('com',[.043,-.018,.024],relay);
+ const sender=createSel751aExterior({mesh,mat,materials,textures});
+ sender.scale.setScalar(.104);sender.position.set(-.133,.086,.048);group.add(sender);
+ // The live teaching contact is a separate schematic block, not a view through the SEL shell.
+ const relay=new THREE.Group();relay.name='separate-virtual-dry-contact';relay.position.set(-.133,.006,.039);group.add(relay);
+ box([.080,.037,.008],[0,0,0],dark,relay);
+ const arm=new THREE.Group();arm.position.set(-.024,0,.007);relay.add(arm);box([.039,.003,.003],[.0195,0,0],gold,arm);
+ for(const x of [-.024,.021])frontCyl(.003,.002,[x,0,.0075],gold,relay);
+ terminal('no',[.033,.010,.007],relay);terminal('com',[.033,-.010,.007],relay);
  const receiver=new THREE.Group();receiver.position.set(-.133,-.062,.03);group.add(receiver);
  box([.096,.07,.035],[0,0,0],pale,receiver);box([.072,.045,.004],[0,.004,.020],dark,receiver);
  const lampMat=mat(0x668078);const lamp=box([.028,.018,.004],[-.012,.008,.024],lampMat,receiver);
@@ -66,7 +69,7 @@ export function createGtfpiAssembly(template){
  // GTFPI panel linkage illustrates documented cable class only, not connector pin mating.
  const lookup=new Map();board.traverse(n=>{if(n.userData.sid)lookup.set(n.userData.sid,n);});
  const lv=lookup.get('gtfpi-v2-2.01-capped.lv');if(!lv)throw Error('GTFPI LV接口标识缺失');
- anchors.boardLabel=node([.145,.12,.015]);anchors.panelLabel=node([.009,.044,.035]);anchors.relayLabel=node([-.133,.111,.03]);anchors.receiverLabel=node([-.133,-.11,.03]);
+ anchors.boardLabel=node([.145,.12,.015]);anchors.panelLabel=node([.009,.044,.035]);anchors.relayLabel=node([-.22,.028,.039]);anchors.receiverLabel=node([-.133,-.11,.03]);
  group.updateMatrixWorld(true);
  const diagram=new THREE.Group();group.add(diagram);
  const world=n=>n.getWorldPosition(new THREE.Vector3());
@@ -76,5 +79,5 @@ export function createGtfpiAssembly(template){
  const floor=box([.44,.009,.17],[0,-.13,.005],mat(0xe6ecec),diagram);
  let disposed=false;
  function update(s,r,phase=null){if(disposed)return;arm.rotation.z=s.closed?0:.45;lampMat.color.setHex(r.receiver===5?0x36b282:r.receiver===0?0x9a5e48:0x668078);for(const [key,c]of Object.entries(cables)){c.mesh.visible=s.wires?.includes(key)??false;c.pulse.visible=!!(c.mesh.visible&&s.power&&r.status==='ready'&&Number.isFinite(phase)&&phase>=0&&phase<=1&&(key==='trip'||key==='common'?s.closed:r.output===5));if(c.pulse.visible)c.pulse.position.copy(c.curve.getPoint(key==='trip'||key==='feedbackGround'?1-phase:phase));}group.userData.closed=s.closed;group.userData.flow=Object.values(cables).some(c=>c.pulse.visible);group.updateMatrixWorld(true);}
- return {group,board,panel,sockets,diagram,relay,receiver,arm,anchors,cables,floor,update,dispose(){if(disposed)return;disposed=true;geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());}};
+ return {group,board,panel,sockets,diagram,relay,sender,receiver,arm,anchors,cables,floor,update,dispose(){if(disposed)return;disposed=true;geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());}};
 }
