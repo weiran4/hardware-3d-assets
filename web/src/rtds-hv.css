@@ -2,3 +2,6 @@
 #rtds-hv-panel .hv-warning{border-left:4px solid #a47b27;background:#fff8e6;padding:12px;font-size:13px}#hv-voltage{font-size:24px}#rtds-hv-panel nav{gap:14px}
 /* On narrow screens keep endpoint controls legible; device names remain in the lesson copy. */
 @media(max-width:600px){#rtds-hv-panel .hv-label{display:none}#rtds-hv-panel .hv-pin{font-size:10px}}
+#hv-scene[data-view="panel"]{height:208px}
+.hv-photo-note{margin:6px 0;font-size:12px}
+@media(max-width:600px){#hv-scene[data-view="panel"]{height:152px}}

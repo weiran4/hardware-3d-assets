@@ -42,3 +42,17 @@ test('runtime WebGL loss stops flow and offers an honest recoverable fallback',a
  await page.locator(id('scene')+' canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2');const extension=gl.getExtension('WEBGL_lose_context');if(!extension)throw Error('Required WebGL loss extension unavailable');extension.loseContext();});
  await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','error');await expect(page.locator(root)).toHaveAttribute('data-playing','false');await expect(page.locator(id('animate'))).toBeDisabled();await expect(page.locator(id('retry'))).toBeVisible();await page.locator(id('retry')).click();await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');await expect(page.locator(id('raw'))).toHaveText('0');await expect(page.locator(id('scene')+' canvas')).toHaveCount(1);
 });
+
+test('Phoenix Contact exterior examples are distinguishable from the separate contact schematic',async({page})=>{
+ for(const [view,width,height] of [['desktop',1440,1050],['mobile',390,844]]){
+  await page.setViewportSize({width,height});await open(page,'#rtds-presentation-14');await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');
+  await expect(page.locator(id('reference-relay'))).toHaveAttribute('href',/2966265$/);
+  await expect(page.locator(id('reference-supply'))).toHaveAttribute('href',/2902991$/);
+  await expect(page.locator(id('schematic'))).toHaveAttribute('data-closed','false');
+  await page.locator(id('example-correct')).click();await page.locator(id('power')).click();await page.locator(id('contact')).click();
+  await expect(page.locator(id('schematic'))).toHaveAttribute('data-closed','true');
+  await expect(page.locator(id('raw'))).toHaveText('0');
+  await mkdir('screenshots',{recursive:true});await page.locator('.digital-visual').screenshot({path:`screenshots/digital-input-phoenix-${view}.png`});
+  await page.locator(id('power')).click();await page.locator(id('page13')).click();await expect(page.locator(id('schematic'))).toBeHidden();
+ }
+});

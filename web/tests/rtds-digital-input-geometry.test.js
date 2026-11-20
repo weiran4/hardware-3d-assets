@@ -29,9 +29,11 @@ test('CH1, WET and GND use bank1 metadata and existing contact geometry',()=>{
  assert.ok(world(a.anchors.input).distanceTo(world(a.anchors.wet))>.01);
  a.dispose();
 });
-test('original relay, controller and field supply are distinct and mode swaps functional terminals',()=>{
+test('photo-grounded exteriors and illustrative controller are distinct and mode swaps functional terminals',()=>{
  const a=assembly();assert.deepEqual(Object.keys(a.devices).sort(),['relay','source','supply']);
- for(const device of Object.values(a.devices)){assert.equal(device.userData.origin,'original-illustrative');assert.ok(meshes(device).length>8);}
+ assert.equal(a.devices.source.userData.origin,'original-illustrative');
+ for(const device of [a.devices.relay,a.devices.supply])assert.equal(device.userData.origin,'original-photo-grounded');
+ for(const device of Object.values(a.devices))assert.ok(meshes(device).length>8);
  a.update(state,ready,.2);const out=world(a.anchors.out),common=world(a.anchors.common);
  assert.equal(a.devices.relay.visible,true);assert.equal(a.devices.source.visible,false);
  assert.equal(a.anchors.out.parent,a.devices.relay);assert.equal(a.anchors.common.parent,a.devices.relay);
@@ -40,12 +42,6 @@ test('original relay, controller and field supply are distinct and mode swaps fu
  assert.equal(a.anchors.out.parent,a.devices.source);assert.equal(a.anchors.common.parent,a.devices.source);
  assert.ok(world(a.anchors.out).distanceTo(out)>.001);assert.ok(world(a.anchors.common).distanceTo(common)>.001);
  a.dispose();
-});
-test('contact closure moves the real relay arm into the fixed contact',()=>{
- const a=assembly();a.update({...state,closed:false},{...ready,raw:1,flow:false},null);a.group.updateMatrixWorld(true);
- const open=world(a.contactTip),fixed=world(a.fixedContact);assert.ok(open.distanceTo(fixed)>.012);
- a.update(state,ready,null);a.group.updateMatrixWorld(true);assert.ok(world(a.contactTip).distanceTo(world(a.fixedContact))<.001);
- assert.ok(world(a.contactTip).distanceTo(open)>.012);a.dispose();
 });
 test('connected cables meet their selected terminal anchors and removed cables disappear',()=>{
  const a=assembly();
@@ -109,5 +105,18 @@ test('wet-input conventional current travels OUT to CH1 and ground to the source
   a.update(wetState,{...ready,raw:1},phase);
   for(const direction of directions){const c=a.cables[direction[0]],terminal=direction[index];assert.equal(c.pulse.visible,true);assert.ok(c.pulse.position.distanceTo(world(a.anchors[terminal]))<1e-8,`${direction[0]} phase ${phase} must be at ${terminal}`);}
  }
+ a.dispose();
+});
+
+test('GTDI dry-contact bench uses photo-grounded Phoenix exteriors and verified terminal identities',()=>{
+ const a=assembly();
+ const {relay,supply}=a.devices;
+ assert.equal(relay.userData.model,'PLC-RSC-24DC/21AU');
+ assert.equal(supply.userData.model,'UNO-PS/1AC/24DC/30W');
+ assert.equal(relay.getObjectByName('terminal-14-NO').userData.role,'NO');
+ assert.equal(relay.getObjectByName('terminal-11-COM').userData.role,'COM');
+ assert.equal(a.anchors.plus.userData.role,'DC+');
+ assert.equal(a.anchors.minus.userData.role,'DC−');
+ assert.ok(!relay.getObjectByName('moving-contact-tip'),'physical relay model must not double as an exposed internal diagram');
  a.dispose();
 });

@@ -6,3 +6,25 @@ for(const mode of ['desktop','mobile','fallback'])test(`HV offline dry wet ${mod
 test('HV rejects mismatched examples and keyboard connects dry mode',async({page})=>{await open(page);for(const [a,b] of [['vp','rp'],['lp','rm']]){await page.locator(q('terminal-'+a)).focus();await page.keyboard.press('Enter');await page.locator(q('terminal-'+b)).focus();await page.keyboard.press('Enter');}await expect(page.locator(q('wires')+' button')).toHaveCount(2);for(const kind of ['drySupply','mismatch']){await page.locator(`[data-hv-example="${kind}"]`).click();await page.locator(q('simulate')).click();await expect(page.locator(root)).toHaveAttribute('data-simulating','false');await expect(page.locator(root)).toHaveAttribute('data-status','unsafe');await expect(page.locator(q('voltage'))).toHaveText('?');}await ready(page,'missing');await expect(page.locator(q('voltage'))).toHaveText('?');await expect(page.locator(root)).toHaveAttribute('data-status','incomplete');});
 test('HV pauses reduced motion and route switching with safe history',async({page})=>{await open(page);await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await ready(page);await page.locator(q('play')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','true');await page.locator(q('play')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','false');await page.locator(q('replay')).click();await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator(root)).toHaveAttribute('data-playing','false');await expect(page.locator(q('play'))).toBeDisabled();await page.emulateMedia({reducedMotion:'no-preference'});await page.locator(q('replay')).click();await page.evaluate(()=>location.hash='#rtds-gtfpi-protection');await expect(page.locator(root)).toBeHidden();await expect(page.locator(root)).toHaveAttribute('data-playing','false');await page.goBack();await expect(page.locator(root)).toBeVisible();await expect(page.locator(root)).toHaveAttribute('data-simulating','true');await expect(page.locator(q('wires')+' button')).toHaveCount(4);});
 test('HV context loss retry preserves one canvas',async({page})=>{await open(page);await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await ready(page);await page.locator(q('play')).click();await page.locator(q('scene')+' canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());await expect(page.locator(root)).toHaveAttribute('data-playing','false');await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','error');await page.locator(q('retry')).click();await expect(page.locator(q('scene'))).toHaveAttribute('data-loaded','true');await expect(page.locator(q('scene')+' canvas')).toHaveCount(1);});
+
+for(const width of [1200,390])test(`HV photographed panel and unobstructed front view ${width}`,async({page})=>{
+ await page.setViewportSize({width,height:880});await open(page);
+ const scene=page.locator(q('scene'));
+ await expect(scene).toHaveAttribute('data-loaded','true');
+ await expect(scene).toHaveAttribute('data-panel-socket-count','48');
+ await expect(page.locator('#hv-panel-photo')).toHaveAttribute('href','https://knowledge.rtds.com/hc/en-us/articles/360034817513-High-Voltage-Interface-Panel');
+ await ready(page,'dry');
+ await page.locator(q('view-panel')).focus();
+ await page.keyboard.press('Enter');
+ await expect(scene).toHaveAttribute('data-view','panel');
+ await expect(page.locator(q('labels'))).toBeHidden();
+ await expect(page.locator(root)).toHaveAttribute('data-simulating','true');
+ await expect(page.locator(q('wires')+' button')).toHaveCount(2);
+ await expect.poll(async()=>Number(await scene.getAttribute('data-triangles'))).toBeGreaterThan(5000);
+ await mkdir('screenshots',{recursive:true});
+ await scene.screenshot({path:`screenshots/hv-photo-panel-${width}.png`});
+ await page.locator(q('view-reset')).click();
+ await expect(scene).toHaveAttribute('data-view','front');
+ await expect(page.locator(q('labels'))).toBeVisible();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(2);
+});
