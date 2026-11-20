@@ -5,3 +5,12 @@
 .blackbox-timeline{height:16px;background:linear-gradient(to right,#e5edf1 0,#e5edf1 96%,white 96%,white 100%);margin:.5rem 0;border:1px solid #879ba6}.blackbox-work{display:block;height:100%;opacity:.8}.blackbox-controls input[type=number]{width:100%;box-sizing:border-box;min-height:36px}
 
 @media(min-width:900px){.blackbox-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.blackbox-budget-panel .blackbox-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.blackbox-inspection{margin:.65rem 0;border:1px solid #ccd9df;border-radius:9px;padding:.35rem}
+.blackbox-view-controls{display:flex;flex-wrap:wrap;gap:.3rem;padding:.25rem}
+.blackbox-view-controls button{min-height:40px;flex:1 1 6rem;padding:.35rem .45rem}
+.blackbox-view-controls button[aria-pressed=true]{color:#fff;background:#193a4c;border-color:#193a4c}
+.blackbox-view-note{font-size:.9rem;line-height:1.45;margin:.3rem .35rem .25rem}
+.blackbox-view-note a{color:#145987;text-underline-offset:.15em}
+
+@media(max-width:650px){.blackbox-stage[data-view]:not([data-view=overview]){height:240px}}
