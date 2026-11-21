@@ -2,21 +2,22 @@ import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {publishedModels} from './rtds-models.js';
+import {createSel2407Exterior,SEL_2407_PHOTO_URL,SEL_2407_TOP_URL} from './rtds-gtsync-sel2407.js';
 
-// Original teaching apparatus is schematic; only NovaCor uses inspected model anchors.
+// Only NovaCor uses real model anchors; the SEL exterior is an unconnected specimen.
 const colors={gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
 async function createSyncScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
  let template;try{template=(await new GLTFLoader().loadAsync(new URL(publishedModels['novacor-2.0'].glb,document.baseURI).href)).scene;}catch(e){renderer.dispose();throw e;}
- const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
- const owned=new Set();let compact=container.clientWidth<600,hands=[],anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
+ const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),exterior=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup,exterior);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
+ const owned=new Set();let compact=container.clientWidth<600,sel=null,selCaption=null,front=false,hands=[],anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
  function own(x){owned.add(x);return x;}
  function box(parent,size,pos,color){const m=new THREE.Mesh(own(new THREE.BoxGeometry(...size)),own(new THREE.MeshStandardMaterial({color,roughness:.62})));m.position.fromArray(pos);parent.add(m);return m;}
  function label(text,pos,width=.24,parent=group){const canvas=document.createElement('canvas');canvas.width=768;canvas.height=96;const c=canvas.getContext('2d');c.fillStyle='#ffffff';c.fillRect(0,0,768,96);c.fillStyle='#193a4c';c.font='bold 56px sans-serif';c.textAlign='center';c.fillText(text,384,61);const texture=own(new THREE.CanvasTexture(canvas));texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(own(new THREE.SpriteMaterial({map:texture,depthTest:false})));sprite.scale.set(width,width/8,1);sprite.position.fromArray(pos);sprite.renderOrder=20;parent.add(sprite);return sprite;}
  function port(parent,key,pos,color){anchors[key]=box(parent,[.012,.009,.008],pos,color);}
  function clearWires(){for(const c of cables){c.mesh.geometry.dispose();c.mesh.material.dispose();c.dot.geometry.dispose();c.dot.material.dispose();}cables=[];wireGroup.clear();signature='';}
- function clearLayout(){clearWires();group.clear();for(const r of owned)r.dispose();owned.clear();anchors={};}
+ function clearLayout(){clearWires();group.clear();exterior.clear();sel=null;selCaption=null;for(const r of owned)r.dispose();owned.clear();anchors={};}
  function find(root,suffix){let result;root.traverse(n=>{if(n.userData.sid?.endsWith('.'+suffix))result=n;});if(!result)throw Error('Confirmed NovaCor anchor unavailable: '+suffix);return result;}
  function apparatus(name,position,count,color){const device=new THREE.Group();device.position.fromArray(position);group.add(device);box(device,[.23,.07,.07],[0,0,0],0xd2dade);box(device,[.222,.055,.004],[0,0,.038],0x243a47);const first=name==='LAN'?0:1;for(let i=0;i<count;i++)port(device,`${name}.p${i+first}`,[-.094+i*.188/Math.max(1,count-1),-.006,.043],color);label(name+' · SCHEMATIC',[0,.056,.04],.24,device);}
 
@@ -30,7 +31,22 @@ async function createSyncScene(container,project){
  label('GTSYNCv2 · SCHEMATIC',[0,.25,.06],.34);
  hands=[];for(const [i,x] of [[0,compact?-.2:-.48],[1,compact?.2:0]]){const pivot=new THREE.Group();pivot.position.set(x,-.12,.06);group.add(pivot);const ring=new THREE.Mesh(own(new THREE.TorusGeometry(.025,.002,6,28)),own(new THREE.MeshBasicMaterial({color:0x627e8f})));pivot.add(ring);const hand=new THREE.Group();pivot.add(hand);box(hand,[.003,.022,.003],[0,.011,.003],i?0x2478ac:0x9a6330);hands.push(hand);label(i?'SIM':'REF',[x,-.17,.065],.12);}
  label('BNC / ST-TIME / RJ45',[0,.18,.07],.27);label('OUT / ST-ETH / GT',[0,-.015,.07],.27);
- group.updateMatrixWorld(true);container.dataset.modelCount='3';container.dataset.anchorCount=String(Object.keys(anchors).length);fit();
+ setPresentation();group.updateMatrixWorld(true);container.dataset.anchorCount=String(Object.keys(anchors).length);fit();
+ }
+ function setPresentation(){
+  const irig=state?.showSel2407===true;
+  if(irig&&!sel){sel=createSel2407Exterior(own);exterior.add(sel);selCaption=label('SEL-2407 · NO WIRES',[0,0,0],.47,exterior);}
+  if(!irig)front=false;
+  if(sel){
+   sel.scale.setScalar(compact?.128:.133);
+   sel.position.set(compact?0:.03,compact?-.668:-.39,0);
+   selCaption.position.copy(sel.position).add(new THREE.Vector3(0,-.045,.025));selCaption.visible=!front;
+  }
+  group.visible=wireGroup.visible=!front;
+  exterior.visible=irig;
+  container.dataset.modelCount=irig?'4':'3';
+  container.dataset.sel2407=irig?(front?'front':'overview'):'hidden';
+  container.setAttribute('aria-label',front?'SEL-2407 独立外观模型，正面视角，不接线':irig?'GTSYNCv2 接线示意与独立未接线的 SEL-2407 外观模型':'GTSYNCv2 外部时源与专用主机链路三维示意');
  }
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
  function buildWires(){const sig=JSON.stringify(state.links);if(sig===signature)return;clearWires();signature=sig;group.updateMatrixWorld(true);
@@ -41,13 +57,28 @@ async function createSyncScene(container,project){
   renderer.render(scene,camera);const points={};for(const key of Object.keys(anchors)){const v=world(key).project(camera);points[key]={x:(v.x*.5+.5)*container.clientWidth,y:(.5-v.y*.5)*container.clientHeight,visible:Math.abs(v.x)<1&&Math.abs(v.y)<1&&v.z>-1&&v.z<1};}project(points);container.dataset.loaded='true';container.dataset.frames=String(++frames);container.dataset.triangles=String(renderer.info.render.triangles);
  }
  function invalidate(){if(!disposed&&active&&!document.hidden&&!frame)frame=requestAnimationFrame(()=>render());}
- function fit(){const width=compact?.65:1.5,height=compact?1.05:.65;const centerY=compact?.15:.10;const distance=Math.max(height,width/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.2;controls.target.set(-.02,centerY,.035);camera.position.set(-.02,centerY+.12,distance);controls.update();invalidate();}
+ function fit(){
+  camera.fov=front?25:36;camera.updateProjectionMatrix();
+  const span=(width,height)=>Math.max(height,width/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
+  if(front&&sel){
+   const distance=span(.86,.246);
+   controls.target.copy(sel.position).add(new THREE.Vector3(0,.073,-.040));
+   camera.position.copy(controls.target).add(new THREE.Vector3(.005,distance*.237,distance));
+  }else{
+   const irig=state?.showSel2407;
+   const width=compact?.65:1.5,height=irig?(compact?1.34:.79):(compact?1.05:.65);
+   const centerY=irig?-.035:(compact?.15:.10);
+   controls.target.set(-.02,centerY,.035);
+   camera.position.set(-.02,centerY+.12,span(width,height)*(irig?1.07:1.2));
+  }
+  controls.update();invalidate();
+ }
  function resize(){if(disposed)return;const w=container.clientWidth,h=container.clientHeight;if(!w||!h)return;const nextCompact=w<600;if(nextCompact!==compact){compact=nextCompact;if(layout)rebuild();}renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();fit();}
  const ro=new ResizeObserver(resize);ro.observe(container);resize();const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else invalidate();};document.addEventListener('visibilitychange',visibility);
  const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('sync-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
  // A single static readiness frame is independent of stale intersection delivery.
  // It does not start animation, and is requested only for the selected lesson.
- return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){state=s;phase=p;if(!layout)rebuild();invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+ return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){const changed=state?.showSel2407!==s.showSel2407;state=s;phase=p;if(!layout)rebuild();else if(changed){setPresentation();fit();}invalidate();},showSel2407Front(value){front=!!value&&state?.showSel2407;setPresentation();fit();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
 }
 
 import {defaultGtsyncBench,evaluateGtsyncBench,calculateGtsyncSkew,describeSyncCorrection} from './rtds-gtsync-bench-state.js';
@@ -55,23 +86,30 @@ export function mountGtsyncBench(root){
  const host=document.createElement('section');host.className='gtsync-bench';root.append(host);
  const choices={source:{pps:'外部 1 PPS',irig:'未调制 IRIG-B B00x',ptp:'PTP v2 外部 Grandmaster',internal:'内部振荡器'},input:{bnc:'BNC 输入','st-time':'ST 时序输入（1 PPS / IRIG-B）','st-ethernet':'ST Ethernet 输入（PTP）',rj45:'RJ45 Ethernet', 'sync-out':'SYNC 输出（错误输入示例）',none:'断开'},medium:{coax:'同轴电缆','st-timing-fiber':'ST 时序光纤','st-ethernet-fiber':'ST Ethernet 光纤',ethernet:'Ethernet',none:'断开'},host:{dedicated:'NovaCor 专用 GTSYNC',gtio:'NovaCor GT1（错误端口）',none:'断开'},hostMedium:{'gt-fiber':'GT 专用光纤',ethernet:'Ethernet（错误介质）',none:'断开'},ptpNetwork:{direct:'直连 Grandmaster','compatible-switch':'已核对兼容的 PTP 交换网络','ordinary-switch':'未核对的普通交换网络'}};
  const names={source:'时间参考',input:'GTSYNCv2 输入端口',medium:'参考输入介质',host:'NovaCor 端口',hostMedium:'主机链路介质',ptpNetwork:'PTP 网络条件'};
- host.innerHTML=`<h3 id="gtsync-bench-heading" tabindex="-1">课件33 · GTSYNCv2 外部时源接线台</h3><p>真实 NovaCor 模型与原创示意时钟/GTSYNCv2；示意盒子的端口位置、比例不是实物接线图。外部参考 → GTSYNCv2，GT → NovaCor 专用 GTSYNC 是两条不同链路。</p><div class="sync-controls">${Object.entries(choices).map(([k,v])=>`<label>${names[k]}<select data-sync="${k}">${Object.entries(v).map(([id,t])=>`<option value="${id}">${t}</option>`).join('')}</select></label>`).join('')}</div><div class="sync-actions"><label><input type="checkbox" data-sync="configured">已完成对应模式配置（离线预设）</label><label><input type="checkbox" data-sync="sntp">1 PPS 有有效 SNTP 时刻</label><label><input type="checkbox" data-sync="holdover">启用 Holdover</label></div><div class="sync-actions"><button data-sync-event="acquire">模拟确认锁定</button><button data-sync-event="loss">断开外部参考</button><button data-sync-event="restore">恢复外部参考</button><button data-sync-play>播放</button><button data-sync-replay>重放</button><button data-sync-step>静态步进</button><button data-sync-retry hidden>重试3D</button></div><output class="sync-status" aria-live="polite"></output><div class="sync-stage" role="img" aria-label="GTSYNCv2 外部时源与专用主机链路三维示意"><p class="sync-loading">正在加载3D…</p></div><p class="sync-link-summary"></p><p class="sync-phase"></p><ul class="sync-issues"></ul><details><summary>GT 主机链路补偿算术</summary><label>光缆长度 m <input data-sync-length type="number" min="0" step="1" value="0"></label><output class="sync-skew"></output><label>同步修正 ns <input data-sync-correction type="number" min="-5000" max="5000" value="0"></label><output class="sync-correction"></output><p>手册 PDF 483：750 ns + 5 ns/m × 长度；软件允许范围需核对，不是测得传播延时，不影响本实验锁定状态。</p></details><details><summary>来源与适用范围</summary><p>课件33；手册 PDF 470–488，专用主机连接471、时源与输入473–479。1 PPS 还需要有效 SNTP 时刻；IRIG-B 为未调制 B00x 并需核对 UTC 字段。ST 时序输入与 ST Ethernet 是不同的物理端口与光学链路，不能因同为 ST 连接器而互换。PTP 使用 Layer 2，并需核对相同 profile、domain 和 peer-delay 条件。BNC 时序口绝不能接 PLC 24 V 输出。PTP 本实验只演示从外部 Grandmaster 接收，不模拟主时钟决策。未展示供电与 SNTP 辅助网络，不表示它们不需要。</p><p>亮点与相位变化仅为状态示意，没有锁定耗时、传播延时或 Holdover 精度保证；不替代厂家配置和电气/光学兼容核对。不依据存在疑点的时间质量表推断精度。</p></details>`;
+ host.innerHTML=`<h3 id="gtsync-bench-heading" tabindex="-1">课件33 · GTSYNCv2 外部时源接线台</h3><p>NovaCor 使用实物模型；接线图中的时源与 GTSYNCv2 是示意，端口位置与比例不能当作实物接线图。外部参考 → GTSYNCv2，GT → NovaCor 专用 GTSYNC 是两条不同链路。</p><div class="sync-controls">${Object.entries(choices).map(([k,v])=>`<label>${names[k]}<select data-sync="${k}">${Object.entries(v).map(([id,t])=>`<option value="${id}">${t}</option>`).join('')}</select></label>`).join('')}</div><div class="sync-actions"><label><input type="checkbox" data-sync="configured">已完成对应模式配置（离线预设）</label><label><input type="checkbox" data-sync="sntp">1 PPS 有有效 SNTP 时刻</label><label><input type="checkbox" data-sync="holdover">启用 Holdover</label></div><div class="sync-actions"><button data-sync-event="acquire">模拟确认锁定</button><button data-sync-event="loss">断开外部参考</button><button data-sync-event="restore">恢复外部参考</button><button data-sync-play>播放</button><button data-sync-replay>重放</button><button data-sync-step>静态步进</button><button data-sync-retry hidden>重试3D</button></div><output class="sync-status" aria-live="polite"></output><div class="sync-stage" role="img" aria-label="GTSYNCv2 外部时源与专用主机链路三维示意"><p class="sync-loading">正在加载3D…</p></div><div class="sync-irig-exterior" hidden><p><strong>SEL-2407 外观参考。</strong> 独立模型不接入仿真线路。显示为静态示意，机身深度为近似，未复刻背面接口。不表示与 GTSYNCv2 的兼容性、接法或同步性能。</p><a href="${SEL_2407_PHOTO_URL}" target="_blank" rel="noopener noreferrer">SEL-2407 厂家实物照片</a> · <a href="${SEL_2407_TOP_URL}" target="_blank" rel="noopener noreferrer">厂家斜视照片</a> <button type="button" data-sync-sel2407-focus aria-pressed="false">看 SEL-2407 正面</button> <button type="button" data-sync-sel2407-reset hidden>返回接线全景</button></div><p class="sync-link-summary"></p><p class="sync-phase"></p><ul class="sync-issues"></ul><details><summary>GT 主机链路补偿算术</summary><label>光缆长度 m <input data-sync-length type="number" min="0" step="1" value="0"></label><output class="sync-skew"></output><label>同步修正 ns <input data-sync-correction type="number" min="-5000" max="5000" value="0"></label><output class="sync-correction"></output><p>手册 PDF 483：750 ns + 5 ns/m × 长度；软件允许范围需核对，不是测得传播延时，不影响本实验锁定状态。</p></details><details><summary>来源与适用范围</summary><p>课件33；手册 PDF 470–488，专用主机连接471、时源与输入473–479。1 PPS 还需要有效 SNTP 时刻；IRIG-B 为未调制 B00x 并需核对 UTC 字段。ST 时序输入与 ST Ethernet 是不同的物理端口与光学链路，不能因同为 ST 连接器而互换。PTP 使用 Layer 2，并需核对相同 profile、domain 和 peer-delay 条件。BNC 时序口绝不能接 PLC 24 V 输出。PTP 本实验只演示从外部 Grandmaster 接收，不模拟主时钟决策。未展示供电与 SNTP 辅助网络，不表示它们不需要。</p><p>亮点与相位变化仅为状态示意，没有锁定耗时、传播延时或 Holdover 精度保证；不替代厂家配置和电气/光学兼容核对。不依据存在疑点的时间质量表推断精度。</p></details>`;
  const stage=host.querySelector('.sync-stage'),loading=host.querySelector('.sync-loading'),play=host.querySelector('[data-sync-play]'),retry=host.querySelector('[data-sync-retry]');
- let state={...defaultGtsyncBench},scene=null,disposed=false,active=false,loadingScene=false,generation=0,playing=false,phase=0,frame=0,last=0,visual=null;
+ const specimen=host.querySelector('.sync-irig-exterior'),focus=host.querySelector('[data-sync-sel2407-focus]'),reset=host.querySelector('[data-sync-sel2407-reset]');
+ let state={...defaultGtsyncBench},scene=null,inspecting=false,disposed=false,active=false,loadingScene=false,generation=0,playing=false,phase=0,frame=0,last=0,visual=null;
+ const replay=host.querySelector('[data-sync-replay]'),step=host.querySelector('[data-sync-step]');
  const media=matchMedia('(prefers-reduced-motion: reduce)');
  const words={miswired:'接线或兼容条件不满足',unconfigured:'已连接，尚未配置',ready:'参考链路就绪，尚未确认锁定',locked:'已锁定外部参考（模拟确认）',holdover:'参考丢失：Holdover 自由运行，不再外部锁定',lost:'外部参考丢失：不能继续声称锁定',internal:'内部参考自由运行，不是 UTC 锁定'};
  function setPlayback(value){playing=value;host.dataset.playing=String(value);play.textContent=value?'暂停':'播放';play.setAttribute('aria-pressed',String(value));}
  function pause(){cancelAnimationFrame(frame);frame=0;last=0;setPlayback(false);}
- function start(){if(!scene||media.matches||!active||document.hidden)return;setPlayback(true);frame=requestAnimationFrame(tick);}
+ function start(){if(!scene||inspecting||media.matches||!active||document.hidden)return;setPlayback(true);frame=requestAnimationFrame(tick);}
  function update(event){const r=evaluateGtsyncBench(state,event);state={...r.nextState};for(const el of host.querySelectorAll('[data-sync]')){const k=el.dataset.sync;if(el.type==='checkbox')el.checked=!!state[k];else el.value=state[k];}host.dataset.status=r.status;host.querySelector('.sync-status').textContent=r.reason==='overflow'?'外部参考丢失且未启用 Holdover：time-step overflow，模拟停止（教学状态）':words[r.status]||r.status;host.querySelector('.sync-issues').replaceChildren(...r.issues.map(x=>{const li=document.createElement('li');li.textContent=x.message;return li;}));
+ const showSel2407=state.source==='irig';specimen.hidden=!showSel2407;stage.classList.toggle('sync-stage-irig',showSel2407);if(!showSel2407)reflectInspection(false);focus.disabled=!scene;
  const links=[];if(state.source!=='internal'&&state.input!=='none'&&state.medium!=='none')links.push({a:'CLOCK.p1',b:'G.'+state.input,network:state.medium,signal:0});if(state.host!=='none'&&state.hostMedium!=='none')links.push({a:'G.GT',b:state.host==='dedicated'?'N.GTSYNC':'N.GT1',network:state.hostMedium,signal:1});
  host.querySelector('.sync-link-summary').textContent=`${choices.source[state.source]} → ${choices.input[state.input]}（${choices.medium[state.medium]}）；GTSYNCv2 GT → ${choices.host[state.host]}（${choices.hostMedium[state.hostMedium]}）。灰色：同轴；金色：ST 时序；蓝色：Ethernet；棕色：GT。`;const enabled={};for(const l of links)enabled[l.network]=r.simulatorRunning;if(!state.available)enabled[state.medium]=false;
- scene?.setActive(active&&!document.hidden);visual={links,enabled,status:r.status,simulatorRunning:r.simulatorRunning,referenceAvailable:state.available&&state.source!=='internal'};scene?.update(visual,phase);host.querySelector('.sync-phase').textContent=r.status==='locked'?'REF 与 SIM 对齐：示意已锁定，不表示锁定时间或精度。':['holdover','internal'].includes(r.status)?'SIM 自由运行：相对外部参考可能漂移；运动幅度仅为定性示意。':'REF / SIM 状态示意：未锁定，不能声称同步。';play.disabled=!scene||media.matches;host.dataset.playing=String(playing);return r;}
+ scene?.setActive(active&&!document.hidden);visual={showSel2407,links,enabled,status:r.status,simulatorRunning:r.simulatorRunning,referenceAvailable:state.available&&state.source!=='internal'};scene?.update(visual,phase);host.querySelector('.sync-phase').textContent=r.status==='locked'?'REF 与 SIM 对齐：示意已锁定，不表示锁定时间或精度。':['holdover','internal'].includes(r.status)?'SIM 自由运行：相对外部参考可能漂移；运动幅度仅为定性示意。':'REF / SIM 状态示意：未锁定，不能声称同步。';reflectPlaybackControls();host.dataset.playing=String(playing);return r;}
  function tick(t){if(!playing||!active||document.hidden){pause();return;}phase=(phase+(last?(t-last)/4000:0))%1;last=t;scene?.update(visual,phase);frame=requestAnimationFrame(tick);}
  host.querySelectorAll('[data-sync]').forEach(el=>el.addEventListener('change',()=>{pause();state[el.dataset.sync]=el.type==='checkbox'?el.checked:el.value;state.history=false;state.stopped=false;phase=0;update();}));
- host.querySelectorAll('[data-sync-event]').forEach(el=>el.onclick=()=>{pause();update(el.dataset.syncEvent);});play.onclick=()=>{if(playing)pause();else start();};host.querySelector('[data-sync-replay]').onclick=()=>{pause();phase=0;update();start();};host.querySelector('[data-sync-step]').onclick=()=>{pause();phase=(phase+.125)%1;update();};
- function failed(){pause();scene?.dispose();scene=null;stage.dataset.loaded='false';loading.hidden=false;loading.textContent='3D不可用，接线与状态检查仍可使用。';retry.hidden=false;update();}
+ host.querySelectorAll('[data-sync-event]').forEach(el=>el.onclick=()=>{pause();update(el.dataset.syncEvent);});play.onclick=()=>{if(playing)pause();else start();};replay.onclick=()=>{if(inspecting)return;pause();phase=0;update();start();};step.onclick=()=>{if(inspecting)return;pause();phase=(phase+.125)%1;update();};
+ function failed(){pause();scene?.dispose();scene=null;reflectInspection(false);stage.removeAttribute('data-sel2407');stage.setAttribute('aria-label','三维示意不可用');stage.dataset.loaded='false';loading.hidden=false;loading.textContent='3D不可用，接线与状态检查仍可使用。';retry.hidden=false;update();}
  async function load(){if(disposed||loadingScene)return;loadingScene=true;const token=++generation;retry.hidden=true;loading.hidden=false;try{const next=await createSyncScene(stage,()=>{loading.hidden=true;});if(disposed||token!==generation){next.dispose();return;}scene=next;update();if(active&&!document.hidden)scene.paintStatic();}catch{if(!disposed)failed();}finally{loadingScene=false;}}
+ function reflectPlaybackControls(){play.disabled=!scene||media.matches||inspecting;replay.disabled=inspecting;step.disabled=inspecting;}
+ function reflectInspection(front){inspecting=front;focus.setAttribute('aria-pressed',String(front));reset.hidden=!front;reflectPlaybackControls();}
+ function specimenView(front){if(!scene||state.source!=='irig')return;pause();reflectInspection(front);scene.showSel2407Front(front);stage.scrollIntoView({block:'center'});}
+ focus.onclick=()=>{specimenView(true);if(!reset.hidden)reset.focus({preventScroll:true});};reset.onclick=()=>{specimenView(false);focus.focus({preventScroll:true});};
  retry.onclick=load;const loss=()=>failed();stage.addEventListener('sync-scene-error',loss);
  const visibility=()=>{if(document.hidden)pause();update();};document.addEventListener('visibilitychange',visibility);const reduce=()=>{pause();update();};media.addEventListener('change',reduce);
  const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)pause();});io.observe(stage);
