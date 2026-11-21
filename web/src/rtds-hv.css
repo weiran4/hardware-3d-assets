@@ -5,3 +5,6 @@
 #hv-scene[data-view="panel"]{height:208px}
 .hv-photo-note{margin:6px 0;font-size:12px}
 @media(max-width:600px){#hv-scene[data-view="panel"]{height:152px}}
+
+#hv-scene[data-view="doble"]{height:315px}
+@media(max-width:600px){#hv-scene[data-view="doble"]{height:231px}}

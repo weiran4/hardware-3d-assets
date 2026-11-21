@@ -3,6 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {publishedModels} from './rtds-models.js';
 import {createInspectionControls,applyInspectionPose} from './rtds-camera.js';
 import {createHvAssembly} from './rtds-hv-geometry.js';
+import {buildDobleF6350eExterior} from './rtds-hv-doble-f6350e.js';
 
 export async function createHvScene(container,onProjection=()=>{}){
  if(!container?.append||!container?.getBoundingClientRect)throw Error('Digital scene requires a DOM container / 场景容器');
@@ -11,17 +12,26 @@ export async function createHvScene(container,onProjection=()=>{}){
  renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
  renderer.domElement.setAttribute('aria-hidden','true');renderer.domElement.style.touchAction='pan-y';
- let template,assembly,controls,observer,disposed=false,active=true,frame=0,panelView=false,frames=0;
+ let template,assembly,doble,controls,observer,disposed=false,active=true,frame=0,viewMode='front',frames=0;
  let latestState={mode:'dry',wires:[],simulating:false,closed:false,external:false},latestResult={status:'off',flow:false},latestPhase=null;
  const releaseTemplate=()=>{
   const geometries=new Set(),materials=new Set(),textures=new Set();
   template?.traverse(n=>{if(n.isMesh){geometries.add(n.geometry);for(const m of Array.isArray(n.material)?n.material:[n.material]){materials.add(m);for(const value of Object.values(m))if(value?.isTexture)textures.add(value);}}});
   for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();
  };
- try{template=(await new GLTFLoader().loadAsync(new URL(info.glb,document.baseURI).href)).scene;assembly=createHvAssembly(template);}
- catch(error){assembly?.dispose();releaseTemplate();renderer.dispose();throw error;}
+ // The photographed device is a view-only sibling, not part of assembly or endpoint projection.
+ const dobleMaterials=new Set(),dobleTextures=new Set();
+ function releaseDoble(){
+  const geometries=new Set();doble?.traverse(n=>{if(n.isMesh)geometries.add(n.geometry);});
+  geometries.forEach(g=>g.dispose());dobleMaterials.forEach(m=>m.dispose());dobleTextures.forEach(t=>t.dispose());
+ }
+ try{
+  template=(await new GLTFLoader().loadAsync(new URL(info.glb,document.baseURI).href)).scene;
+  assembly=createHvAssembly(template);
+  doble=buildDobleF6350eExterior({materials:dobleMaterials,textures:dobleTextures});
+ }catch(error){assembly?.dispose();releaseTemplate();releaseDoble();renderer.dispose();throw error;}
  const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,.001,10);
- scene.add(assembly.group);scene.add(new THREE.HemisphereLight(0xfff8e9,0x8caba5,2.4));
+ scene.add(assembly.group,doble);scene.add(new THREE.HemisphereLight(0xfff8e9,0x8caba5,2.4));
  for(const [intensity,color,position]of [[3.1,0xfff3dc,[-.4,1,1]],[1.6,0xe0edff,[.6,.3,.8]]]){const light=new THREE.DirectionalLight(color,intensity);light.position.fromArray(position);scene.add(light);}
  const reduced=globalThis.matchMedia?.('(prefers-reduced-motion: reduce)');
  const limits={enablePan:false,minZoom:.85,maxZoom:1.8,minAzimuthAngle:-.35,maxAzimuthAngle:.5,minPolarAngle:Math.PI/2-.35,maxPolarAngle:Math.PI/2+.10};
@@ -38,6 +48,7 @@ export async function createHvScene(container,onProjection=()=>{}){
  function render(){
   frame=0;if(!running())return;
   controls.update();assembly.group.updateMatrixWorld(true);camera.updateMatrixWorld(true);renderer.render(scene,camera);
+  setData('renderedWireCount',Object.values(assembly.cables).filter(c=>visible(c.mesh)).length);
   const width=container.clientWidth,height=container.clientHeight,points={};
   for(const [name,node]of Object.entries(assembly.anchors)){
    const world=node.getWorldPosition(new THREE.Vector3()),p=world.clone().project(camera);
@@ -48,7 +59,7 @@ export async function createHvScene(container,onProjection=()=>{}){
  }
  function resize(){
   if(disposed)return;const width=container.clientWidth,height=container.clientHeight;if(!width||!height)return;
-  renderer.setSize(width,height);const aspect=width/height,span=panelView?Math.max(.052,.219/aspect):Math.max(.32,.465/aspect);
+  renderer.setSize(width,height);const aspect=width/height,span=viewMode==='panel'?Math.max(.052,.219/aspect):viewMode==='doble'?Math.max(.355,.48/aspect):Math.max(.32,.465/aspect);
   camera.left=-span*aspect/2;camera.right=span*aspect/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();invalidate();
  }
  function view(action){
@@ -56,11 +67,13 @@ export async function createHvScene(container,onProjection=()=>{}){
   if(['in','out','zoomIn','zoomOut'].includes(action)){
    camera.zoom=THREE.MathUtils.clamp(camera.zoom*(['in','zoomIn'].includes(action)?1.2:1/1.2),limits.minZoom,limits.maxZoom);camera.updateProjectionMatrix();invalidate();return;
   }
-  panelView=action==='panel';
-  assembly.board.visible=assembly.schematic.visible=!panelView;
-  const center=panelView?assembly.panel.position.clone():new THREE.Vector3(0,.003,.024);
-  controls=applyInspectionPose(camera,controls,center,new THREE.Vector3(...(panelView?[.012,.028,1]:[.17,.19,1])),1,renderer.domElement,invalidate);Object.assign(controls,limits);controls.enabled=running();
-  setData('view',panelView?'panel':'front');resize();
+  viewMode=['panel','doble'].includes(action)?action:'front';
+  doble.visible=viewMode==='doble';assembly.group.visible=!doble.visible;
+  assembly.board.visible=assembly.schematic.visible=viewMode==='front';
+  const [center,direction]=viewMode==='panel'?[assembly.panel.position.clone(),[.012,.028,1]]:
+   viewMode==='doble'?[new THREE.Vector3(0,.12,.006),[-.014,.086,1]]:[new THREE.Vector3(0,.003,.024),[.17,.19,1]];
+  controls=applyInspectionPose(camera,controls,center,new THREE.Vector3(...direction),1,renderer.domElement,invalidate);Object.assign(controls,limits);controls.enabled=running();
+  setData('view',viewMode);resize();
  }
  function availability(){
   if(disposed)return;controls.enabled=running();cancelAnimationFrame(frame);frame=0;applyState();setData('active',running());if(running())resize();
@@ -78,7 +91,7 @@ export async function createHvScene(container,onProjection=()=>{}){
   dispose(){
    if(disposed)return;disposed=true;cancelAnimationFrame(frame);observer.disconnect();controls.dispose();
    document.removeEventListener('visibilitychange',availability);reduced?.removeEventListener('change',motionChanged);renderer.domElement.removeEventListener('webglcontextlost',contextLost);
-   assembly.dispose();releaseTemplate();renderer.dispose();renderer.domElement.remove();
+   assembly.dispose();releaseTemplate();releaseDoble();renderer.dispose();renderer.domElement.remove();
    delete container.dataset.loaded;container.dataset.active='false';container.dataset.flow='false';
   }
  };

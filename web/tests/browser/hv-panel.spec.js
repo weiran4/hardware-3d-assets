@@ -28,3 +28,31 @@ for(const width of [1200,390])test(`HV photographed panel and unobstructed front
  await expect(page.locator(q('labels'))).toBeVisible();
  await expect(page.locator(q('wires')+' button')).toHaveCount(2);
 });
+
+for(const width of [1280,390])test(`HV photographed Doble exterior is separate from the 125 V circuit ${width}`,async({page})=>{
+ await page.setViewportSize({width,height:880});await open(page);
+ const scene=page.locator(q('scene')),button=page.locator(q('view-doble'));
+ await expect(scene).toHaveAttribute('data-loaded','true');
+ await expect(page.locator(q('doble-photo'))).toHaveAttribute('href','https://www.doble.com/wp-content/uploads/f6350e@2x.png');
+ await ready(page);await page.locator(q('switch')).click();
+ await expect(page.locator(q('voltage'))).toHaveText('125 V');
+ await button.focus();await page.keyboard.press('Enter');
+ await expect(button).toHaveAttribute('aria-pressed','true');
+ await expect(scene).toHaveAttribute('data-view','doble');
+ await expect(scene).toHaveAccessibleName(/只看外观/);
+ await expect(scene).toHaveAttribute('data-rendered-wire-count','0');
+ await expect(page.locator(q('labels'))).toBeHidden();
+ await expect(page.locator(q('leaders'))).toBeHidden();
+ await expect(page.locator(q('play'))).toBeDisabled();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
+ await expect(page.locator(q('voltage'))).toHaveText('125 V');
+ await expect.poll(async()=>Number(await scene.getAttribute('data-triangles'))).toBeGreaterThan(3000);
+ await mkdir('screenshots',{recursive:true});await scene.screenshot({path:`screenshots/hv-doble-${width}.png`});
+ await page.locator(q('view-panel')).click();await expect(scene).toHaveAttribute('data-view','panel');
+ await page.locator(q('view-reset')).click();await expect(scene).toHaveAttribute('data-view','front');
+ await expect(button).toHaveAttribute('aria-pressed','false');
+ await expect(scene).toHaveAttribute('data-rendered-wire-count','4');
+ await expect(page.locator(q('labels'))).toBeVisible();
+ await expect(page.locator(q('voltage'))).toHaveText('125 V');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
