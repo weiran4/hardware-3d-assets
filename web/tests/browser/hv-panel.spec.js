@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';
+import {test,expect} from '@playwright/test';import {mkdir} from 'node:fs/promises';import {join} from 'node:path';
 const root='#rtds-hv-panel',q=k=>'#hv-'+k;
 async function open(page){await page.goto('./#rtds-presentation-20');await expect(page.locator(root)).toBeVisible();await expect(page.locator(q('heading'))).toBeFocused();}
 async function ready(page,kind='wet'){await page.locator(`[data-hv-example="${kind}"]`).click();await page.locator(q('simulate')).click();}
@@ -54,5 +54,44 @@ for(const width of [1280,390])test(`HV photographed Doble exterior is separate f
  await expect(scene).toHaveAttribute('data-rendered-wire-count','4');
  await expect(page.locator(q('labels'))).toBeVisible();
  await expect(page.locator(q('voltage'))).toHaveText('125 V');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+for(const width of [1280,390])test(`HV photographed SEL-411L specimen separate from circuit ${width}`,async({page})=>{
+ await page.setViewportSize({width,height:880});await open(page);
+ const scene=page.locator(q('scene')),button=page.locator(q('view-sel411l'));
+ await expect(scene).toHaveAttribute('data-loaded','true');
+ await expect(scene).toHaveAttribute('data-sel411l','overview');
+ await expect(page.locator(q('sel411l-photo'))).toHaveAttribute('href',/selinc\.com\/.*411L_Front\.jpeg/);
+ await expect(page.locator(q('sel411l-caption'))).toBeVisible();
+ await ready(page);await page.locator(q('switch')).click();
+ await expect(page.locator(q('voltage'))).toHaveText('125 V');
+ await scene.scrollIntoViewIfNeeded();
+ await expect(scene).toHaveAttribute('data-rendered-wire-count','4');
+ const qa=process.env.HV_PHOTO_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await scene.scrollIntoViewIfNeeded();await scene.screenshot({path:join(qa,`sel411l-overview-${width}.png`)});}
+ await page.locator(q('play')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','true');
+ await button.focus();await page.keyboard.press('Enter');
+ await expect(button).toHaveAttribute('aria-pressed','true');
+ await expect(scene).toHaveAccessibleName(/SEL-411L.*无接线/);
+ await expect(scene).toHaveAttribute('data-sel411l','closeup');
+ await expect(scene).toHaveAttribute('data-view','sel411l');
+ await expect(scene).toHaveAttribute('data-rendered-wire-count','0');
+ await expect(page.locator(q('labels'))).toBeHidden();
+ await expect(page.locator(q('leaders'))).toBeHidden();
+ await expect(page.locator(q('sel411l-caption'))).toBeHidden();
+ await expect(page.locator(root)).toHaveAttribute('data-playing','false');
+ await expect(page.locator(q('play'))).toBeDisabled();await expect(page.locator(q('replay'))).toBeDisabled();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
+ await expect.poll(async()=>Number(await scene.getAttribute('data-triangles'))).toBeGreaterThan(3000);
+ if(qa)await scene.screenshot({path:join(qa,`sel411l-front-${width}.png`)});
+ await page.locator(q('view-reset')).click();
+ await expect(scene).toHaveAttribute('data-view','front');
+ await expect(scene).toHaveAttribute('data-sel411l','overview');
+ await expect(button).toHaveAttribute('aria-pressed','false');
+ await scene.scrollIntoViewIfNeeded();
+ await expect(scene).toHaveAttribute('data-rendered-wire-count','4');
+ await expect(page.locator(q('labels'))).toBeVisible();
+ await expect(page.locator(q('wires')+' button')).toHaveCount(4);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

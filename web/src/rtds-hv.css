@@ -8,3 +8,8 @@
 
 #hv-scene[data-view="doble"]{height:315px}
 @media(max-width:600px){#hv-scene[data-view="doble"]{height:231px}}
+
+#hv-scene[data-view="front"]{height:585px}
+#hv-scene[data-view="sel411l"]{height:287px}
+#hv-sel411l-caption{position:absolute;z-index:2;pointer-events:none;transform:translateX(-50%);white-space:nowrap;border:1px solid #dae5eb;border-radius:999px;background:#fff;color:#36566e;font-weight:650;font-size:11px;padding:3px 7px}
+@media(max-width:600px){#hv-scene[data-view="front"]{height:475px}#hv-scene[data-view="sel411l"]{height:190px}#hv-sel411l-caption{font-size:10px}}
