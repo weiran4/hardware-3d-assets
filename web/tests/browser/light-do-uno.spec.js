@@ -1,0 +1,53 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+
+for(const width of [1280,390])test(`P39 DO has a detached exact Phoenix UNO-PS exterior ${width}`,async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width,height:950});await page.goto('./#rtds-presentation-39');
+ const lab=page.locator('.lightdio-bench'),stage=lab.locator('.lightdio-stage'),control=k=>lab.locator(`[data-lightdio="${k}"]`);
+ const uno=lab.locator('button[data-device-focus="uno"]'),play=lab.locator('[data-lightdio-play]'),step=lab.locator('[data-lightdio-step]');
+ await lab.scrollIntoViewIfNeeded();await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(uno).toHaveCount(0);
+ await control('mode').selectOption('do');await stage.scrollIntoViewIfNeeded();
+ await expect(stage).toHaveAttribute('data-uno-model','phoenix-uno-ps-2902991');
+ await expect(stage).toHaveAttribute('data-device-representations',/"uno":"photo"/);
+ await expect(lab.getByRole('link',{name:/Phoenix.*2902991.*实物/})).toHaveAttribute('href',/phoenixcontact\.com.*120484/);
+ await expect(lab.locator('.lightbench-photo-status[role=status]')).toContainText(/额定 24 V.*未接线/);
+ await lab.locator('[data-lightdio-connect]').click();await stage.scrollIntoViewIfNeeded();
+ await expect(lab).toHaveAttribute('data-status','ready');
+ await expect(lab.locator('.lightdio-reading')).toContainText('输出驱动 · 24 V');
+ const endpoints=async()=>JSON.parse(await stage.getAttribute('data-wire-endpoints'));
+ await expect.poll(async()=>(await endpoints()).length).toBe(8);
+ const old=await endpoints();
+ const xyz=(key)=>{const link=old.find(({a,b})=>a===key||b===key);return (link.a===key?link.start:link.end).map(n=>Number(n.toFixed(6)));};
+ expect(xyz('P.plus')).toEqual(width===390?[-.065,-.55,.06]:[.295,-.15,.06]);
+ expect(xyz('P.common')).toEqual(width===390?[.065,-.55,.06]:[.425,-.15,.06]);
+ const qa=process.env.LIGHT_UNO_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await stage.screenshot({path:`${qa}/uno-overview-${width}.png`});}
+ await play.click();await expect(lab).toHaveAttribute('data-playing','true');
+ await uno.focus();await page.keyboard.press('Enter');
+ await expect(uno).toHaveAttribute('aria-pressed','true');
+ await expect(stage).toHaveAttribute('data-focused-device','uno');await expect(stage).toHaveAttribute('data-wires-visible','false');
+ await expect(stage).toHaveAccessibleName(/2902991.*未接线/);await expect(lab).toHaveAttribute('data-playing','false');
+ await expect(play).toBeDisabled();await expect(step).toBeDisabled();
+ expect(await endpoints()).toEqual(old);
+ if(qa)await stage.screenshot({path:`${qa}/uno-front-${width}.png`});
+ for(const v of ['5','30']){
+  await control('bankVoltage').fill(v);await control('bankVoltage').dispatchEvent('change');
+  await expect(lab.locator('.lightdio-reading')).toContainText('输出驱动 · '+v+' V');
+  await expect(stage).toHaveAttribute('data-focused-device','uno');
+ }
+ await control('bankVoltage').fill('12');await control('bankVoltage').dispatchEvent('change');
+ await expect(lab.locator('.lightdio-reading')).toContainText('输出驱动 · 12 V');
+ await expect(stage).toHaveAttribute('data-focused-device','uno');await expect(stage).toHaveAttribute('data-wires-visible','false');expect(await endpoints()).toEqual(old);
+ await lab.getByRole('button',{name:'查看全部',exact:true}).click();
+ await expect(stage).toHaveAttribute('data-wires-visible','true');await expect(step).toBeEnabled();
+ await uno.click();await control('mode').selectOption('di');
+ await expect(uno).toHaveCount(0);await expect(stage).toHaveAttribute('data-focused-device','all');
+ await control('mode').selectOption('do');await uno.click();
+ await stage.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));
+ await expect(uno).toHaveCount(0);
+ await lab.locator('[data-lightdio-retry]').click();
+ await expect(stage).toHaveAttribute('data-loaded','true');await expect(stage).toHaveAttribute('data-focused-device','all');
+ await expect(stage.locator('canvas')).toHaveCount(1);await expect(control('bankVoltage')).toHaveValue('12');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
