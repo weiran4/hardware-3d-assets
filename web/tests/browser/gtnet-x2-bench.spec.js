@@ -73,3 +73,46 @@ for(const width of [1200,390]) {
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   });
 }
+
+for(const width of [1280,390])test(`P32 detached 5U SEL-421 exterior ${width}`,async({page})=>{
+ test.setTimeout(60000);
+ await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-32');
+ const root=page.locator('#rtds-chapter-5b'),bench=root.locator('.x2-bench'),stage=bench.locator('.network-stage'),focus=bench.locator('[data-sel421-focus]'),reset=bench.locator('[data-sel421-reset]');
+ const play=root.locator('#gtnet-x2-play'),step=root.locator('#gtnet-x2-step'),replay=root.locator('#gtnet-x2-replay');
+ await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage).toHaveAttribute('data-sel421','overview');
+ await stage.scrollIntoViewIfNeeded();
+ await expect(bench.locator('[data-sel421-caption]')).toBeVisible();
+ await expect(bench.locator('[data-sel421-caption]')).toContainText('5U 外观参考 · 未接线');
+ await expect(bench.getByRole('link',{name:/SEL-421.*实物/})).toHaveAttribute('href',/selinc\.com/i);
+ const wires=await stage.getAttribute('data-wires');
+ expect(Number(wires)).toBeGreaterThan(1);
+ const endpoints=await stage.getAttribute('data-ied-anchors');
+ expect(JSON.parse(endpoints)).toEqual({'IED.A':[.51,.035,.07],'IED.B':[.61,.035,.07]});
+ const qa=process.env.X2_PHOTO_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await stage.screenshot({path:`${qa}/sel421-overview-${width}.png`});}
+ await play.click();await expect(root).toHaveAttribute('data-playing','true');
+ await focus.focus();await page.keyboard.press('Enter');
+ await expect(stage).toHaveAttribute('data-sel421','closeup');
+ await expect(stage).toHaveAccessibleName(/SEL-421.*未接线/);
+ await expect(bench.locator('.network-labels')).toBeHidden();
+ await expect(play).toBeDisabled();await expect(step).toBeDisabled();await expect(replay).toBeDisabled();
+ await expect(root).toHaveAttribute('data-playing','false');
+ await expect(stage).toHaveAttribute('data-wires',wires);
+ await expect(stage).toHaveAttribute('data-ied-anchors',endpoints);
+ await stage.scrollIntoViewIfNeeded();
+ await expect(stage).toHaveAttribute('data-rendered-wires','0');
+ if(qa)await stage.screenshot({path:`${qa}/sel421-front-${width}.png`});
+ await reset.click();await expect(stage).toHaveAttribute('data-sel421','overview');await expect(step).toBeEnabled();
+ await focus.click();await root.locator('[data-gtnet-x2-example="prp"]').click();
+ await expect(stage).toHaveAttribute('data-sel421','hidden');await expect(focus).toBeHidden();await expect(step).toBeEnabled();
+ await expect(stage).toHaveAttribute('data-ied-anchors',endpoints);
+ await root.locator('[data-gtnet-x2-example="normal"]').click();await expect(stage).toHaveAttribute('data-sel421','overview');
+ if(width===1280){
+  await focus.click();
+  await stage.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));
+  await expect(focus).toBeDisabled();await expect(stage).toHaveAccessibleName(/不可用/);
+  await bench.locator('[data-retry]').click();await expect(stage).toHaveAttribute('data-sel421','overview');await expect(stage.locator('canvas')).toHaveCount(1);
+ }
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

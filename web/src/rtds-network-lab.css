@@ -2,3 +2,8 @@
 
 .network-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}.network-leaders line{stroke:#4c798d;stroke-width:1}
 .x2-bench{padding:0}.x2-bench .network-stage{height:360px}.x2-live{display:block;padding:9px;border-left:4px solid #458879;background:#f2f7f8;min-height:45px}.x2-bench .network-labels button{font-size:10px}
+
+.x2-sel421-tools p{font-size:.88rem;margin:.35rem 0 .75rem}
+.x2-bench [data-sel421-caption]{position:absolute;pointer-events:none;z-index:2;transform:translateX(-50%);background:white;border:1px solid #dae5eb;border-radius:999px;color:#34536b;font-size:11px;font-weight:650;white-space:nowrap;padding:4px 8px}
+.x2-bench .network-stage[data-sel421="closeup"]{height:290px}
+@media(max-width:600px){.x2-bench .network-stage[data-sel421="closeup"]{height:222px}.x2-bench [data-sel421-caption]{font-size:10px}}
