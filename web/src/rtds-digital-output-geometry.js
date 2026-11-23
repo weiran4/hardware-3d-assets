@@ -32,10 +32,11 @@ export function createOutputAssembly(template,bankNumber=1){
  const needle=new THREE.Group();needle.position.set(-.009,.014,.036);load.add(needle);box([.0012,.017,.001],[0,.0085,0],red,needle);
  const indicator=cylinder(.004,.002,[.031,.025,.032],material(0x657b70),load);
  for(const x of [-.043,.043])for(const y of [-.038,.040])cylinder(.002,.002,[x,y,.025],metal,load);
- box([.096,.060,.044],[0,0,0],metal,supply);box([.015,.061,.046],[-.041,0,.001],ink,supply);box([.071,.048,.002],[.006,0,.024],paint,supply);
- box([.039,.016,.003],[-.003,.009,.026],ink,supply);box([.027,.008,.001],[-.003,.009,.028],material(0x719e8d,{emissive:0x173b2c,emissiveIntensity:.2}),supply);
- const supplyLed=cylinder(.0025,.002,[.026,.010,.027],material(0x657b70),supply);
- for(let i=0;i<7;i++)box([.036,.0012,.002],[.002,-.004-i*.0026,.026],metal,supply);
+ // Flat electrical teaching tile; retain exact original external-source anchors.
+ const tile=material(0xa0b9c3);
+ box([.103,.048,.004],[0,0,.011],tile,supply);
+ for(const y of [-.016,.014])box([.043,.0018,.001],[.020,y,.014],ink,supply);
+ const supplyLed=cylinder(.0025,.002,[-.022,0,.016],material(0x657b70),supply);
  function terminal(parent,pos,color,name){box([.014,.015,.013],[pos[0]-.003,pos[1],pos[2]-.005],green,parent);cylinder(.0032,.002,pos,metal,parent);box([.004,.0008,.0008],[pos[0],pos[1],pos[2]+.0011],ink,parent);const ring=mesh(new THREE.TorusGeometry(.005,.001,6,20),color,parent);ring.position.fromArray([pos[0],pos[1],pos[2]+.001]);const a=node([pos[0],pos[1],pos[2]+.002],parent,name);a.userData.mapping='functional-illustration';return a;}
  anchors.loadIn=terminal(load,[.048,.015,.034],blue,'loadIn');anchors.loadReturn=terminal(load,[.048,-.025,.034],ink,'loadReturn');anchors.plus=terminal(supply,[.048,.014,.029],red,'plus');anchors.minus=terminal(supply,[.048,-.016,.029],ink,'minus');
  anchors.loadLabel=node([-.112+shift,.110,.024]);anchors.supplyLabel=node([-.112+shift,-.108,.024]);anchors.boardLabel=node([.102,.123,.015]);

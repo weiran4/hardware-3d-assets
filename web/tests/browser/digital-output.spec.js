@@ -20,3 +20,48 @@ test('GTDO reduced motion and background stop circuit animation',async({page})=>
 test('GTDO context loss safely stops and retry preserves circuit',async({page})=>{await open(page);await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');await page.locator(id('example-correct')).click();await page.locator(id('power')).click();await page.locator(id('logic')).click();await page.locator(id('animate')).click();await page.locator(id('scene')+' canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','error');await expect(page.locator(root)).toHaveAttribute('data-playing','false');await page.locator(id('retry')).click();await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');await expect(page.locator(id('current'))).toHaveText('24 mA');await expect(page.locator(id('scene')+' canvas')).toHaveCount(1);});
 test('GTDO scoped styling and narrow layout keep controls legible',async({page})=>{await open(page);const b=page.locator(id('power'));await expect(b).toHaveCSS('border-radius','5px');await expect(b).toHaveCSS('min-height','36px');await page.setViewportSize({width:320,height:720});await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.locator(id('scene')).scrollIntoViewIfNeeded();await mkdir('screenshots',{recursive:true});await page.locator(root).screenshot({path:'screenshots/digital-output-narrow.png'});});
 test('mobile playback brings the offscreen 3D circuit back before starting',async({page})=>{await page.setViewportSize({width:390,height:844});await open(page);await expect(page.locator(id('scene'))).toHaveAttribute('data-loaded','true');await page.locator(id('example-correct')).click();await page.locator(id('power')).click();await page.locator(id('logic')).click();await page.locator(id('animate')).evaluate(b=>b.scrollIntoView({block:'start'}));await expect(page.locator(id('scene'))).toHaveAttribute('data-active','false');await page.locator(id('animate')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','true');await expect(page.locator(id('scene'))).toHaveAttribute('data-active','true');const box=await page.locator(id('scene')).boundingBox();expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(844);});
+
+for(const width of [1280,390])test(`GTDO exact unconnected DP832 exterior ${width}`,async({page})=>{
+ await page.setViewportSize({width,height:880});await open(page,'#rtds-presentation-16');
+ const stage=page.locator(id('scene'));const eye=page.locator(id('view-dp832'));
+ await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage).toHaveAttribute('data-dp832','overview');
+ await expect(page.locator(id('dp832-photo'))).toHaveAttribute('href',/Rigol_DP832/);
+ await expect(page.locator(id('dp832-caption'))).toContainText('未接线');
+ await stage.scrollIntoViewIfNeeded();
+ await expect(page.locator(id('dp832-caption'))).toBeVisible();
+ await page.locator(id('both-correct')).click();
+ await expect(stage).toHaveAttribute('data-bank-count','2');
+ await page.locator(id('power')).click();await page.locator(id('logic')).click();
+ await expect(page.locator(id('current'))).toHaveText('12 mA');
+ await stage.scrollIntoViewIfNeeded();
+ await expect(stage).toHaveAttribute('data-rendered-wire-count','8');
+ await expect(stage).toHaveAttribute('data-wire-count','4');await expect(stage).toHaveAttribute('data-bank2-wire-count','4');
+ const state=await page.locator(id('bank-results')).textContent();
+ const qa=process.env.GTDO_PHOTO_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await stage.screenshot({path:`${qa}/dp832-overview-${width}.png`});}
+ if(width===390){await page.locator(id('animate')).evaluate(b=>b.scrollIntoView({block:'start'}));await expect(stage).toHaveAttribute('data-active','false');}
+ await page.locator(id('animate')).click();await expect(page.locator(root)).toHaveAttribute('data-playing','true');
+ await eye.focus();await page.keyboard.press('Enter');
+ await expect(stage).toHaveAttribute('data-dp832','closeup');
+ await expect(stage).toHaveAccessibleName(/DP832.*未接线/);
+ await stage.scrollIntoViewIfNeeded();await expect(stage).toHaveAttribute('data-rendered-wire-count','0');
+ await expect(page.locator(root)).toHaveAttribute('data-playing','false');
+ await expect(eye).toHaveAttribute('aria-pressed','true');await expect(page.locator(id('labels'))).toBeHidden();
+ await expect(page.locator(id('animate'))).toBeDisabled();await expect(page.locator(id('replay'))).toBeDisabled();await expect(page.locator(id('step'))).toBeDisabled();
+ await expect(stage).toHaveAttribute('data-wire-count','4');await expect(stage).toHaveAttribute('data-bank2-wire-count','4');await expect(page.locator(id('bank-results'))).toHaveText(state);
+ if(qa)await stage.screenshot({path:`${qa}/dp832-front-${width}.png`});
+ await page.locator(id('view-reset')).click();await expect(stage).toHaveAttribute('data-dp832','overview');await expect(eye).toHaveAttribute('aria-pressed','false');await expect(page.locator(id('labels'))).toBeVisible();
+ await stage.scrollIntoViewIfNeeded();await expect(stage).toHaveAttribute('data-rendered-wire-count','8');
+ await expect(page.locator(id('bank-results'))).toHaveText(state);await expect(page.locator(id('current'))).toHaveText('12 mA');
+ if(width===1280){
+  await eye.click();await expect(stage).toHaveAttribute('data-dp832','closeup');
+  await stage.locator('canvas').evaluate(c=>c.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext());
+  await expect(stage).toHaveAttribute('data-loaded','error');await expect(eye).toBeDisabled();
+  await page.locator(id('retry')).click();await expect(stage).toHaveAttribute('data-dp832','overview');
+  await expect(stage.locator('canvas')).toHaveCount(1);await expect(page.locator(id('current'))).toHaveText('12 mA');
+ }
+ await page.locator(id('power')).click();await eye.click();await expect(stage).toHaveAttribute('data-dp832','closeup');
+ await page.locator(id('page17')).click();await expect(stage).toHaveAttribute('data-page','17');await expect(stage).toHaveAttribute('data-dp832','overview');await expect(eye).toHaveAttribute('aria-pressed','false');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

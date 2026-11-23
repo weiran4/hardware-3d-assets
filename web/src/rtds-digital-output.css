@@ -15,3 +15,8 @@
 .output-bank-controls button{padding:8px;border:1px solid #668b7c;background:white;border-radius:6px}
 .output-bank-controls button[aria-pressed="true"]{background:#d3e9de;border:2px solid #27674e}
 #output-bank-results{font-variant-numeric:tabular-nums;line-height:1.6}
+
+#output-scene[data-view="front"]{height:530px}
+#output-scene[data-view="dp832"]{height:315px}
+#output-dp832-caption{position:absolute;z-index:2;pointer-events:none;transform:translateX(-50%);white-space:nowrap;border:1px solid #dae5eb;border-radius:999px;background:#fff;color:#36566e;font-weight:650;font-size:11px;padding:4px 7px}
+@media(max-width:600px){#output-scene[data-view="front"]{height:500px}#output-scene[data-view="dp832"]{height:221px}#output-dp832-caption{font-size:10px}}
