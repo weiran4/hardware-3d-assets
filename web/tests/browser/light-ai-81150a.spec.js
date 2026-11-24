@@ -1,0 +1,46 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+
+for(const width of [1280,390])test('P39 Light AI shows a detached Agilent 81150A Option 002 '+width,async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-39');
+ const b=page.locator('.lightbench-bench'),s=b.locator('.lightbench-stage'),pick=k=>b.locator(`[data-lightbench="${k}"]`);
+ const focus=b.locator('[data-device-focus="generator"]'),scope=b.locator('[data-device-focus="scope"]'),all=b.getByRole('button',{name:'查看全部',exact:true}),connect=b.locator('[data-lightbench-connect]'),play=b.locator('[data-lightbench-play]'),step=b.locator('[data-lightbench-step]'),replay=b.locator('[data-lightbench-replay]');
+ const ref=b.getByRole('link',{name:/81150A.*实物照片/});
+ await s.scrollIntoViewIfNeeded();await expect(s).toHaveAttribute('data-photo-status','ready');await expect(focus).toHaveCount(0);await expect(scope).toBeVisible();
+ await pick('mode').selectOption('ai');await s.scrollIntoViewIfNeeded();
+ await expect(s).toHaveAttribute('data-generator-model','81150A-option002-visual-exterior');
+ await expect(s).toHaveAttribute('data-device-representations',/"generator":"photo"/);
+ await expect(ref).toHaveAttribute('href','https://i.ebayimg.com/images/g/COcAAOSwPu9mNu6u/s-l1600.webp');
+ await expect(b.locator('.lightbench-photo-status[role=status]')).toContainText(/81150A.*未接线.*BNC/);
+ await expect(scope).toHaveCount(0);await expect(pick('resistance')).toBeDisabled();
+ await connect.click();await s.scrollIntoViewIfNeeded();await expect(b).toHaveAttribute('data-status','ready');await expect(b.locator('.lightbench-direction')).toContainText('发生器 → Light差分AI');
+ await expect(s).toHaveAttribute('data-wires','5');
+ const endpoints=async()=>JSON.parse(await s.getAttribute('data-wire-endpoints'));
+ await expect.poll(async()=>(await endpoints()).length).toBe(5);
+ const old=await endpoints(),y=width===390?.12:-.1,x=width===390?0:-.36;
+ expect(old.map(({a,b})=>[a,b])).toEqual([['L.topI2','L.bottomI2'],['L.ai','T.signal'],['T.signal','E.signal'],['L.ai','T.return'],['T.return','E.return']]);
+ expect(old[1].end.map(n=>+n.toFixed(6))).toEqual([+(x-.07).toFixed(6),y,.15]);
+ expect(old[3].end.map(n=>+n.toFixed(6))).toEqual([+(x+.07).toFixed(6),y,.15]);
+ const ex=width===390?0:.36,ey=width===390?-.36:.04;
+ expect(old[2].end.map(n=>+n.toFixed(6))).toEqual([+(ex-.055).toFixed(6),ey,.10]);
+ expect(old[4].end.map(n=>+n.toFixed(6))).toEqual([+(ex+.055).toFixed(6),ey,.10]);
+ const links=JSON.parse(await s.getAttribute('data-links'));expect(links.slice(1).every(l=>l.reverse)).toBe(true);
+ const qa=process.env.LIGHT_81150A_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await s.screenshot({path:`${qa}/81150a-overview-${width}.png`});}
+ await play.click();await expect(b).toHaveAttribute('data-playing','true');
+ await focus.focus();await page.keyboard.press('Enter');
+ await expect(focus).toHaveAttribute('aria-pressed','true');await expect(s).toHaveAccessibleName(/81150A.*未接线/);
+ await expect(s).toHaveAttribute('data-wires-visible','false');await expect(b).toHaveAttribute('data-playing','false');for(const button of [play,step,replay])await expect(button).toBeDisabled();
+ expect(await endpoints()).toEqual(old);
+ if(qa)await s.screenshot({path:`${qa}/81150a-closeup-${width}.png`});
+ await pick('channel').selectOption('12');await expect(b.locator('.lightbench-reading')).toContainText('pin25');await expect(focus).toHaveAttribute('aria-pressed','true');
+ await pick('paired').uncheck();await expect(b).toHaveAttribute('data-status','blocked');await expect(s).toHaveAttribute('data-wires-visible','false');await expect.poll(async()=>(await endpoints()).length).toBe(3);await pick('paired').check();
+ await all.click();await expect(s).toHaveAttribute('data-wires-visible','true');await expect(step).toBeEnabled();await step.click();await expect(s).toHaveAttribute('data-phase','0.25');expect(await endpoints()).toEqual(old);
+ await focus.click();await pick('mode').selectOption('ao');
+ await expect(focus).toHaveCount(0);await expect(ref).toHaveCount(0);await expect(s).not.toHaveAttribute('data-generator-model',/.+/);await expect(s).toHaveAttribute('data-focused-device','all');await expect(scope).toBeVisible();
+ await pick('mode').selectOption('ai');await focus.click();
+ await s.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));
+ await expect(s).toHaveAttribute('data-loaded','false');await expect(s).not.toHaveAccessibleName(/81150A/);
+ await b.locator('[data-lightbench-retry]').click();await expect(s).toHaveAttribute('data-focused-device','all');await expect(s).toHaveAttribute('data-loaded','true');await expect(s.locator('canvas')).toHaveCount(1);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
