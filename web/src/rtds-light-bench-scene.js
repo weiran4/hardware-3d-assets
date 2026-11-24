@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import {createDS1054Z,ds1054zDatasheet} from './rtds-ds1054z-model.js';
 import {placeSiemensPlc,siemensReference} from './rtds-digital-input-plc.js';
 import {placePhoenixSupplyExterior,phoenixReferences} from './rtds-digital-input-devices.js';
+import {buildRh25Exterior,rh25Reference} from './rtds-light-rh25.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 const ds1054zFrontPhoto='https://cdn-reichelt.de/bilder/web/xxl_ws/D100/DS1054Z_01.png';
@@ -12,7 +13,7 @@ const colors={sync:0xa16929,data:0x2178b4,power:0x7650a2,signal:0xb45749,return:
 export async function createLightBenchScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
- const leases=new Map();let photoAssets={assets:{},errors:{}},photoSlots=[],deviceTargets=new Map(),focusedDevice=null,toolbarSignature='',scopeModel=null,plcModel=null,unoModel=null;
+ const leases=new Map();let photoAssets={assets:{},errors:{}},photoSlots=[],deviceTargets=new Map(),focusedDevice=null,toolbarSignature='',scopeModel=null,plcModel=null,unoModel=null,rh25Model=null;
  const toolbar=document.createElement('div');toolbar.className='lightbench-photo-tools';toolbar.setAttribute('role','group');toolbar.setAttribute('aria-label','设备观察与模型状态');container.insertAdjacentElement('afterend',toolbar);
  const owned=new Set();let compact=container.clientWidth<600,anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
@@ -46,7 +47,7 @@ export async function createLightBenchScene(container,project){
  function clearLayout(){clearWires();group.clear();for(const r of owned)r.dispose();owned.clear();anchors={};photoSlots=[];deviceTargets.clear();}
 
  function rebuild(){
- clearLayout();layout=1;delete container.dataset.scopeModel;delete container.dataset.plcModel;delete container.dataset.unoModel;
+ clearLayout();layout=1;delete container.dataset.scopeModel;delete container.dataset.plcModel;delete container.dataset.unoModel;delete container.dataset.rh25Model;
  if(state?.mode==='udp'){rebuildUdp();return;}
  if(state?.mode==='network'){rebuildNetwork();return;}
  const digital=['di','do'].includes(state?.mode);
@@ -91,14 +92,19 @@ export async function createLightBenchScene(container,project){
   port(device,'E.signal',[-.055,-.06,.10],0xcb6c51);port(device,'E.return',[.055,-.06,.10],0x4c6177);
   label('LOGICAL PLC OUTPUT · '+(state.reading||'NO SIGNAL'),[0,-.026,.095],.34,device,true);
   label('SIGNAL        RETURN',[0,-.095,.105],.23,device,true);
- }else{
- device.position.set(ex,ey,0);box(device,[.30,.18,.14],[0,0,0],0xdce3e5);box(device,[.28,.16,.008],[0,0,.075],0x2c4b58);box(device,[.15,.08,.009],[-.045,.015,.09],0x76bec6);for(let i=0;i<3;i++)box(device,[.025,.018,.012],[.105,-.035+i*.035,.09],0xaabac0);port(device,'E.signal',[-.055,-.06,.10],0xcb6c51);port(device,'E.return',[.055,-.06,.10],0x4c6177);
- if(state?.mode==='do'){
- box(device,[.16,.055,.02],[-.045,.015,.11],0xb88a52);
- for(let i=0;i<4;i++)box(device,[.009,.055,.004],[-.10+i*.035,.015,.122],[0x6c4137,0x191919,0xab4037,0xc7a257][i]);
- label(state?.reading||'NO SIGNAL',[0,-.115,.105],.29,device);
- }else label(state?.reading||'NO SIGNAL',[-.045,.015,.105],.15,device);
- label(state?.mode==='di'?'ACTIVE PLC OUTPUT · SCHEMATIC':state?.mode==='do'?'RESISTIVE LOAD · SCHEMATIC':'SIGNAL GENERATOR · SCHEMATIC',[0,.14,.08],.53,device);
+ }else if(state?.mode==='do'){
+  // This plate is the ideal resistor abstraction; the specimen has no anchors.
+  device.name='ideal-do-load-nodes';device.position.set(ex,ey,0);
+  box(device,[.233,.031,.012],[0,-.06,.085],0xa2bcbf);
+  port(device,'E.signal',[-.055,-.06,.10],0xcb6c51);port(device,'E.return',[.055,-.06,.10],0x4c6177);
+  label('IDEAL RESISTIVE LOAD · '+(state.reading||'NO SIGNAL'),[0,-.023,.107],.355,device,true);
+  label('SIGNAL         RETURN',[0,-.092,.108],.21,device,true);
+  rh25Model??=buildRh25Exterior();
+  const rh25=rh25Model.group,rx=compact?.228:.578,ry=compact?-.193:.202;
+  rh25.position.set(rx,ry,0);rh25.scale.setScalar(4.15);rh25.rotation.set(.63,-.21,-.09);group.add(rh25);
+  container.dataset.rh25Model=rh25.name;
+  photoSlots.push({kind:'rh25',host:rh25,id:'rh25',name:'Vishay Dale RH-25 外观'});
+  label('RH-25 · 未接线',[rx,ry-.067,.12],.215,group,true);
  }
  if(state?.mode==='do'){
  // Preserve both original logic anchors exactly, on a separate flat teaching plate.
@@ -115,7 +121,7 @@ export async function createLightBenchScene(container,project){
  label('UNO 24 V · 未接线',[sx,sy-.125,.105],.265,group,true);
  port(terminal,'T.supply',[0,0,.03],0x7650a2);label('BANK +',[0,.05,.03],.10,terminal);
  }
- applyPhotoDevices();group.updateMatrixWorld(true);container.dataset.modelCount=state?.mode==='do'?'5':['di','ao'].includes(state?.mode)?'4':'3';container.dataset.mode=state?.mode||'ao';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
+ applyPhotoDevices();group.updateMatrixWorld(true);container.dataset.modelCount=state?.mode==='do'?'6':['di','ao'].includes(state?.mode)?'4':'3';container.dataset.mode=state?.mode||'ao';container.dataset.anchorScope='logical-groups-no-pin-coordinates';fit();
  }
  function rebuildUdp(){
  const lx=compact?0:-.36,ly=compact?.32:.10,ex=compact?0:.36,ey=compact?-.30:.10;
@@ -149,7 +155,7 @@ export async function createLightBenchScene(container,project){
  function applyPhotoDevices(){
  const statuses=[],representations={};
  for(const slot of photoSlots){
-  if(['scope','plc','uno'].includes(slot.kind)){
+  if(['scope','plc','uno','rh25'].includes(slot.kind)){
    representations[slot.id]='photo';statuses.push(slot.name+'：照片参考外观');
    deviceTargets.set(slot.id,{...slot,replaced:true});continue;
   }
@@ -164,12 +170,15 @@ export async function createLightBenchScene(container,project){
  if(!deviceTargets.has(focusedDevice))focusedDevice=null;
  const nextToolbarSignature=JSON.stringify([representations,photoSlots.map(slot=>[slot.id,slot.name])]);if(nextToolbarSignature===toolbarSignature)return;toolbarSignature=nextToolbarSignature;
  const toolbarHadFocus=toolbar.contains(document.activeElement),previousFocus=document.activeElement?.dataset?.deviceFocus;
- toolbar.replaceChildren();const status=document.createElement('p');status.className='lightbench-photo-status';status.setAttribute('role','status');status.textContent=statuses.join('；')+'。设备可分别放大，显示比例不统一；放大时隐藏其他设备和连线。'+(state?.mode==='ao'?'DS1054Z 仅供外观对照；信号及配对 Return 接到独立的逻辑输入，不对应示波器实体端口。等效负载仅用于仿真计算，不是 DS1054Z 的设置。':state?.mode==='di'?'Siemens 仅作静态外观参考，未接线，背面未还原。外设连线终止于独立逻辑节点，不对应 PLC 实体端子，也不确认设备兼容性。':state?.mode==='do'?'Phoenix UNO-PS 2902991 额定 24 V，外观模型未接线，指示灯静态。实验的 5–30 V 参数只改变独立的理想电源，不控制该实物，也不表示端子或兼容性。':'外设连线是功能指示，不是插入动作。GBH/IRC若显示防尘帽，端点只标示帽位。');toolbar.append(status);
+ toolbar.replaceChildren();const status=document.createElement('p');status.className='lightbench-photo-status';status.setAttribute('role','status');status.textContent=statuses.join('；')+'。设备可分别放大，显示比例不统一；放大时隐藏其他设备和连线。'+(state?.mode==='ao'?'DS1054Z 仅供外观对照；信号及配对 Return 接到独立的逻辑输入，不对应示波器实体端口。等效负载仅用于仿真计算，不是 DS1054Z 的设置。':state?.mode==='di'?'Siemens 仅作静态外观参考，未接线，背面未还原。外设连线终止于独立逻辑节点，不对应 PLC 实体端子，也不确认设备兼容性。':state?.mode==='do'?'Phoenix UNO-PS 2902991 额定 24 V，外观模型未接线，指示灯静态。实验的 5–30 V 参数只改变独立的理想电源，不控制该实物，也不表示端子或兼容性。Vishay Dale RH-25 也是静态外观参考，未接线；不代表实验阻值、功率、散热条件或实物适用性。':'外设连线是功能指示，不是插入动作。GBH/IRC若显示防尘帽，端点只标示帽位。');toolbar.append(status);
  const sources={light:['NovaCor Light','22241195047959-NovaCor-Light'],gbh:['GBH V3','360034815313-Global-Bus-Hub'],irc:['IRC Switch V2','360034814853-IRC-Switch']};const refs=document.createElement('p');refs.className='lightbench-photo-status';refs.append('外观参考：');for(const kind of new Set(photoSlots.map(slot=>slot.kind))){const link=document.createElement('a');if(kind==='plc'){
   link.href=siemensReference.document;link.textContent='Siemens '+siemensReference.sku+' 官方实物照片（PDF 封面）';link.target='_blank';link.rel='noopener';refs.append(link);continue;
  }if(kind==='uno'){
   link.href=phoenixReferences.supply.photo;link.textContent='Phoenix Contact 2902991 厂家实物照片';link.target='_blank';link.rel='noopener noreferrer';refs.append(link);
   const details=link.cloneNode();details.href=phoenixReferences.supply.url;details.textContent=' · 厂家规格';refs.append(details);continue;
+ }if(kind==='rh25'){
+  link.href=rh25Reference.photo;link.textContent=rh25Reference.model+' 同型号实物照片';link.target='_blank';link.rel='noopener noreferrer';refs.append(link);
+  const drawing=link.cloneNode();drawing.href=rh25Reference.document;drawing.textContent=' · RH-25 厂家尺寸资料';refs.append(drawing);continue;
  }link.href=kind==='scope'?ds1054zFrontPhoto:'https://knowledge.rtds.com/hc/en-us/articles/'+sources[kind][1];link.textContent=kind==='scope'?'Rigol DS1054Z 同型号正面实物照（Reichelt）':sources[kind][0]+' 官方资料 ';link.target='_blank';link.rel='noopener';refs.append(link);if(kind==='scope'){const alt=link.cloneNode();alt.href=ds1054zDatasheet;alt.textContent=' · Rigol 系列规格表';refs.append(alt);}}toolbar.append(refs);
  if(photoSlots.some(slot=>photoAssets.errors[slot.kind])){const retry=document.createElement('button');retry.textContent='重试外观模型';retry.onclick=()=>{for(const kind of new Set(photoSlots.map(slot=>slot.kind))){if(!photoAssets.errors[kind])continue;leases.get(kind)?.release();leases.delete(kind);delete photoAssets.errors[kind];delete photoAssets.assets[kind];requestPhotoAsset(kind,true);}rebuild();};toolbar.append(retry);}
  const all=document.createElement('button');all.textContent='查看全部';all.onclick=()=>{focusedDevice=null;fit();};toolbar.append(all);
@@ -182,7 +191,7 @@ export async function createLightBenchScene(container,project){
   container.dataset.focusedDevice=id;
   container.dispatchEvent(new CustomEvent('lightbench-device-view',{detail:{id}}));
  }
- function focusDevice(){const target=deviceTargets.get(focusedDevice);if(!target)return false;for(const child of group.children)child.visible=child===target.host;wireGroup.visible=false;container.dataset.wiresVisible='false';group.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(target.host),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());const distance=Math.max(size.y,size.x/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.08+size.z/2;controls.target.copy(center);const scope=target.kind==='scope',plc=target.kind==='plc',uno=target.kind==='uno';camera.position.set(center.x+(scope?distance*.10:plc?distance*.15:uno?distance*.091:0),center.y+(scope?distance*.12:plc?distance*.48:uno?distance*.474:.025),center.z+distance*(plc?1.08:uno?1.05:1));controls.update();for(const button of toolbar.querySelectorAll('[data-device-focus]'))button.setAttribute('aria-pressed',String(button.dataset.deviceFocus===focusedDevice));reportDeviceView(focusedDevice);invalidate();return true;}
+ function focusDevice(){const target=deviceTargets.get(focusedDevice);if(!target)return false;for(const child of group.children)child.visible=child===target.host;wireGroup.visible=false;container.dataset.wiresVisible='false';group.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(target.host),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());const distance=Math.max(size.y,size.x/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.08+size.z/2;controls.target.copy(center);const scope=target.kind==='scope',plc=target.kind==='plc',uno=target.kind==='uno',rh25=target.kind==='rh25';camera.position.set(center.x+(scope?distance*.10:plc?distance*.15:uno?distance*.091:rh25?distance*.105:0),center.y+(scope?distance*.12:plc?distance*.48:uno?distance*.474:rh25?distance*1.14:.025),center.z+distance*(plc?1.08:uno?1.05:1));controls.update();for(const button of toolbar.querySelectorAll('[data-device-focus]'))button.setAttribute('aria-pressed',String(button.dataset.deviceFocus===focusedDevice));reportDeviceView(focusedDevice);invalidate();return true;}
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
  function buildWires(){const sig=JSON.stringify(state.links);if(sig===signature)return;clearWires();signature=sig;group.updateMatrixWorld(true);
   state.links.forEach((link,i)=>{const a=world(link.a),b=world(link.b);if(!a||!b)return;const color=colors[link.network]||0xc64b40;const lift=Math.max(a.z,b.z)+.10+(i%7)*.012;const curve=new THREE.CatmullRomCurve3([a,a.clone().add(new THREE.Vector3(0,0,.045)),new THREE.Vector3((a.x+b.x)/2+(state.mode==='network'&&state.topology==='direct'&&compact?(link.network==='sync'?-.10:.10):0),(a.y+b.y)/2+(state.mode==='network'&&state.topology==='direct'&&!compact?(link.network==='sync'?.08:-.08):0),lift),b.clone().add(new THREE.Vector3(0,0,.045)),b]);const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,32,.0018,5,false),new THREE.MeshStandardMaterial({color,roughness:.6}));wireGroup.add(mesh);const dot=new THREE.Mesh(new THREE.SphereGeometry(.005,10,7),new THREE.MeshBasicMaterial({color:0xffc22b}));wireGroup.add(dot);cables.push({mesh,dot,curve,network:link.network,index:i,signal:link.signal,reverse:link.reverse,returnPath:link.returnPath});});container.dataset.wires=String(cables.length);container.dataset.links=JSON.stringify(state.links);container.dataset.wireEndpoints=JSON.stringify(state.links.filter(l=>world(l.a)&&world(l.b)).map(l=>({a:l.a,b:l.b,start:world(l.a).toArray(),end:world(l.b).toArray()})));
@@ -198,6 +207,6 @@ export async function createLightBenchScene(container,project){
  const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('lightbench-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
  // A single static readiness frame is independent of stale intersection delivery.
  // It does not start animation, and is requested only for the selected lesson.
- return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){const changed=state?.mode!==s.mode||state?.reading!==s.reading||state?.topology!==s.topology;state=s;phase=p;if(!layout||changed)rebuild();invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();scopeModel?.owned.forEach(resource=>resource.dispose());scopeModel=null;plcModel?.resources.forEach(resource=>resource.dispose());plcModel=null;unoModel?.resources.forEach(resource=>resource.dispose());unoModel=null;delete container.dataset.scopeModel;delete container.dataset.plcModel;delete container.dataset.unoModel;delete container.dataset.wiresVisible;for(const lease of leases.values())lease.release();toolbar.remove();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+ return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){const changed=state?.mode!==s.mode||state?.reading!==s.reading||state?.topology!==s.topology;state=s;phase=p;if(!layout||changed)rebuild();invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();scopeModel?.owned.forEach(resource=>resource.dispose());scopeModel=null;plcModel?.resources.forEach(resource=>resource.dispose());plcModel=null;unoModel?.resources.forEach(resource=>resource.dispose());unoModel=null;rh25Model?.dispose();rh25Model=null;delete container.dataset.scopeModel;delete container.dataset.plcModel;delete container.dataset.unoModel;delete container.dataset.rh25Model;delete container.dataset.wiresVisible;for(const lease of leases.values())lease.release();toolbar.remove();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
 }
 

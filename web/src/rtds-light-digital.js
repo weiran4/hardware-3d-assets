@@ -9,9 +9,9 @@ export function mountLightDigital(root){
  const stageLabel=stage.getAttribute('aria-label');
  function updateViewControls(ready){
   play.disabled=!scene||!ready||media.matches||Boolean(viewingDevice);step.disabled=!ready||Boolean(viewingDevice);
-  stage.setAttribute('aria-label',viewingDevice==='plc'?'Siemens CPU 1212C 实物外观三维近看':viewingDevice==='uno'?'Phoenix UNO-PS 2902991 实物外观三维近看 · 未接线':stageLabel);
+  stage.setAttribute('aria-label',viewingDevice==='plc'?'Siemens CPU 1212C 实物外观三维近看':viewingDevice==='uno'?'Phoenix UNO-PS 2902991 实物外观三维近看 · 未接线':viewingDevice==='rh25'?'Vishay Dale RH-25 实物外观三维近看 · 未接线':stageLabel);
  }
- function setDeviceView(e){const id=e.detail?.id;viewingDevice=['plc','uno'].includes(id)?id:null;if(viewingDevice)pause();updateViewControls(evaluateLightDigital(state).ready);}
+ function setDeviceView(e){const id=e.detail?.id;viewingDevice=['plc','uno','rh25'].includes(id)?id:null;if(viewingDevice)pause();updateViewControls(evaluateLightDigital(state).ready);}
  function pause(){playing=false;cancelAnimationFrame(frame);frame=0;last=0;host.dataset.playing='false';play.textContent='播放';play.setAttribute('aria-pressed','false');}
  function paint(){const r=evaluateLightDigital(state);host.dataset.status=r.status;
  for(const el of host.querySelectorAll('[data-lightdio]')){const k=el.dataset.lightdio;if(el.type==='checkbox')el.checked=!!state[k];else el.value=state[k];el.disabled=['supplied','bankVoltage'].includes(k)&&state.mode==='di';}
