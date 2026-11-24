@@ -1,0 +1,41 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+
+for(const width of [1280,390])test('Light UDP detached Moxa EDS-205A exterior '+width,async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-39');
+ const bench=page.locator('.lightudp-bench'),stage=bench.locator('.lightudp-stage'),topology=bench.locator('[data-lightudp="topology"]'),play=bench.locator('[data-lightudp-play]'),step=bench.locator('[data-lightudp-step]'),focus=bench.locator('[data-device-focus="moxa"]'),photo=bench.getByRole('link',{name:/EDS-205A.*实物/});
+ const all=bench.getByRole('button',{name:'查看全部',exact:true});
+ await stage.scrollIntoViewIfNeeded();await expect(stage).toHaveAttribute('data-photo-status','ready');
+ await expect(focus).toHaveCount(0);await expect(photo).toHaveCount(0);
+ await topology.selectOption('switch');await stage.scrollIntoViewIfNeeded();
+ await expect(stage).toHaveAttribute('data-moxa-model','moxa-eds-205a');
+ await expect(stage).toHaveAttribute('data-device-representations',/"moxa":"photo"/);
+ await expect(bench.locator('.lightbench-photo-status[role=status]')).toContainText(/EDS-205A.*未接线.*端口/);
+ await expect(photo).toHaveAttribute('href',/^https:/);
+ await bench.locator('[data-lightudp-connect]').click();await stage.scrollIntoViewIfNeeded();
+ const endpoints=async()=>JSON.parse(await stage.getAttribute('data-wire-endpoints'));
+ await expect.poll(async()=>(await endpoints()).length).toBe(2);const old=await endpoints();
+ const swY=width===390?.025:-.15;
+ expect(old.map(({a,b})=>[a,b])).toEqual([['L.eth','SW.a'],['SW.b','PC.eth']]);
+ expect(old[0].end.map(n=>+n.toFixed(6))).toEqual([-.07,swY,.06]);
+ expect(old[1].start.map(n=>+n.toFixed(6))).toEqual([.07,swY,.06]);
+ await step.click();await expect(bench).toHaveAttribute('data-count','1');
+ const qa=process.env.LIGHT_MOXA_QA_DIR;
+ if(qa){await mkdir(qa,{recursive:true});await stage.screenshot({path:`${qa}/moxa-overview-${width}.png`});}
+ await play.click();await expect(bench).toHaveAttribute('data-playing','true');
+ await focus.focus();await page.keyboard.press('Enter');
+ await expect(focus).toHaveAttribute('aria-pressed','true');await expect(stage).toHaveAccessibleName(/EDS-205A.*未接线/);
+ await expect(stage).toHaveAttribute('data-wires-visible','false');await expect(bench).toHaveAttribute('data-playing','false');await expect(play).toBeDisabled();await expect(step).toBeDisabled();
+ expect(await endpoints()).toEqual(old);
+ if(qa)await stage.screenshot({path:`${qa}/moxa-closeup-${width}.png`});
+ await all.click();await expect(stage).toHaveAttribute('data-wires-visible','true');await expect(step).toBeEnabled();
+ const before=Number(await bench.getAttribute('data-count'));await step.click();await expect(bench).toHaveAttribute('data-count',String(before+1));
+ await focus.click();await topology.selectOption('direct');await expect(stage).toHaveAttribute('data-focused-device','all');
+ await expect(stage).not.toHaveAttribute('data-moxa-model',/.+/);await expect(focus).toHaveCount(0);await expect(photo).toHaveCount(0);
+ await expect(stage).toHaveAttribute('data-wires','1');await expect(step).toBeEnabled();
+ await topology.selectOption('switch');await focus.click();
+ await stage.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));
+ await expect(stage).toHaveAttribute('data-loaded','false');await expect(stage).not.toHaveAccessibleName(/EDS-205A/);await expect(step).toBeEnabled();
+ await bench.locator('[data-lightudp-retry]').click();await expect(stage).toHaveAttribute('data-focused-device','all');await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage.locator('canvas')).toHaveCount(1);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
