@@ -3,6 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {publishedModels} from './rtds-models.js';
 import {createDell7080} from './rtds-udp-dell.js';
+import {createG308Exterior} from './rtds-udp-g308.js';
 
 // Only NovaCor uses photo-inspected mating anchors; the Dell is a detached exterior reference.
 const colors={fiber:0x9a6330,gt:0x9a6330,'gt-fiber':0x9a6330,'st-timing-fiber':0xc18b34,'st-ethernet-fiber':0x2478ac,coax:0x60717f,ethernet:0x2478ac};
@@ -10,7 +11,7 @@ export async function createUdpScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
  let template;try{template=(await new GLTFLoader().loadAsync(new URL(publishedModels['novacor-2.0'].glb,document.baseURI).href)).scene;}catch(e){renderer.dispose();throw e;}
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
- const pcExterior=createDell7080(),owned=new Set();let deviceView='all';let compact=container.clientWidth<600,anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
+ const pcExterior=createDell7080(),switchExterior=createG308Exterior(),owned=new Set();let switchCaption;let deviceView='all';let compact=container.clientWidth<600,anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0;
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
  function own(x){owned.add(x);return x;}
  function box(parent,size,pos,color){const m=new THREE.Mesh(own(new THREE.BoxGeometry(...size)),own(new THREE.MeshStandardMaterial({color,roughness:.62})));m.position.fromArray(pos);parent.add(m);return m;}
@@ -38,6 +39,8 @@ export async function createUdpScene(container,project){
  box(sw,[.256,.030,.009],[0,0,.063],0x386277);
  port(sw,'SW.in',[-.105,0,.07],0x2478ac);port(sw,'SW.out',[.105,0,.07],0x2478ac);
  label('SWITCH · LOGIC',[0,-.044,.08],.30,sw);
+ group.add(switchExterior.group);
+ switchCaption=label('EDS-G308 · 未接线',[compact?.335:.41,compact?.249:-.388,.09],compact?.225:.265);
  group.updateMatrixWorld(true);container.dataset.modelCount='4';container.dataset.anchorCount=String(Object.keys(anchors).length);fit();
  }
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
@@ -50,15 +53,22 @@ export async function createUdpScene(container,project){
  }
  function invalidate(){if(!disposed&&active&&!document.hidden&&!frame)frame=requestAnimationFrame(()=>render());}
  function fit(){
-  const isolated=deviceView!=='all',pc=pcExterior.group;
-  for(const n of group.children)n.visible=!isolated||n===pc;
+  const isolated=deviceView!=='all',pc=pcExterior.group,sw=switchExterior.group;
+  const switching=state?.topology==='switch',switchFocus=deviceView.startsWith('switch-');
+  const focus=switchFocus?sw:pc;
+  for(const n of group.children)n.visible=isolated?n===focus:((n!==sw&&n!==switchCaption)||switching);
+  if(switching)container.dataset.switchModel=sw.name;else delete container.dataset.switchModel;
   wireGroup.visible=!isolated;container.dataset.deviceView=deviceView;container.dataset.wiresVisible=String(wireGroup.visible);
-  if(isolated){
+  if(switchFocus){
+   sw.position.set(0,0,0);sw.rotation.set(deviceView==='switch-rear'?.15:.29,deviceView==='switch-rear'?Math.PI-.55:-.62,0);sw.scale.setScalar(1);
+   controls.target.set(0,.008,0);camera.position.set(-.007,.026,.375);
+  }else if(isolated){
    pc.position.set(0,0,0);pc.rotation.set(0,deviceView==='rear'?Math.PI-.10:.25,0);pc.scale.setScalar(1);
    controls.target.set(0,0,0);camera.position.set(-.007,.021,.437);
   }else{
    pc.position.set(compact?-.255:-.54,compact?.255:.205,.025);pc.rotation.set(0,-.31,0);pc.scale.setScalar(compact?1.18:1.26);
-   const width=compact?.75:1.35,height=compact?1.05:.65;const centerY=compact?.15:.06;const distance=Math.max(height,width/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.2;
+   sw.position.set(compact?.335:.41,compact?.35:-.264,0);sw.rotation.set(.12,-.50,0);sw.scale.setScalar(compact?1.18:1.36);
+   const width=compact?.75:1.35,height=compact?1.05:switching?.78:.65;const centerY=compact?.15:switching?-.004:.06;const distance=Math.max(height,width/Math.max(.3,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(18)))*1.2;
    controls.target.set(-.02,centerY,.035);camera.position.set(-.02,centerY+.12,distance);
   }
   controls.update();invalidate();
@@ -68,6 +78,6 @@ export async function createUdpScene(container,project){
  const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('udp-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
  // A single static readiness frame is independent of stale intersection delivery.
  // It does not start animation, and is requested only for the selected lesson.
- return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){state=s;phase=p;if(!layout)rebuild();invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},setDeviceView(v){if(deviceView===v)return;deviceView=v;fit();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();pcExterior.dispose();delete container.dataset.pcModel;delete container.dataset.deviceView;delete container.dataset.wiresVisible;const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+ return {paintStatic(){cancelAnimationFrame(frame);frame=0;render(true);},update(s,p=null){const changed=state?.topology!==s.topology;state=s;phase=p;if(!layout)rebuild();else if(changed)fit();invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},setDeviceView(v){if(deviceView===v)return;deviceView=v;fit();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();pcExterior.dispose();switchExterior.dispose();delete container.dataset.switchModel;delete container.dataset.pcModel;delete container.dataset.deviceView;delete container.dataset.wiresVisible;const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
 }
 
