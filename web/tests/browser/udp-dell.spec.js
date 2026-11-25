@@ -1,0 +1,26 @@
+import {test,expect} from '@playwright/test';
+import {mkdir} from 'node:fs/promises';
+for(const width of [1200,390])test('P35 detached Dell front and rear '+width,async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width,height:1000});await page.goto('./#rtds-presentation-35');
+ const b=page.locator('.udp-bench'),s=b.locator('.udp-stage'),a=k=>b.locator('[data-udp-inspect='+k+']');
+ await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-pc-model','dell-optiplex-7080-micro');
+ await expect(b.getByRole('link',{name:/7080.*实物/})).toHaveAttribute('href',/^https:/);
+ const links=async()=>JSON.parse(await s.getAttribute('data-wire-endpoints'));
+ const capture=async k=>{const d=process.env.UDP_DELL_CAPTURE;if(d){await mkdir(d,{recursive:true});await s.screenshot({path:d+'/'+width+'-'+k+'.png'});}};
+ await b.locator('[data-udp-connect]').click();await expect(s).toHaveAttribute('data-wires','1');
+ const direct=await links();
+ expect(direct[0].b).toBe('PC.nic');
+ expect(direct[0].end.map(n=>+n.toFixed(3))).toEqual(width===390?[.05,.33,.055]:[-.25,.11,.055]);
+ await capture('overview');
+ await b.locator('[data-udp-play]').click();await expect(b).toHaveAttribute('data-playing','true');
+ await a('front').focus();await page.keyboard.press('Enter');await expect(s).toHaveAttribute('data-device-view','front');
+ await expect(s).toHaveAccessibleName(/7080.*正面.*未接线/);await expect(s).toHaveAttribute('data-wires-visible','false');await expect(b).toHaveAttribute('data-playing','false');await expect(b.locator('[data-udp-step]')).toBeDisabled();expect(await links()).toEqual(direct);
+ await capture('front');await a('rear').click();await expect(s).toHaveAttribute('data-device-view','rear');await expect(s).toHaveAccessibleName(/7080.*背板.*未接线/);await expect(b.locator('[data-udp-port=udp]')).toBeHidden();await capture('rear');
+ await a('all').click();await expect(s).toHaveAttribute('data-wires-visible','true');await expect(b.locator('[data-udp-step]')).toBeEnabled();
+ await b.locator('[data-udp=topology]').selectOption('switch');await b.locator('[data-udp-connect]').click();await b.locator('[data-udp-second]').click();await expect(s).toHaveAttribute('data-wires','2');const sw=await links();expect(sw.map(x=>[x.a,x.b])).toEqual([['N.udp','SW.in'],['SW.out','PC.nic']]);
+ expect(sw[1].end).toEqual(direct[0].end);expect(sw[0].end.map(n=>+n.toFixed(3))).toEqual(width===390?[.045,.12,.1]:[-.425,-.14,.1]);
+ await capture('switched');await a('rear').click();await s.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));
+ await expect(s).toHaveAttribute('data-loaded','false');await expect(a('rear')).toBeDisabled();await b.locator('[data-udp-retry]').click();
+ await expect(s).toHaveAttribute('data-loaded','true');await expect(s).toHaveAttribute('data-device-view','all');expect(await links()).toEqual(sw);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
