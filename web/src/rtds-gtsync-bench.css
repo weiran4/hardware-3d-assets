@@ -4,3 +4,7 @@
 .sync-irig-exterior p{margin:0 0 .35rem}
 .sync-irig-exterior button{font:inherit;min-height:38px;margin:.25rem .2rem .25rem 0}
 @media(max-width:650px){.sync-stage.sync-stage-irig{height:520px}.sync-stage.sync-stage-irig[data-sel2407="front"]{height:280px}}
+.sync-ptp-exterior{padding:.65rem .8rem;margin:.45rem 0 .8rem;border:1px solid #cfdae6;border-radius:8px;background:#f6f9fc;line-height:1.65}
+.sync-ptp-exterior p{margin:0 0 .35rem}
+.sync-ptp-exterior button{font:inherit;min-height:42px;margin:.25rem .2rem .25rem 0}
+@media(max-width:650px){.sync-stage:is([data-sel2488="front"],[data-sel2488="rear"]){height:220px}}
