@@ -7,3 +7,7 @@
 .x2-bench [data-sel421-caption]{position:absolute;pointer-events:none;z-index:2;transform:translateX(-50%);background:white;border:1px solid #dae5eb;border-radius:999px;color:#34536b;font-size:11px;font-weight:650;white-space:nowrap;padding:4px 8px}
 .x2-bench .network-stage[data-sel421="closeup"]{height:290px}
 @media(max-width:600px){.x2-bench .network-stage[data-sel421="closeup"]{height:222px}.x2-bench [data-sel421-caption]{font-size:10px}}
+
+.network-gs316-actions button[aria-pressed=true]{background:#d9eef0;border-color:#678d99;font-weight:650}
+#rtds-three-networks .network-stage:is([data-gs316-view=front],[data-gs316-view=rear]){height:308px}
+@media(max-width:700px){#rtds-three-networks .network-stage:is([data-gs316-view=front],[data-gs316-view=rear]){height:210px}}
