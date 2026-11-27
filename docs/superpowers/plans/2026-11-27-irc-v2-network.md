@@ -1,0 +1,7 @@
+# IRC Switch V2 photo-based integration (P30–31)
+
+The public RTDS oblique front photo shows six cards and identifies the bottom card as slot 1. In the lower bank row, the two groups are marked 1–6 and 7–12. Match the eight positions in this offline preset to their existing original GLB dust caps, not to the two unrelated Light exemplars. Confirm the model's cap coordinates by raycast, not by extrapolating the two exemplars. Do not publish public photo binaries, modify Light or other existing models, or represent insertion or on-site assignment.
+
+1. Add geometry tests for card 1 channels 1–8 and a detector for true per-cap surfaces. Add P30/31 desktop/mobile tests for 25 existing correct links, unchanged error behavior, clean isolated photo-comparison view and an asset failure/retry. Confirm no IRC fetch in two- and three-node presets.
+2. Integrate only into the eight-chassis layout. Keep IRC logic and ports untouched; swap the gray box for real geometry and fallback to a flat logical strip when a model cannot load. Build isolated front view and link public RTDS photo. Optional asset failures must not block lesson. Release leases and discard late snapshots after route change.
+3. Compare two clean screenshots against the public hardware photo, confirm visible cabling in overview, run regressions for the network and Light lessons, build and publish on the existing verified Pages flow.
