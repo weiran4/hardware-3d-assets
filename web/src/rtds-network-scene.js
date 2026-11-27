@@ -4,16 +4,27 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {publishedModels} from './rtds-models.js';
 import {buildGs316v3,gs316v3LanPort} from './rtds-network-gs316.js';
 import {createDell7080} from './rtds-udp-dell.js';
+import {acquirePhotoBenchAsset} from './rtds-photo-bench-assets.js';
+import {buildNetworkGbh} from './rtds-network-gbhv3.js';
 
-// Ethernet uses photo-backed workstation and switch geometry; GBH and IRC remain logical symbols.
+// The GBH optical caps mark channels for teaching; the IRC device remains schematic.
 const colors={lan:0x2478ac,sync:0x9a6330,data:0x8d51b5};
-export async function createNetworkScene(container,project){
+function disposeTemplate(template){const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();}
+export async function createNetworkScene(container,project,count=2,retryGbh=false,isCurrent=()=>true){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
- let template;try{template=(await new GLTFLoader().loadAsync(new URL(publishedModels['novacor-2.0'].glb,document.baseURI).href)).scene;}catch(e){renderer.dispose();throw e;}
+ const gbhLease=count>2?acquirePhotoBenchAsset('gbh',retryGbh):null;
+ let template,gbhAsset;
+ try{
+  const [gltf,gbh]=await Promise.all([new GLTFLoader().loadAsync(new URL(publishedModels['novacor-2.0'].glb,document.baseURI).href),gbhLease?.ready]);
+  template=gltf.scene;gbhAsset=gbh?.asset;
+  if(!isCurrent()){disposeTemplate(template);throw Error('Superseded network view');}
+ }catch(e){gbhLease?.release();renderer.dispose();throw e;}
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
  const owned=new Set(),gsResources=new Set();
  const specimen=buildGs316v3(r=>{gsResources.add(r);return r;});scene.add(specimen);specimen.visible=false;
  const workstation=createDell7080();scene.add(workstation.group);workstation.group.visible=false;
+ const hubSpecimen=gbhAsset?buildNetworkGbh(gbhAsset,0,.47).group:null;
+ if(hubSpecimen){scene.add(hubSpecimen);hubSpecimen.visible=false;}
  let anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0,view='wiring',savedWiring=null,restoreWiring=false,lastWidth=0;
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
  function own(x){owned.add(x);return x;}
@@ -24,6 +35,21 @@ export async function createNetworkScene(container,project){
  function clearLayout(){clearWires();group.clear();for(const r of owned)r.dispose();owned.clear();anchors={};}
  function find(root,suffix){let result;root.traverse(n=>{if(n.userData.sid?.endsWith('.'+suffix))result=n;});if(!result)throw Error('Confirmed NovaCor anchor unavailable: '+suffix);return result;}
  function apparatus(name,position,count,color){const device=new THREE.Group();device.position.fromArray(position);group.add(device);box(device,[.23,.07,.07],[0,0,0],0xd2dade);box(device,[.222,.055,.004],[0,0,.038],0x243a47);for(let i=0;i<count;i++)port(device,`${name}.p${i+1}`,[-.094+i*.188/Math.max(1,count-1),-.006,.043],color);label(name+' · SCHEMATIC',[0,.056,.04],.24,device);}
+ function hub(n,y){
+  const result=gbhAsset?buildNetworkGbh(gbhAsset,n,.237):null;
+  const device=result?.group??new THREE.Group();
+  device.position.set(.15,y,0);group.add(device);
+  if(result){
+   Object.assign(anchors,result.anchors);
+   container.dataset.gbhV3='photo-caps';
+   container.dataset.gbhChannels=Object.values(result.anchors).map(node=>node.name.split('-').at(-1)).join(',');
+  }else{
+   box(device,[.23,.048,.005],[0,0,.037],0xe6ede9);
+   for(let i=0;i<n;i++)port(device,'GBH.p'+(i+1),[-.094+i*.188/(n-1),-.006,.043],colors.sync);
+   container.dataset.gbhV3='schematic';delete container.dataset.gbhChannels;
+  }
+  label(result?'GBH V3 · 36 channels':'GBH · SCHEMATIC',[.15,y+.053,.064],.225);
+ }
  function rebuild(n){clearLayout();layout=n;savedWiring=null;restoreWiring=false;
   const cols=Math.min(4,n),rows=Math.ceil(n/cols);for(let i=0;i<n;i++){const model=template.clone(true);model.scale.setScalar(.42);model.rotation.y=Math.PI;model.position.set((i%cols-(cols-1)/2)*.29,Math.floor(i/cols)*.27-.06,0);group.add(model);for(const suffix of ['wif','udp','gbh','irc1','irc2','irc3','irc4','irc5','irc6'])anchors[`N${i+1}.${suffix}`]=find(model,suffix);label('NovaCor 2.0 · N'+(i+1),[model.position.x,model.position.y+.105,.12],.235);}
   const y=-.32;
@@ -33,7 +59,7 @@ export async function createNetworkScene(container,project){
   for(let i=0;i<=n;i++){const key='LAN.p'+i,jack=gs316v3LanPort(key);anchors[key]=lan.getObjectByName('jack-anchor-'+jack);jacks.push(jack);}
   container.dataset.gs316MappedJacks=jacks.join(',');
   label('NETGEAR GS316v3 · Ethernet',[-.16,y+.056,.048],.252);
-  if(n>2)apparatus('GBH',[.15,y,0],n,colors.sync);if(n>7)apparatus('IRC',[.46,y,0],n,colors.data);
+  if(n>2)hub(n,y);else{delete container.dataset.gbhV3;delete container.dataset.gbhChannels;}if(n>7)apparatus('IRC',[.46,y,0],n,colors.data);
   const pc=workstation.group.clone(true);pc.visible=true;
   pc.scale.setScalar(.78);pc.rotation.y=Math.PI+.19;pc.position.set(-.48,y,0);group.add(pc);
   anchors['PC.lan']=pc.getObjectByName('rear-rj45-mouth');
@@ -51,6 +77,13 @@ export async function createNetworkScene(container,project){
  function invalidate(){if(!disposed&&active&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
  function fit(){
   if(view!=='wiring'){
+   if(view==='gbh-front'){
+    camera.fov=15;camera.updateProjectionMatrix();
+    const distance=Math.max(.191,.57/Math.max(.24,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
+    controls.target.set(0,.005,.13);
+    camera.position.set(.017*distance,.07*distance,distance+.13);
+    controls.update();invalidate();return;
+   }
    if(view.startsWith('pc-')){
     camera.fov=20;camera.updateProjectionMatrix();
     const distance=Math.max(.245,.165/Math.max(.24,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
@@ -71,7 +104,7 @@ export async function createNetworkScene(container,project){
  function setView(next){
   if(next===view)return;
   if(view==='wiring'){restoreWiring=false;savedWiring={target:controls.target.clone(),camera:camera.position.clone()};}
-  view=next;const wiring=view==='wiring';group.visible=wiring;wireGroup.visible=wiring;specimen.visible=view==='front'||view==='rear';workstation.group.visible=view.startsWith('pc-');
+  view=next;const wiring=view==='wiring';group.visible=wiring;wireGroup.visible=wiring;specimen.visible=view==='front'||view==='rear';workstation.group.visible=view.startsWith('pc-');if(hubSpecimen)hubSpecimen.visible=view==='gbh-front';
   if(wiring&&savedWiring){camera.fov=36;camera.updateProjectionMatrix();controls.target.copy(savedWiring.target);camera.position.copy(savedWiring.camera);savedWiring=null;restoreWiring=true;controls.update();invalidate();}
   else fit();
  }
@@ -83,5 +116,5 @@ export async function createNetworkScene(container,project){
  }
  const ro=new ResizeObserver(resize);ro.observe(container);resize();const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else invalidate();};document.addEventListener('visibilitychange',visibility);
  const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('network-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
- return {setView,update(s,p=null){state=s;phase=p;if(layout!==s.count)rebuild(s.count);invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();for(const r of gsResources)r.dispose();gsResources.clear();workstation.dispose();delete container.dataset.workstationNic;delete container.dataset.gs316View;delete container.dataset.gs316MappedJacks;const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+ return {gbhReady:!!gbhAsset,setView,update(s,p=null){state=s;phase=p;if(layout!==s.count)rebuild(s.count);invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();for(const r of gsResources)r.dispose();gsResources.clear();workstation.dispose();gbhLease?.release();delete container.dataset.gbhV3;delete container.dataset.gbhChannels;delete container.dataset.workstationNic;delete container.dataset.gs316View;delete container.dataset.gs316MappedJacks;disposeTemplate(template);renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
 }
