@@ -11,3 +11,6 @@
 .network-gs316-actions button[aria-pressed=true]{background:#d9eef0;border-color:#678d99;font-weight:650}
 #rtds-three-networks .network-stage:is([data-gs316-view=front],[data-gs316-view=rear]){height:308px}
 @media(max-width:700px){#rtds-three-networks .network-stage:is([data-gs316-view=front],[data-gs316-view=rear]){height:210px}}
+
+#rtds-three-networks .network-stage:is([data-gs316-view=pc-front],[data-gs316-view=pc-rear]){height:320px}
+@media(max-width:700px){#rtds-three-networks .network-stage:is([data-gs316-view=pc-front],[data-gs316-view=pc-rear]){height:270px}}

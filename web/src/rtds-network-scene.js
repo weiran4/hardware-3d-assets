@@ -3,8 +3,9 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {publishedModels} from './rtds-models.js';
 import {buildGs316v3,gs316v3LanPort} from './rtds-network-gs316.js';
+import {createDell7080} from './rtds-udp-dell.js';
 
-// GBH, IRC and workstation remain logical symbols. LAN uses the GS316v3 photo reconstruction.
+// Ethernet uses photo-backed workstation and switch geometry; GBH and IRC remain logical symbols.
 const colors={lan:0x2478ac,sync:0x9a6330,data:0x8d51b5};
 export async function createNetworkScene(container,project){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,1);renderer.domElement.setAttribute('aria-hidden','true');
@@ -12,6 +13,7 @@ export async function createNetworkScene(container,project){
  const scene=new THREE.Scene(),group=new THREE.Group(),wireGroup=new THREE.Group(),camera=new THREE.PerspectiveCamera(36,1,.01,30);scene.add(group,wireGroup);scene.add(new THREE.HemisphereLight(0xffffff,0x7a9293,2.7));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(-1,2,4);scene.add(light);
  const owned=new Set(),gsResources=new Set();
  const specimen=buildGs316v3(r=>{gsResources.add(r);return r;});scene.add(specimen);specimen.visible=false;
+ const workstation=createDell7080();scene.add(workstation.group);workstation.group.visible=false;
  let anchors={},cables=[],state=null,phase=null,layout=0,signature='',active=true,disposed=false,frame=0,frames=0,view='wiring',savedWiring=null,restoreWiring=false,lastWidth=0;
  container.append(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=false;controls.enablePan=false;controls.minDistance=.3;controls.maxDistance=12;controls.addEventListener('change',invalidate);
  function own(x){owned.add(x);return x;}
@@ -32,7 +34,11 @@ export async function createNetworkScene(container,project){
   container.dataset.gs316MappedJacks=jacks.join(',');
   label('NETGEAR GS316v3 · Ethernet',[-.16,y+.056,.048],.252);
   if(n>2)apparatus('GBH',[.15,y,0],n,colors.sync);if(n>7)apparatus('IRC',[.46,y,0],n,colors.data);
-  const pc=new THREE.Group();pc.position.set(-.48,y,0);group.add(pc);box(pc,[.15,.11,.018],[0,.022,0],0x30495b);box(pc,[.135,.09,.004],[0,.022,.012],0xb4e8ef);box(pc,[.02,.035,.02],[0,-.045,0],0x778c98);box(pc,[.105,.008,.05],[0,-.061,.015],0x9dafb6);port(pc,'PC.lan',[.063,-.017,.02],colors.lan);label('Workstation · SCHEMATIC',[0,.10,.025],.255,pc);
+  const pc=workstation.group.clone(true);pc.visible=true;
+  pc.scale.setScalar(.78);pc.rotation.y=Math.PI+.19;pc.position.set(-.48,y,0);group.add(pc);
+  anchors['PC.lan']=pc.getObjectByName('rear-rj45-mouth');
+  container.dataset.workstationNic=anchors['PC.lan'].name;
+  label('Workstation · Dell 7080 Micro',[-.426,y+.103,.075],.205);
   group.updateMatrixWorld(true);container.dataset.modelCount=String(n);container.dataset.anchorCount=String(Object.keys(anchors).length);fit();
  }
  function world(key){return anchors[key]?.getWorldPosition(new THREE.Vector3());}
@@ -45,6 +51,14 @@ export async function createNetworkScene(container,project){
  function invalidate(){if(!disposed&&active&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
  function fit(){
   if(view!=='wiring'){
+   if(view.startsWith('pc-')){
+    camera.fov=20;camera.updateProjectionMatrix();
+    const distance=Math.max(.245,.165/Math.max(.24,camera.aspect))/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
+    controls.target.set(0,0,0);
+    if(view==='pc-front')camera.position.set(-.53*distance,.078*distance,distance);
+    else camera.position.set(.032*distance,.026*distance,-distance);
+    controls.update();invalidate();return;
+   }
    camera.fov=18;camera.updateProjectionMatrix();
    const tan=Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
    const distance=Math.max(.104,.365/Math.max(.24,camera.aspect))/(2*tan);
@@ -57,7 +71,7 @@ export async function createNetworkScene(container,project){
  function setView(next){
   if(next===view)return;
   if(view==='wiring'){restoreWiring=false;savedWiring={target:controls.target.clone(),camera:camera.position.clone()};}
-  view=next;const wiring=view==='wiring';group.visible=wiring;wireGroup.visible=wiring;specimen.visible=!wiring;
+  view=next;const wiring=view==='wiring';group.visible=wiring;wireGroup.visible=wiring;specimen.visible=view==='front'||view==='rear';workstation.group.visible=view.startsWith('pc-');
   if(wiring&&savedWiring){camera.fov=36;camera.updateProjectionMatrix();controls.target.copy(savedWiring.target);camera.position.copy(savedWiring.camera);savedWiring=null;restoreWiring=true;controls.update();invalidate();}
   else fit();
  }
@@ -69,5 +83,5 @@ export async function createNetworkScene(container,project){
  }
  const ro=new ResizeObserver(resize);ro.observe(container);resize();const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else invalidate();};document.addEventListener('visibilitychange',visibility);
  const lost=e=>{e.preventDefault();active=false;cancelAnimationFrame(frame);frame=0;container.dataset.loaded='false';container.dispatchEvent(new CustomEvent('network-scene-error'));};renderer.domElement.addEventListener('webglcontextlost',lost);
- return {setView,update(s,p=null){state=s;phase=p;if(layout!==s.count)rebuild(s.count);invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();for(const r of gsResources)r.dispose();gsResources.clear();delete container.dataset.gs316View;delete container.dataset.gs316MappedJacks;const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
+ return {setView,update(s,p=null){state=s;phase=p;if(layout!==s.count)rebuild(s.count);invalidate();},setActive(v){active=!!v;controls.enabled=active;if(!active){cancelAnimationFrame(frame);frame=0;}else invalidate();},fit,dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);ro.disconnect();document.removeEventListener('visibilitychange',visibility);renderer.domElement.removeEventListener('webglcontextlost',lost);controls.dispose();clearLayout();for(const r of gsResources)r.dispose();gsResources.clear();workstation.dispose();delete container.dataset.workstationNic;delete container.dataset.gs316View;delete container.dataset.gs316MappedJacks;const resources=new Set();template.traverse(n=>{if(n.geometry)resources.add(n.geometry);for(const m of n.material?Array.isArray(n.material)?n.material:[n.material]:[]){resources.add(m);for(const v of Object.values(m))if(v?.isTexture)resources.add(v);}});for(const r of resources)r.dispose();renderer.dispose();renderer.domElement.remove();container.dataset.loaded='false';}};
 }

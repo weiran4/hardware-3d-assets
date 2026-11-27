@@ -63,6 +63,7 @@ export function createDell7080(){
  const jack=new THREE.Group();jack.name='rear-rj45-visual-only';rear.add(jack);jack.position.set(0,0,.0003);
  box(jack,'rj45-metal-outline',10.1,63,90.85,9.65,15,.8,silver,.2);
  box(jack,'rj45-dark-well',10.28,63,91.28,7.45,12.7,.22,slot,.4);
+ const mouth=new THREE.Object3D();mouth.name='rear-rj45-mouth';mouth.position.set(10.28*s,63*s,91.72*s);jack.add(mouth);
  box(jack,'rj45-latch-step',6.25,63,91.42,1.65,6.1,.16,slot);
  for(const y of [57.9,68])box(jack,'unlit-status-window',6.5,y,91.48,1.25,1.45,.18,darkLed);
  for(let i=0;i<8;i++)box(jack,'rj45-contact',12.8,58.9+i*1.1,91.45,1.0,.22,.06,warm);
