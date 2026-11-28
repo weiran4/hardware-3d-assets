@@ -1,0 +1,35 @@
+import {test,expect} from '@playwright/test';
+
+for(const width of [1200,390])test(`P32 ordinary copper shows real switches and keeps PRP abstract at ${width}`,async({page})=>{
+ test.setTimeout(90000);
+ await page.setViewportSize({width,height:1000});
+ await page.goto('./#rtds-presentation-32');
+ const root=page.locator('#rtds-chapter-5b'),bench=root.locator('.x2-bench'),stage=bench.locator('.network-stage');
+ await expect(stage).toHaveAttribute('data-loaded','true');
+ await expect(stage).toHaveAttribute('data-x2-switches','gs316v3-copper');
+ await expect(stage).toHaveAttribute('data-x2-switch-jacks','S_A:1,2,3;S_B:1,2');
+ await expect(stage).toHaveAttribute('data-rendered-wires','6');
+ await expect(bench.locator('[data-x2-switch-photo]')).toHaveAttribute('href',/gs316v3_wshadow_topfront_image$/);
+ const inspect=bench.locator('[data-x2-gs316-focus]'),back=bench.locator('[data-sel421-reset]');
+ await inspect.focus();await page.keyboard.press('Enter');
+ await expect(stage).toHaveAttribute('data-x2-view','gs316-front');
+ await expect(stage).toHaveAttribute('data-rendered-wires','0');
+ await expect(root.locator('#gtnet-x2-play')).toBeDisabled();
+ await stage.screenshot({path:`screenshots/GTNETx2-GS316v3-${width}.png`});
+ await back.click();
+ await expect(stage).toHaveAttribute('data-rendered-wires','6');
+ if(width===1200)await stage.screenshot({path:'screenshots/GTNETx2-GS316v3-overview.png'});
+ await root.locator('[data-gtnet-x2-example=prp]').click();
+ await expect(stage).toHaveAttribute('data-x2-switches','schematic');
+ await expect(inspect).toBeHidden();
+ await expect(stage).not.toHaveAttribute('data-x2-switch-jacks',/./);
+ await root.locator('[data-gtnet-x2-example=normal]').click();
+ await expect(stage).toHaveAttribute('data-x2-switches','gs316v3-copper');
+ await inspect.click();
+ await expect(stage).toHaveAttribute('data-x2-view','gs316-front');
+ await root.locator('[data-gtnet-x2-example=speed]').click();
+ await stage.scrollIntoViewIfNeeded();
+ await expect(stage).toHaveAttribute('data-x2-view','wiring');
+ await expect(stage).toHaveAttribute('data-x2-switches','schematic');
+ await expect(root.locator('#gtnet-x2-result')).toHaveAttribute('data-status','invalid');
+});
